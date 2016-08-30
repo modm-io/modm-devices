@@ -14,6 +14,16 @@
   <xsd:attribute name="version" type="xsd:string" />
 </xsd:complexType>
 
+<xsd:simpleType name="HexadezimalType">
+  <xsd:union memberTypes="xsd:unsignedLong">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:pattern value="0x[0-9A-Fa-f]{1,8}"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:union>
+</xsd:simpleType>
+
 <xsd:complexType name="AttributeBaseType">
   <xsd:attribute name="device-pin-id" type="xsd:string" use="optional" />
   <xsd:attribute name="device-size-id" type="xsd:string" use="optional" />
@@ -123,8 +133,16 @@
 <xsd:complexType name="MemoryType">
  <xsd:complexContent>
     <xsd:extension base="AttributeBaseType">
-      <xsd:attribute name="access" type="xsd:string" />
-      <xsd:attribute name="start" type="xsd:string" />
+      <xsd:attribute name="access">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="rx" />
+            <xsd:enumeration value="rwx" />
+            <xsd:enumeration value="rw" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="start" type="HexadezimalType" />
       <xsd:attribute name="name" type="xsd:string" />
       <xsd:attribute name="size" type="xsd:integer" />
     </xsd:extension>
