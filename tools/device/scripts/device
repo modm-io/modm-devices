@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import os
+import argparse
+import sys
+
+import glob
+
+rootpath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")
+sys.path.append(rootpath)
+
+import device
+
+if __name__ == '__main__':
+
+    arg = argparse.ArgumentParser(description='Device Platform Generator')
+    arg.add_argument('-i', '--input', dest='input', required=True, help='XML packet description.')
+    arg.add_argument('-o', '--output', dest='output', required=True, help='Output folder')
+
+    args = arg.parse_args()
+
+    try:
+        parser = device.parser.Parser()
+        device_files = glob.glob(os.path.join(args.input, "**/*.xml"))
+        for device_file in device_files:
+            print(device_file)
+            parser.parse(device_file)
+        
+    except (device.ParserException) as e:
+        print(e)
+        exit(1)
