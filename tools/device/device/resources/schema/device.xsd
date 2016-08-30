@@ -14,10 +14,10 @@
   <xsd:attribute name="version" type="xsd:string" />
 </xsd:complexType>
 
-<xsd:simpleType name="HexadezimalType">
+<xsd:simpleType name="HexadecimalType">
   <xsd:union memberTypes="xsd:unsignedLong">
     <xsd:simpleType>
-      <xsd:restriction base="xsd:token">
+      <xsd:restriction base="xsd:string">
         <xsd:pattern value="0x[0-9A-Fa-f]{1,8}"/>
       </xsd:restriction>
     </xsd:simpleType>
@@ -142,7 +142,7 @@
           </xsd:restriction>
         </xsd:simpleType>
       </xsd:attribute>
-      <xsd:attribute name="start" type="HexadezimalType" />
+      <xsd:attribute name="start" type="HexadecimalType" />
       <xsd:attribute name="name" type="xsd:string" />
       <xsd:attribute name="size" type="xsd:integer" />
     </xsd:extension>
