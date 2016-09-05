@@ -25,19 +25,23 @@
 </xsd:simpleType>
 
 <xsd:complexType name="AttributeBaseType">
-  <xsd:attribute name="device-pin-id" type="xsd:string" use="optional" />
-  <xsd:attribute name="device-size-id" type="xsd:string" use="optional" />
+  <xsd:attribute name="device-platform" type="xsd:string" use="optional" />
+  <xsd:attribute name="device-family" type="xsd:string" use="optional" />
   <xsd:attribute name="device-name" type="xsd:string" use="optional" />
   <xsd:attribute name="device-type" type="xsd:string" use="optional" />
+  <xsd:attribute name="device-pin-id" type="xsd:string" use="optional" />
+  <xsd:attribute name="device-size-id" type="xsd:string" use="optional" />
 </xsd:complexType>
 
 <xsd:complexType name="AttributeBaseStringType">
   <xsd:simpleContent>
     <xsd:extension base="xsd:string">
-      <xsd:attribute name="device-pin-id" type="xsd:string" use="optional" />
-      <xsd:attribute name="device-size-id" type="xsd:string" use="optional" />
+      <xsd:attribute name="device-platform" type="xsd:string" use="optional" />
+      <xsd:attribute name="device-family" type="xsd:string" use="optional" />
       <xsd:attribute name="device-name" type="xsd:string" use="optional" />
       <xsd:attribute name="device-type" type="xsd:string" use="optional" />
+      <xsd:attribute name="device-pin-id" type="xsd:string" use="optional" />
+      <xsd:attribute name="device-size-id" type="xsd:string" use="optional" />
     </xsd:extension>
   </xsd:simpleContent>
 </xsd:complexType>
