@@ -21,11 +21,18 @@ if __name__ == '__main__':
     args = arg.parse_args()
 
     try:
-        parser = device.parser.Parser()
+        device_count = 0
         device_files = glob.glob(os.path.join(args.input, "**/*.xml"))
         for device_file in device_files:
-            print(device_file)
-            parser.parse(device_file)
+            #print(device_file)
+            parser = device.parser.Parser()
+            rootnode = parser.parse(device_file)
+            devices = parser.get_devices(rootnode)
+            
+            device_count += len(devices)
+            for d in devices:
+                print(d)
+        print(device_count)
         
     except (device.ParserException) as e:
         print(e)

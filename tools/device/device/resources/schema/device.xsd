@@ -55,30 +55,29 @@
     <xsd:element name="driver" type="DriverType" minOccurs="1" maxOccurs="unbounded" />
   </xsd:choice>
   
-  <xsd:attribute name="platform" type="xsd:string" />
-  <xsd:attribute name="family" type="xsd:string" />
-  <xsd:attribute name="name" type="xsd:string" />
-  <xsd:attribute name="type" use="optional" type="xsd:string" />
-  <xsd:attribute name="pin_id" use="optional" type="xsd:string" />
-  <xsd:attribute name="size_id" use="optional" type="xsd:string" />
+  <xsd:attribute name="platform" type="xsd:string" use="required" />
+  <xsd:attribute name="family" type="xsd:string" use="required" />
+  <xsd:attribute name="name" type="xsd:string" use="optional" />
+  <xsd:attribute name="type" type="xsd:string" use="optional" />
+  <xsd:attribute name="pin_id" type="xsd:string" use="optional" />
+  <xsd:attribute name="size_id" type="xsd:string" use="optional" />
 </xsd:complexType>
 
 <xsd:complexType name="DriverType">
-  <xsd:sequence>
-    <xsd:element name="gpio" type="GpioType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
-    <xsd:element name="parameter" type="ParameterType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
-    <xsd:element name="memory" type="MemoryType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
-    <xsd:element name="vector" type="VectorType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
-  </xsd:sequence>
-  
-  <xsd:attribute name="device-pin-id" type="xsd:string" use="optional" />
-  <xsd:attribute name="device-size-id" type="xsd:string" use="optional" />
-  <xsd:attribute name="device-name" type="xsd:string" use="optional" />
-  <xsd:attribute name="device-type" type="xsd:string" use="optional" />
-  
-  <xsd:attribute name="type" type="xsd:string" />
-  <xsd:attribute name="name" type="xsd:string" />
-  <xsd:attribute name="instances" use="optional" type="xsd:string" />
+  <xsd:complexContent>
+    <xsd:extension base="AttributeBaseType">
+      <xsd:sequence>
+        <xsd:element name="gpio" type="GpioType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+        <xsd:element name="parameter" type="ParameterType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+        <xsd:element name="memory" type="MemoryType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+        <xsd:element name="vector" type="VectorType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+      </xsd:sequence>
+      
+      <xsd:attribute name="type" type="xsd:string" use="required" />
+      <xsd:attribute name="name" type="xsd:string" use="required" />
+      <xsd:attribute name="instances" type="xsd:string" use="optional" />
+    </xsd:extension>
+  </xsd:complexContent>
 </xsd:complexType>
 
 <xsd:complexType name="GpioType">
@@ -88,8 +87,8 @@
         <xsd:element name="af" type="AlternateFunctionType" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
       
-      <xsd:attribute name="port" type="xsd:string" />
-      <xsd:attribute name="id" type="xsd:string" />
+      <xsd:attribute name="port" type="xsd:string" use="required" />
+      <xsd:attribute name="id" type="xsd:string" use="required" />
       
       <xsd:attribute name="pcint" type="xsd:string" use="optional" />
       <xsd:attribute name="extint" type="xsd:string" use="optional" />
@@ -98,15 +97,14 @@
       <xsd:attribute name="define" type="xsd:string" use="optional" />
     </xsd:extension>
   </xsd:complexContent>
-  
 </xsd:complexType>
 
 <xsd:complexType name="AlternateFunctionType">
   <xsd:complexContent>
     <xsd:extension base="AttributeBaseType">
-      <xsd:attribute name="peripheral" type="xsd:string" />
-      <xsd:attribute name="type" type="AlternateFunctionInputOutputType" />
-      <xsd:attribute name="name" type="xsd:string" />
+      <xsd:attribute name="peripheral" type="xsd:string" use="required" />
+      <xsd:attribute name="type" type="AlternateFunctionInputOutputType" use="optional" />
+      <xsd:attribute name="name" type="xsd:string" use="optional" />
       <xsd:attribute name="id" type="xsd:string" use="optional" />
       <xsd:attribute name="remap" type="xsd:string" use="optional" />
     </xsd:extension>
@@ -142,9 +140,9 @@
           </xsd:restriction>
         </xsd:simpleType>
       </xsd:attribute>
-      <xsd:attribute name="start" type="HexadecimalType" />
-      <xsd:attribute name="name" type="xsd:string" />
-      <xsd:attribute name="size" type="xsd:integer" />
+      <xsd:attribute name="start" type="HexadecimalType" use="required" />
+      <xsd:attribute name="name" type="xsd:string" use="required" />
+      <xsd:attribute name="size" type="xsd:integer" use="required" />
     </xsd:extension>
   </xsd:complexContent>
 </xsd:complexType>
@@ -152,8 +150,8 @@
 <xsd:complexType name="VectorType">
  <xsd:complexContent>
     <xsd:extension base="AttributeBaseType">
-      <xsd:attribute name="position" type="xsd:string" />
-      <xsd:attribute name="name" type="xsd:string" />
+      <xsd:attribute name="position" type="xsd:string" use="required" />
+      <xsd:attribute name="name" type="xsd:string" use="required" />
     </xsd:extension>
   </xsd:complexContent>
 </xsd:complexType>

@@ -4,6 +4,8 @@
 XML parser for the device files.
 """
 
+import itertools
+
 from . import pkg
 from .common import ParserException
 
@@ -13,7 +15,7 @@ import lxml.etree
 
 
 class Parser:
-
+    
     def parse(self, filename, xsdfile=None):
         rootnode = self._validate_and_parse_xml(filename, xsdfile)
 
@@ -46,3 +48,32 @@ class Parser:
                                   % (error.error_log.last_error.filename, error))
 
         return rootnode
+    
+    def get_devices(self, rootnode):
+        node = rootnode.find('device')
+        
+        platform = node.attrib["platform"]
+        family = node.attrib["family"]
+        device_name = node.attrib.get("name", "").split('|')
+        device_type = node.attrib.get("type", "").split('|')
+        pin_id = node.attrib.get("pin_id", "").split('|')
+        size_id = node.attrib.get("size_id", "").split('|')
+        
+        if platform == "stm32":
+            devices = list(itertools.product((platform,), ("f",), device_name, pin_id, size_id))
+        elif family == "at90":
+            devices = list(itertools.product((family,), device_type, device_name))
+        elif family == "xmega":
+            devices = list(itertools.product(("at" + family,), device_name, device_type, pin_id))
+        elif family == "atmega" or family == "attiny":
+            devices = list(itertools.product((family,), device_name, device_type))
+        elif platform == "lpc":
+            devices = list(itertools.product((platform,), (family,), device_name))
+        elif platform == "hosted":
+            devices = list(itertools.product((platform,), (family,)))
+        
+        device_name_list = []
+        for device in devices:
+            device_name_list.append("".join(device).replace("none", ""))
+        
+        return device_name_list
