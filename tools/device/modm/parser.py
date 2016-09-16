@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+#
+# Copyright (c) 2016, Fabian Greif
+# All rights reserved.
 """
 XML parser for the modm files.
 """
 
-import itertools
 from . import pkg
 from .common import ParserException
 
 import modm.device
+import modm.name
 
 # lxml must be imported **after** the Catalog file have been set by 'pkg', otherwise
 # it runs into an endless loop during verification.
@@ -16,7 +19,7 @@ import lxml.etree
 
 
 class Parser:
-    
+
     def parse(self, filename, xsdfile=None):
         rootnode = self._validate_and_parse_xml(filename, xsdfile)
 
@@ -49,88 +52,40 @@ class Parser:
                                   % (error.error_log.last_error.filename, error))
 
         return rootnode
-    
+
     def get_devices(self, rootnode):
         node = rootnode.find('device')
-        
-        devices = modm.device.Device()
-        
-        devices.platform = node.attrib["platform"].split('|')
-        devices.family = node.attrib["family"].split('|')
-        devices.name = node.attrib.get("name", "").split('|')
-        devices.type = node.attrib.get("type", "").split('|')
-        devices.pin_id = node.attrib.get("pin_id", "").split('|')
-        devices.size_id = node.attrib.get("size_id", "").split('|')
-        
-        class Attribute:
-            def __init__(self, name):
-                self.name = name
-            def get(self, device):
-                return getattr(device, self.name)
-            def set(self, device, value):
-                setattr(device, self.name, value)
-        
-        class Fixed:
-            def __init__(self, name):
-                self.name = name
-            def get(self, devices):
-                return (self.name,)
-            def set(self, device, value):
-                pass
-        
-        if devices.platform[0] == "stm32":
-            naming_schema = [
-               Attribute("platform"),
-               Fixed("f"),
-               Attribute("name"),
-               Attribute("pin_id"),
-               Attribute("size_id"),
-            ]
-        elif devices.family[0] == "at90":
-            naming_schema = [
-               Attribute("family"),
-               Attribute("type"),
-               Attribute("name"),
-            ]
-        elif devices.family[0] == "xmega":
-            naming_schema = [
-               Fixed("at"),
-               Attribute("family"),
-               Attribute("name"),
-               Attribute("type"),
-               Attribute("pin_id"),
-            ]
-        elif devices.family[0] == "atmega" or devices.family[0] == "attiny":
-            naming_schema = [
-               Attribute("family"),
-               Attribute("name"),
-               Attribute("type"),
-            ]
-        elif devices.platform[0] == "lpc":
-            naming_schema = [
-               Attribute("platform"),
-               Attribute("family"),
-               Attribute("name"),
-            ]
-        elif devices.platform[0] == "hosted":
-            naming_schema = [
-               Attribute("platform"),
-               Fixed("/"),
-               Attribute("family"),
-            ]
-        
-        devices = list(itertools.product(*[token.get(devices) for token in naming_schema]))
+
+        identifiers = modm.device.MultiDeviceIdentifier()
+
+        def replace_none(node):
+            return "" if (node == "none") else node
+
+        identifiers.platform = list(map(replace_none, node.attrib["platform"].split('|')))
+        identifiers.family = list(map(replace_none, node.attrib["family"].split('|')))
+        identifiers.name = list(map(replace_none, node.attrib.get("name", "").split('|')))
+        identifiers.type = list(map(replace_none, node.attrib.get("type", "").split('|')))
+        identifiers.pin_id = list(map(replace_none, node.attrib.get("pin_id", "").split('|')))
+        identifiers.size_id = list(map(replace_none, node.attrib.get("size_id", "").split('|')))
+
+        if identifiers.platform[0] == "stm32":
+            naming_schema_string = "{{ platform }}f{{ name }}{{ pin_id }}{{ size_id }}"
+        elif identifiers.family[0] == "at90":
+            naming_schema_string = "{{ family }}{{ type }}{{ name }}"
+        elif identifiers.family[0] == "xmega":
+            naming_schema_string = "at{{ family }}{{ name }}{{ type }}{{ pin_id }}"
+        elif identifiers.family[0] == "atmega" or identifiers.family[0] == "attiny":
+            naming_schema_string = "{{ family }}{{ name }}{{ type }}"
+        elif identifiers.platform[0] == "lpc":
+            naming_schema_string = "{{ platform }}{{ family }}{{ name }}"
+        elif identifiers.platform[0] == "hosted":
+            naming_schema_string = "{{ platform }}/{{ family }}"
+
+        naming_schema = modm.name.Schema.parse(naming_schema_string)
 
         device_name_list = []
-        for device_parts in devices:
-            device = modm.device.Device()
-            partname = []
-            for token, value in zip(naming_schema, device_parts):
-                v = value.replace("none", "")
-                token.set(device, v)
-                partname.append(v)
-            
-            device.partname = "".join(partname)
+        for device_identifier in identifiers.get_devices():
+            device = modm.device.Device(device_identifier, naming_schema)
             device_name_list.append(device)
-        
+
         return device_name_list

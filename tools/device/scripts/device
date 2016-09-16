@@ -35,7 +35,8 @@ if __name__ == '__main__':
                 print(d)
         #print(device_count)
         
-        driver_files = glob.glob(os.path.join(args.input, "driver/**/*.xml"), recursive=True)
+        #driver_files = glob.glob(os.path.join(args.input, "driver/**/*.xml"), recursive=True)
+        driver_files = glob.glob(os.path.join(args.input, "driver/**/*.xml"))
         for driver_file in driver_files:
             print(driver_file)
             parser = modm.parser.Parser()
