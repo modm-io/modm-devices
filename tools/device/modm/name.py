@@ -6,28 +6,35 @@
 
 from . import common
 
-class AttributePart:
+class NamePart:
+    def __init__(self):
+        self.is_attribute = False
+
+class AttributePart(NamePart):
     def __init__(self, name):
+        NamePart.__init__(self)
+        self.is_attribute = True
         self.name = name
-    
+
     def get(self, device_identifier, as_tuple=False):
         return getattr(device_identifier, self.name)
-    
+
     def set(self, device, value):
         setattr(device, self.name, value)
 
 
-class FixedPart:
+class FixedPart(NamePart):
     def __init__(self, name):
+        NamePart.__init__(self)
         self.name = name
-    
+
     def get(self, device_identifier, as_tuple=False):
         if as_tuple:
             # Convert to tuple
-            return (self.name, )
+            return (self.name,)
         else:
             return self.name
-    
+
     def set(self, device, value):
         pass
 
@@ -42,20 +49,30 @@ class Schema:
     """
     START_TOKEN = "{{"
     END_TOKEN = "}}"
-    
+
     def __init__(self):
         self.parts = []
-    
+
     def get_name(self, device_identifier):
         name = []
         for part in self.parts:
             name.append(part.get(device_identifier))
         return "".join(name)
-    
+
+    def get_attributes(self):
+        """
+        Return all device identifier attributes used in the schema.
+        """
+        attributes = []
+        for part in self.parts:
+            if part.is_attribute:
+                attributes.append(part.name)
+        return attributes
+
     @staticmethod
     def parse(schema_string):
         schema = Schema()
-        
+
         # Split by the starting token. Apart from the first entry every
         # following list entry is an attribute part. If the first entry is
         # not empty it is an fixed part.
@@ -63,7 +80,7 @@ class Schema:
         if beginning[0] != '':
             schema.parts.append(FixedPart(beginning[0]))
         beginning = beginning[1:]
-        
+
         for token in beginning:
             # All list entries are an attribute part and a following fixed
             # part (if the second entry is not empty).
@@ -75,5 +92,5 @@ class Schema:
             schema.parts.append(AttributePart(value))
             if t[1] != '':
                 schema.parts.append(FixedPart(t[1]))
-        
+
         return schema
