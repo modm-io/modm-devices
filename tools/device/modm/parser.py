@@ -19,11 +19,8 @@ import lxml.etree
 
 
 class Parser:
-
-    def parse(self, filename, xsdfile=None):
-        rootnode = self._validate_and_parse_xml(filename, xsdfile)
-
-        return rootnode
+    def __init__(self, filename, xsdfile):
+        self.rootnode = self._validate_and_parse_xml(filename, xsdfile)
 
     @staticmethod
     def _validate_and_parse_xml(filename, xsdfile):
@@ -32,9 +29,6 @@ class Parser:
             parser = lxml.etree.XMLParser(no_network=True)
             xmlroot = lxml.etree.parse(filename, parser=parser)
             xmlroot.xinclude()
-
-            if xsdfile is None:
-                xsdfile = pkg.get_filename('modm', 'resources/schema/device.xsd')
 
             xmlschema = lxml.etree.parse(xsdfile, parser=parser)
 
@@ -50,23 +44,17 @@ class Parser:
                 lxml.etree.XIncludeError) as error:
             raise ParserException("While parsing '%s': %s"
                                   % (error.error_log.last_error.filename, error))
-
         return rootnode
 
-    def get_devices(self, rootnode):
-        node = rootnode.find('device')
+class DeviceParser(Parser):
+    def __init__(self, filename):
+        Parser.__init__(self,
+                        filename,
+                        pkg.get_filename('modm', 'resources/schema/device.xsd'))
 
-        identifiers = modm.device.MultiDeviceIdentifier()
-
-        def replace_none(node):
-            return "" if (node == "none") else node
-
-        identifiers.platform = list(map(replace_none, node.attrib["platform"].split('|')))
-        identifiers.family = list(map(replace_none, node.attrib["family"].split('|')))
-        identifiers.name = list(map(replace_none, node.attrib.get("name", "").split('|')))
-        identifiers.type = list(map(replace_none, node.attrib.get("type", "").split('|')))
-        identifiers.pin_id = list(map(replace_none, node.attrib.get("pin_id", "").split('|')))
-        identifiers.size_id = list(map(replace_none, node.attrib.get("size_id", "").split('|')))
+    def get_devices(self):
+        node = self.rootnode.find('device')
+        identifiers = modm.device.MultiDeviceIdentifier.from_xml(node)
 
         if identifiers.platform[0] == "stm32":
             naming_schema_string = "{{ platform }}f{{ name }}{{ pin_id }}{{ size_id }}"
@@ -89,3 +77,9 @@ class Parser:
             device_name_list.append(device)
 
         return device_name_list
+
+class DriverParser(Parser):
+    def __init__(self, filename):
+        Parser.__init__(self,
+                        filename,
+                        xsdfile=pkg.get_filename('modm', 'resources/schema/driver.xsd'))

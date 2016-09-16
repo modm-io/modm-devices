@@ -3,8 +3,6 @@
 
 import itertools
 
-from . import name
-
 class DeviceIdentifier:
     """
     Unique identifier of a specific target device.
@@ -65,6 +63,15 @@ class MultiDeviceIdentifier(DeviceIdentifier):
     """
     def __init__(self):
         DeviceIdentifier.__init__(self)
+
+    @staticmethod
+    def from_xml(node):
+        identifier = MultiDeviceIdentifier()
+        for key in identifier.__dict__:
+            setattr(identifier,
+                    key,
+                    node.attrib.get(key, "").replace("none", "").split('|'))
+        return identifier
 
     def get_devices(self):
         """
