@@ -53,28 +53,28 @@ class DeviceParser(Parser):
                         pkg.get_filename('modm', 'resources/schema/device.xsd'))
 
     def get_devices(self):
-        node = self.rootnode.find('device')
-        identifiers = modm.device.MultiDeviceIdentifier.from_xml(node)
+        device_node = self.rootnode.find('device')
+        identifiers = modm.device.MultiDeviceIdentifier.from_xml(device_node)
 
-        if identifiers.platform[0] == "stm32":
-            naming_schema_string = "{{ platform }}f{{ name }}{{ pin_id }}{{ size_id }}"
-        elif identifiers.family[0] == "at90":
-            naming_schema_string = "{{ family }}{{ type }}{{ name }}"
-        elif identifiers.family[0] == "xmega":
-            naming_schema_string = "at{{ family }}{{ name }}{{ type }}{{ pin_id }}"
-        elif identifiers.family[0] == "atmega" or identifiers.family[0] == "attiny":
-            naming_schema_string = "{{ family }}{{ name }}{{ type }}"
-        elif identifiers.platform[0] == "lpc":
+        if identifiers.platform[0] == "lpc":
             naming_schema_string = "{{ platform }}{{ family }}{{ name }}"
         elif identifiers.platform[0] == "hosted":
             naming_schema_string = "{{ platform }}/{{ family }}"
+        else:
+            naming_schema_string = device_node.find('naming-schema').text
+
+        invalid_devices = []
+        for node in device_node.iterfind('invalid-device'):
+            invalid_devices.append(node.text)
 
         naming_schema = modm.name.Schema.parse(naming_schema_string)
 
         device_name_list = []
         for device_identifier in identifiers.get_devices():
             device = modm.device.Device(device_identifier, naming_schema)
-            device_name_list.append(device)
+
+            if device.partname not in invalid_devices:
+                device_name_list.append(device)
 
         return device_name_list
 
