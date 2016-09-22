@@ -84,6 +84,19 @@ class MultiDeviceIdentifier(DeviceIdentifier):
             device_list.append(device_identifier)
         return device_list
 
+    def check_attributes(self, naming_schema):
+        """
+        Check that the identifier only contains attributes defined by
+        the naming schema.
+        """
+        unused_attributes = []
+        naming_attributes = naming_schema.get_attributes()
+        for key, value in self.__dict__.items():
+            if value is not None and len(value) > 1 and key not in naming_attributes:
+                unused_attributes.append(key)
+        return unused_attributes
+
+
 class Device:
     def __init__(self, identifier, naming_schema):
         self.identifier = identifier

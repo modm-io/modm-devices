@@ -48,8 +48,31 @@
 
 <xsd:complexType name="DeviceType">
   <xsd:sequence>
-    <xsd:element name="naming-schema" type="xsd:string" minOccurs="1" maxOccurs="1" />
-    <xsd:element name="invalid-device" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+    <xsd:element name="naming-schema" type="xsd:string" minOccurs="1" maxOccurs="1">
+      <xsd:annotation>
+        <xsd:documentation>
+          Defines a naming schema for the devices. The string can contain fixed
+          characters or device attributes enclosed in double curly braces.
+
+          E.g. 'at{{ family }}{{ name }}{{ type }}{{ pin_id }}' or
+          {{ platform }}f{{ name }}{{ pin_id }}{{ size_id }}.
+
+          The device names are constructed by providing all combinations of
+          the used device attributes to the naming schema string. Device names
+          which can be constructed this way but do not exist as a real device
+          must be excluded with the 'invalid-device' tag.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="invalid-device" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+      <xsd:annotation>
+        <xsd:documentation>
+          Not all combinations which can be generated through the
+          naming schema are valid. This tag can be used to exclude certain
+          device names.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:element>
     
     <xsd:choice maxOccurs="unbounded">
       <xsd:element name="flash" type="AttributeBaseStringType" minOccurs="1" maxOccurs="unbounded" />

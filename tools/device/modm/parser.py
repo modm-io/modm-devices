@@ -20,10 +20,10 @@ import lxml.etree
 
 class Parser:
     def __init__(self, filename, xsdfile):
-        self.rootnode = self._validate_and_parse_xml(filename, xsdfile)
+        self.rootnode = self.validate_and_parse_xml(filename, xsdfile)
 
     @staticmethod
-    def _validate_and_parse_xml(filename, xsdfile):
+    def validate_and_parse_xml(filename, xsdfile):
         try:
             # parse the xml-file
             parser = lxml.etree.XMLParser(no_network=True)
@@ -56,18 +56,20 @@ class DeviceParser(Parser):
         device_node = self.rootnode.find('device')
         identifiers = modm.device.MultiDeviceIdentifier.from_xml(device_node)
 
-        if identifiers.platform[0] == "lpc":
-            naming_schema_string = "{{ platform }}{{ family }}{{ name }}"
-        elif identifiers.platform[0] == "hosted":
-            naming_schema_string = "{{ platform }}/{{ family }}"
-        else:
-            naming_schema_string = device_node.find('naming-schema').text
-
+        # Not all combinations which can be generated through the
+        # naming schema are valid. Grab the list of excluded device names
+        # to remove those from the constructed devices.
         invalid_devices = []
         for node in device_node.iterfind('invalid-device'):
             invalid_devices.append(node.text)
 
+        naming_schema_string = device_node.find('naming-schema').text
         naming_schema = modm.name.Schema.parse(naming_schema_string)
+
+        attributes = identifiers.check_attributes(naming_schema)
+        if len(attributes) > 0:
+            raise ParserException("The following attributes are defined but not used "
+                                  "by the naming schema: '{}'".format("', '".join(attributes)))
 
         device_name_list = []
         for device_identifier in identifiers.get_devices():

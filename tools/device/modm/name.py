@@ -42,7 +42,7 @@ class FixedPart(NamePart):
 class Schema:
     """
     Represents a naming schema.
-    
+
     A naming schema consists of attribute and fixed parts. Attribute parts
     use one field of the device identifier to create the name part. Fixed parts
     a just a static string.
