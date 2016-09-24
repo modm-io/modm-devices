@@ -1,9 +1,5 @@
 <?xml version="1.0"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-  <uri name="https://svn.dlr.de/eucropis-ops/prod/MIB/trunk/tools/p.doc/pdoc/resources/schema/telecommunication.xsd" uri="schema/telecommunication.xsd" />
-  <uri name="https://svn.dlr.de/eucropis-ops/prod/MIB/trunk/tools/p.doc/pdoc/resources/schema/service.xsd" uri="schema/service.xsd" />
-  <uri name="https://svn.dlr.de/eucropis-ops/prod/MIB/trunk/tools/p.doc/pdoc/resources/schema/mapping.xsd" uri="schema/mapping.xsd" />
-  <uri name="https://svn.dlr.de/eucropis-ops/prod/MIB/trunk/tools/p.doc/pdoc/resources/schema/calibration.xsd" uri="schema/calibration.xsd" />
   <uri name="http://www.w3.org/2001/XInclude" uri="schema/xinclude.xsd" />
   <uri name="http://www.w3.org/2001/xml.xsd" uri="schema/xml.xsd" />
 </catalog>
