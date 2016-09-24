@@ -1,0 +1,32 @@
+
+import os
+import sys
+import glob
+
+rootpath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "tools", "device")
+sys.path.append(rootpath)
+
+import modm.pkg
+import modm.parser
+
+def prepare(repo):
+    repo.set_name("modm-platform")
+
+    devices = {}
+    try:
+        device_files = glob.glob(os.path.join(os.path.dirname(os.path.realpath(__file__)),
+                                 "../../xpcc/src/xpcc/architecture/platform/devices/**/*.xml"))
+        for device_file in device_files:
+            parser = modm.parser.DeviceParser(device_file)
+            for device in parser.get_devices():
+                devices[device.partname] = device
+    except (modm.ParserException) as e:
+        print(e)
+        exit(1)
+
+    # repo.add_modules(repo.glob("*/module.lb"))
+
+    repo.add_option(
+        EnumerationOption(name="target",
+                          description="Target architecture for the library.",
+                          enumeration=devices))
