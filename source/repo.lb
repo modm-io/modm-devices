@@ -3,30 +3,37 @@ import os
 import sys
 import glob
 
-rootpath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "tools", "device")
+rootpath = localpath("..", "tools", "device")
 sys.path.append(rootpath)
 
 import modm.pkg
 import modm.parser
 
-def prepare(repo):
+def init(repo):
     repo.set_name("modm-platform")
 
     devices = {}
     try:
-        device_files = glob.glob(os.path.join(os.path.dirname(os.path.realpath(__file__)),
-                                 "../../xpcc/src/xpcc/architecture/platform/devices/**/*.xml"))
-        for device_file in device_files:
-            parser = modm.parser.DeviceParser(device_file)
-            for device in parser.get_devices():
+        parser = modm.parser.DeviceParser()
+        device_file_names = glob.glob(localpath("../../xpcc/src/xpcc/architecture/platform/devices/**/*.xml"))
+        for device_file_name in device_file_names:
+            device_file = parser.parse(device_file_name)
+            for device in device_file.get_devices():
                 devices[device.partname] = device
     except (modm.ParserException) as e:
         print(e)
         exit(1)
 
-    # repo.add_modules(repo.glob("*/module.lb"))
-
     repo.add_option(
         EnumerationOption(name="target",
                           description="Target architecture for the library.",
                           enumeration=devices))
+
+def prepare(repo, options):
+    device = options[":target"].value
+    properties = device.device_file.get_properties(device.identifier)
+
+    for driver in properties["driver"]:
+        path = os.path.join(localpath("../../xpcc/src/xpcc/architecture/platform/driver"),
+                            driver["type"], driver["name"], "driver.lb")
+        repo.add_modules(path)
