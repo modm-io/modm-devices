@@ -6,7 +6,7 @@ import itertools
 class DeviceIdentifier:
     """
     Unique identifier of a specific target device.
-    
+
     Not all a attributes are set for all devices.
     """
     def __init__(self):
@@ -57,21 +57,12 @@ class DeviceIdentifier:
 class MultiDeviceIdentifier(DeviceIdentifier):
     """
     Identifier for a group of devices.
-    
+
     For the multi device identifier the attributes are not a single
     string but rather a list of string. Can be split into separate devices.
     """
     def __init__(self):
         DeviceIdentifier.__init__(self)
-
-    @staticmethod
-    def from_xml(node):
-        identifier = MultiDeviceIdentifier()
-        for key in identifier.__dict__:
-            setattr(identifier,
-                    key,
-                    node.attrib.get(key, "").replace("none", "").split('|'))
-        return identifier
 
     def get_devices(self):
         """
@@ -98,13 +89,18 @@ class MultiDeviceIdentifier(DeviceIdentifier):
 
 
 class Device:
-    def __init__(self, identifier, naming_schema):
+    def __init__(self,
+                 identifier: DeviceIdentifier,
+                 naming_schema,
+                 device_file):
         self.identifier = identifier
         self.naming_schema = naming_schema
         self.partname = naming_schema.get_name(identifier)
+        self.device_file = device_file
 
     def __str__(self):
         return self.partname
+
 
 class Selector:
     def __init__(self):
@@ -117,7 +113,7 @@ class Selector:
             "size_id": []
         }
 
-    def match(self, device_identifier):
+    def match(self, device_identifier: DeviceIdentifier):
         for key, values in self.property.items():
             if values is None or len(values) == 0:
                 continue

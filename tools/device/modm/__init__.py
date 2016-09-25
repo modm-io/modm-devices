@@ -5,12 +5,16 @@ Device Platform Generator
 """
 
 from . import pkg
+from . import common
+from . import device_file
+from . import device
+from . import name
 from . import parser
 
 from .pkg import naturalkey
 from .common import ParserException
 
-__all__ = ['pkg', 'parser']
+__all__ = ['common', 'device_file', 'device', 'name', 'parser', 'pkg']
 
 __author__ = "Fabian Greif"
 __copyright__ = "Fabian Greif"

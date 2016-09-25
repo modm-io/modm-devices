@@ -6,11 +6,11 @@ import argparse
 import sys
 
 import glob
+import pprint
 
 rootpath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")
 sys.path.append(rootpath)
 
-import modm.pkg
 import modm.parser
 
 if __name__ == '__main__':
@@ -23,22 +23,25 @@ if __name__ == '__main__':
 
     try:
         device_count = 0
-        device_files = glob.glob(os.path.join(args.input, "devices/**/*.xml"))
-        for device_file in device_files:
-            print(device_file)
-            parser = modm.parser.DeviceParser(device_file)
-            devices = parser.get_devices()
+        devices = {}
+        device_file_names = glob.glob(os.path.join(args.input, "devices/**/*.xml"))
+        parser = modm.parser.DeviceParser()
+        for device_file_name in device_file_names:
+            device_file = parser.parse(device_file_name)
+            for d in device_file.get_devices():
+                device_count += 1
+                devices[d.partname] = d
 
-            device_count += len(devices)
-            for d in devices:
-                print(d)
-        print(device_count)
+        print()
+        print("Total:", device_count, "devices")
+        print()
 
-        # driver_files = glob.glob(os.path.join(args.input, "driver/**/*.xml"), recursive=True)
-        driver_files = glob.glob(os.path.join(args.input, "driver/**/*.xml"))
-        for driver_file in driver_files:
-        #    print(driver_file)
-            parser = modm.parser.DriverParser(driver_file)
+        device = devices["stm32f303k6"]
+        drivers = device.device_file.get_drivers(device.identifier)
+        pprint.pprint(drivers)
+        print()
+        properties = device.device_file.get_properties(device.identifier)
+        pprint.pprint(properties)
 
     except (modm.ParserException) as e:
         print(e)
