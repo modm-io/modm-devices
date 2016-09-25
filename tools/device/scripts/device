@@ -37,9 +37,6 @@ if __name__ == '__main__':
         print()
 
         device = devices["stm32f303k6"]
-        drivers = device.device_file.get_drivers(device.identifier)
-        pprint.pprint(drivers)
-        print()
         properties = device.device_file.get_properties(device.identifier)
         pprint.pprint(properties)
 

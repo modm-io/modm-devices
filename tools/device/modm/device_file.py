@@ -99,17 +99,9 @@ class DeviceFile:
                     node_dict[child_name].append(child_dict)
         return node_dict
 
-    def get_drivers(self, identifier: modm.device.DeviceIdentifier):
-        drivers = []
-        for driver_node in self.rootnode.iterfind("device/driver"):
-            if self._is_valid(driver_node, identifier):
-                print(driver_node.attrib["type"])
-                drivers.append(self._node_to_dict(driver_node, identifier))
-        return drivers
-
     def get_properties(self, identifier: modm.device.DeviceIdentifier):
         properties = {}
-        for tag in ["flash", "ram", "core", "pin-count", "eeprom", "mcu", "header", "define"]:
+        for tag in ["driver", "flash", "ram", "core", "pin-count", "eeprom", "mcu", "header", "define"]:
             for property_node in self.rootnode.iterfind("/".join(["device", tag])):
                 if self._is_valid(property_node, identifier):
                     propertey_list = properties.get(tag, [])
