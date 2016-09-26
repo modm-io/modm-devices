@@ -3,6 +3,8 @@
 
 import itertools
 
+from .common import ParserException
+
 class DeviceIdentifier:
     """
     Unique identifier of a specific target device.
@@ -97,6 +99,23 @@ class Device:
         self.naming_schema = naming_schema
         self.partname = naming_schema.get_name(identifier)
         self.device_file = device_file
+
+        self.properties = self.device_file.get_properties(self.identifier)
+
+    def get_driver(self, name):
+        parts = name.split(":")
+        if len(parts) == 1:
+            for driver in self.properties["driver"]:
+                if driver["@type"] == parts[0]:
+                    return driver
+        elif len(parts) == 2:
+            for driver in self.properties["driver"]:
+                if driver["@type"] == parts[0] and driver["@name"] == parts[1]:
+                    return driver
+        else:
+            raise ParserException("Invalid driver name '{}'. "
+                                  "The name must contain no or one ':' to "
+                                  "separte type and name.".format(name))
 
     def __str__(self):
         return self.partname

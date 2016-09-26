@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+from collections import defaultdict
+
 import modm.name
 import modm.device
 
@@ -60,51 +62,58 @@ class DeviceFile:
 
         return device_name_list
 
-    def _is_valid(self, node, identifier):
+    @staticmethod
+    def is_valid(node, identifier: modm.device.DeviceIdentifier):
         """
-        Read the selector attributes and match them against the device
-        identifier.
-
+        Read and removes the selector attributes and match them against the
+        device identifier.
+        
         Returns:
             True if the selectors match, False otherwise.
         """
         selector = modm.device.Selector()
-        for attribute_name, property_name in self._ATTRIBUTE_PROPERTY_MAPPING.items():
+        for attribute_name, property_name in DeviceFile._ATTRIBUTE_PROPERTY_MAPPING.items():
             value = node.attrib.get(attribute_name, "")
             values = value.split("|")
             if len(values) > 1 or values[0] != '':
                 selector.property[property_name] = values
-
+                del node.attrib[attribute_name]
         return selector.match(identifier)
 
-    def _node_to_dict(self, node, identifier):
-        node_dict = {}
-        if self._is_valid(node, identifier):
-            # Fist add attributes
-            for key, value in node.items():
-                if key not in self._ATTRIBUTE_PROPERTY_MAPPING.keys():
-                    node_dict[key] = value
-            # Add content
-            if node.text is not None and not node.text.isspace():
-                node_dict['value'] = node.text
-            # Now add children
-            for child_node in node:
-                child_name = child_node.tag + 's'
-                if child_name not in node_dict:
-                    # create child_node list
-                    node_dict[child_name] = []
-
-                child_dict = self._node_to_dict(child_node, identifier)
-                if len(child_dict) > 0:
-                    node_dict[child_name].append(child_dict)
-        return node_dict
-
     def get_properties(self, identifier: modm.device.DeviceIdentifier):
-        properties = {}
-        for tag in ["driver", "flash", "ram", "core", "pin-count", "eeprom", "mcu", "header", "define"]:
-            for property_node in self.rootnode.iterfind("/".join(["device", tag])):
-                if self._is_valid(property_node, identifier):
-                    propertey_list = properties.get(tag, [])
-                    propertey_list.append(self._node_to_dict(property_node, identifier))
-                    properties[tag] = propertey_list
-        return properties
+        class Converter:
+            """
+            Convert XML to a Python dictionary according to
+            http://www.xml.com/pub/a/2006/05/31/converting-between-xml-and-json.html
+            """
+            def __init__(self, identifier: modm.device.DeviceIdentifier):
+                self.identifier = identifier
+
+            def is_valid(self, node):
+                return DeviceFile.is_valid(node, self.identifier)
+
+            def to_dict(self, t):
+                d = {t.tag: {} if t.attrib else None}
+                children = []
+                for c in t:
+                    if self.is_valid(c):
+                        children.append(c)
+                if children:
+                    dd = defaultdict(list)
+                    for dc in map(self.to_dict, children):
+                        for k, v in dc.items():
+                            dd[k].append(v)
+                    d = {t.tag: {k:v[0] if len(v) == 1 else v for k, v in dd.items()}}
+                if t.attrib:
+                    d[t.tag].update(('@' + k, v) for k, v in t.attrib.items())
+                if t.text:
+                    text = t.text.strip()
+                    if children or t.attrib:
+                        if text:
+                            d[t.tag]['#text'] = text
+                    else:
+                        d[t.tag] = text
+                return d
+
+        properties = Converter(identifier).to_dict(self.rootnode.find("device"))
+        return properties["device"]

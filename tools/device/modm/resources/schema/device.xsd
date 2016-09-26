@@ -103,11 +103,11 @@
         <xsd:element name="parameter" type="ParameterType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
         <xsd:element name="memory" type="MemoryType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
         <xsd:element name="vector" type="VectorType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+        <xsd:element name="instance" type="AttributeBaseStringType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
       </xsd:sequence>
       
       <xsd:attribute name="type" type="xsd:string" use="required" />
       <xsd:attribute name="name" type="xsd:string" use="required" />
-      <xsd:attribute name="instances" type="xsd:string" use="optional" />
     </xsd:extension>
   </xsd:complexContent>
 </xsd:complexType>

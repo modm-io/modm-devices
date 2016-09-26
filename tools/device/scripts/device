@@ -25,6 +25,7 @@ if __name__ == '__main__':
         device_count = 0
         devices = {}
         device_file_names = glob.glob(os.path.join(args.input, "devices/**/*.xml"))
+        device_file_names = glob.glob(os.path.join(args.input, "devices/stm32/stm32f303-c_k_r-6_8.xml"))
         parser = modm.parser.DeviceParser()
         for device_file_name in device_file_names:
             device_file = parser.parse(device_file_name)
@@ -37,8 +38,7 @@ if __name__ == '__main__':
         print()
 
         device = devices["stm32f303k6"]
-        properties = device.device_file.get_properties(device.identifier)
-        pprint.pprint(properties)
+        pprint.pprint(device.properties)
 
     except (modm.ParserException) as e:
         print(e)
