@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import copy
 import itertools
 
 from .common import ParserException
@@ -100,16 +101,20 @@ class Device:
         self.partname = naming_schema.get_name(identifier)
         self.device_file = device_file
 
-        self.properties = self.device_file.get_properties(self.identifier)
+        self._properties = self.device_file.get_properties(self.identifier)
+
+    @property
+    def properties(self):
+        return copy.deepcopy(self._properties)
 
     def get_driver(self, name):
         parts = name.split(":")
         if len(parts) == 1:
-            for driver in self.properties["driver"]:
+            for driver in self._properties["driver"]:
                 if driver["@type"] == parts[0]:
                     return driver
         elif len(parts) == 2:
-            for driver in self.properties["driver"]:
+            for driver in self._properties["driver"]:
                 if driver["@type"] == parts[0] and driver["@name"] == parts[1]:
                     return driver
         else:
