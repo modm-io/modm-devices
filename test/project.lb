@@ -1,0 +1,9 @@
+
+<library>
+  <options>
+    <option name=":target" value="stm32f303k6" />
+  </options>
+  <modules>
+    <module>:core</module>
+  </modules>
+</library>
