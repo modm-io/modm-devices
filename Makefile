@@ -11,5 +11,10 @@ discover:
 build:
 	$(LBUILD) $(REPOS) --outpath="test/" -c"test/project.lb"
 
+clean:
+	$(RM) -r test/src
+
 profile:
 	python3 -m cProfile -s cumulative $(LBUILD)-discover $(REPOS) --discover=repository:options
+
+.PHONY : discover build profile clean
