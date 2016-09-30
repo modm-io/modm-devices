@@ -10,7 +10,7 @@ import modm.pkg
 import modm.parser
 
 def init(repo):
-    repo.set_name("modm-platform")
+    repo.name = "modm-platform"
 
     devices = {}
     try:
