@@ -1,11 +1,16 @@
-
+<?xml version='1.0' encoding='UTF-8'?>
 <library>
+  <repositories>
+    <folder>
+      <path>../source/repo.lb</path>
+    </folder>
+  </repositories>
+
   <options>
     <option name=":target" value="stm32f303k6" />
   </options>
   <modules>
     <module>:core</module>
-    <module>:uart</module>
     <module>:uart:1</module>
   </modules>
 </library>
