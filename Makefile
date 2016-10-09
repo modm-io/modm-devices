@@ -1,13 +1,13 @@
 
-LBUILD = ../library-builder/scripts/lbuild
+LBUILD = python3 ../library-builder/scripts/lbuild
 
 discover:
-	$(LBUILD)-discover -c"test/project.lb" --discover=repository:options
-	$(LBUILD)-discover -c"test/project.lb" --discover=modules -D":target=stm32f303k6"
-	$(LBUILD)-discover -c"test/project.lb" --discover=module:options -D":target=stm32f303k6"
+	$(LBUILD) -c"test/project.lb" discover-repository
+	$(LBUILD) -c"test/project.lb" -D":target=stm32f303k6" discover-modules
+	$(LBUILD) -c"test/project.lb" -D":target=stm32f303k6" discover-module-options
 
 build:
-	$(LBUILD) --outpath="test/" -c"test/project.lb"
+	$(LBUILD) --path="test/" -c"test/project.lb" build
 
 clean:
 	$(RM) -r test/src
