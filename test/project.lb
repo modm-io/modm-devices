@@ -3,12 +3,22 @@
          xsd:noNamespaceSchemaLocation="https://github.com/dergraaf/library-builder/lbuild/resources/configuration.xsd">
   <repositories>
     <repository>
-      <git>
-        <url></url>
-        <branch></branch>
-      </git>
-      <path>../source/repo.lb</path>
+	  <vcs>
+		<git>
+		  <name>modm_platform</name>
+		  <url>https://github.com/modm-io/modm-platform</url>
+		  <branch>master</branch>
+		</git>
+		<git>
+		  <name>xpcc</name>
+		  <url>https://github.com/modm-io/xpcc</url>
+		  <branch>feature/lbuild</branch>
+		</git>
+      </vcs>
+      <path>{cache}/modm_platform/source/repo.lb</path>
     </repository>
+
+    <cache>.lbuild_cache</cache>
   </repositories>
 
   <options>
