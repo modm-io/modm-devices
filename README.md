@@ -1,1 +1,1 @@
-# modm-platform
+# modm-devices
