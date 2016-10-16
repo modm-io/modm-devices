@@ -155,8 +155,7 @@ class AVRDeviceWriter(XMLDeviceWriter):
                 driver.setAttributes(attr)
                 driver.setAttributes({'type': name, 'name': family})
 
-                if len(instances) > 0:
-                    driver.setAttribute('instances', ",".join(instances))
+                self.addInstancesToDriver(driver, instances)
 
                 if name in self.io:
                     for io in self.io[name]:
@@ -231,14 +230,13 @@ class AVRDeviceWriter(XMLDeviceWriter):
                     driver = node.addChild('driver')
                     driver.setAttributes(attr)
                     driver.setAttributes({'type': 'uart', 'name': family})
-                    if uartSpi:
-                        spiDriver = node.addChild('driver')
-                        spiDriver.setAttributes(attr)
-                        spiDriver.setAttributes({'type': 'spi', 'name': family + "_uart"})
+                    self.addInstancesToDriver(driver, instances)
 
-                    driver.setAttribute('instances', ",".join(instances))
                     if uartSpi:
-                        spiDriver.setAttribute('instances', ",".join(instances))
+                        spi_driver = node.addChild('driver')
+                        spi_driver.setAttributes(attr)
+                        spi_driver.setAttributes({'type': 'spi', 'name': family + "_uart"})
+                        self.addInstancesToDriver(spi_driver, instances)
 
                     ram_sizes = self.device.getProperty('ram')
                     for ram_size in ram_sizes.values:
