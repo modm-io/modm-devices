@@ -62,31 +62,6 @@ class AVRDeviceWriter(XMLDeviceWriter):
 
         core_child = self.root.addChild('driver')
         core_child.setAttributes({'type': 'core', 'name': 'avr'})
-        ram_sizes = self.device.getProperty('ram')
-        for ram_size in ram_sizes.values:
-            size = ram_size.value
-            # for large RAM sizes, reserve 1kB for stack
-            # for small RAM sizes, reserve half of entire size for stack
-            if size > 2048:
-                size -= 1024
-            else:
-                size /= 2
-            for device_id in ram_size.ids.differenceFromIds(self.device.ids):
-                attr = self._getAttributeDictionaryFromId(device_id)
-                attr['name'] = 'ram_length'
-                ram_size_child = core_child.addChild('parameter')
-                ram_size_child.setAttributes(attr)
-                ram_size_child.setValue(size)
-
-                attr2 = self._getAttributeDictionaryFromId(device_id)
-                attr2['name'] = 'ram_block_length'
-                block_size = 4
-                while (size / block_size > 127):
-                    block_size *= 2
-
-                ram_block_child = core_child.addChild('parameter')
-                ram_block_child.setAttributes(attr2)
-                ram_block_child.setValue(block_size)
 
         # ADC
         self.addAdcToNode(self.root)
@@ -234,18 +209,6 @@ class AVRDeviceWriter(XMLDeviceWriter):
 
                     if uartSpi:
                         self.addInstancesToDriver(spi_driver, instances, attr)
-
-                    ram_sizes = self.device.getProperty('ram')
-                    for ram_size in ram_sizes.values:
-                        size = ram_size.value
-                        # for small RAM sizes, reserve only 16 bytes for the tx buffer
-                        if size < 1024 or size > 1024 * 4:
-                            for ram_id in ram_size.ids.differenceFromIds(self.device.ids):
-                                attr = self._getAttributeDictionaryFromId(ram_id)
-                                attr['name'] = 'tx_buffer'
-                                ram_size_child = driver.addChild('parameter')
-                                ram_size_child.setAttributes(attr)
-                                ram_size_child.setValue(16 if size < 1024 else 250)
 
     def addGpioToNode(self, node):
         family = 'at90_tiny_mega' if (self.family in ['at90', 'attiny', 'atmega']) else self.family

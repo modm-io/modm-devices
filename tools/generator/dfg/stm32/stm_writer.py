@@ -28,19 +28,6 @@ class STMDeviceWriter(XMLDeviceWriter):
 
         core_child = self.root.addChild('driver')
         core_child.setAttributes({'type': 'core', 'name': 'cortex'})
-        param_name_value = {
-#                           'enable_hardfault_handler': 'false',
-#                           'vector_table_in_ram': 'false',
-#                           'allocator': 'newlib'
-        }
-        # The STM32F3 has Core-Coupled Memory on the I-Bus, so we remap by default
-        if self.device.id.family == 'f3' and self._hasCoreCoupledMemory():
-            param_name_value['vector_table_in_ram'] = 'true'
-
-        for param_name in param_name_value:
-            param_core_child = core_child.addChild('parameter')
-            param_core_child.setAttributes({'name': param_name})
-            param_core_child.setValue(param_name_value[param_name])
 
         # Memories
         self.addMemoryToNode(core_child)
