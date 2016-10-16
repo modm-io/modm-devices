@@ -33,9 +33,10 @@ class XMLDeviceWriter:
             if name in props:
                 self.root.setAttribute(name, props[name])
 
-    def addInstancesToDriver(self, driver, instances):
+    def addInstancesToDriver(self, driver, instances, attributes):
         for instance in instances:
             child = driver.addChild('instance')
+            child.setAttributes(attributes)
             child.setValue(instance)
 
     def writeToFile(self, file):

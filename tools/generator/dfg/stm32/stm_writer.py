@@ -116,6 +116,9 @@ class STMDeviceWriter(XMLDeviceWriter):
         else:
             peripherals.append(peripheral)
 
+        driver = node.addChild('driver')
+        driver.setAttributes({'type': name, 'name': family})
+
         for prop in modules.values:
             instances = []
             found = False
@@ -132,12 +135,7 @@ class STMDeviceWriter(XMLDeviceWriter):
 
             for device_id in prop.ids.differenceFromIds(self.device.ids):
                 attr = self._getAttributeDictionaryFromId(device_id)
-
-                driver = node.addChild('driver')
-                driver.setAttributes(attr)
-                driver.setAttributes({'type': name, 'name': family})
-
-                self.addInstancesToDriver(driver, instances)
+                self.addInstancesToDriver(driver, instances, attr)
 
     def addMemoryToNode(self, node):
         memories = self.device.getProperty('memories')
