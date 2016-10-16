@@ -137,8 +137,9 @@ class STMDeviceWriter(XMLDeviceWriter):
                 driver.setAttributes(attr)
                 driver.setAttributes({'type': name, 'name': family})
 
-                if len(instances) > 0:
-                    driver.setAttribute('instances', ",".join(instances))
+                for instance in instances:
+                    child = driver.addChild('instance')
+                    child.setValue(instance)
 
     def addMemoryToNode(self, node):
         memories = self.device.getProperty('memories')
