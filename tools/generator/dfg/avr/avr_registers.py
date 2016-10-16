@@ -7,36 +7,30 @@
 import os
 import sys
 import glob
-
-from ..logger import Logger
+import logging
 
 from ..device import Device
 from .avr_reader import AVRDeviceReader
+
+LOGGER = logging.getLOGGER('dfg.avr.registers')
 
 if __name__ == "__main__":
     """
     Some test code
     """
-    level = 'warn'
-    logger = Logger(level)
     devices = []
     peri_name = "all"
     bitfield_pattern = ""
 
     for arg in sys.argv[1:]:
-        if arg in ['error', 'warn', 'info', 'debug', 'disabled']:
-            level = arg
-            logger.setLogLevel(level)
-            continue
-
         if "ATtiny" in arg or "ATmega" in arg or 'AT90' in arg:
             xml_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', 'AVR_devices', (arg + '*'))
             files = glob.glob(xml_path)
             for file in files:
                 # deal with this here, rather than rewrite half the name merging
                 if os.path.basename(file) != "ATtiny28.xml":
-                    part = AVRDeviceReader(file, logger)
-                    devices.append(Device(part, logger))
+                    part = AVRDeviceReader(file)
+                    devices.append(Device(part))
             continue
 
         if any(arg.startswith(per) for per in ["EXT", "TWI", "USART", "SPI", "AD_CON", "USB", "CAN", "DA_CON", "USI", "TIMER", "PORT"]):
@@ -45,7 +39,7 @@ if __name__ == "__main__":
 
         bitfield_pattern = arg
 
-    logger.setLogLevel('debug')
+    LOGGER.setLogLevel('debug')
 
     peripherals = []
     for dev in devices:
@@ -77,7 +71,7 @@ if __name__ == "__main__":
             registers.remove(match)
 
         if len(matches) == 0:
-            logger.warn("No match for register: " + current['register'].name + " of " + str([device_id.string for device_id in current['ids']]))
+            LOGGER.warning("No match for register: " + current['register'].name + " of " + str([device_id.string for device_id in current['ids']]))
 
         merged.append(current)
 
@@ -99,8 +93,8 @@ if __name__ == "__main__":
                 if ii > 7:
                     ii = 0
                     s += "\n"
-            logger.debug(s)
-            logger.info(str(reg) + "\n")
+            LOGGER.debug(s)
+            LOGGER.info(str(reg) + "\n")
 
         if reg.getFieldsWithPattern(bitfield_pattern) != None:
             filtered_registers.append(dev['register'].name)
@@ -108,7 +102,7 @@ if __name__ == "__main__":
 
     all_filtered_names = []
     if bitfield_pattern != "":
-        logger.info("Registers containing BitField pattern '" + bitfield_pattern + "':")
+        LOGGER.info("Registers containing BitField pattern '" + bitfield_pattern + "':")
         for dev in filtered_devices:
             all_filtered_names.extend([device_id.string for device_id in dev['ids']])
             s = "Devices:\n"
@@ -119,16 +113,16 @@ if __name__ == "__main__":
                 if ii > 7:
                     ii = 0
                     s += "\n"
-            logger.debug(s)
-            logger.info(str(dev['register']) + "\n")
+            LOGGER.debug(s)
+            LOGGER.info(str(dev['register']) + "\n")
 
     filtered_registers = list(set(filtered_registers))
     filtered_registers.sort()
 
-    logger.info("Summary registers:")
+    LOGGER.info("Summary registers:")
     for name in filtered_registers:
-        logger.debug(name)
-    logger.info("Remaining devices:")
+        LOGGER.debug(name)
+    LOGGER.info("Remaining devices:")
     all_names = set(all_names) - set(all_filtered_names)
     all_names = list(all_names)
     all_names.sort()
@@ -140,4 +134,4 @@ if __name__ == "__main__":
         if ii > 7:
             ii = 0
             s += "\n"
-    logger.debug(s)
+    LOGGER.debug(s)

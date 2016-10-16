@@ -4,6 +4,7 @@
 # All rights reserved.
 
 import math
+import logging
 
 from ..device_identifier import DeviceIdentifier
 
@@ -14,20 +15,22 @@ from ..register import Register
 from . import avr_io
 from . import avr_mcu
 
+LOGGER = logging.getLogger('dfg.avr.reader')
+
 class AVRDeviceReader(XMLDeviceReader):
     """ AVRDeviceReader
     This AVR specific part description file reader knows the structure and
     translates the data into a platform independent format.
     """
-    def __init__(self, file, logger=None):
-        XMLDeviceReader.__init__(self, file, logger)
+    def __init__(self, file):
+        XMLDeviceReader.__init__(self, file)
 
         device = self.query("//device")[0]
         self.name = device.get('name')
         architecture = device.get('architecture')
         self.mcu_devices = [{"device": DeviceIdentifier(d['device']), "mcu": d['mcu']} for d in avr_mcu.mcu]
 
-        self.log.info("Parsing AVR PDF: %s %s" % (architecture, self.name))
+        LOGGER.info("Parsing AVR PDF: %s %s", architecture, self.name)
 
         dev = DeviceIdentifier(self.name.lower())
         self.id = dev
@@ -61,7 +64,7 @@ class AVRDeviceReader(XMLDeviceReader):
 
         self.addProperty('core', architecture.lower())
         if (architecture not in ['AVR8', 'AVR8L', 'AVR8_XMEGA']):
-            self.log.error("Sorry, only ATtiny, ATmega, ATxmega and AT90 targets can be parsed corretly.")
+            LOGGER.error("Sorry, only ATtiny, ATmega, ATxmega and AT90 targets can be parsed corretly.")
             exit()
 
         self.addProperty('define', '__AVR_' + self.name + '__')
@@ -85,7 +88,7 @@ class AVRDeviceReader(XMLDeviceReader):
         self.addProperty('modules', modules)
 
         self.modules = self.compactQuery("//peripherals/module/instance/@name")
-        self.log.debug("Available Modules are:\n" + self._modulesToString())
+        LOGGER.debug("Available Modules are:\n" + self._modulesToString())
 
         if dev.family == 'xmega':
             for dev in [d for d in avr_io.xmega_pins if d['type'] == dev.type]:
@@ -248,10 +251,10 @@ class AVRDeviceReader(XMLDeviceReader):
 
     def createModule(self, name):
         if name in self.modules:
-            return Peripheral(name, self._registersOfModule(name), self.log)
+            return Peripheral(name, self._registersOfModule(name))
         else:
-            self.log.error("'" + name + "' not a module!")
-            self.log.error("Available modules are:\n" + self._modulesToString())
+            LOGGER.error("'" + name + "' not a module!")
+            LOGGER.error("Available modules are:\n" + self._modulesToString())
             return None
 
     def _registersOfModule(self, module):

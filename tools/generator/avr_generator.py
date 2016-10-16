@@ -7,38 +7,45 @@
 import os
 import sys
 import glob
+import logging
 
-from dfg.logger import Logger
+import dfg.logger
 
 from dfg.device import Device
 from dfg.merger import DeviceMerger
 from dfg.avr.avr_reader import AVRDeviceReader
 from dfg.avr.avr_writer import AVRDeviceWriter
 
+LOGGER = logging.getLogger('dfg.avr')
+
 if __name__ == "__main__":
-    level = 'info'
-    logger = Logger(level)
     devices = []
+    loglevel = 'INFO'
+    devs = []
 
     for arg in sys.argv[1:]:
-        if arg in ['error', 'warn', 'info', 'debug', 'disabled']:
-            level = arg
-            logger.setLogLevel(level)
+        if arg.startswith('--log='):
+            loglevel = arg.replace('--log=', '')
             continue
-        xml_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'AVR_devices', (arg + '*'))
+        devs.append(arg)
+
+    dfg.logger.configure_logger(loglevel)
+
+    for dev in devs:
+        xml_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'AVR_devices', (dev + '*'))
         files = glob.glob(xml_path)
         for file in files:
             # deal with this here, rather than rewrite half the name merging
             if os.path.basename(file) != "ATtiny28.xml":
-                part = AVRDeviceReader(file, logger)
-                device = Device(part, logger)
+                part = AVRDeviceReader(file)
+                device = Device(part)
                 devices.append(device)
 
-    merger = DeviceMerger(devices, logger)
+    merger = DeviceMerger(devices)
     merger.mergedByPlatform('avr')
 
     folder = os.path.join(os.path.dirname(__file__), '..', '..', 'devices', 'avr')
 
     for dev in merger.mergedDevices:
-        writer = AVRDeviceWriter(dev, logger)
+        writer = AVRDeviceWriter(dev)
         writer.write(folder)

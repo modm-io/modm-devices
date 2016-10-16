@@ -4,15 +4,18 @@
 # All rights reserved.
 
 import itertools
+import logging
 
 from ..writer import XMLDeviceWriter
+
+LOGGER = logging.getLogger('dfg.stm.writer')
 
 class STMDeviceWriter(XMLDeviceWriter):
     """ STMDeviceWriter
     Translates the Device to a XPCC specific format.
     """
-    def __init__(self, device, logger=None):
-        XMLDeviceWriter.__init__(self, device, logger)
+    def __init__(self, device):
+        XMLDeviceWriter.__init__(self, device)
 
         self.addDeviceAttributesToNode(self.root, 'flash')
         self.addDeviceAttributesToNode(self.root, 'ram')
@@ -242,7 +245,7 @@ class STMDeviceWriter(XMLDeviceWriter):
                 devices.remove(identifier)
 
         for device in devices:
-            self.log.error("Found device not matching naming schema: '{}'".format(device))
+            LOGGER.error("Found device not matching naming schema: '{}'".format(device))
 
         child = self.root.prependChild('naming-schema')
         child.setValue('{{ platform }}f{{ name }}{{ pin_id }}{{ size_id }}')

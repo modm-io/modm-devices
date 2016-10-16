@@ -3,58 +3,53 @@
 # Copyright (c)      2016, Fabian Greif
 # All rights reserved.
 
-from .logger import Logger
+import logging
 
 from .reader import XMLDeviceReader
 from .identifiers import Identifiers
 
+LOGGER = logging.getLogger('dfg.device')
 
 class Device:
     """ Device
     Represents a device.
     """
 
-    def __init__(self, description_file=None, logger=None):
-        if logger == None:
-            self.log = Logger()
-        else:
-            self.log = logger
-
+    def __init__(self, description_file=None):
         self.ids = None
         self.properties = []
         if description_file == None:
-            self.ids = Identifiers(None, self.log)
+            self.ids = Identifiers(None)
             return
 
         # proper handling of Parsers
         if isinstance(description_file, XMLDeviceReader):
             self.properties = list(description_file.properties)
-            self.log = description_file.log
-            self.ids = Identifiers(description_file.id, self.log)
+            self.ids = Identifiers(description_file.id)
         else:
             self.properties = list(description_file)
 
         if self.ids == None:
-            self.ids = Identifiers(None, self.log)
+            self.ids = Identifiers(None)
 
         # if flash or ram is missing, it is a bad thing and unsupported
         if self.getProperty('flash') == None:
-            self.log.error("No FLASH found")
+            LOGGER.error("No FLASH found")
             return None
         if self.getProperty('ram') == None:
-            self.log.error("No RAM found")
-            self.log.error("XPCC does not support Assembler-only programming!")
+            LOGGER.error("No RAM found")
+            LOGGER.error("XPCC does not support Assembler-only programming!")
             return None
         # eeprom is optional on AVR and not available on ARM devices
         if (self.getProperty('eeprom') == None) and ('avr' == self.id.platform):
-            self.log.warn("No EEPROM found")
+            LOGGER.warning("No EEPROM found")
 
     def getMergedDevice(self, other):
         """
         Merges the values of both devices and add a dictionary of differences
         """
         assert isinstance(other, Device)
-        self.log.info("Merging '%s'  with  '%s'" % (self.ids.string, other.ids.string))
+        LOGGER.info("Merging '%s'  with  '%s'", self.ids.string, other.ids.string)
 
         # update the ids in both
         self.ids.extend(other.ids)

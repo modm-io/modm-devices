@@ -5,10 +5,10 @@
 
 import os
 import re
+import logging
 
 from lxml import etree
 
-from ..logger import Logger
 from ..device_identifier import DeviceIdentifier
 
 from ..reader import XMLDeviceReader
@@ -17,6 +17,7 @@ from .stm import stm32_defines
 from .stm import stm32f1_remaps
 from .stm import stm32_memory
 
+LOGGER = logging.getLogger('dfg.stm.reader')
 
 class STMDeviceReader(XMLDeviceReader):
     """ STMDeviceReader
@@ -27,12 +28,12 @@ class STMDeviceReader(XMLDeviceReader):
     rootpath = None
 
     @staticmethod
-    def getDevicesFromFamily(family, logger=None, rootpath=None):
+    def getDevicesFromFamily(family, rootpath=None):
         if rootpath is None:
             rootpath = os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', '..', 'STM_devices', 'mcu')
         STMDeviceReader.rootpath = rootpath
 
-        STMDeviceReader.familyFile = XMLDeviceReader(os.path.join(rootpath, 'families.xml'), logger)
+        STMDeviceReader.familyFile = XMLDeviceReader(os.path.join(rootpath, 'families.xml'))
         rawDevices = STMDeviceReader.familyFile.query("//Family[@Name='{}']/SubFamily/Mcu/@RefName".format(family))
 
         # devices can contain duplicates due to Hx, Tx, Yx, Ix suffix!
@@ -43,21 +44,20 @@ class STMDeviceReader(XMLDeviceReader):
             if all(not d.startswith(shortDev) for d in devices):
                 devices.append(dev)
 
-        logger.debug("STMDeviceReader: Found devices of family '{}': {}".format(family, ", ".join(devices)))
+        LOGGER.debug("Found devices of family '{}': {}".format(family, ", ".join(devices)))
         return devices
 
 
-    def __init__(self, deviceName, logger=None):
+    def __init__(self, deviceName):
         deviceNames = self.familyFile.query("//Family/SubFamily/Mcu[@RefName='{}']".format(deviceName))[0]
         comboDeviceName = deviceNames.get('Name')
         deviceFile = os.path.join(self.rootpath, comboDeviceName + '.xml')
 
-        XMLDeviceReader.__init__(self, deviceFile, logger)
+        XMLDeviceReader.__init__(self, deviceFile)
         self.name = deviceName
         self.id = DeviceIdentifier(self.name.lower())
 
-        if logger:
-            logger.info("STMDeviceReader: Parsing '{}'".format(self.id.string))
+        LOGGER.info("Parsing '{}'".format(self.id.string))
 
         # information about the core and architecture
         coreLut = {'m0': 'v6m', 'm3': 'v7m', 'm4': 'v7em', 'm7': 'v7em'}
@@ -102,7 +102,7 @@ class STMDeviceReader(XMLDeviceReader):
                     mem_model = model
                     break
         if mem_model == None:
-            self.log.error("STMDeviceReader: Memory model not found for device '{}'".format(self.id.string))
+            LOGGER.error("Memory model not found for device '{}'".format(self.id.string))
 
         total_ram = ram = int(rams[sizeIndexRam].text) + mem_model['memories']['sram1']
         flash = int(flashs[sizeIndexFlash].text) + mem_model['memories']['flash']
@@ -168,7 +168,7 @@ class STMDeviceReader(XMLDeviceReader):
 
         dev_def = self._getDeviceDefine()
         if dev_def is None:
-            logger.error("STMDeviceReader: Define not found for device '{}'".format(self.id.string))
+            LOGGER.error("Define not found for device '{}'".format(self.id.string))
         else:
             defines.append(dev_def)
 
@@ -186,17 +186,17 @@ class STMDeviceReader(XMLDeviceReader):
 
         self.modules = self.query("//IP/@InstanceName")
         self.modules = sorted(list(set(self.modules)))
-        self.log.debug("STMDeviceReader: Available Modules are:\n" + self._modulesToString())
+        LOGGER.debug("Available Modules are:\n" + self._modulesToString())
 
         # add entire interrupt vectore table here.
         # I have not found a way to extract the correct vector _position_ from the ST device files
         # so we have to swallow our pride and just parse the header file
         # ext/cmsis/stm32/Device/ST/STM32F4xx/Include/
-        headerFilePath = os.path.join('..', '..', '..', 'xpcc', 'ext', 'st', 'stm32{}xx'.format(self.id.family), 'Include', '{}.h'.format(dev_def.lower()))
+        headerFilePath = os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', '..', 'xpcc', 'ext', 'st', 'stm32{}xx'.format(self.id.family), 'Include', '{}.h'.format(dev_def.lower()))
         headerFile = open(headerFilePath, 'r').read()
         match = re.search("typedef enum.*?/\*\*.*?/\*\*.*?\*/(?P<table>.*?)} IRQn_Type;", headerFile, re.DOTALL)
         if not match:
-            logger.error("STMDeviceReader: Interrupt vector table not found for device '{}'".format(self.id.string))
+            LOGGER.error("Interrupt vector table not found for device '{}'".format(self.id.string))
             exit(1)
 
         # print dev_def.lower(), match.group('table')
@@ -213,7 +213,7 @@ class STMDeviceReader(XMLDeviceReader):
                 continue
             ivectors.append({'position': pos, 'name': name})
 
-        self.log.debug("STMDeviceReader: Found interrupt vectors:\n" + "\n".join(["{}: {}".format(v['position'], v['name']) for v in ivectors]))
+        LOGGER.debug("Found interrupt vectors:\n" + "\n".join(["{}: {}".format(v['position'], v['name']) for v in ivectors]))
         self.addProperty('interrupts', ivectors)
 
         for m in self.modules:
@@ -231,7 +231,7 @@ class STMDeviceReader(XMLDeviceReader):
             # lets load additional information about the DMA
             dma_file = self.query("//IP[@Name='DMA']")[0].get('Version')
             dma_file = os.path.join(self.rootpath, 'IP', 'DMA-' + dma_file + '_Modes.xml')
-            self.dmaFile = XMLDeviceReader(dma_file, logger)
+            self.dmaFile = XMLDeviceReader(dma_file)
             dmas = [d.get('Name') for d in self.dmaFile.query("//IP/ModeLogicOperator/Mode[starts-with(@Name,'DMA')]")]
             modules.extend(dmas)
 
@@ -243,7 +243,7 @@ class STMDeviceReader(XMLDeviceReader):
         # lets load additional information about the GPIO IP
         ip_file = self.query("//IP[@Name='GPIO']")[0].get('Version')
         ip_file = os.path.join(self.rootpath, 'IP', 'GPIO-' + ip_file + '_Modes.xml')
-        self.gpioFile = XMLDeviceReader(ip_file, logger)
+        self.gpioFile = XMLDeviceReader(ip_file)
 
         pins = self.query("//Pin[@Type='I/O'][starts-with(@Name,'P')]")
         pins = sorted(pins, key=lambda p: [p.get('Name')[1:2], int(p.get('Name')[:4].split('-')[0].split('/')[0][2:])])

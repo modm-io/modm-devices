@@ -8,8 +8,9 @@ import re
 import sys
 import os
 import platform
+import logging
 
-from .logger import Logger
+LOGGER = logging.getLogger('dfg.device_identifier')
 
 class DeviceIdentifier:
     """ DeviceIdentifier
@@ -18,10 +19,9 @@ class DeviceIdentifier:
     well as lpc controllers
     """
 
-    def __init__(self, string=None, logger=None):
+    def __init__(self, string=None):
         # quick'n'dirty copy constructor
         if isinstance(string, DeviceIdentifier):
-            self.log = string.log
             self.platform = string.platform
             self.family = string.family
             self.name    = string.name
@@ -30,11 +30,6 @@ class DeviceIdentifier:
             self.size_id = string.size_id
             self.valid = string.valid
             return
-
-        if logger == None:
-            self.log = Logger()
-        else:
-            self.log = logger
 
         self._string = string
         # default for properties is None
@@ -56,7 +51,7 @@ class DeviceIdentifier:
             self.name = 'osx'
             self.type, _, _ = platform.mac_ver()
             if self.type == '':
-                self.log.warn("No distribution version found!")
+                LOGGER.warning("No distribution version found!")
             else:
                 self.type = self.type[:-2]
             self.valid = True
@@ -66,9 +61,9 @@ class DeviceIdentifier:
             self.family = 'linux'
             self.name, self.type, _ = platform.linux_distribution()
             if self.name == '':
-                self.log.warn("No distribution name found!")
+                LOGGER.warning("No distribution name found!")
             if self.type == '':
-                self.log.warn("No distribution version found!")
+                LOGGER.warning("No distribution version found!")
             self.valid = True
 
         elif 'windows' in string:
@@ -133,7 +128,7 @@ class DeviceIdentifier:
             self.platform = "lpc"
             self.family = string[3:5]
             self.name = string[5:string.find('_')]
-            self.log.debug("TODO: Handle ending: %s" % string[string.find('_'):])
+            LOGGER.debug("TODO: Handle ending: %s" % string[string.find('_'):])
             if len(string) >= 7:
                 self.valid = True
         else:

@@ -3,20 +3,13 @@
 # Copyright (c)      2016, Fabian Greif
 # All rights reserved.
 
-from .logger import Logger
-
 class Peripheral():
     """ Peripheral
     Represents the names and masks of the peripherals control and data registers
     and methods for smart comparison.
     """
 
-    def __init__(self, name=None, registers=None, logger=None):
-        if logger == None:
-            self.log = Logger()
-        else:
-            self.log = logger
-
+    def __init__(self, name=None, registers=None):
         self.name = name
         if registers == None:
             registers = []

@@ -5,20 +5,13 @@
 
 import re
 
-from .logger import Logger
-
 class Register():
     """ Register
     Represents the names and masks of the registers
     and methods for smart comparison.
     """
 
-    def __init__(self, name=None, fields=None, size=None, logger=None):
-        if logger == None:
-            self.log = Logger()
-        else:
-            self.log = logger
-
+    def __init__(self, name=None, fields=None, size=None):
         if fields == None:
             fields = []
         self.name = name

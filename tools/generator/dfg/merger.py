@@ -3,7 +3,9 @@
 # Copyright (c)      2016, Fabian Greif
 # All rights reserved.
 
-from .logger import Logger
+import logging
+
+LOGGER = logging.getLogger('dfg.merger')
 
 class DeviceMerger:
     """ DeviceMerger
@@ -17,13 +19,8 @@ class DeviceMerger:
     changes to multiple files. Ideally - reality might differ :(.
     """
 
-    def __init__(self, devices, logger=None):
+    def __init__(self, devices):
         self.mergedDevices = list(devices)
-
-        if logger == None:
-            self.log = Logger()
-        else:
-            self.log = logger
 
     def mergedByPlatform(self, platform):
         if platform == 'avr':
@@ -91,7 +88,7 @@ class DeviceMerger:
 
             name_ids = self._getCategoryNameSTM32(current)
             size_ids = self._getCategorySizeSTM32(current)
-            self.log.info("ByName: Searching for device with names '%s' and size-ids '%s'" % (name_ids, size_ids))
+            LOGGER.info("ByName: Searching for device with names '%s' and size-ids '%s'" % (name_ids, size_ids))
 
             for dev in devs:
                 if dev.ids.getAttribute('name')[0] in name_ids and \
@@ -103,9 +100,9 @@ class DeviceMerger:
                 current = current.getMergedDevice(match)
 
             if len(matches) == 0:
-                self.log.info("ByName: no match for device: " + current.id.string)
+                LOGGER.info("ByName: no match for device: " + current.id.string)
 
-            self.log.debug("ByName:\nResulting device:\n" + str(current))
+            LOGGER.debug("ByName:\nResulting device:\n" + str(current))
             merged.append(current)
 
         return merged
@@ -170,7 +167,7 @@ class DeviceMerger:
             device_type = current.ids.getAttribute('type')[0]
 
             if device_type != None:
-                self.log.info("ByName: Searching for device with type '%s'" % device_type)
+                LOGGER.info("ByName: Searching for device with type '%s'" % device_type)
 
                 for dev in devs:
                     if dev.ids.getAttribute('type')[0] == device_type:
@@ -187,9 +184,9 @@ class DeviceMerger:
                 current = current.getMergedDevice(match)
 
             if len(matches) == 0:
-                self.log.info("ByName: no match for device: " + current.id.string)
+                LOGGER.info("ByName: no match for device: " + current.id.string)
 
-            self.log.debug("ByName:\nResulting device:\n" + str(current))
+            LOGGER.debug("ByName:\nResulting device:\n" + str(current))
             merged.append(current)
 
         return merged
@@ -219,7 +216,7 @@ class DeviceMerger:
                 if not (family == "" and device_type == None):
                     device_type = self._getCategoryTypeAVR(current)
 
-                    self.log.info("ByName: Searching for device ending in '"
+                    LOGGER.info("ByName: Searching for device ending in '"
                                  + family + "' and '" + str(device_type) + "'")
 
                     for dev in devs:
@@ -308,9 +305,9 @@ class DeviceMerger:
                 current = current.getMergedDevice(match)
 
             if len(matches) == 0:
-                self.log.info("ByName: no match for device: " + current.id.string)
+                LOGGER.info("ByName: no match for device: " + current.id.string)
 
-            self.log.debug("ByName:\nResulting device:\n" + str(current))
+            LOGGER.debug("ByName:\nResulting device:\n" + str(current))
             merged.append(current)
 
         return merged
@@ -352,7 +349,7 @@ class DeviceMerger:
 
             size_ids = self._getCategorySizeSTM32(current)
             name = current.ids.getAttribute('name')[0]
-            self.log.info("BySize: Searching for device with size-id '%s'" % size_ids)
+            LOGGER.info("BySize: Searching for device with size-id '%s'" % size_ids)
 
             for dev in devs:
                 if dev.ids.getAttribute('name')[0] == name and \
@@ -365,9 +362,9 @@ class DeviceMerger:
                 current = current.getMergedDevice(match)
 
             if len(matches) == 0:
-                self.log.info("BySize: no match for device: " + current.id.string)
+                LOGGER.info("BySize: no match for device: " + current.id.string)
 
-            self.log.debug("BySize:\nResulting device:\n" + str(current))
+            LOGGER.debug("BySize:\nResulting device:\n" + str(current))
             merged.append(current)
 
         return merged
@@ -452,7 +449,7 @@ class DeviceMerger:
             matches = []
             suffix = self._getCategoryTypeAVR(current)
 
-            self.log.info("ByType: Searching for device ending in " + str(suffix))
+            LOGGER.info("ByType: Searching for device ending in " + str(suffix))
 
             for dev in devs:
                 if dev.id.name == props.name and dev.id.type in suffix:
@@ -463,9 +460,9 @@ class DeviceMerger:
                 current = current.getMergedDevice(match)
 
             if len(matches) == 0:
-                self.log.info("ByType: No match for device: " + current.id.string)
+                LOGGER.info("ByType: No match for device: " + current.id.string)
 
-            self.log.debug("ByType:\nResulting device:\n" + str(current))
+            LOGGER.debug("ByType:\nResulting device:\n" + str(current))
             merged.append(current)
 
         return merged

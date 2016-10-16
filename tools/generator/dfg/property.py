@@ -3,8 +3,6 @@
 # Copyright (c)      2016, Fabian Greif
 # All rights reserved.
 
-from .logger import Logger
-
 from .identifiers import Identifiers
 
 class Property:
@@ -13,14 +11,9 @@ class Property:
     This manages merging and accessing of properties.
     """
 
-    def __init__(self, device_id, name, value, logger=None):
-        if logger == None:
-            self.log = Logger()
-        else:
-            self.log = logger
-
+    def __init__(self, device_id, name, value):
         self.name = name
-        self.values = [PropertyValue(device_id, value, self.log)]
+        self.values = [PropertyValue(device_id, value)]
 
     def addValue(self, other):
         if isinstance(other.value, list):
@@ -38,7 +31,7 @@ class Property:
                         # set it to only the intersecting items
                         prop.value = intersection_value
                         # and add a new PropertyValue with only the differences
-                        self.values.append(PropertyValue(prop.ids, self_diff, self.log))
+                        self.values.append(PropertyValue(prop.ids, self_diff))
                     # add the other.ids to this value
                     prop.ids.extend(other.ids)
                     # continue looking with the differences of other
@@ -91,16 +84,11 @@ class PropertyValue:
     Encapsulates a device property value with ids.
     """
 
-    def __init__(self, device_id, value, logger=None):
-        if logger == None:
-            self.log = Logger()
-        else:
-            self.log = logger
-
+    def __init__(self, device_id, value):
         if isinstance(device_id, list):
             self.ids = list(device_id)
         else:
-            self.ids = Identifiers(device_id, self.log)
+            self.ids = Identifiers(device_id)
         self.value = value
         if isinstance(self.value, list):
             self.value.sort()

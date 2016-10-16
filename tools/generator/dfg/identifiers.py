@@ -3,34 +3,30 @@
 # Copyright (c)      2016, Fabian Greif
 # All rights reserved.
 
-from .logger import Logger
+import logging
 from .device_identifier import DeviceIdentifier
+
+LOGGER = logging.getLogger('dfg.identifiers')
 
 class Identifiers:
     """ Identifiers
     Encapsulates a list of device identifiers.
     This manages filtering, merging and accessing of device ids.
     """
-    def __init__(self, device_id=None, logger=None):
+    def __init__(self, device_id=None):
         if isinstance(device_id, Identifiers):
-            self.log = device_id.log
             # please deep copy this list
-            self.ids = [DeviceIdentifier(dev, self.log) for dev in device_id.ids]
+            self.ids = [DeviceIdentifier(dev) for dev in device_id.ids]
             return
-
-        if logger == None:
-            self.log = Logger()
-        else:
-            self.log = logger
 
         if isinstance(device_id, list):
             # please deep copy this list
-            self.ids = [DeviceIdentifier(dev, self.log) for dev in device_id]
+            self.ids = [DeviceIdentifier(dev) for dev in device_id]
             return
 
         self.ids = []
         if device_id != None:
-            self.ids.append(DeviceIdentifier(device_id, self.log))
+            self.ids.append(DeviceIdentifier(device_id))
 
     def append(self, device_id):
         assert isinstance(device_id, DeviceIdentifier)
@@ -51,14 +47,14 @@ class Identifiers:
         assert isinstance(ids, Identifiers)
 
         # list all other ids that are not part of our ids
-        other_ids = Identifiers(None, self.log)
+        other_ids = Identifiers(None)
         for device_id in ids:
             if device_id.string not in self.getAttribute('string'):
                 other_ids.append(DeviceIdentifier(device_id))
 
         # our devices are equal to the input
         if (len(other_ids) == 0):
-            return Identifiers(DeviceIdentifier(None, self.log), self.log)
+            return Identifiers(DeviceIdentifier(None))
 
 
         # create the intersection of all ids
@@ -73,7 +69,7 @@ class Identifiers:
 
         # if we only have one device_id we can stop here
         if len(own_ids) == 1:
-            return Identifiers(own_ids[0], self.log)
+            return Identifiers(own_ids[0])
 
         # strip the intersecting attributes from other_ids
         for device_id in other_ids:
@@ -94,7 +90,7 @@ class Identifiers:
             # so we can forget the uncommon ones (like type)
             for attr in [p for p in own_union.properties if p not in same_attr]:
                 setattr(own_union, attr, None)
-            return Identifiers(own_union, self.log)
+            return Identifiers(own_union)
 
 
         # merge the ids in the list until we cannot anymore
@@ -121,7 +117,7 @@ class Identifiers:
             for dev in remove_devs:
                 devs.remove(dev)
 
-            # self.log.debug("\nUnmergable: %s" % current)
+            # LOGGER.debug("\nUnmergable: %s" % current)
             unmergables.append(current)
 
         # strip the unifying attributes from unmergables
@@ -138,7 +134,7 @@ class Identifiers:
 
         for device_id in self.ids:
             if value == device_id.properties[name]:
-                ids.append(DeviceIdentifier(device_id, self.log))
+                ids.append(DeviceIdentifier(device_id))
 
         return ids
 
@@ -174,14 +170,14 @@ class Identifiers:
 
     @property
     def intersection(self):
-        dev = DeviceIdentifier(self.ids[0], self.log)
+        dev = DeviceIdentifier(self.ids[0])
         for device_id in self.ids[1:]:
             dev = dev.intersectionWithDeviceIdentifier(device_id)
         return dev
 
     @property
     def union(self):
-        dev = DeviceIdentifier(logger=self.log)
+        dev = DeviceIdentifier()
         for device_id in self.ids:
             dev = dev.unionWithDeviceIdentifier(device_id)
         return dev

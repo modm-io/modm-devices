@@ -4,20 +4,21 @@
 # All rights reserved.
 
 import itertools
-
-from ..logger import Logger
+import logging
 
 from ..writer import XMLDeviceWriter
 from . import avr_io
+
+LOGGER = logging.getLogger('dfg.avr.writer')
 
 class AVRDeviceWriter(XMLDeviceWriter):
     """ AVRDeviceWriter
     Translates the Device to a XPCC specific format.
     """
-    def __init__(self, device, logger=None):
-        XMLDeviceWriter.__init__(self, device, logger)
+    def __init__(self, device):
+        XMLDeviceWriter.__init__(self, device)
 
-        self.log.info(("Generating Device File for '%s'." % self.device.ids.string))
+        LOGGER.info(("Generating Device File for '%s'." % self.device.ids.string))
 
         self.types = self.device.ids.getAttribute('type')
         self.pin_ids = self.device.ids.getAttribute('pin_id')
@@ -33,7 +34,7 @@ class AVRDeviceWriter(XMLDeviceWriter):
         else:
             self.io = {}
             if self.device.id.family != 'xmega':
-                self.log.warn("AvrWriter: IO not found for device '%s' with pin-name: '%s'" % (self.device.id.string, pin_name))
+                LOGGER.warning("IO not found for device '%s' with pin-name: '%s'", self.device.id.string, pin_name)
 
         self.addDeviceAttributesToNode(self.root, 'flash')
         self.addDeviceAttributesToNode(self.root, 'ram')
@@ -316,7 +317,7 @@ class AVRDeviceWriter(XMLDeviceWriter):
                 devices.remove(identifier)
 
         for device in devices:
-            self.log.error("Found device not matching naming schema: '{}'".format(device))
+            LOGGER.error("Found device not matching naming schema: '{}'".format(device))
 
         child = self.root.prependChild('naming-schema')
         child.setValue(naming_schema)

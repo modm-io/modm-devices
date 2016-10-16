@@ -4,22 +4,18 @@
 # All rights reserved.
 
 import os
+import logging
 
 from lxml import etree
 
-from .logger import Logger
+LOGGER = logging.getLogger('dfg.writer')
 
 class XMLDeviceWriter:
     """ DeviceWriter
     Base class for all writers for handling the opening and writing of XML files etc...
     """
 
-    def __init__(self, device, logger=None):
-        if logger == None:
-            self.log = Logger()
-        else:
-            self.log = logger
-
+    def __init__(self, device):
         self.file = None
         self.device = device
 
@@ -40,9 +36,9 @@ class XMLDeviceWriter:
 
     def writeToFile(self, file):
         if os.path.exists(file):
-            self.log.warn("XMLDeviceWriter: Overwriting file '" + os.path.basename(file) + "'")
+            LOGGER.warning("Overwriting file '" + os.path.basename(file) + "'")
         else:
-            self.log.info("XMLDeviceWriter: New XML file: '" + os.path.basename(file) + "'")
+            LOGGER.info("New XML file: '" + os.path.basename(file) + "'")
         self.file = file
 
         with open(self.file, 'w') as device_file:
@@ -54,7 +50,7 @@ class XMLDeviceWriter:
             filename = os.path.join(folder, name)
             self.writeToFile(filename)
         else:
-            self.log.error("XMLDeviceWriter: Path is not a folder! " + folder)
+            LOGGER.error("Path is not a folder! " + folder)
 
     def toString(self):
         return etree.tostring(self.tree.root,
