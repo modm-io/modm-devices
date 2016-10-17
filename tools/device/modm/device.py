@@ -101,13 +101,23 @@ class Device:
         self.partname = naming_schema.get_name(identifier)
         self.device_file = device_file
 
-        self._properties = self.device_file.get_properties(self.identifier)
+        self._properties = None
+
+    def __parse_properties(self):
+        """
+        Perform a lazy initialization of the driver property tree.
+        """
+        if self._properties is None:
+            self._properties = self.device_file.get_properties(self.identifier)
 
     @property
     def properties(self):
+        self.__parse_properties()
         return copy.deepcopy(self._properties)
 
     def get_driver(self, name):
+        self.__parse_properties()
+
         parts = name.split(":")
         if len(parts) == 1:
             for driver in self._properties["driver"]:
