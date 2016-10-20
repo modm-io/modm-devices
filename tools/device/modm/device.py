@@ -61,7 +61,7 @@ class MultiDeviceIdentifier(DeviceIdentifier):
     """
     Identifier for a group of devices.
 
-    For the multi device identifier the attributes are not a single
+    For the multi-device identifier the attributes are not a single
     string but rather a list of string. Can be split into separate devices.
     """
     def __init__(self):
@@ -130,7 +130,7 @@ class Device:
         else:
             raise ParserException("Invalid driver name '{}'. "
                                   "The name must contain no or one ':' to "
-                                  "separte type and name.".format(name))
+                                  "separate type and name.".format(name))
 
     def __str__(self):
         return self.partname
