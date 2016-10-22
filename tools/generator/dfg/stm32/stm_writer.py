@@ -27,7 +27,8 @@ class STMDeviceWriter(XMLDeviceWriter):
         self.addDeviceAttributesToNode(self.root, 'define')
 
         core_child = self.root.addChild('driver')
-        core_child.setAttributes({'type': 'core', 'name': 'cortex'})
+        core_child.setAttributes({'type': 'core'})
+        core_child.setAttributes({'compatible': 'cortex'})
 
         # Memories
         self.addMemoryToNode(core_child)
@@ -48,7 +49,8 @@ class STMDeviceWriter(XMLDeviceWriter):
         self.addModuleAttributesToNode(self.root, 'CAN', 'can')
         # Clock
         clock_child = self.root.addChild('driver')
-        clock_child.setAttributes({'type': 'clock', 'name': 'stm32'})
+        clock_child.setAttributes({'type': 'clock'})
+        clock_child.setAttributes({'compatible': 'stm32'})
         # DAC
         # self.addModuleAttributesToNode(self.root, 'DAC', 'dac')
         if (self.device.id.family in ['f3', 'f4']):
@@ -103,7 +105,8 @@ class STMDeviceWriter(XMLDeviceWriter):
             peripherals.append(peripheral)
 
         driver = node.addChild('driver')
-        driver.setAttributes({'type': name, 'name': family})
+        driver.setAttributes({'type': name})
+        driver.setAttributes({'compatible': family})
 
         for prop in modules.values:
             instances = []
@@ -163,7 +166,8 @@ class STMDeviceWriter(XMLDeviceWriter):
         props = self.device.getProperty('gpios')
 
         driver = node.addChild('driver')
-        driver.setAttributes({'type': 'gpio', 'name': 'stm32f1' if self.device.id.family == 'f1' else 'stm32'})
+        driver.setAttributes({'type': 'gpio'})
+        driver.setAttributes({'compatible': 'stm32f1' if self.device.id.family == 'f1' else 'stm32'})
 
         for prop in props.values:
             gpios = prop.value

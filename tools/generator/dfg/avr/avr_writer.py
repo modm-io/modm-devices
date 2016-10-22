@@ -61,13 +61,15 @@ class AVRDeviceWriter(XMLDeviceWriter):
         # self.addDeviceAttributesToNode(self.root, 'define')
 
         core_child = self.root.addChild('driver')
-        core_child.setAttributes({'type': 'core', 'name': 'avr'})
+        core_child.setAttributes({'type': 'core'})
+        core_child.setAttributes({'compatible': 'avr'})
 
         # ADC
         self.addAdcToNode(self.root)
         # Clock
         clock_child = self.root.addChild('driver')
-        clock_child.setAttributes({'type': 'clock', 'name': 'avr'})
+        clock_child.setAttributes({'type': 'clock'})
+        clock_child.setAttributes({'compatible': 'avr'})
         # DAC
         self.addDacToNode(self.root)
         # I2C aka TWI
@@ -107,7 +109,8 @@ class AVRDeviceWriter(XMLDeviceWriter):
                     attr = self._getAttributeDictionaryFromId(device_id)
                     driver = node.addChild('driver')
                     driver.setAttributes(attr)
-                    driver.setAttributes({'type': name, 'name': family})
+                    driver.setAttributes({'type': name})
+                    driver.setAttributes({'compatible': family})
 
     def addModuleInstancesAttributesToNode(self, node, peripheral, name, family=None):
         if family == None:
@@ -115,7 +118,8 @@ class AVRDeviceWriter(XMLDeviceWriter):
         modules = self.device.getProperty('modules')
 
         driver = node.addChild('driver')
-        driver.setAttributes({'type': name, 'name': family})
+        driver.setAttributes({'type': name})
+        driver.setAttributes({'compatible': family})
 
         for prop in modules.values:
             instances = []
@@ -194,10 +198,12 @@ class AVRDeviceWriter(XMLDeviceWriter):
                     instances.append(mod[5:6])
 
             driver = node.addChild('driver')
-            driver.setAttributes({'type': 'uart', 'name': family})
+            driver.setAttributes({'type': 'uart'})
+            driver.setAttributes({'compatible': family})
             if uartSpi:
                 spi_driver = node.addChild('driver')
-                spi_driver.setAttributes({'type': 'spi', 'name': family + "_uart"})
+                spi_driver.setAttributes({'type': 'spi'})
+                spi_driver.setAttributes({'compatible': family + "_uart"})
 
             if instances != []:
                 instances = list(set(instances))
@@ -215,7 +221,8 @@ class AVRDeviceWriter(XMLDeviceWriter):
         props = self.device.getProperty('gpios')
 
         driver = node.addChild('driver')
-        driver.setAttributes({'type': 'gpio', 'name': family})
+        driver.setAttributes({'type': 'gpio'})
+        driver.setAttributes({'compatible': family})
 
         for prop in props.values:
             gpios = prop.value

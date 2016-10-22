@@ -125,7 +125,7 @@ class Device:
                     return driver
         elif len(parts) == 2:
             for driver in self._properties["driver"]:
-                if driver["@type"] == parts[0] and driver["@name"] == parts[1]:
+                if driver["@type"] == parts[0] and driver["@compatible"] == parts[1]:
                     return driver
         else:
             raise ParserException("Invalid driver name '{}'. "
