@@ -132,6 +132,17 @@ class Device:
                                   "The name must contain no or one ':' to "
                                   "separate type and name.".format(name))
 
+    def has_driver(self, name, compatible: list = []):
+        if len(compatible) == 0:
+            return self.get_driver(name) is not None
+
+        if ':' in name:
+            raise ParserException("Invalid driver name '{}'. "
+                                  "The name must contain no ':' when using the "
+                                  "compatible argument.".format(name))
+
+        return any(self.get_driver(name + ':' + c) is not None for c in compatible)
+
     def __str__(self):
         return self.partname
 
