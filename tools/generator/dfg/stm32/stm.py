@@ -2,6 +2,10 @@
 # Copyright (c) 2015-2016, Niklas Hauser
 # All rights reserved.
 
+import logging
+
+LOGGER = logging.getLogger("dfg.stm.data")
+
 stm32_defines = \
 {
     'f0': [
@@ -99,32 +103,83 @@ stm32_defines = \
     ]
 }
 
+def getDefineForDevice(device_id):
+    if device_id["family"] not in stm32_defines:
+        return None
+    # get the defines for this device family
+    familyDefines = stm32_defines[device_id["family"]]
+    # get all defines for this device name
+    devName = 'STM32F{}'.format(device_id["name"])
+
+    # Map STM32F7x8 -> STM32F7x7
+    if device_id["family"] == 'f7' and devName[8] == '8':
+        devName = devName[:8] + '7'
+
+    deviceDefines = sorted([define for define in familyDefines if define.startswith(devName)])
+    # if there is only one define thats the one
+    if len(deviceDefines) == 1:
+        return deviceDefines[0]
+
+    # now we match for the size-id.
+    devNameMatch = devName + 'x{}'.format(device_id["size"].upper())
+    for define in deviceDefines:
+        if devNameMatch <= define:
+            return define
+
+    # now we match for the pin-id.
+    devNameMatch = devName + '{}x'.format(device_id["pin"].upper())
+    for define in deviceDefines:
+        if devNameMatch <= define:
+            return define
+
+    return None
+
 stm32f1_remaps = \
 {
-    'spi1':         {'mask': 1, 'position':  0, 'mapping': [0, 1]},
-    'i2c1':         {'mask': 1, 'position':  1, 'mapping': [0, 1]},
-    'usart1':       {'mask': 1, 'position':  2, 'mapping': [0, 1]},
-    'usart2':       {'mask': 1, 'position':  3, 'mapping': [0, 1]},
-    'usart3':       {'mask': 3, 'position':  4, 'mapping': [0, 1,    3]},
-    'tim1':         {'mask': 3, 'position':  6, 'mapping': [0, 1,    3]},
-    'tim2':         {'mask': 3, 'position':  8, 'mapping': [0, 1, 2, 3]},
-    'tim3':         {'mask': 3, 'position': 10, 'mapping': [0,    2, 3]},
-    'tim4':         {'mask': 1, 'position': 12, 'mapping': [0, 1]},
-    'can':          {'mask': 3, 'position': 13, 'mapping': [0,    2, 3]},
-    'can1':         {'mask': 3, 'position': 13, 'mapping': [0, 2, 3]},
-    'clock':        {'mask': 1, 'position': 15, 'mapping': [0, 1]},
-    'tim5ch4':      {'mask': 1, 'position': 16, 'mapping': [0, 1]},
-    'adc1etrginj':  {'mask': 1, 'position': 17, 'mapping': [0, 1]},
-    'adc1etrgreg':  {'mask': 1, 'position': 18, 'mapping': [0, 1]},
-    'adc2etrginj':  {'mask': 1, 'position': 19, 'mapping': [0, 1]},
-    'adc2etrgreg':  {'mask': 1, 'position': 20, 'mapping': [0, 1]},
-    'eth':          {'mask': 1, 'position': 21, 'mapping': [0, 1]},
-    'can2':         {'mask': 1, 'position': 22, 'mapping': [0, 1]},
-    'mii':          {'mask': 1, 'position': 23, 'mapping': [0, 1]},
-    'swj':          {'mask': 7, 'position': 24, 'mapping': [0, 1, 2,    4]},
-    'spi3':         {'mask': 1, 'position': 28, 'mapping': [0, 1]},
-    'tim2itr1':     {'mask': 1, 'position': 29, 'mapping': [0, 1]},
-    'ptp':          {'mask': 1, 'position': 30, 'mapping': [0, 1]}
+    # (position % 32) -> local bit position
+    # MAPR register
+    'spi1':         {'position':  0, 'mask': 1, 'mapping': [0, 1]},
+    'i2c1':         {'position':  1, 'mask': 1, 'mapping': [0, 1]},
+    'usart1':       {'position':  2, 'mask': 1, 'mapping': [0, 1]},
+    'usart2':       {'position':  3, 'mask': 1, 'mapping': [0, 1]},
+    'usart3':       {'position':  4, 'mask': 3, 'mapping': [0, 1,    3]},
+    'tim1':         {'position':  6, 'mask': 3, 'mapping': [0, 1,    3]},
+    'tim2':         {'position':  8, 'mask': 3, 'mapping': [0, 1, 2, 3]},
+    'tim3':         {'position': 10, 'mask': 3, 'mapping': [0,    2, 3]},
+    'tim4':         {'position': 12, 'mask': 1, 'mapping': [0, 1]},
+    'can':          {'position': 13, 'mask': 3, 'mapping': [0,    2, 3]},
+    'can1':         {'position': 13, 'mask': 3, 'mapping': [0,    2, 3]},
+    'pd01':         {'position': 15, 'mask': 1, 'mapping': [0, 1]},
+    'tim5ch4':      {'position': 16, 'mask': 1, 'mapping': [0, 1]},
+    'adc1etrginj':  {'position': 17, 'mask': 1, 'mapping': [0, 1]},
+    'adc1etrgreg':  {'position': 18, 'mask': 1, 'mapping': [0, 1]},
+    'adc2etrginj':  {'position': 19, 'mask': 1, 'mapping': [0, 1]},
+    'adc2etrgreg':  {'position': 20, 'mask': 1, 'mapping': [0, 1]},
+    'eth':          {'position': 21, 'mask': 1, 'mapping': [0, 1]},
+    'can2':         {'position': 22, 'mask': 1, 'mapping': [0, 1]},
+    'mii_rmii_sel': {'position': 23, 'mask': 1, 'mapping': [0, 1]},
+    'swj_cfg':      {'position': 24, 'mask': 7, 'mapping': [0, 1, 2,    4]},
+    # position 27 is empty
+    'spi3':         {'position': 28, 'mask': 1, 'mapping': [0, 1]},
+    'i2s3':         {'position': 28, 'mask': 1, 'mapping': [0, 1]},
+    'tim2itr1':     {'position': 29, 'mask': 1, 'mapping': [0, 1]},
+    'ptp_pps':      {'position': 30, 'mask': 1, 'mapping': [0, 1]},
+    # position 31 is empty
+    # MAPR2 register
+    'tim15':        {'position': 32, 'mask': 1, 'mapping': [0, 1]},
+    'tim16':        {'position': 33, 'mask': 1, 'mapping': [0, 1]},
+    'tim17':        {'position': 34, 'mask': 1, 'mapping': [0, 1]},
+    'cec':          {'position': 35, 'mask': 1, 'mapping': [0, 1]},
+    'tim1_dma':     {'position': 36, 'mask': 1, 'mapping': [0, 1]},
+    'tim9':         {'position': 37, 'mask': 1, 'mapping': [0, 1]},
+    'tim10':        {'position': 38, 'mask': 1, 'mapping': [0, 1]},
+    'tim11':        {'position': 39, 'mask': 1, 'mapping': [0, 1]},
+    'tim13':        {'position': 40, 'mask': 1, 'mapping': [0, 1]},
+    'tim14':        {'position': 41, 'mask': 1, 'mapping': [0, 1]},
+    'fsmc_nadv':    {'position': 42, 'mask': 1, 'mapping': [0, 1]},
+    'tim67_dac_dma':{'position': 43, 'mask': 1, 'mapping': [0, 1]},
+    'tim12':        {'position': 44, 'mask': 1, 'mapping': [0, 1]},
+    'misc':         {'position': 45, 'mask': 1, 'mapping': [0, 1]},
 }
 
 stm32_memory = \
@@ -232,3 +287,19 @@ stm32_memory = \
         ]
     }
 }
+
+def getMemoryForDevice(device_id):
+    mem_fam = stm32_memory[device_id["family"]]
+    mem_model = None
+    for model in mem_fam['model']:
+        if any(name.startswith(device_id["name"]) for name in model['names']):
+            if device_id["name"] in model['names']:
+                mem_model = model
+                break
+            elif "{}x{}".format(device_id["name"], device_id["size"]) in model['names']:
+                mem_model = model
+                break
+    if mem_model == None:
+        LOGGER.error("Memory model not found for device '{}'".format(device_id.string))
+        exit(1)
+    return (mem_fam['start'], mem_model['memories'])

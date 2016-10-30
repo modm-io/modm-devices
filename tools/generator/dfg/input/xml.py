@@ -9,31 +9,26 @@ import logging
 
 from lxml import etree
 
-from .device_identifier import DeviceIdentifier
+LOGGER = logging.getLogger('dfg.input.xml')
 
-from .property import Property
-
-LOGGER = logging.getLogger('dfg.reader')
-
-class XMLDeviceReader:
+class XMLReader:
     """ DeviceReader
     Base class for all readers for handling the opening and reading of XML files etc...
     """
+    _PARSER = etree.XMLParser(ns_clean=True, recover=True, encoding='utf-8')
 
     def __init__(self, path):
-        self.file = path
-        self.tree = self._openDeviceXML(self.file)
-        self.id = DeviceIdentifier()
-        self.properties = []
+        self.filename = path
+        self.tree = self._openDeviceXML(self.filename)
 
     def _openDeviceXML(self, filename):
-        LOGGER.debug("Opening XML file '%s'" % os.path.basename(self.file))
-        file = open(filename, 'r').read()
-        file = re.sub(' xmlns="[^"]+"', '', file, count=1)
+        LOGGER.debug("Opening XML file '%s'", os.path.basename(self.filename))
+        with open(filename, 'r') as raw_file:
+            xml_file = raw_file.read()
+        xml_file = re.sub(' xmlns="[^"]+"', '', xml_file, count=1).encode('utf-8')
         xmltree = None
         try:
-            # parse the xml-file
-            xmltree = etree.fromstring(file)
+            xmltree = etree.fromstring(xml_file, parser=XMLReader._PARSER)
         except:
             LOGGER.error("Failure to open XML file!")
         return xmltree
@@ -49,7 +44,7 @@ class XMLDeviceReader:
         try:
             response = self.tree.xpath(query)
         except:
-            LOGGER.error("Query failed for '%s'" % str(query))
+            LOGGER.error("Query failed for '%s'", str(query))
 
         return response
 
@@ -57,29 +52,29 @@ class XMLDeviceReader:
         """
         This wraps the queryTree and returns an (empty) array.
         """
-        LOGGER.debug("Querying for '%s'" % str(query))
-        response = self.queryTree(query)
+        LOGGER.debug("Query for '%s'", str(query))
+        result = self.queryTree(query)
 
-        if response != None:
-            if len(response) == 0:
-                LOGGER.warning("No results found for '%s'" % str(query))
-            return response
+        if result != None:
+            if len(result) == 0:
+                LOGGER.warning("No results found for '%s'", str(query))
+            result = list(set(result))
+            return result
 
         return []
 
-    def addProperty(self, name, value):
-        self.properties.append(Property(self.id, name, value))
-
     def compactQuery(self, query):
+        LOGGER.debug("Compact query for '%s'", str(query))
         result = self.queryTree(query)
+        LOGGER.debug("Compact query result: '%s'", str(result))
         if result != None:
+            if len(result) == 0:
+                LOGGER.debug("No results found for '%s'", str(query))
             result = list(set(result))
-            result.sort()
         return result
-
 
     def __repr__(self):
         return self.__str__()
 
     def __str__(self):
-        return "XMLDeviceReader({}, [\n{}])".format(os.path.basename(self.file), ",\n".join(map(str, self.properties)))
+        return "XMLReader({}, [\n{}])".format(os.path.basename(self.filename), ",\n".join(map(str, self.properties)))

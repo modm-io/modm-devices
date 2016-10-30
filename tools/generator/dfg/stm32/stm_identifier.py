@@ -1,0 +1,37 @@
+# -*- coding: utf-8 -*-
+# Copyright (c) 2013     , Kevin Läufer
+# Copyright (c) 2013-2014, Niklas Hauser
+# Copyright (c)      2016, Fabian Greif
+# All rights reserved.
+
+import re
+import logging
+
+from modm.device_identifier import DeviceIdentifier
+
+LOGGER = logging.getLogger("dfg.stm.identifier")
+
+class STMIdentifier:
+    """ STMIdentifier
+    A class to parse STM device strings, e.g. "stm32f407vg".
+    """
+    @staticmethod
+    def from_string(string):
+        i = DeviceIdentifier()
+        i.naming_schema = "{platform}f{name}{pin}{size}{package}"
+        string = string.lower()
+
+        if string.startswith("stm32f"):
+            i["platform"] = "stm32"
+            i["family"] = string[5:7]
+            i["name"] = string[6:9]
+            if len(string) >= 10:
+                i["pin"] = string[9]
+            if len(string) >= 11:
+                i["size"] = string[10]
+            if len(string) >= 12:
+                i["package"] = string[11]
+            return i
+
+        LOGGER.error("Parse Error: unknown platform. Device string: %" % (string))
+        exit(1)
