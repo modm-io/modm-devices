@@ -1,92 +1,65 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+#
+# Copyright (c) 2016, Fabian Greif
+# Copyright (c) 2016, Niklas Hauser
+# All rights reserved.
 
 from collections import defaultdict
 
-import modm.name
-import modm.device
+from modm.device import Device
+from modm.device_identifier import DeviceIdentifier
+from modm.device_identifier import MultiDeviceIdentifier
 
 from .common import ParserException
 
 class DeviceFile:
-
-    # Mapping for the XML attributes to the properties of the device selector
-    _ATTRIBUTE_PROPERTY_MAPPING = {
-        "device-platform": "platform",
-        "device-family": "family",
-        "device-name": "name",
-        "device-type": "type",
-        "device-pin-id": "pin_id",
-        "device-size-id": "size_id",
-    }
+    _DEVICE_ATTRIBUTE_PREFIX = 'device-'
 
     def __init__(self, filename, rootnode):
         self.filename = filename
         self.rootnode = rootnode
 
-    def _get_multi_device_identifier(self, node):
-        identifier = modm.device.MultiDeviceIdentifier()
-        for key in identifier.__dict__:
-            setattr(identifier,
-                    key,
-                    node.attrib.get(key, "").replace("none", "").split('|'))
-        return identifier
+    def _get_multi_device_identifier(self, node, naming_schema):
+        properties = {k:v.split("|") for k,v in node.attrib.items()}
+        return MultiDeviceIdentifier.from_product(properties, naming_schema)
 
     def get_devices(self):
         """
         Return a list of devices which are covered by this device file.
         """
         device_node = self.rootnode.find('device')
-        identifiers = self._get_multi_device_identifier(device_node)
+        naming_schema_string = device_node.find('naming-schema').text
+        identifiers = self._get_multi_device_identifier(device_node, naming_schema_string)
 
         # Not all combinations which can be generated through the
         # naming schema are valid. Grab the list of excluded device names
         # to remove those from the constructed devices.
-        invalid_devices = []
-        for node in device_node.iterfind('invalid-device'):
-            invalid_devices.append(node.text)
-
-        naming_schema_string = device_node.find('naming-schema').text
-        naming_schema = modm.name.Schema.parse(naming_schema_string)
-
-        attributes = identifiers.check_attributes(naming_schema)
-        if len(attributes) > 0:
-            raise ParserException("The following attributes are defined but not used "
-                                  "by the naming schema: '{}'".format("', '".join(attributes)))
-        device_name_list = []
-        for device_identifier in identifiers.get_devices():
-            device = modm.device.Device(device_identifier, naming_schema, self)
-
-            if device.partname not in invalid_devices:
-                device_name_list.append(device)
-
-        return device_name_list
+        invalid_devices = [node.text for node in device_node.iterfind('invalid-device')]
+        return [Device(did, self) for did in identifiers if did.string not in invalid_devices]
 
     @staticmethod
-    def is_valid(node, identifier: modm.device.DeviceIdentifier):
+    def is_valid(node, identifier: DeviceIdentifier):
         """
         Read and removes the selector attributes and match them against the
         device identifier.
-        
+
         Returns:
             True if the selectors match, False otherwise.
         """
-        selector = modm.device.Selector()
-        for attribute_name, property_name in DeviceFile._ATTRIBUTE_PROPERTY_MAPPING.items():
-            value = node.attrib.get(attribute_name, "")
-            values = value.split("|")
-            if len(values) > 1 or values[0] != '':
-                selector.property[property_name] = values
-                del node.attrib[attribute_name]
-        return selector.match(identifier)
+        device_keys = [k for k in node.attrib.keys() if k.startswith(DeviceFile._DEVICE_ATTRIBUTE_PREFIX)]
+        properties = {k.replace(DeviceFile._DEVICE_ATTRIBUTE_PREFIX, ''):node.attrib[k].split("|") for k in device_keys}
+        for k in device_keys:
+            del node.attrib[k]
+        return not any(identifier[key] not in value for key, value in properties.items())
 
-    def get_properties(self, identifier: modm.device.DeviceIdentifier):
+    def get_properties(self, identifier: DeviceIdentifier):
         class Converter:
             """
             Convert XML to a Python dictionary according to
             http://www.xml.com/pub/a/2006/05/31/converting-between-xml-and-json.html
             """
-            def __init__(self, identifier: modm.device.DeviceIdentifier):
+            def __init__(self, identifier: DeviceIdentifier):
                 self.identifier = identifier
 
             def is_valid(self, node):
