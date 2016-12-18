@@ -4,7 +4,7 @@
 <!-- <xsd:import namespace="http://www.w3.org/XML/1998/namespace"
             schemaLocation="http://www.w3.org/2001/xml.xsd" /> -->
 
-<xsd:element name="rca" type="RootType">
+<xsd:element name="modm" type="RootType">
 </xsd:element>
 
 <xsd:complexType name="RootType">
@@ -29,8 +29,10 @@
   <xsd:attribute name="device-family" type="xsd:string" use="optional" />
   <xsd:attribute name="device-name" type="xsd:string" use="optional" />
   <xsd:attribute name="device-type" type="xsd:string" use="optional" />
-  <xsd:attribute name="device-pin-id" type="xsd:string" use="optional" />
-  <xsd:attribute name="device-size-id" type="xsd:string" use="optional" />
+  <xsd:attribute name="device-pin" type="xsd:string" use="optional" />
+  <xsd:attribute name="device-size" type="xsd:string" use="optional" />
+  <xsd:attribute name="device-package" type="xsd:string" use="optional" />
+  <xsd:attribute name="value" type="xsd:string" use="optional" />
 </xsd:complexType>
 
 <xsd:complexType name="AttributeBaseStringType">
@@ -40,8 +42,10 @@
       <xsd:attribute name="device-family" type="xsd:string" use="optional" />
       <xsd:attribute name="device-name" type="xsd:string" use="optional" />
       <xsd:attribute name="device-type" type="xsd:string" use="optional" />
-      <xsd:attribute name="device-pin-id" type="xsd:string" use="optional" />
-      <xsd:attribute name="device-size-id" type="xsd:string" use="optional" />
+      <xsd:attribute name="device-pin" type="xsd:string" use="optional" />
+      <xsd:attribute name="device-size" type="xsd:string" use="optional" />
+      <xsd:attribute name="device-package" type="xsd:string" use="optional" />
+      <xsd:attribute name="value" type="xsd:string" use="optional" />
     </xsd:extension>
   </xsd:simpleContent>
 </xsd:complexType>
@@ -73,12 +77,20 @@
         </xsd:documentation>
       </xsd:annotation>
     </xsd:element>
-    
+    <xsd:element name="valid-device" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+      <xsd:annotation>
+        <xsd:documentation>
+          Not all combinations which can be generated through the
+          naming schema are valid. This tag can be used to include certain
+          device names.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:element>
+
     <xsd:choice maxOccurs="unbounded">
       <xsd:element name="flash" type="AttributeBaseStringType" minOccurs="1" maxOccurs="unbounded" />
       <xsd:element name="ram" type="AttributeBaseStringType" minOccurs="1" maxOccurs="unbounded" />
-      <xsd:element name="core" type="xsd:string" minOccurs="1" maxOccurs="unbounded" />
-      <xsd:element name="pin-count" type="AttributeBaseStringType" minOccurs="1" maxOccurs="unbounded" />
+      <xsd:element name="core" type="AttributeBaseStringType" minOccurs="1" maxOccurs="unbounded" />
       <xsd:element name="eeprom" type="AttributeBaseStringType" minOccurs="0" maxOccurs="unbounded" />
       <xsd:element name="mcu" type="AttributeBaseStringType" minOccurs="0" maxOccurs="unbounded" />
       <xsd:element name="header" type="AttributeBaseStringType" minOccurs="0" maxOccurs="unbounded" />
@@ -86,13 +98,14 @@
       <xsd:element name="driver" type="DriverType" minOccurs="1" maxOccurs="unbounded" />
     </xsd:choice>
   </xsd:sequence>
-  
+
   <xsd:attribute name="platform" type="xsd:string" use="required" />
   <xsd:attribute name="family" type="xsd:string" use="required" />
   <xsd:attribute name="name" type="xsd:string" use="optional" />
   <xsd:attribute name="type" type="xsd:string" use="optional" />
-  <xsd:attribute name="pin_id" type="xsd:string" use="optional" />
-  <xsd:attribute name="size_id" type="xsd:string" use="optional" />
+  <xsd:attribute name="pin" type="xsd:string" use="optional" />
+  <xsd:attribute name="size" type="xsd:string" use="optional" />
+  <xsd:attribute name="package" type="xsd:string" use="optional" />
 </xsd:complexType>
 
 <xsd:complexType name="DriverType">
@@ -105,7 +118,7 @@
         <xsd:element name="vector" type="VectorType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
         <xsd:element name="instance" type="AttributeBaseStringType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
       </xsd:choice>
-      
+
       <xsd:attribute name="type" type="xsd:string" use="required" />
       <xsd:attribute name="compatible" type="xsd:string" use="required" />
     </xsd:extension>
@@ -118,10 +131,10 @@
       <xsd:sequence>
         <xsd:element name="af" type="AlternateFunctionType" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
-      
+
       <xsd:attribute name="port" type="xsd:string" use="required" />
       <xsd:attribute name="id" type="xsd:string" use="required" />
-      
+
       <xsd:attribute name="pcint" type="xsd:string" use="optional" />
       <xsd:attribute name="extint" type="xsd:string" use="optional" />
       <xsd:attribute name="func" type="xsd:string" use="optional" />

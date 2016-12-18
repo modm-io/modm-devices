@@ -45,11 +45,11 @@ class Device:
         parts = name.split(":")
         if len(parts) == 1:
             for driver in self._properties["driver"]:
-                if driver["@type"] == parts[0]:
+                if driver["type"] == parts[0]:
                     return driver
         elif len(parts) == 2:
             for driver in self._properties["driver"]:
-                if driver["@type"] == parts[0] and driver["@compatible"] == parts[1]:
+                if driver["type"] == parts[0] and driver["compatible"] == parts[1]:
                     return driver
         else:
             raise ParserException("Invalid driver name '{}'. "
