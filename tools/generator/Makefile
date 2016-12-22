@@ -2,6 +2,7 @@
 all: generate-avr generate-stm32
 
 generate-avr:
+	rm ../../devices/avr/*
 	./avr_generator.py AT90
 	./avr_generator.py ATtiny
 	./avr_generator.py ATmega

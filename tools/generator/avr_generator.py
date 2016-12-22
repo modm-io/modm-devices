@@ -15,16 +15,22 @@ from dfg.merger import DeviceMerger
 from dfg.avr.avr_device_tree import AVRDeviceTree
 from dfg.avr.avr_groups import avr_groups
 from dfg.output.device_file import DeviceFileWriter
+from modm.parser import DeviceParser
+from deepdiff import DeepDiff
 
 LOGGER = logging.getLogger('dfg.avr')
 
 if __name__ == "__main__":
-    devices = []
+    devices = {}
     loglevel = 'INFO'
     devs = []
     device_depth = 1e6
+    simulate = False
 
     for arg in sys.argv[1:]:
+        if arg.startswith('-n'):
+            simulate = True
+            continue
         if arg.startswith('--log='):
             loglevel = arg.replace('--log=', '')
             continue
@@ -36,23 +42,20 @@ if __name__ == "__main__":
     dfg.logger.configure_logger(loglevel)
 
     for dev in devs:
-        xml_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'AVR_devices', (dev + '*'))
+        xml_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'AVR_devices', '*', (dev + '*'))
         files = glob.glob(xml_path)
         for filename in files:
-            # ATtiny28 is missing data, which is required by the device reader,
-            # which makes us exclude this device.
-            if os.path.basename(filename) != "ATtiny28.xml":
-                device = AVRDeviceTree.from_file(filename)
-                devices.append(device)
-                if device_depth > 0:
-                    device_depth -= 1
-                else:
-                    print(device.toString())
-                    exit(1)
+            device = AVRDeviceTree.from_file(filename)
+            if device is None: continue;
+            devices[device.ids.string] = device
+            if device_depth > 0:
+                device_depth -= 1
+            else:
+                print(device.toString())
+                exit(1)
 
-    mergedDevices = DeviceMerger.merge(avr_groups, devices)
+    mergedDevices = DeviceMerger.merge(avr_groups, [d.copy() for d in devices.values()])
 
-    folder = os.path.join(os.path.dirname(__file__), '..', '..', 'devices', 'avr')
     def filename(ids):
         p = {}
         for k in ids.keys():
@@ -63,7 +66,6 @@ if __name__ == "__main__":
             if k in ['type', 'pin']: v.sort();
             if len(v) > 0:
                 p[k] = "_".join(v)
-
         fmt = "at{family}"
         index = DeviceMerger._get_index_for_id(avr_groups, ids[0])
         if index == -1:
@@ -78,6 +80,31 @@ if __name__ == "__main__":
                 fmt += "-{pin}"
         return fmt.format(**p)
 
+    folder = os.path.join(os.path.dirname(__file__), '..', '..', 'devices', 'avr')
+    parser = DeviceParser()
+    parsed_devices = {}
     for dev in mergedDevices:
-        DeviceFileWriter.write(dev, folder, filename)
-        # print(dev.toString())
+        # dump the merged device file into the devices folder
+        path = DeviceFileWriter.write(dev, folder, filename)
+        # immediately parse this file
+        device_file = parser.parse(path)
+        for device in device_file.get_devices():
+            # and extract all the devices from it
+            parsed_devices[device.partname] = device
+
+    tmp_folder = os.path.join(os.path.dirname(__file__), 'single')
+    os.makedirs(tmp_folder, exist_ok=True)
+    for pname, pdevice in parsed_devices.items():
+        # these are the properties from the merged device
+        pprops = pdevice.properties
+        # dump the associated single device
+        rpath = DeviceFileWriter.write(devices[pname], tmp_folder, lambda ids: ids.string)
+        # parse it again
+        rdevice_file = parser.parse(rpath)
+        rdevice = rdevice_file.get_devices()
+        assert(len(rdevice) == 1)
+        # these are the properties of the single device
+        rprops = rdevice[0].properties
+        ddiff = DeepDiff(rprops, pprops, ignore_order=True)
+        # assert that there is no difference between the two
+        assert(len(ddiff) == 0)

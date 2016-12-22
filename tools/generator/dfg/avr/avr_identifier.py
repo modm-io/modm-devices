@@ -45,7 +45,8 @@ class AVRIdentifier:
                         if match.group("type") != "":
                             i["type"] = match.group("type").lower()
                         if match.group("package") != "":
-                            i["pin-id"] = match.group("package").lower()
+                            i["pin"] = match.group("package").lower()
+                            i.naming_schema = i.naming_schema + "-{pin}"
                         return i
 
                 elif i["family"] == "xmega":
