@@ -52,24 +52,24 @@ class XMLReader:
         """
         This wraps the queryTree and returns an (empty) array.
         """
-        LOGGER.debug("Query for '%s'", str(query))
+        # LOGGER.debug("Query for '%s'", str(query))
         result = self.queryTree(query)
 
         if result != None:
-            if len(result) == 0:
-                LOGGER.warning("No results found for '%s'", str(query))
+            # if len(result) == 0:
+            #     LOGGER.warning("No results found for '%s'", str(query))
             result = list(set(result))
             return result
 
         return []
 
     def compactQuery(self, query):
-        LOGGER.debug("Compact query for '%s'", str(query))
+        # LOGGER.debug("Compact query for '%s'", str(query))
         result = self.queryTree(query)
-        LOGGER.debug("Compact query result: '%s'", str(result))
+        # LOGGER.debug("Compact query result: '%s'", str(result))
         if result != None:
-            if len(result) == 0:
-                LOGGER.debug("No results found for '%s'", str(query))
+            # if len(result) == 0:
+            #     LOGGER.debug("No results found for '%s'", str(query))
             result = list(set(result))
         return result
 

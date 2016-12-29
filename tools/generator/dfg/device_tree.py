@@ -96,7 +96,11 @@ class DeviceTree:
 
     def _sortTree(self):
         for key in self.sortKeys:
-            self.children.sort(key=key)
+            try:
+                self.children.sort(key=key)
+            except Exception as e:
+                print(e, self.children, key)
+                exit(1)
         for ch in self.children:
             ch._sortTree()
 

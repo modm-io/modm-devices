@@ -87,11 +87,12 @@ class DeviceFileWriter:
     @staticmethod
     def write(tree, folder, name):
         path = os.path.join(folder, name(tree.ids) + '.xml')
+        content = DeviceFileWriter.format(tree).decode('utf-8')
+
         if os.path.exists(path):
             LOGGER.warning("Overwriting file '%s'", os.path.basename(path))
         else:
             LOGGER.info("New XML file: '%s'", os.path.basename(path))
-
         with open(path, 'w') as device_file:
-            device_file.write(DeviceFileWriter.format(tree).decode('utf-8'))
+            device_file.write(content)
         return path
