@@ -26,15 +26,15 @@
     <ram device-size="d|e" value="65536"/>
     <core value="cortex-m4f"/>
     <header value="stm32f3xx.h"/>
-    <define device-size="b" device-pin="c|r|v" device-package="t" value="STM32F302xC"/>
+    <define device-size="b|c" device-pin="c|r|v" device-package="t" value="STM32F302xC"/>
     <define device-size="d|e" value="STM32F302xE"/>
     <driver type="core" compatible="cortex">
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="128"/>
-      <memory device-pin="c|r|v" device-package="t" name="flash" access="rx" start="0x8000000" size="256"/>
+      <memory device-pin="c|r|v" device-size="c" name="flash" access="rx" start="0x8000000" size="256"/>
       <memory device-size="d" name="flash" access="rx" start="0x8000000" size="384"/>
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="512"/>
       <memory device-size="b" name="sram1" access="rwx" start="0x20000000" size="32"/>
-      <memory device-pin="c|r|v" device-package="t" name="sram1" access="rwx" start="0x20000000" size="40"/>
+      <memory device-pin="c|r|v" device-size="c" name="sram1" access="rwx" start="0x20000000" size="40"/>
       <memory device-size="d|e" name="sram1" access="rwx" start="0x20000000" size="64"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD"/>
@@ -110,7 +110,7 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver type="fsmc" compatible="stm32"/>
+    <driver device-size="d|e" type="fsmc" compatible="stm32"/>
     <driver type="i2c" compatible="stm32f3">
       <instance value="1"/>
       <instance value="2"/>

@@ -79,7 +79,6 @@
     <driver type="dma" compatible="stm32">
       <instance value="1"/>
     </driver>
-    <driver type="fsmc" compatible="stm32"/>
     <driver type="i2c" compatible="stm32f3">
       <instance value="1"/>
     </driver>

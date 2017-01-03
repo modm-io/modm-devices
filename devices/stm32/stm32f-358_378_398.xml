@@ -129,7 +129,7 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver type="fsmc" compatible="stm32"/>
+    <driver device-name="398" type="fsmc" compatible="stm32"/>
     <driver type="i2c" compatible="stm32f3">
       <instance value="1"/>
       <instance value="2"/>
