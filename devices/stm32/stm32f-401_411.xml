@@ -114,13 +114,11 @@
     <driver type="adc" compatible="stm32">
       <instance value="1"/>
     </driver>
-    <driver type="can" compatible="stm32"/>
     <driver type="clock" compatible="stm32"/>
     <driver type="dma" compatible="stm32">
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver type="fsmc" compatible="stm32"/>
     <driver type="i2c" compatible="stm32">
       <instance value="1"/>
       <instance value="2"/>

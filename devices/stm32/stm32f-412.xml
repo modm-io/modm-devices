@@ -121,7 +121,7 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver type="fsmc" compatible="stm32"/>
+    <driver device-pin="r|v|z" type="fsmc" compatible="stm32"/>
     <driver type="i2c" compatible="stm32">
       <instance value="1"/>
       <instance value="2"/>
@@ -139,7 +139,7 @@
     <driver type="spi" compatible="stm32_uart">
       <instance value="1"/>
       <instance value="2"/>
-      <instance value="3"/>
+      <instance device-pin="r|v|z" value="3"/>
       <instance value="6"/>
     </driver>
     <driver type="timer" compatible="stm32">
@@ -161,7 +161,7 @@
     <driver type="uart" compatible="stm32">
       <instance value="1"/>
       <instance value="2"/>
-      <instance value="3"/>
+      <instance device-pin="r|v|z" value="3"/>
       <instance value="6"/>
     </driver>
     <driver type="usb" compatible="stm32_fs"/>
