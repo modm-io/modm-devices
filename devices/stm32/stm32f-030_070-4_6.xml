@@ -45,12 +45,10 @@
       <vector device-name="070" position="31" name="USB"/>
     </driver>
     <driver type="adc" compatible="stm32f0"/>
-    <driver type="can" compatible="stm32"/>
     <driver type="clock" compatible="stm32"/>
     <driver type="dma" compatible="stm32">
       <instance value="1"/>
     </driver>
-    <driver type="fsmc" compatible="stm32"/>
     <driver type="i2c" compatible="stm32f0">
       <instance value="1"/>
     </driver>

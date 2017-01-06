@@ -75,7 +75,6 @@
       <instance value="1"/>
       <instance device-name="098" value="2"/>
     </driver>
-    <driver type="fsmc" compatible="stm32"/>
     <driver type="i2c" compatible="stm32f0">
       <instance value="1"/>
       <instance value="2"/>

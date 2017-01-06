@@ -70,7 +70,7 @@
       <vector position="30" name="CEC_CAN"/>
     </driver>
     <driver type="adc" compatible="stm32f0"/>
-    <driver type="can" compatible="stm32">
+    <driver device-name="091" type="can" compatible="stm32">
       <instance device-name="091" value="1"/>
     </driver>
     <driver type="clock" compatible="stm32"/>
@@ -78,7 +78,6 @@
       <instance value="1"/>
       <instance device-name="091" value="2"/>
     </driver>
-    <driver type="fsmc" compatible="stm32"/>
     <driver type="i2c" compatible="stm32f0">
       <instance value="1"/>
       <instance value="2"/>
