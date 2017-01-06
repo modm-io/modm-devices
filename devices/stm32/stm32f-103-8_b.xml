@@ -83,7 +83,6 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver type="fsmc" compatible="stm32"/>
     <driver type="i2c" compatible="stm32">
       <instance value="1"/>
       <instance device-pin="c|r|v" value="2"/>
