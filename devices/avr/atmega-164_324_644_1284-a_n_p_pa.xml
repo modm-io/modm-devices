@@ -32,10 +32,14 @@
     <driver type="adc" compatible="avr"/>
     <driver type="clock" compatible="avr"/>
     <driver type="i2c" compatible="avr"/>
-    <driver type="spi" compatible="avr"/>
+    <driver type="spi" compatible="avr">
+        <instance device-name="324" value="0"/>
+        <instance device-name="164" device-type="pa" value="0"/>
+    </driver>
     <driver type="spi" compatible="avr_uart">
       <instance value="0"/>
-      <instance value="1"/>
+      <instance device-name="164|324|1284" value="1"/>
+      <instance device-name="644" device-type="a|p|pa" value="1"/>
     </driver>
     <driver type="timer" compatible="mega">
       <instance value="0"/>
@@ -45,7 +49,8 @@
     </driver>
     <driver type="uart" compatible="avr">
       <instance value="0"/>
-      <instance value="1"/>
+      <instance device-name="164|324|1284" value="1"/>
+      <instance device-name="644" device-type="a|p|pa" value="1"/>
     </driver>
     <driver type="gpio" compatible="avr">
       <gpio port="A" id="0" pcint="0"/>

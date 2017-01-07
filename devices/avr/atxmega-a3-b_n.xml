@@ -48,7 +48,6 @@
       <instance value="E0"/>
       <instance device-pin="" value="E1"/>
       <instance value="F0"/>
-      <instance value="F1"/>
     </driver>
     <driver type="timer" compatible="xmega">
       <instance value="C0"/>
@@ -67,7 +66,6 @@
       <instance value="E0"/>
       <instance device-pin="" value="E1"/>
       <instance value="F0"/>
-      <instance value="F1"/>
     </driver>
     <driver type="gpio" compatible="xmega">
       <gpio port="A" id="0"/>
