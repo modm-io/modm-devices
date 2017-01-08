@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2016, Fabian Greif
+# Copyright (c) 2016-2017, Fabian Greif
 # Copyright (c) 2016, Niklas Hauser
 # All rights reserved.
+
+import lxml.etree
 
 from collections import defaultdict
 
@@ -72,6 +74,9 @@ class DeviceFile:
                 return DeviceFile.is_valid(node, self.identifier)
 
             def to_dict(self, t):
+                if isinstance(t, lxml.etree._Comment):
+                    # Remove comments in the XML file from the generated dict.
+                    return {}
                 d = {t.tag: {} if t.attrib else None}
                 children = []
                 for c in t:
