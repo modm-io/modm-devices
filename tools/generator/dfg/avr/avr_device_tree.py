@@ -312,9 +312,9 @@ class AVRDeviceTree:
         LOGGER.info(("Generating Device Tree for '%s'" % p['id'].string))
 
         def topLevelOrder(e):
-            order = ['flash', 'ram', 'eeprom', 'core', 'mcu', 'header', 'define']
+            order = ['attribute-flash', 'attribute-ram', 'attribute-eeprom', 'attribute-core', 'attribute-mcu', 'header', 'attribute-define']
             if e.name in order:
-                if e.name in ['flash', 'eeprom', 'ram']:
+                if e.name in ['attribute-flash', 'attribute-eeprom', 'attribute-ram']:
                     return (order.index(e.name), int(e['value']))
                 else:
                     return (order.index(e.name), e['value'])
@@ -332,11 +332,11 @@ class AVRDeviceTree:
                 LOGGER.warning("IO not found for device '%s' with pin-name: '%s'", p['id'].string, pin_name)
         p['io'] = io
 
-        AVRDeviceTree.addDeviceAttributesToNode(p, tree, 'flash')
-        AVRDeviceTree.addDeviceAttributesToNode(p, tree, 'ram')
-        AVRDeviceTree.addDeviceAttributesToNode(p, tree, 'eeprom')
-        AVRDeviceTree.addDeviceAttributesToNode(p, tree, 'core')
-        AVRDeviceTree.addDeviceAttributesToNode(p, tree, 'mcu')
+        AVRDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-flash')
+        AVRDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-ram')
+        AVRDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-eeprom')
+        AVRDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-core')
+        AVRDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-mcu')
 
         def driverOrder(e):
             if e.name == 'driver':
@@ -380,8 +380,9 @@ class AVRDeviceTree:
 
     @staticmethod
     def addDeviceAttributesToNode(p, node, name):
-        if name not in p: return;
-        props = p[name]
+        pname = name.split('-')[-1]
+        if pname not in p: return;
+        props = p[pname]
         if not isinstance(props, list):
             props = [props]
         for prop in props:

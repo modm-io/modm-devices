@@ -88,13 +88,13 @@
     </xsd:element>
 
     <xsd:choice maxOccurs="unbounded">
-      <xsd:element name="flash" type="AttributeBaseStringType" minOccurs="1" maxOccurs="unbounded" />
-      <xsd:element name="ram" type="AttributeBaseStringType" minOccurs="1" maxOccurs="unbounded" />
-      <xsd:element name="core" type="AttributeBaseStringType" minOccurs="1" maxOccurs="unbounded" />
-      <xsd:element name="eeprom" type="AttributeBaseStringType" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="mcu" type="AttributeBaseStringType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="attribute-flash" type="AttributeBaseStringType" minOccurs="1" maxOccurs="unbounded" />
+      <xsd:element name="attribute-ram" type="AttributeBaseStringType" minOccurs="1" maxOccurs="unbounded" />
+      <xsd:element name="attribute-eeprom" type="AttributeBaseStringType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="attribute-mcu" type="AttributeBaseStringType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="attribute-core" type="AttributeBaseStringType" minOccurs="1" maxOccurs="unbounded" />
       <xsd:element name="header" type="AttributeBaseStringType" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="define" type="AttributeBaseStringType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="attribute-define" type="AttributeBaseStringType" minOccurs="0" maxOccurs="unbounded" />
       <xsd:element name="driver" type="DriverType" minOccurs="1" maxOccurs="unbounded" />
     </xsd:choice>
   </xsd:sequence>

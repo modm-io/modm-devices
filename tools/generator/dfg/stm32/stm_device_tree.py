@@ -168,7 +168,7 @@ class STMDeviceTree:
         # I have not found a way to extract the correct vector _position_ from the ST device files
         # so we have to swallow our pride and just parse the header file
         # ext/cmsis/stm32/Device/ST/STM32F4xx/Include/
-        headerFilePath = os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', '..', 'xpcc', 'ext', 'st', 'stm32{}xx'.format(did["family"]), 'Include', '{}.h'.format(dev_def.lower()))
+        headerFilePath = os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', '..', 'modm', 'ext', 'st', 'stm32{}xx'.format(did["family"]), 'Include', '{}.h'.format(dev_def.lower()))
         with open(headerFilePath, 'r') as headerFile:
             match = re.search("typedef enum.*?/\*\*.*?/\*\*.*?\*/(?P<table>.*?)} IRQn_Type;", headerFile.read(), re.DOTALL)
             if not match:
@@ -440,21 +440,21 @@ class STMDeviceTree:
         LOGGER.info(("Generating Device Tree for '%s'" % p['id'].string))
 
         def topLevelOrder(e):
-            order = ['flash', 'ram', 'core', 'header', 'define']
+            order = ['attribute-flash', 'attribute-ram', 'attribute-core', 'header', 'attribute-define']
             if e.name in order:
-                if e.name in ['flash', 'ram']:
+                if e.name in ['attribute-flash', 'attribute-ram']:
                     return (order.index(e.name), int(e['value']))
                 else:
                     return (order.index(e.name), e['value'])
             return (len(order), -1)
         tree.addSortKey(topLevelOrder)
 
-        STMDeviceTree.addDeviceAttributesToNode(p, tree, 'flash')
-        STMDeviceTree.addDeviceAttributesToNode(p, tree, 'ram')
-        STMDeviceTree.addDeviceAttributesToNode(p, tree, 'core')
-        # STMDeviceTree.addDeviceAttributesToNode(p, tree, 'pin-count')
+        STMDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-flash')
+        STMDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-ram')
+        STMDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-core')
+        # STMDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-pin-count')
         STMDeviceTree.addDeviceAttributesToNode(p, tree, 'header')
-        STMDeviceTree.addDeviceAttributesToNode(p, tree, 'define')
+        STMDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-define')
 
         def driverOrder(e):
             if e.name == 'driver':
@@ -530,7 +530,8 @@ class STMDeviceTree:
 
     @staticmethod
     def addDeviceAttributesToNode(p, node, name):
-        props = p[name]
+        pname = name.split('-')[-1]
+        props = p[pname]
         if not isinstance(props, list):
             props = [props]
         for prop in props:
