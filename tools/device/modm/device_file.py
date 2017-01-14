@@ -64,8 +64,6 @@ class DeviceFile:
     def get_properties(self, identifier: DeviceIdentifier):
         class Converter:
             """
-            Convert XML to a Python dictionary according to
-            http://www.xml.com/pub/a/2006/05/31/converting-between-xml-and-json.html
             """
             def __init__(self, identifier: DeviceIdentifier):
                 self.identifier = identifier
@@ -87,7 +85,16 @@ class DeviceFile:
                     for dc in map(self.to_dict, children):
                         for k, v in dc.items():
                             dd[k].append(v)
-                    d = {t.tag: {k:v[0] if len(v) == 1 else v for k, v in dd.items()}}
+                    pname = 'attribute-'
+                    dk = {}
+                    for k, v in dd.items():
+                        if k.startswith(pname):
+                            if len(v) > 1:
+                                raise ParserException("Attribute '{}' cannot be a list!".format(k))
+                            k = k.replace(pname, '')
+                            v = v[0]
+                        dk[k] = v
+                    d = {t.tag: dk}
                 if t.attrib.keys() == ['value']:
                     d[t.tag] = t.attrib['value']
                 elif t.attrib:
