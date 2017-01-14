@@ -4,15 +4,15 @@
   <device platform="avr" family="tiny" name="2313|4313" type="|a">
     <naming-schema>at{family}{name}{type}</naming-schema>
     <invalid-device>attiny4313a</invalid-device>
-    <flash device-name="2313" value="2048"/>
-    <flash device-name="4313" value="4096"/>
-    <ram device-name="2313" value="128"/>
-    <ram device-name="4313" value="256"/>
-    <eeprom device-name="2313" value="128"/>
-    <eeprom device-name="4313" value="256"/>
-    <core value="avr8"/>
-    <mcu device-name="2313" value="t2313"/>
-    <mcu device-name="4313" value="t4313"/>
+    <attribute-flash device-name="2313" value="2048"/>
+    <attribute-flash device-name="4313" value="4096"/>
+    <attribute-ram device-name="2313" value="128"/>
+    <attribute-ram device-name="4313" value="256"/>
+    <attribute-eeprom device-name="2313" value="128"/>
+    <attribute-eeprom device-name="4313" value="256"/>
+    <attribute-core value="avr8"/>
+    <attribute-mcu device-name="2313" value="t2313"/>
+    <attribute-mcu device-name="4313" value="t4313"/>
     <driver type="core" compatible="avr"/>
     <driver type="clock" compatible="avr"/>
     <driver type="spi" compatible="avr_uart">

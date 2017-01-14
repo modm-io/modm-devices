@@ -33,18 +33,18 @@
     <valid-device>stm32f411vct</valid-device>
     <valid-device>stm32f411veh</valid-device>
     <valid-device>stm32f411vet</valid-device>
-    <flash device-size="b" value="131072"/>
-    <flash device-size="c" value="262144"/>
-    <flash device-size="d" value="393216"/>
-    <flash device-size="e" value="524288"/>
-    <ram device-name="401" device-size="b|c" value="65536"/>
-    <ram device-name="401" device-size="d|e" value="98304"/>
-    <ram device-name="411" value="131072"/>
-    <core value="cortex-m4f"/>
+    <attribute-flash device-size="b" value="131072"/>
+    <attribute-flash device-size="c" value="262144"/>
+    <attribute-flash device-size="d" value="393216"/>
+    <attribute-flash device-size="e" value="524288"/>
+    <attribute-ram device-name="401" device-size="b|c" value="65536"/>
+    <attribute-ram device-name="401" device-size="d|e" value="98304"/>
+    <attribute-ram device-name="411" value="131072"/>
+    <attribute-core value="cortex-m4f"/>
     <header value="stm32f4xx.h"/>
-    <define device-name="401" device-size="b|c" value="STM32F401xC"/>
-    <define device-name="401" device-size="d|e" value="STM32F401xE"/>
-    <define device-name="411" value="STM32F411xE"/>
+    <attribute-define device-name="401" device-size="b|c" value="STM32F401xC"/>
+    <attribute-define device-name="401" device-size="d|e" value="STM32F401xE"/>
+    <attribute-define device-name="411" value="STM32F411xE"/>
     <driver type="core" compatible="cortex">
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="128"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="256"/>

@@ -5,12 +5,12 @@
     <naming-schema>{platform}f{name}{pin}{size}{package}</naming-schema>
     <invalid-device>stm32f100c4h</invalid-device>
     <invalid-device>stm32f100c6h</invalid-device>
-    <flash device-size="4" value="16384"/>
-    <flash device-size="6" value="32768"/>
-    <ram value="4096"/>
-    <core value="cortex-m3"/>
+    <attribute-flash device-size="4" value="16384"/>
+    <attribute-flash device-size="6" value="32768"/>
+    <attribute-ram value="4096"/>
+    <attribute-core value="cortex-m3"/>
     <header value="stm32f1xx.h"/>
-    <define value="STM32F100xB"/>
+    <attribute-define value="STM32F100xB"/>
     <driver type="core" compatible="cortex">
       <memory device-size="4" name="flash" access="rx" start="0x8000000" size="16"/>
       <memory device-size="6" name="flash" access="rx" start="0x8000000" size="32"/>

@@ -7,12 +7,12 @@
     <invalid-device>stm32f100cbh</invalid-device>
     <invalid-device>stm32f100v8h</invalid-device>
     <invalid-device>stm32f100vbh</invalid-device>
-    <flash device-size="8" value="65536"/>
-    <flash device-size="b" value="131072"/>
-    <ram value="8192"/>
-    <core value="cortex-m3"/>
+    <attribute-flash device-size="8" value="65536"/>
+    <attribute-flash device-size="b" value="131072"/>
+    <attribute-ram value="8192"/>
+    <attribute-core value="cortex-m3"/>
     <header value="stm32f1xx.h"/>
-    <define value="STM32F100xB"/>
+    <attribute-define value="STM32F100xB"/>
     <driver type="core" compatible="cortex">
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="64"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="128"/>

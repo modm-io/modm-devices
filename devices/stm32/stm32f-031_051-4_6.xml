@@ -23,14 +23,14 @@
     <valid-device>stm32f051k6u</valid-device>
     <valid-device>stm32f051r4t</valid-device>
     <valid-device>stm32f051r6t</valid-device>
-    <flash device-size="4" value="16384"/>
-    <flash device-size="6" value="32768"/>
-    <ram device-name="031" value="4096"/>
-    <ram device-name="051" value="8192"/>
-    <core value="cortex-m0"/>
+    <attribute-flash device-size="4" value="16384"/>
+    <attribute-flash device-size="6" value="32768"/>
+    <attribute-ram device-name="031" value="4096"/>
+    <attribute-ram device-name="051" value="8192"/>
+    <attribute-core value="cortex-m0"/>
     <header value="stm32f0xx.h"/>
-    <define device-name="031" value="STM32F031x6"/>
-    <define device-name="051" value="STM32F051x8"/>
+    <attribute-define device-name="031" value="STM32F031x6"/>
+    <attribute-define device-name="051" value="STM32F051x8"/>
     <driver type="core" compatible="cortex">
       <memory device-size="4" name="flash" access="rx" start="0x8000000" size="16"/>
       <memory device-size="6" name="flash" access="rx" start="0x8000000" size="32"/>

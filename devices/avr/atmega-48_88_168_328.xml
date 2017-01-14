@@ -5,25 +5,25 @@
     <naming-schema>at{family}{name}{type}</naming-schema>
     <invalid-device>atmega328a</invalid-device>
     <invalid-device>atmega328pa</invalid-device>
-    <flash device-name="48" value="4096"/>
-    <flash device-name="88" value="8192"/>
-    <flash device-name="168" value="16384"/>
-    <flash device-name="328" value="32768"/>
-    <ram device-name="48" value="512"/>
-    <ram device-name="88|168" value="1024"/>
-    <ram device-name="328" value="2048"/>
-    <eeprom device-name="48" value="256"/>
-    <eeprom device-name="88|168" value="512"/>
-    <eeprom device-name="328" value="1024"/>
-    <core value="avr8"/>
-    <mcu device-type="|a" device-name="168" value="m168"/>
-    <mcu device-name="168" device-type="p|pa" value="m168p"/>
-    <mcu device-type="" device-name="328" value="m328"/>
-    <mcu device-name="328" device-type="p" value="m328p"/>
-    <mcu device-type="|a" device-name="48" value="m48"/>
-    <mcu device-name="48" device-type="p|pa" value="m48p"/>
-    <mcu device-type="|a" device-name="88" value="m88"/>
-    <mcu device-name="88" device-type="p|pa" value="m88p"/>
+    <attribute-flash device-name="48" value="4096"/>
+    <attribute-flash device-name="88" value="8192"/>
+    <attribute-flash device-name="168" value="16384"/>
+    <attribute-flash device-name="328" value="32768"/>
+    <attribute-ram device-name="48" value="512"/>
+    <attribute-ram device-name="88|168" value="1024"/>
+    <attribute-ram device-name="328" value="2048"/>
+    <attribute-eeprom device-name="48" value="256"/>
+    <attribute-eeprom device-name="88|168" value="512"/>
+    <attribute-eeprom device-name="328" value="1024"/>
+    <attribute-core value="avr8"/>
+    <attribute-mcu device-type="|a" device-name="168" value="m168"/>
+    <attribute-mcu device-name="168" device-type="p|pa" value="m168p"/>
+    <attribute-mcu device-type="" device-name="328" value="m328"/>
+    <attribute-mcu device-name="328" device-type="p" value="m328p"/>
+    <attribute-mcu device-type="|a" device-name="48" value="m48"/>
+    <attribute-mcu device-name="48" device-type="p|pa" value="m48p"/>
+    <attribute-mcu device-type="|a" device-name="88" value="m88"/>
+    <attribute-mcu device-name="88" device-type="p|pa" value="m88p"/>
     <driver type="core" compatible="avr"/>
     <driver type="adc" compatible="avr"/>
     <driver type="clock" compatible="avr"/>

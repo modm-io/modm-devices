@@ -4,16 +4,16 @@
   <device platform="avr" family="mega" name="3290|6490" type="|a|p|pa">
     <naming-schema>at{family}{name}{type}</naming-schema>
     <invalid-device>atmega6490pa</invalid-device>
-    <flash device-name="3290" value="32768"/>
-    <flash device-name="6490" value="65536"/>
-    <ram device-name="3290" value="2048"/>
-    <ram device-name="6490" value="4096"/>
-    <eeprom device-name="3290" value="1024"/>
-    <eeprom device-name="6490" value="2048"/>
-    <core value="avr8"/>
-    <mcu device-type="|a" device-name="3290" value="m3290"/>
-    <mcu device-name="3290" device-type="p|pa" value="m3290p"/>
-    <mcu device-name="6490" value="m6490"/>
+    <attribute-flash device-name="3290" value="32768"/>
+    <attribute-flash device-name="6490" value="65536"/>
+    <attribute-ram device-name="3290" value="2048"/>
+    <attribute-ram device-name="6490" value="4096"/>
+    <attribute-eeprom device-name="3290" value="1024"/>
+    <attribute-eeprom device-name="6490" value="2048"/>
+    <attribute-core value="avr8"/>
+    <attribute-mcu device-type="|a" device-name="3290" value="m3290"/>
+    <attribute-mcu device-name="3290" device-type="p|pa" value="m3290p"/>
+    <attribute-mcu device-name="6490" value="m6490"/>
     <driver type="core" compatible="avr"/>
     <driver type="adc" compatible="avr"/>
     <driver type="clock" compatible="avr"/>

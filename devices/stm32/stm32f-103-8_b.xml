@@ -17,12 +17,12 @@
     <valid-device>stm32f103vbh</valid-device>
     <valid-device>stm32f103vbi</valid-device>
     <valid-device>stm32f103vbt</valid-device>
-    <flash device-size="8" value="65536"/>
-    <flash device-size="b" value="131072"/>
-    <ram value="20480"/>
-    <core value="cortex-m3"/>
+    <attribute-flash device-size="8" value="65536"/>
+    <attribute-flash device-size="b" value="131072"/>
+    <attribute-ram value="20480"/>
+    <attribute-core value="cortex-m3"/>
     <header value="stm32f1xx.h"/>
-    <define value="STM32F103xB"/>
+    <attribute-define value="STM32F103xB"/>
     <driver type="core" compatible="cortex">
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="64"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="128"/>

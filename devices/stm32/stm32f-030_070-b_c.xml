@@ -7,14 +7,14 @@
     <valid-device>stm32f030rct</valid-device>
     <valid-device>stm32f070cbt</valid-device>
     <valid-device>stm32f070rbt</valid-device>
-    <flash device-name="070" value="131072"/>
-    <flash device-name="030" value="262144"/>
-    <ram device-name="070" value="16384"/>
-    <ram device-name="030" value="32768"/>
-    <core value="cortex-m0"/>
+    <attribute-flash device-name="070" value="131072"/>
+    <attribute-flash device-name="030" value="262144"/>
+    <attribute-ram device-name="070" value="16384"/>
+    <attribute-ram device-name="030" value="32768"/>
+    <attribute-core value="cortex-m0"/>
     <header value="stm32f0xx.h"/>
-    <define device-name="030" value="STM32F030xC"/>
-    <define device-name="070" value="STM32F070xB"/>
+    <attribute-define device-name="030" value="STM32F030xC"/>
+    <attribute-define device-name="070" value="STM32F070xB"/>
     <driver type="core" compatible="cortex">
       <memory device-name="070" name="flash" access="rx" start="0x8000000" size="128"/>
       <memory device-name="030" name="flash" access="rx" start="0x8000000" size="256"/>

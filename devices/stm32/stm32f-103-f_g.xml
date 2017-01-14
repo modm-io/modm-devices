@@ -7,12 +7,12 @@
     <invalid-device>stm32f103rgh</invalid-device>
     <invalid-device>stm32f103vfh</invalid-device>
     <invalid-device>stm32f103vgh</invalid-device>
-    <flash device-size="f" value="786432"/>
-    <flash device-size="g" value="1048576"/>
-    <ram value="98304"/>
-    <core value="cortex-m3"/>
+    <attribute-flash device-size="f" value="786432"/>
+    <attribute-flash device-size="g" value="1048576"/>
+    <attribute-ram value="98304"/>
+    <attribute-core value="cortex-m3"/>
     <header value="stm32f1xx.h"/>
-    <define value="STM32F103xG"/>
+    <attribute-define value="STM32F103xG"/>
     <driver type="core" compatible="cortex">
       <memory device-size="f" name="flash" access="rx" start="0x8000000" size="768"/>
       <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1024"/>

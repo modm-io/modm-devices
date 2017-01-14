@@ -4,15 +4,15 @@
   <device platform="avr" family="mega" name="3250|6450" type="|a|p|pa">
     <naming-schema>at{family}{name}{type}</naming-schema>
     <invalid-device>atmega6450pa</invalid-device>
-    <flash device-name="3250" value="32768"/>
-    <flash device-name="6450" value="65536"/>
-    <ram device-name="3250" value="2048"/>
-    <ram device-name="6450" value="4096"/>
-    <eeprom device-name="3250" value="1024"/>
-    <eeprom device-name="6450" value="2048"/>
-    <core value="avr8"/>
-    <mcu device-name="3250" value="m3250"/>
-    <mcu device-name="6450" value="m6450"/>
+    <attribute-flash device-name="3250" value="32768"/>
+    <attribute-flash device-name="6450" value="65536"/>
+    <attribute-ram device-name="3250" value="2048"/>
+    <attribute-ram device-name="6450" value="4096"/>
+    <attribute-eeprom device-name="3250" value="1024"/>
+    <attribute-eeprom device-name="6450" value="2048"/>
+    <attribute-core value="avr8"/>
+    <attribute-mcu device-name="3250" value="m3250"/>
+    <attribute-mcu device-name="6450" value="m6450"/>
     <driver type="core" compatible="avr"/>
     <driver type="adc" compatible="avr"/>
     <driver type="clock" compatible="avr"/>

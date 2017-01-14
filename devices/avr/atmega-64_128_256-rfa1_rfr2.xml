@@ -5,20 +5,20 @@
     <naming-schema>at{family}{name}{type}</naming-schema>
     <invalid-device>atmega256rfa1</invalid-device>
     <invalid-device>atmega64rfa1</invalid-device>
-    <flash device-name="64" value="65536"/>
-    <flash device-name="128" value="131072"/>
-    <flash device-name="256" value="262144"/>
-    <ram device-name="64" value="8192"/>
-    <ram device-name="128" value="16384"/>
-    <ram device-name="256" value="32768"/>
-    <eeprom device-name="64" value="2048"/>
-    <eeprom device-name="128" value="4096"/>
-    <eeprom device-name="256" value="8192"/>
-    <core value="avr8"/>
-    <mcu device-type="rfa1" value="m128rfa1"/>
-    <mcu device-name="128" device-type="rfr2" value="m128rfr2"/>
-    <mcu device-name="256" value="m256rfr2"/>
-    <mcu device-name="64" value="m64rfr2"/>
+    <attribute-flash device-name="64" value="65536"/>
+    <attribute-flash device-name="128" value="131072"/>
+    <attribute-flash device-name="256" value="262144"/>
+    <attribute-ram device-name="64" value="8192"/>
+    <attribute-ram device-name="128" value="16384"/>
+    <attribute-ram device-name="256" value="32768"/>
+    <attribute-eeprom device-name="64" value="2048"/>
+    <attribute-eeprom device-name="128" value="4096"/>
+    <attribute-eeprom device-name="256" value="8192"/>
+    <attribute-core value="avr8"/>
+    <attribute-mcu device-type="rfa1" value="m128rfa1"/>
+    <attribute-mcu device-name="128" device-type="rfr2" value="m128rfr2"/>
+    <attribute-mcu device-name="256" value="m256rfr2"/>
+    <attribute-mcu device-name="64" value="m64rfr2"/>
     <driver type="core" compatible="avr"/>
     <driver type="adc" compatible="avr"/>
     <driver type="clock" compatible="avr"/>

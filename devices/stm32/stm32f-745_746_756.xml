@@ -37,14 +37,14 @@
     <valid-device>stm32f756vgt</valid-device>
     <valid-device>stm32f756zgt</valid-device>
     <valid-device>stm32f756zgy</valid-device>
-    <flash device-size="e" value="524288"/>
-    <flash device-size="g" value="1048576"/>
-    <ram value="413696"/>
-    <core value="cortex-m7f"/>
+    <attribute-flash device-size="e" value="524288"/>
+    <attribute-flash device-size="g" value="1048576"/>
+    <attribute-ram value="413696"/>
+    <attribute-core value="cortex-m7f"/>
     <header value="stm32f7xx.h"/>
-    <define device-name="745" value="STM32F745xx"/>
-    <define device-name="746" value="STM32F746xx"/>
-    <define device-name="756" value="STM32F756xx"/>
+    <attribute-define device-name="745" value="STM32F745xx"/>
+    <attribute-define device-name="746" value="STM32F746xx"/>
+    <attribute-define device-name="756" value="STM32F756xx"/>
     <driver type="core" compatible="cortex">
       <memory name="itcm" access="rwx" start="0x00" size="16"/>
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="512"/>

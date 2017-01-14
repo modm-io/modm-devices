@@ -7,12 +7,12 @@
     <valid-device>stm32f318c8y</valid-device>
     <valid-device>stm32f318k8u</valid-device>
     <valid-device>stm32f328c8t</valid-device>
-    <flash value="65536"/>
-    <ram value="16384"/>
-    <core value="cortex-m4f"/>
+    <attribute-flash value="65536"/>
+    <attribute-ram value="16384"/>
+    <attribute-core value="cortex-m4f"/>
     <header value="stm32f3xx.h"/>
-    <define device-name="318" value="STM32F318xx"/>
-    <define device-name="328" value="STM32F328xx"/>
+    <attribute-define device-name="318" value="STM32F318xx"/>
+    <attribute-define device-name="328" value="STM32F328xx"/>
     <driver type="core" compatible="cortex">
       <memory name="flash" access="rx" start="0x8000000" size="64"/>
       <memory device-name="328" name="ccm" access="rwx" start="0x10000000" size="4"/>

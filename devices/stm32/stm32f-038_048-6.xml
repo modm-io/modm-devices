@@ -11,13 +11,13 @@
     <valid-device>stm32f048c6u</valid-device>
     <valid-device>stm32f048g6u</valid-device>
     <valid-device>stm32f048t6y</valid-device>
-    <flash value="32768"/>
-    <ram device-name="038" value="4096"/>
-    <ram device-name="048" value="6144"/>
-    <core value="cortex-m0"/>
+    <attribute-flash value="32768"/>
+    <attribute-ram device-name="038" value="4096"/>
+    <attribute-ram device-name="048" value="6144"/>
+    <attribute-core value="cortex-m0"/>
     <header value="stm32f0xx.h"/>
-    <define device-name="038" value="STM32F038xx"/>
-    <define device-name="048" value="STM32F048xx"/>
+    <attribute-define device-name="038" value="STM32F038xx"/>
+    <attribute-define device-name="048" value="STM32F048xx"/>
     <driver type="core" compatible="cortex">
       <memory name="flash" access="rx" start="0x8000000" size="32"/>
       <memory device-name="038" name="sram1" access="rwx" start="0x20000000" size="4"/>

@@ -16,14 +16,14 @@
     <valid-device>stm32f098rct</valid-device>
     <valid-device>stm32f098rcy</valid-device>
     <valid-device>stm32f098vct</valid-device>
-    <flash device-name="078" value="131072"/>
-    <flash device-name="098" value="262144"/>
-    <ram device-name="078" value="16384"/>
-    <ram device-name="098" value="32768"/>
-    <core value="cortex-m0"/>
+    <attribute-flash device-name="078" value="131072"/>
+    <attribute-flash device-name="098" value="262144"/>
+    <attribute-ram device-name="078" value="16384"/>
+    <attribute-ram device-name="098" value="32768"/>
+    <attribute-core value="cortex-m0"/>
     <header value="stm32f0xx.h"/>
-    <define device-name="078" value="STM32F078xx"/>
-    <define device-name="098" value="STM32F098xx"/>
+    <attribute-define device-name="078" value="STM32F078xx"/>
+    <attribute-define device-name="098" value="STM32F098xx"/>
     <driver type="core" compatible="cortex">
       <memory device-name="078" name="flash" access="rx" start="0x8000000" size="128"/>
       <memory device-name="098" name="flash" access="rx" start="0x8000000" size="256"/>

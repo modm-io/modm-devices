@@ -6,21 +6,21 @@
     <invalid-device>atxmega128a3bu</invalid-device>
     <invalid-device>atxmega192a3bu</invalid-device>
     <invalid-device>atxmega64a3bu</invalid-device>
-    <flash device-name="64" value="65536"/>
-    <flash device-name="128" value="131072"/>
-    <flash device-name="192" value="196608"/>
-    <flash device-name="256" value="262144"/>
-    <ram device-name="64" value="4096"/>
-    <ram device-name="128" value="8192"/>
-    <ram device-name="192|256" value="16384"/>
-    <eeprom device-name="64|128|192" value="2048"/>
-    <eeprom device-name="256" value="4096"/>
-    <core value="avr8_xmega"/>
-    <mcu device-name="128" value="x128a3u"/>
-    <mcu device-name="192" value="x192a3u"/>
-    <mcu device-pin="bu" value="x256a3bu"/>
-    <mcu device-name="256" device-pin="u" value="x256a3u"/>
-    <mcu device-name="64" value="x64a3u"/>
+    <attribute-flash device-name="64" value="65536"/>
+    <attribute-flash device-name="128" value="131072"/>
+    <attribute-flash device-name="192" value="196608"/>
+    <attribute-flash device-name="256" value="262144"/>
+    <attribute-ram device-name="64" value="4096"/>
+    <attribute-ram device-name="128" value="8192"/>
+    <attribute-ram device-name="192|256" value="16384"/>
+    <attribute-eeprom device-name="64|128|192" value="2048"/>
+    <attribute-eeprom device-name="256" value="4096"/>
+    <attribute-core value="avr8_xmega"/>
+    <attribute-mcu device-name="128" value="x128a3u"/>
+    <attribute-mcu device-name="192" value="x192a3u"/>
+    <attribute-mcu device-pin="bu" value="x256a3bu"/>
+    <attribute-mcu device-name="256" device-pin="u" value="x256a3u"/>
+    <attribute-mcu device-name="64" value="x64a3u"/>
     <driver type="core" compatible="avr"/>
     <driver type="adc" compatible="xmega">
       <instance value="A"/>

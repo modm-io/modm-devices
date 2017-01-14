@@ -15,14 +15,14 @@
     <valid-device>stm32f107vbt</valid-device>
     <valid-device>stm32f107vch</valid-device>
     <valid-device>stm32f107vct</valid-device>
-    <flash device-size="8" value="65536"/>
-    <flash device-size="b" value="131072"/>
-    <flash device-size="c" value="262144"/>
-    <ram value="65536"/>
-    <core value="cortex-m3"/>
+    <attribute-flash device-size="8" value="65536"/>
+    <attribute-flash device-size="b" value="131072"/>
+    <attribute-flash device-size="c" value="262144"/>
+    <attribute-ram value="65536"/>
+    <attribute-core value="cortex-m3"/>
     <header value="stm32f1xx.h"/>
-    <define device-name="105" value="STM32F105xC"/>
-    <define device-name="107" value="STM32F107xC"/>
+    <attribute-define device-name="105" value="STM32F105xC"/>
+    <attribute-define device-name="107" value="STM32F107xC"/>
     <driver type="core" compatible="cortex">
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="64"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="128"/>

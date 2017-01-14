@@ -5,22 +5,22 @@
     <naming-schema>at{family}{name}{type}{pin}</naming-schema>
     <invalid-device>atxmega128a4</invalid-device>
     <invalid-device>atxmega64a4</invalid-device>
-    <flash device-name="16" value="16384"/>
-    <flash device-name="32" value="32768"/>
-    <flash device-name="64" value="65536"/>
-    <flash device-name="128" value="131072"/>
-    <ram device-name="16" value="2048"/>
-    <ram device-name="32|64" value="4096"/>
-    <ram device-name="128" value="8192"/>
-    <eeprom device-name="16|32" value="1024"/>
-    <eeprom device-name="64|128" value="2048"/>
-    <core value="avr8_xmega"/>
-    <mcu device-name="128" value="x128a4u"/>
-    <mcu device-pin="" device-name="16" value="x16a4"/>
-    <mcu device-name="16" device-pin="u" value="x16a4u"/>
-    <mcu device-pin="" device-name="32" value="x32a4"/>
-    <mcu device-name="32" device-pin="u" value="x32a4u"/>
-    <mcu device-name="64" value="x64a4u"/>
+    <attribute-flash device-name="16" value="16384"/>
+    <attribute-flash device-name="32" value="32768"/>
+    <attribute-flash device-name="64" value="65536"/>
+    <attribute-flash device-name="128" value="131072"/>
+    <attribute-ram device-name="16" value="2048"/>
+    <attribute-ram device-name="32|64" value="4096"/>
+    <attribute-ram device-name="128" value="8192"/>
+    <attribute-eeprom device-name="16|32" value="1024"/>
+    <attribute-eeprom device-name="64|128" value="2048"/>
+    <attribute-core value="avr8_xmega"/>
+    <attribute-mcu device-name="128" value="x128a4u"/>
+    <attribute-mcu device-pin="" device-name="16" value="x16a4"/>
+    <attribute-mcu device-name="16" device-pin="u" value="x16a4u"/>
+    <attribute-mcu device-pin="" device-name="32" value="x32a4"/>
+    <attribute-mcu device-name="32" device-pin="u" value="x32a4u"/>
+    <attribute-mcu device-name="64" value="x64a4u"/>
     <driver type="core" compatible="avr"/>
     <driver type="adc" compatible="xmega">
       <instance value="A"/>

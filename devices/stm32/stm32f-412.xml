@@ -17,15 +17,15 @@
     <valid-device>stm32f412zet</valid-device>
     <valid-device>stm32f412zgj</valid-device>
     <valid-device>stm32f412zgt</valid-device>
-    <flash device-size="e" value="524288"/>
-    <flash device-size="g" value="1048576"/>
-    <ram value="262144"/>
-    <core value="cortex-m4f"/>
+    <attribute-flash device-size="e" value="524288"/>
+    <attribute-flash device-size="g" value="1048576"/>
+    <attribute-ram value="262144"/>
+    <attribute-core value="cortex-m4f"/>
     <header value="stm32f4xx.h"/>
-    <define device-pin="c" value="STM32F412Cx"/>
-    <define device-pin="r" value="STM32F412Rx"/>
-    <define device-pin="v" value="STM32F412Vx"/>
-    <define device-pin="z" value="STM32F412Zx"/>
+    <attribute-define device-pin="c" value="STM32F412Cx"/>
+    <attribute-define device-pin="r" value="STM32F412Rx"/>
+    <attribute-define device-pin="v" value="STM32F412Vx"/>
+    <attribute-define device-pin="z" value="STM32F412Zx"/>
     <driver type="core" compatible="cortex">
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="512"/>
       <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1024"/>

@@ -7,27 +7,27 @@
     <invalid-device>atmega1284pa</invalid-device>
     <invalid-device>atmega164</invalid-device>
     <invalid-device>atmega324</invalid-device>
-    <flash device-name="164" value="16384"/>
-    <flash device-name="324" value="32768"/>
-    <flash device-name="644" value="65536"/>
-    <flash device-name="1284" value="131072"/>
-    <ram device-name="164" value="1024"/>
-    <ram device-name="324" value="2048"/>
-    <ram device-name="644" value="4096"/>
-    <ram device-name="1284" value="16384"/>
-    <eeprom device-name="164" value="512"/>
-    <eeprom device-name="324" value="1024"/>
-    <eeprom device-name="644" value="2048"/>
-    <eeprom device-name="1284" value="4096"/>
-    <core value="avr8"/>
-    <mcu device-type="" device-name="1284" value="m1284"/>
-    <mcu device-name="1284" device-type="p" value="m1284p"/>
-    <mcu device-name="164" device-type="p|pa" value="m164p"/>
-    <mcu device-name="324" device-type="p" value="m324p"/>
-    <mcu device-name="324" device-type="pa" value="m324pa"/>
-    <mcu device-type="|a" device-name="644" value="m644"/>
-    <mcu device-name="644" device-type="p|pa" value="m644p"/>
-    <mcu device-name="164|324" device-type="a" value="unsupported"/>
+    <attribute-flash device-name="164" value="16384"/>
+    <attribute-flash device-name="324" value="32768"/>
+    <attribute-flash device-name="644" value="65536"/>
+    <attribute-flash device-name="1284" value="131072"/>
+    <attribute-ram device-name="164" value="1024"/>
+    <attribute-ram device-name="324" value="2048"/>
+    <attribute-ram device-name="644" value="4096"/>
+    <attribute-ram device-name="1284" value="16384"/>
+    <attribute-eeprom device-name="164" value="512"/>
+    <attribute-eeprom device-name="324" value="1024"/>
+    <attribute-eeprom device-name="644" value="2048"/>
+    <attribute-eeprom device-name="1284" value="4096"/>
+    <attribute-core value="avr8"/>
+    <attribute-mcu device-type="" device-name="1284" value="m1284"/>
+    <attribute-mcu device-name="1284" device-type="p" value="m1284p"/>
+    <attribute-mcu device-name="164" device-type="p|pa" value="m164p"/>
+    <attribute-mcu device-name="324" device-type="p" value="m324p"/>
+    <attribute-mcu device-name="324" device-type="pa" value="m324pa"/>
+    <attribute-mcu device-type="|a" device-name="644" value="m644"/>
+    <attribute-mcu device-name="644" device-type="p|pa" value="m644p"/>
+    <attribute-mcu device-name="164|324" device-type="a" value="unsupported"/>
     <driver type="core" compatible="avr"/>
     <driver type="adc" compatible="avr"/>
     <driver type="clock" compatible="avr"/>

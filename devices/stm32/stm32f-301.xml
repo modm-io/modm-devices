@@ -10,12 +10,12 @@
     <valid-device>stm32f301k8u</valid-device>
     <valid-device>stm32f301r6t</valid-device>
     <valid-device>stm32f301r8t</valid-device>
-    <flash device-size="6" value="32768"/>
-    <flash device-size="8" value="65536"/>
-    <ram value="16384"/>
-    <core value="cortex-m4f"/>
+    <attribute-flash device-size="6" value="32768"/>
+    <attribute-flash device-size="8" value="65536"/>
+    <attribute-ram value="16384"/>
+    <attribute-core value="cortex-m4f"/>
     <header value="stm32f3xx.h"/>
-    <define value="STM32F301x8"/>
+    <attribute-define value="STM32F301x8"/>
     <driver type="core" compatible="cortex">
       <memory device-size="6" name="flash" access="rx" start="0x8000000" size="32"/>
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="64"/>

@@ -12,13 +12,13 @@
     <valid-device>stm32f103r6t</valid-device>
     <valid-device>stm32f103t4u</valid-device>
     <valid-device>stm32f103t6u</valid-device>
-    <flash device-size="4" value="16384"/>
-    <flash device-size="6" value="32768"/>
-    <ram device-size="4" value="6144"/>
-    <ram device-size="6" value="10240"/>
-    <core value="cortex-m3"/>
+    <attribute-flash device-size="4" value="16384"/>
+    <attribute-flash device-size="6" value="32768"/>
+    <attribute-ram device-size="4" value="6144"/>
+    <attribute-ram device-size="6" value="10240"/>
+    <attribute-core value="cortex-m3"/>
     <header value="stm32f1xx.h"/>
-    <define value="STM32F103x6"/>
+    <attribute-define value="STM32F103x6"/>
     <driver type="core" compatible="cortex">
       <memory device-size="4" name="flash" access="rx" start="0x8000000" size="16"/>
       <memory device-size="6" name="flash" access="rx" start="0x8000000" size="32"/>

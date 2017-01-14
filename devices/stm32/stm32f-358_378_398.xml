@@ -11,16 +11,16 @@
     <valid-device>stm32f378rcy</valid-device>
     <valid-device>stm32f378vct</valid-device>
     <valid-device>stm32f398vet</valid-device>
-    <flash device-name="358|378" value="262144"/>
-    <flash device-name="398" value="524288"/>
-    <ram device-name="378" value="32768"/>
-    <ram device-name="358" value="49152"/>
-    <ram device-name="398" value="81920"/>
-    <core value="cortex-m4f"/>
+    <attribute-flash device-name="358|378" value="262144"/>
+    <attribute-flash device-name="398" value="524288"/>
+    <attribute-ram device-name="378" value="32768"/>
+    <attribute-ram device-name="358" value="49152"/>
+    <attribute-ram device-name="398" value="81920"/>
+    <attribute-core value="cortex-m4f"/>
     <header value="stm32f3xx.h"/>
-    <define device-name="358" value="STM32F358xx"/>
-    <define device-name="378" value="STM32F378xx"/>
-    <define device-name="398" value="STM32F398xx"/>
+    <attribute-define device-name="358" value="STM32F358xx"/>
+    <attribute-define device-name="378" value="STM32F378xx"/>
+    <attribute-define device-name="398" value="STM32F398xx"/>
     <driver type="core" compatible="cortex">
       <memory device-name="358|378" name="flash" access="rx" start="0x8000000" size="256"/>
       <memory device-name="398" name="flash" access="rx" start="0x8000000" size="512"/>

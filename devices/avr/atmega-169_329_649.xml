@@ -5,20 +5,20 @@
     <naming-schema>at{family}{name}{type}</naming-schema>
     <invalid-device>atmega169</invalid-device>
     <invalid-device>atmega649pa</invalid-device>
-    <flash device-name="169" value="16384"/>
-    <flash device-name="329" value="32768"/>
-    <flash device-name="649" value="65536"/>
-    <ram device-name="169" value="1024"/>
-    <ram device-name="329" value="2048"/>
-    <ram device-name="649" value="4096"/>
-    <eeprom device-name="169" value="512"/>
-    <eeprom device-name="329" value="1024"/>
-    <eeprom device-name="649" value="2048"/>
-    <core value="avr8"/>
-    <mcu device-name="169" value="m169"/>
-    <mcu device-type="|a" device-name="329" value="m329"/>
-    <mcu device-name="329" device-type="p|pa" value="m329p"/>
-    <mcu device-name="649" value="m649"/>
+    <attribute-flash device-name="169" value="16384"/>
+    <attribute-flash device-name="329" value="32768"/>
+    <attribute-flash device-name="649" value="65536"/>
+    <attribute-ram device-name="169" value="1024"/>
+    <attribute-ram device-name="329" value="2048"/>
+    <attribute-ram device-name="649" value="4096"/>
+    <attribute-eeprom device-name="169" value="512"/>
+    <attribute-eeprom device-name="329" value="1024"/>
+    <attribute-eeprom device-name="649" value="2048"/>
+    <attribute-core value="avr8"/>
+    <attribute-mcu device-name="169" value="m169"/>
+    <attribute-mcu device-type="|a" device-name="329" value="m329"/>
+    <attribute-mcu device-name="329" device-type="p|pa" value="m329p"/>
+    <attribute-mcu device-name="649" value="m649"/>
     <driver type="core" compatible="avr"/>
     <driver type="adc" compatible="avr"/>
     <driver type="clock" compatible="avr"/>

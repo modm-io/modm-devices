@@ -4,20 +4,20 @@
   <device platform="avr" family="mega" name="16|32|64" type="c1|m1">
     <naming-schema>at{family}{name}{type}</naming-schema>
     <invalid-device>atmega16c1</invalid-device>
-    <flash device-name="16" value="16384"/>
-    <flash device-name="32" value="32768"/>
-    <flash device-name="64" value="65536"/>
-    <ram device-name="16" value="1024"/>
-    <ram device-name="32" value="2048"/>
-    <ram device-name="64" value="4096"/>
-    <eeprom device-name="16" value="512"/>
-    <eeprom device-name="32" value="1024"/>
-    <eeprom device-name="64" value="2048"/>
-    <core value="avr8"/>
-    <mcu device-name="16" value="m16"/>
-    <mcu device-name="32" device-type="c1" value="m32"/>
-    <mcu device-name="32" device-type="m1" value="m32m1"/>
-    <mcu device-name="64" value="m64"/>
+    <attribute-flash device-name="16" value="16384"/>
+    <attribute-flash device-name="32" value="32768"/>
+    <attribute-flash device-name="64" value="65536"/>
+    <attribute-ram device-name="16" value="1024"/>
+    <attribute-ram device-name="32" value="2048"/>
+    <attribute-ram device-name="64" value="4096"/>
+    <attribute-eeprom device-name="16" value="512"/>
+    <attribute-eeprom device-name="32" value="1024"/>
+    <attribute-eeprom device-name="64" value="2048"/>
+    <attribute-core value="avr8"/>
+    <attribute-mcu device-name="16" value="m16"/>
+    <attribute-mcu device-name="32" device-type="c1" value="m32"/>
+    <attribute-mcu device-name="32" device-type="m1" value="m32m1"/>
+    <attribute-mcu device-name="64" value="m64"/>
     <driver type="core" compatible="avr"/>
     <driver type="adc" compatible="avr"/>
     <driver type="clock" compatible="avr"/>

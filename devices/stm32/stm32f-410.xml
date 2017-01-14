@@ -9,14 +9,14 @@
     <valid-device>stm32f410rbt</valid-device>
     <valid-device>stm32f410t8y</valid-device>
     <valid-device>stm32f410tby</valid-device>
-    <flash device-size="8" value="65536"/>
-    <flash device-size="b" value="131072"/>
-    <ram value="32768"/>
-    <core value="cortex-m4f"/>
+    <attribute-flash device-size="8" value="65536"/>
+    <attribute-flash device-size="b" value="131072"/>
+    <attribute-ram value="32768"/>
+    <attribute-core value="cortex-m4f"/>
     <header value="stm32f4xx.h"/>
-    <define device-pin="c" value="STM32F410Cx"/>
-    <define device-pin="r" value="STM32F410Rx"/>
-    <define device-pin="t" value="STM32F410Tx"/>
+    <attribute-define device-pin="c" value="STM32F410Cx"/>
+    <attribute-define device-pin="r" value="STM32F410Rx"/>
+    <attribute-define device-pin="t" value="STM32F410Tx"/>
     <driver type="core" compatible="cortex">
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="64"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="128"/>

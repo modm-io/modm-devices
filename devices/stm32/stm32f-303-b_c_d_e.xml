@@ -19,17 +19,17 @@
     <valid-device>stm32f303vey</valid-device>
     <valid-device>stm32f303zdt</valid-device>
     <valid-device>stm32f303zet</valid-device>
-    <flash device-size="b" value="131072"/>
-    <flash device-pin="c|r|v" device-package="t|y" value="262144"/>
-    <flash device-size="d" value="393216"/>
-    <flash device-size="e" value="524288"/>
-    <ram device-size="b" value="40960"/>
-    <ram device-pin="c|r|v" device-package="t|y" value="49152"/>
-    <ram device-size="d|e" value="81920"/>
-    <core value="cortex-m4f"/>
+    <attribute-flash device-size="b" value="131072"/>
+    <attribute-flash device-pin="c|r|v" device-package="t|y" value="262144"/>
+    <attribute-flash device-size="d" value="393216"/>
+    <attribute-flash device-size="e" value="524288"/>
+    <attribute-ram device-size="b" value="40960"/>
+    <attribute-ram device-pin="c|r|v" device-package="t|y" value="49152"/>
+    <attribute-ram device-size="d|e" value="81920"/>
+    <attribute-core value="cortex-m4f"/>
     <header value="stm32f3xx.h"/>
-    <define device-size="b|c" device-pin="c|r|v" device-package="t|y" value="STM32F303xC"/>
-    <define device-size="d|e" value="STM32F303xE"/>
+    <attribute-define device-size="b|c" device-pin="c|r|v" device-package="t|y" value="STM32F303xC"/>
+    <attribute-define device-size="d|e" value="STM32F303xE"/>
     <driver type="core" compatible="cortex">
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="128"/>
       <memory device-pin="c|r|v" device-size="c" name="flash" access="rx" start="0x8000000" size="256"/>

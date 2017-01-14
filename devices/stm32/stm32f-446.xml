@@ -14,12 +14,12 @@
     <valid-device>stm32f446zeh</valid-device>
     <valid-device>stm32f446zej</valid-device>
     <valid-device>stm32f446zet</valid-device>
-    <flash device-size="c" value="262144"/>
-    <flash device-size="e" value="524288"/>
-    <ram value="131072"/>
-    <core value="cortex-m4f"/>
+    <attribute-flash device-size="c" value="262144"/>
+    <attribute-flash device-size="e" value="524288"/>
+    <attribute-ram value="131072"/>
+    <attribute-core value="cortex-m4f"/>
     <header value="stm32f4xx.h"/>
-    <define value="STM32F446xx"/>
+    <attribute-define value="STM32F446xx"/>
     <driver type="core" compatible="cortex">
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="256"/>
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="512"/>

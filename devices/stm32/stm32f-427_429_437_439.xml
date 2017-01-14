@@ -57,16 +57,16 @@
     <valid-device>stm32f439zgt</valid-device>
     <valid-device>stm32f439zit</valid-device>
     <valid-device>stm32f439ziy</valid-device>
-    <flash device-size="e" value="524288"/>
-    <flash device-size="g" value="1048576"/>
-    <flash device-size="i" value="2097152"/>
-    <ram value="266240"/>
-    <core value="cortex-m4f"/>
+    <attribute-flash device-size="e" value="524288"/>
+    <attribute-flash device-size="g" value="1048576"/>
+    <attribute-flash device-size="i" value="2097152"/>
+    <attribute-ram value="266240"/>
+    <attribute-core value="cortex-m4f"/>
     <header value="stm32f4xx.h"/>
-    <define device-name="427" value="STM32F427xx"/>
-    <define device-name="429" value="STM32F429xx"/>
-    <define device-name="437" value="STM32F437xx"/>
-    <define device-name="439" value="STM32F439xx"/>
+    <attribute-define device-name="427" value="STM32F427xx"/>
+    <attribute-define device-name="429" value="STM32F429xx"/>
+    <attribute-define device-name="437" value="STM32F437xx"/>
+    <attribute-define device-name="439" value="STM32F439xx"/>
     <driver type="core" compatible="cortex">
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="512"/>
       <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1024"/>
