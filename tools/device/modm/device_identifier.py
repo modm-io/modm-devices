@@ -66,16 +66,19 @@ class MultiDeviceIdentifier:
     """
     def __init__(self, device_id=None):
         self.ids = []
+        self.__string = None
         if isinstance(device_id, DeviceIdentifier):
             self.ids = [device_id.copy()]
 
     def copy(self):
-        return MultiDeviceIdentifier.from_list(self.ids)
+        ids = MultiDeviceIdentifier.from_list(self.ids)
+        ids.__string = self.__string
+        return ids
 
     @staticmethod
     def from_list(device_ids: list):
         mid = MultiDeviceIdentifier()
-        mid.ids = [dev.copy() for dev in device_ids]
+        mid.ids = [dev for dev in device_ids]
         return mid
 
     def append(self, device_id):
@@ -85,6 +88,7 @@ class MultiDeviceIdentifier:
         self.ids.append(device_id)
         self.ids = list(set(self.ids))
         self.ids.sort(key=lambda k : k.string)
+        self.__string = None
 
     def extend(self, identifier):
         assert isinstance(identifier, MultiDeviceIdentifier)
@@ -93,18 +97,21 @@ class MultiDeviceIdentifier:
         self.ids.extend(identifier)
         self.ids = list(set(self.ids))
         self.ids.sort(key=lambda k : k.string)
+        self.__string = None
 
     @property
     def string(self):
-        # Format the property dictionaries as a string
-        ident = DeviceIdentifier()
-        ident.naming_schema = self.naming_schema
-        for k in self.keys():
-            v = self.getAttribute(k)
-            if len(v) > 0:
-                fmt = "[{}]" if len(v) > 1 else "{}"
-                ident[k] = fmt.format("|".join(v))
-        return ident.string
+        if self.__string is None:
+            # Format the property dictionaries as a string
+            ident = DeviceIdentifier()
+            ident.naming_schema = self.naming_schema
+            for k in self.keys():
+                v = self.getAttribute(k)
+                if len(v) > 0:
+                    fmt = "[{}]" if len(v) > 1 else "{}"
+                    ident[k] = fmt.format("|".join(v))
+            self.__string = ident.string
+        return self.__string
 
     def subtract(self, others):
         assert isinstance(others, MultiDeviceIdentifier)
@@ -164,6 +171,7 @@ class MultiDeviceIdentifier:
         if (len(self.ids) * 2 > len(complete.ids)):
             # invert it
             ids_inv = complete.copy()
+            ids_inv.__string = None
             ids_inv.ids = [did for did in ids_inv.ids if did not in self.ids]
             return (ids_inv.minimal_subtract(complete, others), -1)
         else:
