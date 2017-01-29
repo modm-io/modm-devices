@@ -39,25 +39,33 @@ class Device:
     def identifier(self):
         return copy.deepcopy(self._identifier.properties)
 
-    def get_driver(self, name):
+    def get_all_drivers(self, name):
         self.__parse_properties()
-
         parts = name.split(":")
+        results = []
+
         if len(parts) == 1:
-            for driver in self._properties["driver"]:
-                if driver["type"] == parts[0]:
-                    return driver
+            results = [d for d in self._properties["driver"] if d["name"] == parts[0]]
         elif len(parts) == 2:
+            find_all = (parts[1][-1] == '*')
             for driver in self._properties["driver"]:
-                if driver["type"] == parts[0] and driver["compatible"] == parts[1]:
-                    return driver
+                if driver["name"] == parts[0] and \
+                        ((find_all and driver["type"].startswith(parts[1][:-1])) or
+                        (not find_all and driver["type"] == parts[1])):
+                    results.append(driver)
         else:
             raise ParserException("Invalid driver name '{}'. "
                                   "The name must contain no or one ':' to "
                                   "separate type and name.".format(name))
 
-    def has_driver(self, name, compatible: list = []):
-        if len(compatible) == 0:
+        return results
+
+    def get_driver(self, name):
+        results = self.get_all_drivers(name)
+        return results[0] if len(results) else None
+
+    def has_driver(self, name, type: list = []):
+        if len(type) == 0:
             return self.get_driver(name) is not None
 
         if ':' in name:
@@ -65,7 +73,7 @@ class Device:
                                   "The name must contain no ':' when using the "
                                   "compatible argument.".format(name))
 
-        return any(self.get_driver(name + ':' + c) is not None for c in compatible)
+        return any(self.get_driver(name + ':' + c) is not None for c in type)
 
     def __str__(self):
         return self.partname
