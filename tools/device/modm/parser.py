@@ -32,7 +32,7 @@ class Parser:
             xmlschema = lxml.etree.parse(xsdfile, parser=parser)
 
             schema = lxml.etree.XMLSchema(xmlschema)
-            schema.assertValid(xmlroot)
+            # schema.assertValid(xmlroot)
 
             rootnode = xmlroot.getroot()
         except OSError as error:
