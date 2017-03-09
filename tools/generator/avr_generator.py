@@ -42,7 +42,7 @@ if __name__ == "__main__":
     dfg.logger.configure_logger(loglevel)
 
     for dev in devs:
-        xml_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'AVR_devices', '*', (dev + '*'))
+        xml_path = os.path.join(os.path.dirname(__file__), 'raw-device-data', 'avr-devices', '*', (dev + '*'))
         files = glob.glob(xml_path)
         for filename in files:
             device = AVRDeviceTree.from_file(filename)

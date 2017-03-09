@@ -1,5 +1,5 @@
 
-all: generate-avr generate-stm32
+all: extract-stm32-data generate-avr generate-stm32
 
 generate-avr:
 	rm ../../devices/avr/*
@@ -21,3 +21,9 @@ generate-stm32:
 	./stm_generator.py STM32L1
 	./stm_generator.py STM32L4
 	./stm_generator.py STM32L4+
+
+extract-data-stm32:
+	(cd raw-data-extractor && ./extract-stm32.sh)
+
+extract-data-avr:
+	(cd raw-data-extractor && ./extract-avr.sh)

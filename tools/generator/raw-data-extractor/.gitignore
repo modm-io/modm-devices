@@ -1,0 +1,5 @@
+*~
+output/
+temp*
+bin/
+*.zip
