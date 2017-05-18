@@ -1,0 +1,3 @@
+[submodule "tools/generator/cmsis-header-stm32"]
+	path = tools/generator/cmsis-header-stm32
+	url = https://github.com/modm-io/cmsis-header-stm32.git
