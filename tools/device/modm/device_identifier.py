@@ -177,6 +177,53 @@ class MultiDeviceIdentifier:
         else:
             return (self.minimal_subtract(complete, others), 1)
 
+    def minimal_subtract_set(self, complete, parent):
+        assert isinstance(complete, MultiDeviceIdentifier)
+
+        def partly_inside(mkeys, ids, did):
+            return any( all( cid[k] == did[k] for k in mkeys ) for cid in ids )
+
+        def minimal_keys():
+            keys = [k for k in self.keys() if not all( all(s[k] == p[k] for p in parent) for s in self)]
+            for clength in range(len(keys)):
+                for kcomb in itertools.combinations(keys, clength):
+                    if not clength:
+                        filtered = parent
+                    else:
+                        filtered = complete.filter(lambda i: partly_inside(kcomb, self, i))
+                    if filtered == self:
+                        return kcomb
+            return keys
+
+        def filtered_by_keys(mkeys, ids):
+            nids = MultiDeviceIdentifier()
+            for k in mkeys:
+                for m in ids.getAttribute(k):
+                    ident = DeviceIdentifier()
+                    ident.naming_schema = self.naming_schema
+                    ident[k] = m
+                    nids.append(ident)
+            return nids
+
+        def product_inside(mkeys, ids, did):
+            nids = ids.copy()
+            nids.append(did)
+            pids = filtered_by_keys(mkeys, nids).product()
+            return all( partly_inside(mkeys, self, i) for i in pids )
+
+        mkeys = minimal_keys()
+
+        cids = [ MultiDeviceIdentifier() ]
+        for did in self:
+            for ids in cids:
+                if product_inside(mkeys, ids, did):
+                    ids.append(did)
+                    break
+            else:
+                cids.append( MultiDeviceIdentifier(did) )
+
+        return [filtered_by_keys(mkeys, ids) for ids in cids]
+
     def filter(self, filter_fn):
         ids = MultiDeviceIdentifier()
 
