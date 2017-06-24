@@ -29,6 +29,17 @@ class DeviceTree:
         self.sortKeys = []
         self.identKey = self._toCompactString()
 
+    def copy(self, parent=None):
+        tree = DeviceTree(self.name)
+        tree.ids = self.ids.copy()
+        tree.attributes = self.attributes
+        tree.sortKeys = self.sortKeys
+        tree.parent = parent if parent else self.parent
+        for child in self.children:
+            cchild = child.copy(tree)
+            tree.children.append(cchild)
+        return tree
+
     def setAttributes(self, *args):
         if isinstance(args[0], list) and isinstance(args[1], dict):
             for k in args[0]:
