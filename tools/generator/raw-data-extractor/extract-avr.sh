@@ -37,5 +37,10 @@ for ((i=1;i<=${#DEVICES[@]};++i)); do
     cp -r temp-avr/${device}/atdf ../raw-device-data/avr-devices/${device}
 done
 
+# apply the patches
+cp patches/avr.patch ../raw-device-data
+(cd ../raw-device-data && git apply -v --ignore-whitespace avr.patch)
+rm ../raw-device-data/avr.patch
+
 # cleanup
 rm -r temp-avr

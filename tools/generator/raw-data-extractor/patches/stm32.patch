@@ -1,0 +1,24 @@
+diff --git a/stm32-devices/mcu/STM32F101C(4-6)Tx.xml b/stm32-devices/mcu/STM32F101C(4-6)Tx.xml
+index 0e77594..6082339 100644
+--- a/stm32-devices/mcu/STM32F101C(4-6)Tx.xml
++++ b/stm32-devices/mcu/STM32F101C(4-6)Tx.xml
+@@ -2,6 +2,7 @@
+ <Mcu ClockTree="STM32F102" DBVersion="V3.0" Family="STM32F1" HasPowerPad="false" IOType="" Line="STM32F101" Package="LQFP48" RefName="STM32F101C(4-6)Tx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+ 	<Core>ARM Cortex-M3</Core>
+ 	<Frequency>36</Frequency>
++	<Ram>4</Ram>
+ 	<Ram>6</Ram>
+ 	<IONb>37</IONb>
+ 	<Die>DIE412</Die>
+diff --git a/stm32-devices/mcu/STM32F101C(8-B)Ux.xml b/stm32-devices/mcu/STM32F101C(8-B)Ux.xml
+index df71d44..b04af24 100644
+--- a/stm32-devices/mcu/STM32F101C(8-B)Ux.xml
++++ b/stm32-devices/mcu/STM32F101C(8-B)Ux.xml
+@@ -2,6 +2,7 @@
+ <Mcu ClockTree="STM32F102" DBVersion="V3.0" Family="STM32F1" HasPowerPad="false" IOType="" Line="STM32F101" Package="UFQFPN48" RefName="STM32F101C(8-B)Ux" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+ 	<Core>ARM Cortex-M3</Core>
+ 	<Frequency>36</Frequency>
++	<Ram>10</Ram>
+ 	<Ram>16</Ram>
+ 	<IONb>37</IONb>
+ 	<Die>DIE410</Die>

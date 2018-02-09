@@ -35,5 +35,10 @@ mkdir -p ../raw-device-data/stm32-devices
 cp -r output/db/mcu ../raw-device-data/stm32-devices
 cp -r output/db/plugins ../raw-device-data/stm32-devices
 
+# apply the patches
+cp patches/stm32.patch ../raw-device-data
+(cd ../raw-device-data && git apply -v --ignore-whitespace stm32.patch)
+rm ../raw-device-data/stm32.patch
+
 # cleanup
 rm -r temp bin output

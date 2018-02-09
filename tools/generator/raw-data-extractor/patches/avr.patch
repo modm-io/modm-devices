@@ -1,0 +1,208 @@
+diff --git a/avr-devices/atmega/ATmega324A.atdf b/avr-devices/atmega/ATmega324A.atdf
+index 1e102ee..d46415d 100644
+--- a/avr-devices/atmega/ATmega324A.atdf
++++ b/avr-devices/atmega/ATmega324A.atdf
+@@ -197,9 +197,9 @@
+               <signal group="PCINT" index="29" function="default" pad="PD5"/>
+               <signal group="PCINT" index="30" function="default" pad="PD6"/>
+               <signal group="PCINT" index="31" function="default" pad="PD7"/>
+-              <signal group="INT0" index="0" function="default" pad="PD2"/>
+-              <signal group="INT1" index="1" function="default" pad="PD3"/>
+-              <signal group="INT2" index="2" function="default" pad="PB2"/>
++              <signal group="INT" index="0" function="default" pad="PD2"/>
++              <signal group="INT" index="1" function="default" pad="PD3"/>
++              <signal group="INT" index="2" function="default" pad="PB2"/>
+             </signals>
+           </instance>
+         </module>
+diff --git a/avr-devices/atmega/ATmega644.atdf b/avr-devices/atmega/ATmega644.atdf
+index e922770..ee61bd8 100644
+--- a/avr-devices/atmega/ATmega644.atdf
++++ b/avr-devices/atmega/ATmega644.atdf
+@@ -54,9 +54,9 @@
+           <instance name="USART0" caption="USART">
+             <register-group name="USART0" name-in-module="USART0" offset="0x00" address-space="data" caption="USART"/>
+             <signals>
+-              <signal group="TXD" index="0" function="default" pad="PD1"/>
+-              <signal group="RXD" index="0" function="default" pad="PD0"/>
+-              <signal group="XCK" index="0" function="default" pad="PB0"/>
++              <signal group="TXD" function="default" pad="PD1"/>
++              <signal group="RXD" function="default" pad="PD0"/>
++              <signal group="XCK" function="default" pad="PB0"/>
+             </signals>
+           </instance>
+         </module>
+@@ -188,12 +188,12 @@
+               <signal group="PCINT" index="25" function="default" pad="PD1"/>
+               <signal group="PCINT" index="26" function="default" pad="PD2"/>
+               <signal group="INT" index="0" function="default" pad="PD2"/>
+-              <signal group="PCINT27" index="27" function="default" pad="PD3"/>
++              <signal group="PCINT" index="27" function="default" pad="PD3"/>
+               <signal group="INT" index="1" function="default" pad="PD3"/>
+-              <signal group="PCINT28" index="28" function="default" pad="PD4"/>
+-              <signal group="PCINT29" index="29" function="default" pad="PD5"/>
+-              <signal group="PCINT30" index="30" function="default" pad="PD6"/>
+-              <signal group="PCINT31" index="31" function="default" pad="PD7"/>
++              <signal group="PCINT" index="28" function="default" pad="PD4"/>
++              <signal group="PCINT" index="29" function="default" pad="PD5"/>
++              <signal group="PCINT" index="30" function="default" pad="PD6"/>
++              <signal group="PCINT" index="31" function="default" pad="PD7"/>
+             </signals>
+           </instance>
+         </module>
+diff --git a/avr-devices/attiny/ATtiny261.atdf b/avr-devices/attiny/ATtiny261.atdf
+index 7785ebb..70c8ac3 100644
+--- a/avr-devices/attiny/ATtiny261.atdf
++++ b/avr-devices/attiny/ATtiny261.atdf
+@@ -103,7 +103,7 @@
+             <signals>
+               <signal field="USIPOS" function="USI" group="SDA" pad="PB0"/>
+               <signal field="USIPOS" function="USI" group="SCL" pad="PB2"/>
+-              <signal field="USIPOS" function="USI_ALT" group="SCL " pad="PA2"/>
++              <signal field="USIPOS" function="USI_ALT" group="SCL" pad="PA2"/>
+               <signal field="USIPOS" function="USI_ALT" group="SDA" pad="PA0"/>
+               <signal field="USIPOS" function="USI" group="DI" pad="PB0"/>
+               <signal field="USIPOS" function="USI" group="DO" pad="PB1"/>
+@@ -153,22 +153,22 @@
+           <instance name="EXINT" caption="External Interrupts">
+             <register-group name="EXINT" name-in-module="EXINT" offset="0x00" address-space="data" caption="External Interrupts"/>
+             <signals>
+-              <signal function="EXTINT" group="PCINT0" index="0" pad="PA0"/>
+-              <signal function="EXTINT" group="PCINT1" index="1" pad="PA1"/>
+-              <signal function="EXTINT" group="PCINT2" index="2" pad="PA2"/>
+-              <signal function="EXTINT" group="PCINT3" index="3" pad="PA3"/>
+-              <signal function="EXTINT" group="PCINT4" index="4" pad="PA4"/>
+-              <signal function="EXTINT" group="PCINT5" index="5" pad="PA5"/>
+-              <signal function="EXTINT" group="PCINT6" index="6" pad="PA6"/>
+-              <signal function="EXTINT" group="PCINT7" index="7" pad="PA7"/>
+-              <signal function="EXTINT" group="PCINT8" index="8" pad="PB0"/>
+-              <signal function="EXTINT" group="PCINT9" index="9" pad="PB1"/>
+-              <signal function="EXTINT" group="PCINT10" index="10" pad="PB2"/>
+-              <signal function="EXTINT" group="PCINT11" index="11" pad="PB3"/>
+-              <signal function="EXTINT" group="PCINT12" index="12" pad="PB4"/>
+-              <signal function="EXTINT" group="PCINT13" index="13" pad="PB5"/>
+-              <signal function="EXTINT" group="PCINT14" index="14" pad="PB6"/>
+-              <signal function="EXTINT" group="PCINT15" index="15" pad="PB7"/>
++              <signal function="EXTINT" group="PCINT" index="0" pad="PA0"/>
++              <signal function="EXTINT" group="PCINT" index="1" pad="PA1"/>
++              <signal function="EXTINT" group="PCINT" index="2" pad="PA2"/>
++              <signal function="EXTINT" group="PCINT" index="3" pad="PA3"/>
++              <signal function="EXTINT" group="PCINT" index="4" pad="PA4"/>
++              <signal function="EXTINT" group="PCINT" index="5" pad="PA5"/>
++              <signal function="EXTINT" group="PCINT" index="6" pad="PA6"/>
++              <signal function="EXTINT" group="PCINT" index="7" pad="PA7"/>
++              <signal function="EXTINT" group="PCINT" index="8" pad="PB0"/>
++              <signal function="EXTINT" group="PCINT" index="9" pad="PB1"/>
++              <signal function="EXTINT" group="PCINT" index="10" pad="PB2"/>
++              <signal function="EXTINT" group="PCINT" index="11" pad="PB3"/>
++              <signal function="EXTINT" group="PCINT" index="12" pad="PB4"/>
++              <signal function="EXTINT" group="PCINT" index="13" pad="PB5"/>
++              <signal function="EXTINT" group="PCINT" index="14" pad="PB6"/>
++              <signal function="EXTINT" group="PCINT" index="15" pad="PB7"/>
+               <signal function="EXTINT" group="INT" index="1" pad="PA2"/>
+               <signal function="EXTINT" group="INT" index="0" pad="PB6"/>
+             </signals>
+diff --git a/avr-devices/attiny/ATtiny461.atdf b/avr-devices/attiny/ATtiny461.atdf
+index d053b0d..06d4211 100644
+--- a/avr-devices/attiny/ATtiny461.atdf
++++ b/avr-devices/attiny/ATtiny461.atdf
+@@ -103,7 +103,7 @@
+             <signals>
+              <signal field="USIPOS" function="USI" group="SDA" pad="PB0"/>
+               <signal field="USIPOS" function="USI" group="SCL" pad="PB2"/>
+-              <signal field="USIPOS" function="USI_ALT" group="SCL " pad="PA2"/>
++              <signal field="USIPOS" function="USI_ALT" group="SCL" pad="PA2"/>
+               <signal field="USIPOS" function="USI_ALT" group="SDA" pad="PA0"/>
+               <signal field="USIPOS" function="USI" group="DI" pad="PB0"/>
+               <signal field="USIPOS" function="USI" group="DO" pad="PB1"/>
+@@ -153,22 +153,22 @@
+           <instance name="EXINT" caption="External Interrupts">
+             <register-group name="EXINT" name-in-module="EXINT" offset="0x00" address-space="data" caption="External Interrupts"/>
+             <signals>
+-              <signal function="EXTINT" group="PCINT0" index="0" pad="PA0"/>
+-              <signal function="EXTINT" group="PCINT1" index="1" pad="PA1"/>
+-              <signal function="EXTINT" group="PCINT2" index="2" pad="PA2"/>
+-              <signal function="EXTINT" group="PCINT3" index="3" pad="PA3"/>
+-              <signal function="EXTINT" group="PCINT4" index="4" pad="PA4"/>
+-              <signal function="EXTINT" group="PCINT5" index="5" pad="PA5"/>
+-              <signal function="EXTINT" group="PCINT6" index="6" pad="PA6"/>
+-              <signal function="EXTINT" group="PCINT7" index="7" pad="PA7"/>
+-              <signal function="EXTINT" group="PCINT8" index="8" pad="PB0"/>
+-              <signal function="EXTINT" group="PCINT9" index="9" pad="PB1"/>
+-              <signal function="EXTINT" group="PCINT10" index="10" pad="PB2"/>
+-              <signal function="EXTINT" group="PCINT11" index="11" pad="PB3"/>
+-              <signal function="EXTINT" group="PCINT12" index="12" pad="PB4"/>
+-              <signal function="EXTINT" group="PCINT13" index="13" pad="PB5"/>
+-              <signal function="EXTINT" group="PCINT14" index="14" pad="PB6"/>
+-              <signal function="EXTINT" group="PCINT15" index="15" pad="PB7"/>
++              <signal function="EXTINT" group="PCINT" index="0" pad="PA0"/>
++              <signal function="EXTINT" group="PCINT" index="1" pad="PA1"/>
++              <signal function="EXTINT" group="PCINT" index="2" pad="PA2"/>
++              <signal function="EXTINT" group="PCINT" index="3" pad="PA3"/>
++              <signal function="EXTINT" group="PCINT" index="4" pad="PA4"/>
++              <signal function="EXTINT" group="PCINT" index="5" pad="PA5"/>
++              <signal function="EXTINT" group="PCINT" index="6" pad="PA6"/>
++              <signal function="EXTINT" group="PCINT" index="7" pad="PA7"/>
++              <signal function="EXTINT" group="PCINT" index="8" pad="PB0"/>
++              <signal function="EXTINT" group="PCINT" index="9" pad="PB1"/>
++              <signal function="EXTINT" group="PCINT" index="10" pad="PB2"/>
++              <signal function="EXTINT" group="PCINT" index="11" pad="PB3"/>
++              <signal function="EXTINT" group="PCINT" index="12" pad="PB4"/>
++              <signal function="EXTINT" group="PCINT" index="13" pad="PB5"/>
++              <signal function="EXTINT" group="PCINT" index="14" pad="PB6"/>
++              <signal function="EXTINT" group="PCINT" index="15" pad="PB7"/>
+               <signal function="EXTINT" group="INT" index="1" pad="PA2"/>
+               <signal function="EXTINT" group="INT" index="0" pad="PB6"/>
+             </signals>
+diff --git a/avr-devices/attiny/ATtiny861.atdf b/avr-devices/attiny/ATtiny861.atdf
+index 02a8cc3..4cbd66d 100644
+--- a/avr-devices/attiny/ATtiny861.atdf
++++ b/avr-devices/attiny/ATtiny861.atdf
+@@ -103,7 +103,7 @@
+             <signals>
+               <signal field="USIPOS" function="USI" group="SDA" pad="PB0"/>
+               <signal field="USIPOS" function="USI" group="SCL" pad="PB2"/>
+-              <signal field="USIPOS" function="USI_ALT" group="SCL " pad="PA2"/>
++              <signal field="USIPOS" function="USI_ALT" group="SCL" pad="PA2"/>
+               <signal field="USIPOS" function="USI_ALT" group="SDA" pad="PA0"/>
+               <signal field="USIPOS" function="USI" group="DI" pad="PB0"/>
+               <signal field="USIPOS" function="USI" group="DO" pad="PB1"/>
+@@ -155,22 +155,22 @@
+           <instance name="EXINT" caption="External Interrupts">
+             <register-group name="EXINT" name-in-module="EXINT" offset="0x00" address-space="data" caption="External Interrupts"/>
+             <signals>
+-              <signal function="EXTINT" group="PCINT0" index="0" pad="PA0"/>
+-              <signal function="EXTINT" group="PCINT1" index="1" pad="PA1"/>
+-              <signal function="EXTINT" group="PCINT2" index="2" pad="PA2"/>
+-              <signal function="EXTINT" group="PCINT3" index="3" pad="PA3"/>
+-              <signal function="EXTINT" group="PCINT4" index="4" pad="PA4"/>
+-              <signal function="EXTINT" group="PCINT5" index="5" pad="PA5"/>
+-              <signal function="EXTINT" group="PCINT6" index="6" pad="PA6"/>
+-              <signal function="EXTINT" group="PCINT7" index="7" pad="PA7"/>
+-              <signal function="EXTINT" group="PCINT8" index="8" pad="PB0"/>
+-              <signal function="EXTINT" group="PCINT9" index="9" pad="PB1"/>
+-              <signal function="EXTINT" group="PCINT10" index="10" pad="PB2"/>
+-              <signal function="EXTINT" group="PCINT11" index="11" pad="PB3"/>
+-              <signal function="EXTINT" group="PCINT12" index="12" pad="PB4"/>
+-              <signal function="EXTINT" group="PCINT13" index="13" pad="PB5"/>
+-              <signal function="EXTINT" group="PCINT14" index="14" pad="PB6"/>
+-              <signal function="EXTINT" group="PCINT15" index="15" pad="PB7"/>
++              <signal function="EXTINT" group="PCINT" index="0" pad="PA0"/>
++              <signal function="EXTINT" group="PCINT" index="1" pad="PA1"/>
++              <signal function="EXTINT" group="PCINT" index="2" pad="PA2"/>
++              <signal function="EXTINT" group="PCINT" index="3" pad="PA3"/>
++              <signal function="EXTINT" group="PCINT" index="4" pad="PA4"/>
++              <signal function="EXTINT" group="PCINT" index="5" pad="PA5"/>
++              <signal function="EXTINT" group="PCINT" index="6" pad="PA6"/>
++              <signal function="EXTINT" group="PCINT" index="7" pad="PA7"/>
++              <signal function="EXTINT" group="PCINT" index="8" pad="PB0"/>
++              <signal function="EXTINT" group="PCINT" index="9" pad="PB1"/>
++              <signal function="EXTINT" group="PCINT" index="10" pad="PB2"/>
++              <signal function="EXTINT" group="PCINT" index="11" pad="PB3"/>
++              <signal function="EXTINT" group="PCINT" index="12" pad="PB4"/>
++              <signal function="EXTINT" group="PCINT" index="13" pad="PB5"/>
++              <signal function="EXTINT" group="PCINT" index="14" pad="PB6"/>
++              <signal function="EXTINT" group="PCINT" index="15" pad="PB7"/>
+               <signal function="EXTINT" group="INT" index="1" pad="PA2"/>
+               <signal function="EXTINT" group="INT" index="0" pad="PB6"/>
+             </signals>
