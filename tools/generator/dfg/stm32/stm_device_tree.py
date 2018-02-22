@@ -10,6 +10,7 @@ import logging
 from ..device_tree import DeviceTree
 from ..input.xml import XMLReader
 
+from .stm_header import STMHeader
 from .stm_identifier import STMIdentifier
 from . import stm
 from . import stm_peripherals
@@ -22,7 +23,6 @@ class STMDeviceTree:
     translates the data into a platform independent format.
     """
     rootpath = os.path.join(os.path.dirname(__file__), "..", "..", "raw-device-data", "stm32-devices", "mcu")
-    cmsis_headers = os.path.join(os.path.dirname(__file__), "..", "..", "cmsis-header-stm32")
     familyFile = XMLReader(os.path.join(rootpath, "families.xml"))
 
     @staticmethod
@@ -153,22 +153,6 @@ class STMDeviceTree:
         p["pin-count"] = re.findall("[0-9]+", package)[0]
         p["package"] = re.findall("[A-Za-z\.]+", package)[0]
 
-        # device defines
-        defines = []
-        cmsis_folder = os.path.join(STMDeviceTree.cmsis_headers, "stm32{}xx".format(did["family"]), "include")
-        family_header = "stm32{}xx.h".format(did["family"])
-        dev_def = None
-
-        with open(os.path.join(cmsis_folder, family_header), "r", errors="replace") as headerFile:
-            match = re.findall("if defined\((?P<define>STM32[F|L|H].....)\)", headerFile.read())
-            if match:
-                dev_def = stm.getDefineForDevice(did, match)
-        if dev_def is None:
-            LOGGER.error("Define not found for device '{}'".format(did.string))
-            return None
-
-        p["cmsis_define"] = dev_def
-
         def clean_up_version(version):
             match = re.search("v[1-9]_[0-9x]", version.replace(".", "_"))
             if match:
@@ -205,29 +189,10 @@ class STMDeviceTree:
         instances = [m[1] for m in modules]
         # print("\n".join(str(m) for m in modules))
 
-        # add entire interrupt vectore table here.
-        # I have not found a way to extract the correct vector _position_ from the ST device files
-        # so we have to swallow our pride and just parse the header file
-        headerFilePath = os.path.join(cmsis_folder, "{}.h".format(dev_def.lower()))
-        with open(headerFilePath, "r", errors="replace") as headerFile:
-            match = re.search(r"typedef enum.*?/\*\*.*?/\*\*.*?\*/(?P<table>.*?)} IRQn_Type;", headerFile.read(), re.DOTALL)
-        if not match:
-            LOGGER.error("Interrupt vector table not found for device '{}'".format(did.string))
-            return None
-        ivectors = []
-        for line in match.group("table").split("\n")[1:-1]:
-            if "=" not in line:  # avoid multiline comment
-                continue
-
-            name, pos = line.split("/*!<")[0].split("=")
-            pos = int(pos.strip(" ,"))
-            name = name.strip()[:-5]
-            # What is this. I don"t even.
-            if did["family"] in ["f3"] and pos == 42 and name == "USBWakeUp":
-                continue
-            ivectors.append({"position": pos, "name": name})
-        LOGGER.debug("Found interrupt vectors:\n" + "\n".join(["{}: {}".format(v["position"], v["name"]) for v in ivectors]))
-        p["interrupts"] = ivectors
+        # Information from the CMSIS headers
+        stm_header = STMHeader(did)
+        p["stm_header"] = stm_header
+        p["interrupts"] = stm_header.get_interrupt_table()
 
         # lets load additional information about the GPIO IP
         ip_file = device_file.query('//IP[@Name="GPIO"]')[0].get("Version")
@@ -524,7 +489,7 @@ class STMDeviceTree:
     def addInterruptTableToNode(p, node):
         interrupts = p["interrupts"]
 
-        for vector in interrupts:
+        for vector in [i for i in interrupts if i["position"] >= 0]:
             vector_section = node.addChild("vector")
             vector_section.setAttributes(["position", "name"], vector)
             vector_section.setIdentifier(lambda e: e["position"])
