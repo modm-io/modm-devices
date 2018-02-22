@@ -1,0 +1,76 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import os
+import argparse
+import sys
+from collections import defaultdict
+
+import glob
+import pprint
+import json
+
+rootpath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")
+sys.path.append(rootpath)
+
+import modm.parser
+
+if __name__ == "__main__":
+
+    arg = argparse.ArgumentParser(description="Device File Statistics")
+    group = arg.add_mutually_exclusive_group()
+    group.add_argument("--ram", action="store_true", help="List all RAM sizes")
+    group.add_argument("--flash", action="store_true", help="List all Flash sizes")
+    group.add_argument("--driver", action="store_true", help="List all drivers")
+    group.add_argument("--count", action="store_true", help="Counts all devices")
+    group.add_argument("--name", action="store_true", help="List all part names")
+    group.add_argument("--json", action="store_true", help="Dump entire device files as json")
+    arg.add_argument("filter", nargs='?', help="Only consider devices starting with this string")
+    args = arg.parse_args()
+
+    total_count = 0
+    devices = {}
+    for filename in glob.glob("{}/../../devices/**/*.xml".format(rootpath)):
+        for d in modm.parser.DeviceParser().parse(filename).get_devices():
+            total_count += 1
+            if args.filter and not d.partname.startswith(args.filter):
+                continue
+            devices[d.partname] = d
+
+    dev_names = sorted(devices.keys())
+    dev_count = len(devices.keys())
+    # print("{}{}: Querying {} of {} devices".format(args.filter, "*" if dev_count > 1 else "", dev_count, total_count))
+
+    if args.count:
+        print("{} devices".format(dev_count))
+    if args.name:
+        print(json.dumps(dev_names, indent=4, sort_keys=True))
+    elif args.json:
+        dump = []
+        for name in dev_names:
+            device = {"name": name, "device": devices[name].properties}
+            dump.append(device)
+        print(json.dumps(dump, indent=4, sort_keys=True))
+    elif args.ram or args.flash:
+        ram_sizes = defaultdict(int)
+        flash_sizes = defaultdict(int)
+        for name in dev_names:
+            core = [d for d in devices[name].properties['driver'] if d['name'] == 'core'][0]
+            if 'memory' in core:
+                ram_size = 0
+                flash_size = 0
+                for memory in core['memory']:
+                    if 'flash' in memory['name']:
+                        flash_size += int(memory['size'])
+                    else:
+                        ram_size += int(memory['size'])
+                ram_sizes[ram_size] += 1;
+                flash_sizes[flash_size] += 1;
+        print(json.dumps(ram_sizes if args.ram else flash_sizes, indent=4, sort_keys=True))
+    elif args.driver:
+        drivers = defaultdict(int)
+        for name in dev_names:
+            for driver in devices[name].properties['driver']:
+                drivers[driver['name']] += 1
+        print(json.dumps(drivers, indent=4, sort_keys=True))
+
