@@ -14,7 +14,7 @@ It is licensed under the MPLv2 license.
 
 Currently data on all STM32 families is available, as well as all AVR devices
 (most of which are missing GPIO data though).
-Please open an issue or better yet a pull request for addititional support.
+Please open an issue or better yet a pull request for additional support.
 
 
 ### TL;DR
@@ -50,9 +50,8 @@ modm to make it more maintainable and flexible as well as handling edge cases
 much better.
 
 We've separated the device data from modm, so that it becomes easier for YOU
-to use this data for your own purposes. See my [talk on modm][modm-talk] for details.
-
-[![][modm-talk-preview]][modm-talk]
+to use this data for your own purposes.
+[I've written an blog post with all the details](http://blog.salkinium.com/modm-devices).
 
 
 ### Data quality
@@ -96,7 +95,7 @@ reason. This allows us maximum flexibility in encoding this complicated
 device information. If you want to engage in format discussions, please consider
 contributing to the device tree specification instead.
 
-Since I may change this data format to accomodate new data, you should write your
+Since I may change this data format to accommodate new data, you should write your
 **own formatter** of this data, so that you have much better control over what
 your tools are expecting!
 So, if you need this data in the form of a Device Tree, please write your own
