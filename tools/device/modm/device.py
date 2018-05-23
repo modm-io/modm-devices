@@ -58,7 +58,7 @@ class Device:
                                   "The name must contain no or one ':' to "
                                   "separate type and name.".format(name))
 
-        return results
+        return copy.deepcopy(results)
 
     def get_driver(self, name):
         results = self.get_all_drivers(name)
