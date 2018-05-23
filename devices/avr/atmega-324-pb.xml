@@ -134,13 +134,13 @@
         <signal driver="exint" name="pcint16"/>
         <signal driver="ptc" name="x10"/>
         <signal driver="ptc" name="y18"/>
-        <signal driver="twi" instance="0" name="sda0"/>
+        <signal driver="twi" instance="0" name="scl0"/>
       </gpio>
       <gpio port="C" pin="1">
         <signal driver="exint" name="pcint17"/>
         <signal driver="ptc" name="x11"/>
         <signal driver="ptc" name="y19"/>
-        <signal driver="twi" instance="0" name="scl0"/>
+        <signal driver="twi" instance="0" name="sda0"/>
       </gpio>
       <gpio port="C" pin="2">
         <signal driver="exint" name="pcint18"/>

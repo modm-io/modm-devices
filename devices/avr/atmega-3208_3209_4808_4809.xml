@@ -40,7 +40,7 @@
       <instance value="b0"/>
       <instance value="b1"/>
       <instance value="b2"/>
-      <instance device-name="4809" value="b3"/>
+      <instance device-name="3209|4809" value="b3"/>
     </driver>
     <driver name="twi" type="avr">
       <instance value="0"/>
@@ -48,8 +48,8 @@
     <driver name="usart" type="avr">
       <instance value="0"/>
       <instance value="1"/>
-      <instance device-name="4808|4809" value="2"/>
-      <instance device-name="4809" value="3"/>
+      <instance value="2"/>
+      <instance device-name="3209|4809" value="3"/>
     </driver>
     <driver name="userrow" type="avr"/>
     <driver name="vport" type="avr">
@@ -112,30 +112,30 @@
       </gpio>
       <gpio port="B" pin="0">
         <signal driver="tc" instance="a0" name="wo0"/>
-        <signal device-name="4809" driver="usart" instance="3" name="txd"/>
+        <signal device-name="3209|4809" driver="usart" instance="3" name="txd"/>
       </gpio>
       <gpio port="B" pin="1">
         <signal driver="tc" instance="a0" name="wo1"/>
-        <signal device-name="4809" driver="usart" instance="3" name="rxd"/>
+        <signal device-name="3209|4809" driver="usart" instance="3" name="rxd"/>
       </gpio>
       <gpio port="B" pin="2">
         <signal driver="evsys" name="evout1"/>
         <signal driver="tc" instance="a0" name="wo2"/>
-        <signal device-name="4809" driver="usart" instance="3" name="xck"/>
+        <signal device-name="3209|4809" driver="usart" instance="3" name="xck"/>
       </gpio>
       <gpio port="B" pin="3">
         <signal driver="tc" instance="a0" name="wo3"/>
-        <signal device-name="4809" driver="usart" instance="3" name="xdir"/>
+        <signal device-name="3209|4809" driver="usart" instance="3" name="xdir"/>
       </gpio>
       <gpio port="B" pin="4">
         <signal driver="tc" instance="a0" name="wo4"/>
         <signal driver="tc" instance="b2" name="wo0"/>
-        <signal device-name="4809" driver="usart" instance="3" name="txd"/>
+        <signal device-name="3209|4809" driver="usart" instance="3" name="txd"/>
       </gpio>
       <gpio port="B" pin="5">
         <signal driver="tc" instance="a0" name="wo5"/>
-        <signal device-name="4809" driver="tc" instance="b3" name="wo0"/>
-        <signal device-name="4809" driver="usart" instance="3" name="rxd"/>
+        <signal device-name="3209|4809" driver="tc" instance="b3" name="wo0"/>
+        <signal device-name="3209|4809" driver="usart" instance="3" name="rxd"/>
       </gpio>
       <gpio port="C" pin="0">
         <signal driver="ccl" name="lut1_in0"/>
@@ -148,7 +148,7 @@
         <signal driver="ccl" name="lut1_in1"/>
         <signal driver="spi" instance="0" name="miso"/>
         <signal driver="tc" instance="a0" name="wo1"/>
-        <signal device-name="4809" driver="tc" instance="b3" name="wo0"/>
+        <signal device-name="3209|4809" driver="tc" instance="b3" name="wo0"/>
         <signal driver="usart" instance="1" name="rxd"/>
       </gpio>
       <gpio port="C" pin="2">
@@ -265,13 +265,13 @@
         <signal driver="ccl" name="lut3_in0"/>
         <signal driver="clkctrl" name="tosc1"/>
         <signal driver="tc" instance="a0" name="wo0"/>
-        <signal device-name="4808|4809" driver="usart" instance="2" name="txd"/>
+        <signal driver="usart" instance="2" name="txd"/>
       </gpio>
       <gpio port="F" pin="1">
         <signal driver="ccl" name="lut3_in1"/>
         <signal driver="clkctrl" name="tosc2"/>
         <signal driver="tc" instance="a0" name="wo1"/>
-        <signal device-name="4808|4809" driver="usart" instance="2" name="rxd"/>
+        <signal driver="usart" instance="2" name="rxd"/>
       </gpio>
       <gpio port="F" pin="2">
         <signal driver="adc" instance="0" name="ain12"/>
@@ -279,31 +279,31 @@
         <signal driver="evsys" name="evout5"/>
         <signal driver="tc" instance="a0" name="wo2"/>
         <signal driver="twi" instance="0" name="sda"/>
-        <signal device-name="4808|4809" driver="usart" instance="2" name="xck"/>
+        <signal driver="usart" instance="2" name="xck"/>
       </gpio>
       <gpio port="F" pin="3">
         <signal driver="adc" instance="0" name="ain13"/>
         <signal driver="ccl" name="lut3_out1"/>
         <signal driver="tc" instance="a0" name="wo3"/>
         <signal driver="twi" instance="0" name="scl"/>
-        <signal device-name="4808|4809" driver="usart" instance="2" name="xdir"/>
+        <signal driver="usart" instance="2" name="xdir"/>
       </gpio>
       <gpio port="F" pin="4">
         <signal driver="adc" instance="0" name="ain14"/>
         <signal driver="tc" instance="a0" name="wo4"/>
         <signal driver="tc" instance="b0" name="wo0"/>
-        <signal device-name="4808|4809" driver="usart" instance="2" name="txd"/>
+        <signal driver="usart" instance="2" name="txd"/>
       </gpio>
       <gpio port="F" pin="5">
         <signal driver="adc" instance="0" name="ain15"/>
         <signal driver="tc" instance="a0" name="wo5"/>
         <signal driver="tc" instance="b1" name="wo0"/>
-        <signal device-name="4808|4809" driver="usart" instance="2" name="rxd"/>
+        <signal driver="usart" instance="2" name="rxd"/>
       </gpio>
       <gpio port="F" pin="6">
         <signal driver="ccl" name="lut3_out1"/>
         <signal driver="rstctrl" name="reset"/>
-        <signal device-name="4808|4809" driver="usart" instance="2" name="xck"/>
+        <signal driver="usart" instance="2" name="xck"/>
       </gpio>
     </driver>
   </device>
