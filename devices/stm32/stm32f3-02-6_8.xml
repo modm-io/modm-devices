@@ -53,6 +53,7 @@
       <vector position="39" name="USART3"/>
       <vector position="40" name="EXTI15_10"/>
       <vector position="41" name="RTC_Alarm"/>
+      <vector position="42" name="USBWakeUp"/>
       <vector position="51" name="SPI3"/>
       <vector position="54" name="TIM6_DAC"/>
       <vector position="64" name="COMP2"/>

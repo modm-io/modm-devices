@@ -68,6 +68,7 @@
       <vector position="39" name="USART3"/>
       <vector position="40" name="EXTI15_10"/>
       <vector position="41" name="RTC_Alarm"/>
+      <vector position="42" name="USBWakeUp"/>
       <vector device-size="d|e" position="48" name="FMC"/>
       <vector position="51" name="SPI3"/>
       <vector position="52" name="UART4"/>

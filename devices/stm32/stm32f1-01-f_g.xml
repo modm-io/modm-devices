@@ -25,7 +25,7 @@
       <vector position="15" name="DMA1_Channel5"/>
       <vector position="16" name="DMA1_Channel6"/>
       <vector position="17" name="DMA1_Channel7"/>
-      <vector position="18" name="ADC1_2"/>
+      <vector position="18" name="ADC1"/>
       <vector position="23" name="EXTI9_5"/>
       <vector position="24" name="TIM9"/>
       <vector position="25" name="TIM10"/>

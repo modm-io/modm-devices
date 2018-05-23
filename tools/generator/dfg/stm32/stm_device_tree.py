@@ -164,7 +164,7 @@ class STMDeviceTree:
         modules = []
         for ip in device_file.query('//IP'):
             # These IPs are all software modules, NOT hardware modules. Their version string is weird too.
-            if ip.get("Name") in ["FATFS", "TOUCHSENSING", "PDM2PCM", "MBEDTLS", "FREERTOS", "CORTEX_M7", "NVIC", "USB_DEVICE", "USB_HOST", "LWIP", "LIBJPEG"]:
+            if ip.get("Name").upper() in ["GFXSIMULATOR", "GRAPHICS", "FATFS", "TOUCHSENSING", "PDM2PCM", "MBEDTLS", "FREERTOS", "CORTEX_M7", "NVIC", "USB_DEVICE", "USB_HOST", "LWIP", "LIBJPEG"]:
                 continue
 
             rversion = ip.get("Version")

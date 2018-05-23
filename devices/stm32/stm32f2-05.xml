@@ -191,9 +191,9 @@
         <signal driver="adc" instance="1" name="in0"/>
         <signal driver="adc" instance="2" name="in0"/>
         <signal driver="adc" instance="3" name="in0"/>
-        <signal driver="tim" instance="2" name="etr"/>
         <signal af="0" driver="sys" name="wkup"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
+        <signal af="1" driver="tim" instance="2" name="etr"/>
         <signal af="2" driver="tim" instance="5" name="ch1"/>
         <signal af="3" driver="tim" instance="8" name="etr"/>
         <signal af="7" driver="usart" instance="2" name="cts"/>
@@ -241,8 +241,8 @@
         <signal driver="adc" instance="1" name="in5"/>
         <signal driver="adc" instance="2" name="in5"/>
         <signal driver="dac" name="out2"/>
-        <signal driver="tim" instance="2" name="etr"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
+        <signal af="1" driver="tim" instance="2" name="etr"/>
         <signal af="3" driver="tim" instance="8" name="ch1n"/>
         <signal af="5" driver="spi" instance="1" name="sck"/>
         <signal af="10" driver="usb_otg_hs" name="ulpi_ck"/>
@@ -311,9 +311,9 @@
         <signal driver="adc" instance="1" name="exti15"/>
         <signal driver="adc" instance="2" name="exti15"/>
         <signal driver="adc" instance="3" name="exti15"/>
-        <signal driver="tim" instance="2" name="etr"/>
         <signal af="0" driver="sys" name="jtdi"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
+        <signal af="1" driver="tim" instance="2" name="etr"/>
         <signal af="5" driver="spi" instance="1" name="nss"/>
         <signal af="6" driver="i2s" instance="3" name="ws"/>
         <signal af="6" driver="spi" instance="3" name="nss"/>
