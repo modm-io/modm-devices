@@ -218,7 +218,6 @@
         <signal af="4" driver="usart" instance="1" name="ck"/>
       </gpio>
       <gpio port="a" pin="9">
-        <signal device-name="52|53|62|63" driver="dac" name="exti9"/>
         <signal af="0" driver="rcc" name="mco"/>
         <signal device-name="53|63" af="1" driver="lcd" name="com1"/>
         <signal device-name="52|53|62|63" af="3" driver="tsc" name="g4_io1"/>
@@ -230,7 +229,6 @@
         <signal af="4" driver="usart" instance="1" name="rx"/>
       </gpio>
       <gpio port="a" pin="11">
-        <signal driver="adc" name="exti11"/>
         <signal device-name="52|53|62|63" driver="usb" name="dm"/>
         <signal af="0" driver="spi" instance="1" name="miso"/>
         <signal device-name="52|53|62|63" af="3" driver="tsc" name="g4_io3"/>
@@ -377,7 +375,6 @@
         <signal af="4" driver="i2c" instance="1" name="scl"/>
       </gpio>
       <gpio device-pin="c|r" port="b" pin="9">
-        <signal device-name="52|53|63" device-pin="c|r" driver="dac" name="exti9"/>
         <signal device-name="53|63" af="1" driver="lcd" name="com3"/>
         <signal af="4" driver="i2c" instance="1" name="sda"/>
         <signal af="5" driver="i2s" instance="2" name="ws"/>
@@ -393,7 +390,6 @@
         <signal af="6" driver="i2c" instance="2" name="scl"/>
       </gpio>
       <gpio device-pin="c|r|t" port="b" pin="11">
-        <signal driver="adc" name="exti11"/>
         <signal device-name="53|63" af="1" driver="lcd" name="seg11"/>
         <signal af="2" driver="tim" instance="2" name="ch4"/>
         <signal device-name="52" device-pin="c|r|t" af="3" driver="tsc" name="g6_io1"/>
@@ -509,8 +505,6 @@
         <signal device-name="63" device-size="8" device-package="t" af="3" driver="tsc" name="g8_io3"/>
       </gpio>
       <gpio device-pin="r" port="c" pin="9">
-        <signal device-name="52|53" device-size="6|8" device-package="h|t" driver="dac" name="exti9"/>
-        <signal device-name="63" device-size="8" device-package="t" driver="dac" name="exti9"/>
         <signal af="0" driver="tim" instance="21" name="etr"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" af="1" driver="lcd" name="seg27"/>
         <signal device-name="63" device-size="8" device-package="t" af="1" driver="lcd" name="seg27"/>
@@ -527,7 +521,6 @@
         <signal device-name="63" device-size="8" device-package="t" af="1" driver="lcd" name="seg28"/>
       </gpio>
       <gpio device-pin="r" port="c" pin="11">
-        <signal driver="adc" name="exti11"/>
         <signal af="0" driver="lpuart" instance="1" name="rx"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" af="1" driver="lcd" name="com5"/>
         <signal device-name="63" device-size="8" device-package="t" af="1" driver="lcd" name="com5"/>

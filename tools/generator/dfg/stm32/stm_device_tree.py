@@ -274,6 +274,7 @@ class STMDeviceTree:
                     naf = {}
                     naf["driver"], naf["instance"], naf["name"] = raf
                     naf["af"] = af[1] if int(af[1]) >= 0 else None
+                    if "exti" in naf["name"]: continue;
                     afs.append(naf)
 
             gpio = (name[1:2].lower(), name[2:].lower(), afs)

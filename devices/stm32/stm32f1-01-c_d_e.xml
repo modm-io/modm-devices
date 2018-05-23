@@ -288,12 +288,9 @@
         <signal driver="rcc" name="mco"/>
         <signal driver="usart" instance="1" name="ck"/>
       </gpio>
-      <gpio port="a" pin="9">
-        <signal driver="dac" name="exti9"/>
-      </gpio>
+      <gpio port="a" pin="9"/>
       <gpio port="a" pin="10"/>
       <gpio port="a" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
         <signal driver="usart" instance="1" name="cts"/>
       </gpio>
       <gpio port="a" pin="12">
@@ -308,7 +305,6 @@
         <signal driver="sys" name="swclk"/>
       </gpio>
       <gpio port="a" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
         <signal driver="sys" name="jtdi"/>
       </gpio>
       <gpio port="b" pin="0">
@@ -333,14 +329,11 @@
         <signal device-pin="v|z" driver="fsmc" name="nl"/>
       </gpio>
       <gpio port="b" pin="8"/>
-      <gpio port="b" pin="9">
-        <signal driver="dac" name="exti9"/>
-      </gpio>
+      <gpio port="b" pin="9"/>
       <gpio port="b" pin="10">
         <signal driver="i2c" instance="2" name="scl"/>
       </gpio>
       <gpio port="b" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
         <signal driver="i2c" instance="2" name="sda"/>
       </gpio>
       <gpio port="b" pin="12">
@@ -354,7 +347,6 @@
         <signal driver="spi" instance="2" name="miso"/>
       </gpio>
       <gpio port="b" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
         <signal driver="spi" instance="2" name="mosi"/>
       </gpio>
       <gpio port="c" pin="0">
@@ -378,14 +370,11 @@
       <gpio port="c" pin="6"/>
       <gpio port="c" pin="7"/>
       <gpio port="c" pin="8"/>
-      <gpio port="c" pin="9">
-        <signal driver="dac" name="exti9"/>
-      </gpio>
+      <gpio port="c" pin="9"/>
       <gpio port="c" pin="10">
         <signal driver="uart" instance="4" name="tx"/>
       </gpio>
       <gpio port="c" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
         <signal driver="uart" instance="4" name="rx"/>
       </gpio>
       <gpio port="c" pin="12">
@@ -399,7 +388,6 @@
         <signal driver="rcc" name="osc32_in"/>
       </gpio>
       <gpio port="c" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
         <signal driver="rcc" name="osc32_out"/>
       </gpio>
       <gpio port="d" pin="0">
@@ -437,7 +425,6 @@
         <signal driver="fsmc" name="da13"/>
       </gpio>
       <gpio device-pin="v|z" port="d" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal driver="fsmc" name="d14"/>
         <signal driver="fsmc" name="da14"/>
       </gpio>
@@ -446,7 +433,6 @@
         <signal driver="fsmc" name="da15"/>
       </gpio>
       <gpio device-pin="v|z" port="d" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
         <signal driver="fsmc" name="a16"/>
         <signal driver="fsmc" name="cle"/>
       </gpio>
@@ -462,7 +448,6 @@
         <signal driver="fsmc" name="da0"/>
       </gpio>
       <gpio device-pin="v|z" port="d" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
         <signal driver="fsmc" name="d1"/>
         <signal driver="fsmc" name="da1"/>
       </gpio>
@@ -502,7 +487,6 @@
         <signal driver="fsmc" name="da5"/>
       </gpio>
       <gpio device-pin="v|z" port="e" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal driver="fsmc" name="d6"/>
         <signal driver="fsmc" name="da6"/>
       </gpio>
@@ -511,7 +495,6 @@
         <signal driver="fsmc" name="da7"/>
       </gpio>
       <gpio device-pin="v|z" port="e" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
         <signal driver="fsmc" name="d8"/>
         <signal driver="fsmc" name="da8"/>
       </gpio>
@@ -528,7 +511,6 @@
         <signal driver="fsmc" name="da11"/>
       </gpio>
       <gpio device-pin="v|z" port="e" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
         <signal driver="fsmc" name="d12"/>
         <signal driver="fsmc" name="da12"/>
       </gpio>
@@ -560,14 +542,12 @@
         <signal driver="fsmc" name="niowr"/>
       </gpio>
       <gpio device-pin="z" port="f" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal driver="fsmc" name="cd"/>
       </gpio>
       <gpio device-pin="z" port="f" pin="10">
         <signal driver="fsmc" name="intr"/>
       </gpio>
       <gpio device-pin="z" port="f" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
         <signal driver="fsmc" name="nios16"/>
       </gpio>
       <gpio device-pin="z" port="f" pin="12">
@@ -580,7 +560,6 @@
         <signal driver="fsmc" name="a8"/>
       </gpio>
       <gpio device-pin="z" port="f" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
         <signal driver="fsmc" name="a9"/>
       </gpio>
       <gpio device-pin="z" port="g" pin="0">
@@ -609,7 +588,6 @@
       </gpio>
       <gpio device-pin="z" port="g" pin="8"/>
       <gpio device-pin="z" port="g" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal driver="fsmc" name="nce3"/>
         <signal driver="fsmc" name="ne2"/>
       </gpio>
@@ -618,7 +596,6 @@
         <signal driver="fsmc" name="ne3"/>
       </gpio>
       <gpio device-pin="z" port="g" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
         <signal driver="fsmc" name="nce4_2"/>
       </gpio>
       <gpio device-pin="z" port="g" pin="12">
@@ -630,9 +607,7 @@
       <gpio device-pin="z" port="g" pin="14">
         <signal driver="fsmc" name="a25"/>
       </gpio>
-      <gpio device-pin="z" port="g" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
-      </gpio>
+      <gpio device-pin="z" port="g" pin="15"/>
     </driver>
   </device>
 </modm>

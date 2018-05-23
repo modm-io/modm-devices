@@ -293,8 +293,6 @@
         <signal af="10" driver="tim" instance="4" name="etr"/>
       </gpio>
       <gpio port="a" pin="9">
-        <signal device-size="b|c" driver="dac" name="exti9"/>
-        <signal device-size="d|e" driver="dac" instance="1" name="exti9"/>
         <signal device-size="d|e" af="2" driver="i2c" instance="3" name="smba"/>
         <signal af="3" driver="tsc" name="g4_io1"/>
         <signal af="4" driver="i2c" instance="2" name="scl"/>
@@ -316,8 +314,6 @@
         <signal af="10" driver="tim" instance="2" name="ch4"/>
       </gpio>
       <gpio port="a" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
-        <signal driver="adc" instance="2" name="exti11"/>
         <signal device-size="d|e" driver="usb" name="dm"/>
         <signal device-size="d|e" af="5" driver="i2s" instance="2" name="sd"/>
         <signal device-size="d|e" af="5" driver="spi" instance="2" name="mosi"/>
@@ -361,8 +357,6 @@
         <signal af="7" driver="usart" instance="2" name="tx"/>
       </gpio>
       <gpio port="a" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
-        <signal driver="adc" instance="2" name="exti15"/>
         <signal af="0" driver="sys" name="jtdi"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
         <signal af="1" driver="tim" instance="2" name="etr"/>
@@ -454,8 +448,6 @@
         <signal af="12" driver="tim" instance="1" name="bkin"/>
       </gpio>
       <gpio port="b" pin="9">
-        <signal device-size="b|c" driver="dac" name="exti9"/>
-        <signal device-size="d|e" driver="dac" instance="1" name="exti9"/>
         <signal af="1" driver="tim" instance="17" name="ch1"/>
         <signal af="2" driver="tim" instance="4" name="ch4"/>
         <signal af="4" driver="i2c" instance="1" name="sda"/>
@@ -470,9 +462,7 @@
         <signal af="7" driver="usart" instance="3" name="tx"/>
       </gpio>
       <gpio port="b" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
         <signal device-size="d|e" driver="adc" instance="1" name="in14"/>
-        <signal driver="adc" instance="2" name="exti11"/>
         <signal device-size="d|e" driver="adc" instance="2" name="in14"/>
         <signal driver="comp" instance="6" name="inp"/>
         <signal af="1" driver="tim" instance="2" name="ch4"/>
@@ -506,8 +496,6 @@
         <signal af="7" driver="usart" instance="3" name="rts"/>
       </gpio>
       <gpio port="b" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
-        <signal driver="adc" instance="2" name="exti15"/>
         <signal driver="comp" instance="6" name="inm"/>
         <signal af="0" driver="rtc" name="refin"/>
         <signal af="1" driver="tim" instance="15" name="ch2"/>
@@ -565,8 +553,6 @@
         <signal af="2" driver="tim" instance="3" name="ch3"/>
       </gpio>
       <gpio device-pin="r|v|z" port="c" pin="9">
-        <signal device-pin="r|v" device-size="b|c" driver="dac" name="exti9"/>
-        <signal device-size="d|e" driver="dac" instance="1" name="exti9"/>
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal device-size="d|e" af="3" driver="i2c" instance="3" name="sda"/>
         <signal af="5" driver="i2s" name="ckin"/>
@@ -578,8 +564,6 @@
         <signal af="7" driver="usart" instance="3" name="tx"/>
       </gpio>
       <gpio device-pin="r|v|z" port="c" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
-        <signal driver="adc" instance="2" name="exti11"/>
         <signal af="5" driver="uart" instance="4" name="rx"/>
         <signal af="6" driver="i2s" instance="3" name="ext_sd"/>
         <signal af="6" driver="spi" instance="3" name="miso"/>
@@ -603,8 +587,6 @@
         <signal driver="rcc" name="osc32_in"/>
       </gpio>
       <gpio port="c" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
-        <signal driver="adc" instance="2" name="exti15"/>
         <signal driver="rcc" name="osc32_out"/>
       </gpio>
       <gpio device-pin="v|z" port="d" pin="0">
@@ -668,8 +650,6 @@
         <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d13"/>
       </gpio>
       <gpio device-pin="v|z" port="d" pin="9">
-        <signal device-pin="v" device-size="b|c" driver="dac" name="exti9"/>
-        <signal device-pin="v|z" device-size="d|e" driver="dac" instance="1" name="exti9"/>
         <signal device-pin="v|z" device-size="d|e" driver="fmc" name="da14"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
         <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d14"/>
@@ -681,8 +661,6 @@
         <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d15"/>
       </gpio>
       <gpio device-pin="v|z" port="d" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
-        <signal driver="adc" instance="2" name="exti11"/>
         <signal device-pin="v" device-size="b|c" driver="comp" instance="6" name="inp"/>
         <signal device-pin="v|z" device-size="d|e" driver="fmc" name="cle"/>
         <signal af="7" driver="usart" instance="3" name="cts"/>
@@ -710,8 +688,6 @@
         <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d0"/>
       </gpio>
       <gpio device-pin="v|z" port="d" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
-        <signal driver="adc" instance="2" name="exti15"/>
         <signal device-pin="v|z" device-size="d|e" driver="fmc" name="da1"/>
         <signal af="2" driver="tim" instance="4" name="ch4"/>
         <signal af="3" driver="tsc" name="g8_io4"/>
@@ -777,15 +753,11 @@
         <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d5"/>
       </gpio>
       <gpio device-pin="v" device-package="h|t" port="e" pin="9">
-        <signal device-pin="v" device-size="b|c" device-package="t" driver="dac" name="exti9"/>
-        <signal device-pin="v|z" device-size="d|e" driver="dac" instance="1" name="exti9"/>
         <signal device-pin="v|z" device-size="d|e" driver="fmc" name="da6"/>
         <signal af="2" driver="tim" instance="1" name="ch1"/>
         <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d6"/>
       </gpio>
       <gpio device-pin="z" device-package="t" port="e" pin="9">
-        <signal device-pin="v" device-size="b|c" device-package="t" driver="dac" name="exti9"/>
-        <signal device-pin="v|z" device-size="d|e" driver="dac" instance="1" name="exti9"/>
         <signal device-pin="v|z" device-size="d|e" driver="fmc" name="da6"/>
         <signal af="2" driver="tim" instance="1" name="ch1"/>
         <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d6"/>
@@ -801,8 +773,6 @@
         <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d7"/>
       </gpio>
       <gpio device-pin="v|z" port="e" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
-        <signal driver="adc" instance="2" name="exti11"/>
         <signal device-pin="v|z" device-size="d|e" driver="fmc" name="da8"/>
         <signal af="2" driver="tim" instance="1" name="ch2"/>
         <signal device-pin="v|z" device-size="d|e" af="5" driver="spi" instance="4" name="nss"/>
@@ -841,16 +811,12 @@
         <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d11"/>
       </gpio>
       <gpio device-pin="v" device-package="h|t" port="e" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
-        <signal driver="adc" instance="2" name="exti15"/>
         <signal device-pin="v|z" device-size="d|e" driver="fmc" name="da12"/>
         <signal af="2" driver="tim" instance="1" name="bkin"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
         <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d12"/>
       </gpio>
       <gpio device-pin="z" device-package="t" port="e" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
-        <signal driver="adc" instance="2" name="exti15"/>
         <signal device-pin="v|z" device-size="d|e" driver="fmc" name="da12"/>
         <signal af="2" driver="tim" instance="1" name="bkin"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
@@ -904,8 +870,6 @@
         <signal af="12" driver="fmc" name="niowr"/>
       </gpio>
       <gpio device-pin="v|z" port="f" pin="9">
-        <signal device-pin="v" device-size="b|c" driver="dac" name="exti9"/>
-        <signal device-pin="v|z" device-size="d|e" driver="dac" instance="1" name="exti9"/>
         <signal af="3" driver="tim" instance="15" name="ch1"/>
         <signal af="5" driver="spi" instance="2" name="sck"/>
         <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="cd"/>
@@ -915,10 +879,7 @@
         <signal af="5" driver="spi" instance="2" name="sck"/>
         <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="intr"/>
       </gpio>
-      <gpio device-pin="z" port="f" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
-        <signal driver="adc" instance="2" name="exti11"/>
-      </gpio>
+      <gpio device-pin="z" port="f" pin="11"/>
       <gpio device-pin="z" port="f" pin="12">
         <signal af="12" driver="fmc" name="a6"/>
       </gpio>
@@ -929,8 +890,6 @@
         <signal af="12" driver="fmc" name="a8"/>
       </gpio>
       <gpio device-pin="z" port="f" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
-        <signal driver="adc" instance="2" name="exti15"/>
         <signal af="12" driver="fmc" name="a9"/>
       </gpio>
       <gpio device-pin="z" port="g" pin="0">
@@ -959,7 +918,6 @@
       </gpio>
       <gpio device-pin="z" port="g" pin="8"/>
       <gpio device-pin="z" port="g" pin="9">
-        <signal driver="dac" instance="1" name="exti9"/>
         <signal af="12" driver="fmc" name="nce3"/>
         <signal af="12" driver="fmc" name="ne2"/>
       </gpio>
@@ -968,8 +926,6 @@
         <signal af="12" driver="fmc" name="ne3"/>
       </gpio>
       <gpio device-pin="z" port="g" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
-        <signal driver="adc" instance="2" name="exti11"/>
         <signal af="12" driver="fmc" name="nce4_2"/>
       </gpio>
       <gpio device-pin="z" port="g" pin="12">
@@ -981,10 +937,7 @@
       <gpio device-pin="z" port="g" pin="14">
         <signal af="12" driver="fmc" name="a25"/>
       </gpio>
-      <gpio device-pin="z" port="g" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
-        <signal driver="adc" instance="2" name="exti15"/>
-      </gpio>
+      <gpio device-pin="z" port="g" pin="15"/>
       <gpio device-pin="z" port="h" pin="0">
         <signal af="12" driver="fmc" name="a0"/>
       </gpio>

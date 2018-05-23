@@ -266,7 +266,6 @@
         <signal af="7" driver="comp" instance="1" name="out"/>
       </gpio>
       <gpio device-pin="k" port="a" pin="11">
-        <signal driver="adc" name="exti11"/>
         <signal af="0" driver="spi" instance="1" name="miso"/>
         <signal af="1" driver="lptim" instance="1" name="out"/>
         <signal af="4" driver="usart" instance="2" name="cts"/>

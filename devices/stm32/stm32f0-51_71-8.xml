@@ -223,8 +223,6 @@
         <signal device-name="71" af="4" name="crs_sync"/>
       </gpio>
       <gpio port="a" pin="9">
-        <signal device-name="71" driver="dac" name="exti9"/>
-        <signal device-name="51" driver="dac" instance="1" name="exti9"/>
         <signal af="0" driver="tim" instance="15" name="bkin"/>
         <signal af="1" driver="usart" instance="1" name="tx"/>
         <signal af="2" driver="tim" instance="1" name="ch2"/>
@@ -348,8 +346,6 @@
         <signal af="3" driver="tsc" name="sync"/>
       </gpio>
       <gpio device-pin="c|r|v" port="b" pin="9">
-        <signal device-name="71" driver="dac" name="exti9"/>
-        <signal device-name="51" device-pin="c|r" driver="dac" instance="1" name="exti9"/>
         <signal af="0" name="ir_out"/>
         <signal af="1" driver="i2c" instance="1" name="sda"/>
         <signal af="2" driver="tim" instance="17" name="ch1"/>
@@ -445,8 +441,6 @@
         <signal device-pin="r" af="1" driver="tim" instance="3" name="ch3"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="9">
-        <signal device-pin="v" driver="dac" name="exti9"/>
-        <signal device-pin="r" driver="dac" instance="1" name="exti9"/>
         <signal af="0" driver="tim" instance="3" name="ch4"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="10">
@@ -511,7 +505,6 @@
         <signal af="0" driver="usart" instance="3" name="tx"/>
       </gpio>
       <gpio device-pin="v" port="d" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="0" driver="usart" instance="3" name="rx"/>
       </gpio>
       <gpio device-pin="v" port="d" pin="10">
@@ -569,7 +562,6 @@
         <signal af="0" driver="tim" instance="1" name="ch1n"/>
       </gpio>
       <gpio device-pin="v" port="e" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="0" driver="tim" instance="1" name="ch1"/>
       </gpio>
       <gpio device-pin="v" port="e" pin="10">
@@ -621,7 +613,6 @@
         <signal driver="i2c" instance="2" name="sda"/>
       </gpio>
       <gpio device-pin="v" port="f" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="0" driver="tim" instance="15" name="ch1"/>
       </gpio>
       <gpio device-pin="v" port="f" pin="10">

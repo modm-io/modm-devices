@@ -209,7 +209,6 @@
         <signal af="14" name="timx_ic1"/>
       </gpio>
       <gpio port="a" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="7" driver="usart" instance="1" name="tx"/>
         <signal af="11" driver="lcd" name="com1"/>
         <signal af="14" name="timx_ic2"/>
@@ -220,7 +219,6 @@
         <signal af="14" name="timx_ic3"/>
       </gpio>
       <gpio port="a" pin="11">
-        <signal driver="adc" name="exti11"/>
         <signal af="5" driver="spi" instance="1" name="miso"/>
         <signal af="7" driver="usart" instance="1" name="cts"/>
         <signal af="10" driver="usb" name="dm"/>
@@ -243,7 +241,6 @@
         <signal af="14" name="timx_ic3"/>
       </gpio>
       <gpio port="a" pin="15">
-        <signal driver="adc" name="exti15"/>
         <signal driver="tim" instance="2" name="etr"/>
         <signal af="0" driver="sys" name="jtdi"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
@@ -317,7 +314,6 @@
         <signal af="11" driver="lcd" name="seg16"/>
       </gpio>
       <gpio port="b" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="2" driver="tim" instance="4" name="ch4"/>
         <signal af="3" driver="tim" instance="11" name="ch1"/>
         <signal af="4" driver="i2c" instance="1" name="sda"/>
@@ -330,7 +326,6 @@
         <signal af="11" driver="lcd" name="seg10"/>
       </gpio>
       <gpio port="b" pin="11">
-        <signal driver="adc" name="exti11"/>
         <signal af="1" driver="tim" instance="2" name="ch4"/>
         <signal af="4" driver="i2c" instance="2" name="sda"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
@@ -364,7 +359,6 @@
         <signal af="11" driver="lcd" name="seg14"/>
       </gpio>
       <gpio port="b" pin="15">
-        <signal driver="adc" name="exti15"/>
         <signal driver="adc" name="in21"/>
         <signal driver="comp" instance="1" name="inp"/>
         <signal af="0" driver="rtc" name="refin"/>
@@ -427,7 +421,6 @@
         <signal af="14" name="timx_ic1"/>
       </gpio>
       <gpio device-pin="r" port="c" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="11" driver="lcd" name="seg27"/>
         <signal af="14" name="timx_ic2"/>
@@ -441,7 +434,6 @@
         <signal af="14" name="timx_ic3"/>
       </gpio>
       <gpio device-pin="r" port="c" pin="11">
-        <signal driver="adc" name="exti11"/>
         <signal device-size="c" af="6" driver="spi" instance="3" name="miso"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
         <signal af="11" driver="lcd" name="com5"/>
@@ -469,7 +461,6 @@
         <signal af="14" name="timx_ic3"/>
       </gpio>
       <gpio port="c" pin="15">
-        <signal driver="adc" name="exti15"/>
         <signal af="0" driver="rcc" name="osc32_out"/>
         <signal af="14" name="timx_ic4"/>
       </gpio>

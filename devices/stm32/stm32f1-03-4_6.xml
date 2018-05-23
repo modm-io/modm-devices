@@ -266,8 +266,6 @@
       <gpio port="a" pin="9"/>
       <gpio port="a" pin="10"/>
       <gpio port="a" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
-        <signal driver="adc" instance="2" name="exti11"/>
         <signal driver="usart" instance="1" name="cts"/>
         <signal driver="usb" name="dm"/>
       </gpio>
@@ -284,8 +282,6 @@
         <signal driver="sys" name="swclk"/>
       </gpio>
       <gpio port="a" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
-        <signal driver="adc" instance="2" name="exti15"/>
         <signal driver="sys" name="jtdi"/>
       </gpio>
       <gpio port="b" pin="0">
@@ -312,17 +308,11 @@
       <gpio device-pin="c|r" port="b" pin="8"/>
       <gpio device-pin="c|r" port="b" pin="9"/>
       <gpio device-pin="c|r" port="b" pin="10"/>
-      <gpio device-pin="c|r" port="b" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
-        <signal driver="adc" instance="2" name="exti11"/>
-      </gpio>
+      <gpio device-pin="c|r" port="b" pin="11"/>
       <gpio device-pin="c|r" port="b" pin="12"/>
       <gpio device-pin="c|r" port="b" pin="13"/>
       <gpio device-pin="c|r" port="b" pin="14"/>
-      <gpio device-pin="c|r" port="b" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
-        <signal driver="adc" instance="2" name="exti15"/>
-      </gpio>
+      <gpio device-pin="c|r" port="b" pin="15"/>
       <gpio device-pin="r" port="c" pin="0">
         <signal driver="adc" instance="1" name="in10"/>
         <signal driver="adc" instance="2" name="in10"/>
@@ -352,10 +342,7 @@
       <gpio device-pin="r" port="c" pin="8"/>
       <gpio device-pin="r" port="c" pin="9"/>
       <gpio device-pin="r" port="c" pin="10"/>
-      <gpio device-pin="r" port="c" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
-        <signal driver="adc" instance="2" name="exti11"/>
-      </gpio>
+      <gpio device-pin="r" port="c" pin="11"/>
       <gpio device-pin="r" port="c" pin="12"/>
       <gpio device-pin="c|r" port="c" pin="13">
         <signal driver="rtc" name="out"/>
@@ -365,8 +352,6 @@
         <signal driver="rcc" name="osc32_in"/>
       </gpio>
       <gpio device-pin="c|r" port="c" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
-        <signal driver="adc" instance="2" name="exti15"/>
         <signal driver="rcc" name="osc32_out"/>
       </gpio>
       <gpio port="d" pin="0">

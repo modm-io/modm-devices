@@ -244,7 +244,6 @@
         <signal af="14" driver="lptim" instance="2" name="out"/>
       </gpio>
       <gpio port="a" pin="9">
-        <signal driver="dac" instance="1" name="exti9"/>
         <signal af="1" driver="tim" instance="1" name="ch2"/>
         <signal af="4" driver="i2c" instance="1" name="scl"/>
         <signal af="7" driver="usart" instance="1" name="tx"/>
@@ -259,7 +258,6 @@
         <signal af="13" driver="sai" instance="1" name="sd_a"/>
       </gpio>
       <gpio port="a" pin="11">
-        <signal driver="adc" instance="1" name="exti11"/>
         <signal af="1" driver="tim" instance="1" name="ch4"/>
         <signal af="2" driver="tim" instance="1" name="bkin2"/>
         <signal af="5" driver="spi" instance="1" name="miso"/>
@@ -294,7 +292,6 @@
         <signal af="13" driver="sai" instance="1" name="fs_b"/>
       </gpio>
       <gpio port="a" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
         <signal af="0" driver="sys" name="jtdi"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
         <signal af="2" driver="tim" instance="2" name="etr"/>
@@ -373,7 +370,6 @@
         <signal driver="rcc" name="osc32_in"/>
       </gpio>
       <gpio port="c" pin="15">
-        <signal driver="adc" instance="1" name="exti15"/>
         <signal driver="rcc" name="osc32_out"/>
       </gpio>
       <gpio port="h" pin="3"/>

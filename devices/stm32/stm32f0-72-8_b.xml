@@ -215,7 +215,6 @@
         <signal af="4" name="crs_sync"/>
       </gpio>
       <gpio port="a" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="0" driver="tim" instance="15" name="bkin"/>
         <signal af="1" driver="usart" instance="1" name="tx"/>
         <signal af="2" driver="tim" instance="1" name="ch2"/>
@@ -323,7 +322,6 @@
         <signal af="4" driver="can" name="rx"/>
       </gpio>
       <gpio port="b" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="0" name="ir_out"/>
         <signal af="1" driver="i2c" instance="1" name="sda"/>
         <signal af="2" driver="tim" instance="17" name="ch1"/>
@@ -417,7 +415,6 @@
         <signal af="0" driver="tim" instance="3" name="ch3"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="0" driver="tim" instance="3" name="ch4"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="10">
@@ -484,7 +481,6 @@
         <signal af="0" driver="usart" instance="3" name="tx"/>
       </gpio>
       <gpio device-pin="v" port="d" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="0" driver="usart" instance="3" name="rx"/>
       </gpio>
       <gpio device-pin="v" port="d" pin="10">
@@ -542,7 +538,6 @@
         <signal af="0" driver="tim" instance="1" name="ch1n"/>
       </gpio>
       <gpio device-pin="v" port="e" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="0" driver="tim" instance="1" name="ch1"/>
       </gpio>
       <gpio device-pin="v" port="e" pin="10">
@@ -584,7 +579,6 @@
       <gpio device-pin="v" port="f" pin="3"/>
       <gpio device-pin="v" port="f" pin="6"/>
       <gpio device-pin="v" port="f" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="0" driver="tim" instance="15" name="ch1"/>
       </gpio>
       <gpio device-pin="v" port="f" pin="10">

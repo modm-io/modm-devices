@@ -234,7 +234,6 @@
         <signal af="4" name="crs_sync"/>
       </gpio>
       <gpio port="a" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="0" driver="tim" instance="15" name="bkin"/>
         <signal af="1" driver="usart" instance="1" name="tx"/>
         <signal af="2" driver="tim" instance="1" name="ch2"/>
@@ -349,7 +348,6 @@
         <signal device-name="91" af="4" driver="can" name="rx"/>
       </gpio>
       <gpio port="b" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="0" name="ir_out"/>
         <signal af="1" driver="i2c" instance="1" name="sda"/>
         <signal af="2" driver="tim" instance="17" name="ch1"/>
@@ -452,7 +450,6 @@
         <signal device-name="91" device-pin="r|v" af="1" driver="usart" instance="8" name="tx"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="0" driver="tim" instance="3" name="ch4"/>
         <signal device-name="91" device-pin="r|v" af="1" driver="usart" instance="8" name="rx"/>
       </gpio>
@@ -524,7 +521,6 @@
         <signal af="0" driver="usart" instance="3" name="tx"/>
       </gpio>
       <gpio device-pin="v" port="d" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="0" driver="usart" instance="3" name="rx"/>
       </gpio>
       <gpio device-pin="v" port="d" pin="10">
@@ -606,7 +602,6 @@
         <signal device-name="91" device-size="c" device-package="h" af="1" driver="usart" instance="4" name="tx"/>
       </gpio>
       <gpio device-pin="v" port="e" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="0" driver="tim" instance="1" name="ch1"/>
         <signal device-name="91" device-size="b|c" device-package="t" af="1" driver="usart" instance="4" name="rx"/>
         <signal device-name="91" device-size="c" device-package="h" af="1" driver="usart" instance="4" name="rx"/>
@@ -673,7 +668,6 @@
       </gpio>
       <gpio device-pin="v" port="f" pin="6"/>
       <gpio device-pin="v" port="f" pin="9">
-        <signal driver="dac" name="exti9"/>
         <signal af="0" driver="tim" instance="15" name="ch1"/>
         <signal device-name="91" device-size="b|c" device-package="t" af="1" driver="usart" instance="6" name="tx"/>
         <signal device-name="91" device-size="c" device-package="h" af="1" driver="usart" instance="6" name="tx"/>

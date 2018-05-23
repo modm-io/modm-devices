@@ -195,7 +195,6 @@
         <signal af="5" driver="tim" instance="22" name="ch2"/>
       </gpio>
       <gpio device-pin="c|k" port="a" pin="11">
-        <signal driver="adc" name="exti11"/>
         <signal af="0" driver="spi" instance="1" name="miso"/>
         <signal af="4" driver="usart" instance="2" name="cts"/>
         <signal af="5" driver="tim" instance="21" name="ch2"/>
@@ -293,7 +292,6 @@
         <signal af="6" driver="lpuart" instance="1" name="tx"/>
       </gpio>
       <gpio device-pin="c" port="b" pin="11">
-        <signal driver="adc" name="exti11"/>
         <signal af="2" driver="tim" instance="2" name="ch4"/>
         <signal af="6" driver="lpuart" instance="1" name="rx"/>
       </gpio>

@@ -214,8 +214,6 @@
         <signal af="7" driver="usart" instance="1" name="ck"/>
       </gpio>
       <gpio port="a" pin="9">
-        <signal driver="dac" instance="1" name="exti9"/>
-        <signal driver="dac" instance="2" name="exti9"/>
         <signal af="3" driver="tsc" name="g4_io1"/>
         <signal af="6" driver="tim" instance="1" name="ch2"/>
         <signal af="7" driver="usart" instance="1" name="tx"/>
@@ -341,8 +339,6 @@
         <signal af="12" driver="tim" instance="1" name="bkin"/>
       </gpio>
       <gpio device-pin="c|r" port="b" pin="9">
-        <signal driver="dac" instance="1" name="exti9"/>
-        <signal driver="dac" instance="2" name="exti9"/>
         <signal af="1" driver="tim" instance="17" name="ch1"/>
         <signal af="4" driver="i2c" instance="1" name="sda"/>
         <signal af="6" name="ir_out"/>
@@ -458,8 +454,6 @@
         <signal af="2" driver="tim" instance="3" name="ch3"/>
       </gpio>
       <gpio device-pin="r" port="c" pin="9">
-        <signal driver="dac" instance="1" name="exti9"/>
-        <signal driver="dac" instance="2" name="exti9"/>
         <signal af="2" driver="tim" instance="3" name="ch4"/>
       </gpio>
       <gpio device-pin="r" port="c" pin="10">
