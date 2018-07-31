@@ -177,6 +177,9 @@ stm_groups = \
         'name': ['22', '32', '23', '33']
     },{
         'family': ['f7'],
+        'name': ['30', '50']
+    },{
+        'family': ['f7'],
         'name': ['45', '46', '56']
     },{
         'family': ['f7'],
@@ -187,6 +190,9 @@ stm_groups = \
     {
         'family': ['h7'],
         'name': ['43', '53']
+    },{
+        'family': ['h7'],
+        'name': ['50']
     },
 
     # STM32L0 devices

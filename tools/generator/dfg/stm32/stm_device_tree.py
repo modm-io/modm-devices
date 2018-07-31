@@ -78,7 +78,7 @@ class STMDeviceTree:
         sizeIndexFlash = 0
         sizeIndexRam = 0
 
-        match = re.search("\(.(-.)*\)", comboDeviceName)
+        match = re.search(r"\(.(-.)*\)", comboDeviceName)
         if match:
             sizeArray = match.group(0)[1:-1].lower().split("-")
             sizeIndexFlash = sizeArray.index(did["size"])
@@ -150,8 +150,8 @@ class STMDeviceTree:
 
         # packaging
         package = device_file.query('//@Package')[0]
-        p["pin-count"] = re.findall("[0-9]+", package)[0]
-        p["package"] = re.findall("[A-Za-z\.]+", package)[0]
+        p["pin-count"] = re.findall(r"[0-9]+", package)[0]
+        p["package"] = re.findall(r"[A-Za-z\.]+", package)[0]
 
         def clean_up_version(version):
             match = re.search("v[1-9]_[0-9x]", version.replace(".", "_"))

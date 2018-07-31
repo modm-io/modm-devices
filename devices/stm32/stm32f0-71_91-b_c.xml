@@ -318,13 +318,13 @@
       </gpio>
       <gpio port="b" pin="5">
         <signal driver="sys" name="wkup6"/>
-        <signal device-name="91" driver="usart" instance="5" name="de"/>
         <signal af="0" driver="i2s" instance="1" name="sd"/>
         <signal af="0" driver="spi" instance="1" name="mosi"/>
         <signal af="1" driver="tim" instance="3" name="ch2"/>
         <signal af="2" driver="tim" instance="16" name="bkin"/>
         <signal af="3" driver="i2c" instance="1" name="smba"/>
         <signal device-name="91" af="4" driver="usart" instance="5" name="ck"/>
+        <signal device-name="91" af="4" driver="usart" instance="5" name="de"/>
         <signal device-name="91" af="4" driver="usart" instance="5" name="rts"/>
       </gpio>
       <gpio port="b" pin="6">
@@ -588,11 +588,11 @@
         <signal af="0" driver="tim" instance="3" name="ch4"/>
       </gpio>
       <gpio device-pin="v" port="e" pin="7">
-        <signal device-name="91" device-size="b|c" device-package="t" driver="usart" instance="5" name="de"/>
-        <signal device-name="91" device-size="c" device-package="h" driver="usart" instance="5" name="de"/>
         <signal af="0" driver="tim" instance="1" name="etr"/>
         <signal device-name="91" device-size="b|c" device-package="t" af="1" driver="usart" instance="5" name="ck"/>
         <signal device-name="91" device-size="c" device-package="h" af="1" driver="usart" instance="5" name="ck"/>
+        <signal device-name="91" device-size="b|c" device-package="t" af="1" driver="usart" instance="5" name="de"/>
+        <signal device-name="91" device-size="c" device-package="h" af="1" driver="usart" instance="5" name="de"/>
         <signal device-name="91" device-size="b|c" device-package="t" af="1" driver="usart" instance="5" name="rts"/>
         <signal device-name="91" device-size="c" device-package="h" af="1" driver="usart" instance="5" name="rts"/>
       </gpio>
