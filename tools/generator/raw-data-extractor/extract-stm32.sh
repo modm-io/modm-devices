@@ -5,8 +5,8 @@ rm -r temp bin output
 mkdir temp output
 
 # download software
-cubeurl="http://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-configurators-and-code-generators/stm32cubemx.html"
-dlurl=$(curl -s $cubeurl | ack "data-download-path=\"(?P<url>/content/ccc/resource/.*?\.zip)\"" --output "http://www.st.com\$+{url}")
+cubeurl="https://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-configurators-and-code-generators/stm32cubemx.html"
+dlurl=$(curl -s $cubeurl | ack "data-download-path=\"(?P<url>/content/ccc/resource/.*?\.zip)\"" --output "https://www.st.com\$+{url}")
 echo $dlurl
 curl -z stm32cubemx.zip -o stm32cubemx.zip $dlurl
 
