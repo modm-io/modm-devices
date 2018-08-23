@@ -20,6 +20,7 @@ class DeviceIdentifier:
         self.properties = OrderedDict()
         self.naming_schema = None
         self.__string = None
+        self.__hash = None
 
     def copy(self):
         identifier = DeviceIdentifier()
@@ -39,6 +40,7 @@ class DeviceIdentifier:
         return self.__string
 
     def __setitem__(self, key, value):
+        self.__hash = None
         self.properties[key] = value
 
     def __getitem__(self, key):
@@ -53,7 +55,9 @@ class DeviceIdentifier:
         return not self == other
 
     def __hash__(self):
-        return hash(str(self.properties))
+        if self.__hash is None:
+            self.__hash = hash(str(self.properties))
+        return self.__hash
 
     def __str__(self):
         return self.string
