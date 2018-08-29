@@ -55,6 +55,9 @@ class DeviceTree:
             self.setAttribute(args[ii * 2], args[ii * 2 + 1])
 
     def setAttribute(self, key, value):
+        if key == "value" and len(self.children):
+            LOGGER.error("Cannot set attribute `value` on tree with children!")
+            exit(1)
         if key in self.attributes:
             LOGGER.warning("Overwriting attribute '%s'", key)
         self.attributes[key] = str(value)
@@ -64,6 +67,9 @@ class DeviceTree:
             del self.attributes[key]
 
     def addChild(self, name):
+        if "value" in self:
+            LOGGER.error("Cannot add children to tree with attribute `value`!")
+            exit(1)
         element = DeviceTree(name)
         element.parent = self
         element.ids = self.ids.copy()
@@ -71,6 +77,9 @@ class DeviceTree:
         return element
 
     def prependChild(self, name):
+        if "value" in self:
+            LOGGER.error("Cannot add children to tree with attribute `value`!")
+            exit(1)
         element = DeviceTree(name)
         element.parent = self
         element.ids = self.ids.copy()
@@ -89,10 +98,16 @@ class DeviceTree:
     def _identifier(self):
         return self.identifier(self)
 
-    def __getitem__(self, item):
+    def get(self, item, default=None):
         if item in self.attributes:
             return self.attributes[item]
-        return None
+        return default
+
+    def __getitem__(self, item):
+        return self.get(item)
+
+    def __contains__(self, item):
+        return (item in self.attributes)
 
     def _sortTree(self):
         for key in self.sortKeys:
