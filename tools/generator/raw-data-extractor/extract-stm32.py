@@ -53,3 +53,7 @@ Path("../raw-device-data/stm32-devices").mkdir(exist_ok=True, parents=True)
 shutil.move("temp-stm32/output/db/mcu", "../raw-device-data/stm32-devices/")
 shutil.move("temp-stm32/output/db/plugins", "../raw-device-data/stm32-devices/")
 
+print("Patching Database...")
+shutil.copy("patches/stm32.patch", "../raw-device-data")
+os.system("(cd ../raw-device-data; patch -p1 -l -i stm32.patch)")
+os.remove("../raw-device-data/stm32.patch")

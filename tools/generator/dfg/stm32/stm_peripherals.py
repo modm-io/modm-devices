@@ -116,12 +116,25 @@ stm_peripherals = \
         'instances': '*',
         'groups': [
             {
-                'hardware': 'stm32',
+                'hardware': 'stm32-mux',
                 'features': [],
                 'protocols': ['mem2mem', 'mem2per', 'per2per'],
-                'devices': [{'family': ['f0', 'f1', 'f3', 'g0', 'g4', 'wb']}]
-            },{
-                'hardware': 'stm32-extended',
+                'devices': [{'family': ['h7', 'g0', 'g4', 'wb']}, {'family': ['l4'], 'name': ['r5', 'r7', 'r9', 's5', 's7', 's9']}]
+            },
+            {
+                'hardware': 'stm32-stream-channel',
+                'features': [],
+                'protocols': ['mem2mem', 'mem2per', 'per2per'],
+                'devices': [{'family': ['f2', 'f4', 'f7']}]
+            },
+            {
+                'hardware': 'stm32-channel-request',
+                'features': [],
+                'protocols': ['mem2mem', 'mem2per', 'per2per'],
+                'devices': [{'family': ['l0', 'l4']}, {'family': ['f0'], 'name': ['91', '98']}, {'family': ['f0'], 'name': ['30'], 'size': ['c']}]
+            },
+            {
+                'hardware': 'stm32-channel',
                 'features': [],
                 'protocols': ['mem2mem', 'mem2per', 'per2per'],
                 'devices': '*'

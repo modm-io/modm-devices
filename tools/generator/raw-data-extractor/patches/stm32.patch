@@ -1,0 +1,25 @@
+diff --git a/stm32-devices/mcu/IP/DMA-STM32G484_dma1_v1_3_Modes.xml b/stm32-devices/mcu/IP/DMA-STM32G484_dma1_v1_3_Modes.xml
+index c8a77f2..43d92ee 100644
+--- a/stm32-devices/mcu/IP/DMA-STM32G484_dma1_v1_3_Modes.xml
++++ b/stm32-devices/mcu/IP/DMA-STM32G484_dma1_v1_3_Modes.xml
+@@ -36,10 +36,10 @@
+  </RefParameter>
+  <RefParameter Comment="Request number" DefaultValue="" Group="" Name="Request" Type="list" Visible="false">
+    <PossibleValue Comment="MEMTOMEM" Value="DMA_REQUEST_MEM2MEM"/>
++   <PossibleValue Comment="DMA_GENERATOR0" Value="DMA_REQUEST_GENERATOR0"/>
+    <PossibleValue Comment="DMA_GENERATOR1" Value="DMA_REQUEST_GENERATOR1"/>
+    <PossibleValue Comment="DMA_GENERATOR2" Value="DMA_REQUEST_GENERATOR2"/>
+    <PossibleValue Comment="DMA_GENERATOR3" Value="DMA_REQUEST_GENERATOR3"/>
+-   <PossibleValue Comment="DMA_GENERATOR4" Value="DMA_REQUEST_GENERATOR4"/>
+    <PossibleValue Comment="ADC1" Value="DMA_REQUEST_ADC1"/>
+    <PossibleValue Comment="DAC1_CH1" Value="DMA_REQUEST_DAC1_CHANNEL1"/>
+    <PossibleValue Comment="DAC1_CH2" Value="DMA_REQUEST_DAC1_CHANNEL2"/>
+@@ -2992,7 +2992,6 @@
+            <Mode Name="CORDIC_WRITE"/>
+            <Mode Name="UCPD1_RX"/>
+            <Mode Name="UCPD1_TX"/>
+-           <Mode Name="FMAC_PRELOAD"/>
+          </ModeLogicOperator>
+        </Mode>
+      </ModeLogicOperator>
+
