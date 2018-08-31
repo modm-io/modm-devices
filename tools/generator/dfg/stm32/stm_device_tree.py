@@ -67,21 +67,21 @@ class STMDeviceTree:
         core = device_file.query('//Core')[0].text.replace("ARM ", "").lower()
         if core.endswith("m4") or core.endswith("m7"):
             core += "f"
-        if did["family"] in ["h7"] or (did["family"] in ["f7"] and did["name"] not in ["45", "46", "56"]):
+        if did.family in ["h7"] or (did.family in ["f7"] and did.name not in ["45", "46", "56"]):
             core += "d"
         p["core"] = core
 
         # flash and ram sizes
         # The <ram> and <flash> can occur multiple times.
         # they are "ordered" in the same way as the `(S-I-Z-E)` ids in the device combo name
-        # we must first find out which index the current did["size"] has inside `(S-I-Z-E)`
+        # we must first find out which index the current did.size has inside `(S-I-Z-E)`
         sizeIndexFlash = 0
         sizeIndexRam = 0
 
         match = re.search(r"\(.(-.)*\)", comboDeviceName)
         if match:
             sizeArray = match.group(0)[1:-1].lower().split("-")
-            sizeIndexFlash = sizeArray.index(did["size"])
+            sizeIndexFlash = sizeArray.index(did.size)
             sizeIndexRam = sizeIndexFlash
 
         rams = sorted([int(r.text) for r in device_file.query('//Ram')])
@@ -94,7 +94,7 @@ class STMDeviceTree:
 
 
 
-        if did["family"] in ["h7"]:
+        if did.family in ["h7"]:
             memories = [
                 {"name": "sram",   "access": "rwx", "start": "0x24000000", "size": str(512*1024)},
                 {"name": "sram1",  "access": "rwx", "start": "0x30000000", "size": str(128*1024)},
@@ -143,7 +143,7 @@ class STMDeviceTree:
                                      "start": "0x{:02X}".format(mem_start["flash"])})
                 else:
                     memories.append({"name": mem, "size": str(val),
-                                     "access": "rw" if did["family"] == "f4" and mem == "ccm" else "rwx",
+                                     "access": "rw" if did.family == "f4" and mem == "ccm" else "rwx",
                                      "start": "0x{:02X}".format(mem_start[mem])})
 
         p["memories"] = memories
@@ -247,7 +247,7 @@ class STMDeviceTree:
                 rafs.append( (driver, instance, name) )
             return rafs
 
-        if did["family"] == "f1":
+        if did.family == "f1":
             grouped_f1_signals = gpioFile.compactQuery('//GPIO_Pin/PinSignal/@Name')
 
         for pin in pins:
@@ -261,7 +261,7 @@ class STMDeviceTree:
             # print(name, localSignals)
             altFunctions = []
 
-            if did["family"] == "f1":
+            if did.family == "f1":
                 altFunctions = [ (s.lower(), "-1") for s in localSignals if s not in grouped_f1_signals]
             else:
                 allSignals = gpioFile.compactQuery('//GPIO_Pin[@Name="{}"]/PinSignal/SpecificParameter[@Name="GPIO_AF"]/..'.format(rname))
@@ -283,7 +283,7 @@ class STMDeviceTree:
             # LOGGER.debug("{}{}: {} ->".format(gpio[0].upper(), gpio[1]))
 
         remaps = {}
-        if did["family"] == "f1":
+        if did.family == "f1":
             for remap in gpioFile.compactQuery('//GPIO_Pin/PinSignal/RemapBlock/@Name'):
                 module = remap.split("_")[0].lower()
                 config = remap.split("_")[1].replace("REMAP", "").replace("IREMAP", "")

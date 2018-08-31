@@ -178,8 +178,8 @@ def getMcuForDevice(device_id):
         LOGGER.debug("Searching for '%s'", d.string)
         if d.string in avrdude_mcu_map:
             return avrdude_mcu_map[d.string]
-        if len(d["type"]) == 0: break;
-        d["type"] = d["type"][:-1]
+        if len(d.type) == 0: break;
+        d.set("type", d.type[:-1])
     LOGGER.warning("Avrdude mcu not found for '%s'!", device_id.string)
     # otherwise return nothing
     return None

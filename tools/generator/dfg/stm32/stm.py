@@ -8,10 +8,10 @@ LOGGER = logging.getLogger("dfg.stm.data")
 
 def getDefineForDevice(device_id, familyDefines):
     # get all defines for this device name
-    devName = 'STM32{}{}'.format(device_id["family"].upper(), device_id["name"].upper())
+    devName = 'STM32{}{}'.format(device_id.family.upper(), device_id.name.upper())
 
     # Map STM32F7x8 -> STM32F7x7
-    if device_id["family"] == 'f7' and devName[8] == '8':
+    if device_id.family == 'f7' and devName[8] == '8':
         devName = devName[:8] + '7'
 
     deviceDefines = sorted([define for define in familyDefines if define.startswith(devName)])
@@ -20,13 +20,13 @@ def getDefineForDevice(device_id, familyDefines):
         return deviceDefines[0]
 
     # now we match for the size-id.
-    devNameMatch = devName + 'x{}'.format(device_id["size"].upper())
+    devNameMatch = devName + 'x{}'.format(device_id.size.upper())
     for define in deviceDefines:
         if devNameMatch <= define:
             return define
 
     # now we match for the pin-id.
-    devNameMatch = devName + '{}x'.format(device_id["pin"].upper())
+    devNameMatch = devName + '{}x'.format(device_id.pin.upper())
     for define in deviceDefines:
         if devNameMatch <= define:
             return define
@@ -277,14 +277,14 @@ stm32_memory = \
 }
 
 def getMemoryForDevice(device_id):
-    mem_fam = stm32_memory[device_id["family"]]
+    mem_fam = stm32_memory[device_id.family]
     mem_model = None
     for model in mem_fam['model']:
-        if any(name.startswith(device_id["name"]) for name in model['name']):
-            if device_id["name"] in model['name']:
+        if any(name.startswith(device_id.name) for name in model['name']):
+            if device_id.name in model['name']:
                 mem_model = model
                 break
-            elif "{}x{}".format(device_id["name"], device_id["size"]) in model['name']:
+            elif "{}x{}".format(device_id.name, device_id.size) in model['name']:
                 mem_model = model
                 break
     if mem_model == None:

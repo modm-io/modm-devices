@@ -22,15 +22,15 @@ class STMIdentifier:
 
         if string.startswith("stm32"):
             i.naming_schema = "{platform}{family}{name}{pin}{size}{package}"
-            i["platform"] = "stm32"
-            i["family"] = string[5:7]
-            i["name"] = string[7:9]
+            i.set("platform", "stm32")
+            i.set("family", string[5:7])
+            i.set("name", string[7:9])
             if len(string) >= 10:
-                i["pin"] = string[9]
+                i.set("pin", string[9])
             if len(string) >= 11:
-                i["size"] = string[10]
+                i.set("size", string[10])
             if len(string) >= 12:
-                i["package"] = string[11]
+                i.set("package", string[11])
             return i
 
         LOGGER.error("Parse Error: unknown platform. Device string: %s", string)

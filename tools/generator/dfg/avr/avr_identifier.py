@@ -18,47 +18,46 @@ class AVRIdentifier:
 
     @staticmethod
     def from_string(string):
-        i = DeviceIdentifier()
         string = string.lower()
 
         # AVR platform with AT90, ATtiny, ATmega and ATxmega family
         if string.startswith("at"):
-            i["platform"] = "avr"
-            matchString = "at(?P<family>tiny|mega|xmega)(?P<name>\d+)"
+            matchString = r"at(?P<family>tiny|mega|xmega)(?P<name>\d+)"
             if string.startswith("at90"):
-                matchString = "at(?P<family>90)(?P<type>can|pwm|usb)(?P<name>\d+)"
+                matchString = r"at(?P<family>90)(?P<type>can|pwm|usb)(?P<name>\d+)"
+
             match = re.search(matchString, string)
             if match:
-                i["family"] = match.group("family").lower()
-                i["name"] = match.group("name").lower()
-                i["type"] = ""
+                i = DeviceIdentifier()
+                i.set("platform", "avr")
+                i.set("family", match.group("family").lower())
+                i.set("name", match.group("name").lower())
 
-                if i["family"] == "90":
+                if i.family == "90":
                     i.naming_schema = "at{family}{type}{name}"
-                    i["type"] = match.group("type").lower()
+                    i.set("type", match.group("type").lower())
                     return i
-                elif i["family"] in ["tiny", "mega"]:
+
+                elif i.family in ["tiny", "mega"]:
                     i.naming_schema = "at{family}{name}{type}"
-                    searchstr = "at" + i["family"] + i["name"] + "(?P<type>\w*)-?(?P<package>\w*)"
+                    searchstr = "at" + i.family + i.name + r"(?P<type>\w*)-?(?P<package>\w*)"
                     match = re.search(searchstr, string)
                     if match:
-                        if match.group("type") != "":
-                            i["type"] = match.group("type").lower()
+                        i.set("type", match.group("type").lower())
                         if match.group("package") != "":
-                            i["pin"] = match.group("package").lower()
+                            i.set("pin", match.group("package").lower())
                             i.naming_schema = i.naming_schema + "-{pin}"
                         return i
 
-                elif i["family"] == "xmega":
+                elif i.family == "xmega":
                     i.naming_schema = "at{family}{name}{type}{pin}"
-                    i["pin"] = ""
-                    searchstr = "at" + i["family"] + i["name"] + "(?P<type>[A-Ea-e]?[1-5]?)(?P<package>[Bb]?[Uu]?)"
+                    searchstr = "at" + i.family + i.name + r"(?P<type>[A-Ea-e]?[1-5]?)(?P<package>[Bb]?[Uu]?)"
                     match = re.search(searchstr, string)
                     if match:
                         if match.group("type") != "":
-                            i["type"] = match.group("type").lower()
+                            i.set("type", match.group("type").lower())
                         if match.group("package") != "":
-                            i["pin"] = match.group("package")
+                            i.set("pin", match.group("package"))
                     return i
 
         LOGGER.error("Parse Error: unknown platform. Device string: '%s'", string)

@@ -13,20 +13,20 @@ from collections import OrderedDict
 from collections import defaultdict
 
 class DeviceIdentifier:
-    """ DeviceIdentifier
-    """
-
     def __init__(self):
-        self.properties = OrderedDict()
+        self._properties = OrderedDict()
         self.naming_schema = None
         self.__string = None
         self.__hash = None
 
     def copy(self):
         identifier = DeviceIdentifier()
-        identifier.properties = copy.deepcopy(self.properties)
+        identifier._properties = copy.deepcopy(self._properties)
         identifier.naming_schema = self.naming_schema
         return identifier
+
+    def keys(self):
+        return self._properties.keys()
 
     @property
     def string(self):
@@ -36,17 +36,27 @@ class DeviceIdentifier:
         # Use the naming schema to generate the string
         if self.__string is None:
             self.__string = string.Formatter().vformat(
-                    self.naming_schema, (), defaultdict(str, **self.properties))
+                    self.naming_schema, (), defaultdict(str, **self._properties))
         return self.__string
 
-    def __setitem__(self, key, value):
+    def set(self, key, value):
         self.__hash = None
-        self.properties[key] = value
+        self.__string = None
+        self._properties[key] = value
+
+    def get(self, key, default=None):
+        if key in self._properties:
+            return self._properties[key]
+        return default
 
     def __getitem__(self, key):
-        if key in self.properties:
-            return self.properties[key]
-        return None
+        return self.get(key, None)
+
+    def __getattr__(self, attr):
+        val = self.get(attr, None)
+        if val is None:
+            raise AttributeError("'{}' has no property '{}'".format(str(self), attr))
+        return val
 
     def __eq__(self, other):
         return self.string == other.string
@@ -56,7 +66,7 @@ class DeviceIdentifier:
 
     def __hash__(self):
         if self.__hash is None:
-            self.__hash = hash(str(self.properties))
+            self.__hash = hash(str(self._properties))
         return self.__hash
 
     def __str__(self):
@@ -113,7 +123,7 @@ class MultiDeviceIdentifier:
                 v = self.getAttribute(k)
                 if len(v) > 0:
                     fmt = "[{}]" if len(v) > 1 else "{}"
-                    ident[k] = fmt.format("|".join(v))
+                    ident.set(k, fmt.format("|".join(v)))
             self.__string = ident.string
         return self.__string
 
@@ -143,7 +153,7 @@ class MultiDeviceIdentifier:
             ident = DeviceIdentifier()
             ident.naming_schema = naming_schema
             for ii, k in enumerate(properties.keys()):
-                ident[k] = attr[ii]
+                ident.set(k, attr[ii])
             ids.append(ident)
         return ids
 
@@ -166,7 +176,7 @@ class MultiDeviceIdentifier:
             for m in diff.getAttribute(k):
                 ident = DeviceIdentifier()
                 ident.naming_schema = self.naming_schema
-                ident[k] = m
+                ident.set(k, m)
                 ids.append(ident)
 
         return ids
@@ -205,7 +215,7 @@ class MultiDeviceIdentifier:
                 for m in ids.getAttribute(k):
                     ident = DeviceIdentifier()
                     ident.naming_schema = self.naming_schema
-                    ident[k] = m
+                    ident.set(k, m)
                     nids.append(ident)
             return nids
 
@@ -240,7 +250,7 @@ class MultiDeviceIdentifier:
     def keys(self):
         keys = []
         for ident in self.ids:
-            for k in ident.properties.keys():
+            for k in ident.keys():
                 if k not in keys:
                     keys.append(k)
         return keys

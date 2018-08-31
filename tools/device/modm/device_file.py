@@ -81,7 +81,7 @@ class DeviceFile:
             def strip_attrib(self, node):
                 stripped_keys = filter(lambda k: not k.startswith(DeviceFile._PREFIX_ATTRIBUTE_DEVICE), node.attrib.keys())
                 if node.getparent().getparent() is None and node.tag == 'device':
-                    stripped_keys = filter(lambda k: k not in self.identifier.properties.keys(), stripped_keys)
+                    stripped_keys = filter(lambda k: k not in self.identifier.keys(), stripped_keys)
                 return {k:node.attrib[k] for k in stripped_keys}
 
             def to_dict(self, t):

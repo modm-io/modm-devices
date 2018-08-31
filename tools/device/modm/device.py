@@ -37,7 +37,7 @@ class Device:
 
     @property
     def identifier(self):
-        return copy.deepcopy(self._identifier.properties)
+        return self._identifier.copy()
 
     def get_all_drivers(self, name):
         self.__parse_properties()

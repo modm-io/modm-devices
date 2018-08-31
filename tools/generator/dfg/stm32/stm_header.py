@@ -57,7 +57,7 @@ class STMHeader:
 
     def __init__(self, did):
         self.did = did
-        family = did["family"]
+        family = did.family
         self.family_folder = "stm32{}xx".format(family)
         self.cmsis_folder = STMHeader.HEADER_PATH / self.family_folder / "Include"
         self.family_header_file = "{}.h".format(self.family_folder)
@@ -100,14 +100,14 @@ class STMHeader:
 
 
     def _get_family_defines(self):
-        if self.did["family"] not in STMHeader.CACHE_FAMILY:
+        if self.did.family not in STMHeader.CACHE_FAMILY:
             defines = []
             with open(self.cmsis_folder / self.family_header_file, "r", errors="replace") as headerFile:
                 match = re.findall(r"if defined\((?P<define>STM32(?:F|L|H|WB).....)\)", headerFile.read())
                 if match: defines = match;
                 else: LOGGER.error("Cannot find family defines for {}!".format(self.did.string));
-            STMHeader.CACHE_FAMILY[self.did["family"]]["family_defines"] = defines
-        return STMHeader.CACHE_FAMILY[self.did["family"]]["family_defines"]
+            STMHeader.CACHE_FAMILY[self.did.family]["family_defines"] = defines
+        return STMHeader.CACHE_FAMILY[self.did.family]["family_defines"]
 
     def _get_filtered_defines(self):
         defines = {}
