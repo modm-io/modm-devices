@@ -1,43 +1,99 @@
 
 import unittest
 
-import modm.device
+from modm.exception import DeviceIdentifierException
+from modm.device_identifier import DeviceIdentifier, MultiDeviceIdentifier
 
-class SelectorTest(unittest.TestCase):
+class DeviceIdentifierTest(unittest.TestCase):
 
-    def test_should_match_an_empty_device(self):
-        identifier = modm.device.DeviceIdentifier()
-        selector = modm.device.Selector()
+    def test_should_construct_empty(self):
+        ident = DeviceIdentifier()
+        self.assertEqual(repr(ident), "DeviceId()")
+        self.assertEqual(len(ident.keys()), 0)
+        self.assertRaises(DeviceIdentifierException,
+                          lambda: ident.string)
+        self.assertRaises(DeviceIdentifierException,
+                          lambda: str(ident))
+        self.assertRaises(AttributeError,
+                          lambda: ident.whatevs)
 
-        self.assertTrue(selector.match(identifier))
 
-    def test_should_match_property(self):
-        identifier = modm.device.DeviceIdentifier()
-        identifier.platform = "Test"
+    def test_setter_getter(self):
+        ident = DeviceIdentifier()
+        ident.set("platform", "stm32")
+        self.assertEqual(ident.get("platform"), "stm32")
+        self.assertEqual(ident["platform"], "stm32")
+        self.assertEqual(ident.platform, "stm32")
+        self.assertEqual(repr(ident), "DeviceId(platformstm32)")
+        self.assertRaises(DeviceIdentifierException,
+                          lambda: ident.string)
+        self.assertRaises(DeviceIdentifierException,
+                          lambda: str(ident))
 
-        selector = modm.device.Selector()
-        selector.property["platform"] = ["Test", "Test1"]
+        ident.set("platform", "avr")
+        self.assertEqual(ident.get("platform"), "avr")
+        self.assertEqual(ident["platform"], "avr")
+        self.assertEqual(ident.platform, "avr")
 
-        self.assertTrue(selector.match(identifier))
+        self.assertEqual(ident.get("whatevs"), None)
+        self.assertEqual(ident.get("whatevs", "default"), "default")
+        self.assertEqual(ident["whatevs"], None)
+        self.assertRaises(AttributeError,
+                          lambda: ident.whatevs)
 
-    def test_should_reject_if_property_set_but_not_in_device(self):
-        identifier = modm.device.DeviceIdentifier()
-        identifier.platform = "Test"
 
-        selector = modm.device.Selector()
-        selector.property["platform"] = ["Test1", "Test2"]
+    def test_naming_schema(self):
+        ident = DeviceIdentifier("{platform}{family}{name}")
+        self.assertEqual(ident.string, "")
+        ident.set("platform", "stm32")
+        self.assertEqual(ident.string, "stm32")
+        ident.set("name", "03")
+        self.assertEqual(ident.string, "stm3203")
+        ident.set("family", "f1")
+        self.assertEqual(ident.string, "stm32f103")
 
-        self.assertFalse(selector.match(identifier))
+        self.assertEqual(str(ident), "stm32f103")
+        self.assertEqual(repr(ident), "stm32f103")
+        self.assertEqual(hash(ident), hash("familyf1name03platformstm32"))
+
+        ident2 = DeviceIdentifier("{platform}{family}{name}")
+        ident2.set("platform", "stm32")
+        ident2.set("family", "f1")
+        ident2.set("name", "03")
+        self.assertEqual(hash(ident2), hash("familyf1name03platformstm32"))
+
+        self.assertTrue(ident == ident2)
+        self.assertFalse(ident != ident2)
+        self.assertEqual(ident, ident2)
+
+        ident3 = DeviceIdentifier("{platform}{family}")
+        ident3.set("platform", "stm32")
+        ident3.set("family", "f1")
+        self.assertEqual(hash(ident3), hash("familyf1platformstm32"))
+
+        self.assertTrue(ident != ident3)
+        self.assertFalse(ident == ident3)
+        self.assertNotEqual(ident, ident3)
+
+
+    def test_copy(self):
+        ident = DeviceIdentifier("{platform}")
+        ident.set("platform", "stm32")
+
+        ident2 = ident.copy()
+        self.assertEqual(ident2.platform, "stm32")
+        self.assertEqual(ident2.naming_schema, "{platform}")
+        ident2.set("platform", "avr")
+        self.assertEqual(ident2.platform, "avr")
+        self.assertEqual(ident.platform, "stm32")
+        ident2.naming_schema = "{platform}{family}"
+        self.assertEqual(ident2.naming_schema, "{platform}{family}")
+        self.assertEqual(ident.naming_schema, "{platform}")
+
 
 
 class MultiDeviceIdentifierTest(unittest.TestCase):
 
-    def test_should_split_into_multiple_devices(self):
-        multi = modm.device.MultiDeviceIdentifier()
-
-        multi.name = ("64", "128")
-        multi.pin_id = ("", "b3")
-
-        devices = multi.get_devices()
-
-        self.assertEqual(4, len(devices))
+    def test_should_construct_empty(self):
+        ident = MultiDeviceIdentifier()
+        self.assertEqual(ident.string, "")

@@ -1,8 +1,5 @@
 
-enumerate:
-	python3 scripts/device -i ~/development/xpcc/src/xpcc/architecture/platform/ -o build
-
 test:
-	@python3 -m unittest discover -p *test.py
+	@python3 -W ignore::DeprecationWarning -m unittest discover -p *test.py
 
-.PHONY : enumerate test
+.PHONY : test
