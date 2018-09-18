@@ -1,0 +1,11 @@
+language: python
+python:
+  - "3.5"
+  - "3.6"
+  - "nightly"
+
+# command to install dependencies
+install: "pip install lxml deepdiff"
+
+# command to run tests
+script: (cd tools/device; make test)
