@@ -55,7 +55,7 @@ class DeviceIdentifier:
     def __getattr__(self, attr):
         val = self.get(attr, None)
         if val is None:
-            raise AttributeError("'{}' has no property '{}'".format(str(self), attr))
+            raise AttributeError("'{}' has no property '{}'".format(repr(self), attr))
         return val
 
     def __eq__(self, other):
@@ -71,6 +71,9 @@ class DeviceIdentifier:
 
     def __str__(self):
         return self.string
+
+    def __repr__(self):
+        return self.string if self.naming_schema else "DeviceId({})".format(self._properties.keys())
 
 
 class MultiDeviceIdentifier:
@@ -310,4 +313,7 @@ class MultiDeviceIdentifier:
         return attr
 
     def __str__(self):
+        return self.string
+
+    def __repr__(self):
         return self.string
