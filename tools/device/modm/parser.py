@@ -10,7 +10,7 @@ XML parser for the modm files.
 from . import pkg
 from .device_file import DeviceFile
 
-from .common import ParserException
+from .exception import ParserException
 
 # lxml must be imported **after** the Catalog file have been set by 'pkg', otherwise
 # it runs into an endless loop during verification.

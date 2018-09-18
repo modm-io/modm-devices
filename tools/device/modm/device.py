@@ -8,7 +8,7 @@
 import copy
 import itertools
 
-from .common import ParserException
+from .exception import ParserException
 from .device_identifier import DeviceIdentifier
 
 

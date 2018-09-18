@@ -9,11 +9,11 @@ import lxml.etree
 
 from collections import defaultdict
 
-from modm.device import Device
-from modm.device_identifier import DeviceIdentifier
-from modm.device_identifier import MultiDeviceIdentifier
+from .device import Device
+from .device_identifier import DeviceIdentifier
+from .device_identifier import MultiDeviceIdentifier
 
-from .common import ParserException
+from .exception import ParserException
 
 class DeviceFile:
     _PREFIX_ATTRIBUTE = 'attribute-'

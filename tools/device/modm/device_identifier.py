@@ -9,8 +9,9 @@ import logging
 import copy
 import itertools
 import string
-from collections import OrderedDict
-from collections import defaultdict
+
+from collections import OrderedDict, defaultdict
+from .exception import DeviceIdentifierException
 
 class DeviceIdentifier:
     def __init__(self):
