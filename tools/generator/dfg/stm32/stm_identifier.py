@@ -17,11 +17,10 @@ class STMIdentifier:
     """
     @staticmethod
     def from_string(string):
-        i = DeviceIdentifier()
         string = string.lower()
 
         if string.startswith("stm32"):
-            i.naming_schema = "{platform}{family}{name}{pin}{size}{package}"
+            i = DeviceIdentifier("{platform}{family}{name}{pin}{size}{package}")
             i.set("platform", "stm32")
             i.set("family", string[5:7])
             i.set("name", string[7:9])

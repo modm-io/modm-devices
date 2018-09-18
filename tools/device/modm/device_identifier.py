@@ -14,16 +14,15 @@ from collections import OrderedDict, defaultdict
 from .exception import DeviceIdentifierException
 
 class DeviceIdentifier:
-    def __init__(self):
+    def __init__(self, naming_schema=None):
+        self.naming_schema = naming_schema
         self._properties = OrderedDict()
-        self.naming_schema = None
         self.__string = None
         self.__hash = None
 
     def copy(self):
-        identifier = DeviceIdentifier()
+        identifier = DeviceIdentifier(self.naming_schema)
         identifier._properties = copy.deepcopy(self._properties)
-        identifier.naming_schema = self.naming_schema
         return identifier
 
     def keys(self):
@@ -118,8 +117,7 @@ class MultiDeviceIdentifier:
     def string(self):
         if self.__string is None:
             # Format the property dictionaries as a string
-            ident = DeviceIdentifier()
-            ident.naming_schema = self.naming_schema
+            ident = DeviceIdentifier(self.naming_schema)
             for k in self.keys():
                 v = self.getAttribute(k)
                 if len(v) > 0:
@@ -137,8 +135,7 @@ class MultiDeviceIdentifier:
             other = others.getAttribute(k)
             if me != other:
                 for m in me:
-                    ident = DeviceIdentifier()
-                    ident.naming_schema = self.naming_schema
+                    ident = DeviceIdentifier(self.naming_schema)
                     ident[k] = m
                     ids.append(ident)
         return ids
@@ -175,8 +172,7 @@ class MultiDeviceIdentifier:
         ids = MultiDeviceIdentifier()
         for k in minimal_keys(self, diff):
             for m in diff.getAttribute(k):
-                ident = DeviceIdentifier()
-                ident.naming_schema = self.naming_schema
+                ident = DeviceIdentifier(self.naming_schema)
                 ident.set(k, m)
                 ids.append(ident)
 
@@ -214,8 +210,7 @@ class MultiDeviceIdentifier:
             nids = MultiDeviceIdentifier()
             for k in mkeys:
                 for m in ids.getAttribute(k):
-                    ident = DeviceIdentifier()
-                    ident.naming_schema = self.naming_schema
+                    ident = DeviceIdentifier(self.naming_schema)
                     ident.set(k, m)
                     nids.append(ident)
             return nids
