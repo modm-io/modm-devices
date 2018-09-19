@@ -33,7 +33,7 @@ def getDefineForDevice(device_id, familyDefines):
 
     return None
 
-stm32f1_remaps = \
+stm32f1_gpio_remap = \
 {
     # (position % 32) -> local bit position
     # MAPR register
@@ -81,12 +81,12 @@ stm32f1_remaps = \
     'misc':         {'position': 45, 'mask': 1, 'mapping': [0, 1]},
 }
 
-def getRemapForModuleConfig(module, config):
+def getGpioRemapForModuleConfig(module, config):
     mmm = {}
-    if module in stm32f1_remaps:
-        mmm['mask'] = stm32f1_remaps[module]['mask']
-        mmm['position'] = stm32f1_remaps[module]['position']
-        mmm['mapping'] = stm32f1_remaps[module]['mapping'][int(config)]
+    if module in stm32f1_gpio_remap:
+        mmm['mask'] = stm32f1_gpio_remap[module]['mask']
+        mmm['position'] = stm32f1_gpio_remap[module]['position']
+        mmm['mapping'] = stm32f1_gpio_remap[module]['mapping'][int(config)]
     return mmm
 
 

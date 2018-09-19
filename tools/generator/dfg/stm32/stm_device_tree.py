@@ -296,7 +296,7 @@ class STMDeviceTree:
             for remap in gpioFile.compactQuery('//GPIO_Pin/PinSignal/RemapBlock/@Name'):
                 module = remap.split("_")[0].lower()
                 config = remap.split("_")[1].replace("REMAP", "").replace("IREMAP", "")
-                mapping = stm.getRemapForModuleConfig(module, config)
+                mapping = stm.getGpioRemapForModuleConfig(module, config)
 
                 mpins = []
                 for pin in gpioFile.compactQuery('//GPIO_Pin/PinSignal/RemapBlock[@Name="{}"]/..'.format(remap)):
