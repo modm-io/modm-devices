@@ -18,11 +18,21 @@ class DeviceIdentifier:
         self.naming_schema = naming_schema
         self._properties = OrderedDict()
         self.__string = None
+        self.__ustring = None
         self.__hash = None
+
+    @property
+    def _ustring(self):
+        if self.__ustring is None:
+            self.__ustring = "".join([k + self._properties[k] for k in sorted(self._properties.keys())])
+        return self.__ustring
 
     def copy(self):
         identifier = DeviceIdentifier(self.naming_schema)
         identifier._properties = copy.deepcopy(self._properties)
+        identifier.__string = self.__string
+        identifier.__ustring = self.__ustring
+        identifier.__hash = self.__hash
         return identifier
 
     def keys(self):
@@ -42,6 +52,7 @@ class DeviceIdentifier:
     def set(self, key, value):
         self.__hash = None
         self.__string = None
+        self.__ustring = None
         self._properties[key] = value
 
     def get(self, key, default=None):
@@ -59,21 +70,21 @@ class DeviceIdentifier:
         return val
 
     def __eq__(self, other):
-        return self.string == other.string
+        return self._ustring == other._ustring
 
     def __ne__(self, other):
         return not self == other
 
     def __hash__(self):
         if self.__hash is None:
-            self.__hash = hash(str(self._properties))
+            self.__hash = hash(self._ustring)
         return self.__hash
 
     def __str__(self):
         return self.string
 
     def __repr__(self):
-        return self.string if self.naming_schema else "DeviceId({})".format(self._properties.keys())
+        return self.string if self.naming_schema else "DeviceId({})".format(self._ustring)
 
 
 class MultiDeviceIdentifier:
