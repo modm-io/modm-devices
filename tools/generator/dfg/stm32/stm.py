@@ -189,6 +189,170 @@ def getFlashLatencyForDevice(did):
             return lconv(lt) # return filtered table
     return lconv(lts[-1]) # if non were found, return last table
 
+
+stm32f3_dma_remap = \
+{
+    'dma1ch1': {
+        'tim17_ch1':  'tim17_up',
+        'tim17_up':  {'position': 12, 'mask': 1, 'id': 0},
+    },
+    'dma1ch2': {
+        'adc2':      {'position': 72, 'mask': 3, 'id': 2},
+        'i2c_tx':    {'position': 70, 'mask': 3, 'id': 1},
+        'spi_rx':    {'position': 64, 'mask': 3, 'id': 0}, # also 'id': 3
+    },
+    'dma1ch3': {
+        'dac1_ch1':   'tim6_up',
+        'i2c_rx':    {'position': 68, 'mask': 3, 'id': 1},
+        'spi_tx':    {'position': 66, 'mask': 3, 'id': 0}, # also 'id': 3
+        'tim16_ch1':  'tim16_up',
+        'tim16_up':  {'position': 11, 'mask': 1, 'id': 0},
+        'tim6_up':   {'position': 13, 'mask': 1, 'id': 1},
+    },
+    'dma1ch4': {
+        'adc2':      {'position': 72, 'mask': 3, 'id': 3},
+        'dac1_ch2':   'tim7_up',
+        'i2c_tx':    {'position': 70, 'mask': 3, 'id': 2},
+        'spi_rx':    {'position': 64, 'mask': 3, 'id': 1},
+        'tim7_up':   {'position': 14, 'mask': 1, 'id': 1},
+    },
+    'dma1ch5': {
+        'dac2_ch1':   'tim18_up',
+        'i2c_rx':    {'position': 68, 'mask': 3, 'id': 2},
+        'spi_tx':    {'position': 66, 'mask': 3, 'id': 1},
+        'tim18_up':  {'position': 15, 'mask': 1, 'id': 1},
+    },
+    'dma1ch6': {
+        'i2c_tx':    {'position': 70, 'mask': 3, 'id': 0}, # also 'id': 3
+        'spi_rx':    {'position': 64, 'mask': 3, 'id': 2},
+    },
+    'dma1ch7': {
+        'i2c_rx':    {'position': 68, 'mask': 3, 'id': 0}, # also 'id': 3
+        'spi_tx':    {'position': 66, 'mask': 3, 'id': 2},
+        'tim17_ch1':  'tim17_up',
+        'tim17_up':  {'position': 12, 'mask': 1, 'id': 1},
+    },
+
+
+    'dma2ch1': {
+        'adc2':     [{'position':  8, 'mask': 1, 'id': 0},
+                     {'position': 73, 'mask': 1, 'id': 0}],
+        'adc4':      {'position':  8, 'mask': 1, 'id': 0},
+    },
+    'dma2ch3': {
+        'adc2':     [{'position':  8, 'mask': 1, 'id': 1},
+                     {'position': 73, 'mask': 1, 'id': 0}],
+        'adc4':      {'position':  8, 'mask': 1, 'id': 1},
+        'dac1_ch1':   'tim6_up',
+        'tim6_up':   {'position': 13, 'mask': 1, 'id': 0},
+    },
+    'dma2ch4': {
+        'dac1_ch2':   'tim7_up',
+        'tim7_up':   {'position': 14, 'mask': 1, 'id': 0},
+    },
+    'dma2ch5': {
+        'dac2_ch1':   'tim18_up',
+        'tim18_up':  {'position': 15, 'mask': 1, 'id': 0},
+    },
+}
+
+stm32f0_dma_remap = \
+{
+    'dma1ch1': {
+        'tim17_up': [{'position': 14, 'mask': 1, 'id': 1},
+                     {'position': 12, 'mask': 1, 'id': 0}],
+        'tim17_ch1':  'tim17_up',
+        'adc':       {'position':  8, 'mask': 1, 'id': 0},
+    },
+    'dma1ch2': {
+        'tim1_ch1':  {'position': 28, 'mask': 1, 'id': 0},
+        'i2c1_tx':   {'position': 27, 'mask': 1, 'id': 0},
+        'usart3_tx': {'position': 26, 'mask': 1, 'id': 1},
+        'tim17_up': [{'position': 14, 'mask': 1, 'id': 1},
+                     {'position': 12, 'mask': 1, 'id': 1}],
+        'tim17_ch1':  'tim17_up',
+        'usart1_tx': {'position':  9, 'mask': 1, 'id': 0},
+        'adc':       {'position':  8, 'mask': 1, 'id': 1},
+    },
+    'dma1ch3': {
+        'tim1_ch2':  {'position': 28, 'mask': 1, 'id': 0},
+        'tim2_ch2':  {'position': 29, 'mask': 1, 'id': 0},
+        'i2c1_rx':   {'position': 27, 'mask': 1, 'id': 0},
+        'usart3_rx': {'position': 26, 'mask': 1, 'id': 1},
+        'tim16_up': [{'position': 13, 'mask': 1, 'id': 1},
+                     {'position': 11, 'mask': 1, 'id': 0}],
+        'tim16_ch1':  'tim16_up',
+        'usart1_rx': {'position': 10, 'mask': 1, 'id': 0},
+    },
+    'dma1ch4': {
+        'tim1_ch3':  {'position': 28, 'mask': 1, 'id': 0},
+        'tim3_trig': {'position': 30, 'mask': 1, 'id': 0},
+        'tim3_ch1':   'tim3_trig',
+        'tim2_ch4':  {'position': 29, 'mask': 1, 'id': 0},
+        'usart2_tx': {'position': 25, 'mask': 1, 'id': 0},
+        'spi2_rx':   {'position': 24, 'mask': 1, 'id': 0},
+        'tim16_up': [{'position': 13, 'mask': 1, 'id': 1},
+                     {'position': 11, 'mask': 1, 'id': 1}],
+        'tim16_ch1':  'tim16_up',
+        'usart1_tx': {'position':  9, 'mask': 1, 'id': 1},
+    },
+    'dma1ch5': {
+        'usart2_rx': {'position': 25, 'mask': 1, 'id': 0},
+        'spi2_tx':   {'position': 24, 'mask': 1, 'id': 0},
+        'usart1_rx': {'position': 10, 'mask': 1, 'id': 1},
+    },
+    'dma1ch6': {
+        'tim3_trig': {'position': 30, 'mask': 1, 'id': 1},
+        'tim3_ch1':   'tim3_trig',
+        'tim1_ch1':  {'position': 28, 'mask': 1, 'id': 1},
+        'tim1_ch2':   'tim1_ch1',
+        'tim1_ch3':   'tim1_ch1',
+        'i2c1_tx':   {'position': 27, 'mask': 1, 'id': 1},
+        'usart3_rx': {'position': 26, 'mask': 1, 'id': 0},
+        'usart2_rx': {'position': 25, 'mask': 1, 'id': 1},
+        'spi2_rx':   {'position': 24, 'mask': 1, 'id': 1},
+        'tim16_up':  {'position': 13, 'mask': 1, 'id': 1},
+        'tim16_ch1':  'tim16_up',
+    },
+    'dma1ch7': {
+        'tim2_ch2':  {'position': 29, 'mask': 1, 'id': 1},
+        'tim2_ch4':   'tim2_ch2',
+        'i2c1_rx':   {'position': 27, 'mask': 1, 'id': 1},
+        'usart3_tx': {'position': 26, 'mask': 1, 'id': 0},
+        'usart2_tx': {'position': 25, 'mask': 1, 'id': 1},
+        'spi2_tx':   {'position': 24, 'mask': 1, 'id': 1},
+        'tim17_up':  {'position': 14, 'mask': 1, 'id': 1},
+        'tim17_ch1':  'tim17_up',
+    },
+}
+
+def getDmaRemap(did, dma, channel, driver, inst, signal):
+    if did.family == "f0":
+        remap = stm32f0_dma_remap
+    elif did.family == "f3":
+        remap = stm32f3_dma_remap
+    else:
+        return None
+
+    key1 = "dma{}ch{}".format(dma, channel)
+    key2 = (driver + inst if inst else "") + ("_{}".format(signal) if signal else "")
+
+    signals = remap.get(key1, {})
+    signal = signals.get(key2, None)
+    if signal is None:
+        return None
+
+    if isinstance(signal, str):
+        signal = signals.get(signal)
+
+    if isinstance(signal, dict):
+        signal = [signal]
+
+    # print(key1, key2, signal)
+    assert( isinstance(signal, list) )
+    return signal
+
+
 stm32_memory = \
 {
     'f0': {

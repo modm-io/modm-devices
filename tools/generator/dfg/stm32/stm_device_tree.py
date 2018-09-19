@@ -313,6 +313,8 @@ class STMDeviceTree:
                     "increase": "ENABLE" in rv("PeriphInc", ["DMA_PINC_ENABLE"])[0],
                 }
                 if inst: signal["instance"] = inst;
+                remaps = stm.getDmaRemap(did, instance, channel, driver, inst, sname)
+                if remaps: signal["remap"] = remaps;
                 dma_streams[instance][stream][channel].append(signal)
                 # print(instance, stream, channel)
                 # print(signal)
@@ -537,6 +539,11 @@ class STMDeviceTree:
                         sign.setAttributes(["driver", "instance"], signal)
                         if signal["name"]:
                             sign.setAttributes(["name"], signal)
+                        sign.addSortKey(lambda e: (e["position"], e["id"]))
+                        for remap in signal.get("remap", []):
+                            rem = sign.addChild("remap")
+                            rem.setAttributes(["position", "mask", "id"], remap)
+
 
     @staticmethod
     def addGpioToNode(p, gpio_driver):
