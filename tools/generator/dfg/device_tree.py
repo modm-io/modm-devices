@@ -17,16 +17,23 @@ class DeviceTree:
     Abstracts a generic tree, loosely based on XML.
     """
 
-    def __init__(self, name=None):
+    def __init__(self, name=None, ids=None):
         self.parent = None
         self.children = []
 
-        self.ids = MultiDeviceIdentifier()
+        self.ids = MultiDeviceIdentifier(ids)
 
         self.name = str(name)
         self.attributes = OrderedDict()
 
         self.sortKeys = []
+
+        self.__cstring = None
+        self.__hash = None
+
+    def _invalidate(self):
+        self.__cstring = None
+        self.__hash = None
 
     def copy(self, parent=None):
         tree = DeviceTree(self.name)
@@ -54,6 +61,7 @@ class DeviceTree:
             self.setAttribute(args[ii * 2], args[ii * 2 + 1])
 
     def setAttribute(self, key, value):
+        self._invalidate()
         if key == "value" and len(self.children):
             LOGGER.error("Cannot set attribute `value` on tree with children!")
             exit(1)
@@ -62,6 +70,7 @@ class DeviceTree:
         self.attributes[key] = str(value)
 
     def removeAttribute(self, key):
+        self._invalidate()
         if key in self.attributes:
             del self.attributes[key]
 
@@ -92,9 +101,7 @@ class DeviceTree:
         self.sortKeys.append(key)
 
     def get(self, item, default=None):
-        if item in self.attributes:
-            return self.attributes[item]
-        return default
+        return self.attributes.get(item, default)
 
     def __getitem__(self, item):
         return self.get(item)
@@ -116,9 +123,10 @@ class DeviceTree:
         ind = ' ' * indent
         if indent >= 2:
             ind = ind[:-2] + '. '
-        ident = self.ids.string
-        if self.parent is not None and self.parent.ids.string == ident:
+        if self.parent is None or self.parent.ids == self.ids:
             ident = ""
+        else:
+            ident = self.ids.string
         string = "{}{} {}\n".format(
             ind,
             self._toCompactString(),
@@ -128,11 +136,12 @@ class DeviceTree:
         return string
 
     def _toCompactString(self):
-        string = "{} <{}>".format(
-            self.name,
-            " ".join(["{}:{}".format(k,v) for k,v in self.attributes.items()])
-        )
-        return string
+        if self.__cstring is None:
+            self.__cstring = "{} <{}>".format(
+                self.name,
+                " ".join(["{}:{}".format(k, "[hidden]" if k.startswith("_") else v) for k,v in self.attributes.items()])
+            )
+        return self.__cstring
 
     def merge(self, other):
         if self == other:
@@ -174,7 +183,9 @@ class DeviceTree:
         return not self == other
 
     def __hash__(self):
-        return hash(self._toCompactString())
+        if self.__hash is None:
+            self.__hash = hash(self._toCompactString())
+        return self.__hash
 
     def __repr__(self):
         return self.__str__()
