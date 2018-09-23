@@ -250,7 +250,6 @@ class AVRDeviceTree:
         for prop in props:
             child = node.addChild(name)
             child.setValue(prop)
-            child.setIdentifier(lambda e: e.name)
 
     @staticmethod
     def from_file(filename):

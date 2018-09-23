@@ -27,7 +27,6 @@ class DeviceTree:
         self.attributes = OrderedDict()
 
         self.sortKeys = []
-        self.identKey = self._toCompactString()
 
     def copy(self, parent=None):
         tree = DeviceTree(self.name)
@@ -91,12 +90,6 @@ class DeviceTree:
 
     def addSortKey(self, key):
         self.sortKeys.append(key)
-
-    def setIdentifier(self, key):
-        self.identifier = key
-
-    def _identifier(self):
-        return self.identifier(self)
 
     def get(self, item, default=None):
         if item in self.attributes:

@@ -475,14 +475,12 @@ class STMDeviceTree:
         for prop in props:
             child = node.addChild(name)
             child.setAttribute("value", prop)
-            child.setIdentifier(lambda e: e.name)
 
     @staticmethod
     def addMemoryToNode(p, node):
         for section in p["memories"]:
             memory_section = node.addChild("memory")
             memory_section.setAttributes(["name", "access", "start", "size"], section)
-            memory_section.setIdentifier(lambda e: e["name"])
         # sort the node children by start address and size
         node.addSortKey(lambda e: (int(e["start"], 16), int(e["size"])) if e.name == "memory" else (-1, -1))
 
@@ -493,7 +491,6 @@ class STMDeviceTree:
         for vector in [i for i in interrupts if i["position"] >= 0]:
             vector_section = node.addChild("vector")
             vector_section.setAttributes(["position", "name"], vector)
-            vector_section.setIdentifier(lambda e: e["position"])
         # sort the node children by vector number and name
         node.addSortKey(lambda e: (int(e["position"]), e["name"]) if e.name == "vector" else (-1, ""))
 
@@ -510,7 +507,6 @@ class STMDeviceTree:
         driver = node.addChild("driver")
         driver.setAttributes("name", name, "family", family)
         driver.addSortKey(lambda e: int(e["value"]))
-        driver.setIdentifier(lambda e: e["name"] + e["hw"])
 
         for module in modules:
             instances = []
@@ -527,7 +523,6 @@ class STMDeviceTree:
             for instance in instances:
                 child = driver.addChild("instance")
                 child.setAttribute("value", instance)
-                child.setIdentifier(lambda e: e.name)
 
     @staticmethod
     def from_partname(partname):
