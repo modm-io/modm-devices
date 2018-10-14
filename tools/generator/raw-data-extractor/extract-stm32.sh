@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # create temp dir
-rm -r temp bin output
+rm -rf temp bin output
 mkdir temp output
 
 # download software
@@ -30,7 +30,7 @@ java izpack_deserializer.IzPackDeserializer > /dev/null
 cd ..
 
 # move the juicy bits to stm32-devices
-rm -r ../raw-device-data/stm32-devices
+rm -rf ../raw-device-data/stm32-devices
 mkdir -p ../raw-device-data/stm32-devices
 cp -r output/db/mcu ../raw-device-data/stm32-devices
 cp -r output/db/plugins ../raw-device-data/stm32-devices
@@ -41,4 +41,4 @@ cp -r output/db/plugins ../raw-device-data/stm32-devices
 #rm ../raw-device-data/stm32.patch
 
 # cleanup
-rm -r temp bin output
+rm -rf temp bin output
