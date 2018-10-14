@@ -30,7 +30,10 @@ make extract-data-avr
 make generate-avr
 ```
 
-You need Python3 with lxml and deepdiff packages, as well as Java (for `javac`/`java`).
+You need Python3 with lxml, deepdiff and CppHeaderParser packages, as well as Java (for `javac`/`java`).
+```sh
+pip install lxml deepdiff CppHeaderParser
+```
 
 
 ### Background

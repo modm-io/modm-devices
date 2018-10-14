@@ -5,7 +5,7 @@ python:
   - "nightly"
 
 # command to install dependencies
-install: "pip install lxml deepdiff"
+install: "pip install lxml deepdiff CppHeaderParser"
 
 # command to run tests
 script: (cd tools/device; make test)
