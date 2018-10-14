@@ -122,6 +122,8 @@
     </driver>
     <driver device-pin="v|z" device-size="d|e" name="fmc" type="stm32-v1.0"/>
     <driver name="i2c" type="stm32-extended">
+      <feature value="dnf"/>
+      <feature value="fmp"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance device-size="d|e" value="3"/>

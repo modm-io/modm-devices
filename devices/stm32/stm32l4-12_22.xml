@@ -100,8 +100,9 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver name="i2c" type="stm32l4">
+    <driver name="i2c" type="stm32-extended">
       <feature value="dnf"/>
+      <feature value="fmp"/>
       <instance value="1"/>
       <instance device-pin="c|r" value="2"/>
       <instance value="3"/>

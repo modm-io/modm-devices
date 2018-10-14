@@ -93,6 +93,8 @@
       <instance value="1"/>
     </driver>
     <driver name="i2c" type="stm32-extended">
+      <feature value="dnf"/>
+      <feature value="fmp"/>
       <instance value="1"/>
       <instance device-name="18" value="2"/>
       <instance device-name="18" value="3"/>

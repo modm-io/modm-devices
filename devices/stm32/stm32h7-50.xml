@@ -193,7 +193,9 @@
     <driver name="hash" type="stm32-v2.0"/>
     <driver name="hdmi_cec" type="stm32-v2.0"/>
     <driver name="hrtim" type="stm32-hrtim_h7"/>
-    <driver name="i2c" type="stm32">
+    <driver name="i2c" type="stm32-extended">
+      <feature value="dnf"/>
+      <feature value="fmp"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>

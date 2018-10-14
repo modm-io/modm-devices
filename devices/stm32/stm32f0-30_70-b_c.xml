@@ -52,6 +52,9 @@
       <instance device-name="30" value="2"/>
     </driver>
     <driver name="i2c" type="stm32-extended">
+      <feature value="dnf"/>
+      <feature device-name="30|70" device-pin="c" value="fmp"/>
+      <feature device-name="70" device-pin="r" value="fmp"/>
       <instance value="1"/>
       <instance value="2"/>
     </driver>
