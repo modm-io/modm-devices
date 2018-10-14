@@ -295,34 +295,71 @@ stm_peripherals = \
             }
         ]
     }],
-    'i2c': [{
-        'instances': '*',
-        'groups': [
-            {
-                # This hardware can go up to 1MHz (Fast Mode Plus)
-                'hardware': 'stm32-extended',
-                'features': [],
-                'protocols': ['i2c-v3.0', 'smb-v2.0', 'pmb-v1.1'],
-                'devices': [{'family': ['f0', 'f3', 'f7']}]
-            },{
-                # Some F4 have a digital noise filter
-                'hardware': 'stm32',
-                'features': ['dnf'],
-                'protocols': ['i2c-v3.0', 'smb-v2.0', 'pmb-v1.1'],
-                'devices': [{'family': ['f4'], 'name': ['27', '29', '37', '39', '46', '69', '79']}]
-            },{
-                'hardware': 'stm32l4',
-                'features': ['dnf'],
-                'protocols': ['i2c-v3.0', 'smb-v2.0', 'pmb-v1.1'],
-                'devices': [{'family': ['l4']}]
-            },{
-                'hardware': 'stm32',
-                'features': [],
-                'protocols': ['i2c-v3.0', 'smb-v2.0', 'pmb-v1.1'],
-                'devices': '*'
-            }
-        ]
-    }],
+    'i2c': [
+        {
+            # F1/F2/F4/L1 standard I2C with SMBus support
+            'instances': '*',
+            'groups': [
+                {
+                    # Some F4 have a digital noise filter
+                    'hardware': 'stm32',
+                    'features': ['dnf'],
+                    'protocols': ['i2c-v3.0', 'smb-v2.0', 'pmb-v1.1'],
+                    'devices': [{'family': ['f4'], 'name': ['27', '29', '37', '39', '46', '69', '79']}]
+                },{
+                    'hardware': 'stm32',
+                    'features': [],
+                    'protocols': ['i2c-v3.0', 'smb-v2.0', 'pmb-v1.1'],
+                    'devices': [{'family': ['f1', 'f2', 'f4', 'l1']}]
+                }
+            ]
+        },{
+            # F0/F3/F7/L0/L4/L4+/H7 extended I2C instance 2 with optional FM+ and SMBus support
+            'instances': ['2'],
+            'groups': [
+                {
+                    # This hardware supports neither FM+ (1 Mhz) nor SMBus
+                    'hardware': 'stm32-extended',
+                    'features': ['dnf'],
+                    'protocols': ['i2c-v3.0'],
+                    'devices': [
+                        {
+                            'family': ['f0'],
+                            'name': ['30', '31', '38', '51', '58']
+                        },{
+                            'family': ['f0'],
+                            'name': ['70'],
+                            'size': ['b']
+                        }
+                    ]
+                },{
+                    # This hardware supports FM+ (1 Mhz) but not SMBus
+                    'hardware': 'stm32-extended',
+                    'features': ['dnf', 'fmp'],
+                    'protocols': ['i2c-v3.0'],
+                    'devices': [{'family': ['f0', 'l0']}]
+                },{
+                    # This hardware supports FM+ (1 Mhz) and SMBus
+                    'hardware': 'stm32-extended',
+                    'features': ['dnf', 'fmp'],
+                    'protocols': ['i2c-v3.0', 'smb-v2.0', 'pmb-v1.1'],
+                    'devices': [{'family': ['f3', 'f7', 'l4', 'h7']}]
+                }
+            ]
+        },{
+            # F0/F3/F7/L0/L4/L4+/H7 extended I2C with FM+ and SMBus support
+            'instances': ['1', '3', '4'],
+            'groups': [
+                {
+                    # This hardware supports FM+ (1 Mhz) and SMBus
+                    'hardware': 'stm32-extended',
+                    'features': ['dnf', 'fmp'],
+                    'protocols': ['i2c-v3.0', 'smb-v2.0', 'pmb-v1.1'],
+                    'devices': [{'family': ['f0', 'f3', 'f7', 'l0', 'l4', 'h7']}]
+                }
+            ]
+        }
+    ],
     'uart': [{
         'instances': '*',
         'groups': [
