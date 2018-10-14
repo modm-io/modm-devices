@@ -358,8 +358,8 @@
         <signal device-name="11" af="12" driver="sdio" name="d7"/>
       </gpio>
       <gpio device-package="h" port="b" pin="11">
-        <signal device-name="11" device-size="c|e" af="1" driver="tim" instance="2" name="ch4"/>
-        <signal device-name="11" device-size="c|e" af="4" driver="i2c" instance="2" name="sda"/>
+        <signal af="1" driver="tim" instance="2" name="ch4"/>
+        <signal af="4" driver="i2c" instance="2" name="sda"/>
         <signal device-name="11" device-size="c|e" af="5" driver="i2s" name="ckin"/>
       </gpio>
       <gpio port="b" pin="12">
