@@ -142,7 +142,7 @@
     <driver name="fmc" type="stm32-v2.1"/>
     <driver device-name="s7|s9" name="gfxmmu" type="stm32-v1.0"/>
     <driver name="hash" type="stm32-v2.2"/>
-    <driver name="i2c" type="stm32l4">
+    <driver name="i2c" type="stm32-extended">
       <feature value="dnf"/>
       <instance value="1"/>
       <instance value="2"/>

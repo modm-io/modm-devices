@@ -299,22 +299,16 @@ stm_peripherals = \
         'instances': '*',
         'groups': [
             {
-                # This hardware can go up to 1MHz (Fast Mode Plus)
-                'hardware': 'stm32-extended',
-                'features': [],
-                'protocols': ['i2c-v3.0', 'smb-v2.0', 'pmb-v1.1'],
-                'devices': [{'family': ['f0', 'f3', 'f7']}]
-            },{
                 # Some F4 have a digital noise filter
                 'hardware': 'stm32',
                 'features': ['dnf'],
                 'protocols': ['i2c-v3.0', 'smb-v2.0', 'pmb-v1.1'],
                 'devices': [{'family': ['f4'], 'name': ['27', '29', '37', '39', '46', '69', '79']}]
             },{
-                'hardware': 'stm32l4',
+                'hardware': 'stm32-extended',
                 'features': ['dnf'],
                 'protocols': ['i2c-v3.0', 'smb-v2.0', 'pmb-v1.1'],
-                'devices': [{'family': ['l4']}]
+                'devices': [{'family': ['f0', 'f3', 'f7', 'l4']}]
             },{
                 'hardware': 'stm32',
                 'features': [],

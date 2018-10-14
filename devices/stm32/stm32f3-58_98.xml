@@ -125,6 +125,7 @@
     </driver>
     <driver device-name="98" name="fmc" type="stm32-v1.0"/>
     <driver name="i2c" type="stm32-extended">
+      <feature value="dnf"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance device-name="98" value="3"/>

@@ -150,7 +150,7 @@
     <driver name="dma2d" type="stm32"/>
     <driver device-pin="a|q|v|z" name="fmc" type="stm32-v2.0"/>
     <driver device-name="a6" name="hash" type="stm32-v2.2"/>
-    <driver name="i2c" type="stm32l4">
+    <driver name="i2c" type="stm32-extended">
       <feature value="dnf"/>
       <instance value="1"/>
       <instance value="2"/>
