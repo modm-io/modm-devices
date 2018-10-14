@@ -227,6 +227,9 @@ stm_groups = \
     # STM32L4 devices
     {
         'family': ['l4'],
+        'name': ['12', '22']
+    },{
+        'family': ['l4'],
         'name': ['51', '71']
     },{
         'family': ['l4'],

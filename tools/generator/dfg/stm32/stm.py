@@ -271,7 +271,10 @@ stm32_memory = \
             },{
                 'name': ['r5', 'r7', 'r9', 's5', 's7', 's9'],
                 'memories': {'flash': 0, 'sram1': 0, 'sram2': 64*1024, 'sram3': 384*1024}
-            },
+            },{
+                'name': ['12', '22'],
+                'memories': {'flash': 0, 'sram1': 0, 'sram2': 8*1024}
+            }
         ]
     },
 }
