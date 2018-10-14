@@ -100,6 +100,7 @@
       <instance value="1"/>
     </driver>
     <driver name="i2c" type="stm32-extended">
+      <feature value="dnf"/>
       <instance value="1"/>
     </driver>
     <driver name="irtim" type="stm32-v1.0"/>

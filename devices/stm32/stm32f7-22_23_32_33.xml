@@ -151,6 +151,7 @@
     </driver>
     <driver device-pin="i|v|z" name="fmc" type="stm32-v2.0"/>
     <driver name="i2c" type="stm32-extended">
+      <feature value="dnf"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
