@@ -1,11 +1,25 @@
 language: python
 python:
-  - "3.5"
-  - "3.6"
-  - "nightly"
+  - 3.5
+
+env:
+  global:
+    - MAKEFLAGS="-j 4"
 
 # command to install dependencies
-install: "pip install lxml deepdiff CppHeaderParser"
+install:
+  - pip install lxml jinja2 deepdiff CppHeaderParser
+  - sudo apt-get install openjdk-7-jdk
 
 # command to run tests
-script: (cd tools/device; make test)
+script:
+  - (cd tools/device; make test)
+  - (cd tools/generator; make init)
+  - (cd tools/generator; make extract-stm32 extract-avr)
+  - (cd tools/generator; make generate-avr)
+  - (cd tools/generator; make generate-stm32)
+  - tools/device/scripts/stats --count
+  - tools/device/scripts/stats --name >/dev/null
+  - tools/device/scripts/stats --ram >/dev/null
+  - git status --porcelain
+  - (( $(git status --porcelain | wc -l) == 0 ))
