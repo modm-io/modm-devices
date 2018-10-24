@@ -57,9 +57,7 @@ class DeviceIdentifier:
         self._properties[key] = value
 
     def get(self, key, default=None):
-        if key in self._properties:
-            return self._properties[key]
-        return default
+        return self._properties.get(key, default)
 
     def __getitem__(self, key):
         return self.get(key, None)
@@ -96,6 +94,7 @@ class MultiDeviceIdentifier:
     def __init__(self, objs=None):
         self.ids = []
         self.__string = None
+        self.__naming_schema = None
 
         if isinstance(objs, DeviceIdentifier):
             self.ids = [objs.copy()]
@@ -110,6 +109,7 @@ class MultiDeviceIdentifier:
     def copy(self):
         ids = MultiDeviceIdentifier.from_list(self.ids)
         ids.__string = self.__string
+        ids.__naming_schema = self.__naming_schema
         return ids
 
     @staticmethod
@@ -118,23 +118,21 @@ class MultiDeviceIdentifier:
         mid.ids = [dev for dev in device_ids]
         return mid
 
-    def append(self, device_id):
-        assert isinstance(device_id, DeviceIdentifier)
-        assert all(device_id.naming_schema == d.naming_schema for d in self.ids)
+    def append(self, did):
+        assert isinstance(did, DeviceIdentifier)
 
-        self.ids.append(device_id)
+        self.ids.append(did)
         self.ids = list(set(self.ids))
-        self.ids.sort(key=lambda k : k.string)
         self.__string = None
+        self.__naming_schema = None
 
-    def extend(self, identifier):
-        assert isinstance(identifier, MultiDeviceIdentifier)
-        assert all(all(i.naming_schema == d.naming_schema for d in self.ids) for i in identifier)
+    def extend(self, dids):
+        assert isinstance(dids, (MultiDeviceIdentifier, list))
 
-        self.ids.extend(identifier)
+        self.ids.extend(dids)
         self.ids = list(set(self.ids))
-        self.ids.sort(key=lambda k : k.string)
         self.__string = None
+        self.__naming_schema = None
 
     @property
     def string(self):
@@ -287,9 +285,10 @@ class MultiDeviceIdentifier:
 
     @property
     def naming_schema(self):
-        if len(self.ids):
-            return self.ids[0].naming_schema
-        return ""
+        if self.__naming_schema is None:
+            schema_set = sorted(set(did.naming_schema for did in self.ids))
+            self.__naming_schema = "".join(schema_set)
+        return self.__naming_schema
 
     def remove(self, device_id):
         self.ids.remove(device_id)

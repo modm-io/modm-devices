@@ -94,6 +94,20 @@ class DeviceIdentifierTest(unittest.TestCase):
 
 class MultiDeviceIdentifierTest(unittest.TestCase):
 
+    def setUp(self):
+        self.ident = MultiDeviceIdentifier()
+
     def test_should_construct_empty(self):
-        ident = MultiDeviceIdentifier()
-        self.assertEqual(ident.string, "")
+        self.assertEqual(self.ident.string, "")
+        self.assertEqual(self.ident.naming_schema, "")
+
+    def test_should_merge_naming_schemas(self):
+
+        self.ident.append(DeviceIdentifier("{one}"))
+        self.assertEqual(self.ident.naming_schema, "{one}")
+
+        self.ident.append(DeviceIdentifier("{one}"))
+        self.assertEqual(self.ident.naming_schema, "{one}")
+
+        self.ident.append(DeviceIdentifier("{one}{two}"))
+        self.assertEqual(self.ident.naming_schema, "{one}{one}{two}")
