@@ -40,6 +40,9 @@ class AVRDeviceTree:
         p['mcu'] = mcu
 
         p['core'] = architecture.lower()
+        # We don't care about Microchip's new abominations
+        if p['core'] == "avr8x":
+            return None
 
         p['define'] = '__AVR_' + partname + '__'
 
