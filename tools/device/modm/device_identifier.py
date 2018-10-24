@@ -93,11 +93,19 @@ class MultiDeviceIdentifier:
     Encapsulates a list of DeviceIdentifier.
     This manages filtering, merging and accessing.
     """
-    def __init__(self, device_id=None):
+    def __init__(self, objs=None):
         self.ids = []
         self.__string = None
-        if isinstance(device_id, DeviceIdentifier):
-            self.ids = [device_id.copy()]
+
+        if isinstance(objs, DeviceIdentifier):
+            self.ids = [objs.copy()]
+        if isinstance(objs, (list, set, tuple)):
+            for obj in objs:
+                if isinstance(objs, DeviceIdentifier):
+                    self.ids.append(objs)
+        if isinstance(objs, MultiDeviceIdentifier):
+            self.ids = [dev for dev in objs.ids]
+
 
     def copy(self):
         ids = MultiDeviceIdentifier.from_list(self.ids)

@@ -17,11 +17,11 @@ class DeviceTree:
     Abstracts a generic tree, loosely based on XML.
     """
 
-    def __init__(self, name=None):
+    def __init__(self, name=None, ids=None):
         self.parent = None
         self.children = []
 
-        self.ids = MultiDeviceIdentifier()
+        self.ids = MultiDeviceIdentifier(ids)
 
         self.name = str(name)
         self.attributes = OrderedDict()
