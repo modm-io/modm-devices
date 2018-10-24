@@ -54,13 +54,13 @@ class DeviceIdentifierTest(unittest.TestCase):
 
         self.assertEqual(str(ident), "stm32f103")
         self.assertEqual(repr(ident), "stm32f103")
-        self.assertEqual(hash(ident), hash("familyf1name03platformstm32"))
+        self.assertEqual(hash(ident), hash("familyf1name03platformstm32{platform}{family}{name}"))
 
         ident2 = DeviceIdentifier("{platform}{family}{name}")
         ident2.set("platform", "stm32")
         ident2.set("family", "f1")
         ident2.set("name", "03")
-        self.assertEqual(hash(ident2), hash("familyf1name03platformstm32"))
+        self.assertEqual(hash(ident2), hash("familyf1name03platformstm32{platform}{family}{name}"))
 
         self.assertTrue(ident == ident2)
         self.assertFalse(ident != ident2)
@@ -69,7 +69,7 @@ class DeviceIdentifierTest(unittest.TestCase):
         ident3 = DeviceIdentifier("{platform}{family}")
         ident3.set("platform", "stm32")
         ident3.set("family", "f1")
-        self.assertEqual(hash(ident3), hash("familyf1platformstm32"))
+        self.assertEqual(hash(ident3), hash("familyf1platformstm32{platform}{family}"))
 
         self.assertTrue(ident != ident3)
         self.assertFalse(ident == ident3)

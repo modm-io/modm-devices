@@ -25,6 +25,7 @@ class DeviceIdentifier:
     def _ustring(self):
         if self.__ustring is None:
             self.__ustring = "".join([k + self._properties[k] for k in sorted(self._properties.keys())])
+            if self.naming_schema: self.__ustring += self.naming_schema;
         return self.__ustring
 
     def copy(self):
@@ -101,6 +102,7 @@ class MultiDeviceIdentifier:
     def copy(self):
         ids = MultiDeviceIdentifier.from_list(self.ids)
         ids.__string = self.__string
+        ids.__naming_schema = self.__naming_schema
         return ids
 
     @staticmethod
@@ -117,6 +119,7 @@ class MultiDeviceIdentifier:
         self.ids = list(set(self.ids))
         self.ids.sort(key=lambda k : k.string)
         self.__string = None
+        self.__naming_schema = None
 
     def extend(self, identifier):
         assert isinstance(identifier, MultiDeviceIdentifier)
@@ -126,6 +129,7 @@ class MultiDeviceIdentifier:
         self.ids = list(set(self.ids))
         self.ids.sort(key=lambda k : k.string)
         self.__string = None
+        self.__naming_schema = None
 
     @property
     def string(self):
@@ -162,8 +166,7 @@ class MultiDeviceIdentifier:
         attributes = list(itertools.product(*properties.values()))
         ids = MultiDeviceIdentifier()
         for attr in attributes:
-            ident = DeviceIdentifier()
-            ident.naming_schema = naming_schema
+            ident = DeviceIdentifier(naming_schema)
             for ii, k in enumerate(properties.keys()):
                 ident.set(k, attr[ii])
             ids.append(ident)
