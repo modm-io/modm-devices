@@ -48,30 +48,19 @@ class XMLReader:
 
         return response
 
-    def query(self, query):
-        """
-        This wraps the queryTree and returns an (empty) array.
-        """
-        # LOGGER.debug("Query for '%s'", str(query))
+    def query(self, query, default=[]):
         result = self.queryTree(query)
+        if result is not None:
+            sorted_results = []
+            for r in result:
+                if r not in sorted_results:
+                    sorted_results.append(r)
+            return sorted_results
 
-        if result != None:
-            # if len(result) == 0:
-            #     LOGGER.warning("No results found for '%s'", str(query))
-            result = list(set(result))
-            return result
-
-        return []
+        return default
 
     def compactQuery(self, query):
-        # LOGGER.debug("Compact query for '%s'", str(query))
-        result = self.queryTree(query)
-        # LOGGER.debug("Compact query result: '%s'", str(result))
-        if result != None:
-            # if len(result) == 0:
-            #     LOGGER.debug("No results found for '%s'", str(query))
-            result = list(set(result))
-        return result
+        return self.query(query, None)
 
     def __repr__(self):
         return self.__str__()
