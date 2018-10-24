@@ -41,8 +41,8 @@ int main() {
 
 class STMHeader:
     ROOT_PATH = Path(__file__).parents[2]
-    HEADER_PATH = ROOT_PATH / "cmsis-header-stm32"
-    CMSIS_PATH =  ROOT_PATH / "cmsis-5/CMSIS/Core/Include"
+    HEADER_PATH = ROOT_PATH / "ext/cmsis-header-stm32"
+    CMSIS_PATH =  ROOT_PATH / "ext/cmsis-5-partial/CMSIS/Core/Include"
     CACHE_PATH =  ROOT_PATH / "cmsis-header-cache"
     CACHE_HEADER = defaultdict(dict)
     CACHE_FAMILY = defaultdict(dict)

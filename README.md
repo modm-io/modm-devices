@@ -20,17 +20,23 @@ Please open an issue or better yet a pull request for additional support.
 ### TL;DR
 
 ```sh
-git clone --recursive --depth=1 https://github.com/modm-io/modm-devices.git
+git clone https://github.com/modm-io/modm-devices.git
 cd modm-devices/tools/generator
+# Clone the required dependencies
+make init
 # Extract and generate STM32 device data
 make extract-data-stm32
 make generate-stm32
 # Extract and generate AVR device data
 make extract-data-avr
 make generate-avr
+# To make use of multi-processing
+make generate-stm32-async
+make generate-avr-async
 ```
 
 You need Python3 with lxml, deepdiff and CppHeaderParser packages, as well as Java (for `javac`/`java`).
+
 ```sh
 pip install lxml deepdiff CppHeaderParser
 ```

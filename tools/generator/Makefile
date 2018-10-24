@@ -1,4 +1,16 @@
 
+init:
+	@git clone https://github.com/modm-io/cmsis-header-stm32.git ext/cmsis-header-stm32
+	@git clone https://github.com/modm-io/cmsis-5-partial.git ext/cmsis-5-partial
+
+
+extract-data-avr:
+	(cd raw-data-extractor && ./extract-avr.sh)
+
+extract-data-stm32:
+	(cd raw-data-extractor && ./extract-stm32.sh)
+
+
 generate-avr:
 	@rm -f ../../devices/avr/*
 	./avr_generator.py AT90
@@ -10,6 +22,7 @@ generate-avr-async:
 	./avr_generator.py AT90 &
 	./avr_generator.py ATtiny &
 	./avr_generator.py ATmega &
+
 
 generate-stm32:
 	@rm -f ../../devices/stm32/*
@@ -37,10 +50,9 @@ generate-stm32-async:
 	./stm_generator.py STM32L1 &
 	./stm_generator.py STM32L4 &
 
-extract-data-stm32:
-	(cd raw-data-extractor && ./extract-stm32.sh)
 
-extract-data-avr:
-	(cd raw-data-extractor && ./extract-avr.sh)
-
-.PHONY: extract-data-avr extract-data-stm32 generate-stm32-async generate-stm32 generate-avr-async generate-avr
+.PHONY:
+	init
+	extract-data-avr extract-data-stm32
+	generate-avr generate-stm32
+	generate-avr-async generate-stm32-async
