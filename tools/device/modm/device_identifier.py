@@ -25,6 +25,7 @@ class DeviceIdentifier:
     def _ustring(self):
         if self.__ustring is None:
             self.__ustring = "".join([k + self._properties[k] for k in sorted(self._properties.keys())])
+            if self.naming_schema: self.__ustring += self.naming_schema;
         return self.__ustring
 
     def copy(self):
@@ -162,8 +163,7 @@ class MultiDeviceIdentifier:
         attributes = list(itertools.product(*properties.values()))
         ids = MultiDeviceIdentifier()
         for attr in attributes:
-            ident = DeviceIdentifier()
-            ident.naming_schema = naming_schema
+            ident = DeviceIdentifier(naming_schema)
             for ii, k in enumerate(properties.keys()):
                 ident.set(k, attr[ii])
             ids.append(ident)
