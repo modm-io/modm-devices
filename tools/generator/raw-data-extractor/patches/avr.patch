@@ -63,45 +63,6 @@ index 7785ebb..70c8ac3 100644
                <signal field="USIPOS" function="USI_ALT" group="SDA" pad="PA0"/>
                <signal field="USIPOS" function="USI" group="DI" pad="PB0"/>
                <signal field="USIPOS" function="USI" group="DO" pad="PB1"/>
-@@ -153,22 +153,22 @@
-           <instance name="EXINT" caption="External Interrupts">
-             <register-group name="EXINT" name-in-module="EXINT" offset="0x00" address-space="data" caption="External Interrupts"/>
-             <signals>
--              <signal function="EXTINT" group="PCINT0" index="0" pad="PA0"/>
--              <signal function="EXTINT" group="PCINT1" index="1" pad="PA1"/>
--              <signal function="EXTINT" group="PCINT2" index="2" pad="PA2"/>
--              <signal function="EXTINT" group="PCINT3" index="3" pad="PA3"/>
--              <signal function="EXTINT" group="PCINT4" index="4" pad="PA4"/>
--              <signal function="EXTINT" group="PCINT5" index="5" pad="PA5"/>
--              <signal function="EXTINT" group="PCINT6" index="6" pad="PA6"/>
--              <signal function="EXTINT" group="PCINT7" index="7" pad="PA7"/>
--              <signal function="EXTINT" group="PCINT8" index="8" pad="PB0"/>
--              <signal function="EXTINT" group="PCINT9" index="9" pad="PB1"/>
--              <signal function="EXTINT" group="PCINT10" index="10" pad="PB2"/>
--              <signal function="EXTINT" group="PCINT11" index="11" pad="PB3"/>
--              <signal function="EXTINT" group="PCINT12" index="12" pad="PB4"/>
--              <signal function="EXTINT" group="PCINT13" index="13" pad="PB5"/>
--              <signal function="EXTINT" group="PCINT14" index="14" pad="PB6"/>
--              <signal function="EXTINT" group="PCINT15" index="15" pad="PB7"/>
-+              <signal function="EXTINT" group="PCINT" index="0" pad="PA0"/>
-+              <signal function="EXTINT" group="PCINT" index="1" pad="PA1"/>
-+              <signal function="EXTINT" group="PCINT" index="2" pad="PA2"/>
-+              <signal function="EXTINT" group="PCINT" index="3" pad="PA3"/>
-+              <signal function="EXTINT" group="PCINT" index="4" pad="PA4"/>
-+              <signal function="EXTINT" group="PCINT" index="5" pad="PA5"/>
-+              <signal function="EXTINT" group="PCINT" index="6" pad="PA6"/>
-+              <signal function="EXTINT" group="PCINT" index="7" pad="PA7"/>
-+              <signal function="EXTINT" group="PCINT" index="8" pad="PB0"/>
-+              <signal function="EXTINT" group="PCINT" index="9" pad="PB1"/>
-+              <signal function="EXTINT" group="PCINT" index="10" pad="PB2"/>
-+              <signal function="EXTINT" group="PCINT" index="11" pad="PB3"/>
-+              <signal function="EXTINT" group="PCINT" index="12" pad="PB4"/>
-+              <signal function="EXTINT" group="PCINT" index="13" pad="PB5"/>
-+              <signal function="EXTINT" group="PCINT" index="14" pad="PB6"/>
-+              <signal function="EXTINT" group="PCINT" index="15" pad="PB7"/>
-               <signal function="EXTINT" group="INT" index="1" pad="PA2"/>
-               <signal function="EXTINT" group="INT" index="0" pad="PB6"/>
-             </signals>
 diff --git a/avr-devices/attiny/ATtiny461.atdf b/avr-devices/attiny/ATtiny461.atdf
 index d053b0d..06d4211 100644
 --- a/avr-devices/attiny/ATtiny461.atdf
@@ -115,45 +76,6 @@ index d053b0d..06d4211 100644
                <signal field="USIPOS" function="USI_ALT" group="SDA" pad="PA0"/>
                <signal field="USIPOS" function="USI" group="DI" pad="PB0"/>
                <signal field="USIPOS" function="USI" group="DO" pad="PB1"/>
-@@ -153,22 +153,22 @@
-           <instance name="EXINT" caption="External Interrupts">
-             <register-group name="EXINT" name-in-module="EXINT" offset="0x00" address-space="data" caption="External Interrupts"/>
-             <signals>
--              <signal function="EXTINT" group="PCINT0" index="0" pad="PA0"/>
--              <signal function="EXTINT" group="PCINT1" index="1" pad="PA1"/>
--              <signal function="EXTINT" group="PCINT2" index="2" pad="PA2"/>
--              <signal function="EXTINT" group="PCINT3" index="3" pad="PA3"/>
--              <signal function="EXTINT" group="PCINT4" index="4" pad="PA4"/>
--              <signal function="EXTINT" group="PCINT5" index="5" pad="PA5"/>
--              <signal function="EXTINT" group="PCINT6" index="6" pad="PA6"/>
--              <signal function="EXTINT" group="PCINT7" index="7" pad="PA7"/>
--              <signal function="EXTINT" group="PCINT8" index="8" pad="PB0"/>
--              <signal function="EXTINT" group="PCINT9" index="9" pad="PB1"/>
--              <signal function="EXTINT" group="PCINT10" index="10" pad="PB2"/>
--              <signal function="EXTINT" group="PCINT11" index="11" pad="PB3"/>
--              <signal function="EXTINT" group="PCINT12" index="12" pad="PB4"/>
--              <signal function="EXTINT" group="PCINT13" index="13" pad="PB5"/>
--              <signal function="EXTINT" group="PCINT14" index="14" pad="PB6"/>
--              <signal function="EXTINT" group="PCINT15" index="15" pad="PB7"/>
-+              <signal function="EXTINT" group="PCINT" index="0" pad="PA0"/>
-+              <signal function="EXTINT" group="PCINT" index="1" pad="PA1"/>
-+              <signal function="EXTINT" group="PCINT" index="2" pad="PA2"/>
-+              <signal function="EXTINT" group="PCINT" index="3" pad="PA3"/>
-+              <signal function="EXTINT" group="PCINT" index="4" pad="PA4"/>
-+              <signal function="EXTINT" group="PCINT" index="5" pad="PA5"/>
-+              <signal function="EXTINT" group="PCINT" index="6" pad="PA6"/>
-+              <signal function="EXTINT" group="PCINT" index="7" pad="PA7"/>
-+              <signal function="EXTINT" group="PCINT" index="8" pad="PB0"/>
-+              <signal function="EXTINT" group="PCINT" index="9" pad="PB1"/>
-+              <signal function="EXTINT" group="PCINT" index="10" pad="PB2"/>
-+              <signal function="EXTINT" group="PCINT" index="11" pad="PB3"/>
-+              <signal function="EXTINT" group="PCINT" index="12" pad="PB4"/>
-+              <signal function="EXTINT" group="PCINT" index="13" pad="PB5"/>
-+              <signal function="EXTINT" group="PCINT" index="14" pad="PB6"/>
-+              <signal function="EXTINT" group="PCINT" index="15" pad="PB7"/>
-               <signal function="EXTINT" group="INT" index="1" pad="PA2"/>
-               <signal function="EXTINT" group="INT" index="0" pad="PB6"/>
-             </signals>
 diff --git a/avr-devices/attiny/ATtiny861.atdf b/avr-devices/attiny/ATtiny861.atdf
 index 02a8cc3..4cbd66d 100644
 --- a/avr-devices/attiny/ATtiny861.atdf
@@ -167,42 +89,3 @@ index 02a8cc3..4cbd66d 100644
                <signal field="USIPOS" function="USI_ALT" group="SDA" pad="PA0"/>
                <signal field="USIPOS" function="USI" group="DI" pad="PB0"/>
                <signal field="USIPOS" function="USI" group="DO" pad="PB1"/>
-@@ -155,22 +155,22 @@
-           <instance name="EXINT" caption="External Interrupts">
-             <register-group name="EXINT" name-in-module="EXINT" offset="0x00" address-space="data" caption="External Interrupts"/>
-             <signals>
--              <signal function="EXTINT" group="PCINT0" index="0" pad="PA0"/>
--              <signal function="EXTINT" group="PCINT1" index="1" pad="PA1"/>
--              <signal function="EXTINT" group="PCINT2" index="2" pad="PA2"/>
--              <signal function="EXTINT" group="PCINT3" index="3" pad="PA3"/>
--              <signal function="EXTINT" group="PCINT4" index="4" pad="PA4"/>
--              <signal function="EXTINT" group="PCINT5" index="5" pad="PA5"/>
--              <signal function="EXTINT" group="PCINT6" index="6" pad="PA6"/>
--              <signal function="EXTINT" group="PCINT7" index="7" pad="PA7"/>
--              <signal function="EXTINT" group="PCINT8" index="8" pad="PB0"/>
--              <signal function="EXTINT" group="PCINT9" index="9" pad="PB1"/>
--              <signal function="EXTINT" group="PCINT10" index="10" pad="PB2"/>
--              <signal function="EXTINT" group="PCINT11" index="11" pad="PB3"/>
--              <signal function="EXTINT" group="PCINT12" index="12" pad="PB4"/>
--              <signal function="EXTINT" group="PCINT13" index="13" pad="PB5"/>
--              <signal function="EXTINT" group="PCINT14" index="14" pad="PB6"/>
--              <signal function="EXTINT" group="PCINT15" index="15" pad="PB7"/>
-+              <signal function="EXTINT" group="PCINT" index="0" pad="PA0"/>
-+              <signal function="EXTINT" group="PCINT" index="1" pad="PA1"/>
-+              <signal function="EXTINT" group="PCINT" index="2" pad="PA2"/>
-+              <signal function="EXTINT" group="PCINT" index="3" pad="PA3"/>
-+              <signal function="EXTINT" group="PCINT" index="4" pad="PA4"/>
-+              <signal function="EXTINT" group="PCINT" index="5" pad="PA5"/>
-+              <signal function="EXTINT" group="PCINT" index="6" pad="PA6"/>
-+              <signal function="EXTINT" group="PCINT" index="7" pad="PA7"/>
-+              <signal function="EXTINT" group="PCINT" index="8" pad="PB0"/>
-+              <signal function="EXTINT" group="PCINT" index="9" pad="PB1"/>
-+              <signal function="EXTINT" group="PCINT" index="10" pad="PB2"/>
-+              <signal function="EXTINT" group="PCINT" index="11" pad="PB3"/>
-+              <signal function="EXTINT" group="PCINT" index="12" pad="PB4"/>
-+              <signal function="EXTINT" group="PCINT" index="13" pad="PB5"/>
-+              <signal function="EXTINT" group="PCINT" index="14" pad="PB6"/>
-+              <signal function="EXTINT" group="PCINT" index="15" pad="PB7"/>
-               <signal function="EXTINT" group="INT" index="1" pad="PA2"/>
-               <signal function="EXTINT" group="INT" index="0" pad="PB6"/>
-             </signals>

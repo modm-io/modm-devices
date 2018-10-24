@@ -5,7 +5,7 @@ init:
 
 
 extract-data-avr:
-	(cd raw-data-extractor && ./extract-avr.sh)
+	(cd raw-data-extractor && python3 extract-avr.py)
 
 extract-data-stm32:
 	(cd raw-data-extractor && ./extract-stm32.sh)
