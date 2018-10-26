@@ -8,7 +8,7 @@ extract-data-avr:
 	(cd raw-data-extractor && python3 extract-avr.py)
 
 extract-data-stm32:
-	(cd raw-data-extractor && ./extract-stm32.sh)
+	(cd raw-data-extractor && python3 extract-stm32.py)
 
 
 generate-avr:

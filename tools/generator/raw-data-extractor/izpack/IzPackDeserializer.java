@@ -46,7 +46,7 @@ public class IzPackDeserializer {
 
 	public static void main(String[] args) {
 		System.out.println("IzPackDeserializer");
-		final String input = "../temp/resources/packs/pack-Core";
+		final String input = "../resources/packs/pack-Core";
 		final String output = "../output";
 		PackFile pf = null;
 		FileInputStream inputFileStream;
