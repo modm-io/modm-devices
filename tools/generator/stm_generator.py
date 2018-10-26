@@ -67,7 +67,7 @@ for dev in mergedDevices:
         parsed_devices[device.partname] = device
 
 tmp_folder = Path(os.path.realpath(__file__)).parent / "single"
-os.makedirs(tmp_folder, exist_ok=True)
+tmp_folder.mkdir(parents=True, exist_ok=True)
 for pname, pdevice in parsed_devices.items():
     # these are the properties from the merged device
     pprops = pdevice.properties

@@ -23,12 +23,11 @@ class CmsisHeader:
     def get_header(filename, replace = []):
         replacers = replace + CmsisHeader.REPLACE
         try:
-            with open(filename, "r", errors="replace") as headerFile:
-                content = headerFile.read()
-                for r in replacers:
-                    content = re.sub(r[0], r[1], content, flags=(re.DOTALL | re.MULTILINE))
-                # print(content)
-                return CppHeaderParser.CppHeader(content, "string")
+            content = filename.read_text(encoding="utf-8", errors="replace")
+            for r in replacers:
+                content = re.sub(r[0], r[1], content, flags=(re.DOTALL | re.MULTILINE))
+            # print(content)
+            return CppHeaderParser.CppHeader(content, "string")
         except CppHeaderParser.CppParseError as e:
             LOGGER.error("Unable to parse '{}': {}".format(filename, str(e)))
             return None

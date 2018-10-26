@@ -86,7 +86,7 @@ class DeviceFileWriter:
 
     @staticmethod
     def write(tree, folder, name):
-        path = os.path.join(folder, name(tree.ids) + '.xml')
+        path = os.path.join(str(folder), name(tree.ids) + '.xml')
         content = DeviceFileWriter.format(tree).decode('utf-8')
 
         if os.path.exists(path):
