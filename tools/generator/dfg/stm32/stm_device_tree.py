@@ -6,12 +6,14 @@
 import os
 import re
 import logging
+import networkx as nx
 
 from ..device_tree import DeviceTree
 from ..input.xml import XMLReader
 
 from .stm_header import STMHeader
 from .stm_identifier import STMIdentifier
+from .stm_clock import STMClock
 from . import stm
 from . import stm_peripherals
 
@@ -24,6 +26,12 @@ class STMDeviceTree:
     """
     rootpath = os.path.join(os.path.dirname(__file__), "..", "..", "raw-device-data", "stm32-devices", "mcu")
     familyFile = XMLReader(os.path.join(rootpath, "families.xml"))
+
+    @staticmethod
+    def getIpFile(device_file, peripheral):
+        ip_file = device_file.query('//IP[@Name="{}"]'.format(peripheral))[0].get("Version")
+        ip_file = os.path.join(STMDeviceTree.rootpath, "IP", "{}-{}_Modes.xml".format(peripheral, ip_file))
+        return XMLReader(ip_file)
 
     @staticmethod
     def getDevicesFromFamily(family):
@@ -62,6 +70,10 @@ class STMDeviceTree:
         p["id"] = did
 
         LOGGER.info("Parsing '{}'".format(did.string))
+
+        rccFile = STMDeviceTree.getIpFile(device_file, "RCC")
+        clock = STMClock.get(did, rccFile)
+        return None
 
         # information about the core and architecture
         core = device_file.query('//Core')[0].text.lower().replace("arm ", "")
@@ -157,8 +169,8 @@ class STMDeviceTree:
             match = re.search("v[1-9]_[0-9x]", version.replace(".", "_"))
             if match:
                 version = match.group(0).replace("_", ".")
-            else:
-                print(version)
+            # else:
+            #     print(version)
             return version
 
         modules = []
@@ -195,9 +207,8 @@ class STMDeviceTree:
         p["interrupts"] = stm_header.get_interrupt_table()
 
         # lets load additional information about the GPIO IP
-        ip_file = device_file.query('//IP[@Name="GPIO"]')[0].get("Version")
-        ip_file = os.path.join(STMDeviceTree.rootpath, "IP", "GPIO-" + ip_file + "_Modes.xml")
-        gpioFile = XMLReader(ip_file)
+        gpioFile = STMDeviceTree.getIpFile(device_file, "GPIO")
+
 
         pins = device_file.query('//Pin[@Type="I/O"][starts-with(@Name,"P")]')
         def raw_pin_sort(p):
