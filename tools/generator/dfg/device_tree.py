@@ -8,7 +8,7 @@ import logging
 from enum import Enum
 from collections import OrderedDict
 
-from modm.device_identifier import MultiDeviceIdentifier
+from modm_devices.device_identifier import MultiDeviceIdentifier
 
 LOGGER = logging.getLogger('dfg.tree')
 

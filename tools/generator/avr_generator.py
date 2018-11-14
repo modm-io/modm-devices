@@ -15,7 +15,7 @@ from dfg.merger import DeviceMerger
 from dfg.avr.avr_device_tree import AVRDeviceTree
 from dfg.avr.avr_groups import avr_groups
 from dfg.output.device_file import DeviceFileWriter
-from modm.parser import DeviceParser
+from modm_devices.parser import DeviceParser
 from deepdiff import DeepDiff
 
 LOGGER = logging.getLogger('dfg.avr')

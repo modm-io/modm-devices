@@ -1,8 +1,8 @@
 
 import unittest
 
-from modm.exception import DeviceIdentifierException
-from modm.device_identifier import DeviceIdentifier, MultiDeviceIdentifier
+from modm_devices.exception import DeviceIdentifierException
+from modm_devices.device_identifier import DeviceIdentifier, MultiDeviceIdentifier
 
 class DeviceIdentifierTest(unittest.TestCase):
 

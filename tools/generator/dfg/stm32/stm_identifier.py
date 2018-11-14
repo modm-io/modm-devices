@@ -7,7 +7,7 @@
 import re
 import logging
 
-from modm.device_identifier import DeviceIdentifier
+from modm_devices.device_identifier import DeviceIdentifier
 
 LOGGER = logging.getLogger("dfg.stm.identifier")
 

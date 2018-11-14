@@ -50,7 +50,7 @@ class Parser:
 class DeviceParser(Parser):
     def __init__(self):
         Parser.__init__(self,
-                        pkg.get_filename('modm', 'resources/schema/device.xsd'))
+                        pkg.get_filename('modm_devices', 'resources/schema/device.xsd'))
 
     def parse(self, filename):
         rootnode = self.validate_and_parse_xml(filename, self.xsdfile)
@@ -60,7 +60,7 @@ class DeviceParser(Parser):
 class DriverParser(Parser):
     def __init__(self):
         Parser.__init__(self,
-                        xsdfile=pkg.get_filename('modm', 'resources/schema/driver.xsd'))
+                        xsdfile=pkg.get_filename('modm_devices', 'resources/schema/driver.xsd'))
 
     def parse(self, filename):
         rootnode = self.validate_and_parse_xml(filename, self.xsdfile)

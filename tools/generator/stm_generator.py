@@ -16,7 +16,7 @@ from dfg.merger import DeviceMerger
 from dfg.stm32.stm_device_tree import STMDeviceTree
 from dfg.stm32.stm_groups import stm_groups
 from dfg.output.device_file import DeviceFileWriter
-from modm.parser import DeviceParser
+from modm_devices.parser import DeviceParser
 from deepdiff import DeepDiff
 
 LOGGER = logging.getLogger("dfg.stm")
