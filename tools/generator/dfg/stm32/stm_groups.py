@@ -198,6 +198,9 @@ stm_groups = \
     # STM32L0 devices
     {
         'family': ['l0'],
+        'name': ['10']
+    },{
+        'family': ['l0'],
         'name': ['11', '21']
     },{
         'family': ['l0'],

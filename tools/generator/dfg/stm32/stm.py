@@ -205,8 +205,14 @@ stm32_memory = \
         },
         'model': [
             {
+                'name': ['10x4'],
+                'memories': {'flash': 0, 'sram1': 0, 'eeprom': 128}
+            },{
+                'name': ['10x8', '10x6'],
+                'memories': {'flash': 0, 'sram1': 0, 'eeprom': 256}
+            },{
                 # CAT1
-                'name': ['11', '21'],
+                'name': ['10xb', '11', '21'],
                 'memories': {'flash': 0, 'sram1': 0, 'eeprom': 512}
             },{
                 # CAT2

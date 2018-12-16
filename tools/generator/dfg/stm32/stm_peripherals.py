@@ -15,7 +15,7 @@ stm_peripherals = \
                 'protocols': ['analog-in'],
                 'devices': [{'family': ['f0']}]
             },{
-                'hardware': 'stm32-f0',
+                'hardware': 'stm32-l0',
                 'features': ['oversampler', 'calfact', 'prescaler'],
                 'protocols': ['analog-in'],
                 'devices': [{'family': ['l0']}]
@@ -87,9 +87,9 @@ stm_peripherals = \
         'instances': '*',
         'groups': [
             {
-                # Custom polynomial and reserve data
+                # Custom polynomial and reverse data
                 'hardware': 'stm32',
-                'features': ['polynomial', 'reserve'],
+                'features': ['polynomial', 'reverse'],
                 'protocols': ['crc32'],
                 'devices': [{'family': ['f0', 'f3', 'f7', 'h7']}]
             },{
