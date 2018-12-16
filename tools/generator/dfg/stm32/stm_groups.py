@@ -51,6 +51,18 @@ stm_groups = \
         'size': ['b', 'c']
     },
 
+    # STM32G0 devices
+    {
+        'family': ['g0'],
+        'name': ['30', '70']
+    },{
+        'family': ['g0'],
+        'name': ['31', '41']
+    },{
+        'family': ['g0'],
+        'name': ['71', '81']
+    },
+
     # STM32F1 devices
     {
         'family': ['f1'],

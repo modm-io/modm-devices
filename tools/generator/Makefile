@@ -30,6 +30,10 @@ generate-stm32f0:
 	@rm -f ../../devices/stm32/stm32f0*
 	./stm_generator.py STM32F0
 
+generate-stm32g0:
+	@rm -f ../../devices/stm32/stm32g0*
+	./stm_generator.py STM32G0
+
 generate-stm32f1:
 	@rm -f ../../devices/stm32/stm32f1*
 	./stm_generator.py STM32F1
@@ -66,11 +70,11 @@ generate-stm32l4:
 	@rm -f ../../devices/stm32/stm32l4*
 	./stm_generator.py STM32L4
 
-generate-stm32: generate-stm32f0 generate-stm32f1 generate-stm32f2 generate-stm32f3 generate-stm32f4 generate-stm32f7 generate-stm32h7 generate-stm32l0 generate-stm32l1 generate-stm32l4
+generate-stm32: generate-stm32f0 generate-stm32g0 generate-stm32f1 generate-stm32f2 generate-stm32f3 generate-stm32f4 generate-stm32f7 generate-stm32h7 generate-stm32l0 generate-stm32l1 generate-stm32l4
 
 
 .PHONY:
 	init extract-avr extract-stm32
 	generate-avr generate-at90 generate-attiny generate-atmega
-	generate-stm32 generate-stm32f0 generate-stm32f1 generate-stm32f2 generate-stm32f3
+	generate-stm32 generate-stm32f0 generate-stm32g0 generate-stm32f1 generate-stm32f2 generate-stm32f3
 	generate-stm32f4 generate-stm32f7 generate-stm32h7 generate-stm32l0 generate-stm32l1 generate-stm32l4

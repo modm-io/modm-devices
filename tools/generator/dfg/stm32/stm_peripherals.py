@@ -20,6 +20,11 @@ stm_peripherals = \
                 'protocols': ['analog-in'],
                 'devices': [{'family': ['l0']}]
             },{
+                'hardware': 'stm32-g0',
+                'features': ['oversampler', 'calfact', 'prescaler'],
+                'protocols': ['analog-in'],
+                'devices': [{'family': ['g0']}]
+            },{
                 # F373 & F378 has a non-special ADC
                 'hardware': 'stm32',
                 'features': [],
@@ -62,7 +67,7 @@ stm_peripherals = \
                 'hardware': 'stm32',
                 'features': ['filter-14'],
                 'protocols': ['can-v2.0a', 'can-v2.0b'],
-                'devices': [{'family': ['f0', 'f1']}]
+                'devices': [{'family': ['f0', 'g0', 'f1']}]
             },{
                 # 28 shared filters
                 'hardware': 'stm32',
@@ -93,6 +98,12 @@ stm_peripherals = \
                 'protocols': ['crc32'],
                 'devices': [{'family': ['f0', 'f3', 'f7', 'h7']}]
             },{
+                # Custom polynomial and reverse data
+                'hardware': 'stm32',
+                'features': ['reverse'],
+                'protocols': ['crc32'],
+                'devices': [{'family': ['g0']}]
+            },{
                 # no poly size
                 'hardware': 'stm32',
                 'features': [],
@@ -108,7 +119,7 @@ stm_peripherals = \
                 'hardware': 'stm32',
                 'features': [],
                 'protocols': ['mem2mem', 'mem2per', 'per2per'],
-                'devices': [{'family': ['f0', 'f1', 'f3']}]
+                'devices': [{'family': ['f0', 'g0', 'f1', 'f3']}]
             },{
                 'hardware': 'stm32-extended',
                 'features': [],
@@ -124,7 +135,7 @@ stm_peripherals = \
                 'hardware': 'stm32',
                 'features': ['window'],
                 'protocols': [],
-                'devices': [{'family': ['f0', 'f3', 'f7']}]
+                'devices': [{'family': ['f0', 'g0', 'f3', 'f7']}]
             },{
                 'hardware': 'stm32',
                 'features': [],
@@ -140,7 +151,7 @@ stm_peripherals = \
                 'hardware': 'stm32',
                 'features': ['data-size', 'nss-pulse', 'fifo'],
                 'protocols': [],
-                'devices': [{'family': ['f0', 'f3', 'f7', 'l4']}]
+                'devices': [{'family': ['f0', 'g0', 'f3', 'f7', 'l4']}]
             },{
                 'hardware': 'stm32',
                 'features': [],
@@ -264,7 +275,7 @@ stm_peripherals = \
                 'hardware': 'stm32',
                 'features': ['exti', 'cfgr2'],
                 'protocols': [],
-                'devices': [{'family': ['f0']}]
+                'devices': [{'family': ['f0', 'g0']}]
             },{
                 'hardware': 'stm32',
                 'features': ['exti'],
@@ -337,7 +348,7 @@ stm_peripherals = \
                     'hardware': 'stm32-extended',
                     'features': ['dnf', 'fmp'],
                     'protocols': ['i2c-v3.0'],
-                    'devices': [{'family': ['f0', 'l0']}]
+                    'devices': [{'family': ['f0', 'g0', 'l0']}]
                 },{
                     # This hardware supports FM+ (1 Mhz) and SMBus
                     'hardware': 'stm32-extended',
@@ -355,7 +366,7 @@ stm_peripherals = \
                     'hardware': 'stm32-extended',
                     'features': ['dnf', 'fmp'],
                     'protocols': ['i2c-v3.0', 'smb-v2.0', 'pmb-v1.1'],
-                    'devices': [{'family': ['f0', 'f3', 'f7', 'l0', 'l4', 'h7']}]
+                    'devices': [{'family': ['f0', 'g0', 'f3', 'f7', 'l0', 'l4', 'h7']}]
                 }
             ]
         }
@@ -366,27 +377,27 @@ stm_peripherals = \
             {
                 'hardware': 'stm32-extended',
                 'features': ['wakeup'],
-                'protocols': ['uart', 'spi'],
-                'devices': [{'family': ['f0', 'f3']}]
+                'protocols': ['uart'],
+                'devices': [{'family': ['f0', 'g0', 'f3']}]
             },{
                 'hardware': 'stm32-extended',
                 'features': ['tcbgt'],
-                'protocols': ['uart', 'spi'],
+                'protocols': ['uart'],
                 'devices': [{'family': ['l4'], 'name': ['r5', 'r7', 'r9', 's5', 's7', 's9']}]
             },{
                 'hardware': 'stm32-extended',
                 'features': [],
-                'protocols': ['uart', 'spi'],
+                'protocols': ['uart'],
                 'devices': [{'family': ['f7', 'l4']}]
             },{
                 'hardware': 'stm32',
                 'features': ['over8'],
-                'protocols': ['uart', 'spi'],
+                'protocols': ['uart'],
                 'devices': [{'family': ['f2', 'f4']}]
             },{
                 'hardware': 'stm32',
                 'features': [],
-                'protocols': ['uart', 'spi'],
+                'protocols': ['uart'],
                 'devices': '*'
             }
         ]
@@ -398,7 +409,7 @@ stm_peripherals = \
                 'hardware': 'stm32-extended',
                 'features': ['wakeup'],
                 'protocols': ['uart', 'spi'],
-                'devices': [{'family': ['f0', 'f3']}]
+                'devices': [{'family': ['f0', 'g0', 'f3']}]
             },{
                 'hardware': 'stm32-extended',
                 'features': ['tcbgt'],
