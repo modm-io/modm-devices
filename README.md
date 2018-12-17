@@ -11,6 +11,7 @@ how to use this data.
 These tools and this data set is maintained and curated by
 [@salkinium][] only at [modm-io/modm-devices][modm-devices].
 It is licensed under the MPLv2 license.
+The CI checks daily for new data: [![](https://travis-ci.org/modm-io/modm-devices.svg?branch=develop)](https://travis-ci.org/modm-io/modm-devices)
 
 Currently data on all STM32 families is available, as well as all AVR devices
 (most of which are missing GPIO data though).
