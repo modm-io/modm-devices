@@ -73,7 +73,7 @@
     </driver>
     <driver name="crc" type="stm32">
       <feature value="polynomial"/>
-      <feature value="reserve"/>
+      <feature value="reverse"/>
     </driver>
     <driver name="dac" type="stm32">
       <feature value="status"/>

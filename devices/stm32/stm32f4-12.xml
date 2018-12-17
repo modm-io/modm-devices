@@ -352,9 +352,9 @@
       <gpio port="b" pin="4">
         <signal af="0" driver="sys" name="jtrst"/>
         <signal af="2" driver="tim" instance="3" name="ch1"/>
-        <signal af="5" driver="i2s" instance="3" name="ext_sd"/>
         <signal af="5" driver="spi" instance="1" name="miso"/>
         <signal af="6" driver="spi" instance="3" name="miso"/>
+        <signal af="7" driver="i2s" instance="3" name="ext_sd"/>
         <signal af="9" driver="i2c" instance="3" name="sda"/>
         <signal af="12" driver="sdio" name="d0"/>
       </gpio>
@@ -428,10 +428,10 @@
         <signal af="1" driver="tim" instance="1" name="bkin"/>
         <signal af="4" driver="i2c" instance="2" name="smba"/>
         <signal af="5" driver="i2s" instance="2" name="ws"/>
-        <signal af="5" driver="i2s" instance="3" name="ck"/>
         <signal af="5" driver="spi" instance="2" name="nss"/>
         <signal af="6" driver="i2s" instance="4" name="ws"/>
         <signal af="6" driver="spi" instance="4" name="nss"/>
+        <signal af="7" driver="i2s" instance="3" name="ck"/>
         <signal af="7" driver="spi" instance="3" name="sck"/>
         <signal af="8" driver="usart" instance="3" name="ck"/>
         <signal af="9" driver="can" instance="2" name="rx"/>
@@ -624,12 +624,12 @@
         <signal af="7" driver="usart" instance="2" name="ck"/>
         <signal af="12" driver="fsmc" name="ne1"/>
       </gpio>
-      <gpio device-pin="v|z" device-package="t" port="d" pin="8">
+      <gpio device-pin="v" device-package="t" port="d" pin="8">
         <signal af="7" driver="usart" instance="3" name="tx"/>
         <signal af="12" driver="fsmc" name="d13"/>
         <signal af="12" driver="fsmc" name="da13"/>
       </gpio>
-      <gpio device-pin="z" device-package="j" port="d" pin="8">
+      <gpio device-pin="z" device-package="j|t" port="d" pin="8">
         <signal af="7" driver="usart" instance="3" name="tx"/>
         <signal af="12" driver="fsmc" name="d13"/>
         <signal af="12" driver="fsmc" name="da13"/>

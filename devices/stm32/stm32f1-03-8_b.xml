@@ -406,11 +406,11 @@
         <signal driver="adc" instance="1" name="in12"/>
         <signal driver="adc" instance="2" name="in12"/>
       </gpio>
-      <gpio device-pin="r|v" device-package="t" port="c" pin="3">
+      <gpio device-pin="r" device-package="t" port="c" pin="3">
         <signal driver="adc" instance="1" name="in13"/>
         <signal driver="adc" instance="2" name="in13"/>
       </gpio>
-      <gpio device-pin="v" device-package="h|i" port="c" pin="3">
+      <gpio device-pin="v" device-package="h|i|t" port="c" pin="3">
         <signal driver="adc" instance="1" name="in13"/>
         <signal driver="adc" instance="2" name="in13"/>
       </gpio>

@@ -749,12 +749,12 @@
         <signal af="7" driver="usart" instance="2" name="ck"/>
         <signal af="12" driver="fsmc" name="ne1"/>
       </gpio>
-      <gpio device-pin="v|z" device-package="t" port="d" pin="8">
+      <gpio device-pin="v" device-package="t" port="d" pin="8">
         <signal af="7" driver="usart" instance="3" name="tx"/>
         <signal af="12" driver="fsmc" name="d13"/>
         <signal af="12" driver="fsmc" name="da13"/>
       </gpio>
-      <gpio device-pin="z" device-package="j" port="d" pin="8">
+      <gpio device-pin="z" device-package="j|t" port="d" pin="8">
         <signal af="7" driver="usart" instance="3" name="tx"/>
         <signal af="12" driver="fsmc" name="d13"/>
         <signal af="12" driver="fsmc" name="da13"/>

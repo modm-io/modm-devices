@@ -361,10 +361,10 @@
       <gpio port="b" pin="2">
         <signal device-pin="q|z" device-size="c|d|e" driver="adc" name="in0b"/>
         <signal device-pin="r|v" device-size="e" driver="adc" name="in0b"/>
-        <signal device-pin="c" device-size="c" device-package="t|u" driver="comp" instance="1" name="inp"/>
-        <signal device-pin="r|v" device-size="c" device-package="t" driver="comp" instance="1" name="inp"/>
+        <signal device-pin="c|r" device-size="c" device-package="t" driver="comp" instance="1" name="inp"/>
+        <signal device-pin="c" device-size="c" device-package="u" driver="comp" instance="1" name="inp"/>
         <signal device-pin="u" device-size="c" device-package="y" driver="comp" instance="1" name="inp"/>
-        <signal device-pin="v" device-size="c" device-package="h" driver="comp" instance="1" name="inp"/>
+        <signal device-pin="v" device-size="c" device-package="h|t" driver="comp" instance="1" name="inp"/>
         <signal af="14" driver="ts" name="g3_io3"/>
       </gpio>
       <gpio port="b" pin="3">
@@ -595,9 +595,9 @@
         <signal device-name="52" device-pin="q|r|u|v|z" af="11" driver="lcd" name="seg28"/>
         <signal device-name="62" device-pin="q|r|v|z" af="11" driver="lcd" name="seg28"/>
         <signal device-name="52" device-pin="q|v|z" device-size="c|d|e" af="11" driver="lcd" name="seg40"/>
-        <signal device-name="52|62" device-pin="r|v|z" device-size="d|e" af="11" driver="lcd" name="seg40"/>
         <signal device-name="62" device-pin="q" device-size="d" af="11" driver="lcd" name="seg40"/>
         <signal device-name="62" device-pin="v" device-size="c" af="11" driver="lcd" name="seg40"/>
+        <signal device-name="52|62" device-pin="r|v|z" device-size="d|e" af="11" driver="lcd" name="seg40"/>
         <signal device-size="d" af="12" driver="sdio" name="d2"/>
         <signal af="14" name="timx_ic3"/>
       </gpio>
@@ -610,9 +610,9 @@
         <signal device-name="52" device-pin="q|r|u|v|z" af="11" driver="lcd" name="seg29"/>
         <signal device-name="62" device-pin="q|r|v|z" af="11" driver="lcd" name="seg29"/>
         <signal device-name="52" device-pin="q|v|z" device-size="c|d|e" af="11" driver="lcd" name="seg41"/>
-        <signal device-name="52|62" device-pin="r|v|z" device-size="d|e" af="11" driver="lcd" name="seg41"/>
         <signal device-name="62" device-pin="q" device-size="d" af="11" driver="lcd" name="seg41"/>
         <signal device-name="62" device-pin="v" device-size="c" af="11" driver="lcd" name="seg41"/>
+        <signal device-name="52|62" device-pin="r|v|z" device-size="d|e" af="11" driver="lcd" name="seg41"/>
         <signal device-size="d" af="12" driver="sdio" name="d3"/>
         <signal af="14" name="timx_ic4"/>
       </gpio>
@@ -626,9 +626,9 @@
         <signal device-name="52" device-pin="q|r|u|v|z" af="11" driver="lcd" name="seg30"/>
         <signal device-name="62" device-pin="q|r|v|z" af="11" driver="lcd" name="seg30"/>
         <signal device-name="52" device-pin="q|v|z" device-size="c|d|e" af="11" driver="lcd" name="seg42"/>
-        <signal device-name="52|62" device-pin="r|v|z" device-size="d|e" af="11" driver="lcd" name="seg42"/>
         <signal device-name="62" device-pin="q" device-size="d" af="11" driver="lcd" name="seg42"/>
         <signal device-name="62" device-pin="v" device-size="c" af="11" driver="lcd" name="seg42"/>
+        <signal device-name="52|62" device-pin="r|v|z" device-size="d|e" af="11" driver="lcd" name="seg42"/>
         <signal device-size="d" af="12" driver="sdio" name="ck"/>
         <signal af="14" name="timx_ic1"/>
       </gpio>
@@ -671,9 +671,9 @@
         <signal device-name="52" device-pin="q|r|u|v|z" af="11" driver="lcd" name="seg31"/>
         <signal device-name="62" device-pin="q|r|v|z" af="11" driver="lcd" name="seg31"/>
         <signal device-name="52" device-pin="q|v|z" device-size="c|d|e" af="11" driver="lcd" name="seg43"/>
-        <signal device-name="52|62" device-pin="r|v|z" device-size="d|e" af="11" driver="lcd" name="seg43"/>
         <signal device-name="62" device-pin="q" device-size="d" af="11" driver="lcd" name="seg43"/>
         <signal device-name="62" device-pin="v" device-size="c" af="11" driver="lcd" name="seg43"/>
+        <signal device-name="52|62" device-pin="r|v|z" device-size="d|e" af="11" driver="lcd" name="seg43"/>
         <signal device-size="d" af="12" driver="sdio" name="cmd"/>
         <signal af="14" name="timx_ic3"/>
       </gpio>
@@ -926,8 +926,8 @@
       </gpio>
       <gpio device-pin="z" port="f" pin="10">
         <signal driver="adc" name="in31"/>
-        <signal device-name="51|52" device-size="c|d" driver="comp" instance="1" name="inp"/>
         <signal device-name="62" device-size="d" driver="comp" instance="1" name="inp"/>
+        <signal device-name="51|52" device-size="c|d" driver="comp" instance="1" name="inp"/>
         <signal device-name="51|52|62" device-size="e" af="14" driver="comp" instance="1" name="inp"/>
         <signal af="14" driver="ts" name="g11_io5"/>
       </gpio>

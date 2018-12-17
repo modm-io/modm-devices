@@ -50,7 +50,7 @@
       <vector device-name="41" position="29" name="AES_LPUART1"/>
       <vector device-name="31" position="29" name="LPUART1"/>
     </driver>
-    <driver name="adc" type="stm32-f0">
+    <driver name="adc" type="stm32-l0">
       <feature value="calfact"/>
       <feature value="oversampler"/>
       <feature value="prescaler"/>

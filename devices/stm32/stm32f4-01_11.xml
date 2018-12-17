@@ -123,14 +123,14 @@
     <driver name="iwdg" type="stm32"/>
     <driver name="rcc" type="stm32-v1.0"/>
     <driver name="rtc" type="stm32-v2.3"/>
-    <driver device-name="01|11" device-pin="r|v" name="sdio" type="stm32"/>
     <driver device-name="11" device-pin="c" name="sdio" type="stm32"/>
+    <driver device-name="01|11" device-pin="r|v" name="sdio" type="stm32"/>
     <driver name="spi" type="stm32">
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
-      <instance device-name="01|11" device-pin="v" value="4"/>
       <instance device-name="11" device-pin="c|r" value="4"/>
+      <instance device-name="01|11" device-pin="v" value="4"/>
       <instance device-name="11" value="5"/>
     </driver>
     <driver name="sys" type="stm32">
@@ -336,8 +336,8 @@
         <signal device-name="11" af="6" driver="i2s" instance="5" name="sd"/>
         <signal device-name="11" af="6" driver="spi" instance="5" name="mosi"/>
         <signal device-name="11" af="9" driver="i2c" instance="3" name="sda"/>
-        <signal device-name="01|11" device-pin="r|v" af="12" driver="sdio" name="d4"/>
         <signal device-name="11" device-pin="c" af="12" driver="sdio" name="d4"/>
+        <signal device-name="01|11" device-pin="r|v" af="12" driver="sdio" name="d4"/>
       </gpio>
       <gpio port="b" pin="9">
         <signal af="2" driver="tim" instance="4" name="ch4"/>
@@ -346,8 +346,8 @@
         <signal af="5" driver="i2s" instance="2" name="ws"/>
         <signal af="5" driver="spi" instance="2" name="nss"/>
         <signal device-name="11" af="9" driver="i2c" instance="2" name="sda"/>
-        <signal device-name="01|11" device-pin="r|v" af="12" driver="sdio" name="d5"/>
         <signal device-name="11" device-pin="c" af="12" driver="sdio" name="d5"/>
+        <signal device-name="01|11" device-pin="r|v" af="12" driver="sdio" name="d5"/>
       </gpio>
       <gpio port="b" pin="10">
         <signal af="1" driver="tim" instance="2" name="ch3"/>

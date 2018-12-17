@@ -388,19 +388,19 @@
         <signal af="14" name="timx_ic3"/>
         <signal af="14" driver="ts" name="g8_io3"/>
       </gpio>
-      <gpio device-pin="r|v" device-package="t" port="c" pin="3">
+      <gpio device-pin="r" device-package="t" port="c" pin="3">
         <signal driver="adc" name="in13"/>
         <signal driver="comp" instance="1" name="inp"/>
-        <signal device-name="52" device-pin="r|v" device-package="t" af="11" driver="lcd" name="seg21"/>
-        <signal device-name="52" device-pin="v" device-package="h" af="11" driver="lcd" name="seg21"/>
+        <signal device-name="52" device-pin="r" device-package="t" af="11" driver="lcd" name="seg21"/>
+        <signal device-name="52" device-pin="v" device-package="h|t" af="11" driver="lcd" name="seg21"/>
         <signal af="14" name="timx_ic4"/>
         <signal af="14" driver="ts" name="g8_io4"/>
       </gpio>
-      <gpio device-pin="v" device-package="h" port="c" pin="3">
+      <gpio device-pin="v" device-package="h|t" port="c" pin="3">
         <signal driver="adc" name="in13"/>
         <signal driver="comp" instance="1" name="inp"/>
-        <signal device-name="52" device-pin="r|v" device-package="t" af="11" driver="lcd" name="seg21"/>
-        <signal device-name="52" device-pin="v" device-package="h" af="11" driver="lcd" name="seg21"/>
+        <signal device-name="52" device-pin="r" device-package="t" af="11" driver="lcd" name="seg21"/>
+        <signal device-name="52" device-pin="v" device-package="h|t" af="11" driver="lcd" name="seg21"/>
         <signal af="14" name="timx_ic4"/>
         <signal af="14" driver="ts" name="g8_io4"/>
       </gpio>

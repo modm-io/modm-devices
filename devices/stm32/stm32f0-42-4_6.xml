@@ -54,7 +54,7 @@
     </driver>
     <driver name="crc" type="stm32">
       <feature value="polynomial"/>
-      <feature value="reserve"/>
+      <feature value="reverse"/>
     </driver>
     <driver name="dma" type="stm32">
       <instance value="1"/>

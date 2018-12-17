@@ -121,7 +121,7 @@
       <vector device-name="73|83" position="30" name="LCD"/>
       <vector device-name="72|73|82|83" position="31" name="USB"/>
     </driver>
-    <driver name="adc" type="stm32-f0">
+    <driver name="adc" type="stm32-l0">
       <feature value="calfact"/>
       <feature value="oversampler"/>
       <feature value="prescaler"/>
@@ -346,8 +346,8 @@
       <gpio device-pin="c|r|v" port="b" pin="2">
         <signal device-name="73|83" driver="lcd" name="vlcd1"/>
         <signal af="2" driver="lptim" instance="1" name="out"/>
-        <signal device-name="72|73|83" device-pin="c|r|v" af="3" driver="tsc" name="g3_io4"/>
         <signal device-name="82" device-pin="c" af="3" driver="tsc" name="g3_io4"/>
+        <signal device-name="72|73|83" device-pin="c|r|v" af="3" driver="tsc" name="g3_io4"/>
         <signal af="7" driver="i2c" instance="3" name="smba"/>
       </gpio>
       <gpio device-package="e|h|i|t|y" port="b" pin="3">
@@ -356,8 +356,8 @@
         <signal device-name="73|83" af="1" driver="lcd" name="seg7"/>
         <signal af="2" driver="tim" instance="2" name="ch2"/>
         <signal device-name="72" device-package="e|h|i|t|y" af="3" driver="tsc" name="g5_io1"/>
-        <signal device-name="73|83" device-package="h|i|t" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="82" device-package="t|y" af="3" driver="tsc" name="g5_io1"/>
+        <signal device-name="73|83" device-package="h|i|t" af="3" driver="tsc" name="g5_io1"/>
         <signal af="5" driver="usart" instance="1" name="de"/>
         <signal af="5" driver="usart" instance="1" name="rts"/>
         <signal af="6" driver="usart" instance="5" name="tx"/>
@@ -404,8 +404,8 @@
       </gpio>
       <gpio device-pin="c|r|v" port="b" pin="8">
         <signal device-name="73|83" af="1" driver="lcd" name="seg16"/>
-        <signal device-name="72|73|83" device-pin="c|r|v" af="3" driver="tsc" name="sync"/>
         <signal device-name="82" device-pin="c" af="3" driver="tsc" name="sync"/>
+        <signal device-name="72|73|83" device-pin="c|r|v" af="3" driver="tsc" name="sync"/>
         <signal af="4" driver="i2c" instance="1" name="scl"/>
       </gpio>
       <gpio device-pin="c|r|v" port="b" pin="9">
@@ -417,8 +417,8 @@
       <gpio device-pin="c|r|v" port="b" pin="10">
         <signal device-name="73|83" af="1" driver="lcd" name="seg10"/>
         <signal af="2" driver="tim" instance="2" name="ch3"/>
-        <signal device-name="72|73|83" device-pin="c|r|v" af="3" driver="tsc" name="sync"/>
         <signal device-name="82" device-pin="c" af="3" driver="tsc" name="sync"/>
+        <signal device-name="72|73|83" device-pin="c|r|v" af="3" driver="tsc" name="sync"/>
         <signal af="4" driver="lpuart" instance="1" name="tx"/>
         <signal af="5" driver="spi" instance="2" name="sck"/>
         <signal af="6" driver="i2c" instance="2" name="scl"/>
@@ -427,8 +427,8 @@
       <gpio device-pin="c|r|v" port="b" pin="11">
         <signal device-name="73|83" af="1" driver="lcd" name="seg11"/>
         <signal af="2" driver="tim" instance="2" name="ch4"/>
-        <signal device-name="72|73|83" device-pin="c|r|v" af="3" driver="tsc" name="g6_io1"/>
         <signal device-name="82" device-pin="c" af="3" driver="tsc" name="g6_io1"/>
+        <signal device-name="72|73|83" device-pin="c|r|v" af="3" driver="tsc" name="g6_io1"/>
         <signal af="4" driver="lpuart" instance="1" name="rx"/>
         <signal af="6" driver="i2c" instance="2" name="sda"/>
         <signal af="7" driver="lpuart" instance="1" name="tx"/>
@@ -440,16 +440,16 @@
         <signal device-name="73|83" af="1" driver="lcd" name="seg12"/>
         <signal af="2" driver="lpuart" instance="1" name="de"/>
         <signal af="2" driver="lpuart" instance="1" name="rts"/>
-        <signal device-name="72|73|83" device-pin="c|r|v" af="3" driver="tsc" name="g6_io2"/>
         <signal device-name="82" device-pin="c" af="3" driver="tsc" name="g6_io2"/>
+        <signal device-name="72|73|83" device-pin="c|r|v" af="3" driver="tsc" name="g6_io2"/>
       </gpio>
       <gpio device-pin="c|r|v" port="b" pin="13">
         <signal af="0" driver="i2s" instance="2" name="ck"/>
         <signal af="0" driver="spi" instance="2" name="sck"/>
         <signal device-name="73|83" af="1" driver="lcd" name="seg13"/>
         <signal af="2" driver="rcc" name="mco"/>
-        <signal device-name="72|73|83" device-pin="c|r|v" af="3" driver="tsc" name="g6_io3"/>
         <signal device-name="82" device-pin="c" af="3" driver="tsc" name="g6_io3"/>
+        <signal device-name="72|73|83" device-pin="c|r|v" af="3" driver="tsc" name="g6_io3"/>
         <signal af="4" driver="lpuart" instance="1" name="cts"/>
         <signal af="5" driver="i2c" instance="2" name="scl"/>
         <signal af="6" driver="tim" instance="21" name="ch1"/>
@@ -460,8 +460,8 @@
         <signal device-name="73|83" af="1" driver="lcd" name="seg14"/>
         <signal af="2" driver="rtc" name="out_alarm"/>
         <signal af="2" driver="rtc" name="out_calib"/>
-        <signal device-name="72|73|83" device-pin="c|r|v" af="3" driver="tsc" name="g6_io4"/>
         <signal device-name="82" device-pin="c" af="3" driver="tsc" name="g6_io4"/>
+        <signal device-name="72|73|83" device-pin="c|r|v" af="3" driver="tsc" name="g6_io4"/>
         <signal af="4" driver="lpuart" instance="1" name="de"/>
         <signal af="4" driver="lpuart" instance="1" name="rts"/>
         <signal af="5" driver="i2c" instance="2" name="sda"/>
@@ -478,10 +478,10 @@
         <signal af="0" driver="lptim" instance="1" name="in1"/>
         <signal device-name="73|83" device-pin="r|v" af="1" driver="lcd" name="seg18"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io1"/>
-        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io1"/>
-        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io1"/>
         <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io1"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io1"/>
+        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io1"/>
+        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io1"/>
         <signal af="6" driver="lpuart" instance="1" name="rx"/>
         <signal af="7" driver="i2c" instance="3" name="scl"/>
       </gpio>
@@ -490,10 +490,10 @@
         <signal af="0" driver="lptim" instance="1" name="in1"/>
         <signal device-name="73|83" device-pin="r|v" af="1" driver="lcd" name="seg18"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io1"/>
-        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io1"/>
-        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io1"/>
         <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io1"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io1"/>
+        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io1"/>
+        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io1"/>
         <signal af="6" driver="lpuart" instance="1" name="rx"/>
         <signal af="7" driver="i2c" instance="3" name="scl"/>
       </gpio>
@@ -502,10 +502,10 @@
         <signal af="0" driver="lptim" instance="1" name="in1"/>
         <signal device-name="73|83" device-pin="r|v" af="1" driver="lcd" name="seg18"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io1"/>
-        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io1"/>
-        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io1"/>
         <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io1"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io1"/>
+        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io1"/>
+        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io1"/>
         <signal af="6" driver="lpuart" instance="1" name="rx"/>
         <signal af="7" driver="i2c" instance="3" name="scl"/>
       </gpio>
@@ -514,10 +514,10 @@
         <signal af="0" driver="lptim" instance="1" name="out"/>
         <signal device-name="73|83" device-pin="r|v" af="1" driver="lcd" name="seg19"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io2"/>
-        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io2"/>
-        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io2"/>
         <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io2"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io2"/>
+        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io2"/>
+        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io2"/>
         <signal af="6" driver="lpuart" instance="1" name="tx"/>
         <signal af="7" driver="i2c" instance="3" name="sda"/>
       </gpio>
@@ -526,10 +526,10 @@
         <signal af="0" driver="lptim" instance="1" name="out"/>
         <signal device-name="73|83" device-pin="r|v" af="1" driver="lcd" name="seg19"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io2"/>
-        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io2"/>
-        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io2"/>
         <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io2"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io2"/>
+        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io2"/>
+        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io2"/>
         <signal af="6" driver="lpuart" instance="1" name="tx"/>
         <signal af="7" driver="i2c" instance="3" name="sda"/>
       </gpio>
@@ -538,10 +538,10 @@
         <signal af="0" driver="lptim" instance="1" name="out"/>
         <signal device-name="73|83" device-pin="r|v" af="1" driver="lcd" name="seg19"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io2"/>
-        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io2"/>
-        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io2"/>
         <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io2"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io2"/>
+        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io2"/>
+        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io2"/>
         <signal af="6" driver="lpuart" instance="1" name="tx"/>
         <signal af="7" driver="i2c" instance="3" name="sda"/>
       </gpio>
@@ -552,10 +552,10 @@
         <signal af="2" driver="i2s" instance="2" name="mck"/>
         <signal af="2" driver="spi" instance="2" name="miso"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io3"/>
-        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io3"/>
-        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io3"/>
         <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io3"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io3"/>
+        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io3"/>
+        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io3"/>
       </gpio>
       <gpio device-pin="r" device-package="h|i|t" port="c" pin="2">
         <signal driver="adc" name="in12"/>
@@ -564,10 +564,10 @@
         <signal af="2" driver="i2s" instance="2" name="mck"/>
         <signal af="2" driver="spi" instance="2" name="miso"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io3"/>
-        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io3"/>
-        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io3"/>
         <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io3"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io3"/>
+        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io3"/>
+        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io3"/>
       </gpio>
       <gpio device-pin="v" device-package="i|t" port="c" pin="2">
         <signal driver="adc" name="in12"/>
@@ -576,30 +576,30 @@
         <signal af="2" driver="i2s" instance="2" name="mck"/>
         <signal af="2" driver="spi" instance="2" name="miso"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io3"/>
-        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io3"/>
-        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io3"/>
         <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io3"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io3"/>
+        <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io3"/>
+        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io3"/>
       </gpio>
-      <gpio device-pin="r|v" device-package="t" port="c" pin="3">
+      <gpio device-pin="r" device-package="t" port="c" pin="3">
         <signal driver="adc" name="in13"/>
         <signal af="0" driver="lptim" instance="1" name="etr"/>
-        <signal device-name="73|83" device-pin="r|v" device-package="t" af="1" driver="lcd" name="seg21"/>
-        <signal device-name="73|83" device-pin="v" device-package="i" af="1" driver="lcd" name="seg21"/>
+        <signal device-name="73|83" device-pin="r" device-package="t" af="1" driver="lcd" name="seg21"/>
+        <signal device-name="73|83" device-pin="v" device-package="i|t" af="1" driver="lcd" name="seg21"/>
         <signal af="2" driver="i2s" instance="2" name="sd"/>
         <signal af="2" driver="spi" instance="2" name="mosi"/>
-        <signal device-name="72|73|83" device-pin="r|v" device-package="t" af="3" driver="tsc" name="g7_io4"/>
-        <signal device-name="72|73|83" device-pin="v" device-package="i" af="3" driver="tsc" name="g7_io4"/>
+        <signal device-name="72|73|83" device-pin="r" device-package="t" af="3" driver="tsc" name="g7_io4"/>
+        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io4"/>
       </gpio>
-      <gpio device-pin="v" device-package="i" port="c" pin="3">
+      <gpio device-pin="v" device-package="i|t" port="c" pin="3">
         <signal driver="adc" name="in13"/>
         <signal af="0" driver="lptim" instance="1" name="etr"/>
-        <signal device-name="73|83" device-pin="r|v" device-package="t" af="1" driver="lcd" name="seg21"/>
-        <signal device-name="73|83" device-pin="v" device-package="i" af="1" driver="lcd" name="seg21"/>
+        <signal device-name="73|83" device-pin="r" device-package="t" af="1" driver="lcd" name="seg21"/>
+        <signal device-name="73|83" device-pin="v" device-package="i|t" af="1" driver="lcd" name="seg21"/>
         <signal af="2" driver="i2s" instance="2" name="sd"/>
         <signal af="2" driver="spi" instance="2" name="mosi"/>
-        <signal device-name="72|73|83" device-pin="r|v" device-package="t" af="3" driver="tsc" name="g7_io4"/>
-        <signal device-name="72|73|83" device-pin="v" device-package="i" af="3" driver="tsc" name="g7_io4"/>
+        <signal device-name="72|73|83" device-pin="r" device-package="t" af="3" driver="tsc" name="g7_io4"/>
+        <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io4"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="4">
         <signal driver="adc" name="in14"/>
@@ -816,8 +816,8 @@
       </gpio>
       <gpio device-pin="c|r|v" port="h" pin="0">
         <signal driver="rcc" name="osc_in"/>
-        <signal device-name="72|73|83" device-pin="c|r|v" af="0" name="crs_sync"/>
         <signal device-name="82" device-pin="c" af="0" name="crs_sync"/>
+        <signal device-name="72|73|83" device-pin="c|r|v" af="0" name="crs_sync"/>
       </gpio>
       <gpio device-pin="c|r|v" port="h" pin="1">
         <signal driver="rcc" name="osc_out"/>

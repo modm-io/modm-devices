@@ -337,7 +337,7 @@
           <signal port="c" pin="4" name="rxd0"/>
           <signal port="c" pin="5" name="rxd1"/>
         </group>
-        <group device-pin="v" device-size="b|c" device-package="t" id="1">
+        <group device-pin="v" device-size="b" device-package="t" id="1">
           <signal port="d" pin="8" name="crs_dv"/>
           <signal port="d" pin="8" name="rx_dv"/>
           <signal port="d" pin="9" name="rxd0"/>
@@ -345,7 +345,7 @@
           <signal port="d" pin="11" name="rxd2"/>
           <signal port="d" pin="12" name="rxd3"/>
         </group>
-        <group device-pin="v" device-size="c" device-package="h" id="1">
+        <group device-pin="v" device-size="c" device-package="h|t" id="1">
           <signal port="d" pin="8" name="crs_dv"/>
           <signal port="d" pin="8" name="rx_dv"/>
           <signal port="d" pin="9" name="rxd0"/>

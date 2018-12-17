@@ -38,7 +38,7 @@
       <vector position="7" name="EXTI4_15"/>
       <vector position="9" name="DMA1_Channel1"/>
       <vector position="10" name="DMA1_Channel2_3"/>
-      <vector position="11" name="DMA1_Channel4_5_6_7"/>
+      <vector position="11" name="DMA1_Channel4_5"/>
       <vector position="12" name="ADC1_COMP"/>
       <vector position="13" name="LPTIM1"/>
       <vector position="15" name="TIM2"/>
@@ -49,7 +49,7 @@
       <vector device-name="21" position="29" name="AES_LPUART1"/>
       <vector device-name="11" position="29" name="LPUART1"/>
     </driver>
-    <driver name="adc" type="stm32-f0">
+    <driver name="adc" type="stm32-l0">
       <feature value="calfact"/>
       <feature value="oversampler"/>
       <feature value="prescaler"/>
@@ -147,7 +147,7 @@
         <signal af="6" driver="lpuart" instance="1" name="tx"/>
         <signal af="7" driver="comp" instance="2" name="out"/>
       </gpio>
-      <gpio device-pin="g|k" device-package="u" port="a" pin="2">
+      <gpio device-pin="g" device-package="u" port="a" pin="2">
         <signal driver="adc" name="in2"/>
         <signal driver="comp" instance="2" name="inm"/>
         <signal driver="rtc" name="out_alarm"/>
@@ -161,7 +161,7 @@
         <signal af="6" driver="lpuart" instance="1" name="tx"/>
         <signal af="7" driver="comp" instance="2" name="out"/>
       </gpio>
-      <gpio device-pin="k" device-package="t" port="a" pin="2">
+      <gpio device-pin="k" device-package="t|u" port="a" pin="2">
         <signal driver="adc" name="in2"/>
         <signal driver="comp" instance="2" name="inm"/>
         <signal driver="rtc" name="out_alarm"/>
@@ -191,7 +191,7 @@
         <signal af="4" driver="usart" instance="2" name="rx"/>
         <signal af="6" driver="lpuart" instance="1" name="rx"/>
       </gpio>
-      <gpio device-pin="g|k" device-package="u" port="a" pin="3">
+      <gpio device-pin="g" device-package="u" port="a" pin="3">
         <signal driver="adc" name="in3"/>
         <signal driver="comp" instance="2" name="inp"/>
         <signal af="0" driver="tim" instance="21" name="ch2"/>
@@ -199,7 +199,7 @@
         <signal af="4" driver="usart" instance="2" name="rx"/>
         <signal af="6" driver="lpuart" instance="1" name="rx"/>
       </gpio>
-      <gpio device-pin="k" device-package="t" port="a" pin="3">
+      <gpio device-pin="k" device-package="t|u" port="a" pin="3">
         <signal driver="adc" name="in3"/>
         <signal driver="comp" instance="2" name="inp"/>
         <signal af="0" driver="tim" instance="21" name="ch2"/>

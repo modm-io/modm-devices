@@ -60,7 +60,7 @@
     </driver>
     <driver name="crc" type="stm32">
       <feature value="polynomial"/>
-      <feature value="reserve"/>
+      <feature value="reverse"/>
     </driver>
     <driver name="dac" type="stm32">
       <feature value="status"/>
@@ -283,13 +283,13 @@
         <signal device-name="71" af="4" driver="usart" instance="3" name="de"/>
         <signal device-name="71" af="4" driver="usart" instance="3" name="rts"/>
       </gpio>
+      <gpio device-pin="r|v" device-package="h|t" port="b" pin="2">
+        <signal af="3" driver="tsc" name="g3_io4"/>
+      </gpio>
       <gpio device-pin="c" device-package="t|u" port="b" pin="2">
         <signal af="3" driver="tsc" name="g3_io4"/>
       </gpio>
       <gpio device-pin="k" device-package="u" port="b" pin="2">
-        <signal af="3" driver="tsc" name="g3_io4"/>
-      </gpio>
-      <gpio device-pin="r|v" device-package="h|t" port="b" pin="2">
         <signal af="3" driver="tsc" name="g3_io4"/>
       </gpio>
       <gpio device-pin="t" device-package="y" port="b" pin="2">
@@ -329,6 +329,12 @@
         <signal af="3" driver="tsc" name="g5_io4"/>
         <signal device-name="71" af="4" driver="usart" instance="4" name="cts"/>
       </gpio>
+      <gpio device-pin="r|v" device-package="h|t" port="b" pin="8">
+        <signal af="0" name="cec"/>
+        <signal af="1" driver="i2c" instance="1" name="scl"/>
+        <signal af="2" driver="tim" instance="16" name="ch1"/>
+        <signal af="3" driver="tsc" name="sync"/>
+      </gpio>
       <gpio device-pin="c" device-package="t|u" port="b" pin="8">
         <signal af="0" name="cec"/>
         <signal af="1" driver="i2c" instance="1" name="scl"/>
@@ -336,12 +342,6 @@
         <signal af="3" driver="tsc" name="sync"/>
       </gpio>
       <gpio device-pin="k" device-package="u" port="b" pin="8">
-        <signal af="0" name="cec"/>
-        <signal af="1" driver="i2c" instance="1" name="scl"/>
-        <signal af="2" driver="tim" instance="16" name="ch1"/>
-        <signal af="3" driver="tsc" name="sync"/>
-      </gpio>
-      <gpio device-pin="r|v" device-package="h|t" port="b" pin="8">
         <signal af="0" name="cec"/>
         <signal af="1" driver="i2c" instance="1" name="scl"/>
         <signal af="2" driver="tim" instance="16" name="ch1"/>

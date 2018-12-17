@@ -45,7 +45,7 @@
     <driver name="adc" type="stm32-f0"/>
     <driver name="crc" type="stm32">
       <feature value="polynomial"/>
-      <feature value="reserve"/>
+      <feature value="reverse"/>
     </driver>
     <driver name="dma" type="stm32">
       <instance value="1"/>
@@ -53,8 +53,7 @@
     </driver>
     <driver name="i2c" type="stm32-extended">
       <feature value="dnf"/>
-      <feature device-name="30|70" device-pin="c" value="fmp"/>
-      <feature device-name="70" device-pin="r" value="fmp"/>
+      <feature value="fmp"/>
       <instance value="1"/>
       <instance value="2"/>
     </driver>
