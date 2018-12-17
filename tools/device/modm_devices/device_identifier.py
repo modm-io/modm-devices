@@ -92,18 +92,26 @@ class MultiDeviceIdentifier:
     This manages filtering, merging and accessing.
     """
     def __init__(self, objs=None):
-        self.ids = []
+        self._ids = []
         self.__string = None
         self.__naming_schema = None
+        self.__dirty = True
 
         if isinstance(objs, DeviceIdentifier):
-            self.ids = [objs.copy()]
+            self._ids = [objs.copy()]
         if isinstance(objs, (list, set, tuple)):
             for obj in objs:
                 if isinstance(objs, DeviceIdentifier):
-                    self.ids.append(objs)
+                    self._ids.append(objs)
         if isinstance(objs, MultiDeviceIdentifier):
-            self.ids = [dev for dev in objs.ids]
+            self._ids = [dev for dev in objs.ids]
+
+    @property
+    def ids(self):
+        if self.__dirty:
+            self._ids = sorted(list(set(self._ids)), key=lambda d: d._ustring)
+            self.__dirty = False
+        return self._ids
 
 
     def copy(self):
@@ -115,22 +123,22 @@ class MultiDeviceIdentifier:
     @staticmethod
     def from_list(device_ids: list):
         mid = MultiDeviceIdentifier()
-        mid.ids = [dev for dev in device_ids]
+        mid._ids = [dev for dev in device_ids]
         return mid
 
     def append(self, did):
         assert isinstance(did, DeviceIdentifier)
 
-        self.ids.append(did)
-        self.ids = list(set(self.ids))
+        self._ids.append(did)
+        self.__dirty = True
         self.__string = None
         self.__naming_schema = None
 
     def extend(self, dids):
         assert isinstance(dids, (MultiDeviceIdentifier, list))
 
-        self.ids.extend(dids)
-        self.ids = list(set(self.ids))
+        self._ids.extend(dids)
+        self.__dirty = True
         self.__string = None
         self.__naming_schema = None
 
@@ -203,7 +211,7 @@ class MultiDeviceIdentifier:
             # invert it
             ids_inv = complete.copy()
             ids_inv.__string = None
-            ids_inv.ids = [did for did in ids_inv.ids if did not in self.ids]
+            ids_inv._ids = [did for did in ids_inv.ids if did not in self.ids]
             return (ids_inv.minimal_subtract(complete, others), -1)
         else:
             return (self.minimal_subtract(complete, others), 1)
@@ -252,7 +260,9 @@ class MultiDeviceIdentifier:
             else:
                 cids.append( MultiDeviceIdentifier(did) )
 
-        return [filtered_by_keys(mkeys, ids) for ids in cids]
+        fids = [filtered_by_keys(mkeys, ids) for ids in cids]
+        fids.sort(key=lambda d: d.string)
+        return fids
 
     def filter(self, filter_fn):
         ids = MultiDeviceIdentifier()
