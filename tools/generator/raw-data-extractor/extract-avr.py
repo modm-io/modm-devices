@@ -36,5 +36,5 @@ with Pool(len(families)) as p:
     p.map(dl, families)
 
 shutil.copy("patches/avr.patch", "../raw-device-data")
-os.system("(cd ../raw-device-data; git apply -v --ignore-whitespace avr.patch)")
+os.system("(cd ../raw-device-data; patch -p1 -f --input=avr.patch)")
 os.remove("../raw-device-data/avr.patch")
