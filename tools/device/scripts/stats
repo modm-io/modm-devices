@@ -13,7 +13,7 @@ import json
 rootpath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")
 sys.path.append(rootpath)
 
-import modm.parser
+import modm_devices.parser
 
 if __name__ == "__main__":
 
@@ -31,7 +31,7 @@ if __name__ == "__main__":
     total_count = 0
     devices = {}
     for filename in glob.glob("{}/../../devices/**/*.xml".format(rootpath)):
-        for d in modm.parser.DeviceParser().parse(filename).get_devices():
+        for d in modm_devices.parser.DeviceParser().parse(filename).get_devices():
             total_count += 1
             if args.filter and not d.partname.startswith(args.filter):
                 continue
