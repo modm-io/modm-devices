@@ -8,9 +8,8 @@
     <invalid-device>attiny15a</invalid-device>
     <attribute-mcu device-name="11" value="t11"/>
     <attribute-mcu device-name="12" value="t12"/>
-    <attribute-mcu device-name="13" device-type="" value="t13"/>
+    <attribute-mcu device-name="13" value="t13"/>
     <attribute-mcu device-name="15" value="t15"/>
-    <attribute-mcu device-type="a" value="unsupported"/>
     <driver name="core" type="avr8">
       <memory device-name="12|13|15" name="eeprom" size="64"/>
       <memory name="flash" size="1024"/>

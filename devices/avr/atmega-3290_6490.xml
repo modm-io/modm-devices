@@ -4,11 +4,9 @@
   <device platform="avr" family="mega" name="3290|6490" type="|a|p|pa">
     <naming-schema>at{family}{name}{type}</naming-schema>
     <invalid-device>atmega6490pa</invalid-device>
-    <attribute-mcu device-name="3290" device-type="" value="m3290"/>
-    <attribute-mcu device-name="3290" device-type="p" value="m3290p"/>
-    <attribute-mcu device-name="6490" device-type="" value="m6490"/>
-    <attribute-mcu device-name="3290" device-type="a|pa" value="unsupported"/>
-    <attribute-mcu device-name="6490" device-type="a|p" value="unsupported"/>
+    <attribute-mcu device-name="3290" device-type="|a" value="m3290"/>
+    <attribute-mcu device-name="3290" device-type="p|pa" value="m3290p"/>
+    <attribute-mcu device-name="6490" value="m6490"/>
     <driver name="core" type="avr8">
       <memory device-name="3290" name="eeprom" size="1024"/>
       <memory device-name="6490" name="eeprom" size="2048"/>

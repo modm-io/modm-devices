@@ -5,12 +5,10 @@
     <naming-schema>at{family}{name}{type}</naming-schema>
     <invalid-device>atmega169</invalid-device>
     <invalid-device>atmega649pa</invalid-device>
-    <attribute-mcu device-name="329" device-type="" value="m329"/>
-    <attribute-mcu device-name="329" device-type="p" value="m329p"/>
-    <attribute-mcu device-name="649" device-type="" value="m649"/>
-    <attribute-mcu device-name="169" device-type="a|p|pa" value="unsupported"/>
-    <attribute-mcu device-name="329" device-type="a|pa" value="unsupported"/>
-    <attribute-mcu device-name="649" device-type="a|p" value="unsupported"/>
+    <attribute-mcu device-name="169" value="m169"/>
+    <attribute-mcu device-name="329" device-type="|a" value="m329"/>
+    <attribute-mcu device-name="329" device-type="p|pa" value="m329p"/>
+    <attribute-mcu device-name="649" value="m649"/>
     <driver name="core" type="avr8">
       <memory device-name="169" name="eeprom" size="512"/>
       <memory device-name="329" name="eeprom" size="1024"/>

@@ -4,9 +4,9 @@
   <device platform="avr" family="mega" name="48|88|168|328" type="pb">
     <naming-schema>at{family}{name}{type}</naming-schema>
     <attribute-mcu device-name="168" value="m168pb"/>
+    <attribute-mcu device-name="328" value="m328p"/>
     <attribute-mcu device-name="48" value="m48pb"/>
     <attribute-mcu device-name="88" value="m88pb"/>
-    <attribute-mcu device-name="328" value="unsupported"/>
     <driver name="core" type="avr8">
       <memory device-name="48" name="eeprom" size="256"/>
       <memory device-name="88|168" name="eeprom" size="512"/>

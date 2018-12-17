@@ -5,9 +5,9 @@
     <naming-schema>at{family}{name}{type}</naming-schema>
     <invalid-device>atmega165</invalid-device>
     <invalid-device>atmega645pa</invalid-device>
-    <attribute-mcu device-name="325" device-type="" value="m325"/>
-    <attribute-mcu device-name="645" device-type="" value="m645"/>
-    <attribute-mcu device-type="a|p|pa" value="unsupported"/>
+    <attribute-mcu device-name="325" value="m325"/>
+    <attribute-mcu device-name="645" value="m645"/>
+    <attribute-mcu device-name="165" value="unsupported"/>
     <driver name="core" type="avr8">
       <memory device-name="165" name="eeprom" size="512"/>
       <memory device-name="325" name="eeprom" size="1024"/>

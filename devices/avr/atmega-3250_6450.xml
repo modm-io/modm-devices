@@ -4,9 +4,8 @@
   <device platform="avr" family="mega" name="3250|6450" type="|a|p|pa">
     <naming-schema>at{family}{name}{type}</naming-schema>
     <invalid-device>atmega6450pa</invalid-device>
-    <attribute-mcu device-name="3250" device-type="" value="m3250"/>
-    <attribute-mcu device-name="6450" device-type="" value="m6450"/>
-    <attribute-mcu device-type="a|p|pa" value="unsupported"/>
+    <attribute-mcu device-name="3250" value="m3250"/>
+    <attribute-mcu device-name="6450" value="m6450"/>
     <driver name="core" type="avr8">
       <memory device-name="3250" name="eeprom" size="1024"/>
       <memory device-name="6450" name="eeprom" size="2048"/>

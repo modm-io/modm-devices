@@ -5,15 +5,14 @@
     <naming-schema>at{family}{name}{type}</naming-schema>
     <invalid-device>atmega328a</invalid-device>
     <invalid-device>atmega328pa</invalid-device>
-    <attribute-mcu device-name="168" device-type="" value="m168"/>
-    <attribute-mcu device-name="168" device-type="p" value="m168p"/>
+    <attribute-mcu device-name="168" device-type="|a" value="m168"/>
+    <attribute-mcu device-name="168" device-type="p|pa" value="m168p"/>
     <attribute-mcu device-name="328" device-type="" value="m328"/>
     <attribute-mcu device-name="328" device-type="p" value="m328p"/>
-    <attribute-mcu device-name="48" device-type="" value="m48"/>
-    <attribute-mcu device-name="48" device-type="p" value="m48p"/>
-    <attribute-mcu device-name="88" device-type="" value="m88"/>
-    <attribute-mcu device-name="88" device-type="p" value="m88p"/>
-    <attribute-mcu device-type="a|pa" value="unsupported"/>
+    <attribute-mcu device-name="48" device-type="|a" value="m48"/>
+    <attribute-mcu device-name="48" device-type="p|pa" value="m48p"/>
+    <attribute-mcu device-name="88" device-type="|a" value="m88"/>
+    <attribute-mcu device-name="88" device-type="p|pa" value="m88p"/>
     <driver name="core" type="avr8">
       <memory device-name="48" name="eeprom" size="256"/>
       <memory device-name="88|168" name="eeprom" size="512"/>

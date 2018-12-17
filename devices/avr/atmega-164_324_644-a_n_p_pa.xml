@@ -5,13 +5,12 @@
     <naming-schema>at{family}{name}{type}</naming-schema>
     <invalid-device>atmega164</invalid-device>
     <invalid-device>atmega324</invalid-device>
-    <attribute-mcu device-name="164" device-type="p" value="m164p"/>
+    <attribute-mcu device-name="164" device-type="p|pa" value="m164p"/>
     <attribute-mcu device-name="324" device-type="p" value="m324p"/>
     <attribute-mcu device-name="324" device-type="pa" value="m324pa"/>
-    <attribute-mcu device-type="" value="m644"/>
-    <attribute-mcu device-name="644" device-type="p" value="m644p"/>
-    <attribute-mcu device-name="164|644" device-type="a|pa" value="unsupported"/>
-    <attribute-mcu device-name="324" device-type="a" value="unsupported"/>
+    <attribute-mcu device-name="644" device-type="|a" value="m644"/>
+    <attribute-mcu device-name="644" device-type="p|pa" value="m644p"/>
+    <attribute-mcu device-name="164|324" device-type="a" value="unsupported"/>
     <driver name="core" type="avr8">
       <memory device-name="164" name="eeprom" size="512"/>
       <memory device-name="324" name="eeprom" size="1024"/>
