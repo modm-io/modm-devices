@@ -60,9 +60,6 @@ class STMDeviceTree:
         device_file = XMLReader(os.path.join(STMDeviceTree.rootpath, comboDeviceName + ".xml"))
         did = STMIdentifier.from_string(partname.lower())
         p["id"] = did
-        # Something about the h7..x series data is super wonky
-        if did.family == "h7" and did.pin == "x":
-            return None
 
         LOGGER.info("Parsing '{}'".format(did.string))
 
