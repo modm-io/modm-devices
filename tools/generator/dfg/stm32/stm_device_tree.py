@@ -207,6 +207,8 @@ class STMDeviceTree:
                 pin = pin[:3]
             return (port, int(pin[2:]))
         pins = sorted(pins, key=raw_pin_sort)
+        # STM32G0 has pin remaps?!?
+        pins = filter(lambda p: "PINREMAP" not in p.get("Variant", ""), pins)
 
         gpios = []
 

@@ -196,34 +196,19 @@
         <signal device-name="48" af="3" driver="tsc" name="g4_io2"/>
         <signal af="4" driver="i2c" instance="1" name="sda"/>
       </gpio>
-      <gpio device-name="38" device-pin="c|k" port="a" pin="11">
-        <signal device-name="48" driver="usb" name="dm"/>
+      <gpio device-pin="c|k|t" port="a" pin="11">
+        <signal device-name="48" device-pin="c|t" driver="usb" name="dm"/>
         <signal af="1" driver="usart" instance="1" name="cts"/>
         <signal af="2" driver="tim" instance="1" name="ch4"/>
-        <signal device-name="48" af="3" driver="tsc" name="g4_io3"/>
-        <signal device-name="48" af="5" driver="i2c" instance="1" name="scl"/>
+        <signal device-name="48" device-pin="c|t" af="3" driver="tsc" name="g4_io3"/>
+        <signal device-name="48" device-pin="c|t" af="5" driver="i2c" instance="1" name="scl"/>
       </gpio>
-      <gpio device-name="48" device-pin="c|g|t" port="a" pin="11">
-        <signal device-name="48" driver="usb" name="dm"/>
-        <signal af="1" driver="usart" instance="1" name="cts"/>
-        <signal af="2" driver="tim" instance="1" name="ch4"/>
-        <signal device-name="48" af="3" driver="tsc" name="g4_io3"/>
-        <signal device-name="48" af="5" driver="i2c" instance="1" name="scl"/>
-      </gpio>
-      <gpio device-name="38" device-pin="c|k" port="a" pin="12">
-        <signal device-name="48" driver="usb" name="dp"/>
+      <gpio device-pin="c|k|t" port="a" pin="12">
+        <signal device-name="48" device-pin="c|t" driver="usb" name="dp"/>
         <signal af="1" driver="usart" instance="1" name="de"/>
         <signal af="1" driver="usart" instance="1" name="rts"/>
         <signal af="2" driver="tim" instance="1" name="etr"/>
-        <signal device-name="48" af="3" driver="tsc" name="g4_io4"/>
-        <signal device-name="48" device-pin="c|t" af="5" driver="i2c" instance="1" name="sda"/>
-      </gpio>
-      <gpio device-name="48" device-pin="c|g|t" port="a" pin="12">
-        <signal device-name="48" driver="usb" name="dp"/>
-        <signal af="1" driver="usart" instance="1" name="de"/>
-        <signal af="1" driver="usart" instance="1" name="rts"/>
-        <signal af="2" driver="tim" instance="1" name="etr"/>
-        <signal device-name="48" af="3" driver="tsc" name="g4_io4"/>
+        <signal device-name="48" device-pin="c|t" af="3" driver="tsc" name="g4_io4"/>
         <signal device-name="48" device-pin="c|t" af="5" driver="i2c" instance="1" name="sda"/>
       </gpio>
       <gpio port="a" pin="13">

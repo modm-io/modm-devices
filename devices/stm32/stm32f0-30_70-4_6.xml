@@ -152,14 +152,13 @@
         <signal af="2" driver="tim" instance="1" name="ch3"/>
         <signal af="4" driver="i2c" instance="1" name="sda"/>
       </gpio>
-      <gpio device-size="6" port="a" pin="11">
-        <signal device-name="70" driver="usb" name="dm"/>
+      <gpio device-pin="c|k" port="a" pin="11">
+        <signal device-name="70" device-pin="c" driver="usb" name="dm"/>
         <signal af="1" driver="usart" instance="1" name="cts"/>
         <signal af="2" driver="tim" instance="1" name="ch4"/>
-        <signal device-name="70" device-pin="f" af="5" driver="i2c" instance="1" name="scl"/>
       </gpio>
-      <gpio device-size="6" port="a" pin="12">
-        <signal device-name="70" driver="usb" name="dp"/>
+      <gpio device-pin="c|k" port="a" pin="12">
+        <signal device-name="70" device-pin="c" driver="usb" name="dp"/>
         <signal af="1" driver="usart" instance="1" name="de"/>
         <signal af="1" driver="usart" instance="1" name="rts"/>
         <signal af="2" driver="tim" instance="1" name="etr"/>

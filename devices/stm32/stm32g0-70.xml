@@ -180,21 +180,6 @@
         <signal af="5" driver="tim" instance="15" name="bk"/>
         <signal af="6" driver="i2c" instance="1" name="scl"/>
       </gpio>
-      <gpio port="a" pin="9">
-        <signal af="0" driver="rcc" name="mco"/>
-        <signal af="1" driver="usart" instance="1" name="tx"/>
-        <signal af="2" driver="tim" instance="1" name="ch2"/>
-        <signal af="4" driver="spi" instance="2" name="miso"/>
-        <signal af="5" driver="tim" instance="15" name="bk"/>
-        <signal af="6" driver="i2c" instance="1" name="scl"/>
-      </gpio>
-      <gpio port="a" pin="10">
-        <signal af="0" driver="spi" instance="2" name="mosi"/>
-        <signal af="1" driver="usart" instance="1" name="rx"/>
-        <signal af="2" driver="tim" instance="1" name="ch3"/>
-        <signal af="5" driver="tim" instance="17" name="bk"/>
-        <signal af="6" driver="i2c" instance="1" name="sda"/>
-      </gpio>
       <gpio port="a" pin="10">
         <signal af="0" driver="spi" instance="2" name="mosi"/>
         <signal af="1" driver="usart" instance="1" name="rx"/>
