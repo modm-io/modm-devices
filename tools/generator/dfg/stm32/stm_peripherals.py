@@ -270,12 +270,12 @@ stm_peripherals = \
                 'hardware': 'stm32',
                 'features': ['exti', 'cfgr2', 'itline'],
                 'protocols': [],
-                'devices': [{'family': ['f0'], 'name': ['91', '98']}]
+                'devices': [{'family': ['f0'], 'name': ['91', '98']}, {'family': ['g0']}]
             },{
                 'hardware': 'stm32',
                 'features': ['exti', 'cfgr2'],
                 'protocols': [],
-                'devices': [{'family': ['f0', 'g0']}]
+                'devices': [{'family': ['f0']}]
             },{
                 'hardware': 'stm32',
                 'features': ['exti'],
@@ -378,12 +378,12 @@ stm_peripherals = \
                 'hardware': 'stm32-extended',
                 'features': ['wakeup'],
                 'protocols': ['uart'],
-                'devices': [{'family': ['f0', 'g0', 'f3']}]
+                'devices': [{'family': ['f0', 'f3']}]
             },{
                 'hardware': 'stm32-extended',
                 'features': ['tcbgt'],
                 'protocols': ['uart'],
-                'devices': [{'family': ['l4'], 'name': ['r5', 'r7', 'r9', 's5', 's7', 's9']}]
+                'devices': [{'family': ['l4'], 'name': ['r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0']}]
             },{
                 'hardware': 'stm32-extended',
                 'features': [],
@@ -409,12 +409,12 @@ stm_peripherals = \
                 'hardware': 'stm32-extended',
                 'features': ['wakeup'],
                 'protocols': ['uart', 'spi'],
-                'devices': [{'family': ['f0', 'g0', 'f3']}]
+                'devices': [{'family': ['f0', 'f3']}]
             },{
                 'hardware': 'stm32-extended',
                 'features': ['tcbgt'],
                 'protocols': ['uart', 'spi'],
-                'devices': [{'family': ['l4'], 'name': ['r5', 'r7', 'r9', 's5', 's7', 's9']}]
+                'devices': [{'family': ['l4'], 'name': ['r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0']}]
             },{
                 'hardware': 'stm32-extended',
                 'features': [],

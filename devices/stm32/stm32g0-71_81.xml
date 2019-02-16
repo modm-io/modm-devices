@@ -124,6 +124,7 @@
     <driver name="sys" type="stm32">
       <feature value="cfgr2"/>
       <feature value="exti"/>
+      <feature value="itline"/>
     </driver>
     <driver name="tim" type="stm32-advanced">
       <instance value="1"/>
@@ -145,7 +146,7 @@
       <instance device-pin="c|r" value="2"/>
     </driver>
     <driver name="usart" type="stm32-extended">
-      <feature value="wakeup"/>
+      <feature value="tcbgt"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
