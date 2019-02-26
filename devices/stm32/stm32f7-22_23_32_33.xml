@@ -133,7 +133,7 @@
       <instance value="2"/>
       <instance value="3"/>
     </driver>
-    <driver device-name="32|33" name="aes" type="stm32-v1.1"/>
+    <driver device-name="32|33" name="aes" type="stm32-v1.0"/>
     <driver name="can" type="stm32">
       <feature value="filter-28"/>
       <instance value="1"/>

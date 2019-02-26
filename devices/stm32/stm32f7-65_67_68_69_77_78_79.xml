@@ -187,7 +187,7 @@
       <feature value="polynomial"/>
       <feature value="reverse"/>
     </driver>
-    <driver device-name="77|78|79" name="cryp" type="stm32-v2.0"/>
+    <driver device-name="77|78|79" name="cryp" type="stm32-v2.2"/>
     <driver name="dac" type="stm32">
       <feature value="status"/>
     </driver>

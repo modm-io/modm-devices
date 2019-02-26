@@ -64,7 +64,7 @@ class STMDeviceTree:
         LOGGER.info("Parsing '{}'".format(did.string))
 
         # information about the core and architecture
-        core = device_file.query('//Core')[0].text.replace("ARM ", "").lower()
+        core = device_file.query('//Core')[0].text.lower().replace("arm ", "")
         if core.endswith("m4") or core.endswith("m7"):
             core += "f"
         if did.family in ["h7"] or (did.family in ["f7"] and did.name not in ["45", "46", "56"]):

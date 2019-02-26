@@ -129,7 +129,7 @@
     <driver name="adc" type="stm32">
       <instance value="1"/>
     </driver>
-    <driver device-name="23" name="aes" type="stm32-v1.1"/>
+    <driver device-name="23" name="aes" type="stm32-v1.0"/>
     <driver name="can" type="stm32">
       <feature value="filter-28"/>
       <instance value="1"/>

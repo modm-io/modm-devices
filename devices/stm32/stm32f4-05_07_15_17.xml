@@ -130,7 +130,7 @@
       <instance value="2"/>
     </driver>
     <driver name="crc" type="stm32"/>
-    <driver device-name="15|17" name="cryp" type="stm32-v1.0"/>
+    <driver device-name="15|17" name="cryp" type="stm32-v2.2"/>
     <driver name="dac" type="stm32">
       <feature value="status"/>
     </driver>

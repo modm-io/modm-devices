@@ -126,7 +126,7 @@
       <instance value="2"/>
       <instance value="3"/>
     </driver>
-    <driver device-name="30" name="aes" type="stm32-v1.1"/>
+    <driver device-name="30" name="aes" type="stm32-v1.0"/>
     <driver name="can" type="stm32">
       <feature value="filter-28"/>
       <instance value="1"/>
@@ -136,7 +136,7 @@
       <feature value="polynomial"/>
       <feature value="reverse"/>
     </driver>
-    <driver device-name="50" name="cryp" type="stm32-v2.0"/>
+    <driver device-name="50" name="cryp" type="stm32-v2.2"/>
     <driver name="dac" type="stm32">
       <feature value="status"/>
     </driver>
@@ -148,7 +148,7 @@
     <driver device-name="50" name="dma2d" type="stm32"/>
     <driver device-name="50" name="eth" type="stm32-v2.0"/>
     <driver device-pin="i|n|v|z" name="fmc" type="stm32-v2.0"/>
-    <driver device-name="50" name="hash" type="stm32-v2.0"/>
+    <driver device-name="50" name="hash" type="stm32-v2.2"/>
     <driver device-name="50" name="hdmi_cec" type="stm32-v2.0"/>
     <driver name="i2c" type="stm32-extended">
       <feature value="dnf"/>

@@ -141,6 +141,7 @@
       <instance value="16"/>
       <instance value="17"/>
     </driver>
+    <driver name="tracer_emb" type="stm32-v1.0"/>
     <driver device-pin="c|k|r" name="ucpd" type="stm32-v1.0">
       <instance value="1"/>
       <instance device-pin="c|r" value="2"/>
@@ -152,6 +153,7 @@
       <instance value="3"/>
       <instance value="4"/>
     </driver>
+    <driver device-pin="c|k|r" name="usbpd" type="stm32-v1.0"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="gpio" type="stm32">
       <gpio port="a" pin="0">
