@@ -8,6 +8,7 @@ import re
 import logging
 
 from lxml import etree
+from pathlib import Path
 
 LOGGER = logging.getLogger('dfg.input.xml')
 
@@ -22,15 +23,10 @@ class XMLReader:
         self.tree = self._openDeviceXML(self.filename)
 
     def _openDeviceXML(self, filename):
-        LOGGER.debug("Opening XML file '%s'", os.path.basename(self.filename))
-        with open(filename, 'r') as raw_file:
-            xml_file = raw_file.read()
-        xml_file = re.sub(' xmlns="[^"]+"', '', xml_file, count=1).encode('utf-8')
-        xmltree = None
-        try:
-            xmltree = etree.fromstring(xml_file, parser=XMLReader._PARSER)
-        except:
-            LOGGER.error("Failure to open XML file!")
+        LOGGER.debug("Opening XML file '%s'", os.path.basename(filename))
+        xml_file = Path(filename).read_text("utf-8", errors="replace")
+        xml_file = re.sub(' xmlns="[^"]+"', '', xml_file, count=1).encode("utf-8")
+        xmltree = etree.fromstring(xml_file, parser=XMLReader._PARSER)
         return xmltree
 
     def queryTree(self, query):
@@ -66,4 +62,4 @@ class XMLReader:
         return self.__str__()
 
     def __str__(self):
-        return "XMLReader({}, [\n{}])".format(os.path.basename(self.filename), ",\n".join(map(str, self.properties)))
+        return "XMLReader({})".format(os.path.basename(self.filename))
