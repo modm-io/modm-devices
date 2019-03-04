@@ -30,12 +30,6 @@ class XMLReader:
         return xmltree
 
     def queryTree(self, query):
-        """
-        This tries to apply the query to the device tree and returns either
-        - an array of element nodes,
-        - an array of strings or
-        - None, if the query failed.
-        """
         response = None
         try:
             response = self.tree.xpath(query)
