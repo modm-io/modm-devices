@@ -182,6 +182,48 @@
     </driver>
     <driver name="dma2d" type="stm32"/>
     <driver name="eth" type="stm32-v2.0"/>
+    <driver name="flash" type="stm32-v1.0">
+      <latency vcore-min="1800">
+        <wait-state ws="0" hclk-max="20000000"/>
+        <wait-state ws="1" hclk-max="40000000"/>
+        <wait-state ws="2" hclk-max="60000000"/>
+        <wait-state ws="3" hclk-max="80000000"/>
+        <wait-state ws="4" hclk-max="100000000"/>
+        <wait-state ws="5" hclk-max="120000000"/>
+        <wait-state ws="6" hclk-max="140000000"/>
+        <wait-state ws="7" hclk-max="160000000"/>
+        <wait-state ws="8" hclk-max="168000000"/>
+      </latency>
+      <latency vcore-min="2100">
+        <wait-state ws="0" hclk-max="22000000"/>
+        <wait-state ws="1" hclk-max="44000000"/>
+        <wait-state ws="2" hclk-max="66000000"/>
+        <wait-state ws="3" hclk-max="88000000"/>
+        <wait-state ws="4" hclk-max="110000000"/>
+        <wait-state ws="5" hclk-max="132000000"/>
+        <wait-state ws="6" hclk-max="154000000"/>
+        <wait-state ws="7" hclk-max="176000000"/>
+        <wait-state ws="8" hclk-max="180000000"/>
+      </latency>
+      <latency vcore-min="2400">
+        <wait-state ws="0" hclk-max="24000000"/>
+        <wait-state ws="1" hclk-max="48000000"/>
+        <wait-state ws="2" hclk-max="72000000"/>
+        <wait-state ws="3" hclk-max="96000000"/>
+        <wait-state ws="4" hclk-max="120000000"/>
+        <wait-state ws="5" hclk-max="144000000"/>
+        <wait-state ws="6" hclk-max="168000000"/>
+        <wait-state ws="7" hclk-max="180000000"/>
+      </latency>
+      <latency vcore-min="2700">
+        <wait-state ws="0" hclk-max="30000000"/>
+        <wait-state ws="1" hclk-max="60000000"/>
+        <wait-state ws="2" hclk-max="90000000"/>
+        <wait-state ws="3" hclk-max="120000000"/>
+        <wait-state ws="4" hclk-max="150000000"/>
+        <wait-state ws="5" hclk-max="180000000"/>
+      </latency>
+    </driver>
     <driver name="fmc" type="stm32-v1.0"/>
     <driver device-name="37|39" name="hash" type="stm32-v2.0"/>
     <driver name="i2c" type="stm32">

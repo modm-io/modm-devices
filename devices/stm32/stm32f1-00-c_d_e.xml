@@ -73,6 +73,11 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
+    <driver name="flash" type="stm32-v1.0">
+      <latency vcore-min="1800">
+        <wait-state ws="0" hclk-max="24000000"/>
+      </latency>
+    </driver>
     <driver device-pin="v|z" name="fsmc" type="stm32-v4.0"/>
     <driver name="hdmi_cec" type="stm32-v1.1"/>
     <driver name="i2c" type="stm32">

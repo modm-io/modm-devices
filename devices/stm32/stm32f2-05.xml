@@ -128,6 +128,40 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
+    <driver name="flash" type="stm32-v1.0">
+      <latency vcore-min="1800">
+        <wait-state ws="0" hclk-max="16000000"/>
+        <wait-state ws="1" hclk-max="32000000"/>
+        <wait-state ws="2" hclk-max="48000000"/>
+        <wait-state ws="3" hclk-max="64000000"/>
+        <wait-state ws="4" hclk-max="80000000"/>
+        <wait-state ws="5" hclk-max="96000000"/>
+        <wait-state ws="6" hclk-max="112000000"/>
+        <wait-state ws="7" hclk-max="120000000"/>
+      </latency>
+      <latency vcore-min="2100">
+        <wait-state ws="0" hclk-max="18000000"/>
+        <wait-state ws="1" hclk-max="36000000"/>
+        <wait-state ws="2" hclk-max="54000000"/>
+        <wait-state ws="3" hclk-max="72000000"/>
+        <wait-state ws="4" hclk-max="90000000"/>
+        <wait-state ws="5" hclk-max="108000000"/>
+        <wait-state ws="6" hclk-max="120000000"/>
+      </latency>
+      <latency vcore-min="2400">
+        <wait-state ws="0" hclk-max="24000000"/>
+        <wait-state ws="1" hclk-max="48000000"/>
+        <wait-state ws="2" hclk-max="72000000"/>
+        <wait-state ws="3" hclk-max="96000000"/>
+        <wait-state ws="4" hclk-max="120000000"/>
+      </latency>
+      <latency vcore-min="2700">
+        <wait-state ws="0" hclk-max="30000000"/>
+        <wait-state ws="1" hclk-max="60000000"/>
+        <wait-state ws="2" hclk-max="90000000"/>
+        <wait-state ws="3" hclk-max="120000000"/>
+      </latency>
+    </driver>
     <driver device-pin="v|z" name="fsmc" type="stm32-v4.0"/>
     <driver name="i2c" type="stm32">
       <instance value="1"/>

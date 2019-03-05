@@ -143,6 +143,13 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
+    <driver name="flash" type="stm32-v1.0">
+      <latency vcore-min="1800">
+        <wait-state ws="0" hclk-max="24000000"/>
+        <wait-state ws="1" hclk-max="48000000"/>
+        <wait-state ws="2" hclk-max="72000000"/>
+      </latency>
+    </driver>
     <driver device-pin="v" device-size="d|e" device-package="h|t" name="fmc" type="stm32-v1.0"/>
     <driver device-pin="z" device-size="d|e" device-package="t" name="fmc" type="stm32-v1.0"/>
     <driver name="i2c" type="stm32-extended">

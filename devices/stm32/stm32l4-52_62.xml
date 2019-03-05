@@ -121,6 +121,21 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
+    <driver name="flash" type="stm32-v1.0">
+      <latency vcore-min="1000">
+        <wait-state ws="0" hclk-max="6000000"/>
+        <wait-state ws="1" hclk-max="12000000"/>
+        <wait-state ws="2" hclk-max="18000000"/>
+        <wait-state ws="3" hclk-max="26000000"/>
+      </latency>
+      <latency vcore-min="1200">
+        <wait-state ws="0" hclk-max="16000000"/>
+        <wait-state ws="1" hclk-max="32000000"/>
+        <wait-state ws="2" hclk-max="48000000"/>
+        <wait-state ws="3" hclk-max="64000000"/>
+        <wait-state ws="4" hclk-max="80000000"/>
+      </latency>
+    </driver>
     <driver name="i2c" type="stm32-extended">
       <feature value="dnf"/>
       <feature value="fmp"/>

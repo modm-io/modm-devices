@@ -189,6 +189,27 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
+    <driver name="flash" type="stm32-v1.0">
+      <latency vcore-min="950">
+        <wait-state ws="0" hclk-max="45000000"/>
+        <wait-state ws="1" hclk-max="90000000"/>
+        <wait-state ws="2" hclk-max="135000000"/>
+        <wait-state ws="3" hclk-max="180000000"/>
+        <wait-state ws="4" hclk-max="225000000"/>
+      </latency>
+      <latency vcore-min="1050">
+        <wait-state ws="0" hclk-max="55000000"/>
+        <wait-state ws="1" hclk-max="110000000"/>
+        <wait-state ws="2" hclk-max="165000000"/>
+        <wait-state ws="3" hclk-max="225000000"/>
+      </latency>
+      <latency vcore-min="1150">
+        <wait-state ws="0" hclk-max="70000000"/>
+        <wait-state ws="1" hclk-max="140000000"/>
+        <wait-state ws="2" hclk-max="185000000"/>
+        <wait-state ws="3" hclk-max="225000000"/>
+      </latency>
+    </driver>
     <driver name="fmc" type="stm32-v3.0"/>
     <driver name="hash" type="stm32-v2.0"/>
     <driver name="hdmi_cec" type="stm32-v2.0"/>

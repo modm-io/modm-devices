@@ -84,6 +84,12 @@
       <instance value="1"/>
       <instance device-name="91" value="2"/>
     </driver>
+    <driver name="flash" type="stm32-v1.0">
+      <latency vcore-min="1800">
+        <wait-state ws="0" hclk-max="24000000"/>
+        <wait-state ws="1" hclk-max="48000000"/>
+      </latency>
+    </driver>
     <driver name="hdmi_cec" type="stm32-v2.0"/>
     <driver name="i2c" type="stm32-extended">
       <feature value="dnf"/>
