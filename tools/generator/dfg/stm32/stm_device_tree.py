@@ -164,7 +164,8 @@ class STMDeviceTree:
         modules = []
         for ip in device_file.query('//IP'):
             # These IPs are all software modules, NOT hardware modules. Their version string is weird too.
-            if ip.get("Name").upper() in ["GFXSIMULATOR", "GRAPHICS", "FATFS", "TOUCHSENSING", "PDM2PCM", "MBEDTLS", "FREERTOS", "CORTEX_M7", "NVIC", "USB_DEVICE", "USB_HOST", "LWIP", "LIBJPEG"]:
+            if ip.get("Name").upper() in ["GFXSIMULATOR", "GRAPHICS", "FATFS", "TOUCHSENSING", "PDM2PCM", "MBEDTLS",
+                                          "FREERTOS", "CORTEX_M7", "NVIC", "USB_DEVICE", "USB_HOST", "LWIP", "LIBJPEG"]:
                 continue
 
             rversion = ip.get("Version")
@@ -182,6 +183,7 @@ class STMDeviceTree:
 
             modules.append(tuple([m.lower() for m in module]))
 
+        modules.append( ("flash", "flash", "v1.0"))
         modules = [m + stm_peripherals.getPeripheralData(did, m) for m in modules]
 
         p["modules"] = modules
@@ -193,6 +195,8 @@ class STMDeviceTree:
         stm_header = STMHeader(did)
         p["stm_header"] = stm_header
         p["interrupts"] = stm_header.get_interrupt_table()
+        # Flash latency table
+        p["flash_latency"] = stm.getFlashLatencyForDevice(did)
 
         # lets load additional information about the GPIO IP
         ip_file = device_file.query('//IP[@Name="GPIO"]')[0].get("Version")
@@ -398,7 +402,9 @@ class STMDeviceTree:
             def driver_sort_key(e):
                 if e.name == "feature":
                     return (0, 0, e["value"])
-                return (1, int(e["value"]), "")
+                if e.name == "instance":
+                    return (1, int(e["value"]), "")
+                return (1e6, 1e6, 1e6)
             driver.addSortKey(driver_sort_key)
             for f in features:
                 feat = driver.addChild("feature")
@@ -411,6 +417,18 @@ class STMDeviceTree:
                 for i in instances:
                     inst = driver.addChild("instance")
                     inst.setValue(i[len(name):])
+
+            if name == "flash":
+                flv = p["flash_latency"]
+                driver.addSortKey(lambda e: int(e.get("vcore-min", 1e6)))
+                for mV, freqs in flv.items():
+                    vddc = driver.addChild("latency")
+                    vddc.setAttributes("vcore-min", mV)
+                    vddc.addSortKey(lambda e: (int(e["ws"]), int(e["hclk-max"])))
+                    for fi, fmax in enumerate(freqs):
+                        fc = vddc.addChild("wait-state")
+                        fc.setAttributes("ws", fi, "hclk-max", fmax)
+
 
         # GPIO driver
         gpio_driver = tree.addChild("driver")
