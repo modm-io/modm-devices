@@ -31,8 +31,9 @@ def dl(family):
                 zi.filename = os.path.basename(zi.filename)
                 z.extract(zi, dest)
 
-with Pool(len(families)) as p:
-    p.map(dl, families)
+if __name__ == "__main__":
+    with Pool(len(families)) as p:
+        p.map(dl, families)
 
 # shutil.copy("patches/sam.patch", "../raw-device-data")
 # os.system("(cd ../raw-device-data; patch -p1 -f --input=sam.patch)")

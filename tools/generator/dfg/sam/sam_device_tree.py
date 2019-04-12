@@ -9,15 +9,13 @@ import logging
 from ..device_tree import DeviceTree
 from ..input.xml import XMLReader
 
-from .avr_identifier import AVRIdentifier
-from . import avr_io
-from . import avr_mcu
+from .sam_identifier import SAMIdentifier
 
-LOGGER = logging.getLogger('dfg.avr.reader')
+LOGGER = logging.getLogger('dfg.sam.reader')
 
-class AVRDeviceTree:
-    """ AVRDeviceTree
-    This AVR specific part description file reader knows the structure and
+class SAMDeviceTree:
+    """ SAMDeviceTree
+    This SAM specific part description file reader knows the structure and
     translates the data into a platform independent format.
     """
 
@@ -29,6 +27,10 @@ class AVRDeviceTree:
         partname = device.get('name')
         architecture = device.get('architecture')
         p = {}
+
+        # get more specific product codes?
+        # for variant in device_file.query("//variant"):
+        #     variant.get('ordercode')
 
         did = AVRIdentifier.from_string(partname.lower())
         p['id'] = did
