@@ -176,7 +176,7 @@ class SAMDeviceTree:
 
         # Clock
         clock_child = tree.addChild('driver')
-        clock_child.setAttributes('name', 'clock', 'type', 'avr')
+        clock_child.setAttributes('name', 'clock', 'type', 'sam')
 
         modules = {}
         for m, i in p['modules']:
@@ -194,7 +194,7 @@ class SAMDeviceTree:
         for name, instances in modules.items():
             driver = tree.addChild('driver')
             dtype = name
-            compatible = 'avr'
+            compatible = 'sam'
 
             if name.startswith('tc'):
                 dtype = 'tc'
@@ -210,7 +210,7 @@ class SAMDeviceTree:
 
         # GPIO driver
         gpio_driver = tree.addChild('driver')
-        gpio_driver.setAttributes('name', 'gpio', 'type', 'avr')
+        gpio_driver.setAttributes('name', 'gpio', 'type', 'sam')
         gpio_driver.addSortKey(lambda e : (e['port'], int(e['pin'])))
         for port, pin in p['gpios']:
             pin_driver = gpio_driver.addChild('gpio')

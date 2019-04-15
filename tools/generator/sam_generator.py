@@ -3,6 +3,9 @@
 # Copyright (c) 2013-2016, Niklas Hauser
 # Copyright (c)      2016, Fabian Greif
 # All rights reserved.
+# TESTING:  exec(open("./sam_generator.py").read())
+# merge_group = sam_groups
+# devices = [d.copy() for d in devices.values()]
 
 import os
 import sys
@@ -39,10 +42,14 @@ if __name__ == "__main__":
             continue
         devs.append(arg)
 
+    # if not len(devs):
+    #     devs.append('samd51')
+
     dfg.logger.configure_logger(loglevel)
 
     for dev in devs:
         xml_path = os.path.join(os.path.dirname(__file__), 'raw-device-data', 'sam-devices', '*', ('AT' + dev.upper() + '*'))
+        # xml_path = os.path.join(os.getcwd(), 'raw-device-data', 'sam-devices', '*', ('AT' + dev.upper() + '*'))
         files = glob.glob(xml_path)
         for filename in files:
             device = SAMDeviceTree.from_file(filename)
@@ -66,21 +73,11 @@ if __name__ == "__main__":
             if k in ['type', 'pin']: v.sort()
             if len(v) > 0:
                 p[k] = "_".join(v)
-        fmt = "at{family}"
-        index = DeviceMerger._get_index_for_id(sam_groups, ids[0])
-        if index == -1:
-            fmt += "-{name}-{type}"
-        else:
-            keys = sam_groups[index].keys()
-            if 'name' in keys:
-                fmt += "-{name}"
-            if 'type' in keys:
-                fmt += "-{type}"
-            if 'pin' in keys:
-                fmt += "-{pin}"
+        fmt = "sam{platform}{family}{series}{pin}{flash}{variant}{package}"
         return fmt.format(**p)
 
     folder = os.path.join(os.path.dirname(__file__), '..', '..', 'devices', 'sam')
+    # folder = os.path.join(os.getcwd(), '..', '..', 'devices', 'sam')
     parser = DeviceParser()
     parsed_devices = {}
     for dev in mergedDevices:

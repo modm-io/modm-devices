@@ -28,7 +28,7 @@ class SAMIdentifier:
             matchString = r"a?t?sam(?P<family>[a-z])(?P<series>[0-9]{2})(?P<pin>[a-z])(?P<flash>[0-9]{2})(?P<variant>[a-z])(?P<package>u?)"
             match = re.search(matchString, string)
             if match:
-                i = DeviceIdentifier("{platform}{family}{series}{pin}{flash}{variant}-{package}")
+                i = DeviceIdentifier("{platform}{family}{series}{pin}{flash}{variant}{package}")
                 i.set("platform", "sam")
                 i.set("family", match.group("family").lower())
                 i.set("series", match.group("series").lower())
