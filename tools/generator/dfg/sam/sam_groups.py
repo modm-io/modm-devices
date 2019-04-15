@@ -2,7 +2,7 @@
 # Copyright (c) 2016, Niklas Hauser
 # All rights reserved.
 
-avr_groups = \
+sam_groups = \
 [
     # SAMD devices
     {

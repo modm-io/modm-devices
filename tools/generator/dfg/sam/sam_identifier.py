@@ -24,8 +24,8 @@ class SAMIdentifier:
         string = string.lower()
 
         # SAM platform with SAMD, SAML, SAMC, SAM4, SAMG, SAMS, SAME, and SAMV
-        if string.startswith("sam"):
-            matchString = r"sam(?P<family>[a-z])(?P<series>[0-9]{2})(?P<pin>[a-z])(?P<flash>[0-9]{2})(?P<variant>[a-z])-(?P<package>[a-z]?)"
+        if string.startswith("sam") or string.startswith("atsam"):
+            matchString = r"a?t?sam(?P<family>[a-z])(?P<series>[0-9]{2})(?P<pin>[a-z])(?P<flash>[0-9]{2})(?P<variant>[a-z])(?P<package>u?)"
             match = re.search(matchString, string)
             if match:
                 i = DeviceIdentifier("{platform}{family}{series}{pin}{flash}{variant}-{package}")
@@ -35,7 +35,14 @@ class SAMIdentifier:
                 i.set("pin", match.group("pin").lower())
                 i.set("flash", match.group("flash").lower())
                 i.set("variant", match.group("variant").lower())
-                i.set("package", match.group("package").lower())
+                # package in atdf file is either U (wlcsp) or not annotated.
+                # we will use 'm' (normally QFN) to represent all other options (TQFP, UFBGA)
+                if match.group("package"):
+                    i.set("package", match.group("package").lower())
+                else:
+                    i.set("package", 'm')
+                return i
+                
 
         LOGGER.error("Parse Error: unknown platform. Device string: '%s'", string)
         exit(1)
