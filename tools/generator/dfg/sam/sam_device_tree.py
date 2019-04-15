@@ -9,15 +9,13 @@ import logging
 from ..device_tree import DeviceTree
 from ..input.xml import XMLReader
 
-from .avr_identifier import AVRIdentifier
-from . import avr_io
-from . import avr_mcu
+from .sam_identifier import SAMIdentifier
 
-LOGGER = logging.getLogger('dfg.avr.reader')
+LOGGER = logging.getLogger('dfg.sam.reader')
 
-class AVRDeviceTree:
-    """ AVRDeviceTree
-    This AVR specific part description file reader knows the structure and
+class SAMDeviceTree:
+    """ SAMDeviceTree
+    This SAM specific part description file reader knows the structure and
     translates the data into a platform independent format.
     """
 
@@ -26,25 +24,24 @@ class AVRDeviceTree:
         device_file = XMLReader(filename)
 
         device = device_file.query("//device")[0]
-        partname = device.get('name')
         architecture = device.get('architecture')
         p = {}
 
-        did = AVRIdentifier.from_string(partname.lower())
+        # get more specific product codes?
+        # for variant in device_file.query("//variant"):
+        #     variant.get('ordercode')
+        partname = device_file.query("//device")[0].get('name').lower()
+        did = SAMIdentifier.from_string(partname.lower())
         p['id'] = did
 
         LOGGER.info("Parsing '%s'", did.string)
 
-        mcu = avr_mcu.getMcuForDevice(did)
-        mcu = 'unsupported' if mcu == None else mcu
-        p['mcu'] = mcu
-
-        p['core'] = architecture.lower()
-        # We don't care about Microchip's new abominations
-        if p['core'] == "avr8x":
-            return None
-
-        p['define'] = '__AVR_' + partname + '__'
+        # information about the core and architecture
+        core = device_file.query("//device")[0].get('architecture').lower().replace("cortex-", "")
+        for param in (device_file.query("//device/parameters")[0]):
+            if param.get("name") == "__FPU_PRESENT" and param.get("value") == '1':
+                core += "f"
+        p["core"] = core
 
         # find the values for flash, ram and (optional) eeprom
         for memory_segment in device_file.query('//memory-segment'):
@@ -52,9 +49,12 @@ class AVRDeviceTree:
             size = int(memory_segment.get('size'), 16)
             if name in ['FLASH', 'APP_SECTION', 'PROGMEM']:
                 p['flash'] = size
-            elif name in ['IRAM', 'SRAM', 'INTERNAL_SRAM']:
+            elif name in ['HMCRAM0', 'HSRAM']:
                 p['ram'] = size
-            elif name == 'EEPROM':
+            elif name in ['LPRAM']:
+                p['lpram'] = size
+            # SAMD512 has 'smart' eeprom, SAML21 has a ReadWhileWrite Array
+            elif name == ['SEEPROM', 'RWW']:
                 p['eeprom'] = size
 
         raw_modules = device_file.query("//peripherals/module/instance")
@@ -63,10 +63,7 @@ class AVRDeviceTree:
         gpios = []
         ports = []
         for m in raw_modules:
-            tmp = {'module': m.getparent().get('name').lower(),
-                   'instance': m.get('name').lower()}
-            # module SPI has two instances USART0_SPI, USART1_SPI, wtf?
-            if tmp['module'] == 'spi' and tmp['instance'].startswith("usart"): continue;
+            tmp = {'module': m.getparent().get('name').lower(), 'instance': m.get('name').lower()}
             if tmp['module'] == 'port':
                 ports.append(tmp)
             else:
@@ -108,7 +105,7 @@ class AVRDeviceTree:
         p['gpios'] = gpios
 
         LOGGER.debug("Found GPIOs: [%s]", ", ".join([p.upper() + i for p,i in p['gpios']]))
-        LOGGER.debug("Available Modules are:\n" + AVRDeviceTree._modulesToString(p['modules']))
+        LOGGER.debug("Available Modules are:\n" + SAMDeviceTree._modulesToString(p['modules']))
 
         interrupts = []
         for i in device_file.query("//interrupts/interrupt"):
@@ -145,10 +142,10 @@ class AVRDeviceTree:
             return (len(order), -1)
         tree.addSortKey(topLevelOrder)
 
-        # AVRDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-flash')
-        # AVRDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-ram')
-        # AVRDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-eeprom')
-        AVRDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-mcu')
+        # SAMDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-flash')
+        # SAMDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-ram')
+        # SAMDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-eeprom')
+        SAMDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-mcu')
 
         def driverOrder(e):
             if e.name == 'driver':
@@ -179,7 +176,7 @@ class AVRDeviceTree:
 
         # Clock
         clock_child = tree.addChild('driver')
-        clock_child.setAttributes('name', 'clock', 'type', 'avr')
+        clock_child.setAttributes('name', 'clock', 'type', 'sam')
 
         modules = {}
         for m, i in p['modules']:
@@ -197,7 +194,7 @@ class AVRDeviceTree:
         for name, instances in modules.items():
             driver = tree.addChild('driver')
             dtype = name
-            compatible = 'avr'
+            compatible = 'sam'
 
             if name.startswith('tc'):
                 dtype = 'tc'
@@ -213,7 +210,7 @@ class AVRDeviceTree:
 
         # GPIO driver
         gpio_driver = tree.addChild('driver')
-        gpio_driver.setAttributes('name', 'gpio', 'type', 'avr')
+        gpio_driver.setAttributes('name', 'gpio', 'type', 'sam')
         gpio_driver.addSortKey(lambda e : (e['port'], int(e['pin'])))
         for port, pin in p['gpios']:
             pin_driver = gpio_driver.addChild('gpio')
@@ -256,6 +253,6 @@ class AVRDeviceTree:
 
     @staticmethod
     def from_file(filename):
-        p = AVRDeviceTree._properties_from_file(filename)
+        p = SAMDeviceTree._properties_from_file(filename)
         if p is None: return None;
-        return AVRDeviceTree._device_tree_from_properties(p)
+        return SAMDeviceTree._device_tree_from_properties(p)
