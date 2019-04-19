@@ -31,25 +31,43 @@ class SAMDeviceTree:
         p['id'] = did
 
         # information about the core and architecture
-        core = device_file.query("//device")[0].get('architecture').lower().replace("cortex-", "")
+        core = device_file.query("//device")[0].get('architecture').lower()
+        if core.endswith('m0plus'):
+            core = core[:-4]
+            core = core + '+'
         for param in (device_file.query("//device/parameters")[0]):
             if param.get("name") == "__FPU_PRESENT" and param.get("value") == '1':
                 core += "f"
         p["core"] = core
 
         # find the values for flash, ram and (optional) eeprom
+        memories = []
         for memory_segment in device_file.query('//memory-segment'):
+            memType = memory_segment.get('type')
+            if memType in ['io', 'user_page', 'fuses', 'other']:
+                LOGGER.debug("Memory segment '%s' not used", memory_segment.get('name'))
+                continue
             name = memory_segment.get('name')
+            start = memory_segment.get('start')
             size = int(memory_segment.get('size'), 16)
-            if name in ['FLASH', 'APP_SECTION', 'PROGMEM']:
-                p['flash'] = size
-            elif name in ['HMCRAM0', 'HSRAM']:
-                p['ram'] = size
-            elif name in ['LPRAM']:
-                p['lpram'] = size
-            # SAMD512 has 'smart' eeprom, SAML21 has a ReadWhileWrite Array
+            access = memory_segment.get('rw')
+            if memory_segment.get('exec') == 'true':
+                access += 'x'
+            if name in ['FLASH']:
+                memories.append({"name":'flash', "access":access, "size":str(size), "start":start})
+                #p['flash'] = size
+            elif name in ['HMCRAMC0', 'HMCRAM0', 'HSRAM']:
+                memories.append({"name":'ram', "access":access, "size":str(size), "start":start})
+               # p['ram'] = size
+            elif name in ['LPRAM', 'BKUPRAM']:
+                memories.append({"name":'lpram', "access":access, "size":str(size), "start":start})
+               # p['lpram'] = size
             elif name in ['SEEPROM', 'RWW']:
-                p['eeprom'] = size
+                memories.append({"name":'eeprom', "access":access, "size":str(size), "start":start})
+                #p['eeprom'] = size
+            else:
+                LOGGER.debug("Memory segment '%s' not used", name)
+        p["memories"] = memories
 
         raw_modules = device_file.query("//peripherals/module/instance")
         modules = []
@@ -139,12 +157,12 @@ class SAMDeviceTree:
                 else:
                     return (order.index(e.name), e['value'])
             return (len(order), -1)
-        tree.addSortKey(topLevelOrder)
+        # tree.addSortKey(topLevelOrder)
 
         # SAMDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-flash')
         # SAMDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-ram')
         # SAMDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-eeprom')
-        SAMDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-mcu')
+        # SAMDeviceTree.addDeviceAttributesToNode(p, tree, 'attribute-mcu')
 
         def driverOrder(e):
             if e.name == 'driver':
@@ -164,19 +182,28 @@ class SAMDeviceTree:
         core_child.setAttributes('name', 'core', 'type', p['core'])
         core_child.addSortKey(lambda e: (int(e['position']), e['name']) if e.name == 'vector' else (-1, ""))
         core_child.addSortKey(lambda e: (e['name'], int(e['size'])) if e.name == 'memory' else ("", -1))
-        for memory in ['flash', 'ram', 'lpram', 'eeprom']:
-            if memory not in p: continue;
-            memory_section = core_child.addChild('memory')
-            memory_section.setAttribute('name', memory)
-            memory_section.setAttribute('size', p[memory])
+
+        for section in p["memories"]:
+            memory_section = core_child.addChild("memory")
+            memory_section.setAttributes(["name", "access", "start", "size"], section)
+        # sort the node children by start address and size
+        core_child.addSortKey(lambda e: (int(e["start"], 16), int(e["size"])) if e.name == "memory" else (-1, -1))
+
+        # for memory in ['flash', 'ram', 'lpram', 'eeprom']:
+        #     if memory not in p: continue;
+        #     memory_section = core_child.addChild('memory')
+        #     memory_section.setAttribute('name', memory)
+        #     memory_section.setAttribute('size', p[memory])
+
         for vector in p['interrupts']:
+            if int(vector['position']) < 0: continue;
             vector_section = core_child.addChild('vector')
             vector_section.setAttributes(['position', 'name'], vector)
 
         modules = {}
         for m, i in p['modules']:
             # filter out non-peripherals: fuses, micro-trace buffer
-            if m in ['fuses', 'mtb', 'systemcontrol', 'systick']: continue;
+            if m in ['fuses', 'mtb', 'systemcontrol', 'systick', 'hmatrixb', 'hmatrix']: continue;
             if m not in modules:
                 modules[m] = [i]
             else:

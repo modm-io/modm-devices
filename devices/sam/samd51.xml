@@ -6,17 +6,7 @@
     <invalid-device>samd51g20a</invalid-device>
     <invalid-device>samd51n18a</invalid-device>
     <invalid-device>samd51p18a</invalid-device>
-    <driver name="core" type="m4f">
-      <vector position="-15" name="Reset"/>
-      <vector position="-14" name="NonMaskableInt"/>
-      <vector position="-13" name="HardFault"/>
-      <vector position="-12" name="MemoryManagement"/>
-      <vector position="-11" name="BusFault"/>
-      <vector position="-10" name="UsageFault"/>
-      <vector position="-5" name="SVCall"/>
-      <vector position="-4" name="DebugMonitor"/>
-      <vector position="-2" name="PendSV"/>
-      <vector position="-1" name="SysTick"/>
+    <driver name="core" type="cortex-m4f">
       <vector position="0" name="PM"/>
       <vector position="1" name="MCLK"/>
       <vector position="2" name="OSCCTRL_XOSC0"/>
@@ -148,13 +138,13 @@
       <vector position="134" name="QSPI"/>
       <vector position="135" name="SDHC0"/>
       <vector device-pin="n|p" position="136" name="SDHC1"/>
-      <memory name="eeprom" size="131072"/>
-      <memory device-flash="18" name="flash" size="262144"/>
-      <memory device-flash="19" name="flash" size="524288"/>
-      <memory device-flash="20" name="flash" size="1048576"/>
-      <memory device-flash="18" name="ram" size="131072"/>
-      <memory device-flash="19" name="ram" size="196608"/>
-      <memory device-flash="20" name="ram" size="262144"/>
+      <memory device-flash="18" name="flash" access="RWx" start="0x00000000" size="262144"/>
+      <memory device-flash="19" name="flash" access="RWx" start="0x00000000" size="524288"/>
+      <memory device-flash="20" name="flash" access="RWx" start="0x00000000" size="1048576"/>
+      <memory device-flash="18" name="ram" access="RWx" start="0x20000000" size="131072"/>
+      <memory device-flash="19" name="ram" access="RWx" start="0x20000000" size="196608"/>
+      <memory device-flash="20" name="ram" access="RWx" start="0x20000000" size="262144"/>
+      <memory name="lpram" access="RWx" start="0x47000000" size="8192"/>
     </driver>
     <driver name="ac" type="sam"/>
     <driver name="adc" type="sam">
@@ -175,9 +165,6 @@
     <driver name="fpu" type="sam"/>
     <driver name="freqm" type="sam"/>
     <driver name="gclk" type="sam"/>
-    <driver name="hmatrixb" type="sam">
-      <instance value=""/>
-    </driver>
     <driver device-pin="j|n|p" name="i2s" type="sam"/>
     <driver name="icm" type="sam"/>
     <driver name="itm" type="sam"/>

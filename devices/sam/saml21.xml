@@ -18,13 +18,7 @@
     <valid-device>saml21j18a</valid-device>
     <valid-device>saml21j18b</valid-device>
     <valid-device>saml21j18bu</valid-device>
-    <driver name="core" type="m0plus">
-      <vector position="-15" name="Reset"/>
-      <vector position="-14" name="NonMaskableInt"/>
-      <vector position="-13" name="HardFault"/>
-      <vector position="-5" name="SVCall"/>
-      <vector position="-2" name="PendSV"/>
-      <vector position="-1" name="SysTick"/>
+    <driver name="core" type="cortex-m0+">
       <vector position="0" name="SYSTEM"/>
       <vector position="1" name="WDT"/>
       <vector position="2" name="RTC"/>
@@ -57,21 +51,21 @@
       <vector position="25" name="PTC"/>
       <vector position="26" name="AES"/>
       <vector position="27" name="TRNG"/>
-      <memory device-flash="15" name="eeprom" size="1024"/>
-      <memory device-flash="16" name="eeprom" size="2048"/>
-      <memory device-flash="17" name="eeprom" size="4096"/>
-      <memory device-flash="18" name="eeprom" size="8192"/>
-      <memory device-flash="15" name="flash" size="32768"/>
-      <memory device-flash="16" name="flash" size="65536"/>
-      <memory device-flash="17" name="flash" size="131072"/>
-      <memory device-flash="18" name="flash" size="262144"/>
-      <memory device-flash="15" name="lpram" size="2048"/>
-      <memory device-flash="16" name="lpram" size="4096"/>
-      <memory device-flash="17|18" name="lpram" size="8192"/>
-      <memory device-flash="15" name="ram" size="4096"/>
-      <memory device-flash="16" name="ram" size="8192"/>
-      <memory device-flash="17" name="ram" size="16384"/>
-      <memory device-flash="18" name="ram" size="32768"/>
+      <memory device-flash="15" name="flash" access="RWx" start="0x00000000" size="32768"/>
+      <memory device-flash="16" name="flash" access="RWx" start="0x00000000" size="65536"/>
+      <memory device-flash="17" name="flash" access="RWx" start="0x00000000" size="131072"/>
+      <memory device-flash="18" name="flash" access="RWx" start="0x00000000" size="262144"/>
+      <memory device-flash="15" name="eeprom" access="RWx" start="0x00400000" size="1024"/>
+      <memory device-flash="16" name="eeprom" access="RWx" start="0x00400000" size="2048"/>
+      <memory device-flash="17" name="eeprom" access="RWx" start="0x00400000" size="4096"/>
+      <memory device-flash="18" name="eeprom" access="RWx" start="0x00400000" size="8192"/>
+      <memory device-flash="15" name="ram" access="RWx" start="0x20000000" size="4096"/>
+      <memory device-flash="16" name="ram" access="RWx" start="0x20000000" size="8192"/>
+      <memory device-flash="17" name="ram" access="RWx" start="0x20000000" size="16384"/>
+      <memory device-flash="18" name="ram" access="RWx" start="0x20000000" size="32768"/>
+      <memory device-flash="15" name="lpram" access="RWx" start="0x30000000" size="2048"/>
+      <memory device-flash="16" name="lpram" access="RWx" start="0x30000000" size="4096"/>
+      <memory device-flash="17|18" name="lpram" access="RWx" start="0x30000000" size="8192"/>
     </driver>
     <driver name="ac" type="sam"/>
     <driver name="adc" type="sam"/>

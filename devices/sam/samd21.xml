@@ -37,13 +37,7 @@
     <valid-device>samd21j17a</valid-device>
     <valid-device>samd21j17d</valid-device>
     <valid-device>samd21j18a</valid-device>
-    <driver name="core" type="m0plus">
-      <vector position="-15" name="Reset"/>
-      <vector position="-14" name="NonMaskableInt"/>
-      <vector position="-13" name="HardFault"/>
-      <vector position="-5" name="SVCall"/>
-      <vector position="-2" name="PendSV"/>
-      <vector position="-1" name="SysTick"/>
+    <driver name="core" type="cortex-m0+">
       <vector position="0" name="PM"/>
       <vector position="1" name="SYSCTRL"/>
       <vector position="2" name="WDT"/>
@@ -76,13 +70,17 @@
       <vector device-variant="a|au|b|bu|cu|d|du" position="27" name="I2S"/>
       <vector device-variant="l" position="28" name="AC1"/>
       <vector device-flash="17" device-variant="d|du|l" position="29" name="TCC3"/>
-      <memory device-flash="15" device-variant="b|bu|cu|l" name="eeprom" size="1024"/>
-      <memory device-flash="16" device-variant="b|bu|cu|l" name="eeprom" size="2048"/>
-      <memory device-flash="17" device-variant="d|du|l" name="eeprom" size="4096"/>
-      <memory device-flash="15" name="flash" size="32768"/>
-      <memory device-flash="16" name="flash" size="65536"/>
-      <memory device-flash="17" name="flash" size="131072"/>
-      <memory device-flash="18" name="flash" size="262144"/>
+      <memory device-flash="15" name="flash" access="RWx" start="0x00000000" size="32768"/>
+      <memory device-flash="16" name="flash" access="RWx" start="0x00000000" size="65536"/>
+      <memory device-flash="17" name="flash" access="RWx" start="0x00000000" size="131072"/>
+      <memory device-flash="18" name="flash" access="RWx" start="0x00000000" size="262144"/>
+      <memory device-flash="15" device-variant="b|bu|cu|l" name="eeprom" access="RWx" start="0x00400000" size="1024"/>
+      <memory device-flash="16" device-variant="b|bu|cu|l" name="eeprom" access="RWx" start="0x00400000" size="2048"/>
+      <memory device-flash="17" device-variant="d|du|l" name="eeprom" access="RWx" start="0x00400000" size="4096"/>
+      <memory device-flash="15" name="ram" access="RWx" start="0x20000000" size="4096"/>
+      <memory device-flash="16" name="ram" access="RWx" start="0x20000000" size="8192"/>
+      <memory device-flash="17" name="ram" access="RWx" start="0x20000000" size="16384"/>
+      <memory device-flash="18" name="ram" access="RWx" start="0x20000000" size="32768"/>
     </driver>
     <driver name="ac" type="sam">
       <instance device-variant="l" value=""/>
@@ -95,9 +93,6 @@
     <driver name="eic" type="sam"/>
     <driver name="evsys" type="sam"/>
     <driver name="gclk" type="sam"/>
-    <driver name="hmatrixb" type="sam">
-      <instance value=""/>
-    </driver>
     <driver device-variant="a|au|b|bu|cu|d|du" name="i2s" type="sam"/>
     <driver name="nvic" type="sam"/>
     <driver name="nvmctrl" type="sam"/>

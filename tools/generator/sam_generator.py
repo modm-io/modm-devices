@@ -85,8 +85,7 @@ if __name__ == "__main__":
             # and extract all the devices from it
             parsed_devices[device.partname] = device
 
-    # tmp_folder = os.path.join(os.path.dirname(__file__), 'single')
-    tmp_folder = os.path.join(os.getcwd(), 'single')
+    tmp_folder = os.path.join(os.path.dirname(__file__), 'single')
     os.makedirs(tmp_folder, exist_ok=True)
     for pname, pdevice in parsed_devices.items():
         # these are the properties from the merged device
