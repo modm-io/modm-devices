@@ -6,12 +6,13 @@ sam_groups = \
 [
     # SAMD devices
     {
-        'family': ['D'],
-        'name': ['21'],
-        'size': ['15', '16', '17', '18']
+        'family': ['d'],
+        'series': ['21']
     },{
-        'family': ['D'],
-        'name': ['51'],
-        'size': ['18', '19', '20']
+        'family': ['d'],
+        'series': ['51']
+    },{
+        'family': ['l'],
+        'series': ['21']
     },
 ]

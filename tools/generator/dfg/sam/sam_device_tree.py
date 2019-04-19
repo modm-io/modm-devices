@@ -22,19 +22,13 @@ class SAMDeviceTree:
     @staticmethod
     def _properties_from_file(filename):
         device_file = XMLReader(filename)
-
-        device = device_file.query("//device")[0]
-        architecture = device.get('architecture')
         p = {}
 
-        # get more specific product codes?
-        # for variant in device_file.query("//variant"):
-        #     variant.get('ordercode')
-        partname = device_file.query("//device")[0].get('name').lower()
+        LOGGER.info("Parsing Device File For '%s'", device_file.query("//device")[0].get('name'))
+
+        partname = device_file.query("//device")[0].get('name')
         did = SAMIdentifier.from_string(partname.lower())
         p['id'] = did
-
-        LOGGER.info("Parsing '%s'", did.string)
 
         # information about the core and architecture
         core = device_file.query("//device")[0].get('architecture').lower().replace("cortex-", "")
@@ -54,13 +48,11 @@ class SAMDeviceTree:
             elif name in ['LPRAM']:
                 p['lpram'] = size
             # SAMD512 has 'smart' eeprom, SAML21 has a ReadWhileWrite Array
-            elif name == ['SEEPROM', 'RWW']:
+            elif name in ['SEEPROM', 'RWW']:
                 p['eeprom'] = size
 
         raw_modules = device_file.query("//peripherals/module/instance")
         modules = []
-        signals = []
-        gpios = []
         ports = []
         for m in raw_modules:
             tmp = {'module': m.getparent().get('name').lower(), 'instance': m.get('name').lower()}
@@ -70,47 +62,55 @@ class SAMDeviceTree:
                 modules.append(tmp)
         p['modules'] = sorted(list(set([(m['module'], m['instance']) for m in modules])))
 
+        signals = []
+        gpios = []
         raw_signals = device_file.query("//peripherals/module/instance/signals/signal")
-        modules_only = not len(raw_signals)
-        p['modules_only'] = modules_only
+        for s in raw_signals:
+            tmp = {'module': s.getparent().getparent().getparent().get('name').lower(),
+                    'instance': s.getparent().getparent().get('name').lower()}
+            tmp.update({k:v.lower() for k,v in s.items()})            
+            if tmp['group'] in ['p', 'pin'] or tmp['group'].startswith('port'):
+                gpios.append(tmp)
+            else:
+                signals.append(tmp)
+        gpios = sorted([(g['pad'][1], g['pad'][2:]) for g in gpios])
 
-        if modules_only:
-            # Parse GPIOs manually from mask
-            for port in ports:
-                port = port['instance'][-1:]
-                port_mask = device_file.query("//modules/module[@name='PORT']/register-group[@name='PORT{0}']/register[@name='PORT{0}']/@mask".format(port.upper()))
-                if len(port_mask) == 0:
-                    # The port mask is split up
-                    port_mask = device_file.query("//modules/module[@name='PORT']/register-group[@name='PORT{0}']/register[@name='PORT{0}']/bitfield/@mask".format(port.upper()))
-                    port_mask = sum([int(mask, 16) for mask in port_mask])
-                else:
-                    port_mask = int(port_mask[0], 16)
-                for pos in range(8):
-                    if (1 << pos) & port_mask:
-                        gpios.append((port, str(pos)))
-            gpios = sorted(gpios)
-        else:
-            for s in raw_signals:
-                tmp = {'module': s.getparent().getparent().getparent().get('name').lower(),
-                       'instance': s.getparent().getparent().get('name').lower()}
-                tmp.update({k:v.lower() for k,v in s.items()})
-                if tmp['group'] in ['p', 'pin'] or tmp['group'].startswith('port'):
-                    gpios.append(tmp)
-                else:
-                    signals.append(tmp)
-            gpios = sorted([(g['pad'][1], g['pad'][2]) for g in gpios])
-
-        # Signal information is missing
         p['signals'] = signals
         p['gpios'] = gpios
-
-        LOGGER.debug("Found GPIOs: [%s]", ", ".join([p.upper() + i for p,i in p['gpios']]))
-        LOGGER.debug("Available Modules are:\n" + SAMDeviceTree._modulesToString(p['modules']))
 
         interrupts = []
         for i in device_file.query("//interrupts/interrupt"):
             interrupts.append({'position': i.get('index'), 'name': i.get('name')})
         p['interrupts'] = interrupts
+
+        #### Events are similar to interrupts, but instead of triggering an ISR data is passed from source
+        #### to sink without waking the processor
+        # event sources
+        event_sources = []
+        for i in device_file.query("//events/generators/generator"):
+            event_sources.append({'index': i.get('index'), 'name': i.get('name'), 'instance': i.get('module-instance')})
+        p['event_sources'] = event_sources
+
+        # event sinks or 'users' as the datasheet calls them
+        event_users = []
+        for i in device_file.query("//events/users/user"):
+            event_users.append({'index': i.get('index'), 'name': i.get('name'), 'instance': i.get('module-instance')})
+        p['event_users'] = event_users
+
+        LOGGER.debug("Found GPIOs: [%s]", ", ".join([p.upper() + i for p,i in p['gpios']]))
+        LOGGER.debug("Available Modules are:\n" + SAMDeviceTree._modulesToString(p['modules']))
+        # LOGGER.debug("Found Signals:")
+        # for sig in p['signals']:
+        #     LOGGER.debug("    %s", sig)
+        # LOGGER.debug("Found Interrupts:")
+        # for intr in p['interrupts']:
+        #     LOGGER.debug("    %s", intr)
+        # LOGGER.debug("Found Event Sources:")
+        # for eventSrc in p['event_sources']:
+        #     LOGGER.debug("    %s", eventSrc)
+        # LOGGER.debug("Found Event Users:")
+        # for eventUsr in p['event_users']:
+        #     LOGGER.debug("    %s", eventUsr)
 
         return p
 
@@ -130,7 +130,6 @@ class SAMDeviceTree:
     def _device_tree_from_properties(p):
         tree = DeviceTree('device')
         tree.ids.append(p['id'])
-        LOGGER.info(("Generating Device Tree for '%s'" % p['id'].string))
 
         def topLevelOrder(e):
             order = ['attribute-flash', 'attribute-ram', 'attribute-eeprom', 'attribute-core', 'attribute-mcu', 'header', 'attribute-define']
@@ -165,26 +164,19 @@ class SAMDeviceTree:
         core_child.setAttributes('name', 'core', 'type', p['core'])
         core_child.addSortKey(lambda e: (int(e['position']), e['name']) if e.name == 'vector' else (-1, ""))
         core_child.addSortKey(lambda e: (e['name'], int(e['size'])) if e.name == 'memory' else ("", -1))
-        for memory in ['flash', 'ram', 'eeprom']:
+        for memory in ['flash', 'ram', 'lpram', 'eeprom']:
             if memory not in p: continue;
             memory_section = core_child.addChild('memory')
             memory_section.setAttribute('name', memory)
             memory_section.setAttribute('size', p[memory])
-        # for vector in p['interrupts']:
-        #     vector_section = core_child.addChild('vector')
-        #     vector_section.setAttributes(['position', 'name'], vector)
-
-        # Clock
-        clock_child = tree.addChild('driver')
-        clock_child.setAttributes('name', 'clock', 'type', 'sam')
+        for vector in p['interrupts']:
+            vector_section = core_child.addChild('vector')
+            vector_section.setAttributes(['position', 'name'], vector)
 
         modules = {}
         for m, i in p['modules']:
-            # filter out non-peripherals
-            if m in ['cpu', 'jtag', 'exint', 'fuse', 'gpio']: continue;
-            if m in ['lockbit', 'boot_load']: continue;
-            # ATtiny AVR8X has more peripherals
-            if m in ['clkctrl', 'cpuint']: continue;
+            # filter out non-peripherals: fuses, micro-trace buffer
+            if m in ['fuses', 'mtb', 'systemcontrol', 'systick']: continue;
             if m not in modules:
                 modules[m] = [i]
             else:
@@ -195,10 +187,6 @@ class SAMDeviceTree:
             driver = tree.addChild('driver')
             dtype = name
             compatible = 'sam'
-
-            if name.startswith('tc'):
-                dtype = 'tc'
-                compatible = name
 
             driver.setAttributes('name', dtype, 'type', compatible)
             # Add all instances to this driver
@@ -221,8 +209,6 @@ class SAMDeviceTree:
             # add all signals
             for s in [s for s in p['signals'] if s['pad'] == ("p" + port + pin)]:
                 driver, instance, name = s['module'], s['instance'], s['group']
-                if driver.startswith('tc'): driver = 'tc';
-                if driver == 'cpu': driver = 'core'; instance = 'core';
                 # add the af node
                 pin_signal = {'driver': driver}
                 if instance != driver:

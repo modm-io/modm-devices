@@ -4,8 +4,6 @@
 # Copyright (c)      2016, Fabian Greif
 # All rights reserved.
 # TESTING:  exec(open("./sam_generator.py").read())
-# merge_group = sam_groups
-# devices = [d.copy() for d in devices.values()]
 
 import os
 import sys
@@ -24,7 +22,6 @@ from deepdiff import DeepDiff
 LOGGER = logging.getLogger('dfg.sam')
 
 if __name__ == "__main__":
-    devices = {}
     loglevel = 'INFO'
     devs = []
     device_depth = 1e6
@@ -42,14 +39,14 @@ if __name__ == "__main__":
             continue
         devs.append(arg)
 
-    # if not len(devs):
-    #     devs.append('samd51')
+    if not len(devs):
+        devs.append('saml21')
 
     dfg.logger.configure_logger(loglevel)
 
+    devices = {}
     for dev in devs:
         xml_path = os.path.join(os.path.dirname(__file__), 'raw-device-data', 'sam-devices', '*', ('AT' + dev.upper() + '*'))
-        # xml_path = os.path.join(os.getcwd(), 'raw-device-data', 'sam-devices', '*', ('AT' + dev.upper() + '*'))
         files = glob.glob(xml_path)
         for filename in files:
             device = SAMDeviceTree.from_file(filename)
@@ -73,11 +70,10 @@ if __name__ == "__main__":
             if k in ['type', 'pin']: v.sort()
             if len(v) > 0:
                 p[k] = "_".join(v)
-        fmt = "sam{platform}{family}{series}{pin}{flash}{variant}{package}"
+        fmt = "{platform}{family}{series}"
         return fmt.format(**p)
 
     folder = os.path.join(os.path.dirname(__file__), '..', '..', 'devices', 'sam')
-    # folder = os.path.join(os.getcwd(), '..', '..', 'devices', 'sam')
     parser = DeviceParser()
     parsed_devices = {}
     for dev in mergedDevices:
@@ -89,7 +85,8 @@ if __name__ == "__main__":
             # and extract all the devices from it
             parsed_devices[device.partname] = device
 
-    tmp_folder = os.path.join(os.path.dirname(__file__), 'single')
+    # tmp_folder = os.path.join(os.path.dirname(__file__), 'single')
+    tmp_folder = os.path.join(os.getcwd(), 'single')
     os.makedirs(tmp_folder, exist_ok=True)
     for pname, pdevice in parsed_devices.items():
         # these are the properties from the merged device
