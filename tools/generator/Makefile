@@ -10,6 +10,8 @@ extract-avr:
 extract-stm32:
 	(cd raw-data-extractor && python3 extract-stm32.py)
 
+extract-sam:
+	(cd raw-data-extractor && python3 extract-sam.py)
 
 generate-at90:
 	@rm -f ../../devices/avr/at90*
@@ -24,6 +26,21 @@ generate-atmega:
 	./avr_generator.py ATmega
 
 generate-avr: generate-at90 generate-attiny generate-atmega
+
+
+generate-saml21:
+	@rm -f ../../devices/sam/saml21*
+	./sam_generator.py saml21
+
+generate-samd21:
+	@rm -f ../../devices/sam/samd21*
+	./sam_generator.py samd21
+
+generate-samd51:
+	@rm -f ../../devices/sam/samd51*
+	./sam_generator.py samd51
+
+generate-sam: generate-saml21 generate-samd21 generate-samd51
 
 
 generate-stm32f0:
