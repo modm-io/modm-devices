@@ -31,10 +31,7 @@ class SAMDeviceTree:
         p['id'] = did
 
         # information about the core and architecture
-        core = device_file.query("//device")[0].get('architecture').lower()
-        if core.endswith('m0plus'):
-            core = core[:-4]
-            core = core + '+'
+        core = device_file.query("//device")[0].get('architecture').lower().replace("plus", "+")
         for param in (device_file.query("//device/parameters")[0]):
             if param.get("name") == "__FPU_PRESENT" and param.get("value") == '1':
                 core += "f"
@@ -50,7 +47,7 @@ class SAMDeviceTree:
             name = memory_segment.get('name')
             start = memory_segment.get('start')
             size = int(memory_segment.get('size'), 16)
-            access = memory_segment.get('rw')
+            access = memory_segment.get('rw').lower()
             if memory_segment.get('exec') == 'true':
                 access += 'x'
             if name in ['FLASH']:
