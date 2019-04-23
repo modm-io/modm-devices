@@ -141,9 +141,11 @@
       <memory device-flash="18" name="flash" access="rwx" start="0x00000000" size="262144"/>
       <memory device-flash="19" name="flash" access="rwx" start="0x00000000" size="524288"/>
       <memory device-flash="20" name="flash" access="rwx" start="0x00000000" size="1048576"/>
+      <memory name="extram" access="rwx" start="0x04000000" size="16777216"/>
       <memory device-flash="18" name="ram" access="rwx" start="0x20000000" size="131072"/>
       <memory device-flash="19" name="ram" access="rwx" start="0x20000000" size="196608"/>
       <memory device-flash="20" name="ram" access="rwx" start="0x20000000" size="262144"/>
+      <memory name="eeprom" access="rw" start="0x44000000" size="131072"/>
       <memory name="lpram" access="rwx" start="0x47000000" size="8192"/>
     </driver>
     <driver name="ac" type="sam"/>

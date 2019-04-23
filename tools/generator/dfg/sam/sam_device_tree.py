@@ -41,9 +41,6 @@ class SAMDeviceTree:
         memories = []
         for memory_segment in device_file.query('//memory-segment'):
             memType = memory_segment.get('type')
-            if memType in ['io', 'user_page', 'fuses', 'other']:
-                LOGGER.debug("Memory segment '%s' not used", memory_segment.get('name'))
-                continue
             name = memory_segment.get('name')
             start = memory_segment.get('start')
             size = int(memory_segment.get('size'), 16)
@@ -52,16 +49,14 @@ class SAMDeviceTree:
                 access += 'x'
             if name in ['FLASH']:
                 memories.append({"name":'flash', "access":access, "size":str(size), "start":start})
-                #p['flash'] = size
             elif name in ['HMCRAMC0', 'HMCRAM0', 'HSRAM']:
                 memories.append({"name":'ram', "access":access, "size":str(size), "start":start})
-               # p['ram'] = size
             elif name in ['LPRAM', 'BKUPRAM']:
                 memories.append({"name":'lpram', "access":access, "size":str(size), "start":start})
-               # p['lpram'] = size
             elif name in ['SEEPROM', 'RWW']:
                 memories.append({"name":'eeprom', "access":access, "size":str(size), "start":start})
-                #p['eeprom'] = size
+            elif name in ['QSPI']:
+                memories.append({"name":'extram', "access":access, "size":str(size), "start":start})
             else:
                 LOGGER.debug("Memory segment '%s' not used", name)
         p["memories"] = memories
