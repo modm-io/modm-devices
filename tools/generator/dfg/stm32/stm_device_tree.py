@@ -164,8 +164,8 @@ class STMDeviceTree:
         modules = []
         for ip in device_file.query('//IP'):
             # These IPs are all software modules, NOT hardware modules. Their version string is weird too.
-            if ip.get("Name").upper() in ["GFXSIMULATOR", "GRAPHICS", "FATFS", "TOUCHSENSING", "PDM2PCM", "MBEDTLS",
-                                          "FREERTOS", "CORTEX_M7", "NVIC", "USB_DEVICE", "USB_HOST", "LWIP", "LIBJPEG"]:
+            if any(ip.get("Name").upper().startswith(p) for p in {"GFXSIMULATOR", "GRAPHICS", "FATFS", "TOUCHSENSING", "PDM2PCM", "MBEDTLS",
+                                                                  "FREERTOS", "CORTEX_M7", "NVIC", "USB_DEVICE", "USB_HOST", "LWIP", "LIBJPEG"}):
                 continue
 
             rversion = ip.get("Version")
@@ -403,7 +403,9 @@ class STMDeviceTree:
                 if e.name == "feature":
                     return (0, 0, e["value"])
                 if e.name == "instance":
-                    return (1, int(e["value"]), "")
+                    if e["value"].isdigit():
+                        return (1, int(e["value"]), "")
+                    return (1, 0, e["value"])
                 return (1e6, 1e6, 1e6)
             driver.addSortKey(driver_sort_key)
             for f in features:
@@ -416,7 +418,9 @@ class STMDeviceTree:
             if any(i != name for i in instances):
                 for i in instances:
                     inst = driver.addChild("instance")
-                    inst.setValue(i[len(name):])
+                    iname = i[len(name):]
+                    iname = iname.replace("_m", "cortex-m")
+                    inst.setValue(iname)
 
             if name == "flash":
                 flv = p["flash_latency"]
@@ -483,6 +487,7 @@ class STMDeviceTree:
                 if instance: af.setAttributes("instance", instance);
                 af.setAttributes("name", name)
 
+        # print(tree.toString())
         return tree
 
 
