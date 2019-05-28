@@ -267,12 +267,11 @@
     <driver name="ltdc" type="stm32-v1.0"/>
     <driver name="mdios" type="stm32-v1.0"/>
     <driver name="mdma" type="stm32-v1.0"/>
-    <driver name="nvic1" type="stm32-stm32h757"/>
-    <driver name="nvic2" type="stm32-stm32h757"/>
     <driver name="opamp" type="stm32-v1.0">
       <instance value="1"/>
       <instance value="2"/>
     </driver>
+    <driver name="pwr" type="stm32-v1.0"/>
     <driver name="quadspi" type="stm32-v1.0"/>
     <driver name="rcc" type="stm32-v1.0"/>
     <driver name="resmgr_utility" type="stm32-stm32h7_cube"/>
@@ -304,6 +303,8 @@
     </driver>
     <driver name="sys" type="stm32">
       <feature value="exti"/>
+      <instance value=""/>
+      <instance value="cortex-m4"/>
     </driver>
     <driver name="tim" type="stm32-advanced">
       <instance value="1"/>
@@ -346,7 +347,7 @@
     <driver name="gpio" type="stm32">
       <gpio port="a" pin="0">
         <signal driver="adc" instance="1" name="inp16"/>
-        <signal driver="sys" name="wkup0"/>
+        <signal driver="pwr" name="wkup0"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
         <signal af="1" driver="tim" instance="2" name="etr"/>
         <signal af="2" driver="tim" instance="5" name="ch1"/>
@@ -388,7 +389,7 @@
       <gpio port="a" pin="2">
         <signal driver="adc" instance="1" name="inp14"/>
         <signal driver="adc" instance="2" name="inp14"/>
-        <signal driver="sys" name="wkup1"/>
+        <signal driver="pwr" name="wkup1"/>
         <signal af="1" driver="tim" instance="2" name="ch3"/>
         <signal af="2" driver="tim" instance="5" name="ch3"/>
         <signal af="3" driver="lptim" instance="4" name="out"/>
@@ -611,8 +612,8 @@
         <signal af="10" driver="sai" instance="4" name="d1"/>
       </gpio>
       <gpio port="b" pin="3">
-        <signal driver="debug" name="jtdo"/>
-        <signal driver="debug" name="swo"/>
+        <signal af="0" driver="debug" name="jtdo"/>
+        <signal af="0" driver="debug" name="swo"/>
         <signal af="1" driver="tim" instance="2" name="ch2"/>
         <signal af="2" driver="hrtim" name="flt4"/>
         <signal af="5" driver="i2s" instance="1" name="ck"/>
@@ -674,7 +675,7 @@
         <signal af="14" driver="uart" instance="5" name="tx"/>
       </gpio>
       <gpio port="b" pin="7">
-        <signal driver="sys" name="pvd_in"/>
+        <signal driver="pwr" name="pvd_in"/>
         <signal af="1" driver="tim" instance="17" name="ch1n"/>
         <signal af="2" driver="tim" instance="4" name="ch2"/>
         <signal af="3" driver="hrtim" name="eev9"/>
@@ -819,8 +820,8 @@
         <signal driver="adc" instance="2" name="inp11"/>
         <signal driver="adc" instance="3" name="inn10"/>
         <signal driver="adc" instance="3" name="inp11"/>
+        <signal driver="pwr" name="wkup5"/>
         <signal driver="rtc" name="tamp3"/>
-        <signal driver="sys" name="wkup5"/>
         <signal af="0" driver="debug" name="traced0"/>
         <signal af="2" driver="sai" instance="1" name="d1"/>
         <signal af="3" driver="dfsdm" instance="1" name="datin0"/>
@@ -913,7 +914,7 @@
         <signal af="14" driver="ltdc" name="hsync"/>
       </gpio>
       <gpio port="c" pin="7">
-        <signal af="0" driver="sys" name="trgio"/>
+        <signal af="0" driver="debug" name="trgio"/>
         <signal af="1" driver="hrtim" name="cha2"/>
         <signal af="2" driver="tim" instance="3" name="ch2"/>
         <signal af="3" driver="tim" instance="8" name="ch2"/>
@@ -990,11 +991,11 @@
         <signal af="13" driver="dcmi" name="d9"/>
       </gpio>
       <gpio port="c" pin="13">
+        <signal driver="pwr" name="wkup2"/>
         <signal driver="rtc" name="out_alarm"/>
         <signal driver="rtc" name="out_calib"/>
         <signal driver="rtc" name="tamp1"/>
         <signal driver="rtc" name="ts"/>
-        <signal driver="sys" name="wkup2"/>
       </gpio>
       <gpio port="c" pin="14">
         <signal driver="rcc" name="osc32_in"/>
@@ -1712,8 +1713,8 @@
         <signal af="14" driver="ltdc" name="b7"/>
       </gpio>
       <gpio device-pin="b|x" port="i" pin="8">
+        <signal driver="pwr" name="wkup3"/>
         <signal driver="rtc" name="tamp2"/>
-        <signal driver="sys" name="wkup3"/>
       </gpio>
       <gpio device-pin="b|x" port="i" pin="9">
         <signal af="8" driver="uart" instance="4" name="rx"/>
@@ -1727,7 +1728,7 @@
         <signal af="14" driver="ltdc" name="hsync"/>
       </gpio>
       <gpio device-pin="b|x" port="i" pin="11">
-        <signal driver="sys" name="wkup4"/>
+        <signal driver="pwr" name="wkup4"/>
         <signal af="9" driver="ltdc" name="g6"/>
         <signal af="10" driver="usb_otg_hs" name="ulpi_dir"/>
       </gpio>
@@ -1769,7 +1770,7 @@
         <signal af="14" driver="ltdc" name="r7"/>
       </gpio>
       <gpio device-pin="x" port="j" pin="7">
-        <signal af="0" driver="sys" name="trgin"/>
+        <signal af="0" driver="debug" name="trgin"/>
         <signal af="3" driver="tim" instance="8" name="ch2n"/>
         <signal af="14" driver="ltdc" name="g0"/>
       </gpio>
@@ -1798,7 +1799,7 @@
         <signal af="14" driver="ltdc" name="g4"/>
       </gpio>
       <gpio device-pin="x" port="j" pin="12">
-        <signal af="0" driver="sys" name="trgout"/>
+        <signal af="0" driver="debug" name="trgout"/>
         <signal af="9" driver="ltdc" name="g3"/>
         <signal af="14" driver="ltdc" name="b0"/>
       </gpio>
