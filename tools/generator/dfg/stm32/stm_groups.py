@@ -51,21 +51,6 @@ stm_groups = \
         'size': ['b', 'c']
     },
 
-    # STM32G0 devices
-    {
-        'family': ['g0'],
-        'name': ['30']
-    },{
-        'family': ['g0'],
-        'name': ['31', '41']
-    },{
-        'family': ['g0'],
-        'name': ['70']
-    },{
-        'family': ['g0'],
-        'name': ['71', '81']
-    },
-
     # STM32F1 devices
     {
         'family': ['f1'],
@@ -199,6 +184,36 @@ stm_groups = \
     },{
         'family': ['f7'],
         'name': ['65', '67', '68', '69', '77', '78', '79']
+    },
+
+    # STM32G0 devices
+    {
+        'family': ['g0'],
+        'name': ['30']
+    },{
+        'family': ['g0'],
+        'name': ['31', '41']
+    },{
+        'family': ['g0'],
+        'name': ['70']
+    },{
+        'family': ['g0'],
+        'name': ['71', '81']
+    },
+
+    # STM32G4 devices
+    {
+        'family': ['g4'],
+        'name': ['31', '41']
+    },{
+        'family': ['g4'],
+        'name': ['71']
+    },{
+        'family': ['g4'],
+        'name': ['73', '83']
+    },{
+        'family': ['g4'],
+        'name': ['74', '84']
     },
 
     # STM32H7 devices
