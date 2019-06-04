@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+# -*- coding: utf-8 -*-
+
+function count {
+    echo "$1"
+    `dirname "$0"`/stats --count $1
+}
+
+count at90
+count attiny
+count atmega
+
+count stm32l0
+count stm32l1
+count stm32l4
+
+count stm32f0
+count stm32f1
+count stm32f2
+count stm32f3
+count stm32f4
+count stm32f7
+
+count stm32g0
+count stm32g4
+
+count stm32h7
