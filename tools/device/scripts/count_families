@@ -25,3 +25,5 @@ count stm32g0
 count stm32g4
 
 count stm32h7
+
+count stm32wb
