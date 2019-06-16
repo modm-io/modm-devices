@@ -1,6 +1,6 @@
 language: python
 python:
-  - 3.5
+  - 3.6
 
 env:
   global:
@@ -9,7 +9,7 @@ env:
 # command to install dependencies
 install:
   - pip install lxml jinja2 deepdiff CppHeaderParser
-  - sudo apt-get install openjdk-7-jdk
+  - sudo apt-get install openjdk-8-jdk
 
 # command to run tests
 script:
