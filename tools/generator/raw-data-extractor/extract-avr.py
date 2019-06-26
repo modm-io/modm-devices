@@ -12,7 +12,7 @@ families = [
     "ATtiny", "ATmega",
     "XMEGAA", "XMEGAB", "XMEGAC", "XMEGAD", "XMEGAE"
 ]
-packurl = "http://packs.download.atmel.com/"
+packurl = "http://packs.download.microchip.com/"
 
 
 shutil.rmtree("../raw-device-data/avr-devices", ignore_errors=True)
@@ -21,7 +21,7 @@ Path("../raw-device-data/avr-devices").mkdir(exist_ok=True, parents=True)
 with urllib.request.urlopen(packurl) as response:
     html = response.read().decode("utf-8")
 def dl(family):
-    atpack = re.search(r'data-link="(Atmel\.{}_DFP\..*?\.atpack)"'.format(family), html).group(1)
+    atpack = re.search(r'data-link="(Microchip\.{}_DFP\..*?\.atpack)"'.format(family), html).group(1)
     dest = "../raw-device-data/avr-devices/{}".format(family.lower())
     print("Downloading '{}'...".format(atpack))
     with urllib.request.urlopen(packurl + atpack) as content:
