@@ -19,13 +19,10 @@
     <driver name="spi" type="avr"/>
     <driver name="tc" type="tc16">
       <instance value="1"/>
-      <instance device-name="841" value="2"/>
+      <instance value="2"/>
     </driver>
     <driver name="tc" type="tc8">
       <instance value="0"/>
-    </driver>
-    <driver device-name="441" name="tc" type="tc8_async">
-      <instance value="2"/>
     </driver>
     <driver name="tocpm" type="avr"/>
     <driver name="twi" type="avr"/>
