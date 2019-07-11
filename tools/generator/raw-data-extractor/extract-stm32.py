@@ -12,7 +12,15 @@ cubeurl = "https://www.st.com/content/st_com/en/products/development-tools/"\
 		  "software-development-tools/stm32-software-development-tools/"\
 		  "stm32-configurators-and-code-generators/stm32cubemx.html"
 
-with urllib.request.urlopen(cubeurl) as response:
+# Set the right headers
+hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
+       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+       'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
+       'Accept-Encoding': 'none',
+       'Accept-Language': 'en-US,en;q=0.8',
+       'Connection': 'keep-alive'}
+
+with urllib.request.urlopen(urllib.request.Request(cubeurl, headers=hdr)) as response:
     html = response.read().decode("utf-8")
     dlurl = re.search(r'data-download-path="(/content/ccc/resource/.*?\.zip)"', html).group(1)
     dlurl = "https://www.st.com" + dlurl
@@ -20,7 +28,7 @@ with urllib.request.urlopen(cubeurl) as response:
     print(dlurl)
 
 shutil.rmtree("temp-stm32", ignore_errors=True)
-with urllib.request.urlopen(dlurl) as content:
+with urllib.request.urlopen(urllib.request.Request(dlurl, headers=hdr)) as content:
     z = zipfile.ZipFile(io.BytesIO(content.read()))
     item = [n for n in z.namelist() if ".exe" in n][0]
     print("Extracting SetupSTM32CubeMX.exe...")
