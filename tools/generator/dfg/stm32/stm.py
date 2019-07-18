@@ -231,7 +231,7 @@ stm32_memory = \
                 'memories': {'flash': 0, 'sram1': 0, 'sram2': 16*1024, 'ccm': 16*1024}
             },
             {
-                'name': ['73', '74', '84'],
+                'name': ['73', '74', '83', '84'],
                 'memories': {'flash': 0, 'sram1': 0, 'sram2': 16*1024, 'ccm': 32*1024}
             }
         ]

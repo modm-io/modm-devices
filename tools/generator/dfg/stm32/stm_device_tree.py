@@ -193,6 +193,9 @@ class STMDeviceTree:
 
         # Information from the CMSIS headers
         stm_header = STMHeader(did)
+        if not stm_header.is_valid:
+            LOGGER.error("CMSIS Header invalid for %s", did.string)
+            return None
         p["stm_header"] = stm_header
         p["interrupts"] = stm_header.get_interrupt_table()
         # Flash latency table

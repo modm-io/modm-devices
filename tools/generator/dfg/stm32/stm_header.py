@@ -57,13 +57,15 @@ class STMHeader:
 
     def __init__(self, did):
         self.did = did
-        family = did.family
-        self.family_folder = "stm32{}xx".format(family)
+        self.family_folder = "stm32{}xx".format(self.did.family)
         self.cmsis_folder = STMHeader.HEADER_PATH / self.family_folder / "Include"
         self.family_header_file = "{}.h".format(self.family_folder)
 
         self.family_defines = self._get_family_defines()
         self.define = stm.getDefineForDevice(self.did, self.family_defines)
+        self.is_valid = self.define is not None
+        if not self.is_valid: return;
+
         self.header_file = "{}.h".format(self.define.lower())
         self.device_map = None
 
