@@ -108,7 +108,7 @@
       <vector position="75" name="OTG_HS_EP1_IN"/>
       <vector position="76" name="OTG_HS_WKUP"/>
       <vector position="77" name="OTG_HS"/>
-      <vector position="80" name="HASH_RNG"/>
+      <vector position="80" name="RNG"/>
     </driver>
     <driver name="adc" type="stm32">
       <instance value="1"/>

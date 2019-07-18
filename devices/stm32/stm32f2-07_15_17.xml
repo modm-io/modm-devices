@@ -120,7 +120,8 @@
       <vector position="77" name="OTG_HS"/>
       <vector device-name="07|17" position="78" name="DCMI"/>
       <vector device-name="15|17" position="79" name="CRYP"/>
-      <vector position="80" name="HASH_RNG"/>
+      <vector device-name="15|17" position="80" name="HASH_RNG"/>
+      <vector device-name="07" position="80" name="RNG"/>
     </driver>
     <driver name="adc" type="stm32">
       <instance value="1"/>

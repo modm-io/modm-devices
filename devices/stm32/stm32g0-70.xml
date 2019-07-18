@@ -483,9 +483,6 @@
         <signal af="0" driver="rcc" name="osc_en"/>
         <signal af="2" driver="tim" instance="15" name="ch1n"/>
       </gpio>
-      <gpio port="f" pin="2">
-        <signal af="0" driver="rcc" name="mco"/>
-      </gpio>
     </driver>
   </device>
 </modm>

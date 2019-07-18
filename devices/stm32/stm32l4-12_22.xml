@@ -306,7 +306,7 @@
         <signal af="5" driver="spi" instance="1" name="nss"/>
         <signal device-pin="c|r" af="7" driver="usart" instance="3" name="de"/>
         <signal device-pin="c|r" af="7" driver="usart" instance="3" name="rts"/>
-        <signal af="9" driver="tsc" name="g3_io1"/>
+        <signal device-pin="r|t" af="9" driver="tsc" name="g3_io1"/>
       </gpio>
       <gpio port="b" pin="0">
         <signal driver="adc" instance="1" name="in15"/>

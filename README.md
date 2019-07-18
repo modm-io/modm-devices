@@ -25,7 +25,7 @@ Please open an issue or better yet a pull request for additional support.
 | STM32L0       | 156     | STM32L1       | 85      | STM32L4       | 181     |
 | STM32F0       | 111     | STM32F1       | 125     | STM32F2       | 47      |
 | STM32F3       | 93      | STM32F4       | 209     | STM32F7       | 120     |
-| STM32G0       | 72      | STM32G4       | 109     | STM32H7       | 72      |
+| STM32G0       | 72      | STM32G4       | 110     | STM32H7       | 72      |
 | STM32WB       | 9       |
 
 </center>

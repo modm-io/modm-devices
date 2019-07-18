@@ -33,6 +33,7 @@
     <valid-device>stm32g441cby</valid-device>
     <valid-device>stm32g441kbt</valid-device>
     <valid-device>stm32g441kbu</valid-device>
+    <valid-device>stm32g441mbt</valid-device>
     <valid-device>stm32g441rbi</valid-device>
     <valid-device>stm32g441rbt</valid-device>
     <valid-device>stm32g441vbt</valid-device>
