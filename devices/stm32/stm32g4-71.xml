@@ -73,6 +73,7 @@
       <vector position="44" name="TIM8_UP"/>
       <vector position="45" name="TIM8_TRG_COM"/>
       <vector position="46" name="TIM8_CC"/>
+      <vector position="47" name="ADC3"/>
       <vector position="49" name="LPTIM1"/>
       <vector position="50" name="TIM5"/>
       <vector position="51" name="SPI3"/>
