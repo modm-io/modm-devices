@@ -281,7 +281,6 @@
     </driver>
     <driver name="tracer_emb" type="stm32-v1.0"/>
     <driver device-pin="m|q|r|v" name="uart" type="stm32-extended">
-      <feature value="tcbgt"/>
       <instance value="4"/>
       <instance value="5"/>
     </driver>
@@ -289,7 +288,6 @@
       <instance value="1"/>
     </driver>
     <driver name="usart" type="stm32-extended">
-      <feature value="tcbgt"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>

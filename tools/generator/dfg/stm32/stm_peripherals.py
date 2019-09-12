@@ -388,12 +388,12 @@ stm_peripherals = \
                 'hardware': 'stm32-extended',
                 'features': ['tcbgt'],
                 'protocols': ['uart'],
-                'devices': [{'family': ['l4'], 'name': ['r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0', 'g4', 'wb']}]
+                'devices': [{'family': ['l4'], 'name': ['r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0', 'wb']}]
             },{
                 'hardware': 'stm32-extended',
                 'features': [],
                 'protocols': ['uart'],
-                'devices': [{'family': ['f7', 'l4']}]
+                'devices': [{'family': ['f7', 'l4', 'g4']}]
             },{
                 'hardware': 'stm32',
                 'features': ['over8'],
@@ -419,12 +419,12 @@ stm_peripherals = \
                 'hardware': 'stm32-extended',
                 'features': ['tcbgt'],
                 'protocols': ['uart', 'spi'],
-                'devices': [{'family': ['l4'], 'name': ['r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0', 'g4', 'wb']}]
+                'devices': [{'family': ['l4'], 'name': ['r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0', 'wb']}]
             },{
                 'hardware': 'stm32-extended',
                 'features': [],
                 'protocols': ['uart', 'spi'],
-                'devices': [{'family': ['f7', 'l4']}]
+                'devices': [{'family': ['f7', 'l4', 'g4']}]
             },{
                 'hardware': 'stm32',
                 'features': ['over8'],

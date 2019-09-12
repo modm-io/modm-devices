@@ -226,14 +226,12 @@
     </driver>
     <driver name="tracer_emb" type="stm32-v1.0"/>
     <driver device-pin="m|r|v" name="uart" type="stm32-extended">
-      <feature value="tcbgt"/>
       <instance value="4"/>
     </driver>
     <driver name="ucpd" type="stm32-v1.0">
       <instance value="1"/>
     </driver>
     <driver name="usart" type="stm32-extended">
-      <feature value="tcbgt"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance device-pin="c|m|r|v" value="3"/>
