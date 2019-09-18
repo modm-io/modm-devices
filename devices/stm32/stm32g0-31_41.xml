@@ -83,9 +83,6 @@
     <driver name="crc" type="stm32">
       <feature value="reverse"/>
     </driver>
-    <driver name="dma" type="stm32">
-      <instance value="1"/>
-    </driver>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1000">
         <wait-state ws="0" hclk-max="8000000"/>
@@ -148,6 +145,146 @@
       <instance device-pin="c|f|g|k|y" value="2"/>
     </driver>
     <driver name="wwdg" type="stm32-v2.0"/>
+    <driver name="dma" type="stm32-mux">
+      <instance value="1"/>
+      <requests>
+        <request position="1">
+          <signal driver="dma" name="generator0"/>
+        </request>
+        <request position="2">
+          <signal driver="dma" name="generator1"/>
+        </request>
+        <request position="3">
+          <signal driver="dma" name="generator2"/>
+        </request>
+        <request position="4">
+          <signal driver="dma" name="generator3"/>
+        </request>
+        <request position="5">
+          <signal driver="adc" instance="1"/>
+        </request>
+        <request device-name="41" position="6">
+          <signal driver="aes" name="in"/>
+        </request>
+        <request device-name="41" position="7">
+          <signal driver="aes" name="out"/>
+        </request>
+        <request position="8">
+          <signal driver="i2c" instance="1" name="rx"/>
+        </request>
+        <request position="9">
+          <signal driver="i2c" instance="1" name="tx"/>
+        </request>
+        <request position="10">
+          <signal driver="i2c" instance="2" name="rx"/>
+        </request>
+        <request position="11">
+          <signal driver="i2c" instance="2" name="tx"/>
+        </request>
+        <request position="12">
+          <signal driver="lpuart" instance="1" name="rx"/>
+        </request>
+        <request position="13">
+          <signal driver="lpuart" instance="1" name="tx"/>
+        </request>
+        <request position="14">
+          <signal driver="spi" instance="1" name="rx"/>
+        </request>
+        <request position="15">
+          <signal driver="spi" instance="1" name="tx"/>
+        </request>
+        <request position="16">
+          <signal driver="spi" instance="2" name="rx"/>
+        </request>
+        <request position="17">
+          <signal driver="spi" instance="2" name="tx"/>
+        </request>
+        <request position="18">
+          <signal driver="tim" instance="1" name="ch1"/>
+        </request>
+        <request position="19">
+          <signal driver="tim" instance="1" name="ch2"/>
+        </request>
+        <request position="20">
+          <signal driver="tim" instance="1" name="ch3"/>
+        </request>
+        <request position="21">
+          <signal driver="tim" instance="1" name="ch4"/>
+        </request>
+        <request position="22">
+          <signal driver="tim" instance="1" name="trig_com"/>
+        </request>
+        <request position="23">
+          <signal driver="tim" instance="1" name="up"/>
+        </request>
+        <request position="24">
+          <signal driver="tim" instance="2" name="ch1"/>
+        </request>
+        <request position="25">
+          <signal driver="tim" instance="2" name="ch2"/>
+        </request>
+        <request position="26">
+          <signal driver="tim" instance="2" name="ch3"/>
+        </request>
+        <request position="27">
+          <signal driver="tim" instance="2" name="ch4"/>
+        </request>
+        <request position="28">
+          <signal driver="tim" instance="2" name="trig"/>
+        </request>
+        <request position="29">
+          <signal driver="tim" instance="2" name="up"/>
+        </request>
+        <request position="30">
+          <signal driver="tim" instance="3" name="ch1"/>
+        </request>
+        <request position="31">
+          <signal driver="tim" instance="3" name="ch2"/>
+        </request>
+        <request position="32">
+          <signal driver="tim" instance="3" name="ch3"/>
+        </request>
+        <request position="33">
+          <signal driver="tim" instance="3" name="ch4"/>
+        </request>
+        <request position="34">
+          <signal driver="tim" instance="3" name="trig"/>
+        </request>
+        <request position="35">
+          <signal driver="tim" instance="3" name="up"/>
+        </request>
+        <request position="36">
+          <signal driver="tim" instance="16" name="ch1"/>
+        </request>
+        <request position="37">
+          <signal driver="tim" instance="16" name="trig_com"/>
+        </request>
+        <request position="38">
+          <signal driver="tim" instance="16" name="up"/>
+        </request>
+        <request position="39">
+          <signal driver="tim" instance="17" name="ch1"/>
+        </request>
+        <request position="40">
+          <signal driver="tim" instance="17" name="trig_com"/>
+        </request>
+        <request position="41">
+          <signal driver="tim" instance="17" name="up"/>
+        </request>
+        <request position="42">
+          <signal driver="usart" instance="1" name="rx"/>
+        </request>
+        <request position="43">
+          <signal driver="usart" instance="1" name="tx"/>
+        </request>
+        <request device-pin="c|f|g|k|y" position="44">
+          <signal driver="usart" instance="2" name="rx"/>
+        </request>
+        <request device-pin="c|f|g|k|y" position="45">
+          <signal driver="usart" instance="2" name="tx"/>
+        </request>
+      </requests>
+    </driver>
     <driver name="gpio" type="stm32">
       <gpio port="a" pin="0">
         <signal driver="adc" instance="1" name="in0"/>

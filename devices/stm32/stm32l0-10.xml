@@ -47,9 +47,6 @@
       <feature value="prescaler"/>
     </driver>
     <driver name="crc" type="stm32"/>
-    <driver name="dma" type="stm32-extended">
-      <instance value="1"/>
-    </driver>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1050">
         <wait-state ws="0" hclk-max="4200000"/>
@@ -100,6 +97,131 @@
       <instance value="2"/>
     </driver>
     <driver name="wwdg" type="stm32-v1.0"/>
+    <driver name="dma" type="stm32-channel-request">
+      <instance value="1"/>
+      <channels instance="1">
+        <channel position="1">
+          <request position="0">
+            <signal driver="adc"/>
+          </request>
+          <request position="8">
+            <signal driver="tim" instance="2" name="ch3"/>
+          </request>
+        </channel>
+        <channel position="2">
+          <request position="0">
+            <signal driver="adc"/>
+          </request>
+          <request position="1">
+            <signal driver="spi" instance="1" name="rx"/>
+          </request>
+          <request device-size="4" position="4">
+            <signal driver="usart" instance="2" name="tx"/>
+          </request>
+          <request device-pin="f|k" device-size="4" position="5">
+            <signal driver="lpuart" instance="1" name="tx"/>
+          </request>
+          <request device-pin="c" device-size="6" position="5">
+            <signal driver="lpuart" instance="1" name="tx"/>
+          </request>
+          <request device-pin="r" device-size="8|b" position="5">
+            <signal driver="lpuart" instance="1" name="tx"/>
+          </request>
+          <request position="6">
+            <signal driver="i2c" instance="1" name="tx"/>
+          </request>
+          <request position="8">
+            <signal driver="tim" instance="2" name="up"/>
+          </request>
+        </channel>
+        <channel position="3">
+          <request position="1">
+            <signal driver="spi" instance="1" name="tx"/>
+          </request>
+          <request device-size="4" position="4">
+            <signal driver="usart" instance="2" name="rx"/>
+          </request>
+          <request device-pin="f|k" device-size="4" position="5">
+            <signal driver="lpuart" instance="1" name="rx"/>
+          </request>
+          <request device-pin="c" device-size="6" position="5">
+            <signal driver="lpuart" instance="1" name="rx"/>
+          </request>
+          <request device-pin="r" device-size="8|b" position="5">
+            <signal driver="lpuart" instance="1" name="rx"/>
+          </request>
+          <request position="6">
+            <signal driver="i2c" instance="1" name="rx"/>
+          </request>
+          <request position="8">
+            <signal driver="tim" instance="2" name="ch2"/>
+          </request>
+        </channel>
+        <channel position="4">
+          <request device-size="4" position="0">
+            <signal driver="adc"/>
+          </request>
+          <request device-size="4" position="1">
+            <signal driver="spi" instance="1" name="rx"/>
+          </request>
+          <request position="4">
+            <signal driver="usart" instance="2" name="tx"/>
+          </request>
+          <request device-size="4" position="5">
+            <signal driver="lpuart" instance="1" name="tx"/>
+          </request>
+          <request device-size="4" position="6">
+            <signal driver="i2c" instance="1" name="tx"/>
+          </request>
+          <request position="8">
+            <signal driver="tim" instance="2" name="ch4"/>
+          </request>
+        </channel>
+        <channel position="5">
+          <request device-size="4" position="1">
+            <signal driver="spi" instance="1" name="tx"/>
+          </request>
+          <request position="4">
+            <signal driver="usart" instance="2" name="rx"/>
+          </request>
+          <request device-size="4" position="5">
+            <signal driver="lpuart" instance="1" name="rx"/>
+          </request>
+          <request device-size="4" position="6">
+            <signal driver="i2c" instance="1" name="rx"/>
+          </request>
+          <request position="8">
+            <signal driver="tim" instance="2" name="ch1"/>
+          </request>
+        </channel>
+        <channel device-size="6|8|b" position="6">
+          <request position="4">
+            <signal driver="usart" instance="2" name="rx"/>
+          </request>
+          <request device-pin="c|r" position="5">
+            <signal driver="lpuart" instance="1" name="rx"/>
+          </request>
+          <request position="6">
+            <signal driver="i2c" instance="1" name="tx"/>
+          </request>
+        </channel>
+        <channel device-size="6|8|b" position="7">
+          <request position="4">
+            <signal driver="usart" instance="2" name="tx"/>
+          </request>
+          <request device-pin="c|r" position="5">
+            <signal driver="lpuart" instance="1" name="tx"/>
+          </request>
+          <request position="6">
+            <signal driver="i2c" instance="1" name="rx"/>
+          </request>
+          <request position="8">
+            <signal driver="tim" instance="2" name="ch2"/>
+            <signal driver="tim" instance="2" name="ch4"/>
+          </request>
+        </channel>
+      </channels>
+    </driver>
     <driver name="gpio" type="stm32">
       <gpio port="a" pin="0">
         <signal driver="adc" name="in0"/>

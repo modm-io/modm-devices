@@ -77,10 +77,6 @@
     <driver name="dac" type="stm32">
       <feature value="status"/>
     </driver>
-    <driver name="dma" type="stm32-extended">
-      <instance value="1"/>
-      <instance value="2"/>
-    </driver>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1800">
         <wait-state ws="0" hclk-max="16000000"/>
@@ -158,6 +154,209 @@
       <instance device-pin="c|r" value="6"/>
     </driver>
     <driver name="wwdg" type="stm32-v1.0"/>
+    <driver name="dma" type="stm32-stream-channel">
+      <instance value="1"/>
+      <instance value="2"/>
+      <streams instance="1">
+        <stream position="0">
+          <channel position="1">
+            <signal driver="i2c" instance="1" name="rx"/>
+          </channel>
+          <channel position="6">
+            <signal driver="tim" instance="5" name="ch3"/>
+            <signal driver="tim" instance="5" name="up"/>
+          </channel>
+          <channel position="7">
+            <signal driver="fmpi2c" instance="1" name="rx"/>
+          </channel>
+        </stream>
+        <stream position="1">
+          <channel position="0">
+            <signal driver="i2c" instance="1" name="tx"/>
+          </channel>
+          <channel position="2">
+            <signal driver="fmpi2c" instance="1" name="tx"/>
+          </channel>
+          <channel position="6">
+            <signal driver="tim" instance="5" name="ch4"/>
+            <signal driver="tim" instance="5" name="trig"/>
+          </channel>
+          <channel position="7">
+            <signal driver="tim" instance="6" name="up"/>
+          </channel>
+        </stream>
+        <stream position="2">
+          <channel position="6">
+            <signal driver="tim" instance="5" name="ch1"/>
+          </channel>
+          <channel position="7">
+            <signal driver="i2c" instance="2" name="rx"/>
+          </channel>
+        </stream>
+        <stream position="3">
+          <channel device-pin="c|r" position="0">
+            <signal driver="spi" instance="2" name="rx"/>
+          </channel>
+          <channel position="1">
+            <signal driver="fmpi2c" instance="1" name="rx"/>
+          </channel>
+          <channel position="6">
+            <signal driver="tim" instance="5" name="ch4"/>
+            <signal driver="tim" instance="5" name="trig"/>
+          </channel>
+          <channel position="7">
+            <signal driver="i2c" instance="2" name="rx"/>
+          </channel>
+        </stream>
+        <stream position="4">
+          <channel device-pin="c|r" position="0">
+            <signal driver="spi" instance="2" name="tx"/>
+          </channel>
+          <channel position="6">
+            <signal driver="tim" instance="5" name="ch2"/>
+          </channel>
+        </stream>
+        <stream position="5">
+          <channel position="1">
+            <signal driver="i2c" instance="1" name="rx"/>
+          </channel>
+          <channel position="4">
+            <signal driver="usart" instance="2" name="rx"/>
+          </channel>
+          <channel position="7">
+            <signal driver="dac" name="dac1"/>
+          </channel>
+        </stream>
+        <stream position="6">
+          <channel position="1">
+            <signal driver="i2c" instance="1" name="tx"/>
+          </channel>
+          <channel position="4">
+            <signal driver="usart" instance="2" name="tx"/>
+          </channel>
+          <channel position="6">
+            <signal driver="tim" instance="5" name="up"/>
+          </channel>
+        </stream>
+        <stream position="7">
+          <channel position="1">
+            <signal driver="i2c" instance="1" name="tx"/>
+          </channel>
+          <channel position="4">
+            <signal driver="fmpi2c" instance="1" name="tx"/>
+          </channel>
+          <channel position="6">
+            <signal driver="usart" instance="2" name="rx"/>
+          </channel>
+          <channel position="7">
+            <signal driver="i2c" instance="2" name="tx"/>
+          </channel>
+        </stream>
+      </streams>
+      <streams instance="2">
+        <stream position="0">
+          <channel position="0">
+            <signal driver="adc" instance="1"/>
+          </channel>
+          <channel position="3">
+            <signal driver="spi" instance="1" name="rx"/>
+          </channel>
+          <channel position="6">
+            <signal driver="tim" instance="1" name="trig"/>
+          </channel>
+        </stream>
+        <stream position="1">
+          <channel device-pin="c|r" position="5">
+            <signal driver="usart" instance="6" name="rx"/>
+          </channel>
+          <channel position="6">
+            <signal driver="tim" instance="1" name="ch1"/>
+          </channel>
+        </stream>
+        <stream position="2">
+          <channel position="2">
+            <signal driver="spi" instance="1" name="tx"/>
+          </channel>
+          <channel position="3">
+            <signal driver="spi" instance="1" name="rx"/>
+          </channel>
+          <channel position="4">
+            <signal driver="usart" instance="1" name="rx"/>
+          </channel>
+          <channel device-pin="c|r" position="5">
+            <signal driver="usart" instance="6" name="rx"/>
+          </channel>
+          <channel position="6">
+            <signal driver="tim" instance="1" name="ch2"/>
+          </channel>
+        </stream>
+        <stream position="3">
+          <channel device-pin="c|r" position="2">
+            <signal driver="spi" instance="5" name="rx"/>
+          </channel>
+          <channel position="3">
+            <signal driver="spi" instance="1" name="tx"/>
+          </channel>
+          <channel position="6">
+            <signal driver="tim" instance="1" name="ch1"/>
+          </channel>
+        </stream>
+        <stream position="4">
+          <channel position="0">
+            <signal driver="adc" instance="1"/>
+          </channel>
+          <channel device-pin="c|r" position="2">
+            <signal driver="spi" instance="5" name="tx"/>
+          </channel>
+          <channel position="6">
+            <signal driver="tim" instance="1" name="ch4"/>
+            <signal driver="tim" instance="1" name="com"/>
+            <signal driver="tim" instance="1" name="trig"/>
+          </channel>
+        </stream>
+        <stream position="5">
+          <channel position="3">
+            <signal driver="spi" instance="1" name="tx"/>
+          </channel>
+          <channel position="4">
+            <signal driver="usart" instance="1" name="rx"/>
+          </channel>
+          <channel device-pin="c|r" position="5">
+            <signal driver="spi" instance="5" name="tx"/>
+          </channel>
+          <channel position="6">
+            <signal driver="tim" instance="1" name="up"/>
+          </channel>
+          <channel device-pin="c|r" position="7">
+            <signal driver="spi" instance="5" name="rx"/>
+          </channel>
+        </stream>
+        <stream position="6">
+          <channel position="0">
+            <signal driver="tim" instance="1" name="ch1"/>
+            <signal driver="tim" instance="1" name="ch2"/>
+            <signal driver="tim" instance="1" name="ch3"/>
+          </channel>
+          <channel device-pin="c|r" position="5">
+            <signal driver="usart" instance="6" name="tx"/>
+          </channel>
+          <channel position="6">
+            <signal driver="tim" instance="1" name="ch3"/>
+          </channel>
+          <channel device-pin="c|r" position="7">
+            <signal driver="spi" instance="5" name="tx"/>
+          </channel>
+        </stream>
+        <stream position="7">
+          <channel position="4">
+            <signal driver="usart" instance="1" name="tx"/>
+          </channel>
+          <channel device-pin="c|r" position="5">
+            <signal driver="usart" instance="6" name="tx"/>
+          </channel>
+        </stream>
+      </streams>
+    </driver>
     <driver name="gpio" type="stm32">
       <gpio port="a" pin="0">
         <signal driver="adc" instance="1" name="in0"/>

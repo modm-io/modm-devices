@@ -130,10 +130,6 @@
     <driver name="dac" type="stm32">
       <feature value="status"/>
     </driver>
-    <driver name="dma" type="stm32-extended">
-      <instance value="1"/>
-      <instance value="2"/>
-    </driver>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1200">
         <wait-state ws="0" hclk-max="2100000"/>
@@ -200,6 +196,89 @@
     </driver>
     <driver name="usb" type="stm32-v1.2"/>
     <driver name="wwdg" type="stm32-v1.0"/>
+    <driver name="dma" type="stm32-channel">
+      <instance value="1"/>
+      <instance value="2"/>
+      <channels instance="1">
+        <channel position="1">
+          <signal driver="adc"/>
+          <signal driver="tim" instance="2" name="ch3"/>
+          <signal driver="tim" instance="4" name="ch1"/>
+        </channel>
+        <channel position="2">
+          <signal driver="dac" name="ch1"/>
+          <signal driver="spi" instance="1" name="rx"/>
+          <signal driver="tim" instance="2" name="up"/>
+          <signal driver="tim" instance="3" name="ch3"/>
+          <signal driver="tim" instance="6" name="up"/>
+          <signal driver="usart" instance="3" name="tx"/>
+        </channel>
+        <channel position="3">
+          <signal driver="dac" name="ch2"/>
+          <signal driver="spi" instance="1" name="tx"/>
+          <signal driver="tim" instance="3" name="ch4"/>
+          <signal driver="tim" instance="3" name="up"/>
+          <signal driver="tim" instance="7" name="up"/>
+          <signal driver="usart" instance="3" name="rx"/>
+        </channel>
+        <channel position="4">
+          <signal driver="i2c" instance="2" name="tx"/>
+          <signal driver="spi" instance="2" name="rx"/>
+          <signal driver="tim" instance="4" name="ch2"/>
+          <signal driver="usart" instance="1" name="tx"/>
+        </channel>
+        <channel position="5">
+          <signal driver="i2c" instance="2" name="rx"/>
+          <signal driver="spi" instance="2" name="tx"/>
+          <signal driver="tim" instance="2" name="ch1"/>
+          <signal driver="tim" instance="4" name="ch3"/>
+          <signal driver="usart" instance="1" name="rx"/>
+        </channel>
+        <channel position="6">
+          <signal driver="i2c" instance="1" name="tx"/>
+          <signal driver="tim" instance="3" name="ch1"/>
+          <signal driver="tim" instance="3" name="trig"/>
+          <signal driver="usart" instance="2" name="rx"/>
+        </channel>
+        <channel position="7">
+          <signal driver="i2c" instance="1" name="rx"/>
+          <signal driver="tim" instance="2" name="ch2"/>
+          <signal driver="tim" instance="2" name="ch4"/>
+          <signal driver="tim" instance="4" name="up"/>
+          <signal driver="usart" instance="2" name="tx"/>
+        </channel>
+      </channels>
+      <channels instance="2">
+        <channel position="1">
+          <signal driver="spi" instance="3" name="rx"/>
+          <signal driver="tim" instance="5" name="ch4"/>
+          <signal driver="tim" instance="5" name="trig"/>
+          <signal device-size="d|e" driver="uart" instance="5" name="tx"/>
+        </channel>
+        <channel position="2">
+          <signal driver="spi" instance="3" name="tx"/>
+          <signal driver="tim" instance="5" name="ch3"/>
+          <signal driver="tim" instance="5" name="up"/>
+          <signal device-size="d|e" driver="uart" instance="5" name="rx"/>
+        </channel>
+        <channel device-name="62" device-size="c" position="3">
+          <signal device-name="62" driver="aes" name="out"/>
+          <signal device-size="d|e" driver="uart" instance="4" name="rx"/>
+        </channel>
+        <channel device-name="51|52|62" device-size="d|e" position="3">
+          <signal device-name="62" driver="aes" name="out"/>
+          <signal device-size="d|e" driver="uart" instance="4" name="rx"/>
+        </channel>
+        <channel position="4">
+          <signal driver="tim" instance="5" name="ch2"/>
+        </channel>
+        <channel position="5">
+          <signal device-name="62" driver="aes" name="in"/>
+          <signal driver="tim" instance="5" name="ch1"/>
+          <signal device-size="d|e" driver="uart" instance="4" name="tx"/>
+        </channel>
+      </channels>
+    </driver>
     <driver name="gpio" type="stm32">
       <gpio port="a" pin="0">
         <signal driver="adc" name="in0"/>

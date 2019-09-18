@@ -65,10 +65,6 @@
       <instance value="1"/>
     </driver>
     <driver name="crc" type="stm32"/>
-    <driver name="dma" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
-    </driver>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1800">
         <wait-state ws="0" hclk-max="24000000"/>
@@ -103,6 +99,55 @@
     </driver>
     <driver device-name="02" name="usb" type="stm32-v1.1"/>
     <driver name="wwdg" type="stm32-v1.0"/>
+    <driver name="dma" type="stm32-channel">
+      <instance value="1"/>
+      <instance value="2"/>
+      <channels instance="1">
+        <channel position="1">
+          <signal driver="adc" instance="1"/>
+          <signal driver="tim" instance="2" name="ch3"/>
+          <signal driver="tim" instance="4" name="ch1"/>
+        </channel>
+        <channel position="2">
+          <signal driver="spi" instance="1" name="rx"/>
+          <signal driver="tim" instance="2" name="up"/>
+          <signal driver="tim" instance="3" name="ch3"/>
+          <signal device-pin="c|r|v" driver="usart" instance="3" name="tx"/>
+        </channel>
+        <channel position="3">
+          <signal driver="spi" instance="1" name="tx"/>
+          <signal driver="tim" instance="3" name="ch4"/>
+          <signal driver="tim" instance="3" name="up"/>
+          <signal device-pin="c|r|v" driver="usart" instance="3" name="rx"/>
+        </channel>
+        <channel position="4">
+          <signal device-pin="c|r|v" driver="i2c" instance="2" name="tx"/>
+          <signal device-pin="c|r|v" driver="spi" instance="2" name="rx"/>
+          <signal driver="tim" instance="4" name="ch2"/>
+          <signal driver="usart" instance="1" name="tx"/>
+        </channel>
+        <channel position="5">
+          <signal device-pin="c|r|v" driver="i2c" instance="2" name="rx"/>
+          <signal device-pin="c|r|v" driver="spi" instance="2" name="tx"/>
+          <signal driver="tim" instance="2" name="ch1"/>
+          <signal driver="tim" instance="4" name="ch3"/>
+          <signal driver="usart" instance="1" name="rx"/>
+        </channel>
+        <channel position="6">
+          <signal driver="i2c" instance="1" name="tx"/>
+          <signal driver="tim" instance="3" name="ch1"/>
+          <signal driver="tim" instance="3" name="trig"/>
+          <signal driver="usart" instance="2" name="rx"/>
+        </channel>
+        <channel position="7">
+          <signal driver="i2c" instance="1" name="rx"/>
+          <signal driver="tim" instance="2" name="ch2"/>
+          <signal driver="tim" instance="2" name="ch4"/>
+          <signal driver="tim" instance="4" name="up"/>
+          <signal driver="usart" instance="2" name="tx"/>
+        </channel>
+      </channels>
+    </driver>
     <driver name="gpio" type="stm32-f1">
       <remap driver="spi" instance="1" position="0" mask="1">
         <group id="0">
