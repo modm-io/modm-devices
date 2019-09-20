@@ -25,38 +25,42 @@ class STMDeviceTree:
     """
     rootpath = os.path.join(os.path.dirname(__file__), "..", "..", "raw-device-data", "stm32-devices", "mcu")
     familyFile = XMLReader(os.path.join(rootpath, "families.xml"))
+    TemperatureMap = {0: "6", 105: "7", 125: "3"}
+
+    @staticmethod
+    def _format_raw_devices(rawDevices):
+        devices = set()
+        for dev in rawDevices:
+            temp_max = dev.find("Temperature")
+            temp_max = "" if temp_max is None else temp_max.get("Max")
+            name = dev.get("RefName")
+            temp_max = int(float(temp_max)) if len(temp_max) else min(STMDeviceTree.TemperatureMap)
+            for temp, value in STMDeviceTree.TemperatureMap.items():
+                if temp_max >= temp:
+                    devices.add(name[:12] + value + name[13:])
+        return sorted(list(devices))
+
 
     @staticmethod
     def getDevicesFromFamily(family):
-        rawDevices = STMDeviceTree.familyFile.query('//Family[@Name="{}"]/SubFamily/Mcu/@RefName'.format(family))
-        devices = []
-        for dev in sorted(rawDevices):
-            if len(dev) >= 14: continue;
-            shortDev = dev[:12]
-            if all(not d.startswith(shortDev) for d in devices):
-                devices.append(shortDev)
-
+        devices = STMDeviceTree.familyFile.query('//Family[@Name="{}"]/SubFamily/Mcu/@RefName'.format(family))
+        devices = STMDeviceTree._format_raw_devices(devices)
         LOGGER.info("Found devices of family '{}': {}".format(family, ", ".join(devices)))
         return devices
 
     @staticmethod
     def getDevicesFromPrefix(prefix):
-        rawDevices = STMDeviceTree.familyFile.query('//Family/SubFamily/Mcu/@RefName')
-        devices = []
-        for dev in sorted(rawDevices):
-            if len(dev) >= 14 or not dev.startswith(prefix): continue;
-            shortDev = dev[:12]
-            if all(not d.startswith(shortDev) for d in devices):
-                devices.append(shortDev)
-
+        devices = STMDeviceTree.familyFile.query('//Family/SubFamily/Mcu[starts-with(@RefName,"{}")]'.format(prefix))
+        devices = STMDeviceTree._format_raw_devices(devices)
         LOGGER.info("Found devices for prefix '{}': {}".format(prefix, ", ".join(devices)))
-        return devices
+        return list(sorted(devices))
 
     @staticmethod
     def _properties_from_partname(partname):
         p = {}
 
-        deviceNames = STMDeviceTree.familyFile.query('//Family/SubFamily/Mcu[starts-with(@RefName,"{}")]'.format(partname))
+        deviceNames = STMDeviceTree.familyFile.query('//Family/SubFamily/Mcu[starts-with(@RefName,"{}")]'
+                                                     .format(partname[:12] + "x" + partname[13:]))
         comboDeviceName = sorted([d.get("Name") for d in deviceNames])[0]
         device_file = XMLReader(os.path.join(STMDeviceTree.rootpath, comboDeviceName + ".xml"))
         did = STMIdentifier.from_string(partname.lower())
@@ -159,7 +163,8 @@ class STMDeviceTree:
             if match:
                 version = match.group(0).replace("_", ".")
             else:
-                print(version)
+                pass
+                # print(version)
             return version
 
         modules = []
