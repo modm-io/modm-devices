@@ -45,14 +45,13 @@ if __name__ == "__main__":
         xml_path = os.path.join(os.path.dirname(__file__), 'raw-device-data', 'avr-devices', '*', (dev + '*'))
         files = glob.glob(xml_path)
         for filename in files:
-            device = AVRDeviceTree.from_file(filename)
-            if device is None: continue;
-            devices[device.ids.string] = device
-            if device_depth > 0:
-                device_depth -= 1
-            else:
-                print(device.toString())
-                exit(1)
+            for dev in AVRDeviceTree.from_file(filename):
+                devices[dev.ids.string] = dev
+                if device_depth > 0:
+                    device_depth -= 1
+                else:
+                    print(dev.toString())
+                    exit(1)
 
     mergedDevices = DeviceMerger.merge(avr_groups, [d.copy() for d in devices.values()])
 

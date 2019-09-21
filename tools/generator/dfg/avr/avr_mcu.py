@@ -175,9 +175,10 @@ def getMcuForDevice(device_id):
     d = device_id.copy()
     # Search for key by truncating type
     while(True):
-        LOGGER.debug("Searching for '%s'", d.string)
-        if d.string in avrdude_mcu_map:
-            return avrdude_mcu_map[d.string]
+        name = d.string.split("-")[0]
+        LOGGER.debug("Searching for '%s'", name)
+        if name in avrdude_mcu_map:
+            return avrdude_mcu_map[name]
         if len(d.type) == 0: break;
         d.set("type", d.type[:-1])
     LOGGER.warning("Avrdude mcu not found for '%s'!", device_id.string)

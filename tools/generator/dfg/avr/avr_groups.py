@@ -111,7 +111,7 @@ avr_groups = \
     },{
         'family': ['mega'],
         'name': ['8', '16', '32'],
-        'type': ['', 'a']
+        'type': ['', 'a', 'l']
     },{
         'family': ['mega'],
         'name': ['8', '16'],
@@ -119,7 +119,7 @@ avr_groups = \
     },{
         'family': ['mega'],
         'name': ['16', '32'],
-        'type': ['u4']
+        'type': ['u4', 'u4rc']
     },{
         'family': ['mega'],
         'name': ['16', '32'],
@@ -131,7 +131,7 @@ avr_groups = \
     },{
         'family': ['mega'],
         'name': ['48', '88', '168', '328'],
-        'type': ['', 'a', 'p', 'pa']
+        'type': ['', 'a', 'p', 'pa', 'v', 'pv']
     },{
         'family': ['mega'],
         'name': ['48', '88', '168', '328'],
@@ -139,7 +139,7 @@ avr_groups = \
     },{
         'family': ['mega'],
         'name': ['64', '128'],
-        'type': ['', 'a']
+        'type': ['', 'a', 'l']
     },{
         'family': ['mega'],
         'name': ['64', '128', '256'],
@@ -154,7 +154,7 @@ avr_groups = \
     },{
         'family': ['mega'],
         'name': ['164', '324', '644'],
-        'type': ['', 'a', 'p', 'pa']
+        'type': ['', 'a', 'p', 'v', 'pa', 'pv']
     },{
         'family': ['mega'],
         'name': ['1284'],
