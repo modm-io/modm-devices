@@ -21,5 +21,7 @@ script:
   - tools/device/scripts/stats --count
   - tools/device/scripts/stats --name >/dev/null
   - tools/device/scripts/stats --ram >/dev/null
+  - python3 tools/sync_docs.py
+  - git diff -- README.md
   - git status --porcelain
   - (( $(git status --porcelain | wc -l) == 0 ))
