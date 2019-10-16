@@ -300,6 +300,9 @@ stm_groups = \
     # STM32WB devices
     {
         'family': ['wb'],
+        'name': ['50']
+    },{
+        'family': ['wb'],
         'name': ['55']
     }
 ]

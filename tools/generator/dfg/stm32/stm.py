@@ -587,7 +587,7 @@ stm32_memory = \
         },
         'model': [
             {
-                'name': ['55'],
+                'name': ['50', '55'],
                 'memories': {'flash': 0, 'sram1': 0, 'sram2': 64*1024}
             }
         ]
