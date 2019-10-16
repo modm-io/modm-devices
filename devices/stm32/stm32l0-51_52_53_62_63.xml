@@ -43,6 +43,7 @@
     <valid-device>stm32l052r8t6</valid-device>
     <valid-device>stm32l052r8t7</valid-device>
     <valid-device>stm32l052t6y6</valid-device>
+    <valid-device>stm32l052t6y7</valid-device>
     <valid-device>stm32l052t8f6</valid-device>
     <valid-device>stm32l052t8f7</valid-device>
     <valid-device>stm32l052t8y6</valid-device>

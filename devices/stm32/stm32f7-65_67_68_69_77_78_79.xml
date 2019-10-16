@@ -39,7 +39,9 @@
     <valid-device>stm32f767vgt6</valid-device>
     <valid-device>stm32f767vgt7</valid-device>
     <valid-device>stm32f767vih6</valid-device>
+    <valid-device>stm32f767vih7</valid-device>
     <valid-device>stm32f767vit6</valid-device>
+    <valid-device>stm32f767vit7</valid-device>
     <valid-device>stm32f767zgt6</valid-device>
     <valid-device>stm32f767zit6</valid-device>
     <valid-device>stm32f768aiy6</valid-device>

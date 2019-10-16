@@ -5,18 +5,10 @@
     <naming-schema>{platform}{family}{name}{pin}{size}{package}{temperature}{variant}</naming-schema>
     <valid-device>stm32l412c8t6</valid-device>
     <valid-device>stm32l412c8u6</valid-device>
-    <valid-device>stm32l412cbt3</valid-device>
-    <valid-device>stm32l412cbt3p</valid-device>
     <valid-device>stm32l412cbt6</valid-device>
     <valid-device>stm32l412cbt6p</valid-device>
-    <valid-device>stm32l412cbt7</valid-device>
-    <valid-device>stm32l412cbt7p</valid-device>
-    <valid-device>stm32l412cbu3</valid-device>
-    <valid-device>stm32l412cbu3p</valid-device>
     <valid-device>stm32l412cbu6</valid-device>
     <valid-device>stm32l412cbu6p</valid-device>
-    <valid-device>stm32l412cbu7</valid-device>
-    <valid-device>stm32l412cbu7p</valid-device>
     <valid-device>stm32l412k8t6</valid-device>
     <valid-device>stm32l412k8u6</valid-device>
     <valid-device>stm32l412kbt3</valid-device>
@@ -27,18 +19,10 @@
     <valid-device>stm32l412kbu7</valid-device>
     <valid-device>stm32l412r8i6</valid-device>
     <valid-device>stm32l412r8t6</valid-device>
-    <valid-device>stm32l412rbi3</valid-device>
-    <valid-device>stm32l412rbi3p</valid-device>
     <valid-device>stm32l412rbi6</valid-device>
     <valid-device>stm32l412rbi6p</valid-device>
-    <valid-device>stm32l412rbi7</valid-device>
-    <valid-device>stm32l412rbi7p</valid-device>
-    <valid-device>stm32l412rbt3</valid-device>
-    <valid-device>stm32l412rbt3p</valid-device>
     <valid-device>stm32l412rbt6</valid-device>
     <valid-device>stm32l412rbt6p</valid-device>
-    <valid-device>stm32l412rbt7</valid-device>
-    <valid-device>stm32l412rbt7p</valid-device>
     <valid-device>stm32l412t8y6</valid-device>
     <valid-device>stm32l412tby6</valid-device>
     <valid-device>stm32l412tby6p</valid-device>
@@ -380,18 +364,14 @@
       <gpio port="a" pin="0">
         <signal driver="adc" instance="1" name="in5"/>
         <signal driver="comp" instance="1" name="inm"/>
-        <signal device-pin="c|r" driver="comp" instance="1" name="out"/>
         <signal driver="opamp" instance="1" name="vinp"/>
         <signal device-pin="k|t" driver="rcc" name="ck_in"/>
         <signal driver="rtc" name="tamp2"/>
         <signal driver="sys" name="wkup1"/>
-        <signal device-pin="c|r" driver="tim" instance="2" name="ch1"/>
-        <signal device-pin="c|r" driver="tim" instance="2" name="etr"/>
-        <signal device-pin="c|r" driver="usart" instance="2" name="cts"/>
-        <signal device-pin="k|t" af="1" driver="tim" instance="2" name="ch1"/>
-        <signal device-pin="k|t" af="7" driver="usart" instance="2" name="cts"/>
-        <signal device-pin="k|t" af="12" driver="comp" instance="1" name="out"/>
-        <signal device-pin="k|t" af="14" driver="tim" instance="2" name="etr"/>
+        <signal af="1" driver="tim" instance="2" name="ch1"/>
+        <signal af="7" driver="usart" instance="2" name="cts"/>
+        <signal af="12" driver="comp" instance="1" name="out"/>
+        <signal af="14" driver="tim" instance="2" name="etr"/>
       </gpio>
       <gpio port="a" pin="1">
         <signal driver="adc" instance="1" name="in6"/>

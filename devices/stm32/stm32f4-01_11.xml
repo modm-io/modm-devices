@@ -40,7 +40,9 @@
     <valid-device>stm32f401veh6</valid-device>
     <valid-device>stm32f401vet6</valid-device>
     <valid-device>stm32f411ccu6</valid-device>
+    <valid-device>stm32f411ccu7</valid-device>
     <valid-device>stm32f411ccy6</valid-device>
+    <valid-device>stm32f411ccy7</valid-device>
     <valid-device>stm32f411ceu3</valid-device>
     <valid-device>stm32f411ceu6</valid-device>
     <valid-device>stm32f411ceu7</valid-device>

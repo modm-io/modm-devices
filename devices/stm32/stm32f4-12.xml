@@ -773,7 +773,7 @@
         <signal af="2" driver="tim" instance="4" name="ch2"/>
         <signal af="4" driver="i2c" instance="1" name="sda"/>
         <signal af="7" driver="usart" instance="1" name="rx"/>
-        <signal device-pin="v|z" af="12" driver="fsmc" name="nl"/>
+        <signal device-pin="r|v|z" af="12" driver="fsmc" name="nl"/>
       </gpio>
       <gpio port="b" pin="8">
         <signal af="2" driver="tim" instance="4" name="ch3"/>

@@ -762,7 +762,7 @@
         <signal af="3" driver="tim" instance="8" name="bkin"/>
         <signal af="5" driver="spi" instance="1" name="miso"/>
         <signal af="9" driver="tim" instance="13" name="ch1"/>
-        <signal af="13" driver="dcmi" name="pixck"/>
+        <signal af="13" driver="dcmi" name="pixclk"/>
         <signal device-name="29|39" af="14" driver="ltdc" name="g2"/>
       </gpio>
       <gpio port="a" pin="7">

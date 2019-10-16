@@ -983,7 +983,7 @@
         <signal af="4" driver="i2c" instance="1" name="sda"/>
         <signal af="6" driver="dfsdm" instance="2" name="datin7"/>
         <signal af="7" driver="usart" instance="1" name="rx"/>
-        <signal device-pin="v|z" af="12" driver="fsmc" name="nl"/>
+        <signal device-pin="m|r|v|z" af="12" driver="fsmc" name="nl"/>
       </gpio>
       <gpio port="b" pin="8">
         <signal af="1" driver="lptim" instance="1" name="out"/>

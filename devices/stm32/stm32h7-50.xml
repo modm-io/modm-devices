@@ -251,7 +251,7 @@
     <driver name="rcc" type="stm32-v1.0"/>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v2.7"/>
-    <driver name="sai" type="stm32-v2.0">
+    <driver name="sai" type="stm32-sai1_h7_cube">
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>

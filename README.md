@@ -13,18 +13,18 @@ These tools and this data set is maintained and curated by
 It is licensed under the MPLv2 license.
 The CI checks daily for new data: [![](https://travis-ci.org/modm-io/modm-devices.svg?branch=develop)](https://travis-ci.org/modm-io/modm-devices)
 
-Currently data for <!--devicecount-->2649<!--/devicecount--> devices is available.
+Currently data for <!--devicecount-->2796<!--/devicecount--> devices is available.
 Please open an issue or better yet a pull request for additional support.
 
 <!--devicetable-->
 | Family        | Devices | Family        | Devices | Family        | Devices |
 |:--------------|:--------|:--------------|:--------|:--------------|:--------|
 | AT90          |    12   | ATMEGA        |   370   | ATTINY        |   148   |
-| STM32F0       |   167   | STM32F1       |   194   | STM32F2       |    71   |
-| STM32F3       |   143   | STM32F4       |   335   | STM32F7       |   170   |
-| STM32G0       |    81   | STM32G4       |   119   | STM32H7       |    72   |
-| STM32L0       |   287   | STM32L1       |   140   | STM32L4       |   322   |
-| STM32WB       |    18   |
+| STM32F0       |   168   | STM32F1       |   194   | STM32F2       |    71   |
+| STM32F3       |   143   | STM32F4       |   337   | STM32F7       |   172   |
+| STM32G0       |   103   | STM32G4       |   217   | STM32H7       |    92   |
+| STM32L0       |   288   | STM32L1       |   140   | STM32L4       |   316   |
+| STM32WB       |    25   |
 <!--/devicetable-->
 
 
