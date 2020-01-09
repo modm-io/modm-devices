@@ -76,6 +76,12 @@ class STMDeviceTree:
             core += "d"
         p["core"] = core
 
+        # Information from the CMSIS headers
+        stm_header = STMHeader(did)
+        if not stm_header.is_valid:
+            LOGGER.error("CMSIS Header invalid for %s", did.string)
+            return None
+
         # flash and ram sizes
         # The <ram> and <flash> can occur multiple times.
         # they are "ordered" in the same way as the `(S-I-Z-E)` ids in the device combo name
@@ -172,7 +178,7 @@ class STMDeviceTree:
             # These IPs are all software modules, NOT hardware modules. Their version string is weird too.
             software_ips = {"GFXSIMULATOR", "GRAPHICS", "FATFS", "TOUCHSENSING", "PDM2PCM",
                             "MBEDTLS", "FREERTOS", "CORTEX_M7", "NVIC", "USB_DEVICE",
-                            "USB_HOST", "LWIP", "LIBJPEG", "GUI_INTERFACE"}
+                            "USB_HOST", "LWIP", "LIBJPEG", "GUI_INTERFACE", "TRACER"}
             if any(ip.get("Name").upper().startswith(p) for p in software_ips):
                 continue
 
@@ -199,11 +205,6 @@ class STMDeviceTree:
         instances = [m[1] for m in modules]
         # print("\n".join(str(m) for m in modules))
 
-        # Information from the CMSIS headers
-        stm_header = STMHeader(did)
-        if not stm_header.is_valid:
-            LOGGER.error("CMSIS Header invalid for %s", did.string)
-            return None
         p["stm_header"] = stm_header
         p["interrupts"] = stm_header.get_interrupt_table()
         # Flash latency table
