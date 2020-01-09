@@ -17,8 +17,12 @@
     <valid-device>stm32g071g6u6</valid-device>
     <valid-device>stm32g071g8u6</valid-device>
     <valid-device>stm32g071g8u6n</valid-device>
+    <valid-device>stm32g071gbu3</valid-device>
+    <valid-device>stm32g071gbu3n</valid-device>
     <valid-device>stm32g071gbu6</valid-device>
     <valid-device>stm32g071gbu6n</valid-device>
+    <valid-device>stm32g071gbu7</valid-device>
+    <valid-device>stm32g071gbu7n</valid-device>
     <valid-device>stm32g071k6t6</valid-device>
     <valid-device>stm32g071k6u3</valid-device>
     <valid-device>stm32g071k6u6</valid-device>
@@ -180,7 +184,6 @@
       <instance value="16"/>
       <instance value="17"/>
     </driver>
-    <driver name="tracer_emb" type="stm32-v1.0"/>
     <driver device-pin="c|k|r" device-variant="" name="ucpd" type="stm32-v1.0">
       <instance value="1"/>
       <instance device-pin="c|r" device-variant="" value="2"/>

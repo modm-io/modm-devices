@@ -28,9 +28,15 @@
     <valid-device>stm32g473vbh6</valid-device>
     <valid-device>stm32g473vbi6</valid-device>
     <valid-device>stm32g473vbt6</valid-device>
+    <valid-device>stm32g473vch3</valid-device>
     <valid-device>stm32g473vch6</valid-device>
+    <valid-device>stm32g473vch7</valid-device>
+    <valid-device>stm32g473vci3</valid-device>
     <valid-device>stm32g473vci6</valid-device>
+    <valid-device>stm32g473vci7</valid-device>
+    <valid-device>stm32g473vct3</valid-device>
     <valid-device>stm32g473vct6</valid-device>
+    <valid-device>stm32g473vct7</valid-device>
     <valid-device>stm32g473veh3</valid-device>
     <valid-device>stm32g473veh6</valid-device>
     <valid-device>stm32g473veh7</valid-device>
@@ -288,7 +294,6 @@
       <instance value="16"/>
       <instance value="17"/>
     </driver>
-    <driver name="tracer_emb" type="stm32-v1.0"/>
     <driver device-pin="m|q|r|v" name="uart" type="stm32-extended">
       <feature value="tcbgt"/>
       <instance value="4"/>

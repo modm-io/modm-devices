@@ -217,7 +217,6 @@
       <instance value="16"/>
       <instance value="17"/>
     </driver>
-    <driver name="tracer_emb" type="stm32-v1.0"/>
     <driver device-pin="m|q|r|v" name="uart" type="stm32-extended">
       <feature value="tcbgt"/>
       <instance value="4"/>

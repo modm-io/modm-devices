@@ -5,8 +5,12 @@
     <naming-schema>{platform}{family}{name}{pin}{size}{package}{temperature}{variant}</naming-schema>
     <valid-device>stm32g431c6t6</valid-device>
     <valid-device>stm32g431c6u6</valid-device>
+    <valid-device>stm32g431c8t3</valid-device>
     <valid-device>stm32g431c8t6</valid-device>
+    <valid-device>stm32g431c8t7</valid-device>
+    <valid-device>stm32g431c8u3</valid-device>
     <valid-device>stm32g431c8u6</valid-device>
+    <valid-device>stm32g431c8u7</valid-device>
     <valid-device>stm32g431cbt3</valid-device>
     <valid-device>stm32g431cbt6</valid-device>
     <valid-device>stm32g431cbt7</valid-device>
@@ -252,7 +256,6 @@
       <instance value="16"/>
       <instance value="17"/>
     </driver>
-    <driver name="tracer_emb" type="stm32-v1.0"/>
     <driver device-pin="m|r|v" name="uart" type="stm32-extended">
       <feature value="tcbgt"/>
       <instance value="4"/>

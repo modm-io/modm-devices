@@ -4,6 +4,7 @@
   <device platform="stm32" family="f4" name="69|79" pin="a|b|i|n|v|z" size="e|g|i" package="h|t|y" temperature="6|7" variant="">
     <naming-schema>{platform}{family}{name}{pin}{size}{package}{temperature}{variant}</naming-schema>
     <valid-device>stm32f469aeh6</valid-device>
+    <valid-device>stm32f469aeh7</valid-device>
     <valid-device>stm32f469aey6</valid-device>
     <valid-device>stm32f469agh6</valid-device>
     <valid-device>stm32f469agy6</valid-device>

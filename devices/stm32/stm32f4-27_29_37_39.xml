@@ -40,7 +40,9 @@
     <valid-device>stm32f429zgt6</valid-device>
     <valid-device>stm32f429zgy6</valid-device>
     <valid-device>stm32f429zit6</valid-device>
+    <valid-device>stm32f429zit7</valid-device>
     <valid-device>stm32f429ziy6</valid-device>
+    <valid-device>stm32f429ziy7</valid-device>
     <valid-device>stm32f437aih6</valid-device>
     <valid-device>stm32f437igh6</valid-device>
     <valid-device>stm32f437igt6</valid-device>
@@ -70,7 +72,9 @@
     <valid-device>stm32f439vgt6</valid-device>
     <valid-device>stm32f439vit6</valid-device>
     <valid-device>stm32f439zgt6</valid-device>
+    <valid-device>stm32f439zgt7</valid-device>
     <valid-device>stm32f439zgy6</valid-device>
+    <valid-device>stm32f439zgy7</valid-device>
     <valid-device>stm32f439zit6</valid-device>
     <valid-device>stm32f439ziy6</valid-device>
     <driver name="core" type="cortex-m4f">

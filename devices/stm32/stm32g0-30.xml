@@ -476,9 +476,6 @@
         <signal driver="rcc" name="osc_out"/>
         <signal af="0" driver="rcc" name="osc_en"/>
       </gpio>
-      <gpio port="f" pin="2">
-        <signal af="0" driver="rcc" name="mco"/>
-      </gpio>
     </driver>
   </device>
 </modm>
