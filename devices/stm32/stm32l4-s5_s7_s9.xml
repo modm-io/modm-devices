@@ -105,8 +105,8 @@
       <vector position="80" name="RNG"/>
       <vector position="81" name="FPU"/>
       <vector position="82" name="HASH_CRS"/>
-      <vector position="83" name="I2C4_EV"/>
-      <vector position="84" name="I2C4_ER"/>
+      <vector position="83" name="I2C4_ER"/>
+      <vector position="84" name="I2C4_EV"/>
       <vector position="85" name="DCMI"/>
       <vector position="90" name="DMA2D"/>
       <vector device-name="s7|s9" position="91" name="LTDC"/>

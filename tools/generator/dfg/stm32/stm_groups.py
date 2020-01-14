@@ -295,6 +295,12 @@ stm_groups = \
     },{
         'family': ['l4'],
         'name': ['s5', 's7', 's9']
+    },{
+        'family': ['l4'],
+        'name': ['p5']
+    },{
+        'family': ['l4'],
+        'name': ['q5']
     },
 
     # STM32WB devices
