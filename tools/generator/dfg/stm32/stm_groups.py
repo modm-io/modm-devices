@@ -227,6 +227,15 @@ stm_groups = \
     },{
         'family': ['h7'],
         'name': ['47', '57']
+    },{
+        'family': ['h7'],
+        'name': ['a3']
+    },{
+        'family': ['h7'],
+        'name': ['b0']
+    },{
+        'family': ['h7'],
+        'name': ['b3']
     },
 
     # STM32L0 devices
