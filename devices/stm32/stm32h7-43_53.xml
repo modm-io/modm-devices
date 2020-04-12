@@ -335,6 +335,7 @@
     </driver>
     <driver name="usb_otg_fs" type="stm32-v2.4"/>
     <driver name="usb_otg_hs" type="stm32-v2.0"/>
+    <driver name="vrefbuf" type="stm32-v1.0"/>
     <driver name="wwdg" type="stm32-v2.0">
       <instance value="1"/>
     </driver>

@@ -1062,8 +1062,7 @@
         <signal af="12" driver="sdmmc" instance="1" name="ck"/>
       </gpio>
       <gpio port="c" pin="13">
-        <signal driver="rtc" name="out_alarm"/>
-        <signal driver="rtc" name="out_calib"/>
+        <signal driver="rtc" name="out"/>
         <signal driver="rtc" name="tamp1"/>
         <signal driver="rtc" name="ts"/>
         <signal driver="sys" name="wkup4"/>

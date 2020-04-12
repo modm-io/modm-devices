@@ -206,6 +206,7 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
+    <driver name="cortex_m4" type="stm32-v1.0"/>
     <driver name="crc" type="stm32">
       <feature value="polynomial"/>
       <feature value="reverse"/>
@@ -355,6 +356,7 @@
     </driver>
     <driver name="usb_otg_fs" type="stm32-v2.4"/>
     <driver name="usb_otg_hs" type="stm32-v2.0"/>
+    <driver name="vrefbuf" type="stm32-v1.0"/>
     <driver name="wwdg" type="stm32-v2.0">
       <instance value="1"/>
       <instance value="2"/>

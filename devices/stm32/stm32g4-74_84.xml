@@ -9,8 +9,12 @@
     <valid-device>stm32g474cbu3</valid-device>
     <valid-device>stm32g474cbu6</valid-device>
     <valid-device>stm32g474cbu7</valid-device>
+    <valid-device>stm32g474cct3</valid-device>
     <valid-device>stm32g474cct6</valid-device>
+    <valid-device>stm32g474cct7</valid-device>
+    <valid-device>stm32g474ccu3</valid-device>
     <valid-device>stm32g474ccu6</valid-device>
+    <valid-device>stm32g474ccu7</valid-device>
     <valid-device>stm32g474cet3</valid-device>
     <valid-device>stm32g474cet6</valid-device>
     <valid-device>stm32g474cet7</valid-device>
@@ -19,7 +23,9 @@
     <valid-device>stm32g474ceu7</valid-device>
     <valid-device>stm32g474mbt6</valid-device>
     <valid-device>stm32g474mct6</valid-device>
+    <valid-device>stm32g474met3</valid-device>
     <valid-device>stm32g474met6</valid-device>
+    <valid-device>stm32g474met7</valid-device>
     <valid-device>stm32g474mey6</valid-device>
     <valid-device>stm32g474qbt6</valid-device>
     <valid-device>stm32g474qct6</valid-device>

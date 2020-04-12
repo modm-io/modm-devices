@@ -26,7 +26,9 @@
     <valid-device>stm32l471qei6</valid-device>
     <valid-device>stm32l471qei7</valid-device>
     <valid-device>stm32l471qgi6</valid-device>
+    <valid-device>stm32l471ret3</valid-device>
     <valid-device>stm32l471ret6</valid-device>
+    <valid-device>stm32l471ret7</valid-device>
     <valid-device>stm32l471rgt6</valid-device>
     <valid-device>stm32l471vet6</valid-device>
     <valid-device>stm32l471vgt3</valid-device>

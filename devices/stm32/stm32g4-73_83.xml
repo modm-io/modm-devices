@@ -15,7 +15,9 @@
     <valid-device>stm32g473ceu7</valid-device>
     <valid-device>stm32g473mbt6</valid-device>
     <valid-device>stm32g473mct6</valid-device>
+    <valid-device>stm32g473met3</valid-device>
     <valid-device>stm32g473met6</valid-device>
+    <valid-device>stm32g473met7</valid-device>
     <valid-device>stm32g473mey6</valid-device>
     <valid-device>stm32g473qbt6</valid-device>
     <valid-device>stm32g473qct6</valid-device>
@@ -25,9 +27,15 @@
     <valid-device>stm32g473ret3</valid-device>
     <valid-device>stm32g473ret6</valid-device>
     <valid-device>stm32g473ret7</valid-device>
+    <valid-device>stm32g473vbh3</valid-device>
     <valid-device>stm32g473vbh6</valid-device>
+    <valid-device>stm32g473vbh7</valid-device>
+    <valid-device>stm32g473vbi3</valid-device>
     <valid-device>stm32g473vbi6</valid-device>
+    <valid-device>stm32g473vbi7</valid-device>
+    <valid-device>stm32g473vbt3</valid-device>
     <valid-device>stm32g473vbt6</valid-device>
+    <valid-device>stm32g473vbt7</valid-device>
     <valid-device>stm32g473vch3</valid-device>
     <valid-device>stm32g473vch6</valid-device>
     <valid-device>stm32g473vch7</valid-device>
@@ -52,7 +60,9 @@
     <valid-device>stm32g483ceu3</valid-device>
     <valid-device>stm32g483ceu6</valid-device>
     <valid-device>stm32g483ceu7</valid-device>
+    <valid-device>stm32g483met3</valid-device>
     <valid-device>stm32g483met6</valid-device>
+    <valid-device>stm32g483met7</valid-device>
     <valid-device>stm32g483mey6</valid-device>
     <valid-device>stm32g483qet6</valid-device>
     <valid-device>stm32g483ret3</valid-device>

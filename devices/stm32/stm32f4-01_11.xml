@@ -6,9 +6,7 @@
     <valid-device>stm32f401cbu3</valid-device>
     <valid-device>stm32f401cbu6</valid-device>
     <valid-device>stm32f401cbu7</valid-device>
-    <valid-device>stm32f401cby3</valid-device>
     <valid-device>stm32f401cby6</valid-device>
-    <valid-device>stm32f401cby7</valid-device>
     <valid-device>stm32f401ccf6</valid-device>
     <valid-device>stm32f401ccf7</valid-device>
     <valid-device>stm32f401ccu6</valid-device>

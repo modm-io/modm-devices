@@ -294,7 +294,7 @@
         <signal af="6" driver="i2c" instance="1" name="sda"/>
       </gpio>
       <gpio port="a" pin="11">
-        <signal driver="adc" instance="1" name="in15"/>
+        <signal device-pin="f|j|k" driver="adc" instance="1" name="in15"/>
         <signal af="0" driver="i2s" instance="1" name="mck"/>
         <signal af="0" driver="spi" instance="1" name="miso"/>
         <signal af="1" driver="usart" instance="1" name="cts"/>
@@ -304,7 +304,7 @@
         <signal af="6" driver="i2c" instance="2" name="scl"/>
       </gpio>
       <gpio port="a" pin="12">
-        <signal driver="adc" instance="1" name="in16"/>
+        <signal device-pin="f|j|k" driver="adc" instance="1" name="in16"/>
         <signal af="0" driver="i2s" instance="1" name="sd"/>
         <signal af="0" driver="spi" instance="1" name="mosi"/>
         <signal af="1" driver="usart" instance="1" name="ck"/>

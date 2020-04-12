@@ -7,7 +7,9 @@
     <valid-device>stm32l4s5qii3</valid-device>
     <valid-device>stm32l4s5qii6</valid-device>
     <valid-device>stm32l4s5qii7</valid-device>
+    <valid-device>stm32l4s5vit3</valid-device>
     <valid-device>stm32l4s5vit6</valid-device>
+    <valid-device>stm32l4s5vit7</valid-device>
     <valid-device>stm32l4s5zit6</valid-device>
     <valid-device>stm32l4s5ziy6</valid-device>
     <valid-device>stm32l4s7aii6</valid-device>

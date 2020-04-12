@@ -1201,8 +1201,7 @@
         <signal device-name="50" af="13" driver="dcmi" name="d9"/>
       </gpio>
       <gpio port="c" pin="13">
-        <signal driver="rtc" name="out_alarm"/>
-        <signal driver="rtc" name="out_calib"/>
+        <signal driver="rtc" name="out"/>
         <signal driver="rtc" name="tamp1"/>
         <signal driver="rtc" name="ts"/>
         <signal driver="sys" name="wkup4"/>

@@ -27,6 +27,7 @@
     <valid-device>stm32l4r9zij6</valid-device>
     <valid-device>stm32l4r9zit6</valid-device>
     <valid-device>stm32l4r9ziy6</valid-device>
+    <valid-device>stm32l4r9ziy6p</valid-device>
     <driver name="core" type="cortex-m4f">
       <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
       <memory device-size="i" name="flash" access="rx" start="0x8000000" size="2097152"/>
@@ -846,7 +847,9 @@
         <signal af="7" driver="usart" instance="3" name="rx"/>
         <signal af="8" driver="lpuart" instance="1" name="tx"/>
         <signal af="10" driver="octospim" name="p1_ncs"/>
-        <signal device-name="r9" af="11" driver="dsihost" name="te"/>
+        <signal device-name="r9" device-pin="a" device-size="g|i" device-package="i" af="11" driver="dsihost" name="te"/>
+        <signal device-name="r9" device-pin="v" device-size="g|i" device-package="t" af="11" driver="dsihost" name="te"/>
+        <signal device-name="r9" device-pin="z" device-size="g|i" device-package="j|t|y" af="11" driver="dsihost" name="te"/>
         <signal af="12" driver="comp" instance="2" name="out"/>
       </gpio>
       <gpio port="b" pin="12">
@@ -1612,44 +1615,52 @@
         <signal af="12" driver="fmc" name="ne4"/>
         <signal af="13" driver="sai" instance="2" name="sd_a"/>
       </gpio>
-      <gpio device-name="r7|r9" device-pin="a" device-package="i" port="g" pin="13">
+      <gpio device-name="r5|r9" device-pin="z" device-package="y" device-variant="" port="g" pin="13">
         <signal af="4" driver="i2c" instance="1" name="sda"/>
         <signal af="7" driver="usart" instance="1" name="ck"/>
-        <signal device-name="r7|r9" device-pin="a" device-package="i" af="11" driver="ltdc" name="r0"/>
-        <signal device-name="r7" device-pin="z" device-package="t" af="11" driver="ltdc" name="r0"/>
-        <signal device-name="r9" device-pin="z" device-package="j|y" af="11" driver="ltdc" name="r0"/>
+        <signal device-name="r7|r9" device-pin="a" device-package="i" device-variant="" af="11" driver="ltdc" name="r0"/>
+        <signal device-name="r7" device-pin="z" device-package="t" device-variant="" af="11" driver="ltdc" name="r0"/>
+        <signal device-name="r9" device-pin="z" device-package="j|y" device-variant="" af="11" driver="ltdc" name="r0"/>
         <signal af="12" driver="fmc" name="a24"/>
       </gpio>
-      <gpio device-name="r5" device-pin="a|q" device-package="i" port="g" pin="13">
+      <gpio device-name="r7|r9" device-pin="a" device-package="i" device-variant="" port="g" pin="13">
         <signal af="4" driver="i2c" instance="1" name="sda"/>
         <signal af="7" driver="usart" instance="1" name="ck"/>
-        <signal device-name="r7|r9" device-pin="a" device-package="i" af="11" driver="ltdc" name="r0"/>
-        <signal device-name="r7" device-pin="z" device-package="t" af="11" driver="ltdc" name="r0"/>
-        <signal device-name="r9" device-pin="z" device-package="j|y" af="11" driver="ltdc" name="r0"/>
+        <signal device-name="r7|r9" device-pin="a" device-package="i" device-variant="" af="11" driver="ltdc" name="r0"/>
+        <signal device-name="r7" device-pin="z" device-package="t" device-variant="" af="11" driver="ltdc" name="r0"/>
+        <signal device-name="r9" device-pin="z" device-package="j|y" device-variant="" af="11" driver="ltdc" name="r0"/>
         <signal af="12" driver="fmc" name="a24"/>
       </gpio>
-      <gpio device-name="r5" device-pin="z" device-package="t|y" port="g" pin="13">
+      <gpio device-name="r5" device-pin="a|q" device-package="i" device-variant="" port="g" pin="13">
         <signal af="4" driver="i2c" instance="1" name="sda"/>
         <signal af="7" driver="usart" instance="1" name="ck"/>
-        <signal device-name="r7|r9" device-pin="a" device-package="i" af="11" driver="ltdc" name="r0"/>
-        <signal device-name="r7" device-pin="z" device-package="t" af="11" driver="ltdc" name="r0"/>
-        <signal device-name="r9" device-pin="z" device-package="j|y" af="11" driver="ltdc" name="r0"/>
+        <signal device-name="r7|r9" device-pin="a" device-package="i" device-variant="" af="11" driver="ltdc" name="r0"/>
+        <signal device-name="r7" device-pin="z" device-package="t" device-variant="" af="11" driver="ltdc" name="r0"/>
+        <signal device-name="r9" device-pin="z" device-package="j|y" device-variant="" af="11" driver="ltdc" name="r0"/>
         <signal af="12" driver="fmc" name="a24"/>
       </gpio>
-      <gpio device-name="r7" device-pin="z" device-package="t" port="g" pin="13">
+      <gpio device-name="r5" device-pin="z" device-package="t" device-variant="|p" port="g" pin="13">
         <signal af="4" driver="i2c" instance="1" name="sda"/>
         <signal af="7" driver="usart" instance="1" name="ck"/>
-        <signal device-name="r7|r9" device-pin="a" device-package="i" af="11" driver="ltdc" name="r0"/>
-        <signal device-name="r7" device-pin="z" device-package="t" af="11" driver="ltdc" name="r0"/>
-        <signal device-name="r9" device-pin="z" device-package="j|y" af="11" driver="ltdc" name="r0"/>
+        <signal device-name="r7|r9" device-pin="a" device-package="i" device-variant="" af="11" driver="ltdc" name="r0"/>
+        <signal device-name="r7" device-pin="z" device-package="t" device-variant="" af="11" driver="ltdc" name="r0"/>
+        <signal device-name="r9" device-pin="z" device-package="j|y" device-variant="" af="11" driver="ltdc" name="r0"/>
         <signal af="12" driver="fmc" name="a24"/>
       </gpio>
-      <gpio device-name="r9" device-pin="z" device-package="j|y" port="g" pin="13">
+      <gpio device-name="r7" device-pin="z" device-package="t" device-variant="" port="g" pin="13">
         <signal af="4" driver="i2c" instance="1" name="sda"/>
         <signal af="7" driver="usart" instance="1" name="ck"/>
-        <signal device-name="r7|r9" device-pin="a" device-package="i" af="11" driver="ltdc" name="r0"/>
-        <signal device-name="r7" device-pin="z" device-package="t" af="11" driver="ltdc" name="r0"/>
-        <signal device-name="r9" device-pin="z" device-package="j|y" af="11" driver="ltdc" name="r0"/>
+        <signal device-name="r7|r9" device-pin="a" device-package="i" device-variant="" af="11" driver="ltdc" name="r0"/>
+        <signal device-name="r7" device-pin="z" device-package="t" device-variant="" af="11" driver="ltdc" name="r0"/>
+        <signal device-name="r9" device-pin="z" device-package="j|y" device-variant="" af="11" driver="ltdc" name="r0"/>
+        <signal af="12" driver="fmc" name="a24"/>
+      </gpio>
+      <gpio device-name="r9" device-pin="z" device-package="j" device-variant="" port="g" pin="13">
+        <signal af="4" driver="i2c" instance="1" name="sda"/>
+        <signal af="7" driver="usart" instance="1" name="ck"/>
+        <signal device-name="r7|r9" device-pin="a" device-package="i" device-variant="" af="11" driver="ltdc" name="r0"/>
+        <signal device-name="r7" device-pin="z" device-package="t" device-variant="" af="11" driver="ltdc" name="r0"/>
+        <signal device-name="r9" device-pin="z" device-package="j|y" device-variant="" af="11" driver="ltdc" name="r0"/>
         <signal af="12" driver="fmc" name="a24"/>
       </gpio>
       <gpio device-name="r5|r7" device-pin="z" device-package="t" port="g" pin="14">
