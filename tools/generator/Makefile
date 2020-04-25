@@ -1,93 +1,55 @@
 
-init:
-	@git clone https://github.com/modm-io/cmsis-header-stm32.git ext/cmsis-header-stm32
-	@git clone https://github.com/modm-io/cmsis-5-partial.git ext/cmsis-5-partial
+# Git Submodule management
+ext/%:
+	@git clone https://github.com/modm-io/$(@:ext/%=%).git $@
 
+.PHONY: init
+init: ext/cmsis-header-stm32 ext/cmsis-5-partial #ext/cmsis-header-sam
 
-extract-avr:
-	(cd raw-data-extractor && python3 extract-avr.py)
+.PHONY: clean_init
+clean_init:
+	@rm -rf ext/
 
-extract-stm32:
-	(cd raw-data-extractor && python3 extract-stm32.py)
+# Raw device data management
+raw-device-data/%-devices:
+	(cd raw-data-extractor && python3 extract-$(@:raw-device-data/%-devices=%).py)
 
+.PHONY: extract
+extract: raw-device-data/avr-devices raw-device-data/stm32-devices raw-device-data/sam-devices
 
-generate-at90:
-	@rm -f ../../devices/avr/at90*
-	./avr_generator.py AT90
+.PHONY: clean_extract
+clean_extract:
+# 	@rm -rf raw-device-data/
 
-generate-attiny:
-	@rm -f ../../devices/avr/attiny*
-	./avr_generator.py ATtiny
+# AVR device files
+.PHONY: generate-at%
+generate-at%: raw-device-data/avr-devices
+	@rm -f ../../devices/avr/$(@:generate-%=%)*
+	./avr_generator.py $(@:generate-at%=AT%)
 
-generate-atmega:
-	@rm -f ../../devices/avr/atmega*
-	./avr_generator.py ATmega
-
+.PHONY: generate-avr
 generate-avr: generate-at90 generate-attiny generate-atmega
 
 
-generate-stm32f0:
-	@rm -f ../../devices/stm32/stm32f0*
-	./stm_generator.py STM32F0
+# SAM device files
+.PHONY: generate-sam%
+generate-sam%: raw-device-data/sam-devices ext/cmsis-5-partial
+	@rm -f ../../devices/sam/$(@:generate-%=%)*
+	./sam_generator.py $(@:generate-%=%)
 
-generate-stm32f1:
-	@rm -f ../../devices/stm32/stm32f1*
-	./stm_generator.py STM32F1
+.PHONY: generate-sam
+generate-sam: generate-saml21 generate-samd21 generate-samd51
 
-generate-stm32f2:
-	@rm -f ../../devices/stm32/stm32f2*
-	./stm_generator.py STM32F2
 
-generate-stm32f3:
-	@rm -f ../../devices/stm32/stm32f3*
-	./stm_generator.py STM32F3
+# STM32 device files
+.PHONY: generate-stm32%
+generate-stm32%: raw-device-data/sam-devices ext/cmsis-5-partial ext/cmsis-header-stm32
+	@rm -f ../../devices/stm32/$(@:generate-%=%)*
+	./stm_generator.py `echo $(@:generate-%=%) | tr '[:lower:]' '[:upper:]'`
 
-generate-stm32f4:
-	@rm -f ../../devices/stm32/stm32f4*
-	./stm_generator.py STM32F4
-
-generate-stm32f7:
-	@rm -f ../../devices/stm32/stm32f7*
-	./stm_generator.py STM32F7
-
-generate-stm32g0:
-	@rm -f ../../devices/stm32/stm32g0*
-	./stm_generator.py STM32G0
-
-generate-stm32g4:
-	@rm -f ../../devices/stm32/stm32g4*
-	./stm_generator.py STM32G4
-
-generate-stm32h7:
-	@rm -f ../../devices/stm32/stm32h7*
-	./stm_generator.py STM32H7
-
-generate-stm32l0:
-	@rm -f ../../devices/stm32/stm32l0*
-	./stm_generator.py STM32L0
-
-generate-stm32l1:
-	@rm -f ../../devices/stm32/stm32l1*
-	./stm_generator.py STM32L1
-
-generate-stm32l4:
-	@rm -f ../../devices/stm32/stm32l4*
-	./stm_generator.py STM32L4
-
-generate-stm32wb:
-	@rm -f ../../devices/stm32/stm32wb*
-	./stm_generator.py STM32WB
-
+.PHONY: generate-stm32
 generate-stm32: generate-stm32f0 generate-stm32f1 generate-stm32f2 generate-stm32f3 \
 				generate-stm32f4 generate-stm32f7 generate-stm32g0 generate-stm32g4 \
 				generate-stm32h7 generate-stm32l0 generate-stm32l1 generate-stm32l4 \
 				generate-stm32wb
 
-
-.PHONY:
-	init extract-avr extract-stm32
-	generate-avr generate-at90 generate-attiny generate-atmega
-	generate-stm32 generate-stm32l0 generate-stm32l1 generate-stm32l4
-	generate-stm32f0 generate-stm32f1 generate-stm32f2 generate-stm32f3 generate-stm32f4 generate-stm32f7
-	generate-stm32g0 generate-stm32g4
-	generate-stm32h7

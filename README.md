@@ -13,18 +13,18 @@ These tools and this data set is maintained and curated by
 It is licensed under the MPLv2 license.
 The CI checks daily for new data: [![](https://travis-ci.org/modm-io/modm-devices.svg?branch=develop)](https://travis-ci.org/modm-io/modm-devices)
 
-Currently data for <!--devicecount-->2984<!--/devicecount--> devices is available.
+Currently data for <!--devicecount-->3240<!--/devicecount--> devices is available.
 Please open an issue or better yet a pull request for additional support.
 
 <!--devicetable-->
 | Family        | Devices | Family        | Devices | Family        | Devices |
 |:--------------|:--------|:--------------|:--------|:--------------|:--------|
 | AT90          |    12   | ATMEGA        |   370   | ATTINY        |   148   |
-| STM32F0       |   168   | STM32F1       |   194   | STM32F2       |    71   |
-| STM32F3       |   143   | STM32F4       |   340   | STM32F7       |   174   |
-| STM32G0       |   117   | STM32G4       |   263   | STM32H7       |   153   |
-| STM32L0       |   307   | STM32L1       |   140   | STM32L4       |   353   |
-| STM32WB       |    31   |
+| SAMD          |   209   | SAML          |    47   | STM32F0       |   168   |
+| STM32F1       |   194   | STM32F2       |    71   | STM32F3       |   143   |
+| STM32F4       |   340   | STM32F7       |   174   | STM32G0       |   117   |
+| STM32G4       |   263   | STM32H7       |   153   | STM32L0       |   307   |
+| STM32L1       |   140   | STM32L4       |   353   | STM32WB       |    31   |
 <!--/devicetable-->
 
 
@@ -33,13 +33,11 @@ Please open an issue or better yet a pull request for additional support.
 ```sh
 git clone https://github.com/modm-io/modm-devices.git
 cd modm-devices/tools/generator
-# Clone the required dependencies
-make init
-# Extract and generate STM32 device data
-make extract-stm32
+# Generate STM32 device data
 make generate-stm32
-# Extract and generate AVR device data
-make extract-avr
+# Generate SAM device data
+make generate-sam
+# Generate AVR device data
 make generate-avr
 ```
 
