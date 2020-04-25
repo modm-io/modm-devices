@@ -15,9 +15,10 @@ install:
 script:
   - (cd tools/device; make test)
   - (cd tools/generator; make init)
-  - (cd tools/generator; make extract-stm32 extract-avr)
+  - (cd tools/generator; make extract)
   - (cd tools/generator; make generate-avr)
   - (cd tools/generator; make generate-stm32)
+  - (cd tools/generator; make generate-sam)
   - tools/device/scripts/stats --count
   - tools/device/scripts/stats --name >/dev/null
   - tools/device/scripts/stats --ram >/dev/null
