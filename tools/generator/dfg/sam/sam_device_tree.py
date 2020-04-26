@@ -63,13 +63,13 @@ class SAMDeviceTree:
             if memory_segment.get("exec") == "true":
                 access += "x"
             if name in ["FLASH"]:
-                memories.append({"name":"flash", "access":access, "size":str(size), "start":start})
+                memories.append({"name":"flash", "access":"rx", "size":str(size), "start":start})
             elif name in ["HMCRAMC0", "HMCRAM0", "HSRAM"]:
                 memories.append({"name":"ram", "access":access, "size":str(size), "start":start})
             elif name in ["LPRAM", "BKUPRAM"]:
                 memories.append({"name":"lpram", "access":access, "size":str(size), "start":start})
             elif name in ["SEEPROM", "RWW"]:
-                memories.append({"name":"eeprom", "access":access, "size":str(size), "start":start})
+                memories.append({"name":"eeprom", "access":"r", "size":str(size), "start":start})
             elif name in ["QSPI"]:
                 memories.append({"name":"extram", "access":access, "size":str(size), "start":start})
             else:
