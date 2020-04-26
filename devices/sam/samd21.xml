@@ -205,13 +205,13 @@
       <vector device-variant="a|b|c|d" position="27" name="I2S"/>
       <vector device-variant="l" position="28" name="AC1"/>
       <vector device-flash="17" device-variant="d|l" position="29" name="TCC3"/>
-      <memory device-flash="15" name="flash" access="rwx" start="0x00000000" size="32768"/>
-      <memory device-flash="16" name="flash" access="rwx" start="0x00000000" size="65536"/>
-      <memory device-flash="17" name="flash" access="rwx" start="0x00000000" size="131072"/>
-      <memory device-flash="18" name="flash" access="rwx" start="0x00000000" size="262144"/>
-      <memory device-flash="15" device-variant="b|c|l" name="eeprom" access="rwx" start="0x00400000" size="1024"/>
-      <memory device-flash="16" device-variant="b|c|l" name="eeprom" access="rwx" start="0x00400000" size="2048"/>
-      <memory device-flash="17" device-variant="d|l" name="eeprom" access="rwx" start="0x00400000" size="4096"/>
+      <memory device-flash="15" name="flash" access="rx" start="0x00000000" size="32768"/>
+      <memory device-flash="16" name="flash" access="rx" start="0x00000000" size="65536"/>
+      <memory device-flash="17" name="flash" access="rx" start="0x00000000" size="131072"/>
+      <memory device-flash="18" name="flash" access="rx" start="0x00000000" size="262144"/>
+      <memory device-flash="15" device-variant="b|c|l" name="eeprom" access="r" start="0x00400000" size="1024"/>
+      <memory device-flash="16" device-variant="b|c|l" name="eeprom" access="r" start="0x00400000" size="2048"/>
+      <memory device-flash="17" device-variant="d|l" name="eeprom" access="r" start="0x00400000" size="4096"/>
       <memory device-flash="15" name="ram" access="rwx" start="0x20000000" size="4096"/>
       <memory device-flash="16" name="ram" access="rwx" start="0x20000000" size="8192"/>
       <memory device-flash="17" name="ram" access="rwx" start="0x20000000" size="16384"/>
