@@ -119,7 +119,7 @@ stm_peripherals = \
                 'hardware': 'stm32-mux',
                 'features': [],
                 'protocols': ['mem2mem', 'mem2per', 'per2per'],
-                'devices': [{'family': ['h7', 'g0', 'g4', 'wb']}, {'family': ['l4'], 'name': ['r5', 'r7', 'r9', 's5', 's7', 's9']}]
+                'devices': [{'family': ['h7', 'g0', 'g4', 'wb']}, {'family': ['l4'], 'name': ['p5', 'p7', 'p9', 'q5', 'q7', 'q9', 'r5', 'r7', 'r9', 's5', 's7', 's9']}]
             },
             {
                 'hardware': 'stm32-stream-channel',
@@ -401,7 +401,7 @@ stm_peripherals = \
                 'hardware': 'stm32-extended',
                 'features': ['tcbgt'],
                 'protocols': ['uart'],
-                'devices': [{'family': ['l4'], 'name': ['r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0', 'g4', 'wb']}]
+                'devices': [{'family': ['l4'], 'name': ['p5', 'p7', 'p9', 'q5', 'q7', 'q9', 'r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0', 'g4', 'wb']}]
             },{
                 'hardware': 'stm32-extended',
                 'features': [],
@@ -432,7 +432,7 @@ stm_peripherals = \
                 'hardware': 'stm32-extended',
                 'features': ['tcbgt'],
                 'protocols': ['uart', 'spi'],
-                'devices': [{'family': ['l4'], 'name': ['r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0', 'g4', 'wb']}]
+                'devices': [{'family': ['l4'], 'name': ['p5', 'p7', 'p9', 'q5', 'q7', 'q9', 'r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0', 'g4', 'wb']}]
             },{
                 'hardware': 'stm32-extended',
                 'features': [],

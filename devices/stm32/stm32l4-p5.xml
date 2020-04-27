@@ -229,17 +229,19 @@
     </driver>
     <driver name="tsc" type="stm32-v1.0"/>
     <driver name="uart" type="stm32-extended">
+      <feature value="tcbgt"/>
       <instance value="4"/>
       <instance device-pin="a|q|v|z" value="5"/>
     </driver>
     <driver name="usart" type="stm32-extended">
+      <feature value="tcbgt"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
     </driver>
     <driver name="usb_otg_fs" type="stm32-v3.0"/>
     <driver name="wwdg" type="stm32-v1.0"/>
-    <driver name="dma" type="stm32-channel-request">
+    <driver name="dma" type="stm32-mux">
       <instance value="1"/>
       <instance value="2"/>
       <requests>
