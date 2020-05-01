@@ -95,7 +95,9 @@ class DeviceFile:
                 if children:
                     dd = defaultdict(list)
                     for dc in map(self.to_dict, children):
+                        # print(dc)
                         for k, v in dc.items():
+                            # if k == "signal" and v.get("name") == "seg40": print(v)
                             dd[k].append(v)
                     dk = {}
                     for k, v in dd.items():
@@ -111,8 +113,11 @@ class DeviceFile:
                 elif len(attrib):
                     if any(k in d[t.tag] for k in attrib.keys()):
                         raise ParserException("Node children are overwriting attribute '{}'!".format(k))
+                    # print(attrib.items())
                     d[t.tag].update(attrib.items())
                 return read_only({k:read_only(v) for k,v in d.items()})
 
         properties = Converter(identifier).to_dict(self.rootnode.find("device"))
+        # print(properties)
+        # exit(1)
         return properties["device"]
