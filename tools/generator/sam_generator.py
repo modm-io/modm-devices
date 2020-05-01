@@ -5,98 +5,41 @@
 # All rights reserved.
 # TESTING:  exec(open("./sam_generator.py").read())
 
-import os
-import sys
-import glob
-import logging
+import argparse
+from pathlib import Path
 
 import dfg.logger
-
-from dfg.merger import DeviceMerger
+import dfg.generator
 from dfg.sam.sam_device_tree import SAMDeviceTree
 from dfg.sam.sam_groups import sam_groups
-from dfg.output.device_file import DeviceFileWriter
-from modm_devices.parser import DeviceParser
-from deepdiff import DeepDiff
 
-LOGGER = logging.getLogger('dfg.sam')
+arg = argparse.ArgumentParser(description="Device File Generator for SAM")
+arg.add_argument("--log-level", default="INFO", nargs="?", choices=["ERROR", "WARNING", "INFO", "DEBUG", "DISABLED"], help="Choose the output log level")
+arg.add_argument("--check-merge", default=False, action="store_true", help="Brute-force check the merge algorithm")
+arg.add_argument("filter", nargs = "*", help="Only consider devices starting with this string")
+args = arg.parse_args()
+dfg.logger.configure_logger(args.log_level)
 
-if __name__ == "__main__":
-    loglevel = 'INFO'
-    devs = []
-    device_depth = 1e6
-    simulate = False
+devices = {}
+for dev in args.filter:
+    files = Path("raw-device-data/sam-devices/").glob('*/AT' + dev.upper() + '*')
+    for filename in files:
+        for dev in SAMDeviceTree.from_file(filename):
+            if dev is None: continue;
+            devices[dev.ids.string] = dev
 
-    for arg in sys.argv[1:]:
-        if arg.startswith('-n'):
-            simulate = True
-            continue
-        if arg.startswith('--log='):
-            loglevel = arg.replace('--log=', '')
-            continue
-        if arg.startswith('--depth='):
-            device_depth = int(arg.replace('--depth=', '')) - 1
-            continue
-        devs.append(arg)
+def filename(ids):
+    p = {}
+    for k in ids.keys():
+        v = []
+        for b in ids.getAttribute(k):
+            if b == "": b = 'n'
+            v.append(b)
+        if k in ['type', 'pin']: v.sort()
+        if len(v) > 0:
+            p[k] = "_".join(v)
+    fmt = "{platform}{family}{series}"
+    return fmt.format(**p)
 
-    if not len(devs):
-        devs.append('saml21')
-
-    dfg.logger.configure_logger(loglevel)
-
-    devices = {}
-    for dev in devs:
-        xml_path = os.path.join(os.path.dirname(__file__), 'raw-device-data', 'sam-devices', '*', ('AT' + dev.upper() + '*'))
-        files = glob.glob(xml_path)
-        for filename in files:
-            for dev in SAMDeviceTree.from_file(filename):
-                devices[dev.ids.string] = dev
-                if device_depth > 0:
-                    device_depth -= 1
-                else:
-                    print(device.toString())
-                    exit(1)
-
-    mergedDevices = DeviceMerger.merge(sam_groups, [d.copy() for d in devices.values()])
-
-    def filename(ids):
-        p = {}
-        for k in ids.keys():
-            v = []
-            for b in ids.getAttribute(k):
-                if b == "": b = 'n'
-                v.append(b)
-            if k in ['type', 'pin']: v.sort()
-            if len(v) > 0:
-                p[k] = "_".join(v)
-        fmt = "{platform}{family}{series}"
-        return fmt.format(**p)
-
-    folder = os.path.join(os.path.dirname(__file__), '..', '..', 'devices', 'sam')
-    parser = DeviceParser()
-    parsed_devices = {}
-    for dev in mergedDevices:
-        # dump the merged device file into the devices folder
-        path = DeviceFileWriter.write(dev, folder, filename)
-        # immediately parse this file
-        device_file = parser.parse(path)
-        for device in device_file.get_devices():
-            # and extract all the devices from it
-            parsed_devices[device.partname] = device
-
-    tmp_folder = os.path.join(os.path.dirname(__file__), 'single')
-    os.makedirs(tmp_folder, exist_ok=True)
-    for pname, pdevice in parsed_devices.items():
-        # these are the properties from the merged device
-        pprops = pdevice.properties
-        # dump the associated single device
-        rpath = DeviceFileWriter.write(devices[pname], tmp_folder, lambda ids: ids.string)
-        # parse it again
-        rdevice_file = parser.parse(rpath)
-        rdevice = rdevice_file.get_devices()
-        assert(len(rdevice) == 1)
-        # these are the properties of the single device
-        rprops = rdevice[0].properties
-        ddiff = DeepDiff(rprops, pprops, ignore_order=True)
-        # assert that there is no difference between the two
-        assert(len(ddiff) == 0)
+dfg.generator.run(output="sam", devices=devices, groups=sam_groups,
+                  filename=filename, check_merge=args.check_merge)

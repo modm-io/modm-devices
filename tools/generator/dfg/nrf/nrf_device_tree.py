@@ -24,7 +24,7 @@ class NRFDeviceTree:
 
     @staticmethod
     def _properties_from_file(ld_filename):
-        xml_filename = re.sub('\_\w{4}.ld', '.svd', ld_filename)
+        xml_filename = re.sub(r'\_\w{4}.ld', '.svd', ld_filename)
         device_file = XMLReader(xml_filename)
         p = {}
 
@@ -295,6 +295,6 @@ class NRFDeviceTree:
 
     @staticmethod
     def from_file(filename):
-        p = NRFDeviceTree._properties_from_file(filename)
+        p = NRFDeviceTree._properties_from_file(str(filename))
         if p is None: return None;
         return NRFDeviceTree._device_tree_from_properties(p)

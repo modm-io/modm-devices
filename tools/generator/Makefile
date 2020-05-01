@@ -33,7 +33,7 @@ update-data: update-data-avr update-data-stm32 update-data-sam update-data-nrf
 .PHONY: generate-at%
 generate-at%: raw-device-data/avr-devices
 	@rm -f ../../devices/avr/$(@:generate-%=%)*
-	./avr_generator.py $(@:generate-at%=AT%)
+	./avr_generator.py $(@:generate-at%=%)
 
 .PHONY: generate-avr
 generate-avr: generate-at90 generate-attiny generate-atmega
@@ -64,7 +64,7 @@ generate-nrf: generate-nrf52810 generate-nrf52811 generate-nrf52820 generate-nrf
 .PHONY: generate-stm32%
 generate-stm32%: raw-device-data/stm32-devices ext/cmsis-5-partial ext/cmsis-header-stm32
 	@rm -f ../../devices/stm32/$(@:generate-%=%)*
-	./stm_generator.py `echo $(@:generate-%=%) | tr '[:lower:]' '[:upper:]'`
+	./stm_generator.py $(@:generate-%=%)
 
 .PHONY: generate-stm32
 generate-stm32: generate-stm32f0 generate-stm32f1 generate-stm32f2 generate-stm32f3 \
