@@ -43,7 +43,7 @@ class AVRDeviceTree:
         mcu = "unsupported" if mcu == None else mcu
         p["mcu"] = mcu
         p["core"] = device.get("architecture").lower()
-        # We don"t care about Microchip"s new abominations
+        # We don"t care about Microchip's new abominations
         if p["core"] == "avr8x":
             return None
 
@@ -121,6 +121,11 @@ class AVRDeviceTree:
         # print(signals)
         # print(p["gpios"])
         # print(p["pinout"], p["pinout_pins"])
+
+        # if no GPIOs are found, don't bother with this device
+        if not p["gpios"]:
+            LOGGER.error("No GPIOs found for '{}'!".format(did.string))
+            return None
 
         LOGGER.debug("Found GPIOs: [%s]", ", ".join([p.upper() + i for p,i in p["gpios"]]))
         LOGGER.debug("Available Modules are:\n" + AVRDeviceTree._modulesToString(p["modules"]))
