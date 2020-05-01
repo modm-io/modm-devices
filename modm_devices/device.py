@@ -21,26 +21,19 @@ class Device:
         self.partname = identifier.string
         self.device_file = device_file
 
-        self._properties = None
-
-    def __parse_properties(self):
-        """
-        Perform a lazy initialization of the driver property tree.
-        """
-        if self._properties is None:
-            self._properties = self.device_file.get_properties(self._identifier)
+        self.__properties = None
 
     @property
-    def properties(self):
-        self.__parse_properties()
-        return copy.deepcopy(self._properties)
+    def _properties(self):
+        if self.__properties is None:
+            self.__properties = self.device_file.get_properties(self._identifier)
+        return self.__properties
 
     @property
     def identifier(self):
-        return self._identifier.copy()
+        return self._identifier
 
     def get_all_drivers(self, name):
-        self.__parse_properties()
         parts = name.split(":")
         results = []
 
@@ -58,7 +51,7 @@ class Device:
                                   "The name must contain no or one ':' to "
                                   "separate type and name.".format(name))
 
-        return copy.deepcopy(results)
+        return results
 
     def get_driver(self, name):
         results = self.get_all_drivers(name)
