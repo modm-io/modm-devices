@@ -104,6 +104,7 @@ class AVRDeviceTree:
                         gpios.append((port, str(pos)))
             gpios = sorted(gpios)
         else:
+            signal_hashs = set()
             for s in raw_signals:
                 tmp = {"module": s.getparent().getparent().getparent().get("name").lower(),
                        "instance": s.getparent().getparent().get("name").lower()}
@@ -111,7 +112,14 @@ class AVRDeviceTree:
                 if tmp["group"] in ["p", "pin"] or tmp["group"].startswith("port"):
                     gpios.append(tmp)
                 else:
-                    signals.append(tmp)
+                    # filter out duplicates
+                    shash = tmp.get("instance", "") + tmp.get("group", "")
+                    shash += tmp.get("pad", "") + tmp.get("index", "")
+                    if shash not in signal_hashs:
+                        signal_hashs.add(shash)
+                        signals.append(tmp)
+                    else:
+                        LOGGER.warning("Duplicate signal '{}'".format(tmp))
             gpios = sorted([(g["pad"][1], g["pad"][2]) for g in gpios])
 
         # Signal information is missing
