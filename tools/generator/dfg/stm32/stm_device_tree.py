@@ -259,6 +259,11 @@ class STMDeviceTree:
             return (driver, instance, name)
 
         def split_multi_af(af):
+            af = af.replace("ir_", "irtim_") \
+                   .replace("crs_", "rcc_crs_") \
+                   .replace("timx_", "tim_")
+            if af == "cec": af = "hdmi_cec_cec";
+
             driver, instance, names = split_af(af)
             rafs = []
             for name in names.split("-"):
