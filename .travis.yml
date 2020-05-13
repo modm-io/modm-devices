@@ -19,6 +19,7 @@ script:
   - (cd tools/generator; make generate-avr)
   - (cd tools/generator; make generate-stm32)
   - (cd tools/generator; make generate-sam)
+  - (cd tools/generator; make generate-nrf)
   - tools/device/scripts/stats --count
   - tools/device/scripts/stats --name >/dev/null
   - tools/device/scripts/stats --ram >/dev/null
