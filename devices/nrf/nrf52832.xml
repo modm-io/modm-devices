@@ -41,10 +41,12 @@
       <vector position="36" name="RTC2"/>
       <vector position="37" name="I2S"/>
       <vector position="38" name="FPU"/>
-      <memory name="flash" access="rx" start="0x00000000" size="1048576"/>
-      <memory name="code_ram" access="rwx" start="0x800000" size="262144"/>
-      <memory name="extflash" access="rx" start="0x12000000" size="134217728"/>
-      <memory name="ram" access="rwx" start="0x20000000" size="262144"/>
+      <memory device-function="ab" name="flash" access="rx" start="0x00000000" size="0x40000"/>
+      <memory device-function="aa" name="flash" access="rx" start="0x00000000" size="0x80000"/>
+      <memory device-function="ab" name="code_ram" access="rwx" start="0x800000" size="0x8000"/>
+      <memory device-function="aa" name="code_ram" access="rwx" start="0x800000" size="0x10000"/>
+      <memory device-function="ab" name="ram" access="rwx" start="0x20000000" size="0x8000"/>
+      <memory device-function="aa" name="ram" access="rwx" start="0x20000000" size="0x10000"/>
     </driver>
     <driver name="aar" type="nrf52"/>
     <driver name="bprot" type="nrf52"/>

@@ -43,14 +43,35 @@ class NRFDeviceTree:
             core += "f"
         p["core"] = core
 
+
         # find the values for flash and ram
-        # FIXME load from Linkerfile
+        memlines = []
+        with open(ld_filename, 'r') as linkerfile:
+            status = 0
+            for line in linkerfile:
+                if status == 0 and "MEMORY" in line:
+                    status = 1
+                elif status == 1 and "{" in line:
+                    status = 2
+                elif status == 2:
+                    if "}" in line:
+                        status = 3
+                    else:
+                        memlines.append(line)
+
         memories = []
-        memories.append({"name":'flash', "access":"rx", "size":str(int("0x100000", 16)), "start":"0x00000000"})
-        memories.append({"name":'extflash', "access":"rx", "size":str(int("0x8000000", 16)), "start":"0x12000000"})
-        memories.append({"name":'ram', "access":"rwx", "size":str(int("0x40000", 16)), "start":"0x20000000"})
-        memories.append({"name":'code_ram', "access":"rwx", "size":str(int("0x40000", 16)), "start":"0x800000"})
+
+        for memline in memlines:
+            matchString = r"  (?P<name>\w*) \((?P<access>\w*)\) : ORIGIN = (?P<start>0x\d*), LENGTH = (?P<size>0x\d*)"
+            match = re.search(matchString, memline)
+            memories.append({
+                "name": match.group("name").lower(),
+                "access": match.group("access").lower(),
+                "size": match.group("size").lower(),
+                "start": match.group("start").lower()})
+
         p["memories"] = memories
+
 
         raw_modules = device_file.query("//peripherals/peripheral")
         modules = []
@@ -149,13 +170,13 @@ class NRFDeviceTree:
         core_child = tree.addChild('driver')
         core_child.setAttributes('name', 'core', 'type', p['core'])
         core_child.addSortKey(lambda e: (int(e['position']), e['name']) if e.name == 'vector' else (-1, ""))
-        core_child.addSortKey(lambda e: (e['name'], int(e['size'])) if e.name == 'memory' else ("", -1))
+        core_child.addSortKey(lambda e: (e['name'], int(e['size'], 16)) if e.name == 'memory' else ("", -1))
 
         for section in p["memories"]:
             memory_section = core_child.addChild("memory")
             memory_section.setAttributes(["name", "access", "start", "size"], section)
         # sort the node children by start address and size
-        core_child.addSortKey(lambda e: (int(e["start"], 16), int(e["size"])) if e.name == "memory" else (-1, -1))
+        core_child.addSortKey(lambda e: (int(e["start"], 16), int(e["size"], 16)) if e.name == "memory" else (-1, -1))
 
         # for memory in ['flash', 'ram', 'lpram', 'eeprom']:
         #     if memory not in p: continue;
