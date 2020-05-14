@@ -67,7 +67,7 @@ class NRFDeviceTree:
             memories.append({
                 "name": match.group("name").lower(),
                 "access": match.group("access").lower(),
-                "size": match.group("size").lower(),
+                "size": str(int(match.group("size").lower(), 16)),
                 "start": match.group("start").lower()})
 
         p["memories"] = memories
@@ -170,13 +170,13 @@ class NRFDeviceTree:
         core_child = tree.addChild('driver')
         core_child.setAttributes('name', 'core', 'type', p['core'])
         core_child.addSortKey(lambda e: (int(e['position']), e['name']) if e.name == 'vector' else (-1, ""))
-        core_child.addSortKey(lambda e: (e['name'], int(e['size'], 16)) if e.name == 'memory' else ("", -1))
+        core_child.addSortKey(lambda e: (e['name'], int(e['size'])) if e.name == 'memory' else ("", -1))
 
         for section in p["memories"]:
             memory_section = core_child.addChild("memory")
             memory_section.setAttributes(["name", "access", "start", "size"], section)
         # sort the node children by start address and size
-        core_child.addSortKey(lambda e: (int(e["start"], 16), int(e["size"], 16)) if e.name == "memory" else (-1, -1))
+        core_child.addSortKey(lambda e: (int(e["start"], 16), int(e["size"])) if e.name == "memory" else (-1, -1))
 
         # for memory in ['flash', 'ram', 'lpram', 'eeprom']:
         #     if memory not in p: continue;

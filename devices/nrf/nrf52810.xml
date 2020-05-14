@@ -31,9 +31,9 @@
       <vector position="25" name="SWI5"/>
       <vector position="28" name="PWM0"/>
       <vector position="29" name="PDM"/>
-      <memory name="flash" access="rx" start="0x00000000" size="0x30000"/>
-      <memory name="code_ram" access="rwx" start="0x800000" size="0x6000"/>
-      <memory name="ram" access="rwx" start="0x20000000" size="0x6000"/>
+      <memory name="flash" access="rx" start="0x00000000" size="196608"/>
+      <memory name="code_ram" access="rwx" start="0x800000" size="24576"/>
+      <memory name="ram" access="rwx" start="0x20000000" size="24576"/>
     </driver>
     <driver name="aar" type="nrf52"/>
     <driver name="bprot" type="nrf52"/>

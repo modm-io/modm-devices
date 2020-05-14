@@ -45,9 +45,9 @@
       <vector position="40" name="UARTE1"/>
       <vector position="45" name="PWM3"/>
       <vector position="47" name="SPIM3"/>
-      <memory name="flash" access="rx" start="0x00000000" size="0x80000"/>
-      <memory name="code_ram" access="rwx" start="0x800000" size="0x20000"/>
-      <memory name="ram" access="rwx" start="0x20000000" size="0x20000"/>
+      <memory name="flash" access="rx" start="0x00000000" size="524288"/>
+      <memory name="code_ram" access="rwx" start="0x800000" size="131072"/>
+      <memory name="ram" access="rwx" start="0x20000000" size="131072"/>
     </driver>
     <driver name="aar" type="nrf52"/>
     <driver name="acl" type="nrf52"/>

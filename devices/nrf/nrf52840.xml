@@ -47,10 +47,10 @@
       <vector position="42" name="CRYPTOCELL"/>
       <vector position="45" name="PWM3"/>
       <vector position="47" name="SPIM3"/>
-      <memory name="flash" access="rx" start="0x00000000" size="0x100000"/>
-      <memory name="code_ram" access="rwx" start="0x800000" size="0x40000"/>
-      <memory name="extflash" access="rx" start="0x12000000" size="0x8000000"/>
-      <memory name="ram" access="rwx" start="0x20000000" size="0x40000"/>
+      <memory name="flash" access="rx" start="0x00000000" size="1048576"/>
+      <memory name="code_ram" access="rwx" start="0x800000" size="262144"/>
+      <memory name="extflash" access="rx" start="0x12000000" size="134217728"/>
+      <memory name="ram" access="rwx" start="0x20000000" size="262144"/>
     </driver>
     <driver name="aar" type="nrf52"/>
     <driver name="acl" type="nrf52"/>
