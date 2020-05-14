@@ -181,7 +181,7 @@ class NRFDeviceTree:
         for name, instances in modules.items():
             driver = tree.addChild('driver')
             dtype = name
-            compatible = 'nrf'
+            compatible = p['id']['platform'] + p['id']['family']
 
             driver.setAttributes('name', dtype, 'type', compatible)
             # Add all instances to this driver
