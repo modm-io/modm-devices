@@ -51,17 +51,15 @@ if __name__ == "__main__":
 
     devices = {}
     for dev in devs:
-        xml_path = os.path.join(os.path.dirname(__file__), 'raw-device-data', 'nrf-devices', 'nrf', (dev.lower() + '.svd'))
-        files = glob.glob(xml_path)
+        ld_path = os.path.join(os.path.dirname(__file__), 'raw-device-data', 'nrf-devices', 'nrf', (dev.lower() + '_*.ld'))
+        files = glob.glob(ld_path)
         for filename in files:
-            print(filename)
             device = NRFDeviceTree.from_file(filename)
             if device is None: continue;
             devices[device.ids.string] = device
             if device_depth > 0:
                 device_depth -= 1
             else:
-                print(device.toString())
                 exit(1)
 
     mergedDevices = DeviceMerger.merge(nrf_groups, [d.copy() for d in devices.values()])

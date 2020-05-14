@@ -4,8 +4,11 @@
 
 nrf_groups = \
 [
-    # NRF52 devices
+    # NRF5 devices
     {
+        'family': ['51'],
+        'series': ['822']
+    },{
         'family': ['52'],
         'series': ['810', '811', '820', '832', '833', '840']
     },

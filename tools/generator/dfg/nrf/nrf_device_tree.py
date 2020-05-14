@@ -6,6 +6,8 @@
 
 import math
 import logging
+import re
+import os
 
 from ..device_tree import DeviceTree
 from ..input.xml import XMLReader
@@ -21,19 +23,16 @@ class NRFDeviceTree:
     """
 
     @staticmethod
-    def _properties_from_file(filename):
-        device_file = XMLReader(filename)
+    def _properties_from_file(ld_filename):
+        xml_filename = re.sub('\_\w{4}.ld', '.svd', ld_filename)
+        device_file = XMLReader(xml_filename)
         p = {}
 
         LOGGER.info("Parsing Device File For '%s'", device_file.query("//device/name")[0])
 
-        partname = device_file.query("//device/name")[0].text
-
-        # dirty hack because af inconsistent part names in .svd files
-        if partname == 'nrf52':
-            partname = 'nrf52832'
-        elif partname == 'nrf51':
-            partname = 'nrf51822'
+        partname = ld_filename.split('/')[-1]
+        partname = partname.split('.')[0]
+        partname = partname.replace('_', '-')
 
         did = NRFIdentifier.from_string(partname.lower())
         p['id'] = did
