@@ -28,14 +28,14 @@ class NRFDeviceTree:
         device_file = XMLReader(xml_filename)
         p = {}
 
-        LOGGER.info("Parsing Device File For '%s'", device_file.query("//device/name")[0])
-
         partname = ld_filename.split('/')[-1]
         partname = partname.split('.')[0]
         partname = partname.replace('_', '-')
 
         did = NRFIdentifier.from_string(partname.lower())
         p['id'] = did
+
+        LOGGER.info("Parsing '%s'", did.string)
 
         # information about the core and architecture
         core = device_file.query("//device/cpu/name")[0].text.lower().replace("cm", "cortex-m")
@@ -92,7 +92,9 @@ class NRFDeviceTree:
                     gpios.append((modulename, str(i)))
 
             else:
-                modules.append({'module': modulename.lower(), 'instance': modulename.lower()})
+                matchString = r"(?P<module>.*\D)(?P<instance>\d*$)"
+                match = re.search(matchString, modulename)
+                modules.append({'module': match.group("module").lower(), 'instance': modulename.lower()})
         p['modules'] = sorted(list(set([(m['module'], m['instance']) for m in modules])))
         p['gpios'] = gpios
         p['signals'] = []

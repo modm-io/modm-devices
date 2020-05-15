@@ -22,7 +22,7 @@ from deepdiff import DeepDiff
 LOGGER = logging.getLogger('dfg.nrf')
 
 if __name__ == "__main__":
-    loglevel = 'DEBUG'
+    loglevel = 'INFO'
     devs = []
     device_depth = 1e6
     simulate = False

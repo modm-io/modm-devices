@@ -40,12 +40,14 @@
     <driver name="clock" type="nrf52"/>
     <driver name="comp" type="nrf52"/>
     <driver name="ecb" type="nrf52"/>
-    <driver name="egu0" type="nrf52"/>
-    <driver name="egu1" type="nrf52"/>
-    <driver name="egu2" type="nrf52"/>
-    <driver name="egu3" type="nrf52"/>
-    <driver name="egu4" type="nrf52"/>
-    <driver name="egu5" type="nrf52"/>
+    <driver name="egu" type="nrf52">
+      <instance value="0"/>
+      <instance value="1"/>
+      <instance value="2"/>
+      <instance value="3"/>
+      <instance value="4"/>
+      <instance value="5"/>
+    </driver>
     <driver name="ficr" type="nrf52"/>
     <driver name="gpiote" type="nrf52"/>
     <driver name="nvmc" type="nrf52"/>
@@ -54,33 +56,55 @@
     <driver name="qdec" type="nrf52"/>
     <driver name="radio" type="nrf52"/>
     <driver name="rng" type="nrf52"/>
-    <driver name="rtc0" type="nrf52"/>
-    <driver name="rtc1" type="nrf52"/>
-    <driver name="spi0" type="nrf52"/>
-    <driver name="spi1" type="nrf52"/>
-    <driver name="spim0" type="nrf52"/>
-    <driver name="spim1" type="nrf52"/>
-    <driver name="spis0" type="nrf52"/>
-    <driver name="spis1" type="nrf52"/>
-    <driver name="swi0" type="nrf52"/>
-    <driver name="swi1" type="nrf52"/>
-    <driver name="swi2" type="nrf52"/>
-    <driver name="swi3" type="nrf52"/>
-    <driver name="swi4" type="nrf52"/>
-    <driver name="swi5" type="nrf52"/>
+    <driver name="rtc" type="nrf52">
+      <instance value="0"/>
+      <instance value="1"/>
+    </driver>
+    <driver name="spi" type="nrf52">
+      <instance value="0"/>
+      <instance value="1"/>
+    </driver>
+    <driver name="spim" type="nrf52">
+      <instance value="0"/>
+      <instance value="1"/>
+    </driver>
+    <driver name="spis" type="nrf52">
+      <instance value="0"/>
+      <instance value="1"/>
+    </driver>
+    <driver name="swi" type="nrf52">
+      <instance value="0"/>
+      <instance value="1"/>
+      <instance value="2"/>
+      <instance value="3"/>
+      <instance value="4"/>
+      <instance value="5"/>
+    </driver>
     <driver name="temp" type="nrf52"/>
-    <driver name="timer0" type="nrf52"/>
-    <driver name="timer1" type="nrf52"/>
-    <driver name="timer2" type="nrf52"/>
-    <driver name="timer3" type="nrf52"/>
-    <driver name="twi0" type="nrf52"/>
-    <driver name="twi1" type="nrf52"/>
-    <driver name="twim0" type="nrf52"/>
-    <driver name="twim1" type="nrf52"/>
-    <driver name="twis0" type="nrf52"/>
-    <driver name="twis1" type="nrf52"/>
-    <driver name="uart0" type="nrf52"/>
-    <driver name="uarte0" type="nrf52"/>
+    <driver name="timer" type="nrf52">
+      <instance value="0"/>
+      <instance value="1"/>
+      <instance value="2"/>
+      <instance value="3"/>
+    </driver>
+    <driver name="twi" type="nrf52">
+      <instance value="0"/>
+      <instance value="1"/>
+    </driver>
+    <driver name="twim" type="nrf52">
+      <instance value="0"/>
+      <instance value="1"/>
+    </driver>
+    <driver name="twis" type="nrf52">
+      <instance value="0"/>
+      <instance value="1"/>
+    </driver>
+    <driver name="uart" type="nrf52">
+      <instance value="0"/>
+    </driver>
+    <driver name="uarte" type="nrf52">
+      <instance value="0"/>
+    </driver>
     <driver name="uicr" type="nrf52"/>
     <driver name="usbd" type="nrf52"/>
     <driver name="wdt" type="nrf52"/>
