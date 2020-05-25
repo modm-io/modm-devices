@@ -73,6 +73,24 @@ class NRFDeviceTree:
         p["memories"] = memories
 
 
+        # Signals FIXME continue here, find derived peripherals
+        signals = {}
+        raw_signals = device_file.query("//peripherals/peripheral/registers/cluster")
+        for s in raw_signals:
+            if s.find('name').text == "PSEL":
+
+                # find parent peripheral
+                parent_peripheral_instance = s.getparent().getparent().find('name').text.lower()
+                signals[parent_peripheral_instance] = []
+
+                # find all signals of peripheral
+                signal_elements = s.findall('register/name')
+                for signal_element in signal_elements:
+                    signal_name = signal_element.text.lower()
+                    signals[parent_peripheral_instance].append(signal_name)
+
+
+        # drivers and gpios
         raw_modules = device_file.query("//peripherals/peripheral")
         modules = []
         ports = {}
@@ -95,9 +113,21 @@ class NRFDeviceTree:
                 matchString = r"(?P<module>.*\D)(?P<instance>\d*$)"
                 match = re.search(matchString, modulename)
                 modules.append({'module': match.group("module").lower(), 'instance': modulename.lower()})
+
+                # copy available signals to all derived peripherals
+                if m.get('derivedFrom') is not None:
+                    if m.get('derivedFrom').lower() in signals:
+                        print(modulename.lower() + " is derived from " + m.get('derivedFrom').lower())
+                        signals[modulename.lower()] = signals[m.get('derivedFrom').lower()]
         p['modules'] = sorted(list(set([(m['module'], m['instance']) for m in modules])))
         p['gpios'] = gpios
         p['signals'] = []
+        for instance in signals:
+            for signal in signals[instance]:
+                matchString = r"(?P<module>.*\D)(?P<instance>\d*$)"
+                match = re.search(matchString, instance)
+                p['signals'].append({'driver': match.group("module").lower(), 'instance': instance, 'name': signal})
+
 
         interrupts = []
         raw_interrupt = device_file.query("//peripherals/peripheral/interrupt")
@@ -114,12 +144,12 @@ class NRFDeviceTree:
 
         LOGGER.debug("Found GPIOs: [%s]", ", ".join([p.upper() + "." + i for p,i in p['gpios']]))
         LOGGER.debug("Available Modules are:\n" + NRFDeviceTree._modulesToString(p['modules']))
-        # LOGGER.debug("Found Signals:")
-        # for sig in p['signals']:
-        #     LOGGER.debug("    %s", sig)
-        # LOGGER.debug("Found Interrupts:")
-        # for intr in p['interrupts']:
-        #     LOGGER.debug("    %s", intr)
+        LOGGER.debug("Found Signals:")
+        for sig in p['signals']:
+            LOGGER.debug("    %s", sig)
+        LOGGER.debug("Found Interrupts:")
+        for intr in p['interrupts']:
+            LOGGER.debug("    %s", intr)
 
         return p
 
@@ -225,8 +255,8 @@ class NRFDeviceTree:
                                              e['instance'] if e['instance'] is not None else '',
                                              e['name'] if e['name'] is not None else ''))
             # add all signals
-            for s in [s for s in p['signals'] if s['pad'] == ("p" + port + pin)]:
-                driver, instance, name = s['module'], s['instance'], s['group']
+            for s in p['signals']:
+                driver, instance, name = s['driver'], s['instance'], s['name']
                 # add the af node
                 pin_signal = {'driver': driver}
                 if instance != driver:
@@ -239,6 +269,7 @@ class NRFDeviceTree:
                 if "name" not in pin_signal:
                     LOGGER.error("%s has no name!", s)
                     continue
+
                 af = pin_driver.addChild('signal')
                 af.setAttributes(['driver', 'instance', 'name'], pin_signal)
 
