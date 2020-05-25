@@ -73,7 +73,7 @@ class NRFDeviceTree:
         p["memories"] = memories
 
 
-        # Signals FIXME continue here, find derived peripherals
+        # Signals
         signals = {}
         raw_signals = device_file.query("//peripherals/peripheral/registers/cluster")
         for s in raw_signals:
