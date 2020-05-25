@@ -103,7 +103,7 @@
     <driver name="uicr" type="nrf52"/>
     <driver name="wdt" type="nrf52"/>
     <driver name="gpio" type="nrf">
-      <gpio port="P0" pin="0">
+      <gpio port="0" pin="0">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -135,7 +135,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="1">
+      <gpio port="0" pin="1">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -167,7 +167,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="2">
+      <gpio port="0" pin="2">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -199,7 +199,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="3">
+      <gpio port="0" pin="3">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -231,7 +231,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="4">
+      <gpio port="0" pin="4">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -263,7 +263,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="5">
+      <gpio port="0" pin="5">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -295,7 +295,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="6">
+      <gpio port="0" pin="6">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -327,7 +327,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="7">
+      <gpio port="0" pin="7">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -359,7 +359,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="8">
+      <gpio port="0" pin="8">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -391,7 +391,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="9">
+      <gpio port="0" pin="9">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -423,7 +423,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="10">
+      <gpio port="0" pin="10">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -455,7 +455,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="11">
+      <gpio port="0" pin="11">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -487,7 +487,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="12">
+      <gpio port="0" pin="12">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -519,7 +519,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="13">
+      <gpio port="0" pin="13">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -551,7 +551,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="14">
+      <gpio port="0" pin="14">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -583,7 +583,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="15">
+      <gpio port="0" pin="15">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -615,7 +615,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="16">
+      <gpio port="0" pin="16">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -647,7 +647,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="17">
+      <gpio port="0" pin="17">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -679,7 +679,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="18">
+      <gpio port="0" pin="18">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -711,7 +711,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="19">
+      <gpio port="0" pin="19">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -743,7 +743,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="20">
+      <gpio port="0" pin="20">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -775,7 +775,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="21">
+      <gpio port="0" pin="21">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -807,7 +807,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="22">
+      <gpio port="0" pin="22">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -839,7 +839,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="23">
+      <gpio port="0" pin="23">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -871,7 +871,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="24">
+      <gpio port="0" pin="24">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -903,7 +903,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="25">
+      <gpio port="0" pin="25">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -935,7 +935,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="26">
+      <gpio port="0" pin="26">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -967,7 +967,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="27">
+      <gpio port="0" pin="27">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -999,7 +999,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="28">
+      <gpio port="0" pin="28">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -1031,7 +1031,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="29">
+      <gpio port="0" pin="29">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -1063,7 +1063,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="30">
+      <gpio port="0" pin="30">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>
@@ -1095,7 +1095,7 @@
         <signal driver="uarte" instance="0" name="rxd"/>
         <signal driver="uarte" instance="0" name="txd"/>
       </gpio>
-      <gpio port="P0" pin="31">
+      <gpio port="0" pin="31">
         <signal driver="pdm" name="clk"/>
         <signal driver="pdm" name="din"/>
         <signal driver="pwm" instance="0" name="out[%s]"/>

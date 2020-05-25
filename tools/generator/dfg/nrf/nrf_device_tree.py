@@ -100,14 +100,16 @@ class NRFDeviceTree:
             moduledesc = m.find('description').text
 
             if "GPIO Port" in moduledesc:
+                # omit the leading P of the port names, also of the derived ports
+                portnumber = modulename[1:]
                 if m.get('derivedFrom') is not None:
-                    portsize = ports[m.get('derivedFrom')]
+                    portsize = ports[m.get('derivedFrom')[1:]]
                 else:
                     portsize = int(m.find('size').text, base=0)
 
-                ports[modulename] = portsize
+                ports[portnumber] = portsize
                 for i in range(portsize):
-                    gpios.append((modulename, str(i)))
+                    gpios.append((portnumber, str(i)))
 
             else:
                 matchString = r"(?P<module>.*\D)(?P<instance>\d*$)"
