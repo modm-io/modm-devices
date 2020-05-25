@@ -233,11 +233,12 @@ class NRFDeviceTree:
             else:
                 modules[m].append(i)
 
+
+        compatible = p['id']['platform'] + p['id']['family']
         # add all other modules
         for name, instances in modules.items():
             driver = tree.addChild('driver')
             dtype = name
-            compatible = p['id']['platform'] + p['id']['family']
 
             driver.setAttributes('name', dtype, 'type', compatible)
             # Add all instances to this driver
@@ -249,7 +250,7 @@ class NRFDeviceTree:
 
         # GPIO driver
         gpio_driver = tree.addChild('driver')
-        gpio_driver.setAttributes('name', 'gpio', 'type', 'nrf')
+        gpio_driver.setAttributes('name', 'gpio', 'type', compatible)
         # gpio_driver.addSortKey(lambda e : (e['port'], int(e['pin'])))
 
         # add all signals

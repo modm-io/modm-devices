@@ -138,7 +138,7 @@
     </driver>
     <driver name="uicr" type="nrf52"/>
     <driver name="wdt" type="nrf52"/>
-    <driver name="gpio" type="nrf">
+    <driver name="gpio" type="nrf52">
       <signal driver="uarte" instance="0" name="rts"/>
       <signal driver="uarte" instance="0" name="txd"/>
       <signal driver="uarte" instance="0" name="cts"/>
