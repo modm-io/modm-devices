@@ -119,7 +119,7 @@ class NRFDeviceTree:
                 # copy available signals to all derived peripherals
                 if m.get('derivedFrom') is not None:
                     if m.get('derivedFrom').lower() in signals:
-                        print(modulename.lower() + " is derived from " + m.get('derivedFrom').lower())
+                        LOGGER.debug(modulename.lower() + " is derived from " + m.get('derivedFrom').lower())
                         signals[modulename.lower()] = signals[m.get('derivedFrom').lower()]
         p['modules'] = sorted(list(set([(m['module'], m['instance']) for m in modules])))
         p['gpios'] = gpios
@@ -128,7 +128,8 @@ class NRFDeviceTree:
             for signal in signals[instance]:
                 matchString = r"(?P<module>.*\D)(?P<instance>\d*$)"
                 match = re.search(matchString, instance)
-                p['signals'].append({'driver': match.group("module").lower(), 'instance': instance, 'name': signal})
+                if not "[%s]" in signal:  # TODO take care of multichannel signals like OUT[%s] of PWM peripheral
+                    p['signals'].append({'driver': match.group("module").lower(), 'instance': instance, 'name': signal})
 
 
         interrupts = []
@@ -249,31 +250,34 @@ class NRFDeviceTree:
         # GPIO driver
         gpio_driver = tree.addChild('driver')
         gpio_driver.setAttributes('name', 'gpio', 'type', 'nrf')
-        gpio_driver.addSortKey(lambda e : (e['port'], int(e['pin'])))
+        # gpio_driver.addSortKey(lambda e : (e['port'], int(e['pin'])))
+
+        # add all signals
+        for s in p['signals']:
+            driver, instance, name = s['driver'], s['instance'], s['name']
+            # add the af node
+            gpio_signal = {'driver': driver}
+            if instance != driver:
+                gpio_signal['instance'] = instance.replace(driver, '')
+            if name != driver and name != 'int':
+                if 'index' in s: name += s['index'];
+                gpio_signal['name'] = name
+            elif 'index' in s:
+                gpio_signal['name'] = s['index']
+            if "name" not in gpio_signal:
+                LOGGER.error("%s has no name!", s)
+                continue
+
+            af = gpio_driver.addChild('signal')
+            af.setAttributes(['driver', 'instance', 'name'], gpio_signal)
+
+        # add all GPIOs
         for port, pin in p['gpios']:
             pin_driver = gpio_driver.addChild('gpio')
-            pin_driver.setAttributes('port', port.upper(), 'pin', pin)
+            pin_driver.setAttributes('port', port, 'pin', pin)
             pin_driver.addSortKey(lambda e: (e['driver'],
                                              e['instance'] if e['instance'] is not None else '',
                                              e['name'] if e['name'] is not None else ''))
-            # add all signals
-            for s in p['signals']:
-                driver, instance, name = s['driver'], s['instance'], s['name']
-                # add the af node
-                pin_signal = {'driver': driver}
-                if instance != driver:
-                    pin_signal['instance'] = instance.replace(driver, '')
-                if name != driver and name != 'int':
-                    if 'index' in s: name += s['index'];
-                    pin_signal['name'] = name
-                elif 'index' in s:
-                    pin_signal['name'] = s['index']
-                if "name" not in pin_signal:
-                    LOGGER.error("%s has no name!", s)
-                    continue
-
-                af = pin_driver.addChild('signal')
-                af.setAttributes(['driver', 'instance', 'name'], pin_signal)
 
         return tree
 
