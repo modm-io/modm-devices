@@ -15,7 +15,7 @@ raw-device-data/%-devices:
 	(cd raw-data-extractor && python3 extract-$(@:raw-device-data/%-devices=%).py)
 
 .PHONY: extract
-extract: raw-device-data/avr-devices raw-device-data/stm32-devices raw-device-data/sam-devices
+extract: raw-device-data/avr-devices raw-device-data/stm32-devices raw-device-data/sam-devices raw-device-data/nrf-devices
 
 .PHONY: clean_extract
 clean_extract:
@@ -39,6 +39,17 @@ generate-sam%: raw-device-data/sam-devices ext/cmsis-5-partial
 
 .PHONY: generate-sam
 generate-sam: generate-saml21 generate-samd21 generate-samd51
+
+
+
+# NRF device files
+.PHONY: generate-nrf%
+generate-nrf%: raw-device-data/nrf-devices ext/cmsis-5-partial
+	@rm -f ../../devices/nrf/$(@:generate-%=%)*
+	./nrf_generator.py $(@:generate-%=%)
+
+.PHONY: generate-nrf
+generate-nrf: generate-nrf52810 generate-nrf52811 generate-nrf52820 generate-nrf52832 generate-nrf52833 generate-nrf52840
 
 
 # STM32 device files
