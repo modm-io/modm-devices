@@ -19,7 +19,15 @@ extract: raw-device-data/avr-devices raw-device-data/stm32-devices raw-device-da
 
 .PHONY: clean_extract
 clean_extract:
-# 	@rm -rf raw-device-data/
+	@rm -rf raw-device-data/
+
+.PHONY: update-data-%
+update-data-%:
+	rm -rf $(@:update-data-%=raw-device-data/%-devices)
+	$(MAKE) $(@:update-data-%=raw-device-data/%-devices)
+
+.PHONY: update-data
+update-data: update-data-avr update-data-stm32 update-data-sam update-data-nrf
 
 # AVR device files
 .PHONY: generate-at%
@@ -54,7 +62,7 @@ generate-nrf: generate-nrf52810 generate-nrf52811 generate-nrf52820 generate-nrf
 
 # STM32 device files
 .PHONY: generate-stm32%
-generate-stm32%: raw-device-data/sam-devices ext/cmsis-5-partial ext/cmsis-header-stm32
+generate-stm32%: raw-device-data/stm32-devices ext/cmsis-5-partial ext/cmsis-header-stm32
 	@rm -f ../../devices/stm32/$(@:generate-%=%)*
 	./stm_generator.py `echo $(@:generate-%=%) | tr '[:lower:]' '[:upper:]'`
 
