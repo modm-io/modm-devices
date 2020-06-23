@@ -71,7 +71,6 @@
         <signal driver="tc" instance="2" name="t0"/>
         <signal driver="tc" instance="2" name="tocc2"/>
         <signal driver="usart" instance="0" name="xck"/>
-        <signal driver="usart" instance="0" name="xck"/>
       </gpio>
       <gpio port="A" pin="4">
         <signal driver="ac" name="ain11"/>

@@ -384,10 +384,10 @@
       <gpio port="a" pin="8">
         <signal af="0" driver="rcc" name="mco"/>
         <signal device-name="53|63" af="1" driver="lcd" name="com0"/>
-        <signal device-name="52" device-pin="c|k|r" af="2" name="crs_sync"/>
-        <signal device-name="62" device-pin="k" af="2" name="crs_sync"/>
-        <signal device-name="51|52" device-pin="t" af="2" name="crs_sync"/>
-        <signal device-name="53|63" device-pin="c|r" af="2" name="crs_sync"/>
+        <signal device-name="52" device-pin="c|k|r" af="2" driver="rcc" name="crs_sync"/>
+        <signal device-name="62" device-pin="k" af="2" driver="rcc" name="crs_sync"/>
+        <signal device-name="51|52" device-pin="t" af="2" driver="rcc" name="crs_sync"/>
+        <signal device-name="53|63" device-pin="c|r" af="2" driver="rcc" name="crs_sync"/>
         <signal af="4" driver="usart" instance="1" name="ck"/>
       </gpio>
       <gpio port="a" pin="9">
@@ -767,7 +767,7 @@
       </gpio>
       <gpio device-pin="c|r" port="h" pin="0">
         <signal driver="rcc" name="osc_in"/>
-        <signal device-name="52|53|63" device-pin="c|r" af="0" name="crs_sync"/>
+        <signal device-name="52|53|63" device-pin="c|r" af="0" driver="rcc" name="crs_sync"/>
       </gpio>
       <gpio device-pin="c|r" port="h" pin="1">
         <signal driver="rcc" name="osc_out"/>

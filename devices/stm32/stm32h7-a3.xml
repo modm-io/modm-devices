@@ -968,7 +968,7 @@
         <signal af="0" driver="debug" name="jtdi"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
         <signal af="1" driver="tim" instance="2" name="etr"/>
-        <signal af="4" name="cec"/>
+        <signal af="4" driver="hdmi_cec" name="cec"/>
         <signal af="5" driver="i2s" instance="1" name="ws"/>
         <signal af="5" driver="spi" instance="1" name="nss"/>
         <signal af="6" driver="i2s" instance="3" name="ws"/>
@@ -1035,7 +1035,7 @@
         <signal af="8" driver="i2s" instance="6" name="ck"/>
         <signal af="8" driver="spi" instance="6" name="sck"/>
         <signal af="9" driver="sdmmc" instance="2" name="d2"/>
-        <signal af="10" name="crs_sync"/>
+        <signal af="10" driver="rcc" name="crs_sync"/>
         <signal af="11" driver="uart" instance="7" name="rx"/>
       </gpio>
       <gpio port="b" pin="4">
@@ -1076,7 +1076,7 @@
         <signal af="1" driver="tim" instance="16" name="ch1n"/>
         <signal af="2" driver="tim" instance="4" name="ch1"/>
         <signal af="4" driver="i2c" instance="1" name="scl"/>
-        <signal af="5" name="cec"/>
+        <signal af="5" driver="hdmi_cec" name="cec"/>
         <signal af="6" driver="i2c" instance="4" name="scl"/>
         <signal af="7" driver="usart" instance="1" name="tx"/>
         <signal af="8" driver="lpuart" instance="1" name="tx"/>

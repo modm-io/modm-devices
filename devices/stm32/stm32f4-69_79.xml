@@ -759,7 +759,7 @@
         <signal af="5" driver="spi" instance="1" name="mosi"/>
         <signal af="9" driver="tim" instance="14" name="ch1"/>
         <signal af="10" driver="quadspi" name="clk"/>
-        <signal device-pin="b|i|n" af="11" driver="eth" name="crs_dv"/>
+        <signal device-pin="b|i|n" af="11" driver="eth" name="rcc_crs_dv"/>
         <signal device-pin="b|i|n" af="11" driver="eth" name="rx_dv"/>
       </gpio>
       <gpio port="a" pin="8">

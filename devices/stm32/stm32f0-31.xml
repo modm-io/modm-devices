@@ -278,7 +278,7 @@
       </gpio>
       <gpio port="a" pin="13">
         <signal driver="sys" name="swdio"/>
-        <signal af="1" name="ir_out"/>
+        <signal af="1" driver="irtim" name="out"/>
       </gpio>
       <gpio port="a" pin="14">
         <signal af="0" driver="sys" name="swclk"/>
@@ -340,7 +340,7 @@
         <signal af="2" driver="tim" instance="16" name="ch1"/>
       </gpio>
       <gpio device-pin="c" port="b" pin="9">
-        <signal af="0" name="ir_out"/>
+        <signal af="0" driver="irtim" name="out"/>
         <signal af="1" driver="i2c" instance="1" name="sda"/>
         <signal af="2" driver="tim" instance="17" name="ch1"/>
       </gpio>

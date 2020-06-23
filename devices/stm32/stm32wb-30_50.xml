@@ -231,7 +231,6 @@
         <signal driver="rtc" name="tamp2"/>
         <signal driver="sys" name="wkup1"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
-        <signal device-name="30" af="5" name="i2s_ckin"/>
         <signal af="14" driver="tim" instance="2" name="etr"/>
       </gpio>
       <gpio port="a" pin="1">
@@ -293,7 +292,7 @@
         <signal af="4" driver="i2c" instance="1" name="sda"/>
         <signal af="7" driver="usart" instance="1" name="rx"/>
         <signal device-name="30" af="9" driver="tsc" name="g7_io2"/>
-        <signal af="10" name="crs_sync"/>
+        <signal af="10" driver="rcc" name="crs_sync"/>
         <signal af="14" driver="tim" instance="17" name="bkin"/>
       </gpio>
       <gpio port="a" pin="11">
@@ -313,7 +312,7 @@
         <signal af="0" driver="sys" name="jtms"/>
         <signal af="0" driver="sys" name="swdio"/>
         <signal device-name="30" af="5" driver="spi" instance="1" name="mosi"/>
-        <signal af="8" name="ir_out"/>
+        <signal af="8" driver="irtim" name="out"/>
       </gpio>
       <gpio port="a" pin="14">
         <signal af="0" driver="sys" name="jtck"/>
@@ -336,7 +335,6 @@
       <gpio port="b" pin="2">
         <signal af="0" driver="rtc" name="out"/>
         <signal af="1" driver="lptim" instance="1" name="out"/>
-        <signal device-name="30" af="3" name="i2s_ckin"/>
         <signal af="5" driver="spi" instance="1" name="nss"/>
       </gpio>
       <gpio port="b" pin="3">
@@ -390,7 +388,7 @@
       <gpio port="b" pin="9">
         <signal af="1" driver="tim" instance="1" name="ch3n"/>
         <signal af="4" driver="i2c" instance="1" name="sda"/>
-        <signal af="8" name="ir_out"/>
+        <signal af="8" driver="irtim" name="out"/>
         <signal device-name="30" af="9" driver="tsc" name="g7_io4"/>
         <signal af="14" driver="tim" instance="17" name="ch1"/>
       </gpio>

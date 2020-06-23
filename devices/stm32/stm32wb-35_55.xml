@@ -480,7 +480,7 @@
         <signal device-name="35" device-package="u" af="5" driver="spi" instance="2" name="mosi"/>
         <signal af="7" driver="usart" instance="1" name="rx"/>
         <signal device-name="35" af="9" driver="tsc" name="g7_io2"/>
-        <signal af="10" name="crs_sync"/>
+        <signal af="10" driver="rcc" name="crs_sync"/>
         <signal device-name="55" af="11" driver="lcd" name="com2"/>
         <signal device-name="55" af="13" driver="sai" instance="1" name="sd_a"/>
         <signal af="14" driver="tim" instance="17" name="bkin"/>
@@ -507,7 +507,7 @@
         <signal af="0" driver="sys" name="swdio"/>
         <signal device-name="35" af="5" driver="i2s" instance="1" name="sd"/>
         <signal device-name="35" af="5" driver="spi" instance="1" name="mosi"/>
-        <signal af="8" name="ir_out"/>
+        <signal af="8" driver="irtim" name="out"/>
         <signal af="10" driver="usb" name="noe"/>
         <signal device-name="55" af="13" driver="sai" instance="1" name="sd_b"/>
       </gpio>
@@ -673,7 +673,7 @@
         <signal device-name="35" device-package="u" af="5" driver="i2s" instance="2" name="ws"/>
         <signal device-name="35" device-package="u" af="5" driver="spi" instance="2" name="nss"/>
         <signal device-name="55" device-package="q|v|y" af="5" driver="spi" instance="2" name="nss"/>
-        <signal af="8" name="ir_out"/>
+        <signal af="8" driver="irtim" name="out"/>
         <signal device-name="35" device-package="u" af="9" driver="tsc" name="g7_io4"/>
         <signal device-name="55" device-package="q|y" af="9" driver="tsc" name="g7_io4"/>
         <signal af="10" driver="quadspi" name="bk1_io0"/>
@@ -688,7 +688,7 @@
         <signal device-name="35" device-package="u" af="5" driver="i2s" instance="2" name="ws"/>
         <signal device-name="35" device-package="u" af="5" driver="spi" instance="2" name="nss"/>
         <signal device-name="55" device-package="q|v|y" af="5" driver="spi" instance="2" name="nss"/>
-        <signal af="8" name="ir_out"/>
+        <signal af="8" driver="irtim" name="out"/>
         <signal device-name="35" device-package="u" af="9" driver="tsc" name="g7_io4"/>
         <signal device-name="55" device-package="q|y" af="9" driver="tsc" name="g7_io4"/>
         <signal af="10" driver="quadspi" name="bk1_io0"/>

@@ -587,7 +587,7 @@
       <gpio port="a" pin="8">
         <signal af="0" driver="rcc" name="mco"/>
         <signal device-name="73|83" af="1" driver="lcd" name="com0"/>
-        <signal device-name="72|73|82|83" af="2" name="crs_sync"/>
+        <signal device-name="72|73|82|83" af="2" driver="rcc" name="crs_sync"/>
         <signal af="4" driver="usart" instance="1" name="ck"/>
         <signal af="7" driver="i2c" instance="3" name="scl"/>
       </gpio>
@@ -1167,10 +1167,10 @@
         <signal device-name="73|83" device-size="8|b|z" device-package="i|t" device-temperature="6" af="1" driver="lcd" name="seg34"/>
       </gpio>
       <gpio device-pin="v" port="d" pin="15">
-        <signal device-name="73" device-size="8|b|z" device-package="t" device-temperature="7" af="0" name="crs_sync"/>
-        <signal device-name="73" device-size="b|z" device-package="i" device-temperature="3|7" af="0" name="crs_sync"/>
-        <signal device-name="73" device-size="z" device-package="t" device-temperature="3" af="0" name="crs_sync"/>
-        <signal device-name="72|73|83" device-size="8|b|z" device-package="i|t" device-temperature="6" af="0" name="crs_sync"/>
+        <signal device-name="73" device-size="8|b|z" device-package="t" device-temperature="7" af="0" driver="rcc" name="crs_sync"/>
+        <signal device-name="73" device-size="b|z" device-package="i" device-temperature="3|7" af="0" driver="rcc" name="crs_sync"/>
+        <signal device-name="73" device-size="z" device-package="t" device-temperature="3" af="0" driver="rcc" name="crs_sync"/>
+        <signal device-name="72|73|83" device-size="8|b|z" device-package="i|t" device-temperature="6" af="0" driver="rcc" name="crs_sync"/>
         <signal device-name="73" device-size="8|b|z" device-package="t" device-temperature="7" af="1" driver="lcd" name="seg35"/>
         <signal device-name="73" device-size="b|z" device-package="i" device-temperature="3|7" af="1" driver="lcd" name="seg35"/>
         <signal device-name="73" device-size="z" device-package="t" device-temperature="3" af="1" driver="lcd" name="seg35"/>
@@ -1289,8 +1289,8 @@
       </gpio>
       <gpio device-pin="c|r|v" port="h" pin="0">
         <signal driver="rcc" name="osc_in"/>
-        <signal device-name="82" device-pin="c" af="0" name="crs_sync"/>
-        <signal device-name="72|73|83" device-pin="c|r|v" af="0" name="crs_sync"/>
+        <signal device-name="82" device-pin="c" af="0" driver="rcc" name="crs_sync"/>
+        <signal device-name="72|73|83" device-pin="c|r|v" af="0" driver="rcc" name="crs_sync"/>
       </gpio>
       <gpio device-pin="c|r|v" port="h" pin="1">
         <signal driver="rcc" name="osc_out"/>

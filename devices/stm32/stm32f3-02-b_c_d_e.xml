@@ -488,7 +488,7 @@
         <signal af="0" driver="sys" name="swdio"/>
         <signal af="1" driver="tim" instance="16" name="ch1n"/>
         <signal af="3" driver="tsc" name="g4_io3"/>
-        <signal af="5" name="ir_out"/>
+        <signal af="5" driver="irtim" name="out"/>
         <signal af="7" driver="usart" instance="3" name="cts"/>
         <signal af="10" driver="tim" instance="4" name="ch3"/>
       </gpio>
@@ -595,7 +595,7 @@
         <signal af="1" driver="tim" instance="17" name="ch1"/>
         <signal af="2" driver="tim" instance="4" name="ch4"/>
         <signal af="4" driver="i2c" instance="1" name="sda"/>
-        <signal af="6" name="ir_out"/>
+        <signal af="6" driver="irtim" name="out"/>
         <signal device-size="d|e" af="7" driver="usart" instance="3" name="tx"/>
         <signal af="8" driver="comp" instance="2" name="out"/>
         <signal af="9" driver="can" name="tx"/>

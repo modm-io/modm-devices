@@ -660,7 +660,7 @@
         <signal af="3" driver="tim" instance="8" name="ch1n"/>
         <signal af="5" driver="spi" instance="1" name="mosi"/>
         <signal af="9" driver="tim" instance="14" name="ch1"/>
-        <signal device-name="07|17" af="11" driver="eth" name="crs_dv"/>
+        <signal device-name="07|17" af="11" driver="eth" name="rcc_crs_dv"/>
         <signal device-name="07|17" af="11" driver="eth" name="rx_dv"/>
       </gpio>
       <gpio port="a" pin="8">

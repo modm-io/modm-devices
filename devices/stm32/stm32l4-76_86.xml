@@ -715,7 +715,7 @@
       <gpio port="a" pin="13">
         <signal af="0" driver="sys" name="jtms"/>
         <signal af="0" driver="sys" name="swdio"/>
-        <signal af="1" name="ir_out"/>
+        <signal af="1" driver="irtim" name="out"/>
         <signal af="10" driver="usb_otg_fs" name="noe"/>
       </gpio>
       <gpio port="a" pin="14">
@@ -848,7 +848,7 @@
         <signal af="14" driver="tim" instance="16" name="ch1"/>
       </gpio>
       <gpio port="b" pin="9">
-        <signal af="1" name="ir_out"/>
+        <signal af="1" driver="irtim" name="out"/>
         <signal af="2" driver="tim" instance="4" name="ch4"/>
         <signal af="4" driver="i2c" instance="1" name="sda"/>
         <signal af="5" driver="spi" instance="2" name="nss"/>

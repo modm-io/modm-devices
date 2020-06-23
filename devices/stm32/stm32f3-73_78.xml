@@ -408,7 +408,7 @@
         <signal af="3" driver="tsc" name="g2_io2"/>
         <signal af="5" driver="i2s" instance="1" name="ck"/>
         <signal af="5" driver="spi" instance="1" name="sck"/>
-        <signal af="7" name="cec"/>
+        <signal af="7" driver="hdmi_cec" name="cec"/>
         <signal af="9" driver="tim" instance="14" name="ch1"/>
         <signal af="10" driver="tim" instance="12" name="ch2"/>
       </gpio>
@@ -493,7 +493,7 @@
         <signal af="1" driver="tim" instance="16" name="ch1n"/>
         <signal af="2" driver="tim" instance="5" name="ch4"/>
         <signal af="3" driver="tsc" name="g4_io3"/>
-        <signal af="5" name="ir_out"/>
+        <signal af="5" driver="irtim" name="out"/>
         <signal af="6" driver="i2s" instance="1" name="mck"/>
         <signal af="6" driver="spi" instance="1" name="miso"/>
         <signal af="7" driver="usart" instance="3" name="cts"/>
@@ -604,7 +604,7 @@
         <signal af="4" driver="i2c" instance="1" name="scl"/>
         <signal af="5" driver="i2s" instance="2" name="ck"/>
         <signal af="5" driver="spi" instance="2" name="sck"/>
-        <signal af="6" name="cec"/>
+        <signal af="6" driver="hdmi_cec" name="cec"/>
         <signal af="7" driver="usart" instance="3" name="tx"/>
         <signal af="8" driver="comp" instance="1" name="out"/>
         <signal af="9" driver="can" name="rx"/>
@@ -616,7 +616,7 @@
         <signal af="4" driver="i2c" instance="1" name="sda"/>
         <signal af="5" driver="i2s" instance="2" name="ws"/>
         <signal af="5" driver="spi" instance="2" name="nss"/>
-        <signal af="6" name="ir_out"/>
+        <signal af="6" driver="irtim" name="out"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
         <signal af="8" driver="comp" instance="2" name="out"/>
         <signal af="9" driver="can" name="tx"/>
@@ -628,7 +628,7 @@
         <signal af="3" driver="tsc" name="sync"/>
         <signal af="5" driver="i2s" instance="2" name="ck"/>
         <signal af="5" driver="spi" instance="2" name="sck"/>
-        <signal af="6" name="cec"/>
+        <signal af="6" driver="hdmi_cec" name="cec"/>
         <signal af="7" driver="usart" instance="3" name="tx"/>
       </gpio>
       <gpio port="b" pin="14">

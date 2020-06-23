@@ -317,7 +317,7 @@
       <gpio port="a" pin="13">
         <signal driver="adc" instance="1" name="in17"/>
         <signal af="0" driver="sys" name="swdio"/>
-        <signal af="1" name="ir_out"/>
+        <signal af="1" driver="irtim" name="out"/>
       </gpio>
       <gpio port="a" pin="14">
         <signal driver="adc" instance="1" name="in18"/>
@@ -391,7 +391,7 @@
         <signal af="6" driver="i2c" instance="1" name="scl"/>
       </gpio>
       <gpio port="b" pin="9">
-        <signal af="0" name="ir_out"/>
+        <signal af="0" driver="irtim" name="out"/>
         <signal af="2" driver="tim" instance="17" name="ch1"/>
         <signal af="5" driver="spi" instance="2" name="nss"/>
         <signal af="6" driver="i2c" instance="1" name="sda"/>

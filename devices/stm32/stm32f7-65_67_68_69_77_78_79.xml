@@ -932,7 +932,7 @@
         <signal af="5" driver="spi" instance="1" name="mosi"/>
         <signal af="8" driver="spi" instance="6" name="mosi"/>
         <signal af="9" driver="tim" instance="14" name="ch1"/>
-        <signal device-pin="b|i|n|v|z" af="11" driver="eth" name="crs_dv"/>
+        <signal device-pin="b|i|n|v|z" af="11" driver="eth" name="rcc_crs_dv"/>
         <signal device-pin="b|i|n|v|z" af="11" driver="eth" name="rx_dv"/>
         <signal af="12" driver="fmc" name="sdnwe"/>
       </gpio>
@@ -1001,7 +1001,7 @@
         <signal af="0" driver="sys" name="jtdi"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
         <signal af="1" driver="tim" instance="2" name="etr"/>
-        <signal af="4" name="cec"/>
+        <signal af="4" driver="hdmi_cec" name="cec"/>
         <signal af="5" driver="i2s" instance="1" name="ws"/>
         <signal af="5" driver="spi" instance="1" name="nss"/>
         <signal af="6" driver="i2s" instance="3" name="ws"/>
@@ -1088,7 +1088,7 @@
       <gpio port="b" pin="6">
         <signal af="1" driver="uart" instance="5" name="tx"/>
         <signal af="2" driver="tim" instance="4" name="ch1"/>
-        <signal af="3" name="cec"/>
+        <signal af="3" driver="hdmi_cec" name="cec"/>
         <signal af="4" driver="i2c" instance="1" name="scl"/>
         <signal af="6" driver="dfsdm" instance="1" name="datin5"/>
         <signal af="7" driver="usart" instance="1" name="tx"/>

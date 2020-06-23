@@ -245,7 +245,7 @@
         <signal driver="adc" name="in5"/>
         <signal af="0" driver="i2s" instance="1" name="ck"/>
         <signal af="0" driver="spi" instance="1" name="sck"/>
-        <signal af="1" name="cec"/>
+        <signal af="1" driver="hdmi_cec" name="cec"/>
         <signal af="2" driver="tim" instance="2" name="ch1"/>
         <signal af="2" driver="tim" instance="2" name="etr"/>
         <signal af="3" driver="tsc" name="g2_io2"/>
@@ -273,7 +273,7 @@
         <signal af="0" driver="rcc" name="mco"/>
         <signal af="1" driver="usart" instance="1" name="ck"/>
         <signal af="2" driver="tim" instance="1" name="ch1"/>
-        <signal af="4" name="crs_sync"/>
+        <signal af="4" driver="rcc" name="crs_sync"/>
       </gpio>
       <gpio port="a" pin="9">
         <signal af="1" driver="usart" instance="1" name="tx"/>
@@ -305,7 +305,7 @@
       </gpio>
       <gpio port="a" pin="13">
         <signal af="0" driver="sys" name="swdio"/>
-        <signal af="1" name="ir_out"/>
+        <signal af="1" driver="irtim" name="out"/>
         <signal af="2" driver="usb" name="noe"/>
       </gpio>
       <gpio port="a" pin="14">
@@ -367,19 +367,19 @@
         <signal af="3" driver="tsc" name="g5_io4"/>
       </gpio>
       <gpio port="b" pin="8">
-        <signal af="0" name="cec"/>
+        <signal af="0" driver="hdmi_cec" name="cec"/>
         <signal af="1" driver="i2c" instance="1" name="scl"/>
         <signal af="2" driver="tim" instance="16" name="ch1"/>
         <signal af="3" driver="tsc" name="sync"/>
       </gpio>
       <gpio device-pin="c" port="b" pin="9">
-        <signal af="0" name="ir_out"/>
+        <signal af="0" driver="irtim" name="out"/>
         <signal af="1" driver="i2c" instance="1" name="sda"/>
         <signal af="2" driver="tim" instance="17" name="ch1"/>
         <signal af="5" driver="spi" instance="2" name="nss"/>
       </gpio>
       <gpio device-pin="c" port="b" pin="10">
-        <signal af="0" name="cec"/>
+        <signal af="0" driver="hdmi_cec" name="cec"/>
         <signal af="1" driver="i2c" instance="1" name="scl"/>
         <signal af="2" driver="tim" instance="2" name="ch3"/>
         <signal af="3" driver="tsc" name="sync"/>
@@ -424,7 +424,7 @@
       </gpio>
       <gpio port="f" pin="0">
         <signal driver="rcc" name="osc_in"/>
-        <signal af="0" name="crs_sync"/>
+        <signal af="0" driver="rcc" name="crs_sync"/>
         <signal af="1" driver="i2c" instance="1" name="sda"/>
       </gpio>
       <gpio port="f" pin="1">

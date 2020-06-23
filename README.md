@@ -13,13 +13,13 @@ These tools and this data set is maintained and curated by
 It is licensed under the MPLv2 license.
 The CI checks daily for new data: [![](https://travis-ci.org/modm-io/modm-devices.svg?branch=develop)](https://travis-ci.org/modm-io/modm-devices)
 
-Currently data for <!--devicecount-->3247<!--/devicecount--> devices is available.
+Currently data for <!--devicecount-->3223<!--/devicecount--> devices is available.
 Please open an issue or better yet a pull request for additional support.
 
 <!--devicetable-->
 | Family        | Devices | Family        | Devices | Family        | Devices |
 |:--------------|:--------|:--------------|:--------|:--------------|:--------|
-| AT90          |    12   | ATMEGA        |   370   | ATTINY        |   148   |
+| AT90          |    12   | ATMEGA        |   346   | ATTINY        |   148   |
 | NRF52         |     7   | SAMD          |   209   | SAML          |    47   |
 | STM32F0       |   168   | STM32F1       |   194   | STM32F2       |    71   |
 | STM32F3       |   143   | STM32F4       |   340   | STM32F7       |   174   |
