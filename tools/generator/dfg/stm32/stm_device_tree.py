@@ -215,6 +215,16 @@ class STMDeviceTree:
         ip_file = os.path.join(STMDeviceTree.rootpath, "IP", "GPIO-" + ip_file + "_Modes.xml")
         gpioFile = XMLReader(ip_file)
 
+        all_pins = device_file.query('//Pin')
+        def all_pin_sort(p):
+            pos = p.get('Position')
+            try:
+                return int(pos, 10)
+            except:
+                pass
+            return (pos[0], int(pos[1:], 10))
+        all_pins = sorted(all_pins, key=all_pin_sort)
+
         pins = device_file.query('//Pin[@Type="I/O"][starts-with(@Name,"P")]')
         def raw_pin_sort(p):
             port = p.get("Name")[1:2]
@@ -412,6 +422,7 @@ class STMDeviceTree:
 
         p["remaps"] = remaps
         p["gpios"] = gpios
+        p["all_pins"] = all_pins
 
         return p
 
@@ -446,6 +457,8 @@ class STMDeviceTree:
         # STMDeviceTree.addDeviceAttributesToNode(p, tree, "attribute-flash")
         # STMDeviceTree.addDeviceAttributesToNode(p, tree, "attribute-ram")
         # STMDeviceTree.addDeviceAttributesToNode(p, tree, "attribute-pin-count")
+
+        STMDeviceTree.addPositionTableToNode(p, tree)
 
         def driverOrder(e):
             if e.name == "driver":
@@ -634,6 +647,18 @@ class STMDeviceTree:
             vector_section.setAttributes(["position", "name"], vector)
         # sort the node children by vector number and name
         node.addSortKey(lambda e: (int(e["position"]), e["name"]) if e.name == "vector" else (-1, ""))
+
+    @staticmethod
+    def addPositionTableToNode(p, node):
+        all_pins = p["all_pins"]
+        for pin in all_pins:
+            pin_section = node.addChild("pin")
+            pin_section.setAttributes("position", pin.get("Position").upper(),
+                                      "name", pin.get("Name").upper(),
+                                      "type", pin.get("Type").upper())
+        node.addSortKey(lambda e: ((('_', int(e["position"])) if e["position"][0].isdigit()
+                                    else (e["position"][0], int(e["position"][1:]))) if e.name == "pin" else ("", -1)
+                                  ))
 
     @staticmethod
     def addModuleAttributesToNode(p, node, peripheral, name, family="stm32"):
