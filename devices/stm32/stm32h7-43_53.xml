@@ -27,6 +27,1318 @@
     <valid-device>stm32h753vit6</valid-device>
     <valid-device>stm32h753xih6</valid-device>
     <valid-device>stm32h753zit6</valid-device>
+    <pin device-pin="x" position="A1" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="A1" name="PC14-OSC32_IN (OSC32_IN)" type="I/O" gpio-port="c" gpio-pin="14"/>
+    <pin device-package="k" position="A1" name="PE3" type="I/O" gpio-port="e" gpio-pin="3"/>
+    <pin device-pin="a" position="A1" name="PE4" type="I/O" gpio-port="e" gpio-pin="4"/>
+    <pin device-pin="x" position="A2" name="PI6" type="I/O" gpio-port="i" gpio-pin="6"/>
+    <pin device-pin="v" device-package="h" position="A2" name="PC13" type="I/O" gpio-port="c" gpio-pin="13"/>
+    <pin device-package="i|k" position="A2" name="PE2" type="I/O" gpio-port="e" gpio-pin="2"/>
+    <pin device-pin="x" position="A3" name="PI5" type="I/O" gpio-port="i" gpio-pin="5"/>
+    <pin device-pin="v" device-package="h" position="A3" name="PE2" type="I/O" gpio-port="e" gpio-pin="2"/>
+    <pin device-package="k" position="A3" name="PE1" type="I/O" gpio-port="e" gpio-pin="1"/>
+    <pin device-pin="a" position="A3" name="VDD" type="POWER"/>
+    <pin device-pin="x" position="A4" name="PI4" type="I/O" gpio-port="i" gpio-pin="4"/>
+    <pin device-pin="v" device-package="h" position="A4" name="PB9" type="I/O" gpio-port="b" gpio-pin="9"/>
+    <pin device-package="k" position="A4" name="PE0" type="I/O" gpio-port="e" gpio-pin="0"/>
+    <pin device-pin="a" position="A4" name="PI6" type="I/O" gpio-port="i" gpio-pin="6"/>
+    <pin device-pin="x" position="A5" name="PB5" type="I/O" gpio-port="b" gpio-pin="5"/>
+    <pin device-pin="v" device-package="h" position="A5" name="PB7" type="I/O" gpio-port="b" gpio-pin="7"/>
+    <pin device-package="k" position="A5" name="PB8" type="I/O" gpio-port="b" gpio-pin="8"/>
+    <pin device-pin="a" position="A5" name="PB6" type="I/O" gpio-port="b" gpio-pin="6"/>
+    <pin device-pin="x" position="A6" name="VDDLDO" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="A6" name="PB4 (NJTRST)" type="I/O" gpio-port="b" gpio-pin="4"/>
+    <pin device-package="k" position="A6" name="PB5" type="I/O" gpio-port="b" gpio-pin="5"/>
+    <pin device-pin="a" position="A6" name="PI2" type="I/O" gpio-port="i" gpio-pin="2"/>
+    <pin device-pin="x" position="A7" name="VCAP" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="A7" name="PB3 (JTDO/TRACESWO)" type="I/O" gpio-port="b" gpio-pin="3"/>
+    <pin device-package="k" position="A7" name="PG14" type="I/O" gpio-port="g" gpio-pin="14"/>
+    <pin device-pin="a" position="A7" name="VDD" type="POWER"/>
+    <pin device-pin="x" position="A8" name="PK5" type="I/O" gpio-port="k" gpio-pin="5"/>
+    <pin device-pin="v" device-package="h" position="A8" name="PA15 (JTDI)" type="I/O" gpio-port="a" gpio-pin="15"/>
+    <pin device-package="k" position="A8" name="PG13" type="I/O" gpio-port="g" gpio-pin="13"/>
+    <pin device-pin="a" position="A8" name="PG10" type="I/O" gpio-port="g" gpio-pin="10"/>
+    <pin device-pin="x" position="A9" name="PG10" type="I/O" gpio-port="g" gpio-pin="10"/>
+    <pin device-pin="v" device-package="h" position="A9" name="PA14 (JTCK/SWCLK)" type="I/O" gpio-port="a" gpio-pin="14"/>
+    <pin device-package="k" position="A9" name="PB4 (NJTRST)" type="I/O" gpio-port="b" gpio-pin="4"/>
+    <pin device-pin="a" position="A9" name="PD5" type="I/O" gpio-port="d" gpio-pin="5"/>
+    <pin device-pin="x" position="A10" name="PG9" type="I/O" gpio-port="g" gpio-pin="9"/>
+    <pin device-pin="v" device-package="h" position="A10" name="PA13 (JTMS/SWDIO)" type="I/O" gpio-port="a" gpio-pin="13"/>
+    <pin device-package="k" position="A10" name="PB3 (JTDO/TRACESWO)" type="I/O" gpio-port="b" gpio-pin="3"/>
+    <pin device-pin="a" position="A10" name="VDD" type="POWER"/>
+    <pin device-pin="x" position="A11" name="PD5" type="I/O" gpio-port="d" gpio-pin="5"/>
+    <pin device-package="k" position="A11" name="PD7" type="I/O" gpio-port="d" gpio-pin="7"/>
+    <pin device-pin="a" position="A11" name="PC12" type="I/O" gpio-port="c" gpio-pin="12"/>
+    <pin device-pin="x" position="A12" name="PD4" type="I/O" gpio-port="d" gpio-pin="4"/>
+    <pin device-package="k" position="A12" name="PC12" type="I/O" gpio-port="c" gpio-pin="12"/>
+    <pin device-pin="a" position="A12" name="PC10" type="I/O" gpio-port="c" gpio-pin="10"/>
+    <pin device-pin="x" position="A13" name="PC10" type="I/O" gpio-port="c" gpio-pin="10"/>
+    <pin device-package="k" position="A13" name="PA15 (JTDI)" type="I/O" gpio-port="a" gpio-pin="15"/>
+    <pin device-pin="a" position="A13" name="PI0" type="I/O" gpio-port="i" gpio-pin="0"/>
+    <pin device-pin="x" position="A14" name="PA15 (JTDI)" type="I/O" gpio-port="a" gpio-pin="15"/>
+    <pin device-package="k" position="A14" name="PA14 (JTCK/SWCLK)" type="I/O" gpio-port="a" gpio-pin="14"/>
+    <pin device-pin="x" position="A15" name="PI1" type="I/O" gpio-port="i" gpio-pin="1"/>
+    <pin device-package="k" position="A15" name="PA13 (JTMS/SWDIO)" type="I/O" gpio-port="a" gpio-pin="13"/>
+    <pin device-pin="x" position="A16" name="PI0" type="I/O" gpio-port="i" gpio-pin="0"/>
+    <pin device-pin="x" position="A17" name="VSS" type="POWER"/>
+    <pin device-pin="x" position="B1" name="VBAT" type="POWER"/>
+    <pin device-pin="a" device-package="i" position="B1" name="PC15-OSC32_OUT (OSC32_OUT)" type="I/O" gpio-port="c" gpio-pin="15"/>
+    <pin device-pin="v" device-package="h" position="B1" name="PC15-OSC32_OUT (OSC32_OUT)" type="I/O" gpio-port="c" gpio-pin="15"/>
+    <pin device-package="k" position="B1" name="PE4" type="I/O" gpio-port="e" gpio-pin="4"/>
+    <pin device-pin="x" position="B2" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="B2" name="VBAT" type="POWER"/>
+    <pin device-package="k" position="B2" name="PE5" type="I/O" gpio-port="e" gpio-pin="5"/>
+    <pin device-pin="a" position="B2" name="PE3" type="I/O" gpio-port="e" gpio-pin="3"/>
+    <pin device-pin="x" position="B3" name="PI7" type="I/O" gpio-port="i" gpio-pin="7"/>
+    <pin device-pin="v" device-package="h" position="B3" name="PE3" type="I/O" gpio-port="e" gpio-pin="3"/>
+    <pin device-package="k" position="B3" name="PE6" type="I/O" gpio-port="e" gpio-pin="6"/>
+    <pin device-pin="a" position="B3" name="VSS" type="POWER"/>
+    <pin device-pin="x" position="B4" name="PE1" type="I/O" gpio-port="e" gpio-pin="1"/>
+    <pin device-pin="v" device-package="h" position="B4" name="PB8" type="I/O" gpio-port="b" gpio-pin="8"/>
+    <pin device-package="k" position="B4" name="PB9" type="I/O" gpio-port="b" gpio-pin="9"/>
+    <pin device-pin="a" position="B4" name="VDDLDO" type="POWER"/>
+    <pin device-package="h" position="B5" name="PB6" type="I/O" gpio-port="b" gpio-pin="6"/>
+    <pin device-package="k" position="B5" name="PB7" type="I/O" gpio-port="b" gpio-pin="7"/>
+    <pin device-pin="a" position="B5" name="PB8" type="I/O" gpio-port="b" gpio-pin="8"/>
+    <pin device-pin="x" position="B6" name="NC" type="NC"/>
+    <pin device-pin="v" device-package="h" position="B6" name="PD5" type="I/O" gpio-port="d" gpio-pin="5"/>
+    <pin device-package="k" position="B6" name="PB6" type="I/O" gpio-port="b" gpio-pin="6"/>
+    <pin device-pin="a" position="B6" name="PB4 (NJTRST)" type="I/O" gpio-port="b" gpio-pin="4"/>
+    <pin device-pin="x" position="B7" name="PB4 (NJTRST)" type="I/O" gpio-port="b" gpio-pin="4"/>
+    <pin device-pin="v" device-package="h" position="B7" name="PD2" type="I/O" gpio-port="d" gpio-pin="2"/>
+    <pin device-package="k" position="B7" name="PG15" type="I/O" gpio-port="g" gpio-pin="15"/>
+    <pin device-pin="a" position="B7" name="PI3" type="I/O" gpio-port="i" gpio-pin="3"/>
+    <pin device-pin="x" position="B8" name="PK4" type="I/O" gpio-port="k" gpio-pin="4"/>
+    <pin device-pin="v" device-package="h" position="B8" name="PC11" type="I/O" gpio-port="c" gpio-pin="11"/>
+    <pin device-package="k" position="B8" name="PG12" type="I/O" gpio-port="g" gpio-pin="12"/>
+    <pin device-pin="a" position="B8" name="PG11" type="I/O" gpio-port="g" gpio-pin="11"/>
+    <pin device-pin="i" device-package="k" position="B9" name="PG11" type="I/O" gpio-port="g" gpio-pin="11"/>
+    <pin device-pin="x" device-package="h" position="B9" name="PG11" type="I/O" gpio-port="g" gpio-pin="11"/>
+    <pin device-pin="v" device-package="h" position="B9" name="PC10" type="I/O" gpio-port="c" gpio-pin="10"/>
+    <pin device-pin="a" position="B9" name="PD6" type="I/O" gpio-port="d" gpio-pin="6"/>
+    <pin device-pin="x" position="B10" name="PJ15" type="I/O" gpio-port="j" gpio-pin="15"/>
+    <pin device-pin="v" device-package="h" position="B10" name="PA12" type="I/O" gpio-port="a" gpio-pin="12"/>
+    <pin device-package="k" position="B10" name="PG10" type="I/O" gpio-port="g" gpio-pin="10"/>
+    <pin device-pin="a" position="B10" name="VSS" type="POWER"/>
+    <pin device-pin="i" device-package="k" position="B11" name="PD6" type="I/O" gpio-port="d" gpio-pin="6"/>
+    <pin device-pin="x" device-package="h" position="B11" name="PD6" type="I/O" gpio-port="d" gpio-pin="6"/>
+    <pin device-pin="a" position="B11" name="PC11" type="I/O" gpio-port="c" gpio-pin="11"/>
+    <pin device-pin="x" position="B12" name="PD3" type="I/O" gpio-port="d" gpio-pin="3"/>
+    <pin device-package="k" position="B12" name="PD0" type="I/O" gpio-port="d" gpio-pin="0"/>
+    <pin device-pin="a" position="B12" name="PA14 (JTCK/SWCLK)" type="I/O" gpio-port="a" gpio-pin="14"/>
+    <pin device-pin="i" device-package="k" position="B13" name="PC11" type="I/O" gpio-port="c" gpio-pin="11"/>
+    <pin device-pin="x" device-package="h" position="B13" name="PC11" type="I/O" gpio-port="c" gpio-pin="11"/>
+    <pin device-pin="a" position="B13" name="PI1" type="I/O" gpio-port="i" gpio-pin="1"/>
+    <pin device-pin="x" position="B14" name="PA14 (JTCK/SWCLK)" type="I/O" gpio-port="a" gpio-pin="14"/>
+    <pin device-package="k" position="B14" name="PC10" type="I/O" gpio-port="c" gpio-pin="10"/>
+    <pin device-pin="x" position="B15" name="PI2" type="I/O" gpio-port="i" gpio-pin="2"/>
+    <pin device-package="k" position="B15" name="PA12" type="I/O" gpio-port="a" gpio-pin="12"/>
+    <pin device-pin="x" position="B16" name="PH15" type="I/O" gpio-port="h" gpio-pin="15"/>
+    <pin device-pin="x" position="B17" name="PH14" type="I/O" gpio-port="h" gpio-pin="14"/>
+    <pin device-pin="x" position="C1" name="PC15-OSC32_OUT (OSC32_OUT)" type="I/O" gpio-port="c" gpio-pin="15"/>
+    <pin device-pin="v" device-package="h" position="C1" name="PH0-OSC_IN (PH0)" type="I/O" gpio-port="h" gpio-pin="0"/>
+    <pin device-package="k" position="C1" name="VBAT" type="POWER"/>
+    <pin device-pin="a" position="C1" name="PC14-OSC32_IN (OSC32_IN)" type="I/O" gpio-port="c" gpio-pin="14"/>
+    <pin device-pin="x" position="C2" name="PC14-OSC32_IN (OSC32_IN)" type="I/O" gpio-port="c" gpio-pin="14"/>
+    <pin device-pin="v" device-package="h" position="C2" name="VSS" type="POWER"/>
+    <pin device-package="k" position="C2" name="PI7" type="I/O" gpio-port="i" gpio-pin="7"/>
+    <pin device-pin="a" position="C2" name="PE6" type="I/O" gpio-port="e" gpio-pin="6"/>
+    <pin device-pin="x" position="C3" name="PE2" type="I/O" gpio-port="e" gpio-pin="2"/>
+    <pin device-pin="v" device-package="h" position="C3" name="PE4" type="I/O" gpio-port="e" gpio-pin="4"/>
+    <pin device-package="k" position="C3" name="PI6" type="I/O" gpio-port="i" gpio-pin="6"/>
+    <pin device-pin="a" position="C3" name="PE5" type="I/O" gpio-port="e" gpio-pin="5"/>
+    <pin device-pin="x" position="C4" name="PE0" type="I/O" gpio-port="e" gpio-pin="0"/>
+    <pin device-pin="v" device-package="h" position="C4" name="PE1" type="I/O" gpio-port="e" gpio-pin="1"/>
+    <pin device-package="k" position="C4" name="PI5" type="I/O" gpio-port="i" gpio-pin="5"/>
+    <pin device-pin="a" position="C4" name="PDR_ON" type="RESET"/>
+    <pin device-pin="x" position="C5" name="PB7" type="I/O" gpio-port="b" gpio-pin="7"/>
+    <pin device-pin="v" device-package="h" position="C5" name="PB5" type="I/O" gpio-port="b" gpio-pin="5"/>
+    <pin device-package="k" position="C5" name="VDD" type="POWER"/>
+    <pin device-pin="a" position="C5" name="PB9" type="I/O" gpio-port="b" gpio-pin="9"/>
+    <pin device-pin="x" position="C6" name="PB3 (JTDO/TRACESWO)" type="I/O" gpio-port="b" gpio-pin="3"/>
+    <pin device-pin="v" device-package="h" position="C6" name="PD6" type="I/O" gpio-port="d" gpio-pin="6"/>
+    <pin device-package="k" position="C6" name="PDR_ON" type="RESET"/>
+    <pin device-pin="a" position="C6" name="PB5" type="I/O" gpio-port="b" gpio-pin="5"/>
+    <pin device-pin="x" position="C7" name="PK6" type="I/O" gpio-port="k" gpio-pin="6"/>
+    <pin device-pin="v" device-package="h" position="C7" name="PD3" type="I/O" gpio-port="d" gpio-pin="3"/>
+    <pin device-package="k" position="C7" name="VDD" type="POWER"/>
+    <pin device-pin="a" position="C7" name="PG14" type="I/O" gpio-port="g" gpio-pin="14"/>
+    <pin device-pin="x" position="C8" name="PK3" type="I/O" gpio-port="k" gpio-pin="3"/>
+    <pin device-pin="v" device-package="h" position="C8" name="PC12" type="I/O" gpio-port="c" gpio-pin="12"/>
+    <pin device-package="k" position="C8" name="VDD" type="POWER"/>
+    <pin device-pin="a" position="C8" name="PG9" type="I/O" gpio-port="g" gpio-pin="9"/>
+    <pin device-pin="x" position="C9" name="PG12" type="I/O" gpio-port="g" gpio-pin="12"/>
+    <pin device-pin="v" device-package="h" position="C9" name="PA9" type="I/O" gpio-port="a" gpio-pin="9"/>
+    <pin device-package="k" position="C9" name="VDD" type="POWER"/>
+    <pin device-pin="a" position="C9" name="PD4" type="I/O" gpio-port="d" gpio-pin="4"/>
+    <pin device-pin="x" position="C10" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="C10" name="PA11" type="I/O" gpio-port="a" gpio-pin="11"/>
+    <pin device-package="k" position="C10" name="PG9" type="I/O" gpio-port="g" gpio-pin="9"/>
+    <pin device-pin="a" position="C10" name="PD1" type="I/O" gpio-port="d" gpio-pin="1"/>
+    <pin device-pin="x" position="C11" name="PD7" type="I/O" gpio-port="d" gpio-pin="7"/>
+    <pin device-package="k" position="C11" name="PD5" type="I/O" gpio-port="d" gpio-pin="5"/>
+    <pin device-pin="a" position="C11" name="PA15 (JTDI)" type="I/O" gpio-port="a" gpio-pin="15"/>
+    <pin device-pin="x" position="C12" name="PC12" type="I/O" gpio-port="c" gpio-pin="12"/>
+    <pin device-package="k" position="C12" name="PD1" type="I/O" gpio-port="d" gpio-pin="1"/>
+    <pin device-pin="a" position="C12" name="VSS" type="POWER"/>
+    <pin device-pin="x" position="C13" name="VSS" type="POWER"/>
+    <pin device-package="k" position="C13" name="PI3" type="I/O" gpio-port="i" gpio-pin="3"/>
+    <pin device-pin="a" position="C13" name="VDD" type="POWER"/>
+    <pin device-pin="x" position="C14" name="PI3" type="I/O" gpio-port="i" gpio-pin="3"/>
+    <pin device-package="k" position="C14" name="PI2" type="I/O" gpio-port="i" gpio-pin="2"/>
+    <pin device-pin="x" position="C15" name="PA13 (JTMS/SWDIO)" type="I/O" gpio-port="a" gpio-pin="13"/>
+    <pin device-package="k" position="C15" name="PA11" type="I/O" gpio-port="a" gpio-pin="11"/>
+    <pin device-pin="x" position="C16" name="VSS" type="POWER"/>
+    <pin device-pin="x" position="C17" name="VDDLDO" type="POWER"/>
+    <pin device-pin="x" position="D1" name="PE5" type="I/O" gpio-port="e" gpio-pin="5"/>
+    <pin device-pin="v" device-package="h" position="D1" name="PH1-OSC_OUT (PH1)" type="I/O" gpio-port="h" gpio-pin="1"/>
+    <pin device-package="k" position="D1" name="PC13" type="I/O" gpio-port="c" gpio-pin="13"/>
+    <pin device-pin="a" position="D1" name="VDD" type="POWER"/>
+    <pin device-pin="x" position="D2" name="PE4" type="I/O" gpio-port="e" gpio-pin="4"/>
+    <pin device-pin="v" device-package="h" position="D2" name="VDD" type="POWER"/>
+    <pin device-package="k" position="D2" name="PI8" type="I/O" gpio-port="i" gpio-pin="8"/>
+    <pin device-pin="a" position="D2" name="VSS" type="POWER"/>
+    <pin device-pin="x" position="D3" name="PE3" type="I/O" gpio-port="e" gpio-pin="3"/>
+    <pin device-pin="v" device-package="h" position="D3" name="PE5" type="I/O" gpio-port="e" gpio-pin="5"/>
+    <pin device-package="k" position="D3" name="PI9" type="I/O" gpio-port="i" gpio-pin="9"/>
+    <pin device-pin="a" position="D3" name="PC13" type="I/O" gpio-port="c" gpio-pin="13"/>
+    <pin device-pin="x" position="D4" name="PB9" type="I/O" gpio-port="b" gpio-pin="9"/>
+    <pin device-pin="v" device-package="h" position="D4" name="PE0" type="I/O" gpio-port="e" gpio-pin="0"/>
+    <pin device-package="k" position="D4" name="PI4" type="I/O" gpio-port="i" gpio-pin="4"/>
+    <pin device-pin="a" position="D4" name="PE1" type="I/O" gpio-port="e" gpio-pin="1"/>
+    <pin device-pin="x" position="D5" name="PB8" type="I/O" gpio-port="b" gpio-pin="8"/>
+    <pin device-pin="v" device-package="h" position="D5" name="BOOT0" type="BOOT"/>
+    <pin device-package="k" position="D5" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="D5" name="PE0" type="I/O" gpio-port="e" gpio-pin="0"/>
+    <pin device-pin="x" position="D6" name="PG15" type="I/O" gpio-port="g" gpio-pin="15"/>
+    <pin device-pin="v" device-package="h" position="D6" name="PD7" type="I/O" gpio-port="d" gpio-pin="7"/>
+    <pin device-package="k" position="D6" name="BOOT0" type="BOOT"/>
+    <pin device-pin="a" position="D6" name="PB7" type="I/O" gpio-port="b" gpio-pin="7"/>
+    <pin device-pin="x" position="D7" name="PK7" type="I/O" gpio-port="k" gpio-pin="7"/>
+    <pin device-pin="v" device-package="h" position="D7" name="PD4" type="I/O" gpio-port="d" gpio-pin="4"/>
+    <pin device-package="k" position="D7" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="D7" name="PG13" type="I/O" gpio-port="g" gpio-pin="13"/>
+    <pin device-pin="x" position="D8" name="PG14" type="I/O" gpio-port="g" gpio-pin="14"/>
+    <pin device-pin="v" device-package="h" position="D8" name="PD0" type="I/O" gpio-port="d" gpio-pin="0"/>
+    <pin device-package="k" position="D8" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="D8" name="PD7" type="I/O" gpio-port="d" gpio-pin="7"/>
+    <pin device-pin="x" position="D9" name="PG13" type="I/O" gpio-port="g" gpio-pin="13"/>
+    <pin device-pin="v" device-package="h" position="D9" name="PA8" type="I/O" gpio-port="a" gpio-pin="8"/>
+    <pin device-package="k" position="D9" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="D9" name="PD3" type="I/O" gpio-port="d" gpio-pin="3"/>
+    <pin device-pin="x" position="D10" name="PJ14" type="I/O" gpio-port="j" gpio-pin="14"/>
+    <pin device-pin="v" device-package="h" position="D10" name="PA10" type="I/O" gpio-port="a" gpio-pin="10"/>
+    <pin device-package="k" position="D10" name="PD4" type="I/O" gpio-port="d" gpio-pin="4"/>
+    <pin device-pin="a" position="D10" name="PD0" type="I/O" gpio-port="d" gpio-pin="0"/>
+    <pin device-pin="x" position="D11" name="PJ12" type="I/O" gpio-port="j" gpio-pin="12"/>
+    <pin device-package="k" position="D11" name="PD3" type="I/O" gpio-port="d" gpio-pin="3"/>
+    <pin device-pin="a" position="D11" name="PA13 (JTMS/SWDIO)" type="I/O" gpio-port="a" gpio-pin="13"/>
+    <pin device-pin="i" device-package="k" position="D12" name="PD2" type="I/O" gpio-port="d" gpio-pin="2"/>
+    <pin device-pin="x" device-package="h" position="D12" name="PD2" type="I/O" gpio-port="d" gpio-pin="2"/>
+    <pin device-pin="a" position="D12" name="VDDLDO" type="POWER"/>
+    <pin device-pin="x" position="D13" name="PD0" type="I/O" gpio-port="d" gpio-pin="0"/>
+    <pin device-package="k" position="D13" name="PH15" type="I/O" gpio-port="h" gpio-pin="15"/>
+    <pin device-pin="a" position="D13" name="VCAP" type="POWER"/>
+    <pin device-pin="x" position="D14" name="PA10" type="I/O" gpio-port="a" gpio-pin="10"/>
+    <pin device-package="k" position="D14" name="PI1" type="I/O" gpio-port="i" gpio-pin="1"/>
+    <pin device-pin="x" position="D15" name="PA9" type="I/O" gpio-port="a" gpio-pin="9"/>
+    <pin device-package="k" position="D15" name="PA10" type="I/O" gpio-port="a" gpio-pin="10"/>
+    <pin device-pin="x" position="D16" name="PH13" type="I/O" gpio-port="h" gpio-pin="13"/>
+    <pin device-pin="x" position="D17" name="VCAP" type="POWER"/>
+    <pin device-pin="x" position="E1" name="NC" type="NC"/>
+    <pin device-pin="v" device-package="h" position="E1" name="NRST" type="RESET"/>
+    <pin device-package="k" position="E1" name="PC14-OSC32_IN (OSC32_IN)" type="I/O" gpio-port="c" gpio-pin="14"/>
+    <pin device-pin="a" position="E1" name="PI11" type="I/O" gpio-port="i" gpio-pin="11"/>
+    <pin device-pin="x" position="E2" name="PI9" type="I/O" gpio-port="i" gpio-pin="9"/>
+    <pin device-pin="v" device-package="h" position="E2" name="PC2_C" type="I/O" gpio-port="c" gpio-pin="2"/>
+    <pin device-package="k" position="E2" name="PF0" type="I/O" gpio-port="f" gpio-pin="0"/>
+    <pin device-pin="a" position="E2" name="PI7" type="I/O" gpio-port="i" gpio-pin="7"/>
+    <pin device-pin="x" position="E3" name="PC13" type="I/O" gpio-port="c" gpio-pin="13"/>
+    <pin device-pin="v" device-package="h" position="E3" name="PE6" type="I/O" gpio-port="e" gpio-pin="6"/>
+    <pin device-package="k" position="E3" name="PI10" type="I/O" gpio-port="i" gpio-pin="10"/>
+    <pin device-pin="a" position="E3" name="VBAT" type="POWER"/>
+    <pin device-pin="x" position="E4" name="PI8" type="I/O" gpio-port="i" gpio-pin="8"/>
+    <pin device-pin="v" device-package="h" position="E4" name="VSS" type="POWER"/>
+    <pin device-package="k" position="E4" name="PI11" type="I/O" gpio-port="i" gpio-pin="11"/>
+    <pin device-pin="a" position="E4" name="PF1" type="I/O" gpio-port="f" gpio-pin="1"/>
+    <pin device-pin="x" position="E5" name="PE6" type="I/O" gpio-port="e" gpio-pin="6"/>
+    <pin device-pin="v" device-package="h" position="E5" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="E5" name="PF3" type="I/O" gpio-port="f" gpio-pin="3"/>
+    <pin device-pin="x" position="E6" name="VDD" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="E6" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="E6" name="BOOT0" type="BOOT"/>
+    <pin device-pin="x" position="E7" name="PDR_ON" type="RESET"/>
+    <pin device-pin="v" device-package="h" position="E7" name="VCAP" type="POWER"/>
+    <pin device-pin="a" position="E7" name="PG15" type="I/O" gpio-port="g" gpio-pin="15"/>
+    <pin device-pin="x" position="E8" name="BOOT0" type="BOOT"/>
+    <pin device-pin="v" device-package="h" position="E8" name="PD1" type="I/O" gpio-port="d" gpio-pin="1"/>
+    <pin device-pin="a" position="E8" name="PG12" type="I/O" gpio-port="g" gpio-pin="12"/>
+    <pin device-pin="x" position="E9" name="VDD" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="E9" name="PC9" type="I/O" gpio-port="c" gpio-pin="9"/>
+    <pin device-pin="a" position="E9" name="PD2" type="I/O" gpio-port="d" gpio-pin="2"/>
+    <pin device-pin="x" position="E10" name="PJ13" type="I/O" gpio-port="j" gpio-pin="13"/>
+    <pin device-pin="v" device-package="h" position="E10" name="PC7" type="I/O" gpio-port="c" gpio-pin="7"/>
+    <pin device-pin="a" position="E10" name="PA10" type="I/O" gpio-port="a" gpio-pin="10"/>
+    <pin device-pin="x" position="E11" name="VDD" type="POWER"/>
+    <pin device-pin="a" position="E11" name="PA9" type="I/O" gpio-port="a" gpio-pin="9"/>
+    <pin device-pin="x" position="E12" name="PD1" type="I/O" gpio-port="d" gpio-pin="1"/>
+    <pin device-package="k" position="E12" name="PH13" type="I/O" gpio-port="h" gpio-pin="13"/>
+    <pin device-pin="a" position="E12" name="PA8" type="I/O" gpio-port="a" gpio-pin="8"/>
+    <pin device-pin="x" position="E13" name="PC8" type="I/O" gpio-port="c" gpio-pin="8"/>
+    <pin device-package="k" position="E13" name="PH14" type="I/O" gpio-port="h" gpio-pin="14"/>
+    <pin device-pin="a" position="E13" name="PA12" type="I/O" gpio-port="a" gpio-pin="12"/>
+    <pin device-pin="x" position="E14" name="PC9" type="I/O" gpio-port="c" gpio-pin="9"/>
+    <pin device-package="k" position="E14" name="PI0" type="I/O" gpio-port="i" gpio-pin="0"/>
+    <pin device-pin="x" position="E15" name="PA8" type="I/O" gpio-port="a" gpio-pin="8"/>
+    <pin device-package="k" position="E15" name="PA9" type="I/O" gpio-port="a" gpio-pin="9"/>
+    <pin device-pin="x" position="E16" name="PA12" type="I/O" gpio-port="a" gpio-pin="12"/>
+    <pin device-pin="x" position="E17" name="PA11" type="I/O" gpio-port="a" gpio-pin="11"/>
+    <pin device-pin="x" position="F1" name="NC" type="NC"/>
+    <pin device-pin="v" device-package="h" position="F1" name="PC0" type="I/O" gpio-port="c" gpio-pin="0"/>
+    <pin device-package="k" position="F1" name="PC15-OSC32_OUT (OSC32_OUT)" type="I/O" gpio-port="c" gpio-pin="15"/>
+    <pin device-pin="a" position="F1" name="PI13" type="I/O" gpio-port="i" gpio-pin="13"/>
+    <pin device-pin="i" device-package="k" position="F2" name="VSS" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="F2" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="F2" name="PC1" type="I/O" gpio-port="c" gpio-pin="1"/>
+    <pin device-pin="a" position="F2" name="PI12" type="I/O" gpio-port="i" gpio-pin="12"/>
+    <pin device-pin="x" position="F3" name="PI10" type="I/O" gpio-port="i" gpio-pin="10"/>
+    <pin device-pin="v" device-package="h" position="F3" name="PC3_C" type="I/O" gpio-port="c" gpio-pin="3"/>
+    <pin device-package="k" position="F3" name="VDD" type="POWER"/>
+    <pin device-pin="a" position="F3" name="PF0" type="I/O" gpio-port="f" gpio-pin="0"/>
+    <pin device-pin="x" position="F4" name="PI11" type="I/O" gpio-port="i" gpio-pin="11"/>
+    <pin device-pin="v" device-package="h" position="F4" name="VDDLDO" type="POWER"/>
+    <pin device-package="k" position="F4" name="PH2" type="I/O" gpio-port="h" gpio-pin="2"/>
+    <pin device-pin="a" position="F4" name="PF2" type="I/O" gpio-port="f" gpio-pin="2"/>
+    <pin device-package="h" position="F5" name="VDD" type="POWER"/>
+    <pin device-pin="a" position="F5" name="PF5" type="I/O" gpio-port="f" gpio-pin="5"/>
+    <pin device-pin="v" device-package="h" position="F6" name="VDD33_USB" type="POWER"/>
+    <pin device-package="k" position="F6" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="F6" name="PF7" type="I/O" gpio-port="f" gpio-pin="7"/>
+    <pin device-pin="v" device-package="h" position="F7" name="PDR_ON" type="RESET"/>
+    <pin device-package="k" position="F7" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="F7" name="PB3 (JTDO/TRACESWO)" type="I/O" gpio-port="b" gpio-pin="3"/>
+    <pin device-pin="v" device-package="h" position="F8" name="VCAP" type="POWER"/>
+    <pin device-package="k" position="F8" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="F8" name="PG4" type="I/O" gpio-port="g" gpio-pin="4"/>
+    <pin device-pin="v" device-package="h" position="F9" name="PC8" type="I/O" gpio-port="c" gpio-pin="8"/>
+    <pin device-package="k" position="F9" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="F9" name="PC6" type="I/O" gpio-port="c" gpio-pin="6"/>
+    <pin device-pin="v" device-package="h" position="F10" name="PC6" type="I/O" gpio-port="c" gpio-pin="6"/>
+    <pin device-package="k" position="F10" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="F10" name="PC7" type="I/O" gpio-port="c" gpio-pin="7"/>
+    <pin device-pin="a" position="F11" name="PC9" type="I/O" gpio-port="c" gpio-pin="9"/>
+    <pin device-package="k" position="F12" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="F12" name="PC8" type="I/O" gpio-port="c" gpio-pin="8"/>
+    <pin device-pin="x" position="F13" name="PC7" type="I/O" gpio-port="c" gpio-pin="7"/>
+    <pin device-package="k" position="F13" name="VCAP" type="POWER"/>
+    <pin device-pin="a" position="F13" name="PA11" type="I/O" gpio-port="a" gpio-pin="11"/>
+    <pin device-pin="x" position="F14" name="PC6" type="I/O" gpio-port="c" gpio-pin="6"/>
+    <pin device-package="k" position="F14" name="PC9" type="I/O" gpio-port="c" gpio-pin="9"/>
+    <pin device-pin="x" position="F15" name="PG8" type="I/O" gpio-port="g" gpio-pin="8"/>
+    <pin device-package="k" position="F15" name="PA8" type="I/O" gpio-port="a" gpio-pin="8"/>
+    <pin device-pin="x" position="F16" name="PG7" type="I/O" gpio-port="g" gpio-pin="7"/>
+    <pin device-pin="x" position="F17" name="VDD33_USB" type="POWER"/>
+    <pin device-pin="x" position="G1" name="PF2" type="I/O" gpio-port="f" gpio-pin="2"/>
+    <pin device-pin="v" device-package="h" position="G1" name="VSSA" type="POWER"/>
+    <pin device-package="k" position="G1" name="PH0-OSC_IN (PH0)" type="I/O" gpio-port="h" gpio-pin="0"/>
+    <pin device-pin="a" position="G1" name="VDD" type="POWER"/>
+    <pin device-pin="x" position="G2" name="NC" type="NC"/>
+    <pin device-pin="v" device-package="h" position="G2" name="PA0" type="I/O" gpio-port="a" gpio-pin="0"/>
+    <pin device-package="i|k" position="G2" name="VSS" type="POWER"/>
+    <pin device-pin="x" position="G3" name="PF1" type="I/O" gpio-port="f" gpio-pin="1"/>
+    <pin device-pin="v" device-package="h" position="G3" name="PA4" type="I/O" gpio-port="a" gpio-pin="4"/>
+    <pin device-package="k" position="G3" name="VDD" type="POWER"/>
+    <pin device-pin="a" position="G3" name="PF4" type="I/O" gpio-port="f" gpio-pin="4"/>
+    <pin device-pin="x" position="G4" name="PF0" type="I/O" gpio-port="f" gpio-pin="0"/>
+    <pin device-pin="v" device-package="h" position="G4" name="PC4" type="I/O" gpio-port="c" gpio-pin="4"/>
+    <pin device-package="k" position="G4" name="PH3" type="I/O" gpio-port="h" gpio-pin="3"/>
+    <pin device-pin="a" position="G4" name="PF6" type="I/O" gpio-port="f" gpio-pin="6"/>
+    <pin device-pin="x" position="G5" name="VDD" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="G5" name="PB2" type="I/O" gpio-port="b" gpio-pin="2"/>
+    <pin device-pin="a" position="G5" name="PF9" type="I/O" gpio-port="f" gpio-pin="9"/>
+    <pin device-pin="v" device-package="h" position="G6" name="PE10" type="I/O" gpio-port="e" gpio-pin="10"/>
+    <pin device-package="k" position="G6" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="G6" name="NRST" type="RESET"/>
+    <pin device-pin="i" device-package="k" position="G7" name="VSS" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="G7" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="G7" name="PE14" type="I/O" gpio-port="e" gpio-pin="14"/>
+    <pin device-pin="a" position="G7" name="PF13" type="I/O" gpio-port="f" gpio-pin="13"/>
+    <pin device-pin="i" device-package="k" position="G8" name="VSS" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="G8" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="G8" name="PD15" type="I/O" gpio-port="d" gpio-pin="15"/>
+    <pin device-pin="a" position="G8" name="PE7" type="I/O" gpio-port="e" gpio-pin="7"/>
+    <pin device-pin="i" device-package="k" position="G9" name="VSS" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="G9" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="G9" name="PD11" type="I/O" gpio-port="d" gpio-pin="11"/>
+    <pin device-pin="a" position="G9" name="PG6" type="I/O" gpio-port="g" gpio-pin="6"/>
+    <pin device-pin="i" device-package="k" position="G10" name="VSS" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="G10" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="G10" name="PB15" type="I/O" gpio-port="b" gpio-pin="15"/>
+    <pin device-pin="a" position="G10" name="PG7" type="I/O" gpio-port="g" gpio-pin="7"/>
+    <pin device-pin="x" position="G11" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="G11" name="PG8" type="I/O" gpio-port="g" gpio-pin="8"/>
+    <pin device-package="k" position="G12" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="G12" name="VDD50_USB" type="POWER"/>
+    <pin device-pin="i" device-package="k" position="G13" name="VDD" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="G13" name="VDD" type="POWER"/>
+    <pin device-pin="a" position="G13" name="VDD33_USB" type="POWER"/>
+    <pin device-pin="x" position="G14" name="PG5" type="I/O" gpio-port="g" gpio-pin="5"/>
+    <pin device-package="k" position="G14" name="PC8" type="I/O" gpio-port="c" gpio-pin="8"/>
+    <pin device-pin="x" position="G15" name="PG6" type="I/O" gpio-port="g" gpio-pin="6"/>
+    <pin device-package="k" position="G15" name="PC7" type="I/O" gpio-port="c" gpio-pin="7"/>
+    <pin device-pin="x" position="G16" name="VSS" type="POWER"/>
+    <pin device-pin="x" position="G17" name="VDD50_USB" type="POWER"/>
+    <pin device-pin="x" position="H1" name="PI12" type="I/O" gpio-port="i" gpio-pin="12"/>
+    <pin device-pin="v" device-package="h" position="H1" name="VDDA" type="POWER"/>
+    <pin device-package="k" position="H1" name="PH1-OSC_OUT (PH1)" type="I/O" gpio-port="h" gpio-pin="1"/>
+    <pin device-pin="a" position="H1" name="PH0-OSC_IN (PH0)" type="I/O" gpio-port="h" gpio-pin="0"/>
+    <pin device-pin="x" position="H2" name="PI13" type="I/O" gpio-port="i" gpio-pin="13"/>
+    <pin device-pin="v" device-package="h" position="H2" name="PA1" type="I/O" gpio-port="a" gpio-pin="1"/>
+    <pin device-package="k" position="H2" name="PF2" type="I/O" gpio-port="f" gpio-pin="2"/>
+    <pin device-pin="a" position="H2" name="PH1-OSC_OUT (PH1)" type="I/O" gpio-port="h" gpio-pin="1"/>
+    <pin device-pin="x" position="H3" name="PI14" type="I/O" gpio-port="i" gpio-pin="14"/>
+    <pin device-pin="v" device-package="h" position="H3" name="PA5" type="I/O" gpio-port="a" gpio-pin="5"/>
+    <pin device-package="k" position="H3" name="PF1" type="I/O" gpio-port="f" gpio-pin="1"/>
+    <pin device-pin="a" position="H3" name="PF10" type="I/O" gpio-port="f" gpio-pin="10"/>
+    <pin device-pin="x" position="H4" name="PF3" type="I/O" gpio-port="f" gpio-pin="3"/>
+    <pin device-pin="v" device-package="h" position="H4" name="PC5" type="I/O" gpio-port="c" gpio-pin="5"/>
+    <pin device-package="k" position="H4" name="PH4" type="I/O" gpio-port="h" gpio-pin="4"/>
+    <pin device-pin="a" position="H4" name="PF8" type="I/O" gpio-port="f" gpio-pin="8"/>
+    <pin device-pin="x" position="H5" name="VDD" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="H5" name="PE7" type="I/O" gpio-port="e" gpio-pin="7"/>
+    <pin device-pin="a" position="H5" name="PJ1" type="I/O" gpio-port="j" gpio-pin="1"/>
+    <pin device-pin="v" device-package="h" position="H6" name="PE11" type="I/O" gpio-port="e" gpio-pin="11"/>
+    <pin device-package="k" position="H6" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="H6" name="PA4" type="I/O" gpio-port="a" gpio-pin="4"/>
+    <pin device-pin="i" device-package="k" position="H7" name="VSS" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="H7" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="H7" name="PE15" type="I/O" gpio-port="e" gpio-pin="15"/>
+    <pin device-pin="a" position="H7" name="PF14" type="I/O" gpio-port="f" gpio-pin="14"/>
+    <pin device-pin="i" device-package="k" position="H8" name="VSS" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="H8" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="H8" name="PD14" type="I/O" gpio-port="d" gpio-pin="14"/>
+    <pin device-pin="a" position="H8" name="PE8" type="I/O" gpio-port="e" gpio-pin="8"/>
+    <pin device-pin="i" device-package="k" position="H9" name="VSS" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="H9" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="H9" name="PD10" type="I/O" gpio-port="d" gpio-pin="10"/>
+    <pin device-pin="a" position="H9" name="PG2" type="I/O" gpio-port="g" gpio-pin="2"/>
+    <pin device-pin="i" device-package="k" position="H10" name="VSS" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="H10" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="H10" name="PB14" type="I/O" gpio-port="b" gpio-pin="14"/>
+    <pin device-pin="a" position="H10" name="PG3" type="I/O" gpio-port="g" gpio-pin="3"/>
+    <pin device-pin="x" position="H11" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="H11" name="PG5" type="I/O" gpio-port="g" gpio-pin="5"/>
+    <pin device-package="i|k" position="H12" name="VSS" type="POWER"/>
+    <pin device-pin="a|x" position="H13" name="VDD" type="POWER"/>
+    <pin device-package="k" position="H13" name="VDD33_USB" type="POWER"/>
+    <pin device-pin="x" position="H14" name="PG4" type="I/O" gpio-port="g" gpio-pin="4"/>
+    <pin device-package="k" position="H14" name="PG8" type="I/O" gpio-port="g" gpio-pin="8"/>
+    <pin device-pin="x" position="H15" name="PG3" type="I/O" gpio-port="g" gpio-pin="3"/>
+    <pin device-package="k" position="H15" name="PC6" type="I/O" gpio-port="c" gpio-pin="6"/>
+    <pin device-pin="x" position="H16" name="PG2" type="I/O" gpio-port="g" gpio-pin="2"/>
+    <pin device-pin="x" position="H17" name="PK2" type="I/O" gpio-port="k" gpio-pin="2"/>
+    <pin device-pin="x" position="J1" name="PH1-OSC_OUT (PH1)" type="I/O" gpio-port="h" gpio-pin="1"/>
+    <pin device-pin="v" device-package="h" position="J1" name="VSS" type="POWER"/>
+    <pin device-package="k" position="J1" name="NRST" type="RESET"/>
+    <pin device-pin="a" position="J1" name="PC0" type="I/O" gpio-port="c" gpio-pin="0"/>
+    <pin device-pin="x" position="J2" name="PH0-OSC_IN (PH0)" type="I/O" gpio-port="h" gpio-pin="0"/>
+    <pin device-pin="v" device-package="h" position="J2" name="PA2" type="I/O" gpio-port="a" gpio-pin="2"/>
+    <pin device-package="k" position="J2" name="PF3" type="I/O" gpio-port="f" gpio-pin="3"/>
+    <pin device-pin="a" position="J2" name="PC1" type="I/O" gpio-port="c" gpio-pin="1"/>
+    <pin device-pin="x" position="J3" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="J3" name="PA6" type="I/O" gpio-port="a" gpio-pin="6"/>
+    <pin device-package="k" position="J3" name="PF4" type="I/O" gpio-port="f" gpio-pin="4"/>
+    <pin device-pin="a" position="J3" name="VSSA" type="POWER"/>
+    <pin device-pin="x" position="J4" name="PF5" type="I/O" gpio-port="f" gpio-pin="5"/>
+    <pin device-pin="v" device-package="h" position="J4" name="PB0" type="I/O" gpio-port="b" gpio-pin="0"/>
+    <pin device-package="k" position="J4" name="PH5" type="I/O" gpio-port="h" gpio-pin="5"/>
+    <pin device-pin="a" position="J4" name="PJ0" type="I/O" gpio-port="j" gpio-pin="0"/>
+    <pin device-pin="x" position="J5" name="PF4" type="I/O" gpio-port="f" gpio-pin="4"/>
+    <pin device-pin="v" device-package="h" position="J5" name="PE8" type="I/O" gpio-port="e" gpio-pin="8"/>
+    <pin device-pin="a" position="J5" name="PA0" type="I/O" gpio-port="a" gpio-pin="0"/>
+    <pin device-pin="v" device-package="h" position="J6" name="PE12" type="I/O" gpio-port="e" gpio-pin="12"/>
+    <pin device-package="k" position="J6" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="J6" name="PA7" type="I/O" gpio-port="a" gpio-pin="7"/>
+    <pin device-pin="i" device-package="k" position="J7" name="VSS" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="J7" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="J7" name="PB10" type="I/O" gpio-port="b" gpio-pin="10"/>
+    <pin device-pin="a" position="J7" name="PF15" type="I/O" gpio-port="f" gpio-pin="15"/>
+    <pin device-pin="i" device-package="k" position="J8" name="VSS" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="J8" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="J8" name="PB13" type="I/O" gpio-port="b" gpio-pin="13"/>
+    <pin device-pin="a" position="J8" name="PE9" type="I/O" gpio-port="e" gpio-pin="9"/>
+    <pin device-pin="i" device-package="k" position="J9" name="VSS" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="J9" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="J9" name="PD9" type="I/O" gpio-port="d" gpio-pin="9"/>
+    <pin device-pin="a" position="J9" name="PE14" type="I/O" gpio-port="e" gpio-pin="14"/>
+    <pin device-pin="i" device-package="k" position="J10" name="VSS" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="J10" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="J10" name="PD13" type="I/O" gpio-port="d" gpio-pin="13"/>
+    <pin device-pin="a" position="J10" name="PD11" type="I/O" gpio-port="d" gpio-pin="11"/>
+    <pin device-pin="x" position="J11" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="J11" name="PD13" type="I/O" gpio-port="d" gpio-pin="13"/>
+    <pin device-package="k" position="J12" name="VDD" type="POWER"/>
+    <pin device-pin="a" position="J12" name="PD15" type="I/O" gpio-port="d" gpio-pin="15"/>
+    <pin device-pin="i" device-package="k" position="J13" name="VDD" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="J13" name="VDD" type="POWER"/>
+    <pin device-pin="a" position="J13" name="PD14" type="I/O" gpio-port="d" gpio-pin="14"/>
+    <pin device-pin="x" position="J14" name="PK0" type="I/O" gpio-port="k" gpio-pin="0"/>
+    <pin device-package="k" position="J14" name="PG7" type="I/O" gpio-port="g" gpio-pin="7"/>
+    <pin device-pin="x" position="J15" name="PK1" type="I/O" gpio-port="k" gpio-pin="1"/>
+    <pin device-package="k" position="J15" name="PG6" type="I/O" gpio-port="g" gpio-pin="6"/>
+    <pin device-pin="x" position="J16" name="VSS" type="POWER"/>
+    <pin device-pin="x" position="J17" name="VSS" type="POWER"/>
+    <pin device-pin="x" position="K1" name="NRST" type="RESET"/>
+    <pin device-pin="v" device-package="h" position="K1" name="VDD" type="POWER"/>
+    <pin device-package="k" position="K1" name="PF7" type="I/O" gpio-port="f" gpio-pin="7"/>
+    <pin device-pin="a" position="K1" name="PC3_C" type="I/O" gpio-port="c" gpio-pin="3"/>
+    <pin device-pin="i" device-package="k" position="K2" name="PF6" type="I/O" gpio-port="f" gpio-pin="6"/>
+    <pin device-pin="x" device-package="h" position="K2" name="PF6" type="I/O" gpio-port="f" gpio-pin="6"/>
+    <pin device-pin="v" device-package="h" position="K2" name="PA3" type="I/O" gpio-port="a" gpio-pin="3"/>
+    <pin device-pin="a" position="K2" name="PC2_C" type="I/O" gpio-port="c" gpio-pin="2"/>
+    <pin device-pin="x" position="K3" name="PF7" type="I/O" gpio-port="f" gpio-pin="7"/>
+    <pin device-pin="v" device-package="h" position="K3" name="PA7" type="I/O" gpio-port="a" gpio-pin="7"/>
+    <pin device-package="k" position="K3" name="PF5" type="I/O" gpio-port="f" gpio-pin="5"/>
+    <pin device-pin="a" position="K3" name="PH4" type="I/O" gpio-port="h" gpio-pin="4"/>
+    <pin device-pin="x" position="K4" name="PF8" type="I/O" gpio-port="f" gpio-pin="8"/>
+    <pin device-pin="v" device-package="h" position="K4" name="PB1" type="I/O" gpio-port="b" gpio-pin="1"/>
+    <pin device-package="k" position="K4" name="VDD" type="POWER"/>
+    <pin device-pin="a" position="K4" name="PA1" type="I/O" gpio-port="a" gpio-pin="1"/>
+    <pin device-pin="x" position="K5" name="VDD" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="K5" name="PE9" type="I/O" gpio-port="e" gpio-pin="9"/>
+    <pin device-pin="a" position="K5" name="PA6" type="I/O" gpio-port="a" gpio-pin="6"/>
+    <pin device-pin="v" device-package="h" position="K6" name="PE13" type="I/O" gpio-port="e" gpio-pin="13"/>
+    <pin device-package="k" position="K6" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="K6" name="PC4" type="I/O" gpio-port="c" gpio-pin="4"/>
+    <pin device-pin="i" device-package="k" position="K7" name="VSS" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="K7" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="K7" name="PB11" type="I/O" gpio-port="b" gpio-pin="11"/>
+    <pin device-pin="a" position="K7" name="PG0" type="I/O" gpio-port="g" gpio-pin="0"/>
+    <pin device-pin="i" device-package="k" position="K8" name="VSS" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="K8" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="K8" name="PB12" type="I/O" gpio-port="b" gpio-pin="12"/>
+    <pin device-pin="a" position="K8" name="PE13" type="I/O" gpio-port="e" gpio-pin="13"/>
+    <pin device-pin="i" device-package="k" position="K9" name="VSS" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="K9" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="K9" name="PD8" type="I/O" gpio-port="d" gpio-pin="8"/>
+    <pin device-pin="a" position="K9" name="PH10" type="I/O" gpio-port="h" gpio-pin="10"/>
+    <pin device-pin="i" device-package="k" position="K10" name="VSS" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="K10" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="h" position="K10" name="PD12" type="I/O" gpio-port="d" gpio-pin="12"/>
+    <pin device-pin="a" position="K10" name="PH12" type="I/O" gpio-port="h" gpio-pin="12"/>
+    <pin device-pin="x" position="K11" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="K11" name="PD9" type="I/O" gpio-port="d" gpio-pin="9"/>
+    <pin device-package="k" position="K12" name="PH12" type="I/O" gpio-port="h" gpio-pin="12"/>
+    <pin device-pin="a" position="K12" name="PD10" type="I/O" gpio-port="d" gpio-pin="10"/>
+    <pin device-pin="x" position="K13" name="VDD" type="POWER"/>
+    <pin device-package="k" position="K13" name="PG5" type="I/O" gpio-port="g" gpio-pin="5"/>
+    <pin device-pin="a" position="K13" name="PD12" type="I/O" gpio-port="d" gpio-pin="12"/>
+    <pin device-pin="x" position="K14" name="PJ11" type="I/O" gpio-port="j" gpio-pin="11"/>
+    <pin device-package="k" position="K14" name="PG4" type="I/O" gpio-port="g" gpio-pin="4"/>
+    <pin device-pin="x" position="K15" name="VSS" type="POWER"/>
+    <pin device-package="k" position="K15" name="PG3" type="I/O" gpio-port="g" gpio-pin="3"/>
+    <pin device-pin="x" position="K16" name="NC" type="NC"/>
+    <pin device-pin="x" position="K17" name="NC" type="NC"/>
+    <pin device-pin="a|x" position="L1" name="VDDA" type="POWER"/>
+    <pin device-package="k" position="L1" name="PF10" type="I/O" gpio-port="f" gpio-pin="10"/>
+    <pin device-pin="x" position="L2" name="PC0" type="I/O" gpio-port="c" gpio-pin="0"/>
+    <pin device-package="k" position="L2" name="PF9" type="I/O" gpio-port="f" gpio-pin="9"/>
+    <pin device-pin="a" position="L2" name="VREF+" type="MONOIO"/>
+    <pin device-pin="x" position="L3" name="PF10" type="I/O" gpio-port="f" gpio-pin="10"/>
+    <pin device-package="k" position="L3" name="PF8" type="I/O" gpio-port="f" gpio-pin="8"/>
+    <pin device-pin="a" position="L3" name="PH5" type="I/O" gpio-port="h" gpio-pin="5"/>
+    <pin device-pin="x" position="L4" name="PF9" type="I/O" gpio-port="f" gpio-pin="9"/>
+    <pin device-package="k" position="L4" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="L4" name="PA5" type="I/O" gpio-port="a" gpio-pin="5"/>
+    <pin device-pin="x" position="L5" name="VDD" type="POWER"/>
+    <pin device-pin="a" position="L5" name="PB1" type="I/O" gpio-port="b" gpio-pin="1"/>
+    <pin device-pin="a" position="L6" name="PB2" type="I/O" gpio-port="b" gpio-pin="2"/>
+    <pin device-pin="x" position="L7" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="L7" name="PG1" type="I/O" gpio-port="g" gpio-pin="1"/>
+    <pin device-pin="x" position="L8" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="L8" name="PE12" type="I/O" gpio-port="e" gpio-pin="12"/>
+    <pin device-pin="x" position="L9" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="L9" name="PB10" type="I/O" gpio-port="b" gpio-pin="10"/>
+    <pin device-pin="x" position="L10" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="L10" name="PH11" type="I/O" gpio-port="h" gpio-pin="11"/>
+    <pin device-pin="x" position="L11" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="L11" name="PB13" type="I/O" gpio-port="b" gpio-pin="13"/>
+    <pin device-package="k" position="L12" name="PH11" type="I/O" gpio-port="h" gpio-pin="11"/>
+    <pin device-pin="a" position="L12" name="VSS" type="POWER"/>
+    <pin device-pin="a|x" position="L13" name="VDD" type="POWER"/>
+    <pin device-package="k" position="L13" name="PH10" type="I/O" gpio-port="h" gpio-pin="10"/>
+    <pin device-pin="x" position="L14" name="PJ10" type="I/O" gpio-port="j" gpio-pin="10"/>
+    <pin device-package="k" position="L14" name="PD15" type="I/O" gpio-port="d" gpio-pin="15"/>
+    <pin device-pin="x" position="L15" name="VSS" type="POWER"/>
+    <pin device-package="k" position="L15" name="PG2" type="I/O" gpio-port="g" gpio-pin="2"/>
+    <pin device-pin="x" position="L16" name="NC" type="NC"/>
+    <pin device-pin="x" position="L17" name="NC" type="NC"/>
+    <pin device-pin="x" position="M1" name="VREF+" type="MONOIO"/>
+    <pin device-package="k" position="M1" name="VSSA" type="POWER"/>
+    <pin device-pin="a" position="M1" name="VDD" type="POWER"/>
+    <pin device-pin="x" position="M2" name="PC1" type="I/O" gpio-port="c" gpio-pin="1"/>
+    <pin device-package="k" position="M2" name="PC0" type="I/O" gpio-port="c" gpio-pin="0"/>
+    <pin device-pin="a" position="M2" name="VSS" type="POWER"/>
+    <pin device-pin="x" position="M3" name="PC2" type="I/O" gpio-port="c" gpio-pin="2"/>
+    <pin device-package="k" position="M3" name="PC1" type="I/O" gpio-port="c" gpio-pin="1"/>
+    <pin device-pin="a" position="M3" name="PH3" type="I/O" gpio-port="h" gpio-pin="3"/>
+    <pin device-pin="x" position="M4" name="PC3" type="I/O" gpio-port="c" gpio-pin="3"/>
+    <pin device-package="k" position="M4" name="PC2_C" type="I/O" gpio-port="c" gpio-pin="2"/>
+    <pin device-pin="a" position="M4" name="VSS" type="POWER"/>
+    <pin device-pin="x" position="M5" name="VDD" type="POWER"/>
+    <pin device-package="k" position="M5" name="PC3_C" type="I/O" gpio-port="c" gpio-pin="3"/>
+    <pin device-pin="a" position="M5" name="PB0" type="I/O" gpio-port="b" gpio-pin="0"/>
+    <pin device-package="k" position="M6" name="PB2" type="I/O" gpio-port="b" gpio-pin="2"/>
+    <pin device-pin="a" position="M6" name="PF11" type="I/O" gpio-port="f" gpio-pin="11"/>
+    <pin device-package="k" position="M7" name="PG1" type="I/O" gpio-port="g" gpio-pin="1"/>
+    <pin device-pin="a" position="M7" name="VSS" type="POWER"/>
+    <pin device-package="k" position="M8" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="M8" name="PE10" type="I/O" gpio-port="e" gpio-pin="10"/>
+    <pin device-package="k" position="M9" name="VSS" type="POWER"/>
+    <pin device-pin="a" position="M9" name="PB11" type="I/O" gpio-port="b" gpio-pin="11"/>
+    <pin device-package="k" position="M10" name="VCAP" type="POWER"/>
+    <pin device-pin="a" position="M10" name="VDDLDO" type="POWER"/>
+    <pin device-package="k" position="M11" name="PH6" type="I/O" gpio-port="h" gpio-pin="6"/>
+    <pin device-pin="a" position="M11" name="VSS" type="POWER"/>
+    <pin device-package="k" position="M12" name="PH8" type="I/O" gpio-port="h" gpio-pin="8"/>
+    <pin device-pin="a" position="M12" name="PD8" type="I/O" gpio-port="d" gpio-pin="8"/>
+    <pin device-pin="x" position="M13" name="VDD" type="POWER"/>
+    <pin device-package="k" position="M13" name="PH9" type="I/O" gpio-port="h" gpio-pin="9"/>
+    <pin device-pin="a" position="M13" name="PB15" type="I/O" gpio-port="b" gpio-pin="15"/>
+    <pin device-pin="x" position="M14" name="PJ9" type="I/O" gpio-port="j" gpio-pin="9"/>
+    <pin device-package="k" position="M14" name="PD14" type="I/O" gpio-port="d" gpio-pin="14"/>
+    <pin device-pin="x" position="M15" name="VSS" type="POWER"/>
+    <pin device-package="k" position="M15" name="PD13" type="I/O" gpio-port="d" gpio-pin="13"/>
+    <pin device-pin="x" position="M16" name="NC" type="NC"/>
+    <pin device-pin="x" position="M17" name="NC" type="NC"/>
+    <pin device-pin="i" device-package="k" position="N1" name="VREF-" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="N1" name="VREF-" type="POWER"/>
+    <pin device-pin="a" position="N1" name="PA2" type="I/O" gpio-port="a" gpio-pin="2"/>
+    <pin device-pin="a|x" position="N2" name="PH2" type="I/O" gpio-port="h" gpio-pin="2"/>
+    <pin device-package="k" position="N2" name="PA1" type="I/O" gpio-port="a" gpio-pin="1"/>
+    <pin device-pin="x" position="N3" name="PA2" type="I/O" gpio-port="a" gpio-pin="2"/>
+    <pin device-package="k" position="N3" name="PA0" type="I/O" gpio-port="a" gpio-pin="0"/>
+    <pin device-pin="a" position="N3" name="PA3" type="I/O" gpio-port="a" gpio-pin="3"/>
+    <pin device-pin="x" position="N4" name="PA1" type="I/O" gpio-port="a" gpio-pin="1"/>
+    <pin device-package="k" position="N4" name="PA4" type="I/O" gpio-port="a" gpio-pin="4"/>
+    <pin device-pin="a" position="N4" name="VDD" type="POWER"/>
+    <pin device-pin="x" position="N5" name="PA0" type="I/O" gpio-port="a" gpio-pin="0"/>
+    <pin device-package="k" position="N5" name="PC4" type="I/O" gpio-port="c" gpio-pin="4"/>
+    <pin device-pin="a" position="N5" name="PC5" type="I/O" gpio-port="c" gpio-pin="5"/>
+    <pin device-pin="x" position="N6" name="PJ0" type="I/O" gpio-port="j" gpio-pin="0"/>
+    <pin device-package="k" position="N6" name="PF13" type="I/O" gpio-port="f" gpio-pin="13"/>
+    <pin device-pin="a" position="N6" name="PF12" type="I/O" gpio-port="f" gpio-pin="12"/>
+    <pin device-pin="a|x" position="N7" name="VDD" type="POWER"/>
+    <pin device-package="k" position="N7" name="PG0" type="I/O" gpio-port="g" gpio-pin="0"/>
+    <pin device-pin="i" device-package="k" position="N8" name="VDD" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="N8" name="VDD" type="POWER"/>
+    <pin device-pin="a" position="N8" name="PE11" type="I/O" gpio-port="e" gpio-pin="11"/>
+    <pin device-pin="x" position="N9" name="PE10" type="I/O" gpio-port="e" gpio-pin="10"/>
+    <pin device-package="k" position="N9" name="VDD" type="POWER"/>
+    <pin device-pin="a" position="N9" name="PE15" type="I/O" gpio-port="e" gpio-pin="15"/>
+    <pin device-pin="i" device-package="k" position="N10" name="VDD" type="POWER"/>
+    <pin device-pin="x" device-package="h" position="N10" name="VDD" type="POWER"/>
+    <pin device-pin="a" position="N10" name="VCAP" type="POWER"/>
+    <pin device-pin="a|x" position="N11" name="VDD" type="POWER"/>
+    <pin device-package="k" position="N11" name="PE13" type="I/O" gpio-port="e" gpio-pin="13"/>
+    <pin device-pin="x" position="N12" name="VDD" type="POWER"/>
+    <pin device-package="k" position="N12" name="PH7" type="I/O" gpio-port="h" gpio-pin="7"/>
+    <pin device-pin="a" position="N12" name="PB12" type="I/O" gpio-port="b" gpio-pin="12"/>
+    <pin device-pin="x" position="N13" name="PJ8" type="I/O" gpio-port="j" gpio-pin="8"/>
+    <pin device-package="k" position="N13" name="PD12" type="I/O" gpio-port="d" gpio-pin="12"/>
+    <pin device-pin="a" position="N13" name="PB14" type="I/O" gpio-port="b" gpio-pin="14"/>
+    <pin device-pin="x" position="N14" name="PJ7" type="I/O" gpio-port="j" gpio-pin="7"/>
+    <pin device-package="k" position="N14" name="PD11" type="I/O" gpio-port="d" gpio-pin="11"/>
+    <pin device-pin="x" position="N15" name="PJ6" type="I/O" gpio-port="j" gpio-pin="6"/>
+    <pin device-package="k" position="N15" name="PD10" type="I/O" gpio-port="d" gpio-pin="10"/>
+    <pin device-pin="x" position="N16" name="VSS" type="POWER"/>
+    <pin device-pin="x" position="N17" name="NC" type="NC"/>
+    <pin device-pin="x" position="P1" name="VSSA" type="POWER"/>
+    <pin device-package="k" position="P1" name="VREF+" type="MONOIO"/>
+    <pin device-pin="x" position="P2" name="PH3" type="I/O" gpio-port="h" gpio-pin="3"/>
+    <pin device-package="k" position="P2" name="PA2" type="I/O" gpio-port="a" gpio-pin="2"/>
+    <pin device-pin="x" position="P3" name="PH4" type="I/O" gpio-port="h" gpio-pin="4"/>
+    <pin device-package="k" position="P3" name="PA6" type="I/O" gpio-port="a" gpio-pin="6"/>
+    <pin device-pin="x" position="P4" name="PH5" type="I/O" gpio-port="h" gpio-pin="5"/>
+    <pin device-package="k" position="P4" name="PA5" type="I/O" gpio-port="a" gpio-pin="5"/>
+    <pin device-pin="x" position="P5" name="PI15" type="I/O" gpio-port="i" gpio-pin="15"/>
+    <pin device-package="k" position="P5" name="PC5" type="I/O" gpio-port="c" gpio-pin="5"/>
+    <pin device-pin="x" position="P6" name="PJ1" type="I/O" gpio-port="j" gpio-pin="1"/>
+    <pin device-package="k" position="P6" name="PF12" type="I/O" gpio-port="f" gpio-pin="12"/>
+    <pin device-pin="x" position="P7" name="PF13" type="I/O" gpio-port="f" gpio-pin="13"/>
+    <pin device-package="k" position="P7" name="PF15" type="I/O" gpio-port="f" gpio-pin="15"/>
+    <pin device-pin="x" position="P8" name="PF14" type="I/O" gpio-port="f" gpio-pin="14"/>
+    <pin device-package="k" position="P8" name="PE8" type="I/O" gpio-port="e" gpio-pin="8"/>
+    <pin device-pin="i" device-package="k" position="P9" name="PE9" type="I/O" gpio-port="e" gpio-pin="9"/>
+    <pin device-pin="x" device-package="h" position="P9" name="PE9" type="I/O" gpio-port="e" gpio-pin="9"/>
+    <pin device-pin="i" device-package="k" position="P10" name="PE11" type="I/O" gpio-port="e" gpio-pin="11"/>
+    <pin device-pin="x" device-package="h" position="P10" name="PE11" type="I/O" gpio-port="e" gpio-pin="11"/>
+    <pin device-pin="x" position="P11" name="PB10" type="I/O" gpio-port="b" gpio-pin="10"/>
+    <pin device-package="k" position="P11" name="PE14" type="I/O" gpio-port="e" gpio-pin="14"/>
+    <pin device-pin="x" position="P12" name="PB11" type="I/O" gpio-port="b" gpio-pin="11"/>
+    <pin device-package="k" position="P12" name="PB12" type="I/O" gpio-port="b" gpio-pin="12"/>
+    <pin device-pin="x" position="P13" name="PH10" type="I/O" gpio-port="h" gpio-pin="10"/>
+    <pin device-package="k" position="P13" name="PB13" type="I/O" gpio-port="b" gpio-pin="13"/>
+    <pin device-pin="x" position="P14" name="PH11" type="I/O" gpio-port="h" gpio-pin="11"/>
+    <pin device-package="k" position="P14" name="PD9" type="I/O" gpio-port="d" gpio-pin="9"/>
+    <pin device-pin="x" position="P15" name="PD15" type="I/O" gpio-port="d" gpio-pin="15"/>
+    <pin device-package="k" position="P15" name="PD8" type="I/O" gpio-port="d" gpio-pin="8"/>
+    <pin device-pin="x" position="P16" name="PD14" type="I/O" gpio-port="d" gpio-pin="14"/>
+    <pin device-pin="x" position="P17" name="VDD" type="POWER"/>
+    <pin device-pin="x" position="R1" name="PC2_C" type="I/O" gpio-port="c" gpio-pin="2"/>
+    <pin device-package="k" position="R1" name="VDDA" type="POWER"/>
+    <pin device-pin="x" position="R2" name="PC3_C" type="I/O" gpio-port="c" gpio-pin="3"/>
+    <pin device-package="k" position="R2" name="PA3" type="I/O" gpio-port="a" gpio-pin="3"/>
+    <pin device-pin="x" position="R3" name="PA6" type="I/O" gpio-port="a" gpio-pin="6"/>
+    <pin device-package="k" position="R3" name="PA7" type="I/O" gpio-port="a" gpio-pin="7"/>
+    <pin device-pin="x" position="R4" name="VSS" type="POWER"/>
+    <pin device-package="k" position="R4" name="PB1" type="I/O" gpio-port="b" gpio-pin="1"/>
+    <pin device-pin="x" position="R5" name="PA7" type="I/O" gpio-port="a" gpio-pin="7"/>
+    <pin device-package="k" position="R5" name="PB0" type="I/O" gpio-port="b" gpio-pin="0"/>
+    <pin device-pin="x" position="R6" name="PB2" type="I/O" gpio-port="b" gpio-pin="2"/>
+    <pin device-package="k" position="R6" name="PF11" type="I/O" gpio-port="f" gpio-pin="11"/>
+    <pin device-pin="x" position="R7" name="PF12" type="I/O" gpio-port="f" gpio-pin="12"/>
+    <pin device-package="k" position="R7" name="PF14" type="I/O" gpio-port="f" gpio-pin="14"/>
+    <pin device-pin="x" position="R8" name="VSS" type="POWER"/>
+    <pin device-package="k" position="R8" name="PE7" type="I/O" gpio-port="e" gpio-pin="7"/>
+    <pin device-pin="x" position="R9" name="PF15" type="I/O" gpio-port="f" gpio-pin="15"/>
+    <pin device-package="k" position="R9" name="PE10" type="I/O" gpio-port="e" gpio-pin="10"/>
+    <pin device-pin="i" device-package="k" position="R10" name="PE12" type="I/O" gpio-port="e" gpio-pin="12"/>
+    <pin device-pin="x" device-package="h" position="R10" name="PE12" type="I/O" gpio-port="e" gpio-pin="12"/>
+    <pin device-pin="i" device-package="k" position="R11" name="PE15" type="I/O" gpio-port="e" gpio-pin="15"/>
+    <pin device-pin="x" device-package="h" position="R11" name="PE15" type="I/O" gpio-port="e" gpio-pin="15"/>
+    <pin device-pin="x" position="R12" name="PJ5" type="I/O" gpio-port="j" gpio-pin="5"/>
+    <pin device-package="k" position="R12" name="PB10" type="I/O" gpio-port="b" gpio-pin="10"/>
+    <pin device-pin="x" position="R13" name="PH9" type="I/O" gpio-port="h" gpio-pin="9"/>
+    <pin device-package="k" position="R13" name="PB11" type="I/O" gpio-port="b" gpio-pin="11"/>
+    <pin device-pin="x" position="R14" name="PH12" type="I/O" gpio-port="h" gpio-pin="12"/>
+    <pin device-package="k" position="R14" name="PB14" type="I/O" gpio-port="b" gpio-pin="14"/>
+    <pin device-pin="x" position="R15" name="PD11" type="I/O" gpio-port="d" gpio-pin="11"/>
+    <pin device-package="k" position="R15" name="PB15" type="I/O" gpio-port="b" gpio-pin="15"/>
+    <pin device-pin="x" position="R16" name="PD12" type="I/O" gpio-port="d" gpio-pin="12"/>
+    <pin device-pin="x" position="R17" name="PD13" type="I/O" gpio-port="d" gpio-pin="13"/>
+    <pin device-pin="x" position="T1" name="PA0_C" type="I/O" gpio-port="a" gpio-pin="0"/>
+    <pin device-pin="x" position="T2" name="PA1_C" type="I/O" gpio-port="a" gpio-pin="1"/>
+    <pin device-pin="x" position="T3" name="PA5" type="I/O" gpio-port="a" gpio-pin="5"/>
+    <pin device-pin="x" position="T4" name="PC4" type="I/O" gpio-port="c" gpio-pin="4"/>
+    <pin device-pin="x" position="T5" name="PB1" type="I/O" gpio-port="b" gpio-pin="1"/>
+    <pin device-pin="x" position="T6" name="PJ2" type="I/O" gpio-port="j" gpio-pin="2"/>
+    <pin device-pin="x" position="T7" name="PF11" type="I/O" gpio-port="f" gpio-pin="11"/>
+    <pin device-pin="x" position="T8" name="PG0" type="I/O" gpio-port="g" gpio-pin="0"/>
+    <pin device-pin="x" position="T9" name="PE8" type="I/O" gpio-port="e" gpio-pin="8"/>
+    <pin device-pin="x" position="T10" name="PE13" type="I/O" gpio-port="e" gpio-pin="13"/>
+    <pin device-pin="x" position="T11" name="PH6" type="I/O" gpio-port="h" gpio-pin="6"/>
+    <pin device-pin="x" position="T12" name="VSS" type="POWER"/>
+    <pin device-pin="x" position="T13" name="PH8" type="I/O" gpio-port="h" gpio-pin="8"/>
+    <pin device-pin="x" position="T14" name="PB12" type="I/O" gpio-port="b" gpio-pin="12"/>
+    <pin device-pin="x" position="T15" name="PB15" type="I/O" gpio-port="b" gpio-pin="15"/>
+    <pin device-pin="x" position="T16" name="PD10" type="I/O" gpio-port="d" gpio-pin="10"/>
+    <pin device-pin="x" position="T17" name="PD9" type="I/O" gpio-port="d" gpio-pin="9"/>
+    <pin device-pin="x" position="U1" name="VSS" type="POWER"/>
+    <pin device-pin="x" position="U2" name="PA3" type="I/O" gpio-port="a" gpio-pin="3"/>
+    <pin device-pin="x" position="U3" name="PA4" type="I/O" gpio-port="a" gpio-pin="4"/>
+    <pin device-pin="x" position="U4" name="PC5" type="I/O" gpio-port="c" gpio-pin="5"/>
+    <pin device-pin="x" position="U5" name="PB0" type="I/O" gpio-port="b" gpio-pin="0"/>
+    <pin device-pin="x" position="U6" name="PJ3" type="I/O" gpio-port="j" gpio-pin="3"/>
+    <pin device-pin="x" position="U7" name="PJ4" type="I/O" gpio-port="j" gpio-pin="4"/>
+    <pin device-pin="x" position="U8" name="PG1" type="I/O" gpio-port="g" gpio-pin="1"/>
+    <pin device-pin="x" position="U9" name="PE7" type="I/O" gpio-port="e" gpio-pin="7"/>
+    <pin device-pin="x" position="U10" name="PE14" type="I/O" gpio-port="e" gpio-pin="14"/>
+    <pin device-pin="x" position="U11" name="VCAP" type="POWER"/>
+    <pin device-pin="x" position="U12" name="VDDLDO" type="POWER"/>
+    <pin device-pin="x" position="U13" name="PH7" type="I/O" gpio-port="h" gpio-pin="7"/>
+    <pin device-pin="x" position="U14" name="PB13" type="I/O" gpio-port="b" gpio-pin="13"/>
+    <pin device-pin="x" position="U15" name="PB14" type="I/O" gpio-port="b" gpio-pin="14"/>
+    <pin device-pin="x" position="U16" name="PD8" type="I/O" gpio-port="d" gpio-pin="8"/>
+    <pin device-pin="x" position="U17" name="VSS" type="POWER"/>
+    <pin device-package="t" position="1" name="PE2" type="I/O" gpio-port="e" gpio-pin="2"/>
+    <pin device-package="t" position="2" name="PE3" type="I/O" gpio-port="e" gpio-pin="3"/>
+    <pin device-package="t" position="3" name="PE4" type="I/O" gpio-port="e" gpio-pin="4"/>
+    <pin device-package="t" position="4" name="PE5" type="I/O" gpio-port="e" gpio-pin="5"/>
+    <pin device-package="t" position="5" name="PE6" type="I/O" gpio-port="e" gpio-pin="6"/>
+    <pin device-package="t" position="6" name="VBAT" type="POWER"/>
+    <pin device-pin="v|z" device-package="t" position="7" name="PC13" type="I/O" gpio-port="c" gpio-pin="13"/>
+    <pin device-pin="b|i" device-package="t" position="7" name="PI8" type="I/O" gpio-port="i" gpio-pin="8"/>
+    <pin device-pin="v|z" device-package="t" position="8" name="PC14-OSC32_IN (OSC32_IN)" type="I/O" gpio-port="c" gpio-pin="14"/>
+    <pin device-pin="b|i" device-package="t" position="8" name="PC13" type="I/O" gpio-port="c" gpio-pin="13"/>
+    <pin device-pin="v|z" device-package="t" position="9" name="PC15-OSC32_OUT (OSC32_OUT)" type="I/O" gpio-port="c" gpio-pin="15"/>
+    <pin device-pin="b|i" device-package="t" position="9" name="PC14-OSC32_IN (OSC32_IN)" type="I/O" gpio-port="c" gpio-pin="14"/>
+    <pin device-pin="z" position="10" name="PF0" type="I/O" gpio-port="f" gpio-pin="0"/>
+    <pin device-pin="v" device-package="t" position="10" name="VSS" type="POWER"/>
+    <pin device-pin="b|i" device-package="t" position="10" name="PC15-OSC32_OUT (OSC32_OUT)" type="I/O" gpio-port="c" gpio-pin="15"/>
+    <pin device-pin="z" position="11" name="PF1" type="I/O" gpio-port="f" gpio-pin="1"/>
+    <pin device-pin="v" device-package="t" position="11" name="VDD" type="POWER"/>
+    <pin device-pin="b|i" device-package="t" position="11" name="PI9" type="I/O" gpio-port="i" gpio-pin="9"/>
+    <pin device-pin="z" position="12" name="PF2" type="I/O" gpio-port="f" gpio-pin="2"/>
+    <pin device-pin="v" device-package="t" position="12" name="PH0-OSC_IN (PH0)" type="I/O" gpio-port="h" gpio-pin="0"/>
+    <pin device-pin="b|i" device-package="t" position="12" name="PI10" type="I/O" gpio-port="i" gpio-pin="10"/>
+    <pin device-pin="z" position="13" name="PF3" type="I/O" gpio-port="f" gpio-pin="3"/>
+    <pin device-pin="v" device-package="t" position="13" name="PH1-OSC_OUT (PH1)" type="I/O" gpio-port="h" gpio-pin="1"/>
+    <pin device-pin="b|i" device-package="t" position="13" name="PI11" type="I/O" gpio-port="i" gpio-pin="11"/>
+    <pin device-pin="z" position="14" name="PF4" type="I/O" gpio-port="f" gpio-pin="4"/>
+    <pin device-pin="v" device-package="t" position="14" name="NRST" type="RESET"/>
+    <pin device-pin="b|i" device-package="t" position="14" name="VSS" type="POWER"/>
+    <pin device-pin="z" position="15" name="PF5" type="I/O" gpio-port="f" gpio-pin="5"/>
+    <pin device-pin="v" device-package="t" position="15" name="PC0" type="I/O" gpio-port="c" gpio-pin="0"/>
+    <pin device-pin="b|i" device-package="t" position="15" name="VDD" type="POWER"/>
+    <pin device-pin="z" position="16" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="t" position="16" name="PC1" type="I/O" gpio-port="c" gpio-pin="1"/>
+    <pin device-pin="b|i" device-package="t" position="16" name="PF0" type="I/O" gpio-port="f" gpio-pin="0"/>
+    <pin device-pin="z" position="17" name="VDD" type="POWER"/>
+    <pin device-pin="v" device-package="t" position="17" name="PC2_C" type="I/O" gpio-port="c" gpio-pin="2"/>
+    <pin device-pin="b|i" device-package="t" position="17" name="PF1" type="I/O" gpio-port="f" gpio-pin="1"/>
+    <pin device-pin="z" position="18" name="PF6" type="I/O" gpio-port="f" gpio-pin="6"/>
+    <pin device-pin="v" device-package="t" position="18" name="PC3_C" type="I/O" gpio-port="c" gpio-pin="3"/>
+    <pin device-pin="b|i" device-package="t" position="18" name="PF2" type="I/O" gpio-port="f" gpio-pin="2"/>
+    <pin device-pin="z" position="19" name="PF7" type="I/O" gpio-port="f" gpio-pin="7"/>
+    <pin device-pin="v" device-package="t" position="19" name="VSSA" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="19" name="PF3" type="I/O" gpio-port="f" gpio-pin="3"/>
+    <pin device-pin="b" position="19" name="PI12" type="I/O" gpio-port="i" gpio-pin="12"/>
+    <pin device-pin="z" position="20" name="PF8" type="I/O" gpio-port="f" gpio-pin="8"/>
+    <pin device-pin="v" device-package="t" position="20" name="VREF+" type="MONOIO"/>
+    <pin device-pin="i" device-package="t" position="20" name="PF4" type="I/O" gpio-port="f" gpio-pin="4"/>
+    <pin device-pin="b" position="20" name="PI13" type="I/O" gpio-port="i" gpio-pin="13"/>
+    <pin device-pin="z" position="21" name="PF9" type="I/O" gpio-port="f" gpio-pin="9"/>
+    <pin device-pin="v" device-package="t" position="21" name="VDDA" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="21" name="PF5" type="I/O" gpio-port="f" gpio-pin="5"/>
+    <pin device-pin="b" position="21" name="PI14" type="I/O" gpio-port="i" gpio-pin="14"/>
+    <pin device-pin="z" position="22" name="PF10" type="I/O" gpio-port="f" gpio-pin="10"/>
+    <pin device-pin="v" device-package="t" position="22" name="PA0" type="I/O" gpio-port="a" gpio-pin="0"/>
+    <pin device-pin="i" device-package="t" position="22" name="VSS" type="POWER"/>
+    <pin device-pin="b" position="22" name="PF3" type="I/O" gpio-port="f" gpio-pin="3"/>
+    <pin device-pin="z" position="23" name="PH0-OSC_IN (PH0)" type="I/O" gpio-port="h" gpio-pin="0"/>
+    <pin device-pin="v" device-package="t" position="23" name="PA1" type="I/O" gpio-port="a" gpio-pin="1"/>
+    <pin device-pin="i" device-package="t" position="23" name="VDD" type="POWER"/>
+    <pin device-pin="b" position="23" name="PF4" type="I/O" gpio-port="f" gpio-pin="4"/>
+    <pin device-pin="z" position="24" name="PH1-OSC_OUT (PH1)" type="I/O" gpio-port="h" gpio-pin="1"/>
+    <pin device-pin="v" device-package="t" position="24" name="PA2" type="I/O" gpio-port="a" gpio-pin="2"/>
+    <pin device-pin="i" device-package="t" position="24" name="PF6" type="I/O" gpio-port="f" gpio-pin="6"/>
+    <pin device-pin="b" position="24" name="PF5" type="I/O" gpio-port="f" gpio-pin="5"/>
+    <pin device-pin="z" position="25" name="NRST" type="RESET"/>
+    <pin device-pin="v" device-package="t" position="25" name="PA3" type="I/O" gpio-port="a" gpio-pin="3"/>
+    <pin device-pin="i" device-package="t" position="25" name="PF7" type="I/O" gpio-port="f" gpio-pin="7"/>
+    <pin device-pin="b" position="25" name="VSS" type="POWER"/>
+    <pin device-pin="z" position="26" name="PC0" type="I/O" gpio-port="c" gpio-pin="0"/>
+    <pin device-pin="v" device-package="t" position="26" name="VSS" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="26" name="PF8" type="I/O" gpio-port="f" gpio-pin="8"/>
+    <pin device-pin="b" position="26" name="VDD" type="POWER"/>
+    <pin device-pin="z" position="27" name="PC1" type="I/O" gpio-port="c" gpio-pin="1"/>
+    <pin device-pin="v" device-package="t" position="27" name="VDD" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="27" name="PF9" type="I/O" gpio-port="f" gpio-pin="9"/>
+    <pin device-pin="b" position="27" name="PF6" type="I/O" gpio-port="f" gpio-pin="6"/>
+    <pin device-pin="z" position="28" name="PC2_C" type="I/O" gpio-port="c" gpio-pin="2"/>
+    <pin device-pin="v" device-package="t" position="28" name="PA4" type="I/O" gpio-port="a" gpio-pin="4"/>
+    <pin device-pin="i" device-package="t" position="28" name="PF10" type="I/O" gpio-port="f" gpio-pin="10"/>
+    <pin device-pin="b" position="28" name="PF7" type="I/O" gpio-port="f" gpio-pin="7"/>
+    <pin device-pin="z" position="29" name="PC3_C" type="I/O" gpio-port="c" gpio-pin="3"/>
+    <pin device-pin="v" device-package="t" position="29" name="PA5" type="I/O" gpio-port="a" gpio-pin="5"/>
+    <pin device-pin="i" device-package="t" position="29" name="PH0-OSC_IN (PH0)" type="I/O" gpio-port="h" gpio-pin="0"/>
+    <pin device-pin="b" position="29" name="PF8" type="I/O" gpio-port="f" gpio-pin="8"/>
+    <pin device-pin="z" position="30" name="VDD" type="POWER"/>
+    <pin device-pin="v" device-package="t" position="30" name="PA6" type="I/O" gpio-port="a" gpio-pin="6"/>
+    <pin device-pin="i" device-package="t" position="30" name="PH1-OSC_OUT (PH1)" type="I/O" gpio-port="h" gpio-pin="1"/>
+    <pin device-pin="b" position="30" name="PF9" type="I/O" gpio-port="f" gpio-pin="9"/>
+    <pin device-pin="z" position="31" name="VSSA" type="POWER"/>
+    <pin device-pin="v" device-package="t" position="31" name="PA7" type="I/O" gpio-port="a" gpio-pin="7"/>
+    <pin device-pin="i" device-package="t" position="31" name="NRST" type="RESET"/>
+    <pin device-pin="b" position="31" name="PF10" type="I/O" gpio-port="f" gpio-pin="10"/>
+    <pin device-pin="z" position="32" name="VREF+" type="MONOIO"/>
+    <pin device-pin="v" device-package="t" position="32" name="PC4" type="I/O" gpio-port="c" gpio-pin="4"/>
+    <pin device-pin="i" device-package="t" position="32" name="PC0" type="I/O" gpio-port="c" gpio-pin="0"/>
+    <pin device-pin="b" position="32" name="PH0-OSC_IN (PH0)" type="I/O" gpio-port="h" gpio-pin="0"/>
+    <pin device-pin="z" position="33" name="VDDA" type="POWER"/>
+    <pin device-pin="v" device-package="t" position="33" name="PC5" type="I/O" gpio-port="c" gpio-pin="5"/>
+    <pin device-pin="i" device-package="t" position="33" name="PC1" type="I/O" gpio-port="c" gpio-pin="1"/>
+    <pin device-pin="b" position="33" name="PH1-OSC_OUT (PH1)" type="I/O" gpio-port="h" gpio-pin="1"/>
+    <pin device-pin="z" position="34" name="PA0" type="I/O" gpio-port="a" gpio-pin="0"/>
+    <pin device-pin="v" device-package="t" position="34" name="PB0" type="I/O" gpio-port="b" gpio-pin="0"/>
+    <pin device-pin="i" device-package="t" position="34" name="PC2_C" type="I/O" gpio-port="c" gpio-pin="2"/>
+    <pin device-pin="b" position="34" name="NRST" type="RESET"/>
+    <pin device-pin="z" position="35" name="PA1" type="I/O" gpio-port="a" gpio-pin="1"/>
+    <pin device-pin="v" device-package="t" position="35" name="PB1" type="I/O" gpio-port="b" gpio-pin="1"/>
+    <pin device-pin="i" device-package="t" position="35" name="PC3_C" type="I/O" gpio-port="c" gpio-pin="3"/>
+    <pin device-pin="b" position="35" name="PC0" type="I/O" gpio-port="c" gpio-pin="0"/>
+    <pin device-pin="z" position="36" name="PA2" type="I/O" gpio-port="a" gpio-pin="2"/>
+    <pin device-pin="v" device-package="t" position="36" name="PB2" type="I/O" gpio-port="b" gpio-pin="2"/>
+    <pin device-pin="i" device-package="t" position="36" name="VDD" type="POWER"/>
+    <pin device-pin="b" position="36" name="PC1" type="I/O" gpio-port="c" gpio-pin="1"/>
+    <pin device-pin="z" position="37" name="PA3" type="I/O" gpio-port="a" gpio-pin="3"/>
+    <pin device-pin="v" device-package="t" position="37" name="PE7" type="I/O" gpio-port="e" gpio-pin="7"/>
+    <pin device-pin="i" device-package="t" position="37" name="VSSA" type="POWER"/>
+    <pin device-pin="b" position="37" name="PC2_C" type="I/O" gpio-port="c" gpio-pin="2"/>
+    <pin device-pin="z" position="38" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="t" position="38" name="PE8" type="I/O" gpio-port="e" gpio-pin="8"/>
+    <pin device-pin="i" device-package="t" position="38" name="VREF+" type="MONOIO"/>
+    <pin device-pin="b" position="38" name="PC3_C" type="I/O" gpio-port="c" gpio-pin="3"/>
+    <pin device-pin="b|z" position="39" name="VDD" type="POWER"/>
+    <pin device-pin="v" device-package="t" position="39" name="PE9" type="I/O" gpio-port="e" gpio-pin="9"/>
+    <pin device-pin="i" device-package="t" position="39" name="VDDA" type="POWER"/>
+    <pin device-pin="z" position="40" name="PA4" type="I/O" gpio-port="a" gpio-pin="4"/>
+    <pin device-pin="v" device-package="t" position="40" name="PE10" type="I/O" gpio-port="e" gpio-pin="10"/>
+    <pin device-pin="i" device-package="t" position="40" name="PA0" type="I/O" gpio-port="a" gpio-pin="0"/>
+    <pin device-pin="b" position="40" name="VSSA" type="POWER"/>
+    <pin device-pin="z" position="41" name="PA5" type="I/O" gpio-port="a" gpio-pin="5"/>
+    <pin device-pin="v" device-package="t" position="41" name="PE11" type="I/O" gpio-port="e" gpio-pin="11"/>
+    <pin device-pin="i" device-package="t" position="41" name="PA1" type="I/O" gpio-port="a" gpio-pin="1"/>
+    <pin device-pin="b" position="41" name="VREF+" type="MONOIO"/>
+    <pin device-pin="z" position="42" name="PA6" type="I/O" gpio-port="a" gpio-pin="6"/>
+    <pin device-pin="v" device-package="t" position="42" name="PE12" type="I/O" gpio-port="e" gpio-pin="12"/>
+    <pin device-pin="i" device-package="t" position="42" name="PA2" type="I/O" gpio-port="a" gpio-pin="2"/>
+    <pin device-pin="b" position="42" name="VDDA" type="POWER"/>
+    <pin device-pin="z" position="43" name="PA7" type="I/O" gpio-port="a" gpio-pin="7"/>
+    <pin device-pin="v" device-package="t" position="43" name="PE13" type="I/O" gpio-port="e" gpio-pin="13"/>
+    <pin device-pin="i" device-package="t" position="43" name="PH2" type="I/O" gpio-port="h" gpio-pin="2"/>
+    <pin device-pin="b" position="43" name="PA0" type="I/O" gpio-port="a" gpio-pin="0"/>
+    <pin device-pin="z" position="44" name="PC4" type="I/O" gpio-port="c" gpio-pin="4"/>
+    <pin device-pin="v" device-package="t" position="44" name="PE14" type="I/O" gpio-port="e" gpio-pin="14"/>
+    <pin device-pin="i" device-package="t" position="44" name="PH3" type="I/O" gpio-port="h" gpio-pin="3"/>
+    <pin device-pin="b" position="44" name="PA1" type="I/O" gpio-port="a" gpio-pin="1"/>
+    <pin device-pin="z" position="45" name="PC5" type="I/O" gpio-port="c" gpio-pin="5"/>
+    <pin device-pin="v" device-package="t" position="45" name="PE15" type="I/O" gpio-port="e" gpio-pin="15"/>
+    <pin device-pin="i" device-package="t" position="45" name="PH4" type="I/O" gpio-port="h" gpio-pin="4"/>
+    <pin device-pin="b" position="45" name="PA2" type="I/O" gpio-port="a" gpio-pin="2"/>
+    <pin device-pin="z" position="46" name="PB0" type="I/O" gpio-port="b" gpio-pin="0"/>
+    <pin device-pin="v" device-package="t" position="46" name="PB10" type="I/O" gpio-port="b" gpio-pin="10"/>
+    <pin device-pin="i" device-package="t" position="46" name="PH5" type="I/O" gpio-port="h" gpio-pin="5"/>
+    <pin device-pin="b" position="46" name="PH2" type="I/O" gpio-port="h" gpio-pin="2"/>
+    <pin device-pin="z" position="47" name="PB1" type="I/O" gpio-port="b" gpio-pin="1"/>
+    <pin device-pin="v" device-package="t" position="47" name="PB11" type="I/O" gpio-port="b" gpio-pin="11"/>
+    <pin device-pin="i" device-package="t" position="47" name="PA3" type="I/O" gpio-port="a" gpio-pin="3"/>
+    <pin device-pin="b" position="47" name="PH3" type="I/O" gpio-port="h" gpio-pin="3"/>
+    <pin device-pin="z" position="48" name="PB2" type="I/O" gpio-port="b" gpio-pin="2"/>
+    <pin device-pin="v" device-package="t" position="48" name="VCAP" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="48" name="VSS" type="POWER"/>
+    <pin device-pin="b" position="48" name="PH4" type="I/O" gpio-port="h" gpio-pin="4"/>
+    <pin device-pin="z" position="49" name="PF11" type="I/O" gpio-port="f" gpio-pin="11"/>
+    <pin device-pin="v" device-package="t" position="49" name="VSS" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="49" name="VDD" type="POWER"/>
+    <pin device-pin="b" position="49" name="PH5" type="I/O" gpio-port="h" gpio-pin="5"/>
+    <pin device-pin="z" position="50" name="PF12" type="I/O" gpio-port="f" gpio-pin="12"/>
+    <pin device-pin="v" device-package="t" position="50" name="VDD" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="50" name="PA4" type="I/O" gpio-port="a" gpio-pin="4"/>
+    <pin device-pin="b" position="50" name="PA3" type="I/O" gpio-port="a" gpio-pin="3"/>
+    <pin device-pin="b|z" position="51" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="t" position="51" name="PB12" type="I/O" gpio-port="b" gpio-pin="12"/>
+    <pin device-pin="i" device-package="t" position="51" name="PA5" type="I/O" gpio-port="a" gpio-pin="5"/>
+    <pin device-pin="b|z" position="52" name="VDD" type="POWER"/>
+    <pin device-pin="v" device-package="t" position="52" name="PB13" type="I/O" gpio-port="b" gpio-pin="13"/>
+    <pin device-pin="i" device-package="t" position="52" name="PA6" type="I/O" gpio-port="a" gpio-pin="6"/>
+    <pin device-pin="z" position="53" name="PF13" type="I/O" gpio-port="f" gpio-pin="13"/>
+    <pin device-pin="v" device-package="t" position="53" name="PB14" type="I/O" gpio-port="b" gpio-pin="14"/>
+    <pin device-pin="i" device-package="t" position="53" name="PA7" type="I/O" gpio-port="a" gpio-pin="7"/>
+    <pin device-pin="b" position="53" name="PA4" type="I/O" gpio-port="a" gpio-pin="4"/>
+    <pin device-pin="z" position="54" name="PF14" type="I/O" gpio-port="f" gpio-pin="14"/>
+    <pin device-pin="v" device-package="t" position="54" name="PB15" type="I/O" gpio-port="b" gpio-pin="15"/>
+    <pin device-pin="i" device-package="t" position="54" name="PC4" type="I/O" gpio-port="c" gpio-pin="4"/>
+    <pin device-pin="b" position="54" name="PA5" type="I/O" gpio-port="a" gpio-pin="5"/>
+    <pin device-pin="z" position="55" name="PF15" type="I/O" gpio-port="f" gpio-pin="15"/>
+    <pin device-pin="v" device-package="t" position="55" name="PD8" type="I/O" gpio-port="d" gpio-pin="8"/>
+    <pin device-pin="i" device-package="t" position="55" name="PC5" type="I/O" gpio-port="c" gpio-pin="5"/>
+    <pin device-pin="b" position="55" name="PA6" type="I/O" gpio-port="a" gpio-pin="6"/>
+    <pin device-pin="z" position="56" name="PG0" type="I/O" gpio-port="g" gpio-pin="0"/>
+    <pin device-pin="v" device-package="t" position="56" name="PD9" type="I/O" gpio-port="d" gpio-pin="9"/>
+    <pin device-pin="i" device-package="t" position="56" name="PB0" type="I/O" gpio-port="b" gpio-pin="0"/>
+    <pin device-pin="b" position="56" name="PA7" type="I/O" gpio-port="a" gpio-pin="7"/>
+    <pin device-pin="z" position="57" name="PG1" type="I/O" gpio-port="g" gpio-pin="1"/>
+    <pin device-pin="v" device-package="t" position="57" name="PD10" type="I/O" gpio-port="d" gpio-pin="10"/>
+    <pin device-pin="i" device-package="t" position="57" name="PB1" type="I/O" gpio-port="b" gpio-pin="1"/>
+    <pin device-pin="b" position="57" name="PC4" type="I/O" gpio-port="c" gpio-pin="4"/>
+    <pin device-pin="z" position="58" name="PE7" type="I/O" gpio-port="e" gpio-pin="7"/>
+    <pin device-pin="v" device-package="t" position="58" name="PD11" type="I/O" gpio-port="d" gpio-pin="11"/>
+    <pin device-pin="i" device-package="t" position="58" name="PB2" type="I/O" gpio-port="b" gpio-pin="2"/>
+    <pin device-pin="b" position="58" name="PC5" type="I/O" gpio-port="c" gpio-pin="5"/>
+    <pin device-pin="z" position="59" name="PE8" type="I/O" gpio-port="e" gpio-pin="8"/>
+    <pin device-pin="v" device-package="t" position="59" name="PD12" type="I/O" gpio-port="d" gpio-pin="12"/>
+    <pin device-pin="i" device-package="t" position="59" name="PF11" type="I/O" gpio-port="f" gpio-pin="11"/>
+    <pin device-pin="b" position="59" name="VDD" type="POWER"/>
+    <pin device-pin="z" position="60" name="PE9" type="I/O" gpio-port="e" gpio-pin="9"/>
+    <pin device-pin="v" device-package="t" position="60" name="PD13" type="I/O" gpio-port="d" gpio-pin="13"/>
+    <pin device-pin="i" device-package="t" position="60" name="PF12" type="I/O" gpio-port="f" gpio-pin="12"/>
+    <pin device-pin="b" position="60" name="VSS" type="POWER"/>
+    <pin device-pin="i|z" device-package="t" position="61" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="t" position="61" name="PD14" type="I/O" gpio-port="d" gpio-pin="14"/>
+    <pin device-pin="b" position="61" name="PB0" type="I/O" gpio-port="b" gpio-pin="0"/>
+    <pin device-pin="i|z" device-package="t" position="62" name="VDD" type="POWER"/>
+    <pin device-pin="v" device-package="t" position="62" name="PD15" type="I/O" gpio-port="d" gpio-pin="15"/>
+    <pin device-pin="b" position="62" name="PB1" type="I/O" gpio-port="b" gpio-pin="1"/>
+    <pin device-pin="z" position="63" name="PE10" type="I/O" gpio-port="e" gpio-pin="10"/>
+    <pin device-pin="v" device-package="t" position="63" name="PC6" type="I/O" gpio-port="c" gpio-pin="6"/>
+    <pin device-pin="i" device-package="t" position="63" name="PF13" type="I/O" gpio-port="f" gpio-pin="13"/>
+    <pin device-pin="b" position="63" name="PB2" type="I/O" gpio-port="b" gpio-pin="2"/>
+    <pin device-pin="z" position="64" name="PE11" type="I/O" gpio-port="e" gpio-pin="11"/>
+    <pin device-pin="v" device-package="t" position="64" name="PC7" type="I/O" gpio-port="c" gpio-pin="7"/>
+    <pin device-pin="i" device-package="t" position="64" name="PF14" type="I/O" gpio-port="f" gpio-pin="14"/>
+    <pin device-pin="b" position="64" name="PI15" type="I/O" gpio-port="i" gpio-pin="15"/>
+    <pin device-pin="z" position="65" name="PE12" type="I/O" gpio-port="e" gpio-pin="12"/>
+    <pin device-pin="v" device-package="t" position="65" name="PC8" type="I/O" gpio-port="c" gpio-pin="8"/>
+    <pin device-pin="i" device-package="t" position="65" name="PF15" type="I/O" gpio-port="f" gpio-pin="15"/>
+    <pin device-pin="b" position="65" name="PJ0" type="I/O" gpio-port="j" gpio-pin="0"/>
+    <pin device-pin="z" position="66" name="PE13" type="I/O" gpio-port="e" gpio-pin="13"/>
+    <pin device-pin="v" device-package="t" position="66" name="PC9" type="I/O" gpio-port="c" gpio-pin="9"/>
+    <pin device-pin="i" device-package="t" position="66" name="PG0" type="I/O" gpio-port="g" gpio-pin="0"/>
+    <pin device-pin="b" position="66" name="PJ1" type="I/O" gpio-port="j" gpio-pin="1"/>
+    <pin device-pin="z" position="67" name="PE14" type="I/O" gpio-port="e" gpio-pin="14"/>
+    <pin device-pin="v" device-package="t" position="67" name="PA8" type="I/O" gpio-port="a" gpio-pin="8"/>
+    <pin device-pin="i" device-package="t" position="67" name="PG1" type="I/O" gpio-port="g" gpio-pin="1"/>
+    <pin device-pin="b" position="67" name="PJ2" type="I/O" gpio-port="j" gpio-pin="2"/>
+    <pin device-pin="z" position="68" name="PE15" type="I/O" gpio-port="e" gpio-pin="15"/>
+    <pin device-pin="v" device-package="t" position="68" name="PA9" type="I/O" gpio-port="a" gpio-pin="9"/>
+    <pin device-pin="i" device-package="t" position="68" name="PE7" type="I/O" gpio-port="e" gpio-pin="7"/>
+    <pin device-pin="b" position="68" name="PJ3" type="I/O" gpio-port="j" gpio-pin="3"/>
+    <pin device-pin="z" position="69" name="PB10" type="I/O" gpio-port="b" gpio-pin="10"/>
+    <pin device-pin="v" device-package="t" position="69" name="PA10" type="I/O" gpio-port="a" gpio-pin="10"/>
+    <pin device-pin="i" device-package="t" position="69" name="PE8" type="I/O" gpio-port="e" gpio-pin="8"/>
+    <pin device-pin="b" position="69" name="PJ4" type="I/O" gpio-port="j" gpio-pin="4"/>
+    <pin device-pin="z" position="70" name="PB11" type="I/O" gpio-port="b" gpio-pin="11"/>
+    <pin device-pin="v" device-package="t" position="70" name="PA11" type="I/O" gpio-port="a" gpio-pin="11"/>
+    <pin device-pin="i" device-package="t" position="70" name="PE9" type="I/O" gpio-port="e" gpio-pin="9"/>
+    <pin device-pin="b" position="70" name="PF11" type="I/O" gpio-port="f" gpio-pin="11"/>
+    <pin device-pin="z" position="71" name="VCAP" type="POWER"/>
+    <pin device-pin="v" device-package="t" position="71" name="PA12" type="I/O" gpio-port="a" gpio-pin="12"/>
+    <pin device-pin="i" device-package="t" position="71" name="VSS" type="POWER"/>
+    <pin device-pin="b" position="71" name="PF12" type="I/O" gpio-port="f" gpio-pin="12"/>
+    <pin device-pin="i|z" device-package="t" position="72" name="VDD" type="POWER"/>
+    <pin device-pin="v" device-package="t" position="72" name="PA13 (JTMS/SWDIO)" type="I/O" gpio-port="a" gpio-pin="13"/>
+    <pin device-pin="b" position="72" name="VSS" type="POWER"/>
+    <pin device-pin="z" position="73" name="PB12" type="I/O" gpio-port="b" gpio-pin="12"/>
+    <pin device-pin="v" device-package="t" position="73" name="VCAP" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="73" name="PE10" type="I/O" gpio-port="e" gpio-pin="10"/>
+    <pin device-pin="b" position="73" name="VDD" type="POWER"/>
+    <pin device-pin="z" position="74" name="PB13" type="I/O" gpio-port="b" gpio-pin="13"/>
+    <pin device-pin="v" device-package="t" position="74" name="VSS" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="74" name="PE11" type="I/O" gpio-port="e" gpio-pin="11"/>
+    <pin device-pin="b" position="74" name="PF13" type="I/O" gpio-port="f" gpio-pin="13"/>
+    <pin device-pin="z" position="75" name="PB14" type="I/O" gpio-port="b" gpio-pin="14"/>
+    <pin device-pin="v" device-package="t" position="75" name="VDD" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="75" name="PE12" type="I/O" gpio-port="e" gpio-pin="12"/>
+    <pin device-pin="b" position="75" name="PF14" type="I/O" gpio-port="f" gpio-pin="14"/>
+    <pin device-pin="z" position="76" name="PB15" type="I/O" gpio-port="b" gpio-pin="15"/>
+    <pin device-pin="v" device-package="t" position="76" name="PA14 (JTCK/SWCLK)" type="I/O" gpio-port="a" gpio-pin="14"/>
+    <pin device-pin="i" device-package="t" position="76" name="PE13" type="I/O" gpio-port="e" gpio-pin="13"/>
+    <pin device-pin="b" position="76" name="PF15" type="I/O" gpio-port="f" gpio-pin="15"/>
+    <pin device-pin="z" position="77" name="PD8" type="I/O" gpio-port="d" gpio-pin="8"/>
+    <pin device-pin="v" device-package="t" position="77" name="PA15 (JTDI)" type="I/O" gpio-port="a" gpio-pin="15"/>
+    <pin device-pin="i" device-package="t" position="77" name="PE14" type="I/O" gpio-port="e" gpio-pin="14"/>
+    <pin device-pin="b" position="77" name="PG0" type="I/O" gpio-port="g" gpio-pin="0"/>
+    <pin device-pin="z" position="78" name="PD9" type="I/O" gpio-port="d" gpio-pin="9"/>
+    <pin device-pin="v" device-package="t" position="78" name="PC10" type="I/O" gpio-port="c" gpio-pin="10"/>
+    <pin device-pin="i" device-package="t" position="78" name="PE15" type="I/O" gpio-port="e" gpio-pin="15"/>
+    <pin device-pin="b" position="78" name="PG1" type="I/O" gpio-port="g" gpio-pin="1"/>
+    <pin device-pin="z" position="79" name="PD10" type="I/O" gpio-port="d" gpio-pin="10"/>
+    <pin device-pin="v" device-package="t" position="79" name="PC11" type="I/O" gpio-port="c" gpio-pin="11"/>
+    <pin device-pin="i" device-package="t" position="79" name="PB10" type="I/O" gpio-port="b" gpio-pin="10"/>
+    <pin device-pin="b" position="79" name="PE7" type="I/O" gpio-port="e" gpio-pin="7"/>
+    <pin device-pin="z" position="80" name="PD11" type="I/O" gpio-port="d" gpio-pin="11"/>
+    <pin device-pin="v" device-package="t" position="80" name="PC12" type="I/O" gpio-port="c" gpio-pin="12"/>
+    <pin device-pin="i" device-package="t" position="80" name="PB11" type="I/O" gpio-port="b" gpio-pin="11"/>
+    <pin device-pin="b" position="80" name="PE8" type="I/O" gpio-port="e" gpio-pin="8"/>
+    <pin device-pin="z" position="81" name="PD12" type="I/O" gpio-port="d" gpio-pin="12"/>
+    <pin device-pin="v" device-package="t" position="81" name="PD0" type="I/O" gpio-port="d" gpio-pin="0"/>
+    <pin device-pin="i" device-package="t" position="81" name="VCAP" type="POWER"/>
+    <pin device-pin="b" position="81" name="PE9" type="I/O" gpio-port="e" gpio-pin="9"/>
+    <pin device-pin="z" position="82" name="PD13" type="I/O" gpio-port="d" gpio-pin="13"/>
+    <pin device-pin="v" device-package="t" position="82" name="PD1" type="I/O" gpio-port="d" gpio-pin="1"/>
+    <pin device-pin="i" device-package="t" position="82" name="VDD" type="POWER"/>
+    <pin device-pin="b" position="82" name="VSS" type="POWER"/>
+    <pin device-pin="z" position="83" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="t" position="83" name="PD2" type="I/O" gpio-port="d" gpio-pin="2"/>
+    <pin device-pin="i" device-package="t" position="83" name="PH6" type="I/O" gpio-port="h" gpio-pin="6"/>
+    <pin device-pin="b" position="83" name="VDD" type="POWER"/>
+    <pin device-pin="z" position="84" name="VDD" type="POWER"/>
+    <pin device-pin="v" device-package="t" position="84" name="PD3" type="I/O" gpio-port="d" gpio-pin="3"/>
+    <pin device-pin="i" device-package="t" position="84" name="PH7" type="I/O" gpio-port="h" gpio-pin="7"/>
+    <pin device-pin="b" position="84" name="PE10" type="I/O" gpio-port="e" gpio-pin="10"/>
+    <pin device-pin="z" position="85" name="PD14" type="I/O" gpio-port="d" gpio-pin="14"/>
+    <pin device-pin="v" device-package="t" position="85" name="PD4" type="I/O" gpio-port="d" gpio-pin="4"/>
+    <pin device-pin="i" device-package="t" position="85" name="PH8" type="I/O" gpio-port="h" gpio-pin="8"/>
+    <pin device-pin="b" position="85" name="PE11" type="I/O" gpio-port="e" gpio-pin="11"/>
+    <pin device-pin="z" position="86" name="PD15" type="I/O" gpio-port="d" gpio-pin="15"/>
+    <pin device-pin="v" device-package="t" position="86" name="PD5" type="I/O" gpio-port="d" gpio-pin="5"/>
+    <pin device-pin="i" device-package="t" position="86" name="PH9" type="I/O" gpio-port="h" gpio-pin="9"/>
+    <pin device-pin="b" position="86" name="PE12" type="I/O" gpio-port="e" gpio-pin="12"/>
+    <pin device-pin="z" position="87" name="PG2" type="I/O" gpio-port="g" gpio-pin="2"/>
+    <pin device-pin="v" device-package="t" position="87" name="PD6" type="I/O" gpio-port="d" gpio-pin="6"/>
+    <pin device-pin="i" device-package="t" position="87" name="PH10" type="I/O" gpio-port="h" gpio-pin="10"/>
+    <pin device-pin="b" position="87" name="PE13" type="I/O" gpio-port="e" gpio-pin="13"/>
+    <pin device-pin="z" position="88" name="PG3" type="I/O" gpio-port="g" gpio-pin="3"/>
+    <pin device-pin="v" device-package="t" position="88" name="PD7" type="I/O" gpio-port="d" gpio-pin="7"/>
+    <pin device-pin="i" device-package="t" position="88" name="PH11" type="I/O" gpio-port="h" gpio-pin="11"/>
+    <pin device-pin="b" position="88" name="PE14" type="I/O" gpio-port="e" gpio-pin="14"/>
+    <pin device-pin="z" position="89" name="PG4" type="I/O" gpio-port="g" gpio-pin="4"/>
+    <pin device-pin="v" device-package="t" position="89" name="PB3 (JTDO/TRACESWO)" type="I/O" gpio-port="b" gpio-pin="3"/>
+    <pin device-pin="i" device-package="t" position="89" name="PH12" type="I/O" gpio-port="h" gpio-pin="12"/>
+    <pin device-pin="b" position="89" name="PE15" type="I/O" gpio-port="e" gpio-pin="15"/>
+    <pin device-pin="z" position="90" name="PG5" type="I/O" gpio-port="g" gpio-pin="5"/>
+    <pin device-pin="v" device-package="t" position="90" name="PB4 (NJTRST)" type="I/O" gpio-port="b" gpio-pin="4"/>
+    <pin device-pin="i" device-package="t" position="90" name="VSS" type="POWER"/>
+    <pin device-pin="b" position="90" name="PB10" type="I/O" gpio-port="b" gpio-pin="10"/>
+    <pin device-pin="z" position="91" name="PG6" type="I/O" gpio-port="g" gpio-pin="6"/>
+    <pin device-pin="v" device-package="t" position="91" name="PB5" type="I/O" gpio-port="b" gpio-pin="5"/>
+    <pin device-pin="i" device-package="t" position="91" name="VDD" type="POWER"/>
+    <pin device-pin="b" position="91" name="PB11" type="I/O" gpio-port="b" gpio-pin="11"/>
+    <pin device-pin="z" position="92" name="PG7" type="I/O" gpio-port="g" gpio-pin="7"/>
+    <pin device-pin="v" device-package="t" position="92" name="PB6" type="I/O" gpio-port="b" gpio-pin="6"/>
+    <pin device-pin="i" device-package="t" position="92" name="PB12" type="I/O" gpio-port="b" gpio-pin="12"/>
+    <pin device-pin="b" position="92" name="VCAP" type="POWER"/>
+    <pin device-pin="z" position="93" name="PG8" type="I/O" gpio-port="g" gpio-pin="8"/>
+    <pin device-pin="v" device-package="t" position="93" name="PB7" type="I/O" gpio-port="b" gpio-pin="7"/>
+    <pin device-pin="i" device-package="t" position="93" name="PB13" type="I/O" gpio-port="b" gpio-pin="13"/>
+    <pin device-pin="b" position="93" name="VSS" type="POWER"/>
+    <pin device-pin="z" position="94" name="VSS" type="POWER"/>
+    <pin device-pin="v" device-package="t" position="94" name="BOOT0" type="BOOT"/>
+    <pin device-pin="i" device-package="t" position="94" name="PB14" type="I/O" gpio-port="b" gpio-pin="14"/>
+    <pin device-pin="b" position="94" name="VDD" type="POWER"/>
+    <pin device-pin="z" position="95" name="VDD33_USB" type="POWER"/>
+    <pin device-pin="v" device-package="t" position="95" name="PB8" type="I/O" gpio-port="b" gpio-pin="8"/>
+    <pin device-pin="i" device-package="t" position="95" name="PB15" type="I/O" gpio-port="b" gpio-pin="15"/>
+    <pin device-pin="b" position="95" name="PJ5" type="I/O" gpio-port="j" gpio-pin="5"/>
+    <pin device-pin="z" position="96" name="PC6" type="I/O" gpio-port="c" gpio-pin="6"/>
+    <pin device-pin="v" device-package="t" position="96" name="PB9" type="I/O" gpio-port="b" gpio-pin="9"/>
+    <pin device-pin="i" device-package="t" position="96" name="PD8" type="I/O" gpio-port="d" gpio-pin="8"/>
+    <pin device-pin="b" position="96" name="PH6" type="I/O" gpio-port="h" gpio-pin="6"/>
+    <pin device-pin="z" position="97" name="PC7" type="I/O" gpio-port="c" gpio-pin="7"/>
+    <pin device-pin="v" device-package="t" position="97" name="PE0" type="I/O" gpio-port="e" gpio-pin="0"/>
+    <pin device-pin="i" device-package="t" position="97" name="PD9" type="I/O" gpio-port="d" gpio-pin="9"/>
+    <pin device-pin="b" position="97" name="PH7" type="I/O" gpio-port="h" gpio-pin="7"/>
+    <pin device-pin="z" position="98" name="PC8" type="I/O" gpio-port="c" gpio-pin="8"/>
+    <pin device-pin="v" device-package="t" position="98" name="PE1" type="I/O" gpio-port="e" gpio-pin="1"/>
+    <pin device-pin="i" device-package="t" position="98" name="PD10" type="I/O" gpio-port="d" gpio-pin="10"/>
+    <pin device-pin="b" position="98" name="PH8" type="I/O" gpio-port="h" gpio-pin="8"/>
+    <pin device-pin="z" position="99" name="PC9" type="I/O" gpio-port="c" gpio-pin="9"/>
+    <pin device-pin="v" device-package="t" position="99" name="VSS" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="99" name="PD11" type="I/O" gpio-port="d" gpio-pin="11"/>
+    <pin device-pin="b" position="99" name="PH9" type="I/O" gpio-port="h" gpio-pin="9"/>
+    <pin device-pin="z" position="100" name="PA8" type="I/O" gpio-port="a" gpio-pin="8"/>
+    <pin device-pin="v" device-package="t" position="100" name="VDD" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="100" name="PD12" type="I/O" gpio-port="d" gpio-pin="12"/>
+    <pin device-pin="b" position="100" name="PH10" type="I/O" gpio-port="h" gpio-pin="10"/>
+    <pin device-pin="z" position="101" name="PA9" type="I/O" gpio-port="a" gpio-pin="9"/>
+    <pin device-pin="i" device-package="t" position="101" name="PD13" type="I/O" gpio-port="d" gpio-pin="13"/>
+    <pin device-pin="b" position="101" name="PH11" type="I/O" gpio-port="h" gpio-pin="11"/>
+    <pin device-pin="z" position="102" name="PA10" type="I/O" gpio-port="a" gpio-pin="10"/>
+    <pin device-pin="i" device-package="t" position="102" name="VSS" type="POWER"/>
+    <pin device-pin="b" position="102" name="PH12" type="I/O" gpio-port="h" gpio-pin="12"/>
+    <pin device-pin="z" position="103" name="PA11" type="I/O" gpio-port="a" gpio-pin="11"/>
+    <pin device-pin="b|i" device-package="t" position="103" name="VDD" type="POWER"/>
+    <pin device-pin="z" position="104" name="PA12" type="I/O" gpio-port="a" gpio-pin="12"/>
+    <pin device-pin="i" device-package="t" position="104" name="PD14" type="I/O" gpio-port="d" gpio-pin="14"/>
+    <pin device-pin="b" position="104" name="PB12" type="I/O" gpio-port="b" gpio-pin="12"/>
+    <pin device-pin="z" position="105" name="PA13 (JTMS/SWDIO)" type="I/O" gpio-port="a" gpio-pin="13"/>
+    <pin device-pin="i" device-package="t" position="105" name="PD15" type="I/O" gpio-port="d" gpio-pin="15"/>
+    <pin device-pin="b" position="105" name="PB13" type="I/O" gpio-port="b" gpio-pin="13"/>
+    <pin device-pin="z" position="106" name="VCAP" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="106" name="PG2" type="I/O" gpio-port="g" gpio-pin="2"/>
+    <pin device-pin="b" position="106" name="PB14" type="I/O" gpio-port="b" gpio-pin="14"/>
+    <pin device-pin="z" position="107" name="VSS" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="107" name="PG3" type="I/O" gpio-port="g" gpio-pin="3"/>
+    <pin device-pin="b" position="107" name="PB15" type="I/O" gpio-port="b" gpio-pin="15"/>
+    <pin device-pin="z" position="108" name="VDD" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="108" name="PG4" type="I/O" gpio-port="g" gpio-pin="4"/>
+    <pin device-pin="b" position="108" name="PD8" type="I/O" gpio-port="d" gpio-pin="8"/>
+    <pin device-pin="z" position="109" name="PA14 (JTCK/SWCLK)" type="I/O" gpio-port="a" gpio-pin="14"/>
+    <pin device-pin="i" device-package="t" position="109" name="PG5" type="I/O" gpio-port="g" gpio-pin="5"/>
+    <pin device-pin="b" position="109" name="PD9" type="I/O" gpio-port="d" gpio-pin="9"/>
+    <pin device-pin="z" position="110" name="PA15 (JTDI)" type="I/O" gpio-port="a" gpio-pin="15"/>
+    <pin device-pin="i" device-package="t" position="110" name="PG6" type="I/O" gpio-port="g" gpio-pin="6"/>
+    <pin device-pin="b" position="110" name="PD10" type="I/O" gpio-port="d" gpio-pin="10"/>
+    <pin device-pin="z" position="111" name="PC10" type="I/O" gpio-port="c" gpio-pin="10"/>
+    <pin device-pin="i" device-package="t" position="111" name="PG7" type="I/O" gpio-port="g" gpio-pin="7"/>
+    <pin device-pin="b" position="111" name="PD11" type="I/O" gpio-port="d" gpio-pin="11"/>
+    <pin device-pin="z" position="112" name="PC11" type="I/O" gpio-port="c" gpio-pin="11"/>
+    <pin device-pin="i" device-package="t" position="112" name="PG8" type="I/O" gpio-port="g" gpio-pin="8"/>
+    <pin device-pin="b" position="112" name="PD12" type="I/O" gpio-port="d" gpio-pin="12"/>
+    <pin device-pin="z" position="113" name="PC12" type="I/O" gpio-port="c" gpio-pin="12"/>
+    <pin device-pin="i" device-package="t" position="113" name="VSS" type="POWER"/>
+    <pin device-pin="b" position="113" name="PD13" type="I/O" gpio-port="d" gpio-pin="13"/>
+    <pin device-pin="z" position="114" name="PD0" type="I/O" gpio-port="d" gpio-pin="0"/>
+    <pin device-pin="i" device-package="t" position="114" name="VDD33_USB" type="POWER"/>
+    <pin device-pin="b" position="114" name="VSS" type="POWER"/>
+    <pin device-pin="z" position="115" name="PD1" type="I/O" gpio-port="d" gpio-pin="1"/>
+    <pin device-pin="i" device-package="t" position="115" name="PC6" type="I/O" gpio-port="c" gpio-pin="6"/>
+    <pin device-pin="b" position="115" name="VDD" type="POWER"/>
+    <pin device-pin="z" position="116" name="PD2" type="I/O" gpio-port="d" gpio-pin="2"/>
+    <pin device-pin="i" device-package="t" position="116" name="PC7" type="I/O" gpio-port="c" gpio-pin="7"/>
+    <pin device-pin="b" position="116" name="PD14" type="I/O" gpio-port="d" gpio-pin="14"/>
+    <pin device-pin="z" position="117" name="PD3" type="I/O" gpio-port="d" gpio-pin="3"/>
+    <pin device-pin="i" device-package="t" position="117" name="PC8" type="I/O" gpio-port="c" gpio-pin="8"/>
+    <pin device-pin="b" position="117" name="PD15" type="I/O" gpio-port="d" gpio-pin="15"/>
+    <pin device-pin="z" position="118" name="PD4" type="I/O" gpio-port="d" gpio-pin="4"/>
+    <pin device-pin="i" device-package="t" position="118" name="PC9" type="I/O" gpio-port="c" gpio-pin="9"/>
+    <pin device-pin="b" position="118" name="PJ6" type="I/O" gpio-port="j" gpio-pin="6"/>
+    <pin device-pin="z" position="119" name="PD5" type="I/O" gpio-port="d" gpio-pin="5"/>
+    <pin device-pin="i" device-package="t" position="119" name="PA8" type="I/O" gpio-port="a" gpio-pin="8"/>
+    <pin device-pin="b" position="119" name="PJ7" type="I/O" gpio-port="j" gpio-pin="7"/>
+    <pin device-pin="z" position="120" name="VSS" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="120" name="PA9" type="I/O" gpio-port="a" gpio-pin="9"/>
+    <pin device-pin="b" position="120" name="PJ8" type="I/O" gpio-port="j" gpio-pin="8"/>
+    <pin device-pin="z" position="121" name="VDD" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="121" name="PA10" type="I/O" gpio-port="a" gpio-pin="10"/>
+    <pin device-pin="b" position="121" name="PJ9" type="I/O" gpio-port="j" gpio-pin="9"/>
+    <pin device-pin="z" position="122" name="PD6" type="I/O" gpio-port="d" gpio-pin="6"/>
+    <pin device-pin="i" device-package="t" position="122" name="PA11" type="I/O" gpio-port="a" gpio-pin="11"/>
+    <pin device-pin="b" position="122" name="PJ10" type="I/O" gpio-port="j" gpio-pin="10"/>
+    <pin device-pin="z" position="123" name="PD7" type="I/O" gpio-port="d" gpio-pin="7"/>
+    <pin device-pin="i" device-package="t" position="123" name="PA12" type="I/O" gpio-port="a" gpio-pin="12"/>
+    <pin device-pin="b" position="123" name="PJ11" type="I/O" gpio-port="j" gpio-pin="11"/>
+    <pin device-pin="z" position="124" name="PG9" type="I/O" gpio-port="g" gpio-pin="9"/>
+    <pin device-pin="i" device-package="t" position="124" name="PA13 (JTMS/SWDIO)" type="I/O" gpio-port="a" gpio-pin="13"/>
+    <pin device-pin="b" position="124" name="VDD" type="POWER"/>
+    <pin device-pin="z" position="125" name="PG10" type="I/O" gpio-port="g" gpio-pin="10"/>
+    <pin device-pin="i" device-package="t" position="125" name="VCAP" type="POWER"/>
+    <pin device-pin="b" position="125" name="VSS" type="POWER"/>
+    <pin device-pin="z" position="126" name="PG11" type="I/O" gpio-port="g" gpio-pin="11"/>
+    <pin device-pin="i" device-package="t" position="126" name="VSS" type="POWER"/>
+    <pin device-pin="b" position="126" name="PK0" type="I/O" gpio-port="k" gpio-pin="0"/>
+    <pin device-pin="z" position="127" name="PG12" type="I/O" gpio-port="g" gpio-pin="12"/>
+    <pin device-pin="i" device-package="t" position="127" name="VDD" type="POWER"/>
+    <pin device-pin="b" position="127" name="PK1" type="I/O" gpio-port="k" gpio-pin="1"/>
+    <pin device-pin="z" position="128" name="PG13" type="I/O" gpio-port="g" gpio-pin="13"/>
+    <pin device-pin="i" device-package="t" position="128" name="PH13" type="I/O" gpio-port="h" gpio-pin="13"/>
+    <pin device-pin="b" position="128" name="PK2" type="I/O" gpio-port="k" gpio-pin="2"/>
+    <pin device-pin="z" position="129" name="PG14" type="I/O" gpio-port="g" gpio-pin="14"/>
+    <pin device-pin="i" device-package="t" position="129" name="PH14" type="I/O" gpio-port="h" gpio-pin="14"/>
+    <pin device-pin="b" position="129" name="PG2" type="I/O" gpio-port="g" gpio-pin="2"/>
+    <pin device-pin="z" position="130" name="VSS" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="130" name="PH15" type="I/O" gpio-port="h" gpio-pin="15"/>
+    <pin device-pin="b" position="130" name="PG3" type="I/O" gpio-port="g" gpio-pin="3"/>
+    <pin device-pin="z" position="131" name="VDD" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="131" name="PI0" type="I/O" gpio-port="i" gpio-pin="0"/>
+    <pin device-pin="b" position="131" name="PG4" type="I/O" gpio-port="g" gpio-pin="4"/>
+    <pin device-pin="z" position="132" name="PG15" type="I/O" gpio-port="g" gpio-pin="15"/>
+    <pin device-pin="i" device-package="t" position="132" name="PI1" type="I/O" gpio-port="i" gpio-pin="1"/>
+    <pin device-pin="b" position="132" name="PG5" type="I/O" gpio-port="g" gpio-pin="5"/>
+    <pin device-pin="z" position="133" name="PB3 (JTDO/TRACESWO)" type="I/O" gpio-port="b" gpio-pin="3"/>
+    <pin device-pin="i" device-package="t" position="133" name="PI2" type="I/O" gpio-port="i" gpio-pin="2"/>
+    <pin device-pin="b" position="133" name="PG6" type="I/O" gpio-port="g" gpio-pin="6"/>
+    <pin device-pin="z" position="134" name="PB4 (NJTRST)" type="I/O" gpio-port="b" gpio-pin="4"/>
+    <pin device-pin="i" device-package="t" position="134" name="PI3" type="I/O" gpio-port="i" gpio-pin="3"/>
+    <pin device-pin="b" position="134" name="PG7" type="I/O" gpio-port="g" gpio-pin="7"/>
+    <pin device-pin="z" position="135" name="PB5" type="I/O" gpio-port="b" gpio-pin="5"/>
+    <pin device-pin="i" device-package="t" position="135" name="VSS" type="POWER"/>
+    <pin device-pin="b" position="135" name="PG8" type="I/O" gpio-port="g" gpio-pin="8"/>
+    <pin device-pin="z" position="136" name="PB6" type="I/O" gpio-port="b" gpio-pin="6"/>
+    <pin device-pin="i" device-package="t" position="136" name="VDD" type="POWER"/>
+    <pin device-pin="b" position="136" name="VSS" type="POWER"/>
+    <pin device-pin="z" position="137" name="PB7" type="I/O" gpio-port="b" gpio-pin="7"/>
+    <pin device-pin="i" device-package="t" position="137" name="PA14 (JTCK/SWCLK)" type="I/O" gpio-port="a" gpio-pin="14"/>
+    <pin device-pin="b" position="137" name="VDD33_USB" type="POWER"/>
+    <pin device-pin="z" position="138" name="BOOT0" type="BOOT"/>
+    <pin device-pin="i" device-package="t" position="138" name="PA15 (JTDI)" type="I/O" gpio-port="a" gpio-pin="15"/>
+    <pin device-pin="b" position="138" name="PC6" type="I/O" gpio-port="c" gpio-pin="6"/>
+    <pin device-pin="z" position="139" name="PB8" type="I/O" gpio-port="b" gpio-pin="8"/>
+    <pin device-pin="i" device-package="t" position="139" name="PC10" type="I/O" gpio-port="c" gpio-pin="10"/>
+    <pin device-pin="b" position="139" name="PC7" type="I/O" gpio-port="c" gpio-pin="7"/>
+    <pin device-pin="z" position="140" name="PB9" type="I/O" gpio-port="b" gpio-pin="9"/>
+    <pin device-pin="i" device-package="t" position="140" name="PC11" type="I/O" gpio-port="c" gpio-pin="11"/>
+    <pin device-pin="b" position="140" name="PC8" type="I/O" gpio-port="c" gpio-pin="8"/>
+    <pin device-pin="z" position="141" name="PE0" type="I/O" gpio-port="e" gpio-pin="0"/>
+    <pin device-pin="i" device-package="t" position="141" name="PC12" type="I/O" gpio-port="c" gpio-pin="12"/>
+    <pin device-pin="b" position="141" name="PC9" type="I/O" gpio-port="c" gpio-pin="9"/>
+    <pin device-pin="z" position="142" name="PE1" type="I/O" gpio-port="e" gpio-pin="1"/>
+    <pin device-pin="i" device-package="t" position="142" name="PD0" type="I/O" gpio-port="d" gpio-pin="0"/>
+    <pin device-pin="b" position="142" name="PA8" type="I/O" gpio-port="a" gpio-pin="8"/>
+    <pin device-pin="z" position="143" name="PDR_ON" type="RESET"/>
+    <pin device-pin="i" device-package="t" position="143" name="PD1" type="I/O" gpio-port="d" gpio-pin="1"/>
+    <pin device-pin="b" position="143" name="PA9" type="I/O" gpio-port="a" gpio-pin="9"/>
+    <pin device-pin="z" position="144" name="VDD" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="144" name="PD2" type="I/O" gpio-port="d" gpio-pin="2"/>
+    <pin device-pin="b" position="144" name="PA10" type="I/O" gpio-port="a" gpio-pin="10"/>
+    <pin device-pin="i" device-package="t" position="145" name="PD3" type="I/O" gpio-port="d" gpio-pin="3"/>
+    <pin device-pin="b" position="145" name="PA11" type="I/O" gpio-port="a" gpio-pin="11"/>
+    <pin device-pin="i" device-package="t" position="146" name="PD4" type="I/O" gpio-port="d" gpio-pin="4"/>
+    <pin device-pin="b" position="146" name="PA12" type="I/O" gpio-port="a" gpio-pin="12"/>
+    <pin device-pin="i" device-package="t" position="147" name="PD5" type="I/O" gpio-port="d" gpio-pin="5"/>
+    <pin device-pin="b" position="147" name="PA13 (JTMS/SWDIO)" type="I/O" gpio-port="a" gpio-pin="13"/>
+    <pin device-pin="i" device-package="t" position="148" name="VSS" type="POWER"/>
+    <pin device-pin="b" position="148" name="VCAP" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="149" name="VDD" type="POWER"/>
+    <pin device-pin="b" position="149" name="VSS" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="150" name="PD6" type="I/O" gpio-port="d" gpio-pin="6"/>
+    <pin device-pin="b" position="150" name="VDD" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="151" name="PD7" type="I/O" gpio-port="d" gpio-pin="7"/>
+    <pin device-pin="b" position="151" name="PH13" type="I/O" gpio-port="h" gpio-pin="13"/>
+    <pin device-pin="i" device-package="t" position="152" name="PG9" type="I/O" gpio-port="g" gpio-pin="9"/>
+    <pin device-pin="b" position="152" name="PH14" type="I/O" gpio-port="h" gpio-pin="14"/>
+    <pin device-pin="i" device-package="t" position="153" name="PG10" type="I/O" gpio-port="g" gpio-pin="10"/>
+    <pin device-pin="b" position="153" name="PH15" type="I/O" gpio-port="h" gpio-pin="15"/>
+    <pin device-pin="i" device-package="t" position="154" name="PG11" type="I/O" gpio-port="g" gpio-pin="11"/>
+    <pin device-pin="b" position="154" name="PI0" type="I/O" gpio-port="i" gpio-pin="0"/>
+    <pin device-pin="i" device-package="t" position="155" name="PG12" type="I/O" gpio-port="g" gpio-pin="12"/>
+    <pin device-pin="b" position="155" name="PI1" type="I/O" gpio-port="i" gpio-pin="1"/>
+    <pin device-pin="i" device-package="t" position="156" name="PG13" type="I/O" gpio-port="g" gpio-pin="13"/>
+    <pin device-pin="b" position="156" name="PI2" type="I/O" gpio-port="i" gpio-pin="2"/>
+    <pin device-pin="i" device-package="t" position="157" name="PG14" type="I/O" gpio-port="g" gpio-pin="14"/>
+    <pin device-pin="b" position="157" name="PI3" type="I/O" gpio-port="i" gpio-pin="3"/>
+    <pin device-pin="i" device-package="t" position="158" name="VSS" type="POWER"/>
+    <pin device-pin="b" position="158" name="VDD" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="159" name="VDD" type="POWER"/>
+    <pin device-pin="b" position="159" name="PA14 (JTCK/SWCLK)" type="I/O" gpio-port="a" gpio-pin="14"/>
+    <pin device-pin="i" device-package="t" position="160" name="PG15" type="I/O" gpio-port="g" gpio-pin="15"/>
+    <pin device-pin="b" position="160" name="PA15 (JTDI)" type="I/O" gpio-port="a" gpio-pin="15"/>
+    <pin device-pin="i" device-package="t" position="161" name="PB3 (JTDO/TRACESWO)" type="I/O" gpio-port="b" gpio-pin="3"/>
+    <pin device-pin="b" position="161" name="PC10" type="I/O" gpio-port="c" gpio-pin="10"/>
+    <pin device-pin="i" device-package="t" position="162" name="PB4 (NJTRST)" type="I/O" gpio-port="b" gpio-pin="4"/>
+    <pin device-pin="b" position="162" name="PC11" type="I/O" gpio-port="c" gpio-pin="11"/>
+    <pin device-pin="i" device-package="t" position="163" name="PB5" type="I/O" gpio-port="b" gpio-pin="5"/>
+    <pin device-pin="b" position="163" name="PC12" type="I/O" gpio-port="c" gpio-pin="12"/>
+    <pin device-pin="i" device-package="t" position="164" name="PB6" type="I/O" gpio-port="b" gpio-pin="6"/>
+    <pin device-pin="b" position="164" name="PD0" type="I/O" gpio-port="d" gpio-pin="0"/>
+    <pin device-pin="i" device-package="t" position="165" name="PB7" type="I/O" gpio-port="b" gpio-pin="7"/>
+    <pin device-pin="b" position="165" name="PD1" type="I/O" gpio-port="d" gpio-pin="1"/>
+    <pin device-pin="i" device-package="t" position="166" name="BOOT0" type="BOOT"/>
+    <pin device-pin="b" position="166" name="PD2" type="I/O" gpio-port="d" gpio-pin="2"/>
+    <pin device-pin="i" device-package="t" position="167" name="PB8" type="I/O" gpio-port="b" gpio-pin="8"/>
+    <pin device-pin="b" position="167" name="PD3" type="I/O" gpio-port="d" gpio-pin="3"/>
+    <pin device-pin="i" device-package="t" position="168" name="PB9" type="I/O" gpio-port="b" gpio-pin="9"/>
+    <pin device-pin="b" position="168" name="PD4" type="I/O" gpio-port="d" gpio-pin="4"/>
+    <pin device-pin="i" device-package="t" position="169" name="PE0" type="I/O" gpio-port="e" gpio-pin="0"/>
+    <pin device-pin="b" position="169" name="PD5" type="I/O" gpio-port="d" gpio-pin="5"/>
+    <pin device-pin="i" device-package="t" position="170" name="PE1" type="I/O" gpio-port="e" gpio-pin="1"/>
+    <pin device-pin="b" position="170" name="VSS" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="171" name="PDR_ON" type="RESET"/>
+    <pin device-pin="b" position="171" name="VDD" type="POWER"/>
+    <pin device-pin="i" device-package="t" position="172" name="VDD" type="POWER"/>
+    <pin device-pin="b" position="172" name="PD6" type="I/O" gpio-port="d" gpio-pin="6"/>
+    <pin device-pin="i" device-package="t" position="173" name="PI4" type="I/O" gpio-port="i" gpio-pin="4"/>
+    <pin device-pin="b" position="173" name="PD7" type="I/O" gpio-port="d" gpio-pin="7"/>
+    <pin device-pin="i" device-package="t" position="174" name="PI5" type="I/O" gpio-port="i" gpio-pin="5"/>
+    <pin device-pin="b" position="174" name="PJ12" type="I/O" gpio-port="j" gpio-pin="12"/>
+    <pin device-pin="i" device-package="t" position="175" name="PI6" type="I/O" gpio-port="i" gpio-pin="6"/>
+    <pin device-pin="b" position="175" name="PJ13" type="I/O" gpio-port="j" gpio-pin="13"/>
+    <pin device-pin="i" device-package="t" position="176" name="PI7" type="I/O" gpio-port="i" gpio-pin="7"/>
+    <pin device-pin="b" position="176" name="PJ14" type="I/O" gpio-port="j" gpio-pin="14"/>
+    <pin device-pin="b" position="177" name="PJ15" type="I/O" gpio-port="j" gpio-pin="15"/>
+    <pin device-pin="b" position="178" name="PG9" type="I/O" gpio-port="g" gpio-pin="9"/>
+    <pin device-pin="b" position="179" name="PG10" type="I/O" gpio-port="g" gpio-pin="10"/>
+    <pin device-pin="b" position="180" name="PG11" type="I/O" gpio-port="g" gpio-pin="11"/>
+    <pin device-pin="b" position="181" name="PG12" type="I/O" gpio-port="g" gpio-pin="12"/>
+    <pin device-pin="b" position="182" name="PG13" type="I/O" gpio-port="g" gpio-pin="13"/>
+    <pin device-pin="b" position="183" name="PG14" type="I/O" gpio-port="g" gpio-pin="14"/>
+    <pin device-pin="b" position="184" name="VSS" type="POWER"/>
+    <pin device-pin="b" position="185" name="VDD" type="POWER"/>
+    <pin device-pin="b" position="186" name="PK3" type="I/O" gpio-port="k" gpio-pin="3"/>
+    <pin device-pin="b" position="187" name="PK4" type="I/O" gpio-port="k" gpio-pin="4"/>
+    <pin device-pin="b" position="188" name="PK5" type="I/O" gpio-port="k" gpio-pin="5"/>
+    <pin device-pin="b" position="189" name="PK6" type="I/O" gpio-port="k" gpio-pin="6"/>
+    <pin device-pin="b" position="190" name="PK7" type="I/O" gpio-port="k" gpio-pin="7"/>
+    <pin device-pin="b" position="191" name="PG15" type="I/O" gpio-port="g" gpio-pin="15"/>
+    <pin device-pin="b" position="192" name="PB3 (JTDO/TRACESWO)" type="I/O" gpio-port="b" gpio-pin="3"/>
+    <pin device-pin="b" position="193" name="PB4 (NJTRST)" type="I/O" gpio-port="b" gpio-pin="4"/>
+    <pin device-pin="b" position="194" name="PB5" type="I/O" gpio-port="b" gpio-pin="5"/>
+    <pin device-pin="b" position="195" name="PB6" type="I/O" gpio-port="b" gpio-pin="6"/>
+    <pin device-pin="b" position="196" name="PB7" type="I/O" gpio-port="b" gpio-pin="7"/>
+    <pin device-pin="b" position="197" name="BOOT0" type="BOOT"/>
+    <pin device-pin="b" position="198" name="PB8" type="I/O" gpio-port="b" gpio-pin="8"/>
+    <pin device-pin="b" position="199" name="PB9" type="I/O" gpio-port="b" gpio-pin="9"/>
+    <pin device-pin="b" position="200" name="PE0" type="I/O" gpio-port="e" gpio-pin="0"/>
+    <pin device-pin="b" position="201" name="PE1" type="I/O" gpio-port="e" gpio-pin="1"/>
+    <pin device-pin="b" position="202" name="VSS" type="POWER"/>
+    <pin device-pin="b" position="203" name="PDR_ON" type="RESET"/>
+    <pin device-pin="b" position="204" name="VDD" type="POWER"/>
+    <pin device-pin="b" position="205" name="PI4" type="I/O" gpio-port="i" gpio-pin="4"/>
+    <pin device-pin="b" position="206" name="PI5" type="I/O" gpio-port="i" gpio-pin="5"/>
+    <pin device-pin="b" position="207" name="PI6" type="I/O" gpio-port="i" gpio-pin="6"/>
+    <pin device-pin="b" position="208" name="PI7" type="I/O" gpio-port="i" gpio-pin="7"/>
     <driver name="core" type="cortex-m7fd">
       <memory name="itcm" access="rwx" start="0x00000000" size="65536"/>
       <memory device-size="g" name="flash" access="rx" start="0x08000000" size="1048576"/>

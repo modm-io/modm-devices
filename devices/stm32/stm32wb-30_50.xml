@@ -5,6 +5,59 @@
     <naming-schema>{platform}{family}{name}{pin}{size}{package}{temperature}{variant}</naming-schema>
     <valid-device>stm32wb30ceu6</valid-device>
     <valid-device>stm32wb50cgu6</valid-device>
+    <pin position="1" name="VBAT" type="POWER"/>
+    <pin position="2" name="PC14-OSC32_IN" type="I/O" gpio-port="c" gpio-pin="14"/>
+    <pin position="3" name="PC15-OSC32_OUT" type="I/O" gpio-port="c" gpio-pin="15"/>
+    <pin position="4" name="PH3-BOOT0" type="I/O" gpio-port="h" gpio-pin="3"/>
+    <pin position="5" name="PB8" type="I/O" gpio-port="b" gpio-pin="8"/>
+    <pin position="6" name="PB9" type="I/O" gpio-port="b" gpio-pin="9"/>
+    <pin position="7" name="NRST" type="RESET"/>
+    <pin position="8" name="VDDA" type="POWER"/>
+    <pin position="9" name="PA0" type="I/O" gpio-port="a" gpio-pin="0"/>
+    <pin position="10" name="PA1" type="I/O" gpio-port="a" gpio-pin="1"/>
+    <pin position="11" name="PA2" type="I/O" gpio-port="a" gpio-pin="2"/>
+    <pin position="12" name="PA3" type="I/O" gpio-port="a" gpio-pin="3"/>
+    <pin position="13" name="PA4" type="I/O" gpio-port="a" gpio-pin="4"/>
+    <pin position="14" name="PA5" type="I/O" gpio-port="a" gpio-pin="5"/>
+    <pin position="15" name="PA6" type="I/O" gpio-port="a" gpio-pin="6"/>
+    <pin position="16" name="PA7" type="I/O" gpio-port="a" gpio-pin="7"/>
+    <pin position="17" name="PA8" type="I/O" gpio-port="a" gpio-pin="8"/>
+    <pin position="18" name="PA9" type="I/O" gpio-port="a" gpio-pin="9"/>
+    <pin position="19" name="PB2" type="I/O" gpio-port="b" gpio-pin="2"/>
+    <pin position="20" name="VDD" type="POWER"/>
+    <pin position="21" name="RF1" type="MONOIO"/>
+    <pin position="22" name="VSSRF" type="POWER"/>
+    <pin position="23" name="VDDRF" type="POWER"/>
+    <pin position="24" name="OSC_OUT" type="MONOIO"/>
+    <pin position="25" name="OSC_IN" type="MONOIO"/>
+    <pin position="26" name="AT0" type="NC"/>
+    <pin position="27" name="AT1" type="NC"/>
+    <pin position="28" name="PB0" type="I/O" gpio-port="b" gpio-pin="0"/>
+    <pin position="29" name="PB1" type="I/O" gpio-port="b" gpio-pin="1"/>
+    <pin position="30" name="PE4" type="I/O" gpio-port="e" gpio-pin="4"/>
+    <pin device-name="30" position="31" name="VDD" type="POWER"/>
+    <pin device-name="50" position="31" name="VFBSMPS" type="POWER"/>
+    <pin device-name="30" position="32" name="VSS" type="POWER"/>
+    <pin device-name="50" position="32" name="VSSSMPS" type="POWER"/>
+    <pin device-name="30" position="33" name="VDD" type="POWER"/>
+    <pin device-name="50" position="33" name="VLXSMPS" type="POWER"/>
+    <pin device-name="30" position="34" name="VDD" type="POWER"/>
+    <pin device-name="50" position="34" name="VDDSMPS" type="POWER"/>
+    <pin position="35" name="VDD" type="POWER"/>
+    <pin position="36" name="PA10" type="I/O" gpio-port="a" gpio-pin="10"/>
+    <pin position="37" name="PA11" type="I/O" gpio-port="a" gpio-pin="11"/>
+    <pin position="38" name="PA12" type="I/O" gpio-port="a" gpio-pin="12"/>
+    <pin position="39" name="PA13" type="I/O" gpio-port="a" gpio-pin="13"/>
+    <pin device-name="30" position="40" name="VDD" type="POWER"/>
+    <pin device-name="50" position="40" name="VDDUSB" type="POWER"/>
+    <pin position="41" name="PA14" type="I/O" gpio-port="a" gpio-pin="14"/>
+    <pin position="42" name="PA15" type="I/O" gpio-port="a" gpio-pin="15"/>
+    <pin position="43" name="PB3" type="I/O" gpio-port="b" gpio-pin="3"/>
+    <pin position="44" name="PB4" type="I/O" gpio-port="b" gpio-pin="4"/>
+    <pin position="45" name="PB5" type="I/O" gpio-port="b" gpio-pin="5"/>
+    <pin position="46" name="PB6" type="I/O" gpio-port="b" gpio-pin="6"/>
+    <pin position="47" name="PB7" type="I/O" gpio-port="b" gpio-pin="7"/>
+    <pin position="48" name="VDD" type="POWER"/>
     <driver name="core" type="cortex-m4f">
       <memory device-name="30" name="flash" access="rx" start="0x8000000" size="524288"/>
       <memory device-name="50" name="flash" access="rx" start="0x8000000" size="1048576"/>

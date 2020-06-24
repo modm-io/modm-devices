@@ -4,6 +4,38 @@
   <device platform="stm32" family="l4" name="32|42" pin="k" size="b|c" package="u" temperature="6" variant="">
     <naming-schema>{platform}{family}{name}{pin}{size}{package}{temperature}{variant}</naming-schema>
     <invalid-device>stm32l442kbu6</invalid-device>
+    <pin position="1" name="VDD" type="POWER"/>
+    <pin position="2" name="PC14-OSC32_IN (PC14)" type="I/O" gpio-port="c" gpio-pin="14"/>
+    <pin position="3" name="PC15-OSC32_OUT (PC15)" type="I/O" gpio-port="c" gpio-pin="15"/>
+    <pin position="4" name="NRST" type="RESET"/>
+    <pin position="5" name="VDDA/VREF+" type="POWER"/>
+    <pin position="6" name="PA0" type="I/O" gpio-port="a" gpio-pin="0"/>
+    <pin position="7" name="PA1" type="I/O" gpio-port="a" gpio-pin="1"/>
+    <pin position="8" name="PA2" type="I/O" gpio-port="a" gpio-pin="2"/>
+    <pin position="9" name="PA3" type="I/O" gpio-port="a" gpio-pin="3"/>
+    <pin position="10" name="PA4" type="I/O" gpio-port="a" gpio-pin="4"/>
+    <pin position="11" name="PA5" type="I/O" gpio-port="a" gpio-pin="5"/>
+    <pin position="12" name="PA6" type="I/O" gpio-port="a" gpio-pin="6"/>
+    <pin position="13" name="PA7" type="I/O" gpio-port="a" gpio-pin="7"/>
+    <pin position="14" name="PB0" type="I/O" gpio-port="b" gpio-pin="0"/>
+    <pin position="15" name="PB1" type="I/O" gpio-port="b" gpio-pin="1"/>
+    <pin position="16" name="VSS" type="POWER"/>
+    <pin position="17" name="VDD" type="POWER"/>
+    <pin position="18" name="PA8" type="I/O" gpio-port="a" gpio-pin="8"/>
+    <pin position="19" name="PA9" type="I/O" gpio-port="a" gpio-pin="9"/>
+    <pin position="20" name="PA10" type="I/O" gpio-port="a" gpio-pin="10"/>
+    <pin position="21" name="PA11" type="I/O" gpio-port="a" gpio-pin="11"/>
+    <pin position="22" name="PA12" type="I/O" gpio-port="a" gpio-pin="12"/>
+    <pin position="23" name="PA13 (JTMS-SWDIO)" type="I/O" gpio-port="a" gpio-pin="13"/>
+    <pin position="24" name="PA14 (JTCK-SWCLK)" type="I/O" gpio-port="a" gpio-pin="14"/>
+    <pin position="25" name="PA15 (JTDI)" type="I/O" gpio-port="a" gpio-pin="15"/>
+    <pin position="26" name="PB3 (JTDO-TRACESWO)" type="I/O" gpio-port="b" gpio-pin="3"/>
+    <pin position="27" name="PB4 (NJTRST)" type="I/O" gpio-port="b" gpio-pin="4"/>
+    <pin position="28" name="PB5" type="I/O" gpio-port="b" gpio-pin="5"/>
+    <pin position="29" name="PB6" type="I/O" gpio-port="b" gpio-pin="6"/>
+    <pin position="30" name="PB7" type="I/O" gpio-port="b" gpio-pin="7"/>
+    <pin position="31" name="PH3-BOOT0" type="I/O" gpio-port="h" gpio-pin="3"/>
+    <pin position="32" name="VSS" type="POWER"/>
     <driver name="core" type="cortex-m4f">
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
