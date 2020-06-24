@@ -352,6 +352,7 @@ class STMDeviceTree:
         if did.family == "f1":
             grouped_f1_signals = gpioFile.compactQuery('//GPIO_Pin/PinSignal/@Name')
 
+        gpio_pinmap = {}
         for pin in pins:
             rname = pin.get("Name")
             name = rname[:4]
@@ -383,6 +384,7 @@ class STMDeviceTree:
             gpios.append(gpio)
             # print(gpio[0].upper(), gpio[1], afs)
             # LOGGER.debug("{}{}: {} ->".format(gpio[0].upper(), gpio[1]))
+            gpio_pinmap[pin] = (gpio[0], gpio[1])
 
         remaps = {}
         if did.family == "f1":
@@ -423,6 +425,7 @@ class STMDeviceTree:
         p["remaps"] = remaps
         p["gpios"] = gpios
         p["all_pins"] = all_pins
+        p["gpio_pinmap"] = gpio_pinmap
 
         return p
 
@@ -651,11 +654,20 @@ class STMDeviceTree:
     @staticmethod
     def addPositionTableToNode(p, node):
         all_pins = p["all_pins"]
+        gpio_pinmap = p["gpio_pinmap"]
         for pin in all_pins:
             pin_section = node.addChild("pin")
-            pin_section.setAttributes("position", pin.get("Position").upper(),
-                                      "name", pin.get("Name").upper(),
-                                      "type", pin.get("Type").upper())
+            if pin in gpio_pinmap:
+                gpio = gpio_pinmap[pin]
+                pin_section.setAttributes("position", pin.get("Position").upper(),
+                                          "name", pin.get("Name").upper(),
+                                          "type", pin.get("Type").upper(),
+                                          "gpio-port", gpio[0],
+                                          "gpio-pin", gpio[1])
+            else:
+                pin_section.setAttributes("position", pin.get("Position").upper(),
+                                          "name", pin.get("Name").upper(),
+                                          "type", pin.get("Type").upper())
         node.addSortKey(lambda e: ((('_', int(e["position"])) if e["position"][0].isdigit()
                                     else (e["position"][0], int(e["position"][1:]))) if e.name == "pin" else ("", -1)
                                   ))
