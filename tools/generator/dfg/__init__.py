@@ -6,8 +6,7 @@ Device File Generator
 import os
 import sys
 
-sys.path.append(os.path.join("..", "..", "tools", "device"))
-sys.path.append(os.path.join("cmsis-svd", "python"))
+sys.path.append(os.path.join("..", ".."))
 
 __author__ = "Niklas Hauser"
 __copyright__ = "Niklas Hauser"

@@ -6,7 +6,7 @@ from pathlib import Path
 from jinja2 import Environment
 from collections import defaultdict
 
-rootpath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "device")
+rootpath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "..")
 sys.path.append(rootpath)
 import modm_devices.parser
 
@@ -29,7 +29,7 @@ def extract(text, key):
 
 if __name__ == "__main__":
     devices = []
-    for filename in Path(rootpath).glob("../../devices/**/*.xml"):
+    for filename in Path(rootpath).glob("devices/**/*.xml"):
         for d in modm_devices.parser.DeviceParser().parse(str(filename)).get_devices():
             devices.append(d)
 
@@ -39,7 +39,7 @@ if __name__ == "__main__":
         family = did.string.split(did.family)[0] + did.family
         families[family.upper()] += 1
 
-    readme_path = Path(rootpath) / "../../README.md"
+    readme_path = Path(rootpath) / "README.md"
     readme = readme_path.read_text()
     readme = replace(readme, "devicetable", format_table(families))
     readme = replace(readme, "devicecount", sum(families.values()))

@@ -20,10 +20,7 @@ script:
   - (cd tools/generator; make generate-stm32)
   - (cd tools/generator; make generate-sam)
   - (cd tools/generator; make generate-nrf)
-  - tools/device/scripts/stats --count
-  - tools/device/scripts/stats --name >/dev/null
-  - tools/device/scripts/stats --ram >/dev/null
-  - python3 tools/sync_docs.py
+  - python3 tools/scripts/sync_docs.py
   - git diff -- README.md
   - git status --porcelain
   - git diff $(git diff --name-only | sed -n 1p)
