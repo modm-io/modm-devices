@@ -245,7 +245,7 @@ class SAMDeviceTree:
             for s in [s for s in p["signals"] if s["pad"] == ("p" + port + pin)]:
                 driver, instance, name = s["module"], s["instance"], s["group"]
                 # add the af node
-                pin_signal = {"driver": driver}
+                pin_signal = {"driver": driver, "function": s["function"]}
                 if instance != driver:
                     pin_signal["instance"] = instance.replace(driver, "")
                 if name != driver and name != "int":
@@ -257,7 +257,7 @@ class SAMDeviceTree:
                     LOGGER.error("%s has no name!", s)
                     continue
                 af = pin_driver.addChild("signal")
-                af.setAttributes(["driver", "instance", "name"], pin_signal)
+                af.setAttributes(["driver", "instance", "name", "function"], pin_signal)
 
         return tree
 
