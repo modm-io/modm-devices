@@ -22,24 +22,3 @@ index c8a77f2..43d92ee 100644
           </ModeLogicOperator>
         </Mode>
       </ModeLogicOperator>
-
-diff --git a/stm32-devices/mcu/STM32WB30CEUx.xml b/stm32-devices/mcu/STM32WB30CEUx.xml
-index c20f9b0..0a34576 100644
---- a/stm32-devices/mcu/STM32WB30CEUx.xml
-+++ b/stm32-devices/mcu/STM32WB30CEUx.xml
-@@ -74,7 +74,6 @@
-  <Pin Name="VDDA" Position="8" Type="Power"/>
-  <Pin Name="PA0" Position="9" Type="I/O">
-    <Signal Name="ADC1_IN5"/>
--   <Signal Name="I2S_CKIN"/>
-    <Signal Name="RTC_TAMP2"/>
-    <Signal Name="SYS_WKUP1"/>
-    <Signal Name="TIM2_CH1"/>
-@@ -145,7 +144,6 @@
-    <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
-  </Pin>
-  <Pin Name="PB2" Position="19" Type="I/O">
--   <Signal Name="I2S_CKIN"/>
-    <Signal Name="LPTIM1_OUT"/>
-    <Signal Name="RTC_OUT"/>
-    <Signal Name="SPI1_NSS"/>
