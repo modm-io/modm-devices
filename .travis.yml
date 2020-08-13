@@ -1,17 +1,15 @@
 language: python
 python:
-  - 3.6
+  - 3.8
 
 env:
   global:
     - MAKEFLAGS="-j 4"
 
-# command to install dependencies
 install:
   - pip install lxml jinja2 deepdiff CppHeaderParser
   - sudo apt-get install openjdk-8-jdk
 
-# command to run tests
 script:
   - (cd tools/device; make test)
   - (cd tools/generator; make init)
@@ -25,3 +23,13 @@ script:
   - git status --porcelain
   - git diff $(git diff --name-only | sed -n 1p)
   - (( $(git status --porcelain | wc -l) == 0 ))
+
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  skip_existing: true
+  user: salkinium
+  password:
+    secure: P34ztjRmcbpX7sii7E/ZM4Gf1Xz2FYDAs5EXk0zqOOjOp62D3I5U4UBqtVB/apJSVHu+HLpropVfJgBFShRDFIvh7poxLDdbYsmxHy/pStzcC53pZmqhUNxTjSuBbB435evSU7Io36rR69BYy+w3ef2OPG1WrHm5eSExM/hfPqz3bXp/rMxKpHQWSczMR5B4pbW0NnzjbMQOrUdoM9OX/leJIZayal72CY4Hulb3AA3M1Lf98hO/cCSmx8gY1YP6NflmHwz/C8WELePHOF717LiOoudi5tbkayPh0Bmj48z9T/mqIqrl8rIuWw0vgfD06drBZbmWV/N2dw3Bpx+eWo3GSRTOi0mQrD7xTkZTTJwv6lbOh5b+vMW78Um3j2s2OL/SSSeHvgaDjMydUq/D76drLUM6Ma2UBhK1wKSQe6wMSLxltJ1SX3gxYSdruDp0FlmiAwjUbjawqrJ/qV73p0PtCCTsBCfH1vcuFL+nDMBDtyL9VMNFOR3i86/7u/YomtxvtYYDEgnJiAa69HvTI2xzEwx5G8eNRHPnidTGYm92qmF+UyIWTsVaphLwfwiJi0UNXcgExEScl46Dg5thh26hrhQ+7wH9jDDuIIH5bt1q/x1Mqx75KMvbWqQbD7U88YnNZKrKX7nWP1cy2XQuY/z/3yy7aC7xXJXXq9mWnYY=
+  on:
+    branch: develop
