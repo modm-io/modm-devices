@@ -5,6 +5,8 @@
     <naming-schema>{platform}{family}{name}{pin}{size}{package}{temperature}{variant}</naming-schema>
     <valid-device>stm32l071c8t6</valid-device>
     <valid-device>stm32l071c8t7</valid-device>
+    <valid-device>stm32l071c8u6</valid-device>
+    <valid-device>stm32l071c8u7</valid-device>
     <valid-device>stm32l071cbt3</valid-device>
     <valid-device>stm32l071cbt6</valid-device>
     <valid-device>stm32l071cbt7</valid-device>

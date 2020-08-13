@@ -585,7 +585,6 @@
         <signal driver="comp" instance="2" name="inp"/>
         <signal driver="opamp" instance="1" name="vinm"/>
         <signal driver="opamp" instance="1" name="vinm0"/>
-        <signal driver="opamp" instance="1" name="vinm1"/>
         <signal driver="opamp" instance="1" name="vinm_sec"/>
         <signal driver="opamp" instance="1" name="vinp"/>
         <signal driver="opamp" instance="1" name="vinp_sec"/>
@@ -614,7 +613,6 @@
         <signal driver="dac" instance="1" name="out2"/>
         <signal driver="opamp" instance="2" name="vinm"/>
         <signal driver="opamp" instance="2" name="vinm0"/>
-        <signal driver="opamp" instance="2" name="vinm1"/>
         <signal driver="opamp" instance="2" name="vinm_sec"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
         <signal af="2" driver="tim" instance="2" name="etr"/>
@@ -777,7 +775,6 @@
         <signal driver="comp" instance="4" name="inm"/>
         <signal driver="opamp" instance="3" name="vinm"/>
         <signal driver="opamp" instance="3" name="vinm0"/>
-        <signal driver="opamp" instance="3" name="vinm1"/>
         <signal driver="opamp" instance="3" name="vinm_sec"/>
         <signal af="0" driver="rtc" name="out2"/>
         <signal af="1" driver="lptim" instance="1" name="out"/>
@@ -881,7 +878,6 @@
       </gpio>
       <gpio port="b" pin="10">
         <signal driver="opamp" instance="3" name="vinm"/>
-        <signal driver="opamp" instance="3" name="vinm0"/>
         <signal driver="opamp" instance="3" name="vinm1"/>
         <signal driver="opamp" instance="3" name="vinm_sec"/>
         <signal af="1" driver="tim" instance="2" name="ch3"/>
@@ -1002,11 +998,9 @@
       <gpio device-pin="m|q|r|v" port="c" pin="5">
         <signal driver="adc" instance="2" name="in11"/>
         <signal driver="opamp" instance="1" name="vinm"/>
-        <signal driver="opamp" instance="1" name="vinm0"/>
         <signal driver="opamp" instance="1" name="vinm1"/>
         <signal driver="opamp" instance="1" name="vinm_sec"/>
         <signal driver="opamp" instance="2" name="vinm"/>
-        <signal driver="opamp" instance="2" name="vinm0"/>
         <signal driver="opamp" instance="2" name="vinm1"/>
         <signal driver="opamp" instance="2" name="vinm_sec"/>
         <signal driver="sys" name="wkup5"/>

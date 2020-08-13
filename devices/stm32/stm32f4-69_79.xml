@@ -38,8 +38,11 @@
     <valid-device>stm32f479bit6</valid-device>
     <valid-device>stm32f479igh6</valid-device>
     <valid-device>stm32f479igt6</valid-device>
+    <valid-device>stm32f479igt7</valid-device>
     <valid-device>stm32f479iih6</valid-device>
+    <valid-device>stm32f479iih7</valid-device>
     <valid-device>stm32f479iit6</valid-device>
+    <valid-device>stm32f479iit7</valid-device>
     <valid-device>stm32f479ngh6</valid-device>
     <valid-device>stm32f479nih6</valid-device>
     <valid-device>stm32f479vgt6</valid-device>

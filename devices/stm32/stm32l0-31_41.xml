@@ -4,6 +4,7 @@
   <device platform="stm32" family="l0" name="31|41" pin="c|e|f|g|k" size="4|6" package="p|t|u|y" temperature="3|6|7" variant="|s">
     <naming-schema>{platform}{family}{name}{pin}{size}{package}{temperature}{variant}</naming-schema>
     <valid-device>stm32l031c4t6</valid-device>
+    <valid-device>stm32l031c4u6</valid-device>
     <valid-device>stm32l031c6t3</valid-device>
     <valid-device>stm32l031c6t6</valid-device>
     <valid-device>stm32l031c6t7</valid-device>
@@ -38,6 +39,8 @@
     <valid-device>stm32l041c4t7</valid-device>
     <valid-device>stm32l041c6t6</valid-device>
     <valid-device>stm32l041c6t7</valid-device>
+    <valid-device>stm32l041c6u6</valid-device>
+    <valid-device>stm32l041c6u7</valid-device>
     <valid-device>stm32l041e6y6</valid-device>
     <valid-device>stm32l041f6p6</valid-device>
     <valid-device>stm32l041f6p7</valid-device>

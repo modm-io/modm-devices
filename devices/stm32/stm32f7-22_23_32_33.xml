@@ -24,7 +24,9 @@
     <valid-device>stm32f723iek7</valid-device>
     <valid-device>stm32f723iet6</valid-device>
     <valid-device>stm32f723iet7</valid-device>
+    <valid-device>stm32f723vct6</valid-device>
     <valid-device>stm32f723vcy6</valid-device>
+    <valid-device>stm32f723vet6</valid-device>
     <valid-device>stm32f723vey6</valid-device>
     <valid-device>stm32f723zci6</valid-device>
     <valid-device>stm32f723zct6</valid-device>
@@ -46,6 +48,7 @@
     <valid-device>stm32f733iek7</valid-device>
     <valid-device>stm32f733iet6</valid-device>
     <valid-device>stm32f733iet7</valid-device>
+    <valid-device>stm32f733vet6</valid-device>
     <valid-device>stm32f733vey6</valid-device>
     <valid-device>stm32f733zei6</valid-device>
     <valid-device>stm32f733zei7</valid-device>

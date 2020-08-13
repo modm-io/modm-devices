@@ -55,6 +55,7 @@
     <valid-device>stm32l152zct6</valid-device>
     <valid-device>stm32l152zdt6</valid-device>
     <valid-device>stm32l152zet6</valid-device>
+    <valid-device>stm32l162qch6</valid-device>
     <valid-device>stm32l162qdh6</valid-device>
     <valid-device>stm32l162rct6</valid-device>
     <valid-device>stm32l162rct6a</valid-device>
@@ -68,6 +69,7 @@
     <valid-device>stm32l162vdy6x</valid-device>
     <valid-device>stm32l162vet6</valid-device>
     <valid-device>stm32l162vey6</valid-device>
+    <valid-device>stm32l162zct6</valid-device>
     <valid-device>stm32l162zdt6</valid-device>
     <valid-device>stm32l162zet6</valid-device>
     <driver name="core" type="cortex-m3">
@@ -764,8 +766,7 @@
         <signal device-name="52" device-pin="q|r|u|v|z" af="11" driver="lcd" name="seg28"/>
         <signal device-name="62" device-pin="q|r|v|z" af="11" driver="lcd" name="seg28"/>
         <signal device-name="52" device-pin="q|v|z" device-size="c|d|e" device-variant="" af="11" driver="lcd" name="seg40"/>
-        <signal device-name="62" device-pin="q" device-size="d" device-variant="" af="11" driver="lcd" name="seg40"/>
-        <signal device-name="62" device-pin="v" device-size="c" device-variant="" af="11" driver="lcd" name="seg40"/>
+        <signal device-name="62" device-pin="q|v|z" device-size="c|d" device-variant="" af="11" driver="lcd" name="seg40"/>
         <signal device-name="52|62" device-pin="r|v" device-size="c" device-variant="a" af="11" driver="lcd" name="seg40"/>
         <signal device-name="52|62" device-pin="r|v|z" device-size="d|e" device-variant="" af="11" driver="lcd" name="seg40"/>
         <signal device-name="52|62" device-pin="v" device-size="d" device-variant="x" af="11" driver="lcd" name="seg40"/>
@@ -781,8 +782,7 @@
         <signal device-name="52" device-pin="q|r|u|v|z" af="11" driver="lcd" name="seg29"/>
         <signal device-name="62" device-pin="q|r|v|z" af="11" driver="lcd" name="seg29"/>
         <signal device-name="52" device-pin="q|v|z" device-size="c|d|e" device-variant="" af="11" driver="lcd" name="seg41"/>
-        <signal device-name="62" device-pin="q" device-size="d" device-variant="" af="11" driver="lcd" name="seg41"/>
-        <signal device-name="62" device-pin="v" device-size="c" device-variant="" af="11" driver="lcd" name="seg41"/>
+        <signal device-name="62" device-pin="q|v|z" device-size="c|d" device-variant="" af="11" driver="lcd" name="seg41"/>
         <signal device-name="52|62" device-pin="r|v" device-size="c" device-variant="a" af="11" driver="lcd" name="seg41"/>
         <signal device-name="52|62" device-pin="r|v|z" device-size="d|e" device-variant="" af="11" driver="lcd" name="seg41"/>
         <signal device-name="52|62" device-pin="v" device-size="d" device-variant="x" af="11" driver="lcd" name="seg41"/>
@@ -799,8 +799,7 @@
         <signal device-name="52" device-pin="q|r|u|v|z" af="11" driver="lcd" name="seg30"/>
         <signal device-name="62" device-pin="q|r|v|z" af="11" driver="lcd" name="seg30"/>
         <signal device-name="52" device-pin="q|v|z" device-size="c|d|e" device-variant="" af="11" driver="lcd" name="seg42"/>
-        <signal device-name="62" device-pin="q" device-size="d" device-variant="" af="11" driver="lcd" name="seg42"/>
-        <signal device-name="62" device-pin="v" device-size="c" device-variant="" af="11" driver="lcd" name="seg42"/>
+        <signal device-name="62" device-pin="q|v|z" device-size="c|d" device-variant="" af="11" driver="lcd" name="seg42"/>
         <signal device-name="52|62" device-pin="r|v" device-size="c" device-variant="a" af="11" driver="lcd" name="seg42"/>
         <signal device-name="52|62" device-pin="r|v|z" device-size="d|e" device-variant="" af="11" driver="lcd" name="seg42"/>
         <signal device-name="52|62" device-pin="v" device-size="d" device-variant="x" af="11" driver="lcd" name="seg42"/>
@@ -846,8 +845,7 @@
         <signal device-name="52" device-pin="q|r|u|v|z" af="11" driver="lcd" name="seg31"/>
         <signal device-name="62" device-pin="q|r|v|z" af="11" driver="lcd" name="seg31"/>
         <signal device-name="52" device-pin="q|v|z" device-size="c|d|e" device-variant="" af="11" driver="lcd" name="seg43"/>
-        <signal device-name="62" device-pin="q" device-size="d" device-variant="" af="11" driver="lcd" name="seg43"/>
-        <signal device-name="62" device-pin="v" device-size="c" device-variant="" af="11" driver="lcd" name="seg43"/>
+        <signal device-name="62" device-pin="q|v|z" device-size="c|d" device-variant="" af="11" driver="lcd" name="seg43"/>
         <signal device-name="52|62" device-pin="r|v" device-size="c" device-variant="a" af="11" driver="lcd" name="seg43"/>
         <signal device-name="52|62" device-pin="r|v|z" device-size="d|e" device-variant="" af="11" driver="lcd" name="seg43"/>
         <signal device-name="52|62" device-pin="v" device-size="d" device-variant="x" af="11" driver="lcd" name="seg43"/>
@@ -1113,8 +1111,7 @@
       </gpio>
       <gpio device-pin="z" port="f" pin="10">
         <signal driver="adc" name="in31"/>
-        <signal device-name="62" device-size="d" driver="comp" instance="1" name="inp"/>
-        <signal device-name="51|52" device-size="c|d" driver="comp" instance="1" name="inp"/>
+        <signal device-name="51|52|62" device-size="c|d" driver="comp" instance="1" name="inp"/>
         <signal device-name="51|52|62" device-size="e" af="14" driver="comp" instance="1" name="inp"/>
         <signal af="14" driver="ts" name="g11_io5"/>
       </gpio>

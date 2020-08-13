@@ -252,7 +252,7 @@
     </driver>
     <driver name="jpeg" type="stm32-v1.0"/>
     <driver name="lptim" type="stm32-v1.1">
-      <instance device-pin="a|i|l|n|q|v|z" value="1"/>
+      <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
     </driver>

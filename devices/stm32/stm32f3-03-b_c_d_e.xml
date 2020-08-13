@@ -6,6 +6,7 @@
     <valid-device>stm32f303cbt6</valid-device>
     <valid-device>stm32f303cbt7</valid-device>
     <valid-device>stm32f303cct6</valid-device>
+    <valid-device>stm32f303cct7</valid-device>
     <valid-device>stm32f303rbt6</valid-device>
     <valid-device>stm32f303rbt7</valid-device>
     <valid-device>stm32f303rct6</valid-device>

@@ -566,21 +566,24 @@
         <signal af="7" driver="usart" instance="3" name="tx"/>
         <signal device-name="52" device-pin="r|v" af="11" driver="lcd" name="com4"/>
         <signal device-name="52" device-pin="r|v" af="11" driver="lcd" name="seg28"/>
-        <signal device-name="52" device-pin="v" af="11" driver="lcd" name="seg40"/>
+        <signal device-name="52" device-pin="r|v" device-variant="a" af="11" driver="lcd" name="seg40"/>
+        <signal device-name="52" device-pin="v" device-variant="" af="11" driver="lcd" name="seg40"/>
         <signal af="14" driver="tim" name="ic3"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="11">
         <signal af="7" driver="usart" instance="3" name="rx"/>
         <signal device-name="52" device-pin="r|v" af="11" driver="lcd" name="com5"/>
         <signal device-name="52" device-pin="r|v" af="11" driver="lcd" name="seg29"/>
-        <signal device-name="52" device-pin="v" af="11" driver="lcd" name="seg41"/>
+        <signal device-name="52" device-pin="r|v" device-variant="a" af="11" driver="lcd" name="seg41"/>
+        <signal device-name="52" device-pin="v" device-variant="" af="11" driver="lcd" name="seg41"/>
         <signal af="14" driver="tim" name="ic4"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="12">
         <signal af="7" driver="usart" instance="3" name="ck"/>
         <signal device-name="52" device-pin="r|v" af="11" driver="lcd" name="com6"/>
         <signal device-name="52" device-pin="r|v" af="11" driver="lcd" name="seg30"/>
-        <signal device-name="52" device-pin="v" af="11" driver="lcd" name="seg42"/>
+        <signal device-name="52" device-pin="r|v" device-variant="a" af="11" driver="lcd" name="seg42"/>
+        <signal device-name="52" device-pin="v" device-variant="" af="11" driver="lcd" name="seg42"/>
         <signal af="14" driver="tim" name="ic1"/>
       </gpio>
       <gpio port="c" pin="13">
@@ -612,7 +615,8 @@
         <signal af="2" driver="tim" instance="3" name="etr"/>
         <signal device-name="52" device-pin="r|v" af="11" driver="lcd" name="com7"/>
         <signal device-name="52" device-pin="r|v" af="11" driver="lcd" name="seg31"/>
-        <signal device-name="52" device-pin="v" af="11" driver="lcd" name="seg43"/>
+        <signal device-name="52" device-pin="r|v" device-variant="a" af="11" driver="lcd" name="seg43"/>
+        <signal device-name="52" device-pin="v" device-variant="" af="11" driver="lcd" name="seg43"/>
         <signal af="14" driver="tim" name="ic3"/>
       </gpio>
       <gpio device-pin="v" port="d" pin="3">

@@ -21,6 +21,7 @@
     <valid-device>stm32f401rct6</valid-device>
     <valid-device>stm32f401rct7</valid-device>
     <valid-device>stm32f401rdt6</valid-device>
+    <valid-device>stm32f401rdt7</valid-device>
     <valid-device>stm32f401ret6</valid-device>
     <valid-device>stm32f401ret7</valid-device>
     <valid-device>stm32f401vbh3</valid-device>
