@@ -26,4 +26,5 @@ script:
   - python3 tools/sync_docs.py
   - git diff -- README.md
   - git status --porcelain
+  - git diff $(git diff --name-only | sed -n 1p)
   - (( $(git status --porcelain | wc -l) == 0 ))

@@ -14,7 +14,6 @@ families = [
 ]
 packurl = "http://packs.download.microchip.com/"
 
-
 shutil.rmtree("../raw-device-data/avr-devices", ignore_errors=True)
 Path("../raw-device-data/avr-devices").mkdir(exist_ok=True, parents=True)
 
@@ -32,9 +31,10 @@ def dl(family):
     shutil.move(dest+"_/atdf", dest)
     shutil.rmtree(dest+"_", ignore_errors=True)
 
-with Pool(len(families)) as p:
-    p.map(dl, families)
+if __name__ == "__main__":
+    with Pool(len(families)) as p:
+        p.map(dl, families)
 
-shutil.copy("patches/avr.patch", "../raw-device-data")
-os.system("(cd ../raw-device-data; patch -p1 -l --no-backup-if-mismatch -i avr.patch)")
-os.remove("../raw-device-data/avr.patch")
+    shutil.copy("patches/avr.patch", "../raw-device-data")
+    os.system("(cd ../raw-device-data; patch -p1 -l --no-backup-if-mismatch -i avr.patch)")
+    os.remove("../raw-device-data/avr.patch")

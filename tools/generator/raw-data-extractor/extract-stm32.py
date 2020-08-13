@@ -1,6 +1,5 @@
 
 from pathlib import Path
-from multiprocessing import Pool
 import urllib.request
 import zipfile
 import shutil
