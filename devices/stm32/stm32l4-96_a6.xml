@@ -60,8 +60,8 @@
     <driver name="core" type="cortex-m4f">
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288"/>
       <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
-      <memory name="sram1" access="rwx" start="0x20000000" size="262144"/>
-      <memory name="sram2" access="rwx" start="0x20040000" size="65536"/>
+      <memory name="ccm" access="rwx" start="0x10000000" size="65536"/>
+      <memory name="sram1" access="rwx" start="0x20000000" size="327680"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD_PVM"/>
       <vector position="2" name="TAMP_STAMP"/>

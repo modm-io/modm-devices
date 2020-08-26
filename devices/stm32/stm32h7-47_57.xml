@@ -18,15 +18,15 @@
     <valid-device>stm32h757xih6</valid-device>
     <valid-device>stm32h757ziy6</valid-device>
     <driver name="core" type="cortex-m7fd">
-      <memory name="itcm" access="rwx" start="0x00000000" size="65536"/>
-      <memory device-size="g" name="flash" access="rx" start="0x08000000" size="1048576"/>
-      <memory device-size="i" name="flash" access="rx" start="0x08000000" size="2097152"/>
-      <memory name="dtcm" access="rx" start="0x20000000" size="131072"/>
-      <memory name="sram" access="rwx" start="0x24000000" size="524288"/>
-      <memory name="sram1" access="rwx" start="0x30000000" size="131072"/>
-      <memory name="sram2" access="rwx" start="0x30020000" size="131072"/>
-      <memory name="sram3" access="rwx" start="0x30040000" size="32768"/>
-      <memory name="sram4" access="rwx" start="0x38000000" size="65536"/>
+      <memory name="itcm" access="rwx" start="0x00" size="65536"/>
+      <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
+      <memory device-size="i" name="flash" access="rx" start="0x8000000" size="2097152"/>
+      <memory name="dtcm" access="rwx" start="0x20000000" size="131072"/>
+      <memory name="d1_sram" access="rwx" start="0x24000000" size="524288"/>
+      <memory name="d2_sram1" access="rwx" start="0x30000000" size="131072"/>
+      <memory name="d2_sram2" access="rwx" start="0x30020000" size="131072"/>
+      <memory name="d2_sram3" access="rwx" start="0x30040000" size="32768"/>
+      <memory name="d3_sram" access="rwx" start="0x38000000" size="65536"/>
       <memory name="backup" access="rwx" start="0x38800000" size="4096"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD_AVD"/>

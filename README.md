@@ -13,7 +13,7 @@ These tools and this data set is maintained and curated by
 It is licensed under the MPLv2 license.
 The CI checks daily for new data: [![](https://travis-ci.org/modm-io/modm-devices.svg?branch=develop)](https://travis-ci.org/modm-io/modm-devices)
 
-Currently data for <!--devicecount-->3257<!--/devicecount--> devices is available.
+Currently data for <!--devicecount-->3322<!--/devicecount--> devices is available.
 Please open an issue or better yet a pull request for additional support.
 
 <!--devicetable-->
@@ -23,7 +23,7 @@ Please open an issue or better yet a pull request for additional support.
 | NRF52         |     7   | SAMD          |   209   | SAML          |    47   |
 | STM32F0       |   169   | STM32F1       |   194   | STM32F2       |    71   |
 | STM32F3       |   145   | STM32F4       |   344   | STM32F7       |   181   |
-| STM32G0       |   117   | STM32G4       |   267   | STM32H7       |   146   |
+| STM32G0       |   117   | STM32G4       |   293   | STM32H7       |   185   |
 | STM32L0       |   324   | STM32L1       |   142   | STM32L4       |   358   |
 | STM32WB       |    30   |
 <!--/devicetable-->

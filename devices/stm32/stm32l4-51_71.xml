@@ -42,10 +42,9 @@
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288"/>
       <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
-      <memory device-name="71" name="sram1" access="rwx" start="0x20000000" size="98304"/>
-      <memory device-name="51" name="sram1" access="rwx" start="0x20000000" size="131072"/>
-      <memory device-name="71" name="sram2" access="rwx" start="0x20018000" size="32768"/>
-      <memory device-name="51" name="sram2" access="rwx" start="0x20020000" size="32768"/>
+      <memory name="ccm" access="rwx" start="0x10000000" size="32768"/>
+      <memory device-name="71" name="sram1" access="rwx" start="0x20000000" size="131072"/>
+      <memory device-name="51" name="sram1" access="rwx" start="0x20000000" size="163840"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD_PVM"/>
       <vector position="2" name="TAMP_STAMP"/>
