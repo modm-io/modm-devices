@@ -104,58 +104,16 @@ class STMDeviceTree:
             sizeIndexFlash = len(flashs) - 1
 
 
+        p["ram"] = rams[sizeIndexRam] * 1024
+        p["flash"] = flashs[sizeIndexFlash] * 1024
 
-        if did.family in ["h7"]:
-            memories = [
-                {"name": "sram",   "access": "rwx", "start": "0x24000000", "size": str(512*1024)},
-                {"name": "sram1",  "access": "rwx", "start": "0x30000000", "size": str(128*1024)},
-                {"name": "sram2",  "access": "rwx", "start": "0x30020000", "size": str(128*1024)},
-                {"name": "sram3",  "access": "rwx", "start": "0x30040000", "size":  str(32*1024)},
-                {"name": "sram4",  "access": "rwx", "start": "0x38000000", "size":  str(64*1024)},
-                {"name": "backup", "access": "rwx", "start": "0x38800000", "size":   str(4*1024)},
-                {"name": "itcm",   "access": "rwx", "start": "0x00000000", "size":  str(64*1024)},
-                {"name": "dtcm",   "access": "rx",  "start": "0x20000000", "size": str(128*1024)},
-                {"name": "flash",  "access": "rx",  "start": "0x08000000", "size": flashs[sizeIndexFlash]*1024},
-            ]
-        else:
-            mem_start, mem_model = stm.getMemoryForDevice(did)
-            total_ram = ram = rams[sizeIndexRam] * 1024 + mem_model["sram1"]
-            flash = flashs[sizeIndexFlash] * 1024 + mem_model["flash"]
-            if "ccm" in mem_model:
-                total_ram += mem_model["ccm"]
-            if "backup" in mem_model:
-                total_ram += mem_model["backup"]
-            if "itcm" in mem_model:
-                total_ram += mem_model["itcm"]
-                total_ram += mem_model["dtcm"]
-
-            p["ram"] = total_ram
-            p["flash"] = flash
-
-            # first get the real SRAM1 size
-            for mem, val in mem_model.items():
-                if any(s in mem for s in ["2", "3"]):
-                    ram -= val
-
-            memories = []
-            # add all memories
-            for mem, val in mem_model.items():
-                if "1" in mem:
-                    memories.append({"name": "sram1", "access" : "rwx", "size": str(ram),
-                                     "start": "0x{:02X}".format(mem_start["sram" if "sram" in mem_start else "sram1"])})
-                elif "2" in mem:
-                    memories.append({"name": "sram2", "access" : "rwx", "size": str(val),
-                                     "start": "0x{:02X}".format((mem_start["sram"] + ram) if "sram" in mem_start else mem_start["sram2"])})
-                elif "3" in mem:
-                    memories.append({"name": "sram3", "access": "rwx", "size": str(val),
-                                     "start": "0x{:02X}".format(mem_start["sram"] + ram + mem_model["sram2"])})
-                elif "flash" in mem:
-                    memories.append({"name": "flash", "access": "rx", "size": str(flash),
-                                     "start": "0x{:02X}".format(mem_start["flash"])})
-                else:
-                    memories.append({"name": mem, "size": str(val),
-                                     "access": "rw" if did.family == "f4" and mem == "ccm" else "rwx",
-                                     "start": "0x{:02X}".format(mem_start[mem])})
+        memories = []
+        for (mem_name, mem_start, mem_size) in stm.getMemoryForDevice(did, p["flash"], p["ram"]):
+            access = "rwx"
+            if did.family == "f4" and mem_name == "ccm": access = "rw";
+            if "flash" in mem_name: access = "rx";
+            memories.append({"name": mem_name, "access": access, "size": str(mem_size),
+                             "start": "0x{:02X}".format(mem_start)})
 
         p["memories"] = memories
 

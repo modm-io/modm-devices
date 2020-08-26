@@ -388,10 +388,10 @@ stm32_memory = \
         'model': [
             {
                 'name': ['31', '41'],
-                'memories': {'flash': 0, 'sram1': 0, 'sram2': 6*1024, 'ccm': 10*1024}
+                'memories': {'flash': 0, 'sram1': 0, 'sram2':  6*1024, 'ccm': 10*1024}
             },
             {
-                'name': ['71'],
+                'name': ['71', '91', 'a1'],
                 'memories': {'flash': 0, 'sram1': 0, 'sram2': 16*1024, 'ccm': 16*1024}
             },
             {
@@ -494,6 +494,40 @@ stm32_memory = \
             }
         ]
     },
+    'h7': {
+        'start': {
+            'flash': 0x08000000,
+            'dtcm': 0x20000000,
+            'itcm': 0x00000000,
+            'd1_sram': 0x24000000,
+            'd2_sram': 0x30000000,
+            'd3_sram': 0x38000000,
+            'backup': 0x38800000
+        },
+        'model': [
+            {
+                'name': ['42'],
+                'memories': {'flash': 0, 'itcm': 64*1024, 'dtcm': 128*1024, 'backup': 4*1024,
+                             'd1_sram': 384*1024,
+                             'd2_sram1': 32*1024, 'd2_sram2': 16*1024,
+                             'd3_sram': 64*1024}
+            },
+            {
+                'name': ['23', '25', '30', '33', '35', '40', '43', '45', '47', '50', '53', '55', '57'],
+                'memories': {'flash': 0, 'itcm': 64*1024, 'dtcm': 128*1024, 'backup': 4*1024,
+                             'd1_sram': 512*1024,
+                             'd2_sram1': 128*1024, 'd2_sram2': 128*1024, 'd2_sram3': 32*1024,
+                             'd3_sram': 64*1024}
+            },
+            {
+                'name': ['a0', 'a3', 'b0', 'b3'],
+                'memories': {'flash': 0, 'itcm': 64*1024, 'dtcm': 128*1024, 'backup': 4*1024,
+                             'd1_sram1': 256*1024, 'd1_sram2': 384*1024, 'd1_sram3': 384*1024,
+                             'd2_sram1': 64*1024, 'd2_sram2': 64*1024,
+                             'd3_sram': 32*1024}
+            }
+        ]
+    },
     'l0': {
         'start': {
             'flash': 0x08000000,
@@ -559,30 +593,30 @@ stm32_memory = \
     'l4': {
         'start': {
             'flash': 0x08000000,
-            'eeprom': 0x08080000,
-            'sram3': 0x20030000,
-            'sram2': 0x10000000,
+            'ccm': 0x10000000,
             'sram': 0x20000000
         },
         'model': [
             {
+                'name': ['12', '22'],
+                'memories': {'flash': 0, 'sram1': 0, 'ccm': 8*1024}
+            },{
                 'name': ['51', '71', '75', '76', '85', '86'],
-                'memories': {'flash': 0, 'sram1': 0, 'sram2': 32*1024}
+                'memories': {'flash': 0, 'sram1': 0, 'ccm': 32*1024}
             },{
                 'name': ['31', '32', '33', '42', '43', '52', '62'],
-                'memories': {'flash': 0, 'sram1': 0, 'sram2': 16*1024}
+                'memories': {'flash': 0, 'sram1': 0, 'ccm': 16*1024}
             },{
                 'name': ['96', 'a6'],
-                'memories': {'flash': 0, 'sram1': 0, 'sram2': 64*1024}
-            },{
+                'memories': {'flash': 0, 'sram1': 0, 'ccm': 64*1024}
+            },
+            # Technically part of the STM32L4+ family
+            {
                 'name': ['r5', 'r7', 'r9', 's5', 's7', 's9'],
                 'memories': {'flash': 0, 'sram1': 0, 'sram2': 64*1024, 'sram3': 384*1024}
             },{
                 'name': ['p5', 'q5'],
                 'memories': {'flash': 0, 'sram1': 0, 'sram2': 64*1024, 'sram3': 128*1024}
-            },{
-                'name': ['12', '22'],
-                'memories': {'flash': 0, 'sram1': 0, 'sram2': 8*1024}
             }
         ]
     },
@@ -600,7 +634,8 @@ stm32_memory = \
     },
 }
 
-def getMemoryForDevice(device_id):
+
+def getMemoryModel(device_id):
     mem_fam = stm32_memory[device_id.family]
     mem_model = None
     for model in mem_fam['model']:
@@ -614,4 +649,40 @@ def getMemoryForDevice(device_id):
     if mem_model == None:
         LOGGER.error("Memory model not found for device '{}'".format(device_id.string))
         exit(1)
-    return (mem_fam['start'], mem_model['memories'])
+    return (dict(mem_fam['start']), dict(mem_model['memories']))
+
+def getMemoryForDevice(device_id, total_flash, total_ram):
+    mem_start, mem_model = getMemoryModel(device_id)
+
+    # Correct Flash size
+    mem_model["flash"] = total_flash
+
+    # Correct RAM size
+    main_sram = next( (name for (name, size) in mem_model.items() if size == 0), None )
+    if main_sram is not None:
+        main_sram_name = next( ram for ram in mem_start.keys() if main_sram.startswith(ram) )
+        # compute the size from total ram
+        mem_model[main_sram] = total_ram
+        main_sram_index = int(main_sram.split("sram")[-1]) if main_sram[-1].isdigit() else 0
+        for name, size in mem_model.items():
+            mem_index = int(name.split("sram")[-1]) if name[-1].isdigit() else 0
+            if name.startswith(main_sram_name) and mem_index != main_sram_index:
+                mem_model[main_sram] -= size
+
+    # Assemble flattened memories
+    memories = []
+    for name, size in mem_model.items():
+        sram_name = next( ram for ram in mem_start.keys() if name.startswith(ram) )
+        index = int(name.split("sram")[-1]) if name[-1].isdigit() else 0
+        start = mem_start[sram_name]
+        if index > 1:
+            # correct start address
+            for mem_name, mem_size in mem_model.items():
+                mem_index = int(mem_name.split("sram")[-1]) if mem_name[-1].isdigit() else 0
+                if mem_name.startswith(sram_name) and mem_index < index:
+                    start += mem_size
+        memories.append( (name, start, size) )
+
+    return memories
+
+
