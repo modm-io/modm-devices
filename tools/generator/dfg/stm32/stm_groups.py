@@ -202,7 +202,7 @@ stm_groups = \
         'name': ['31', '41']
     },{
         'family': ['g4'],
-        'name': ['71']
+        'name': ['71', '91', 'a1']
     },{
         'family': ['g4'],
         'name': ['73', '83']
@@ -213,6 +213,15 @@ stm_groups = \
 
     # STM32H7 devices
     {
+        'family': ['h7'],
+        'name': ['23', '33']
+    },{
+        'family': ['h7'],
+        'name': ['25', '35']
+    },{
+        'family': ['h7'],
+        'name': ['30']
+    },{
         'family': ['h7'],
         'name': ['40', '50']
     },{
@@ -232,10 +241,10 @@ stm_groups = \
         'name': ['a3']
     },{
         'family': ['h7'],
-        'name': ['b0']
+        'name': ['a0', 'b0']
     },{
         'family': ['h7'],
-        'name': ['b3']
+        'name': ['a3', 'b3']
     },
 
     # STM32L0 devices
