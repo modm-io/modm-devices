@@ -1,11 +1,15 @@
+import sys
+sys.path.append(".")
+
 from setuptools import setup, find_packages
+from modm_devices import __version__
 
 with open("README.md") as f:
     long_description = f.read()
 
 setup(
     name = "modm-devices",
-    version = "0.1.1",
+    version = __version__,
     python_requires=">=3.5.0",
     packages = find_packages(exclude=["test"]),
     package_data = {

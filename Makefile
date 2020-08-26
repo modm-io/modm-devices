@@ -18,4 +18,7 @@ upload: dist
 clean:
 	@rm -rf dist build modm_devices.egg-info
 
-.PHONY : test dist install install-user upload clean
+sync:
+	@python3 tools/scripts/sync_docs.py
+
+.PHONY : test dist install install-user upload clean sync
