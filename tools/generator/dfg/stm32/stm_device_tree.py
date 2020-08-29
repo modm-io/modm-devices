@@ -182,9 +182,30 @@ class STMDeviceTree:
             return (port, int(pin[2:]))
         pins = sorted(pins, key=raw_pin_sort)
         # STM32G0 has pin remaps?!?
-        pins = filter(lambda p: "PINREMAP" not in p.get("Variant", ""), pins)
+        # pins = filter(lambda p: "PINREMAP" not in p.get("Variant", ""), pins)
 
         gpios = []
+
+        def pin_name(name):
+            name = name[:4]
+            if len(name) > 3 and not name[3].isdigit():
+                name = name[:3]
+            return (name[1:2].lower(), name[2:].lower())
+
+        pinout = []
+        for pin in device_file.query("//Pin"):
+            pinv = {
+                "name": pin.get("Name"),
+                "position": pin.get("Position"),
+                "type": pin.get("Type"),
+                "remap": "PINREMAP" in pin.get("Variant", ""),
+            }
+            if "I/O" in pinv["type"]:
+                pinv["port"], pinv["pin"] = pin_name(pinv["name"])
+            pinout.append(pinv)
+
+        p["pinout"] = pinout
+        p["package"] = device_file.query("/Mcu/@Package")[0]
 
         def split_af(af):
             # entry 0 contains names without instance
@@ -302,9 +323,7 @@ class STMDeviceTree:
 
         for pin in pins:
             rname = pin.get("Name")
-            name = rname[:4]
-            if len(name) > 3 and not name[3].isdigit():
-                name = name[:3]
+            name = pin_name(rname)
 
             # the analog channels are only available in the Mcu file, not the GPIO file
             localSignals = device_file.compactQuery('//Pin[@Name="{}"]/Signal[not(@Name="GPIO")]/@Name'.format(rname))
@@ -327,7 +346,7 @@ class STMDeviceTree:
                     if "exti" in naf["name"]: continue;
                     afs.append(naf)
 
-            gpio = (name[1:2].lower(), name[2:].lower(), afs)
+            gpio = (name[0], name[1], afs)
             gpios.append(gpio)
             # print(gpio[0].upper(), gpio[1], afs)
             # LOGGER.debug("{}{}: {} ->".format(gpio[0].upper(), gpio[1]))
@@ -536,9 +555,27 @@ class STMDeviceTree:
                         pin_ch = group_ch.addChild("signal")
                         pin_ch.setAttributes(["port", "pin", "name"], pin)
 
+        package = gpio_driver.addChild("package")
+        package.setAttributes("name", p["package"])
+        def sort_pinout(e):
+            alphas = "".join(filter(str.isalpha, e["position"]))
+            digits = "".join(filter(str.isdigit, e["position"]))
+            return (alphas, int(digits), e.get("variant", ""))
+        package.addSortKey(sort_pinout)
+        for pin in p["pinout"]:
+            pinc = package.addChild("pin")
+            pinc.setAttributes(["position", "name"], pin)
+            if "I/O" not in pin["type"]:
+                pinc.setAttributes("type", pin["type"].lower())
+            if pin["remap"]:
+                pinc.setAttributes("variant", "remap")
+
+
         # Sort these things
         def sort_gpios(e):
-            if "driver" in e:
+            if "package" in e.name:
+                return (1000, e["name"], 0, "", 0)
+            elif "driver" in e:
                 return (int(e["position"]), e["driver"], int(e.get("instance", 0)), "", 0)
             else:
                 return (100, "", 0, e["port"], int(e["pin"]))
