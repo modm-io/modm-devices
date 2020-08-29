@@ -760,6 +760,94 @@
       <gpio port="h" pin="3">
         <signal af="0" driver="rcc" name="lsco"/>
       </gpio>
+      <package name="LGA86">
+        <pin position="1" name="PA2"/>
+        <pin position="2" name="PA1"/>
+        <pin position="3" name="PA0"/>
+        <pin position="4" name="VREF+" type="monoio"/>
+        <pin position="5" name="VSS" type="power"/>
+        <pin position="6" name="VDDA" type="power"/>
+        <pin position="7" name="PC3"/>
+        <pin position="8" name="PC2"/>
+        <pin position="9" name="PC1"/>
+        <pin position="10" name="NRST" type="reset"/>
+        <pin position="11" name="PB9"/>
+        <pin position="12" name="PC0"/>
+        <pin position="13" name="PH3-BOOT0"/>
+        <pin position="14" name="PB8"/>
+        <pin position="15" name="VBAT" type="power"/>
+        <pin position="16" name="VSSSMPS" type="power"/>
+        <pin position="17" name="VDDSMPS" type="power"/>
+        <pin position="18" name="PB7"/>
+        <pin position="19" name="PB5"/>
+        <pin position="20" name="PB4"/>
+        <pin position="21" name="PB3"/>
+        <pin position="22" name="PC10"/>
+        <pin position="23" name="PC11"/>
+        <pin position="24" name="PC12"/>
+        <pin position="25" name="PA13"/>
+        <pin position="26" name="PA14"/>
+        <pin position="27" name="PA15"/>
+        <pin position="28" name="PA10"/>
+        <pin position="29" name="PA12"/>
+        <pin position="30" name="PA11"/>
+        <pin position="31" name="VSS" type="power"/>
+        <pin position="32" name="VDDUSB" type="power"/>
+        <pin position="33" name="PD0"/>
+        <pin position="34" name="PD1"/>
+        <pin position="35" name="PB13"/>
+        <pin position="36" name="PC6"/>
+        <pin position="37" name="PB14"/>
+        <pin position="38" name="PB15"/>
+        <pin position="39" name="PB6"/>
+        <pin position="40" name="PC13"/>
+        <pin position="41" name="PB12"/>
+        <pin position="42" name="PE4"/>
+        <pin position="43" name="NC" type="nc"/>
+        <pin position="44" name="NC" type="nc"/>
+        <pin position="45" name="PC5"/>
+        <pin position="46" name="PB11"/>
+        <pin position="47" name="PB10"/>
+        <pin position="48" name="PB2"/>
+        <pin position="49" name="PC4"/>
+        <pin position="50" name="PA8"/>
+        <pin position="51" name="PA9"/>
+        <pin position="52" name="PA7"/>
+        <pin position="53" name="PA6"/>
+        <pin position="54" name="PA5"/>
+        <pin position="55" name="PA4"/>
+        <pin position="56" name="PA3"/>
+        <pin position="57" name="VSS" type="power"/>
+        <pin position="58" name="ANT_IN"/>
+        <pin position="59" name="RF_OUT"/>
+        <pin position="60" name="VSS" type="power"/>
+        <pin position="61" name="PH0"/>
+        <pin position="62" name="PH1"/>
+        <pin position="63" name="PD14"/>
+        <pin position="64" name="PE1"/>
+        <pin position="65" name="PD13"/>
+        <pin position="66" name="PD12"/>
+        <pin position="67" name="PD7"/>
+        <pin position="68" name="PD2"/>
+        <pin position="69" name="PC9"/>
+        <pin position="70" name="PD3"/>
+        <pin position="71" name="PC7"/>
+        <pin position="72" name="PE3"/>
+        <pin position="73" name="PD4"/>
+        <pin position="74" name="PD9"/>
+        <pin position="75" name="PD8"/>
+        <pin position="76" name="PD15"/>
+        <pin position="77" name="PD10"/>
+        <pin position="78" name="PE2"/>
+        <pin position="79" name="PE0"/>
+        <pin position="80" name="PD5"/>
+        <pin position="81" name="PD6"/>
+        <pin position="82" name="PD11"/>
+        <pin position="83" name="PC8"/>
+        <pin position="84" name="VSS" type="power"/>
+        <pin position="85" name="ANT_NC"/>
+        <pin position="86" name="VSS" type="power"/>
+      </package>
     </driver>
   </device>
 </modm>

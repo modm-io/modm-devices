@@ -1089,6 +1089,581 @@
         <signal af="12" driver="fmc" name="a1"/>
       </gpio>
       <gpio device-pin="z" port="h" pin="2"/>
+      <package device-pin="v" device-package="t" name="LQFP100">
+        <pin position="1" name="PE2"/>
+        <pin position="2" name="PE3"/>
+        <pin position="3" name="PE4"/>
+        <pin position="4" name="PE5"/>
+        <pin position="5" name="PE6"/>
+        <pin position="6" name="VBAT" type="power"/>
+        <pin position="7" name="PC13"/>
+        <pin position="8" name="PC14-OSC32_IN"/>
+        <pin position="9" name="PC15-OSC32_OUT"/>
+        <pin position="10" name="PF9"/>
+        <pin position="11" name="PF10"/>
+        <pin position="12" name="PF0-OSC_IN"/>
+        <pin position="13" name="PF1-OSC_OUT"/>
+        <pin position="14" name="NRST" type="reset"/>
+        <pin position="15" name="PC0"/>
+        <pin position="16" name="PC1"/>
+        <pin position="17" name="PC2"/>
+        <pin position="18" name="PC3"/>
+        <pin position="19" name="PF2"/>
+        <pin device-size="d|e" device-temperature="6" position="20" name="VSSA" type="power"/>
+        <pin device-size="b|c" device-temperature="6" position="20" name="VSSA/VREF-" type="power"/>
+        <pin device-size="c" device-temperature="7" position="20" name="VSSA/VREF-" type="power"/>
+        <pin position="21" name="VREF+" type="power"/>
+        <pin position="22" name="VDDA" type="power"/>
+        <pin position="23" name="PA0"/>
+        <pin position="24" name="PA1"/>
+        <pin position="25" name="PA2"/>
+        <pin position="26" name="PA3"/>
+        <pin device-size="d|e" device-temperature="6" position="27" name="VSS" type="power"/>
+        <pin device-size="b|c" device-temperature="6" position="27" name="PF4"/>
+        <pin device-size="c" device-temperature="7" position="27" name="PF4"/>
+        <pin position="28" name="VDD" type="power"/>
+        <pin position="29" name="PA4"/>
+        <pin position="30" name="PA5"/>
+        <pin position="31" name="PA6"/>
+        <pin position="32" name="PA7"/>
+        <pin position="33" name="PC4"/>
+        <pin position="34" name="PC5"/>
+        <pin position="35" name="PB0"/>
+        <pin position="36" name="PB1"/>
+        <pin position="37" name="PB2"/>
+        <pin position="38" name="PE7"/>
+        <pin position="39" name="PE8"/>
+        <pin position="40" name="PE9"/>
+        <pin position="41" name="PE10"/>
+        <pin position="42" name="PE11"/>
+        <pin position="43" name="PE12"/>
+        <pin position="44" name="PE13"/>
+        <pin position="45" name="PE14"/>
+        <pin position="46" name="PE15"/>
+        <pin position="47" name="PB10"/>
+        <pin position="48" name="PB11"/>
+        <pin position="49" name="VSS" type="power"/>
+        <pin position="50" name="VDD" type="power"/>
+        <pin position="51" name="PB12"/>
+        <pin position="52" name="PB13"/>
+        <pin position="53" name="PB14"/>
+        <pin position="54" name="PB15"/>
+        <pin position="55" name="PD8"/>
+        <pin position="56" name="PD9"/>
+        <pin position="57" name="PD10"/>
+        <pin position="58" name="PD11"/>
+        <pin position="59" name="PD12"/>
+        <pin position="60" name="PD13"/>
+        <pin position="61" name="PD14"/>
+        <pin position="62" name="PD15"/>
+        <pin position="63" name="PC6"/>
+        <pin position="64" name="PC7"/>
+        <pin position="65" name="PC8"/>
+        <pin position="66" name="PC9"/>
+        <pin position="67" name="PA8"/>
+        <pin position="68" name="PA9"/>
+        <pin position="69" name="PA10"/>
+        <pin position="70" name="PA11"/>
+        <pin position="71" name="PA12"/>
+        <pin position="72" name="PA13"/>
+        <pin position="73" name="PF6"/>
+        <pin position="74" name="VSS" type="power"/>
+        <pin position="75" name="VDD" type="power"/>
+        <pin position="76" name="PA14"/>
+        <pin position="77" name="PA15"/>
+        <pin position="78" name="PC10"/>
+        <pin position="79" name="PC11"/>
+        <pin position="80" name="PC12"/>
+        <pin position="81" name="PD0"/>
+        <pin position="82" name="PD1"/>
+        <pin position="83" name="PD2"/>
+        <pin position="84" name="PD3"/>
+        <pin position="85" name="PD4"/>
+        <pin position="86" name="PD5"/>
+        <pin position="87" name="PD6"/>
+        <pin position="88" name="PD7"/>
+        <pin position="89" name="PB3"/>
+        <pin position="90" name="PB4"/>
+        <pin position="91" name="PB5"/>
+        <pin position="92" name="PB6"/>
+        <pin position="93" name="PB7"/>
+        <pin position="94" name="BOOT0" type="boot"/>
+        <pin position="95" name="PB8"/>
+        <pin position="96" name="PB9"/>
+        <pin position="97" name="PE0"/>
+        <pin position="98" name="PE1"/>
+        <pin position="99" name="VSS" type="power"/>
+        <pin position="100" name="VDD" type="power"/>
+      </package>
+      <package device-pin="z" name="LQFP144">
+        <pin position="1" name="PE2"/>
+        <pin position="2" name="PE3"/>
+        <pin position="3" name="PE4"/>
+        <pin position="4" name="PE5"/>
+        <pin position="5" name="PE6"/>
+        <pin position="6" name="VBAT" type="power"/>
+        <pin position="7" name="PC13"/>
+        <pin position="8" name="PC14-OSC32_IN"/>
+        <pin position="9" name="PC15-OSC32_OUT"/>
+        <pin position="10" name="PH0"/>
+        <pin position="11" name="PH1"/>
+        <pin position="12" name="PF2"/>
+        <pin position="13" name="PF3"/>
+        <pin position="14" name="PF4"/>
+        <pin position="15" name="PF5"/>
+        <pin position="16" name="VSS" type="power"/>
+        <pin position="17" name="VDD" type="power"/>
+        <pin position="18" name="PF6"/>
+        <pin position="19" name="PF7"/>
+        <pin position="20" name="PF8"/>
+        <pin position="21" name="PF9"/>
+        <pin position="22" name="PF10"/>
+        <pin position="23" name="PF0-OSC_IN"/>
+        <pin position="24" name="PF1-OSC_OUT"/>
+        <pin position="25" name="NRST" type="reset"/>
+        <pin position="26" name="PC0"/>
+        <pin position="27" name="PC1"/>
+        <pin position="28" name="PC2"/>
+        <pin position="29" name="PC3"/>
+        <pin position="30" name="VSSA" type="power"/>
+        <pin position="31" name="VREF-" type="power"/>
+        <pin position="32" name="VREF+" type="power"/>
+        <pin position="33" name="VDDA" type="power"/>
+        <pin position="34" name="PA0"/>
+        <pin position="35" name="PA1"/>
+        <pin position="36" name="PA2"/>
+        <pin position="37" name="PA3"/>
+        <pin position="38" name="VSS" type="power"/>
+        <pin position="39" name="VDD" type="power"/>
+        <pin position="40" name="PA4"/>
+        <pin position="41" name="PA5"/>
+        <pin position="42" name="PA6"/>
+        <pin position="43" name="PA7"/>
+        <pin position="44" name="PC4"/>
+        <pin position="45" name="PC5"/>
+        <pin position="46" name="PB0"/>
+        <pin position="47" name="PB1"/>
+        <pin position="48" name="PB2"/>
+        <pin position="49" name="PF11"/>
+        <pin position="50" name="PF12"/>
+        <pin position="51" name="VSS" type="power"/>
+        <pin position="52" name="VDD" type="power"/>
+        <pin position="53" name="PF13"/>
+        <pin position="54" name="PF14"/>
+        <pin position="55" name="PF15"/>
+        <pin position="56" name="PG0"/>
+        <pin position="57" name="PG1"/>
+        <pin position="58" name="PE7"/>
+        <pin position="59" name="PE8"/>
+        <pin position="60" name="PE9"/>
+        <pin position="61" name="VSS" type="power"/>
+        <pin position="62" name="VDD" type="power"/>
+        <pin position="63" name="PE10"/>
+        <pin position="64" name="PE11"/>
+        <pin position="65" name="PE12"/>
+        <pin position="66" name="PE13"/>
+        <pin position="67" name="PE14"/>
+        <pin position="68" name="PE15"/>
+        <pin position="69" name="PB10"/>
+        <pin position="70" name="PB11"/>
+        <pin position="71" name="VSS" type="power"/>
+        <pin position="72" name="VDD" type="power"/>
+        <pin position="73" name="PB12"/>
+        <pin position="74" name="PB13"/>
+        <pin position="75" name="PB14"/>
+        <pin position="76" name="PB15"/>
+        <pin position="77" name="PD8"/>
+        <pin position="78" name="PD9"/>
+        <pin position="79" name="PD10"/>
+        <pin position="80" name="PD11"/>
+        <pin position="81" name="PD12"/>
+        <pin position="82" name="PD13"/>
+        <pin position="83" name="VSS" type="power"/>
+        <pin position="84" name="VDD" type="power"/>
+        <pin position="85" name="PD14"/>
+        <pin position="86" name="PD15"/>
+        <pin position="87" name="PG2"/>
+        <pin position="88" name="PG3"/>
+        <pin position="89" name="PG4"/>
+        <pin position="90" name="PG5"/>
+        <pin position="91" name="PG6"/>
+        <pin position="92" name="PG7"/>
+        <pin position="93" name="PG8"/>
+        <pin position="94" name="VSS" type="power"/>
+        <pin position="95" name="VDD" type="power"/>
+        <pin position="96" name="PC6"/>
+        <pin position="97" name="PC7"/>
+        <pin position="98" name="PC8"/>
+        <pin position="99" name="PC9"/>
+        <pin position="100" name="PA8"/>
+        <pin position="101" name="PA9"/>
+        <pin position="102" name="PA10"/>
+        <pin position="103" name="PA11"/>
+        <pin position="104" name="PA12"/>
+        <pin position="105" name="PA13"/>
+        <pin position="106" name="PH2"/>
+        <pin position="107" name="VSS" type="power"/>
+        <pin position="108" name="VDD" type="power"/>
+        <pin position="109" name="PA14"/>
+        <pin position="110" name="PA15"/>
+        <pin position="111" name="PC10"/>
+        <pin position="112" name="PC11"/>
+        <pin position="113" name="PC12"/>
+        <pin position="114" name="PD0"/>
+        <pin position="115" name="PD1"/>
+        <pin position="116" name="PD2"/>
+        <pin position="117" name="PD3"/>
+        <pin position="118" name="PD4"/>
+        <pin position="119" name="PD5"/>
+        <pin position="120" name="VSS" type="power"/>
+        <pin position="121" name="VDD" type="power"/>
+        <pin position="122" name="PD6"/>
+        <pin position="123" name="PD7"/>
+        <pin position="124" name="PG9"/>
+        <pin position="125" name="PG10"/>
+        <pin position="126" name="PG11"/>
+        <pin position="127" name="PG12"/>
+        <pin position="128" name="PG13"/>
+        <pin position="129" name="PG14"/>
+        <pin position="130" name="VSS" type="power"/>
+        <pin position="131" name="VDD" type="power"/>
+        <pin position="132" name="PG15"/>
+        <pin position="133" name="PB3"/>
+        <pin position="134" name="PB4"/>
+        <pin position="135" name="PB5"/>
+        <pin position="136" name="PB6"/>
+        <pin position="137" name="PB7"/>
+        <pin position="138" name="BOOT0" type="boot"/>
+        <pin position="139" name="PB8"/>
+        <pin position="140" name="PB9"/>
+        <pin position="141" name="PE0"/>
+        <pin position="142" name="PE1"/>
+        <pin position="143" name="VSS" type="power"/>
+        <pin position="144" name="VDD" type="power"/>
+      </package>
+      <package device-pin="c" name="LQFP48">
+        <pin position="1" name="VBAT" type="power"/>
+        <pin position="2" name="PC13"/>
+        <pin position="3" name="PC14-OSC32_IN"/>
+        <pin position="4" name="PC15-OSC32_OUT"/>
+        <pin position="5" name="PF0-OSC_IN"/>
+        <pin position="6" name="PF1-OSC_OUT"/>
+        <pin position="7" name="NRST" type="reset"/>
+        <pin position="8" name="VSSA/VREF-" type="power"/>
+        <pin position="9" name="VDDA/VREF+" type="power"/>
+        <pin position="10" name="PA0"/>
+        <pin position="11" name="PA1"/>
+        <pin position="12" name="PA2"/>
+        <pin position="13" name="PA3"/>
+        <pin position="14" name="PA4"/>
+        <pin position="15" name="PA5"/>
+        <pin position="16" name="PA6"/>
+        <pin position="17" name="PA7"/>
+        <pin position="18" name="PB0"/>
+        <pin position="19" name="PB1"/>
+        <pin position="20" name="PB2"/>
+        <pin position="21" name="PB10"/>
+        <pin position="22" name="PB11"/>
+        <pin position="23" name="VSS" type="power"/>
+        <pin position="24" name="VDD" type="power"/>
+        <pin position="25" name="PB12"/>
+        <pin position="26" name="PB13"/>
+        <pin position="27" name="PB14"/>
+        <pin position="28" name="PB15"/>
+        <pin position="29" name="PA8"/>
+        <pin position="30" name="PA9"/>
+        <pin position="31" name="PA10"/>
+        <pin position="32" name="PA11"/>
+        <pin position="33" name="PA12"/>
+        <pin position="34" name="PA13"/>
+        <pin position="35" name="VSS" type="power"/>
+        <pin position="36" name="VDD" type="power"/>
+        <pin position="37" name="PA14"/>
+        <pin position="38" name="PA15"/>
+        <pin position="39" name="PB3"/>
+        <pin position="40" name="PB4"/>
+        <pin position="41" name="PB5"/>
+        <pin position="42" name="PB6"/>
+        <pin position="43" name="PB7"/>
+        <pin position="44" name="BOOT0" type="boot"/>
+        <pin position="45" name="PB8"/>
+        <pin position="46" name="PB9"/>
+        <pin position="47" name="VSS" type="power"/>
+        <pin position="48" name="VDD" type="power"/>
+      </package>
+      <package device-pin="r" name="LQFP64">
+        <pin position="1" name="VBAT" type="power"/>
+        <pin position="2" name="PC13"/>
+        <pin position="3" name="PC14-OSC32_IN"/>
+        <pin position="4" name="PC15-OSC32_OUT"/>
+        <pin position="5" name="PF0-OSC_IN"/>
+        <pin position="6" name="PF1-OSC_OUT"/>
+        <pin position="7" name="NRST" type="reset"/>
+        <pin position="8" name="PC0"/>
+        <pin position="9" name="PC1"/>
+        <pin position="10" name="PC2"/>
+        <pin position="11" name="PC3"/>
+        <pin device-size="d|e" device-temperature="6|7" position="12" name="VSSA" type="power"/>
+        <pin device-size="b|c" device-temperature="6|7" position="12" name="VSSA/VREF-" type="power"/>
+        <pin device-size="d|e" device-temperature="6|7" position="13" name="VDDA" type="power"/>
+        <pin device-size="b|c" device-temperature="6|7" position="13" name="VDDA/VREF+" type="power"/>
+        <pin position="14" name="PA0"/>
+        <pin position="15" name="PA1"/>
+        <pin position="16" name="PA2"/>
+        <pin position="17" name="PA3"/>
+        <pin device-size="d|e" device-temperature="6|7" position="18" name="VSS" type="power"/>
+        <pin device-size="b|c" device-temperature="6|7" position="18" name="PF4"/>
+        <pin position="19" name="VDD" type="power"/>
+        <pin position="20" name="PA4"/>
+        <pin position="21" name="PA5"/>
+        <pin position="22" name="PA6"/>
+        <pin position="23" name="PA7"/>
+        <pin position="24" name="PC4"/>
+        <pin position="25" name="PC5"/>
+        <pin position="26" name="PB0"/>
+        <pin position="27" name="PB1"/>
+        <pin position="28" name="PB2"/>
+        <pin position="29" name="PB10"/>
+        <pin position="30" name="PB11"/>
+        <pin position="31" name="VSS" type="power"/>
+        <pin position="32" name="VDD" type="power"/>
+        <pin position="33" name="PB12"/>
+        <pin position="34" name="PB13"/>
+        <pin position="35" name="PB14"/>
+        <pin position="36" name="PB15"/>
+        <pin position="37" name="PC6"/>
+        <pin position="38" name="PC7"/>
+        <pin position="39" name="PC8"/>
+        <pin position="40" name="PC9"/>
+        <pin position="41" name="PA8"/>
+        <pin position="42" name="PA9"/>
+        <pin position="43" name="PA10"/>
+        <pin position="44" name="PA11"/>
+        <pin position="45" name="PA12"/>
+        <pin position="46" name="PA13"/>
+        <pin position="47" name="VSS" type="power"/>
+        <pin position="48" name="VDD" type="power"/>
+        <pin position="49" name="PA14"/>
+        <pin position="50" name="PA15"/>
+        <pin position="51" name="PC10"/>
+        <pin position="52" name="PC11"/>
+        <pin position="53" name="PC12"/>
+        <pin position="54" name="PD2"/>
+        <pin position="55" name="PB3"/>
+        <pin position="56" name="PB4"/>
+        <pin position="57" name="PB5"/>
+        <pin position="58" name="PB6"/>
+        <pin position="59" name="PB7"/>
+        <pin position="60" name="BOOT0" type="boot"/>
+        <pin position="61" name="PB8"/>
+        <pin position="62" name="PB9"/>
+        <pin position="63" name="VSS" type="power"/>
+        <pin position="64" name="VDD" type="power"/>
+      </package>
+      <package device-package="h" name="UFBGA100">
+        <pin position="A1" name="PE3"/>
+        <pin position="A2" name="PE1"/>
+        <pin position="A3" name="PB8"/>
+        <pin position="A4" name="BOOT0" type="boot"/>
+        <pin position="A5" name="PD7"/>
+        <pin position="A6" name="PD5"/>
+        <pin position="A7" name="PB4"/>
+        <pin position="A8" name="PB3"/>
+        <pin position="A9" name="PA15"/>
+        <pin position="A10" name="PA14"/>
+        <pin position="A11" name="PA13"/>
+        <pin position="A12" name="PA12"/>
+        <pin position="B1" name="PE4"/>
+        <pin position="B2" name="PE2"/>
+        <pin position="B3" name="PB9"/>
+        <pin position="B4" name="PB7"/>
+        <pin position="B5" name="PB6"/>
+        <pin position="B6" name="PD6"/>
+        <pin position="B7" name="PD4"/>
+        <pin position="B8" name="PD3"/>
+        <pin position="B9" name="PD1"/>
+        <pin position="B10" name="PC12"/>
+        <pin position="B11" name="PC10"/>
+        <pin position="B12" name="PA11"/>
+        <pin position="C1" name="PC13"/>
+        <pin position="C2" name="PE5"/>
+        <pin position="C3" name="PE0"/>
+        <pin position="C4" name="VDD" type="power"/>
+        <pin position="C5" name="PB5"/>
+        <pin position="C8" name="PD2"/>
+        <pin position="C9" name="PD0"/>
+        <pin position="C10" name="PC11"/>
+        <pin position="C11" name="PF6"/>
+        <pin position="C12" name="PA10"/>
+        <pin position="D1" name="PC14-OSC32_IN"/>
+        <pin position="D2" name="PE6"/>
+        <pin position="D3" name="VSS" type="power"/>
+        <pin position="D10" name="PA9"/>
+        <pin position="D11" name="PA8"/>
+        <pin position="D12" name="PC9"/>
+        <pin position="E1" name="PC15-OSC32_OUT"/>
+        <pin position="E2" name="VBAT" type="power"/>
+        <pin position="E3" name="VSS" type="power"/>
+        <pin position="E10" name="PC8"/>
+        <pin position="E11" name="PC7"/>
+        <pin position="E12" name="PC6"/>
+        <pin position="F1" name="PF0-OSC_IN"/>
+        <pin position="F2" name="PF9"/>
+        <pin position="F11" name="VSS" type="power"/>
+        <pin position="F12" name="VSS" type="power"/>
+        <pin position="G1" name="PF1-OSC_OUT"/>
+        <pin position="G2" name="PF10"/>
+        <pin position="G11" name="VDD" type="power"/>
+        <pin position="G12" name="VDD" type="power"/>
+        <pin position="H1" name="PC0"/>
+        <pin position="H2" name="NRST" type="reset"/>
+        <pin position="H3" name="VDD" type="power"/>
+        <pin position="H10" name="PD15"/>
+        <pin position="H11" name="PD14"/>
+        <pin position="H12" name="PD13"/>
+        <pin position="J1" name="PF2"/>
+        <pin position="J2" name="PC1"/>
+        <pin position="J3" name="PC2"/>
+        <pin position="J10" name="PD12"/>
+        <pin position="J11" name="PD11"/>
+        <pin position="J12" name="PD10"/>
+        <pin position="K1" name="VSSA" type="power"/>
+        <pin position="K2" name="PC3"/>
+        <pin position="K3" name="PA2"/>
+        <pin position="K4" name="PA5"/>
+        <pin position="K5" name="PC4"/>
+        <pin position="K8" name="PD9"/>
+        <pin position="K9" name="PD8"/>
+        <pin position="K10" name="PB15"/>
+        <pin position="K11" name="PB14"/>
+        <pin position="K12" name="PB13"/>
+        <pin position="L1" name="VDDA" type="power"/>
+        <pin position="L2" name="PA0"/>
+        <pin position="L3" name="PA3"/>
+        <pin position="L4" name="PA6"/>
+        <pin position="L5" name="PC5"/>
+        <pin position="L6" name="PB2"/>
+        <pin position="L7" name="PE8"/>
+        <pin position="L8" name="PE10"/>
+        <pin position="L9" name="PE12"/>
+        <pin position="L10" name="PB10"/>
+        <pin position="L11" name="PB11"/>
+        <pin position="L12" name="PB12"/>
+        <pin position="M1" name="VREF+" type="power"/>
+        <pin position="M2" name="PA1"/>
+        <pin position="M3" name="PA4"/>
+        <pin position="M4" name="PA7"/>
+        <pin position="M5" name="PB0"/>
+        <pin position="M6" name="PB1"/>
+        <pin position="M7" name="PE7"/>
+        <pin position="M8" name="PE9"/>
+        <pin position="M9" name="PE11"/>
+        <pin position="M10" name="PE13"/>
+        <pin position="M11" name="PE14"/>
+        <pin position="M12" name="PE15"/>
+      </package>
+      <package device-package="y" name="WLCSP100">
+        <pin position="A1" name="VSS" type="power"/>
+        <pin position="A2" name="VSS" type="power"/>
+        <pin position="A3" name="PC12"/>
+        <pin position="A4" name="PD2"/>
+        <pin position="A5" name="PB3"/>
+        <pin position="A6" name="PB5"/>
+        <pin position="A7" name="BOOT0" type="boot"/>
+        <pin position="A8" name="PE1"/>
+        <pin position="A9" name="VDD" type="power"/>
+        <pin position="A10" name="VDD" type="power"/>
+        <pin position="B1" name="VSS" type="power"/>
+        <pin position="B2" name="PA15"/>
+        <pin position="B3" name="PD0"/>
+        <pin position="B4" name="PD3"/>
+        <pin position="B5" name="PB4"/>
+        <pin position="B6" name="PB6"/>
+        <pin position="B7" name="PE0"/>
+        <pin position="B8" name="VDD" type="power"/>
+        <pin position="B9" name="PE5"/>
+        <pin position="B10" name="VDD" type="power"/>
+        <pin position="C1" name="PF6"/>
+        <pin position="C2" name="PA14"/>
+        <pin position="C3" name="PD1"/>
+        <pin position="C4" name="PD4"/>
+        <pin position="C5" name="PB7"/>
+        <pin position="C6" name="PB9"/>
+        <pin position="C7" name="VSS" type="power"/>
+        <pin position="C8" name="PE4"/>
+        <pin position="C9" name="PC13"/>
+        <pin position="C10" name="PC14-OSC32_IN"/>
+        <pin position="D1" name="PA12"/>
+        <pin position="D2" name="VDD" type="power"/>
+        <pin position="D3" name="PC11"/>
+        <pin position="D4" name="PD7"/>
+        <pin position="D5" name="PB8"/>
+        <pin position="D6" name="PE2"/>
+        <pin position="D7" name="PE3"/>
+        <pin position="D8" name="VBAT" type="power"/>
+        <pin position="D9" name="PC15-OSC32_OUT"/>
+        <pin position="D10" name="PF9"/>
+        <pin position="E1" name="PA10"/>
+        <pin position="E2" name="PA11"/>
+        <pin position="E3" name="PA13"/>
+        <pin position="E4" name="PC10"/>
+        <pin position="E5" name="PA9"/>
+        <pin position="E6" name="PE8"/>
+        <pin position="E7" name="PE6"/>
+        <pin position="E8" name="PF2"/>
+        <pin position="E9" name="NRST" type="reset"/>
+        <pin position="E10" name="PF10"/>
+        <pin position="F1" name="PC8"/>
+        <pin position="F2" name="PC7"/>
+        <pin position="F3" name="PC9"/>
+        <pin position="F4" name="PC6"/>
+        <pin position="F5" name="PA8"/>
+        <pin position="F6" name="PC5"/>
+        <pin position="F7" name="PA2"/>
+        <pin position="F8" name="PE7"/>
+        <pin position="F9" name="PF1-OSC_OUT"/>
+        <pin position="F10" name="PF0-OSC_IN"/>
+        <pin position="G1" name="PD15"/>
+        <pin position="G2" name="PD14"/>
+        <pin position="G3" name="PD13"/>
+        <pin position="G4" name="PD9"/>
+        <pin position="G5" name="PE12"/>
+        <pin position="G6" name="PC4"/>
+        <pin position="G7" name="PA3"/>
+        <pin position="G8" name="PC2"/>
+        <pin position="G9" name="PC1"/>
+        <pin position="G10" name="PC0"/>
+        <pin position="H1" name="PD12"/>
+        <pin position="H2" name="PD11"/>
+        <pin position="H3" name="PD10"/>
+        <pin position="H4" name="PB15"/>
+        <pin position="H5" name="PE11"/>
+        <pin position="H6" name="PA6"/>
+        <pin position="H7" name="PA5"/>
+        <pin position="H8" name="VSSA/VREF-" type="power"/>
+        <pin position="H9" name="PA0"/>
+        <pin position="H10" name="PC3"/>
+        <pin position="J1" name="VSS" type="power"/>
+        <pin position="J2" name="PB14"/>
+        <pin position="J3" name="PB13"/>
+        <pin position="J4" name="PB12"/>
+        <pin position="J5" name="VDD" type="power"/>
+        <pin position="J6" name="PB0"/>
+        <pin position="J7" name="PA4"/>
+        <pin position="J8" name="VREF+" type="power"/>
+        <pin position="J9" name="PA1"/>
+        <pin position="J10" name="VDDA" type="power"/>
+        <pin position="K1" name="VSS" type="power"/>
+        <pin position="K2" name="VSS" type="power"/>
+        <pin position="K3" name="PB11"/>
+        <pin position="K4" name="PB10"/>
+        <pin position="K5" name="PB2"/>
+        <pin position="K6" name="PB1"/>
+        <pin position="K7" name="PA7"/>
+        <pin position="K8" name="VDD" type="power"/>
+        <pin position="K9" name="VSS" type="power"/>
+        <pin position="K10" name="VSS" type="power"/>
+      </package>
     </driver>
   </device>
 </modm>

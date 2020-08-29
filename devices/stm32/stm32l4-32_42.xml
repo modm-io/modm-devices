@@ -583,6 +583,40 @@
         <signal driver="rcc" name="osc32_out"/>
       </gpio>
       <gpio port="h" pin="3"/>
+      <package name="UFQFPN32">
+        <pin position="1" name="VDD" type="power"/>
+        <pin position="2" name="PC14-OSC32_IN (PC14)"/>
+        <pin position="3" name="PC15-OSC32_OUT (PC15)"/>
+        <pin position="4" name="NRST" type="reset"/>
+        <pin position="5" name="VDDA/VREF+" type="power"/>
+        <pin position="6" name="PA0"/>
+        <pin position="7" name="PA1"/>
+        <pin position="8" name="PA2"/>
+        <pin position="9" name="PA3"/>
+        <pin position="10" name="PA4"/>
+        <pin position="11" name="PA5"/>
+        <pin position="12" name="PA6"/>
+        <pin position="13" name="PA7"/>
+        <pin position="14" name="PB0"/>
+        <pin position="15" name="PB1"/>
+        <pin position="16" name="VSS" type="power"/>
+        <pin position="17" name="VDD" type="power"/>
+        <pin position="18" name="PA8"/>
+        <pin position="19" name="PA9"/>
+        <pin position="20" name="PA10"/>
+        <pin position="21" name="PA11"/>
+        <pin position="22" name="PA12"/>
+        <pin position="23" name="PA13 (JTMS-SWDIO)"/>
+        <pin position="24" name="PA14 (JTCK-SWCLK)"/>
+        <pin position="25" name="PA15 (JTDI)"/>
+        <pin position="26" name="PB3 (JTDO-TRACESWO)"/>
+        <pin position="27" name="PB4 (NJTRST)"/>
+        <pin position="28" name="PB5"/>
+        <pin position="29" name="PB6"/>
+        <pin position="30" name="PB7"/>
+        <pin position="31" name="PH3-BOOT0"/>
+        <pin position="32" name="VSS" type="power"/>
+      </package>
     </driver>
   </device>
 </modm>
