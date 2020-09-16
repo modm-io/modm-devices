@@ -181,8 +181,8 @@ class STMDeviceTree:
                 pin = pin[:3]
             return (port, int(pin[2:]))
         pins = sorted(pins, key=raw_pin_sort)
-        # STM32G0 has pin remaps?!?
-        # pins = filter(lambda p: "PINREMAP" not in p.get("Variant", ""), pins)
+        # Remove package remaps from GPIO data (but not from package)
+        pins.sort(key=lambda p: "PINREMAP" not in p.get("Variant", ""))
 
         gpios = []
 
@@ -192,16 +192,29 @@ class STMDeviceTree:
                 name = name[:3]
             return (name[1:2].lower(), name[2:].lower())
 
+        # Find the remap pin pairs, if they exist
+        double_pinouts = defaultdict(list)
+        for pin in device_file.query('//Pin'):
+            double_pinouts[pin.get("Position")].append((pin.get("Name"), pin.get("Variant", "DEFAULT")))
+        double_pinouts = {pos: {pin:variant for (pin, variant) in pins}
+                                for pos, pins in double_pinouts.items()
+                                    if len(pins) > 1 and any("PINREMAP" in pin[1] for pin in pins)}
+
+        # Get the pinout for this package with correct remap variants
         pinout = []
         for pin in device_file.query("//Pin"):
+            name = pin.get("Name")
+            pos = pin.get("Position")
             pinv = {
-                "name": pin.get("Name"),
-                "position": pin.get("Position"),
+                "name": name,
+                "position": pos,
                 "type": pin.get("Type"),
-                "remap": "PINREMAP" in pin.get("Variant", ""),
             }
-            if "I/O" in pinv["type"]:
-                pinv["port"], pinv["pin"] = pin_name(pinv["name"])
+            variant = double_pinouts.get(pos, {}).get(name)
+            if (variant is not None and (pin.get("Type") != "I/O" or (
+                pin_name(name)[0] in ['a'] and
+                pin_name(name)[1] in ['9', '10', '11', '12']))):
+                pinv["variant"] = "remap" if "PINREMAP" in variant else "remap-default"
             pinout.append(pinv)
 
         p["pinout"] = pinout
@@ -321,6 +334,7 @@ class STMDeviceTree:
         if did.family == "f1":
             grouped_f1_signals = gpioFile.compactQuery('//GPIO_Pin/PinSignal/@Name')
 
+        _seen_gpio = set()
         for pin in pins:
             rname = pin.get("Name")
             name = pin_name(rname)
@@ -347,7 +361,9 @@ class STMDeviceTree:
                     afs.append(naf)
 
             gpio = (name[0], name[1], afs)
-            gpios.append(gpio)
+            if name not in _seen_gpio:
+                gpios.append(gpio)
+                _seen_gpio.add(name)
             # print(gpio[0].upper(), gpio[1], afs)
             # LOGGER.debug("{}{}: {} ->".format(gpio[0].upper(), gpio[1]))
 
@@ -567,8 +583,7 @@ class STMDeviceTree:
             pinc.setAttributes(["position", "name"], pin)
             if "I/O" not in pin["type"]:
                 pinc.setAttributes("type", pin["type"].lower())
-            if pin["remap"]:
-                pinc.setAttributes("variant", "remap")
+            pinc.setAttributes(["variant"], pin)
 
 
         # Sort these things
