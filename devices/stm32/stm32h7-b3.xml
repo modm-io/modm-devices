@@ -770,18 +770,6 @@
         <signal af="9" driver="sdmmc" instance="2" name="cmd"/>
         <signal af="10" driver="sai" instance="2" name="sd_b"/>
       </gpio>
-      <gpio device-pin="a" device-package="i" device-variant="q" port="a" pin="0">
-        <signal driver="adc" instance="1" name="inn1"/>
-        <signal driver="adc" instance="1" name="inp0"/>
-      </gpio>
-      <gpio device-pin="i" device-package="k" device-variant="q" port="a" pin="0">
-        <signal driver="adc" instance="1" name="inn1"/>
-        <signal driver="adc" instance="1" name="inp0"/>
-      </gpio>
-      <gpio device-pin="l" device-package="h" device-variant="q" port="a" pin="0">
-        <signal driver="adc" instance="1" name="inn1"/>
-        <signal driver="adc" instance="1" name="inp0"/>
-      </gpio>
       <gpio port="a" pin="1">
         <signal driver="adc" instance="1" name="inn16"/>
         <signal driver="adc" instance="1" name="inp17"/>
@@ -796,15 +784,6 @@
         <signal af="10" driver="sai" instance="2" name="mclk_b"/>
         <signal af="11" driver="octospim" name="p1_dqs"/>
         <signal af="14" driver="ltdc" name="r2"/>
-      </gpio>
-      <gpio device-pin="a" device-package="i" device-variant="q" port="a" pin="1">
-        <signal driver="adc" instance="1" name="inp1"/>
-      </gpio>
-      <gpio device-pin="i" device-package="k" device-variant="q" port="a" pin="1">
-        <signal driver="adc" instance="1" name="inp1"/>
-      </gpio>
-      <gpio device-pin="l" device-package="h" device-variant="q" port="a" pin="1">
-        <signal driver="adc" instance="1" name="inp1"/>
       </gpio>
       <gpio port="a" pin="2">
         <signal driver="adc" instance="1" name="inp14"/>
@@ -1321,18 +1300,6 @@
         <signal device-pin="l" device-package="h" device-variant="q" af="12" driver="fmc" name="sdne0"/>
         <signal device-pin="q" device-package="y" device-variant="q" af="12" driver="fmc" name="sdne0"/>
       </gpio>
-      <gpio device-pin="a" device-package="i" device-variant="q" port="c" pin="2">
-        <signal driver="adc" instance="2" name="inn1"/>
-        <signal driver="adc" instance="2" name="inp0"/>
-      </gpio>
-      <gpio device-pin="i" device-package="k" device-variant="q" port="c" pin="2">
-        <signal driver="adc" instance="2" name="inn1"/>
-        <signal driver="adc" instance="2" name="inp0"/>
-      </gpio>
-      <gpio device-pin="l" device-package="h" device-variant="q" port="c" pin="2">
-        <signal driver="adc" instance="2" name="inn1"/>
-        <signal driver="adc" instance="2" name="inp0"/>
-      </gpio>
       <gpio port="c" pin="3">
         <signal device-pin="a" device-package="i" device-variant="q" driver="adc" instance="1" name="inn12"/>
         <signal device-pin="i" device-package="k" device-variant="q" driver="adc" instance="1" name="inn12"/>
@@ -1379,51 +1346,6 @@
         <signal device-pin="q" device-package="y" device-variant="q" af="11" driver="octospim" name="p1_io6"/>
         <signal device-pin="r" device-package="t" device-variant="" af="11" driver="octospim" name="p1_io6"/>
         <signal device-package="i|k|y" device-variant="q" af="12" driver="fmc" name="sdcke0"/>
-      </gpio>
-      <gpio device-pin="a" device-package="i" device-variant="q" port="c" pin="3">
-        <signal device-pin="l" driver="adc" instance="1" name="inn12"/>
-        <signal device-pin="l" driver="adc" instance="1" name="inp13"/>
-        <signal device-pin="l" driver="adc" instance="2" name="inn12"/>
-        <signal device-pin="a" device-package="i" driver="adc" instance="2" name="inp1"/>
-        <signal device-pin="i" device-package="k" driver="adc" instance="2" name="inp1"/>
-        <signal device-pin="l" driver="adc" instance="2" name="inp13"/>
-        <signal device-pin="l" af="3" driver="dfsdm" instance="1" name="datin1"/>
-        <signal device-pin="l" af="5" driver="i2s" instance="2" name="sdo"/>
-        <signal device-pin="l" af="5" driver="spi" instance="2" name="mosi"/>
-        <signal device-pin="l" af="9" driver="octospim" name="p1_io0"/>
-        <signal device-pin="l" af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
-        <signal device-pin="l" af="11" driver="octospim" name="p1_io6"/>
-        <signal device-pin="l" af="12" driver="fmc" name="sdcke0"/>
-      </gpio>
-      <gpio device-pin="i" device-package="k" device-variant="q" port="c" pin="3">
-        <signal device-pin="l" driver="adc" instance="1" name="inn12"/>
-        <signal device-pin="l" driver="adc" instance="1" name="inp13"/>
-        <signal device-pin="l" driver="adc" instance="2" name="inn12"/>
-        <signal device-pin="a" device-package="i" driver="adc" instance="2" name="inp1"/>
-        <signal device-pin="i" device-package="k" driver="adc" instance="2" name="inp1"/>
-        <signal device-pin="l" driver="adc" instance="2" name="inp13"/>
-        <signal device-pin="l" af="3" driver="dfsdm" instance="1" name="datin1"/>
-        <signal device-pin="l" af="5" driver="i2s" instance="2" name="sdo"/>
-        <signal device-pin="l" af="5" driver="spi" instance="2" name="mosi"/>
-        <signal device-pin="l" af="9" driver="octospim" name="p1_io0"/>
-        <signal device-pin="l" af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
-        <signal device-pin="l" af="11" driver="octospim" name="p1_io6"/>
-        <signal device-pin="l" af="12" driver="fmc" name="sdcke0"/>
-      </gpio>
-      <gpio device-pin="l" device-package="h" device-variant="q" port="c" pin="3">
-        <signal device-pin="l" driver="adc" instance="1" name="inn12"/>
-        <signal device-pin="l" driver="adc" instance="1" name="inp13"/>
-        <signal device-pin="l" driver="adc" instance="2" name="inn12"/>
-        <signal device-pin="a" device-package="i" driver="adc" instance="2" name="inp1"/>
-        <signal device-pin="i" device-package="k" driver="adc" instance="2" name="inp1"/>
-        <signal device-pin="l" driver="adc" instance="2" name="inp13"/>
-        <signal device-pin="l" af="3" driver="dfsdm" instance="1" name="datin1"/>
-        <signal device-pin="l" af="5" driver="i2s" instance="2" name="sdo"/>
-        <signal device-pin="l" af="5" driver="spi" instance="2" name="mosi"/>
-        <signal device-pin="l" af="9" driver="octospim" name="p1_io0"/>
-        <signal device-pin="l" af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
-        <signal device-pin="l" af="11" driver="octospim" name="p1_io6"/>
-        <signal device-pin="l" af="12" driver="fmc" name="sdcke0"/>
       </gpio>
       <gpio port="c" pin="4">
         <signal driver="adc" instance="1" name="inp4"/>

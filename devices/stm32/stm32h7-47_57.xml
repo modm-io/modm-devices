@@ -691,12 +691,6 @@
         <signal af="10" driver="sai" instance="2" name="sd_b"/>
         <signal af="11" driver="eth" name="crs"/>
       </gpio>
-      <gpio device-pin="x" port="a" pin="0">
-        <signal driver="adc" instance="1" name="inn1"/>
-        <signal driver="adc" instance="1" name="inp0"/>
-        <signal driver="adc" instance="2" name="inn1"/>
-        <signal driver="adc" instance="2" name="inp0"/>
-      </gpio>
       <gpio port="a" pin="1">
         <signal driver="adc" instance="1" name="inn16"/>
         <signal driver="adc" instance="1" name="inp17"/>
@@ -712,10 +706,6 @@
         <signal af="11" driver="eth" name="ref_clk"/>
         <signal af="11" driver="eth" name="rx_clk"/>
         <signal af="14" driver="ltdc" name="r2"/>
-      </gpio>
-      <gpio device-pin="x" port="a" pin="1">
-        <signal driver="adc" instance="1" name="inp1"/>
-        <signal driver="adc" instance="2" name="inp1"/>
       </gpio>
       <gpio port="a" pin="2">
         <signal driver="adc" instance="1" name="inp14"/>
@@ -1183,10 +1173,6 @@
         <signal af="11" driver="eth" name="txd2"/>
         <signal af="12" driver="fmc" name="sdne0"/>
       </gpio>
-      <gpio device-pin="x" port="c" pin="2">
-        <signal driver="adc" instance="3" name="inn1"/>
-        <signal driver="adc" instance="3" name="inp0"/>
-      </gpio>
       <gpio port="c" pin="3">
         <signal device-pin="x" driver="adc" instance="1" name="inn12"/>
         <signal device-pin="x" driver="adc" instance="1" name="inp13"/>
@@ -1199,9 +1185,6 @@
         <signal af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
         <signal af="11" driver="eth" name="tx_clk"/>
         <signal af="12" driver="fmc" name="sdcke0"/>
-      </gpio>
-      <gpio device-pin="x" port="c" pin="3">
-        <signal driver="adc" instance="3" name="inp1"/>
       </gpio>
       <gpio port="c" pin="4">
         <signal driver="adc" instance="1" name="inp4"/>

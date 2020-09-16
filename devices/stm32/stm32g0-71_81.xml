@@ -535,8 +535,7 @@
         <signal af="2" driver="tim" instance="1" name="ch1"/>
         <signal af="5" driver="lptim" instance="2" name="out"/>
       </gpio>
-      <gpio device-pin="c|k|r" port="a" pin="9">
-        <signal driver="ucpd" instance="1" name="dbcc1"/>
+      <gpio port="a" pin="9">
         <signal af="0" driver="rcc" name="mco"/>
         <signal af="1" driver="usart" instance="1" name="tx"/>
         <signal af="2" driver="tim" instance="1" name="ch2"/>
@@ -544,8 +543,7 @@
         <signal af="5" driver="tim" instance="15" name="bk"/>
         <signal af="6" driver="i2c" instance="1" name="scl"/>
       </gpio>
-      <gpio device-pin="c|k|r" port="a" pin="10">
-        <signal driver="ucpd" instance="1" name="dbcc2"/>
+      <gpio port="a" pin="10">
         <signal af="0" driver="spi" instance="2" name="mosi"/>
         <signal af="1" driver="usart" instance="1" name="rx"/>
         <signal af="2" driver="tim" instance="1" name="ch3"/>
