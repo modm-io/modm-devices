@@ -182,7 +182,7 @@ class STMDeviceTree:
             return (port, int(pin[2:]))
         pins = sorted(pins, key=raw_pin_sort)
         # Remove package remaps from GPIO data (but not from package)
-        pins = filter(lambda p: "PINREMAP" not in p.get("Variant", ""), pins)
+        pins.sort(key=lambda p: "PINREMAP" not in p.get("Variant", ""))
 
         gpios = []
 
@@ -321,6 +321,7 @@ class STMDeviceTree:
         if did.family == "f1":
             grouped_f1_signals = gpioFile.compactQuery('//GPIO_Pin/PinSignal/@Name')
 
+        _seen_gpio = set()
         for pin in pins:
             rname = pin.get("Name")
             name = pin_name(rname)
@@ -347,7 +348,9 @@ class STMDeviceTree:
                     afs.append(naf)
 
             gpio = (name[0], name[1], afs)
-            gpios.append(gpio)
+            if name not in _seen_gpio:
+                gpios.append(gpio)
+                _seen_gpio.add(name)
             # print(gpio[0].upper(), gpio[1], afs)
             # LOGGER.debug("{}{}: {} ->".format(gpio[0].upper(), gpio[1]))
 
