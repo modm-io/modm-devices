@@ -329,21 +329,6 @@
         <signal af="5" driver="tim" instance="15" name="bk"/>
         <signal af="6" driver="i2c" instance="1" name="scl"/>
       </gpio>
-      <gpio port="a" pin="9">
-        <signal af="0" driver="rcc" name="mco"/>
-        <signal af="1" driver="usart" instance="1" name="tx"/>
-        <signal af="2" driver="tim" instance="1" name="ch2"/>
-        <signal af="4" driver="spi" instance="2" name="miso"/>
-        <signal af="5" driver="tim" instance="15" name="bk"/>
-        <signal af="6" driver="i2c" instance="1" name="scl"/>
-      </gpio>
-      <gpio port="a" pin="10">
-        <signal af="0" driver="spi" instance="2" name="mosi"/>
-        <signal af="1" driver="usart" instance="1" name="rx"/>
-        <signal af="2" driver="tim" instance="1" name="ch3"/>
-        <signal af="5" driver="tim" instance="17" name="bk"/>
-        <signal af="6" driver="i2c" instance="1" name="sda"/>
-      </gpio>
       <gpio port="a" pin="10">
         <signal af="0" driver="spi" instance="2" name="mosi"/>
         <signal af="1" driver="usart" instance="1" name="rx"/>
@@ -653,15 +638,15 @@
         <pin position="16" name="PB1"/>
         <pin position="17" name="PB2"/>
         <pin position="18" name="PA8"/>
-        <pin position="19" name="PA9"/>
         <pin position="19" name="NC" type="nc" variant="remap"/>
+        <pin position="19" name="PA9" variant="remap-default"/>
         <pin position="20" name="PC6"/>
-        <pin position="21" name="PA10"/>
         <pin position="21" name="NC" type="nc" variant="remap"/>
-        <pin position="22" name="PA11 [PA9]"/>
+        <pin position="21" name="PA10" variant="remap-default"/>
         <pin position="22" name="PA9 [PA11]" variant="remap"/>
-        <pin position="23" name="PA12 [PA10]"/>
+        <pin position="22" name="PA11 [PA9]" variant="remap-default"/>
         <pin position="23" name="PA10 [PA12]" variant="remap"/>
+        <pin position="23" name="PA12 [PA10]" variant="remap-default"/>
         <pin position="24" name="PA13"/>
         <pin position="25" name="PA14-BOOT0"/>
         <pin position="26" name="PA15"/>
@@ -701,16 +686,16 @@
         <pin position="26" name="PB14"/>
         <pin position="27" name="PB15"/>
         <pin position="28" name="PA8"/>
-        <pin position="29" name="PA9"/>
         <pin position="29" name="NC" type="nc" variant="remap"/>
+        <pin position="29" name="PA9" variant="remap-default"/>
         <pin position="30" name="PC6"/>
         <pin position="31" name="PC7"/>
-        <pin position="32" name="PA10"/>
         <pin position="32" name="NC" type="nc" variant="remap"/>
-        <pin position="33" name="PA11 [PA9]"/>
+        <pin position="32" name="PA10" variant="remap-default"/>
         <pin position="33" name="PA9 [PA11]" variant="remap"/>
-        <pin position="34" name="PA12 [PA10]"/>
+        <pin position="33" name="PA11 [PA9]" variant="remap-default"/>
         <pin position="34" name="PA10 [PA12]" variant="remap"/>
+        <pin position="34" name="PA12 [PA10]" variant="remap-default"/>
         <pin position="35" name="PA13"/>
         <pin position="36" name="PA14-BOOT0"/>
         <pin position="37" name="PA15"/>
@@ -763,18 +748,18 @@
         <pin position="34" name="PB14"/>
         <pin position="35" name="PB15"/>
         <pin position="36" name="PA8"/>
-        <pin position="37" name="PA9"/>
         <pin position="37" name="NC" type="nc" variant="remap"/>
+        <pin position="37" name="PA9" variant="remap-default"/>
         <pin position="38" name="PC6"/>
         <pin position="39" name="PC7"/>
         <pin position="40" name="PD8"/>
         <pin position="41" name="PD9"/>
-        <pin position="42" name="PA10"/>
         <pin position="42" name="NC" type="nc" variant="remap"/>
-        <pin position="43" name="PA11 [PA9]"/>
+        <pin position="42" name="PA10" variant="remap-default"/>
         <pin position="43" name="PA9 [PA11]" variant="remap"/>
-        <pin position="44" name="PA12 [PA10]"/>
+        <pin position="43" name="PA11 [PA9]" variant="remap-default"/>
         <pin position="44" name="PA10 [PA12]" variant="remap"/>
+        <pin position="44" name="PA12 [PA10]" variant="remap-default"/>
         <pin position="45" name="PA13"/>
         <pin position="46" name="PA14-BOOT0"/>
         <pin position="47" name="PA15"/>

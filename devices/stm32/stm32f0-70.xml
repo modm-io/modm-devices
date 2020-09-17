@@ -664,10 +664,10 @@
         <pin position="14" name="PB1"/>
         <pin position="15" name="VSS" type="power"/>
         <pin position="16" name="VDD" type="power"/>
-        <pin position="17" name="PA9"/>
         <pin position="17" name="PA11" variant="remap"/>
-        <pin position="18" name="PA10"/>
+        <pin position="17" name="PA9" variant="remap-default"/>
         <pin position="18" name="PA12" variant="remap"/>
+        <pin position="18" name="PA10" variant="remap-default"/>
         <pin position="19" name="PA13"/>
         <pin position="20" name="PA14"/>
       </package>
