@@ -192,14 +192,25 @@ class STMDeviceTree:
                 name = name[:3]
             return (name[1:2].lower(), name[2:].lower())
 
+        # Find the opposite of the remap pins, if they exist
+        pinout_remap_default = []
+        for pin in device_file.query('//Pin[starts-with(@Variant,"PINREMAP")]'):
+            name = pin.get("Name").split("[")
+            if len(name) > 1:
+                pinout_remap_default.append(pin_name(name[1]))
+        # Get the pinout for this package with correct remap variants
         pinout = []
         for pin in device_file.query("//Pin"):
+            name = pin.get("Name")
             pinv = {
-                "name": pin.get("Name"),
+                "name": name,
                 "position": pin.get("Position"),
                 "type": pin.get("Type"),
-                "remap": "PINREMAP" in pin.get("Variant", ""),
             }
+            if "PINREMAP" in pin.get("Variant", ""):
+                pinv["variant"] = "remap"
+            if pin_name(name) in pinout_remap_default:
+                pinv["variant"] = "remap-default"
             if "I/O" in pinv["type"]:
                 pinv["port"], pinv["pin"] = pin_name(pinv["name"])
             pinout.append(pinv)
@@ -570,8 +581,7 @@ class STMDeviceTree:
             pinc.setAttributes(["position", "name"], pin)
             if "I/O" not in pin["type"]:
                 pinc.setAttributes("type", pin["type"].lower())
-            if pin["remap"]:
-                pinc.setAttributes("variant", "remap")
+            pinc.setAttributes(["variant"], pin)
 
 
         # Sort these things
