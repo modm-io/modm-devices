@@ -997,10 +997,10 @@
         <pin device-name="71" device-size="8|b" device-temperature="3|6|7" device-variant="|n" position="21" name="UCPD1_DBCC2" type="monoio" variant="remap"/>
         <pin device-name="81" device-size="b" device-temperature="6" device-variant="n" position="21" name="UCPD1_DBCC2" type="monoio" variant="remap"/>
         <pin device-name="81" device-size="b" device-temperature="6" device-variant="" position="21" name="NC" type="nc" variant="remap"/>
-        <pin position="22" name="PA11 [PA9]"/>
         <pin position="22" name="PA9 [PA11]" variant="remap"/>
-        <pin position="23" name="PA12 [PA10]"/>
+        <pin position="22" name="PA11 [PA9]" variant="remap-default"/>
         <pin position="23" name="PA10 [PA12]" variant="remap"/>
+        <pin position="23" name="PA12 [PA10]" variant="remap-default"/>
         <pin position="24" name="PA13"/>
         <pin position="25" name="PA14-BOOT0"/>
         <pin device-name="71" device-size="8|b" device-temperature="3|6|7" device-variant="n" position="26" name="PD0"/>
@@ -1062,10 +1062,10 @@
         <pin position="31" name="PC7"/>
         <pin position="32" name="PA10"/>
         <pin position="32" name="UCPD1_DBCC2" type="monoio" variant="remap"/>
-        <pin position="33" name="PA11 [PA9]"/>
         <pin position="33" name="PA9 [PA11]" variant="remap"/>
-        <pin position="34" name="PA12 [PA10]"/>
+        <pin position="33" name="PA11 [PA9]" variant="remap-default"/>
         <pin position="34" name="PA10 [PA12]" variant="remap"/>
+        <pin position="34" name="PA12 [PA10]" variant="remap-default"/>
         <pin position="35" name="PA13"/>
         <pin position="36" name="PA14-BOOT0"/>
         <pin position="37" name="PA15"/>
@@ -1126,10 +1126,10 @@
         <pin position="41" name="PD9"/>
         <pin position="42" name="PA10"/>
         <pin position="42" name="UCPD1_DBCC2" type="monoio" variant="remap"/>
-        <pin position="43" name="PA11 [PA9]"/>
         <pin position="43" name="PA9 [PA11]" variant="remap"/>
-        <pin position="44" name="PA12 [PA10]"/>
+        <pin position="43" name="PA11 [PA9]" variant="remap-default"/>
         <pin position="44" name="PA10 [PA12]" variant="remap"/>
+        <pin position="44" name="PA12 [PA10]" variant="remap-default"/>
         <pin position="45" name="PA13"/>
         <pin position="46" name="PA14-BOOT0"/>
         <pin position="47" name="PA15"/>
@@ -1167,8 +1167,8 @@
         <pin position="B5" name="PD5"/>
         <pin position="B6" name="PD1"/>
         <pin position="B7" name="PC9"/>
-        <pin position="B8" name="PA12 [PA10]"/>
         <pin position="B8" name="PA10 [PA12]" variant="remap"/>
+        <pin position="B8" name="PA12 [PA10]" variant="remap-default"/>
         <pin position="C1" name="PC14-OSC32_IN (PC14)"/>
         <pin position="C2" name="PC13"/>
         <pin position="C3" name="PB9"/>
@@ -1176,8 +1176,8 @@
         <pin position="C5" name="PD4"/>
         <pin position="C6" name="PA15"/>
         <pin position="C7" name="PA14-BOOT0"/>
-        <pin position="C8" name="PA11 [PA9]"/>
         <pin position="C8" name="PA9 [PA11]" variant="remap"/>
+        <pin position="C8" name="PA11 [PA9]" variant="remap-default"/>
         <pin position="D1" name="VDD" type="power"/>
         <pin position="D2" name="VREF+" type="monoio"/>
         <pin position="D3" name="VBAT" type="power"/>
@@ -1244,10 +1244,10 @@
         <pin device-name="81" device-size="b" device-temperature="6" device-variant="" position="15" name="PB1"/>
         <pin position="16" name="PA8"/>
         <pin position="17" name="PC6"/>
-        <pin position="18" name="PA11 [PA9]"/>
         <pin position="18" name="PA9 [PA11]" variant="remap"/>
-        <pin position="19" name="PA12 [PA10]"/>
+        <pin position="18" name="PA11 [PA9]" variant="remap-default"/>
         <pin position="19" name="PA10 [PA12]" variant="remap"/>
+        <pin position="19" name="PA12 [PA10]" variant="remap-default"/>
         <pin position="20" name="PA13"/>
         <pin position="21" name="PA14-BOOT0"/>
         <pin device-name="71" device-size="8|b" device-temperature="6" device-variant="n" position="22" name="PD0"/>
@@ -1311,10 +1311,10 @@
         <pin device-name="71" device-size="8|b" device-temperature="3|6|7" device-variant="n" position="21" name="UCPD1_DBCC2" type="monoio" variant="remap"/>
         <pin device-name="81" device-size="b" device-temperature="6" device-variant="n" position="21" name="UCPD1_DBCC2" type="monoio" variant="remap"/>
         <pin device-name="81" device-size="b" device-temperature="6" device-variant="" position="21" name="NC" type="nc" variant="remap"/>
-        <pin position="22" name="PA11 [PA9]"/>
         <pin position="22" name="PA9 [PA11]" variant="remap"/>
-        <pin position="23" name="PA12 [PA10]"/>
+        <pin position="22" name="PA11 [PA9]" variant="remap-default"/>
         <pin position="23" name="PA10 [PA12]" variant="remap"/>
+        <pin position="23" name="PA12 [PA10]" variant="remap-default"/>
         <pin position="24" name="PA13"/>
         <pin position="25" name="PA14-BOOT0"/>
         <pin device-name="71" device-size="8|b" device-temperature="3|6|7" device-variant="n" position="26" name="PD0"/>
@@ -1372,10 +1372,10 @@
         <pin position="31" name="PC7"/>
         <pin position="32" name="PA10"/>
         <pin position="32" name="UCPD1_DBCC2" type="monoio" variant="remap"/>
-        <pin position="33" name="PA11 [PA9]"/>
         <pin position="33" name="PA9 [PA11]" variant="remap"/>
-        <pin position="34" name="PA12 [PA10]"/>
+        <pin position="33" name="PA11 [PA9]" variant="remap-default"/>
         <pin position="34" name="PA10 [PA12]" variant="remap"/>
+        <pin position="34" name="PA12 [PA10]" variant="remap-default"/>
         <pin position="35" name="PA13"/>
         <pin position="36" name="PA14-BOOT0"/>
         <pin position="37" name="PA15"/>
@@ -1397,14 +1397,14 @@
         <pin position="A3" name="PB5"/>
         <pin position="A4" name="PB7"/>
         <pin position="A5" name="PC14-OSC32_IN (PC14)"/>
-        <pin position="B1" name="PA12 [PA10]"/>
         <pin position="B1" name="PA10 [PA12]" variant="remap"/>
+        <pin position="B1" name="PA12 [PA10]" variant="remap-default"/>
         <pin position="B2" name="PA13"/>
         <pin position="B3" name="PB6"/>
         <pin position="B4" name="PB8"/>
         <pin position="B5" name="PC15-OSC32_OUT (PC15)"/>
-        <pin position="C1" name="PA11 [PA9]"/>
         <pin position="C1" name="PA9 [PA11]" variant="remap"/>
+        <pin position="C1" name="PA11 [PA9]" variant="remap-default"/>
         <pin position="C2" name="PA6"/>
         <pin position="C3" name="PA3"/>
         <pin position="C4" name="PA0"/>
