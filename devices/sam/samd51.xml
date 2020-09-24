@@ -262,834 +262,834 @@
     <driver name="wdt" type="sam"/>
     <driver name="gpio" type="sam">
       <gpio port="A" pin="00">
-        <signal driver="eic" name="extint0" function="a"/>
+        <signal driver="eic" name="extint" function="a" index="0"/>
         <signal driver="osc32kctrl" name="xin32" function="xin32"/>
-        <signal driver="sercom" instance="1" name="pad0" function="d"/>
-        <signal driver="tc" instance="2" name="wo0" function="e"/>
+        <signal driver="sercom" instance="1" name="pad" function="d" index="0"/>
+        <signal driver="tc" instance="2" name="wo" function="e" index="0"/>
       </gpio>
       <gpio port="A" pin="01">
-        <signal driver="eic" name="extint1" function="a"/>
+        <signal driver="eic" name="extint" function="a" index="1"/>
         <signal driver="osc32kctrl" name="xout32" function="xout32"/>
-        <signal driver="sercom" instance="1" name="pad1" function="d"/>
-        <signal driver="tc" instance="2" name="wo1" function="e"/>
+        <signal driver="sercom" instance="1" name="pad" function="d" index="1"/>
+        <signal driver="tc" instance="2" name="wo" function="e" index="1"/>
       </gpio>
       <gpio port="A" pin="02">
-        <signal driver="adc" instance="0" name="ain0" function="b"/>
-        <signal driver="dac" name="vout0" function="b"/>
-        <signal driver="eic" name="extint2" function="a"/>
-        <signal driver="rtc" name="in2" function="rtc"/>
+        <signal driver="adc" instance="0" name="ain" function="b" index="0"/>
+        <signal driver="dac" name="vout" function="b" index="0"/>
+        <signal driver="eic" name="extint" function="a" index="2"/>
+        <signal driver="rtc" name="in" function="rtc" index="2"/>
       </gpio>
       <gpio port="A" pin="03">
-        <signal driver="adc" instance="0" name="ain1" function="b"/>
-        <signal driver="adc" instance="0" name="x0" function="b"/>
-        <signal driver="adc" instance="0" name="y0" function="b"/>
-        <signal driver="eic" name="extint3" function="a"/>
+        <signal driver="adc" instance="0" name="ain" function="b" index="1"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="0"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="0"/>
+        <signal driver="eic" name="extint" function="a" index="3"/>
       </gpio>
       <gpio port="A" pin="04">
-        <signal driver="ac" name="ain0" function="b"/>
-        <signal driver="adc" instance="0" name="ain4" function="b"/>
-        <signal driver="adc" instance="0" name="x3" function="b"/>
-        <signal driver="adc" instance="0" name="y3" function="b"/>
-        <signal driver="ccl" name="in0" function="n"/>
-        <signal driver="eic" name="extint4" function="a"/>
-        <signal driver="sercom" instance="0" name="pad0" function="d"/>
-        <signal driver="tc" instance="0" name="wo0" function="e"/>
+        <signal driver="ac" name="ain" function="b" index="0"/>
+        <signal driver="adc" instance="0" name="ain" function="b" index="4"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="3"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="3"/>
+        <signal driver="ccl" name="in" function="n" index="0"/>
+        <signal driver="eic" name="extint" function="a" index="4"/>
+        <signal driver="sercom" instance="0" name="pad" function="d" index="0"/>
+        <signal driver="tc" instance="0" name="wo" function="e" index="0"/>
       </gpio>
       <gpio port="A" pin="05">
-        <signal driver="ac" name="ain1" function="b"/>
-        <signal driver="adc" instance="0" name="ain5" function="b"/>
-        <signal driver="ccl" name="in1" function="n"/>
-        <signal driver="dac" name="vout1" function="b"/>
-        <signal driver="eic" name="extint5" function="a"/>
-        <signal driver="sercom" instance="0" name="pad1" function="d"/>
-        <signal driver="tc" instance="0" name="wo1" function="e"/>
+        <signal driver="ac" name="ain" function="b" index="1"/>
+        <signal driver="adc" instance="0" name="ain" function="b" index="5"/>
+        <signal driver="ccl" name="in" function="n" index="1"/>
+        <signal driver="dac" name="vout" function="b" index="1"/>
+        <signal driver="eic" name="extint" function="a" index="5"/>
+        <signal driver="sercom" instance="0" name="pad" function="d" index="1"/>
+        <signal driver="tc" instance="0" name="wo" function="e" index="1"/>
       </gpio>
       <gpio port="A" pin="06">
-        <signal driver="ac" name="ain2" function="b"/>
-        <signal driver="adc" instance="0" name="ain6" function="b"/>
-        <signal driver="adc" instance="0" name="x4" function="b"/>
-        <signal driver="adc" instance="0" name="y4" function="b"/>
-        <signal driver="ccl" name="in2" function="n"/>
-        <signal driver="eic" name="extint6" function="a"/>
+        <signal driver="ac" name="ain" function="b" index="2"/>
+        <signal driver="adc" instance="0" name="ain" function="b" index="6"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="4"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="4"/>
+        <signal driver="ccl" name="in" function="n" index="2"/>
+        <signal driver="eic" name="extint" function="a" index="6"/>
         <signal driver="sdhc" instance="0" name="sdcd" function="i"/>
-        <signal driver="sercom" instance="0" name="pad2" function="d"/>
-        <signal driver="tc" instance="1" name="wo0" function="e"/>
+        <signal driver="sercom" instance="0" name="pad" function="d" index="2"/>
+        <signal driver="tc" instance="1" name="wo" function="e" index="0"/>
       </gpio>
       <gpio port="A" pin="07">
-        <signal driver="ac" name="ain3" function="b"/>
-        <signal driver="adc" instance="0" name="ain7" function="b"/>
-        <signal driver="adc" instance="0" name="x5" function="b"/>
-        <signal driver="adc" instance="0" name="y5" function="b"/>
-        <signal driver="ccl" name="out0" function="n"/>
-        <signal driver="eic" name="extint7" function="a"/>
+        <signal driver="ac" name="ain" function="b" index="3"/>
+        <signal driver="adc" instance="0" name="ain" function="b" index="7"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="5"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="5"/>
+        <signal driver="ccl" name="out" function="n" index="0"/>
+        <signal driver="eic" name="extint" function="a" index="7"/>
         <signal driver="sdhc" instance="0" name="sdwp" function="i"/>
-        <signal driver="sercom" instance="0" name="pad3" function="d"/>
-        <signal driver="tc" instance="1" name="wo1" function="e"/>
+        <signal driver="sercom" instance="0" name="pad" function="d" index="3"/>
+        <signal driver="tc" instance="1" name="wo" function="e" index="1"/>
       </gpio>
       <gpio port="A" pin="08">
-        <signal driver="adc" instance="0" name="ain8" function="b"/>
-        <signal driver="adc" instance="0" name="x6" function="b"/>
-        <signal driver="adc" instance="0" name="y6" function="b"/>
-        <signal driver="adc" instance="1" name="ain2" function="b"/>
-        <signal driver="ccl" name="in3" function="n"/>
+        <signal driver="adc" instance="0" name="ain" function="b" index="8"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="6"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="6"/>
+        <signal driver="adc" instance="1" name="ain" function="b" index="2"/>
+        <signal driver="ccl" name="in" function="n" index="3"/>
         <signal driver="eic" name="nmi" function="a"/>
-        <signal device-pin="j|n|p" driver="i2s" name="mck0" function="j"/>
-        <signal driver="qspi" name="data0" function="h"/>
+        <signal device-pin="j|n|p" driver="i2s" name="mck" function="j" index="0"/>
+        <signal driver="qspi" name="data" function="h" index="0"/>
         <signal driver="sdhc" instance="0" name="sdcmd" function="i"/>
-        <signal driver="sercom" instance="0" name="pad0" function="c"/>
-        <signal driver="sercom" instance="2" name="pad1" function="d"/>
-        <signal driver="tc" instance="0" name="wo0" function="e"/>
-        <signal driver="tcc" instance="0" name="wo0" function="f"/>
-        <signal driver="tcc" instance="1" name="wo4" function="g"/>
+        <signal driver="sercom" instance="0" name="pad" function="c" index="0"/>
+        <signal driver="sercom" instance="2" name="pad" function="d" index="1"/>
+        <signal driver="tc" instance="0" name="wo" function="e" index="0"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="0"/>
+        <signal driver="tcc" instance="1" name="wo" function="g" index="4"/>
       </gpio>
       <gpio port="A" pin="09">
-        <signal driver="adc" instance="0" name="ain9" function="b"/>
-        <signal driver="adc" instance="0" name="x7" function="b"/>
-        <signal driver="adc" instance="0" name="y7" function="b"/>
-        <signal driver="adc" instance="1" name="ain3" function="b"/>
-        <signal driver="ccl" name="in4" function="n"/>
-        <signal driver="eic" name="extint9" function="a"/>
-        <signal device-pin="j|n|p" driver="i2s" name="fs0" function="j"/>
-        <signal driver="qspi" name="data1" function="h"/>
-        <signal driver="sdhc" instance="0" name="sddat0" function="i"/>
-        <signal driver="sercom" instance="0" name="pad1" function="c"/>
-        <signal driver="sercom" instance="2" name="pad0" function="d"/>
-        <signal driver="tc" instance="0" name="wo1" function="e"/>
-        <signal driver="tcc" instance="0" name="wo1" function="f"/>
-        <signal driver="tcc" instance="1" name="wo5" function="g"/>
+        <signal driver="adc" instance="0" name="ain" function="b" index="9"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="7"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="7"/>
+        <signal driver="adc" instance="1" name="ain" function="b" index="3"/>
+        <signal driver="ccl" name="in" function="n" index="4"/>
+        <signal driver="eic" name="extint" function="a" index="9"/>
+        <signal device-pin="j|n|p" driver="i2s" name="fs" function="j" index="0"/>
+        <signal driver="qspi" name="data" function="h" index="1"/>
+        <signal driver="sdhc" instance="0" name="sddat" function="i" index="0"/>
+        <signal driver="sercom" instance="0" name="pad" function="c" index="1"/>
+        <signal driver="sercom" instance="2" name="pad" function="d" index="0"/>
+        <signal driver="tc" instance="0" name="wo" function="e" index="1"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="1"/>
+        <signal driver="tcc" instance="1" name="wo" function="g" index="5"/>
       </gpio>
       <gpio port="A" pin="10">
-        <signal driver="adc" instance="0" name="ain10" function="b"/>
-        <signal driver="adc" instance="0" name="x8" function="b"/>
-        <signal driver="adc" instance="0" name="y8" function="b"/>
-        <signal driver="ccl" name="in5" function="n"/>
-        <signal driver="eic" name="extint10" function="a"/>
-        <signal driver="gclk" name="io4" function="m"/>
-        <signal device-pin="j|n|p" driver="i2s" name="sck0" function="j"/>
-        <signal driver="qspi" name="data2" function="h"/>
-        <signal driver="sdhc" instance="0" name="sddat1" function="i"/>
-        <signal driver="sercom" instance="0" name="pad2" function="c"/>
-        <signal driver="sercom" instance="2" name="pad2" function="d"/>
-        <signal driver="tc" instance="1" name="wo0" function="e"/>
-        <signal driver="tcc" instance="0" name="wo2" function="f"/>
-        <signal driver="tcc" instance="1" name="wo6" function="g"/>
+        <signal driver="adc" instance="0" name="ain" function="b" index="10"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="8"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="8"/>
+        <signal driver="ccl" name="in" function="n" index="5"/>
+        <signal driver="eic" name="extint" function="a" index="10"/>
+        <signal driver="gclk" name="io" function="m" index="4"/>
+        <signal device-pin="j|n|p" driver="i2s" name="sck" function="j" index="0"/>
+        <signal driver="qspi" name="data" function="h" index="2"/>
+        <signal driver="sdhc" instance="0" name="sddat" function="i" index="1"/>
+        <signal driver="sercom" instance="0" name="pad" function="c" index="2"/>
+        <signal driver="sercom" instance="2" name="pad" function="d" index="2"/>
+        <signal driver="tc" instance="1" name="wo" function="e" index="0"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="2"/>
+        <signal driver="tcc" instance="1" name="wo" function="g" index="6"/>
       </gpio>
       <gpio port="A" pin="11">
-        <signal driver="adc" instance="0" name="ain11" function="b"/>
-        <signal driver="adc" instance="0" name="x9" function="b"/>
-        <signal driver="adc" instance="0" name="y9" function="b"/>
-        <signal driver="ccl" name="out1" function="n"/>
-        <signal driver="eic" name="extint11" function="a"/>
-        <signal driver="gclk" name="io5" function="m"/>
+        <signal driver="adc" instance="0" name="ain" function="b" index="11"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="9"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="9"/>
+        <signal driver="ccl" name="out" function="n" index="1"/>
+        <signal driver="eic" name="extint" function="a" index="11"/>
+        <signal driver="gclk" name="io" function="m" index="5"/>
         <signal device-pin="j|n|p" driver="i2s" name="sdo" function="j"/>
-        <signal driver="qspi" name="data3" function="h"/>
-        <signal driver="sdhc" instance="0" name="sddat2" function="i"/>
-        <signal driver="sercom" instance="0" name="pad3" function="c"/>
-        <signal driver="sercom" instance="2" name="pad3" function="d"/>
-        <signal driver="tc" instance="1" name="wo1" function="e"/>
-        <signal driver="tcc" instance="0" name="wo3" function="f"/>
-        <signal driver="tcc" instance="1" name="wo7" function="g"/>
+        <signal driver="qspi" name="data" function="h" index="3"/>
+        <signal driver="sdhc" instance="0" name="sddat" function="i" index="2"/>
+        <signal driver="sercom" instance="0" name="pad" function="c" index="3"/>
+        <signal driver="sercom" instance="2" name="pad" function="d" index="3"/>
+        <signal driver="tc" instance="1" name="wo" function="e" index="1"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="3"/>
+        <signal driver="tcc" instance="1" name="wo" function="g" index="7"/>
       </gpio>
       <gpio port="A" pin="12">
-        <signal driver="ac" name="cmp0" function="m"/>
-        <signal driver="eic" name="extint12" function="a"/>
+        <signal driver="ac" name="cmp" function="m" index="0"/>
+        <signal driver="eic" name="extint" function="a" index="12"/>
         <signal driver="pcc" name="den1" function="k"/>
         <signal driver="sdhc" instance="0" name="sdcd" function="i"/>
-        <signal driver="sercom" instance="2" name="pad0" function="c"/>
-        <signal driver="sercom" instance="4" name="pad1" function="d"/>
-        <signal driver="tc" instance="2" name="wo0" function="e"/>
-        <signal driver="tcc" instance="0" name="wo6" function="f"/>
-        <signal driver="tcc" instance="1" name="wo2" function="g"/>
+        <signal driver="sercom" instance="2" name="pad" function="c" index="0"/>
+        <signal driver="sercom" instance="4" name="pad" function="d" index="1"/>
+        <signal driver="tc" instance="2" name="wo" function="e" index="0"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="6"/>
+        <signal driver="tcc" instance="1" name="wo" function="g" index="2"/>
       </gpio>
       <gpio port="A" pin="13">
-        <signal driver="ac" name="cmp1" function="m"/>
-        <signal driver="eic" name="extint13" function="a"/>
+        <signal driver="ac" name="cmp" function="m" index="1"/>
+        <signal driver="eic" name="extint" function="a" index="13"/>
         <signal driver="pcc" name="den2" function="k"/>
         <signal driver="sdhc" instance="0" name="sdwp" function="i"/>
-        <signal driver="sercom" instance="2" name="pad1" function="c"/>
-        <signal driver="sercom" instance="4" name="pad0" function="d"/>
-        <signal driver="tc" instance="2" name="wo1" function="e"/>
-        <signal driver="tcc" instance="0" name="wo7" function="f"/>
-        <signal driver="tcc" instance="1" name="wo3" function="g"/>
+        <signal driver="sercom" instance="2" name="pad" function="c" index="1"/>
+        <signal driver="sercom" instance="4" name="pad" function="d" index="0"/>
+        <signal driver="tc" instance="2" name="wo" function="e" index="1"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="7"/>
+        <signal driver="tcc" instance="1" name="wo" function="g" index="3"/>
       </gpio>
       <gpio port="A" pin="14">
-        <signal driver="eic" name="extint14" function="a"/>
-        <signal driver="gclk" name="io0" function="m"/>
-        <signal driver="oscctrl" name="xin0" function="xin0"/>
+        <signal driver="eic" name="extint" function="a" index="14"/>
+        <signal driver="gclk" name="io" function="m" index="0"/>
+        <signal driver="oscctrl" name="xin" function="xin0" index="0"/>
         <signal driver="pcc" name="clk" function="k"/>
-        <signal driver="sercom" instance="2" name="pad2" function="c"/>
-        <signal driver="sercom" instance="4" name="pad2" function="d"/>
-        <signal driver="tc" instance="3" name="wo0" function="e"/>
-        <signal driver="tcc" instance="1" name="wo2" function="g"/>
-        <signal driver="tcc" instance="2" name="wo0" function="f"/>
+        <signal driver="sercom" instance="2" name="pad" function="c" index="2"/>
+        <signal driver="sercom" instance="4" name="pad" function="d" index="2"/>
+        <signal driver="tc" instance="3" name="wo" function="e" index="0"/>
+        <signal driver="tcc" instance="1" name="wo" function="g" index="2"/>
+        <signal driver="tcc" instance="2" name="wo" function="f" index="0"/>
       </gpio>
       <gpio port="A" pin="15">
-        <signal driver="eic" name="extint15" function="a"/>
-        <signal driver="gclk" name="io1" function="m"/>
-        <signal driver="oscctrl" name="xout0" function="xout0"/>
-        <signal driver="sercom" instance="2" name="pad3" function="c"/>
-        <signal driver="sercom" instance="4" name="pad3" function="d"/>
-        <signal driver="tc" instance="3" name="wo1" function="e"/>
-        <signal driver="tcc" instance="1" name="wo3" function="g"/>
-        <signal driver="tcc" instance="2" name="wo1" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="15"/>
+        <signal driver="gclk" name="io" function="m" index="1"/>
+        <signal driver="oscctrl" name="xout" function="xout0" index="0"/>
+        <signal driver="sercom" instance="2" name="pad" function="c" index="3"/>
+        <signal driver="sercom" instance="4" name="pad" function="d" index="3"/>
+        <signal driver="tc" instance="3" name="wo" function="e" index="1"/>
+        <signal driver="tcc" instance="1" name="wo" function="g" index="3"/>
+        <signal driver="tcc" instance="2" name="wo" function="f" index="1"/>
       </gpio>
       <gpio port="A" pin="16">
-        <signal driver="adc" instance="0" name="x10" function="b"/>
-        <signal driver="adc" instance="0" name="y10" function="b"/>
-        <signal driver="ccl" name="in0" function="n"/>
-        <signal driver="eic" name="extint0" function="a"/>
-        <signal driver="gclk" name="io2" function="m"/>
-        <signal driver="pcc" name="data0" function="k"/>
-        <signal driver="sercom" instance="1" name="pad0" function="c"/>
-        <signal driver="sercom" instance="3" name="pad1" function="d"/>
-        <signal driver="tc" instance="2" name="wo0" function="e"/>
-        <signal driver="tcc" instance="0" name="wo4" function="g"/>
-        <signal driver="tcc" instance="1" name="wo0" function="f"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="10"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="10"/>
+        <signal driver="ccl" name="in" function="n" index="0"/>
+        <signal driver="eic" name="extint" function="a" index="0"/>
+        <signal driver="gclk" name="io" function="m" index="2"/>
+        <signal driver="pcc" name="data" function="k" index="0"/>
+        <signal driver="sercom" instance="1" name="pad" function="c" index="0"/>
+        <signal driver="sercom" instance="3" name="pad" function="d" index="1"/>
+        <signal driver="tc" instance="2" name="wo" function="e" index="0"/>
+        <signal driver="tcc" instance="0" name="wo" function="g" index="4"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="0"/>
       </gpio>
       <gpio port="A" pin="17">
-        <signal driver="adc" instance="0" name="x11" function="b"/>
-        <signal driver="adc" instance="0" name="y11" function="b"/>
-        <signal driver="ccl" name="in1" function="n"/>
-        <signal driver="eic" name="extint1" function="a"/>
-        <signal driver="gclk" name="io3" function="m"/>
-        <signal driver="pcc" name="data1" function="k"/>
-        <signal driver="sercom" instance="1" name="pad1" function="c"/>
-        <signal driver="sercom" instance="3" name="pad0" function="d"/>
-        <signal driver="tc" instance="2" name="wo1" function="e"/>
-        <signal driver="tcc" instance="0" name="wo5" function="g"/>
-        <signal driver="tcc" instance="1" name="wo1" function="f"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="11"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="11"/>
+        <signal driver="ccl" name="in" function="n" index="1"/>
+        <signal driver="eic" name="extint" function="a" index="1"/>
+        <signal driver="gclk" name="io" function="m" index="3"/>
+        <signal driver="pcc" name="data" function="k" index="1"/>
+        <signal driver="sercom" instance="1" name="pad" function="c" index="1"/>
+        <signal driver="sercom" instance="3" name="pad" function="d" index="0"/>
+        <signal driver="tc" instance="2" name="wo" function="e" index="1"/>
+        <signal driver="tcc" instance="0" name="wo" function="g" index="5"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="1"/>
       </gpio>
       <gpio port="A" pin="18">
-        <signal driver="ac" name="cmp0" function="m"/>
-        <signal driver="adc" instance="0" name="x12" function="b"/>
-        <signal driver="adc" instance="0" name="y12" function="b"/>
-        <signal driver="ccl" name="in2" function="n"/>
-        <signal driver="eic" name="extint2" function="a"/>
-        <signal driver="pcc" name="data2" function="k"/>
-        <signal driver="sercom" instance="1" name="pad2" function="c"/>
-        <signal driver="sercom" instance="3" name="pad2" function="d"/>
-        <signal driver="tc" instance="3" name="wo0" function="e"/>
-        <signal driver="tcc" instance="0" name="wo6" function="g"/>
-        <signal driver="tcc" instance="1" name="wo2" function="f"/>
+        <signal driver="ac" name="cmp" function="m" index="0"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="12"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="12"/>
+        <signal driver="ccl" name="in" function="n" index="2"/>
+        <signal driver="eic" name="extint" function="a" index="2"/>
+        <signal driver="pcc" name="data" function="k" index="2"/>
+        <signal driver="sercom" instance="1" name="pad" function="c" index="2"/>
+        <signal driver="sercom" instance="3" name="pad" function="d" index="2"/>
+        <signal driver="tc" instance="3" name="wo" function="e" index="0"/>
+        <signal driver="tcc" instance="0" name="wo" function="g" index="6"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="2"/>
       </gpio>
       <gpio port="A" pin="19">
-        <signal driver="ac" name="cmp1" function="m"/>
-        <signal driver="adc" instance="0" name="x13" function="b"/>
-        <signal driver="adc" instance="0" name="y13" function="b"/>
-        <signal driver="ccl" name="out0" function="n"/>
-        <signal driver="eic" name="extint3" function="a"/>
-        <signal driver="pcc" name="data3" function="k"/>
-        <signal driver="sercom" instance="1" name="pad3" function="c"/>
-        <signal driver="sercom" instance="3" name="pad3" function="d"/>
-        <signal driver="tc" instance="3" name="wo1" function="e"/>
-        <signal driver="tcc" instance="0" name="wo7" function="g"/>
-        <signal driver="tcc" instance="1" name="wo3" function="f"/>
+        <signal driver="ac" name="cmp" function="m" index="1"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="13"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="13"/>
+        <signal driver="ccl" name="out" function="n" index="0"/>
+        <signal driver="eic" name="extint" function="a" index="3"/>
+        <signal driver="pcc" name="data" function="k" index="3"/>
+        <signal driver="sercom" instance="1" name="pad" function="c" index="3"/>
+        <signal driver="sercom" instance="3" name="pad" function="d" index="3"/>
+        <signal driver="tc" instance="3" name="wo" function="e" index="1"/>
+        <signal driver="tcc" instance="0" name="wo" function="g" index="7"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="3"/>
       </gpio>
       <gpio port="A" pin="20">
-        <signal driver="adc" instance="0" name="x14" function="b"/>
-        <signal driver="adc" instance="0" name="y14" function="b"/>
-        <signal driver="eic" name="extint4" function="a"/>
-        <signal device-pin="j|n|p" driver="i2s" name="fs0" function="j"/>
-        <signal driver="pcc" name="data4" function="k"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="14"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="14"/>
+        <signal driver="eic" name="extint" function="a" index="4"/>
+        <signal device-pin="j|n|p" driver="i2s" name="fs" function="j" index="0"/>
+        <signal driver="pcc" name="data" function="k" index="4"/>
         <signal device-pin="n|p" driver="sdhc" instance="1" name="sdcmd" function="i"/>
-        <signal driver="sercom" instance="3" name="pad2" function="d"/>
-        <signal driver="sercom" instance="5" name="pad2" function="c"/>
-        <signal device-pin="n|p" driver="tc" instance="7" name="wo0" function="e"/>
-        <signal driver="tcc" instance="0" name="wo0" function="g"/>
-        <signal driver="tcc" instance="1" name="wo4" function="f"/>
+        <signal driver="sercom" instance="3" name="pad" function="d" index="2"/>
+        <signal driver="sercom" instance="5" name="pad" function="c" index="2"/>
+        <signal device-pin="n|p" driver="tc" instance="7" name="wo" function="e" index="0"/>
+        <signal driver="tcc" instance="0" name="wo" function="g" index="0"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="4"/>
       </gpio>
       <gpio port="A" pin="21">
-        <signal driver="adc" instance="0" name="x15" function="b"/>
-        <signal driver="adc" instance="0" name="y15" function="b"/>
-        <signal driver="eic" name="extint5" function="a"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="15"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="15"/>
+        <signal driver="eic" name="extint" function="a" index="5"/>
         <signal device-pin="j|n|p" driver="i2s" name="sdo" function="j"/>
-        <signal driver="pcc" name="data5" function="k"/>
+        <signal driver="pcc" name="data" function="k" index="5"/>
         <signal device-pin="n|p" driver="sdhc" instance="1" name="sdck" function="i"/>
-        <signal driver="sercom" instance="3" name="pad3" function="d"/>
-        <signal driver="sercom" instance="5" name="pad3" function="c"/>
-        <signal device-pin="n|p" driver="tc" instance="7" name="wo1" function="e"/>
-        <signal driver="tcc" instance="0" name="wo1" function="g"/>
-        <signal driver="tcc" instance="1" name="wo5" function="f"/>
+        <signal driver="sercom" instance="3" name="pad" function="d" index="3"/>
+        <signal driver="sercom" instance="5" name="pad" function="c" index="3"/>
+        <signal device-pin="n|p" driver="tc" instance="7" name="wo" function="e" index="1"/>
+        <signal driver="tcc" instance="0" name="wo" function="g" index="1"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="5"/>
       </gpio>
       <gpio port="A" pin="22">
-        <signal driver="adc" instance="0" name="x16" function="b"/>
-        <signal driver="adc" instance="0" name="y16" function="b"/>
-        <signal driver="ccl" name="in6" function="n"/>
-        <signal driver="eic" name="extint6" function="a"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="16"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="16"/>
+        <signal driver="ccl" name="in" function="n" index="6"/>
+        <signal driver="eic" name="extint" function="a" index="6"/>
         <signal device-pin="j|n|p" driver="i2s" name="sdi" function="j"/>
-        <signal driver="pcc" name="data6" function="k"/>
-        <signal driver="sercom" instance="3" name="pad0" function="c"/>
-        <signal driver="sercom" instance="5" name="pad1" function="d"/>
-        <signal device-pin="j|n|p" driver="tc" instance="4" name="wo0" function="e"/>
-        <signal driver="tcc" instance="0" name="wo2" function="g"/>
-        <signal driver="tcc" instance="1" name="wo6" function="f"/>
+        <signal driver="pcc" name="data" function="k" index="6"/>
+        <signal driver="sercom" instance="3" name="pad" function="c" index="0"/>
+        <signal driver="sercom" instance="5" name="pad" function="d" index="1"/>
+        <signal device-pin="j|n|p" driver="tc" instance="4" name="wo" function="e" index="0"/>
+        <signal driver="tcc" instance="0" name="wo" function="g" index="2"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="6"/>
       </gpio>
       <gpio port="A" pin="23">
-        <signal driver="adc" instance="0" name="x17" function="b"/>
-        <signal driver="adc" instance="0" name="y17" function="b"/>
-        <signal driver="ccl" name="in7" function="n"/>
-        <signal driver="eic" name="extint7" function="a"/>
-        <signal device-pin="j|n|p" driver="i2s" name="fs1" function="j"/>
-        <signal driver="pcc" name="data7" function="k"/>
-        <signal driver="sercom" instance="3" name="pad1" function="c"/>
-        <signal driver="sercom" instance="5" name="pad0" function="d"/>
-        <signal device-pin="j|n|p" driver="tc" instance="4" name="wo1" function="e"/>
-        <signal driver="tcc" instance="0" name="wo3" function="g"/>
-        <signal driver="tcc" instance="1" name="wo7" function="f"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="17"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="17"/>
+        <signal driver="ccl" name="in" function="n" index="7"/>
+        <signal driver="eic" name="extint" function="a" index="7"/>
+        <signal device-pin="j|n|p" driver="i2s" name="fs" function="j" index="1"/>
+        <signal driver="pcc" name="data" function="k" index="7"/>
+        <signal driver="sercom" instance="3" name="pad" function="c" index="1"/>
+        <signal driver="sercom" instance="5" name="pad" function="d" index="0"/>
+        <signal device-pin="j|n|p" driver="tc" instance="4" name="wo" function="e" index="1"/>
+        <signal driver="tcc" instance="0" name="wo" function="g" index="3"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="7"/>
         <signal driver="usb" name="sof_1khz" function="h"/>
       </gpio>
       <gpio port="A" pin="24">
-        <signal driver="ccl" name="in8" function="n"/>
-        <signal driver="eic" name="extint8" function="a"/>
-        <signal driver="pdec" name="qdi0" function="g"/>
-        <signal driver="sercom" instance="3" name="pad2" function="c"/>
-        <signal driver="sercom" instance="5" name="pad2" function="d"/>
-        <signal device-pin="j|n|p" driver="tc" instance="5" name="wo0" function="e"/>
-        <signal driver="tcc" instance="2" name="wo2" function="f"/>
+        <signal driver="ccl" name="in" function="n" index="8"/>
+        <signal driver="eic" name="extint" function="a" index="8"/>
+        <signal driver="pdec" name="qdi" function="g" index="0"/>
+        <signal driver="sercom" instance="3" name="pad" function="c" index="2"/>
+        <signal driver="sercom" instance="5" name="pad" function="d" index="2"/>
+        <signal device-pin="j|n|p" driver="tc" instance="5" name="wo" function="e" index="0"/>
+        <signal driver="tcc" instance="2" name="wo" function="f" index="2"/>
         <signal driver="usb" name="dm" function="h"/>
       </gpio>
       <gpio port="A" pin="25">
-        <signal driver="ccl" name="out2" function="n"/>
-        <signal driver="eic" name="extint9" function="a"/>
-        <signal driver="pdec" name="qdi1" function="g"/>
-        <signal driver="sercom" instance="3" name="pad3" function="c"/>
-        <signal driver="sercom" instance="5" name="pad3" function="d"/>
-        <signal device-pin="j|n|p" driver="tc" instance="5" name="wo1" function="e"/>
+        <signal driver="ccl" name="out" function="n" index="2"/>
+        <signal driver="eic" name="extint" function="a" index="9"/>
+        <signal driver="pdec" name="qdi" function="g" index="1"/>
+        <signal driver="sercom" instance="3" name="pad" function="c" index="3"/>
+        <signal driver="sercom" instance="5" name="pad" function="d" index="3"/>
+        <signal device-pin="j|n|p" driver="tc" instance="5" name="wo" function="e" index="1"/>
         <signal driver="usb" name="dp" function="h"/>
       </gpio>
       <gpio port="A" pin="27">
-        <signal driver="adc" instance="0" name="x18" function="b"/>
-        <signal driver="adc" instance="0" name="y18" function="b"/>
-        <signal driver="eic" name="extint11" function="a"/>
-        <signal driver="gclk" name="io1" function="m"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="18"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="18"/>
+        <signal driver="eic" name="extint" function="a" index="11"/>
+        <signal driver="gclk" name="io" function="m" index="1"/>
       </gpio>
       <gpio port="A" pin="30">
-        <signal driver="adc" instance="0" name="x19" function="b"/>
-        <signal driver="adc" instance="0" name="y19" function="b"/>
-        <signal driver="ccl" name="in3" function="n"/>
-        <signal driver="eic" name="extint14" function="a"/>
-        <signal driver="gclk" name="io0" function="m"/>
-        <signal driver="sercom" instance="1" name="pad2" function="d"/>
-        <signal device-pin="n|p" driver="sercom" instance="7" name="pad2" function="c"/>
-        <signal device-pin="n|p" driver="tc" instance="6" name="wo0" function="e"/>
-        <signal driver="tcc" instance="2" name="wo0" function="f"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="19"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="19"/>
+        <signal driver="ccl" name="in" function="n" index="3"/>
+        <signal driver="eic" name="extint" function="a" index="14"/>
+        <signal driver="gclk" name="io" function="m" index="0"/>
+        <signal driver="sercom" instance="1" name="pad" function="d" index="2"/>
+        <signal device-pin="n|p" driver="sercom" instance="7" name="pad" function="c" index="2"/>
+        <signal device-pin="n|p" driver="tc" instance="6" name="wo" function="e" index="0"/>
+        <signal driver="tcc" instance="2" name="wo" function="f" index="0"/>
       </gpio>
       <gpio port="A" pin="31">
-        <signal driver="ccl" name="out1" function="n"/>
-        <signal driver="eic" name="extint15" function="a"/>
-        <signal driver="sercom" instance="1" name="pad3" function="d"/>
-        <signal device-pin="n|p" driver="sercom" instance="7" name="pad3" function="c"/>
-        <signal device-pin="n|p" driver="tc" instance="6" name="wo1" function="e"/>
-        <signal driver="tcc" instance="2" name="wo1" function="f"/>
+        <signal driver="ccl" name="out" function="n" index="1"/>
+        <signal driver="eic" name="extint" function="a" index="15"/>
+        <signal driver="sercom" instance="1" name="pad" function="d" index="3"/>
+        <signal device-pin="n|p" driver="sercom" instance="7" name="pad" function="c" index="3"/>
+        <signal device-pin="n|p" driver="tc" instance="6" name="wo" function="e" index="1"/>
+        <signal driver="tcc" instance="2" name="wo" function="f" index="1"/>
       </gpio>
       <gpio device-pin="j|n|p" port="B" pin="00">
-        <signal driver="adc" instance="0" name="ain12" function="b"/>
-        <signal driver="adc" instance="0" name="x30" function="b"/>
-        <signal driver="adc" instance="0" name="y30" function="b"/>
-        <signal driver="ccl" name="in1" function="n"/>
-        <signal driver="eic" name="extint0" function="a"/>
-        <signal driver="rtc" name="in0" function="rtc"/>
-        <signal driver="sercom" instance="5" name="pad2" function="d"/>
-        <signal device-pin="n|p" driver="tc" instance="7" name="wo0" function="e"/>
+        <signal driver="adc" instance="0" name="ain" function="b" index="12"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="30"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="30"/>
+        <signal driver="ccl" name="in" function="n" index="1"/>
+        <signal driver="eic" name="extint" function="a" index="0"/>
+        <signal driver="rtc" name="in" function="rtc" index="0"/>
+        <signal driver="sercom" instance="5" name="pad" function="d" index="2"/>
+        <signal device-pin="n|p" driver="tc" instance="7" name="wo" function="e" index="0"/>
       </gpio>
       <gpio device-pin="j|n|p" port="B" pin="01">
-        <signal driver="adc" instance="0" name="ain13" function="b"/>
-        <signal driver="adc" instance="0" name="x31" function="b"/>
-        <signal driver="adc" instance="0" name="y31" function="b"/>
-        <signal driver="ccl" name="in2" function="n"/>
-        <signal driver="eic" name="extint1" function="a"/>
+        <signal driver="adc" instance="0" name="ain" function="b" index="13"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="31"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="31"/>
+        <signal driver="ccl" name="in" function="n" index="2"/>
+        <signal driver="eic" name="extint" function="a" index="1"/>
         <signal driver="rtc" name="out" function="rtc"/>
-        <signal driver="sercom" instance="5" name="pad3" function="d"/>
-        <signal driver="supc" name="out0" function="supc"/>
-        <signal device-pin="n|p" driver="tc" instance="7" name="wo1" function="e"/>
+        <signal driver="sercom" instance="5" name="pad" function="d" index="3"/>
+        <signal driver="supc" name="out" function="supc" index="0"/>
+        <signal device-pin="n|p" driver="tc" instance="7" name="wo" function="e" index="1"/>
       </gpio>
       <gpio port="B" pin="02">
-        <signal driver="adc" instance="0" name="ain14" function="b"/>
-        <signal driver="adc" instance="0" name="x20" function="b"/>
-        <signal driver="adc" instance="0" name="y20" function="b"/>
-        <signal driver="ccl" name="out0" function="n"/>
-        <signal driver="eic" name="extint2" function="a"/>
-        <signal driver="rtc" name="in1" function="rtc"/>
-        <signal driver="sercom" instance="5" name="pad0" function="d"/>
-        <signal driver="supc" name="out1" function="supc"/>
-        <signal device-pin="n|p" driver="tc" instance="6" name="wo0" function="e"/>
-        <signal driver="tcc" instance="2" name="wo2" function="f"/>
+        <signal driver="adc" instance="0" name="ain" function="b" index="14"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="20"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="20"/>
+        <signal driver="ccl" name="out" function="n" index="0"/>
+        <signal driver="eic" name="extint" function="a" index="2"/>
+        <signal driver="rtc" name="in" function="rtc" index="1"/>
+        <signal driver="sercom" instance="5" name="pad" function="d" index="0"/>
+        <signal driver="supc" name="out" function="supc" index="1"/>
+        <signal device-pin="n|p" driver="tc" instance="6" name="wo" function="e" index="0"/>
+        <signal driver="tcc" instance="2" name="wo" function="f" index="2"/>
       </gpio>
       <gpio port="B" pin="03">
-        <signal driver="adc" instance="0" name="ain15" function="b"/>
-        <signal driver="adc" instance="0" name="x21" function="b"/>
-        <signal driver="adc" instance="0" name="y21" function="b"/>
-        <signal driver="eic" name="extint3" function="a"/>
-        <signal driver="sercom" instance="5" name="pad1" function="d"/>
+        <signal driver="adc" instance="0" name="ain" function="b" index="15"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="21"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="21"/>
+        <signal driver="eic" name="extint" function="a" index="3"/>
+        <signal driver="sercom" instance="5" name="pad" function="d" index="1"/>
         <signal driver="supc" name="vbat" function="supc"/>
-        <signal device-pin="n|p" driver="tc" instance="6" name="wo1" function="e"/>
+        <signal device-pin="n|p" driver="tc" instance="6" name="wo" function="e" index="1"/>
       </gpio>
       <gpio device-pin="j|n|p" port="B" pin="04">
-        <signal driver="adc" instance="0" name="x22" function="b"/>
-        <signal driver="adc" instance="0" name="y22" function="b"/>
-        <signal driver="adc" instance="1" name="ain6" function="b"/>
-        <signal driver="eic" name="extint4" function="a"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="22"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="22"/>
+        <signal driver="adc" instance="1" name="ain" function="b" index="6"/>
+        <signal driver="eic" name="extint" function="a" index="4"/>
       </gpio>
       <gpio device-pin="j|n|p" port="B" pin="05">
-        <signal driver="adc" instance="0" name="x23" function="b"/>
-        <signal driver="adc" instance="0" name="y23" function="b"/>
-        <signal driver="adc" instance="1" name="ain7" function="b"/>
-        <signal driver="eic" name="extint5" function="a"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="23"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="23"/>
+        <signal driver="adc" instance="1" name="ain" function="b" index="7"/>
+        <signal driver="eic" name="extint" function="a" index="5"/>
       </gpio>
       <gpio device-pin="j|n|p" port="B" pin="06">
-        <signal driver="adc" instance="0" name="x24" function="b"/>
-        <signal driver="adc" instance="0" name="y24" function="b"/>
-        <signal driver="adc" instance="1" name="ain8" function="b"/>
-        <signal driver="ccl" name="in6" function="n"/>
-        <signal driver="eic" name="extint6" function="a"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="24"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="24"/>
+        <signal driver="adc" instance="1" name="ain" function="b" index="8"/>
+        <signal driver="ccl" name="in" function="n" index="6"/>
+        <signal driver="eic" name="extint" function="a" index="6"/>
       </gpio>
       <gpio device-pin="j|n|p" port="B" pin="07">
-        <signal driver="adc" instance="0" name="x25" function="b"/>
-        <signal driver="adc" instance="0" name="y25" function="b"/>
-        <signal driver="adc" instance="1" name="ain9" function="b"/>
-        <signal driver="ccl" name="in7" function="n"/>
-        <signal driver="eic" name="extint7" function="a"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="25"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="25"/>
+        <signal driver="adc" instance="1" name="ain" function="b" index="9"/>
+        <signal driver="ccl" name="in" function="n" index="7"/>
+        <signal driver="eic" name="extint" function="a" index="7"/>
       </gpio>
       <gpio port="B" pin="08">
-        <signal driver="adc" instance="0" name="ain2" function="b"/>
-        <signal driver="adc" instance="0" name="x1" function="b"/>
-        <signal driver="adc" instance="0" name="y1" function="b"/>
-        <signal driver="adc" instance="1" name="ain0" function="b"/>
-        <signal driver="ccl" name="in8" function="n"/>
-        <signal driver="eic" name="extint8" function="a"/>
-        <signal driver="sercom" instance="4" name="pad0" function="d"/>
-        <signal device-pin="j|n|p" driver="tc" instance="4" name="wo0" function="e"/>
+        <signal driver="adc" instance="0" name="ain" function="b" index="2"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="1"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="1"/>
+        <signal driver="adc" instance="1" name="ain" function="b" index="0"/>
+        <signal driver="ccl" name="in" function="n" index="8"/>
+        <signal driver="eic" name="extint" function="a" index="8"/>
+        <signal driver="sercom" instance="4" name="pad" function="d" index="0"/>
+        <signal device-pin="j|n|p" driver="tc" instance="4" name="wo" function="e" index="0"/>
       </gpio>
       <gpio port="B" pin="09">
-        <signal driver="adc" instance="0" name="ain3" function="b"/>
-        <signal driver="adc" instance="0" name="x2" function="b"/>
-        <signal driver="adc" instance="0" name="y2" function="b"/>
-        <signal driver="adc" instance="1" name="ain1" function="b"/>
-        <signal driver="ccl" name="out2" function="n"/>
-        <signal driver="eic" name="extint9" function="a"/>
-        <signal driver="sercom" instance="4" name="pad1" function="d"/>
-        <signal device-pin="j|n|p" driver="tc" instance="4" name="wo1" function="e"/>
+        <signal driver="adc" instance="0" name="ain" function="b" index="3"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="2"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="2"/>
+        <signal driver="adc" instance="1" name="ain" function="b" index="1"/>
+        <signal driver="ccl" name="out" function="n" index="2"/>
+        <signal driver="eic" name="extint" function="a" index="9"/>
+        <signal driver="sercom" instance="4" name="pad" function="d" index="1"/>
+        <signal device-pin="j|n|p" driver="tc" instance="4" name="wo" function="e" index="1"/>
       </gpio>
       <gpio port="B" pin="10">
-        <signal driver="ccl" name="in11" function="n"/>
-        <signal driver="eic" name="extint10" function="a"/>
-        <signal driver="gclk" name="io4" function="m"/>
+        <signal driver="ccl" name="in" function="n" index="11"/>
+        <signal driver="eic" name="extint" function="a" index="10"/>
+        <signal driver="gclk" name="io" function="m" index="4"/>
         <signal device-pin="j|n|p" driver="i2s" name="sdi" function="j"/>
         <signal driver="qspi" name="sck" function="h"/>
-        <signal driver="sdhc" instance="0" name="sddat3" function="i"/>
-        <signal driver="sercom" instance="4" name="pad2" function="d"/>
-        <signal device-pin="j|n|p" driver="tc" instance="5" name="wo0" function="e"/>
-        <signal driver="tcc" instance="0" name="wo4" function="f"/>
-        <signal driver="tcc" instance="1" name="wo0" function="g"/>
+        <signal driver="sdhc" instance="0" name="sddat" function="i" index="3"/>
+        <signal driver="sercom" instance="4" name="pad" function="d" index="2"/>
+        <signal device-pin="j|n|p" driver="tc" instance="5" name="wo" function="e" index="0"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="4"/>
+        <signal driver="tcc" instance="1" name="wo" function="g" index="0"/>
       </gpio>
       <gpio port="B" pin="11">
-        <signal driver="ccl" name="out1" function="n"/>
-        <signal driver="eic" name="extint11" function="a"/>
-        <signal driver="gclk" name="io5" function="m"/>
-        <signal device-pin="j|n|p" driver="i2s" name="fs1" function="j"/>
+        <signal driver="ccl" name="out" function="n" index="1"/>
+        <signal driver="eic" name="extint" function="a" index="11"/>
+        <signal driver="gclk" name="io" function="m" index="5"/>
+        <signal device-pin="j|n|p" driver="i2s" name="fs" function="j" index="1"/>
         <signal driver="qspi" name="cs" function="h"/>
         <signal driver="sdhc" instance="0" name="sdck" function="i"/>
-        <signal driver="sercom" instance="4" name="pad3" function="d"/>
-        <signal device-pin="j|n|p" driver="tc" instance="5" name="wo1" function="e"/>
-        <signal driver="tcc" instance="0" name="wo5" function="f"/>
-        <signal driver="tcc" instance="1" name="wo1" function="g"/>
+        <signal driver="sercom" instance="4" name="pad" function="d" index="3"/>
+        <signal device-pin="j|n|p" driver="tc" instance="5" name="wo" function="e" index="1"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="5"/>
+        <signal driver="tcc" instance="1" name="wo" function="g" index="1"/>
       </gpio>
       <gpio device-pin="j|n|p" port="B" pin="12">
-        <signal driver="adc" instance="0" name="x26" function="b"/>
-        <signal driver="adc" instance="0" name="y26" function="b"/>
-        <signal driver="eic" name="extint12" function="a"/>
-        <signal driver="gclk" name="io6" function="m"/>
-        <signal driver="i2s" name="sck1" function="j"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="26"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="26"/>
+        <signal driver="eic" name="extint" function="a" index="12"/>
+        <signal driver="gclk" name="io" function="m" index="6"/>
+        <signal driver="i2s" name="sck" function="j" index="1"/>
         <signal driver="sdhc" instance="0" name="sdcd" function="i"/>
-        <signal driver="sercom" instance="4" name="pad0" function="c"/>
-        <signal driver="tc" instance="4" name="wo0" function="e"/>
-        <signal driver="tcc" instance="0" name="wo0" function="g"/>
-        <signal driver="tcc" instance="3" name="wo0" function="f"/>
+        <signal driver="sercom" instance="4" name="pad" function="c" index="0"/>
+        <signal driver="tc" instance="4" name="wo" function="e" index="0"/>
+        <signal driver="tcc" instance="0" name="wo" function="g" index="0"/>
+        <signal driver="tcc" instance="3" name="wo" function="f" index="0"/>
       </gpio>
       <gpio device-pin="j|n|p" port="B" pin="13">
-        <signal driver="adc" instance="0" name="x27" function="b"/>
-        <signal driver="adc" instance="0" name="y27" function="b"/>
-        <signal driver="eic" name="extint13" function="a"/>
-        <signal driver="gclk" name="io7" function="m"/>
-        <signal driver="i2s" name="mck1" function="j"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="27"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="27"/>
+        <signal driver="eic" name="extint" function="a" index="13"/>
+        <signal driver="gclk" name="io" function="m" index="7"/>
+        <signal driver="i2s" name="mck" function="j" index="1"/>
         <signal driver="sdhc" instance="0" name="sdwp" function="i"/>
-        <signal driver="sercom" instance="4" name="pad1" function="c"/>
-        <signal driver="tc" instance="4" name="wo1" function="e"/>
-        <signal driver="tcc" instance="0" name="wo1" function="g"/>
-        <signal driver="tcc" instance="3" name="wo1" function="f"/>
+        <signal driver="sercom" instance="4" name="pad" function="c" index="1"/>
+        <signal driver="tc" instance="4" name="wo" function="e" index="1"/>
+        <signal driver="tcc" instance="0" name="wo" function="g" index="1"/>
+        <signal driver="tcc" instance="3" name="wo" function="f" index="1"/>
       </gpio>
       <gpio device-pin="j|n|p" port="B" pin="14">
-        <signal driver="adc" instance="0" name="x28" function="b"/>
-        <signal driver="adc" instance="0" name="y28" function="b"/>
-        <signal driver="ccl" name="in9" function="n"/>
-        <signal driver="eic" name="extint14" function="a"/>
-        <signal driver="gclk" name="io0" function="m"/>
-        <signal driver="pcc" name="data8" function="k"/>
-        <signal driver="sercom" instance="4" name="pad2" function="c"/>
-        <signal driver="tc" instance="5" name="wo0" function="e"/>
-        <signal driver="tcc" instance="0" name="wo2" function="g"/>
-        <signal driver="tcc" instance="4" name="wo0" function="f"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="28"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="28"/>
+        <signal driver="ccl" name="in" function="n" index="9"/>
+        <signal driver="eic" name="extint" function="a" index="14"/>
+        <signal driver="gclk" name="io" function="m" index="0"/>
+        <signal driver="pcc" name="data" function="k" index="8"/>
+        <signal driver="sercom" instance="4" name="pad" function="c" index="2"/>
+        <signal driver="tc" instance="5" name="wo" function="e" index="0"/>
+        <signal driver="tcc" instance="0" name="wo" function="g" index="2"/>
+        <signal driver="tcc" instance="4" name="wo" function="f" index="0"/>
       </gpio>
       <gpio device-pin="j|n|p" port="B" pin="15">
-        <signal driver="adc" instance="0" name="x29" function="b"/>
-        <signal driver="adc" instance="0" name="y29" function="b"/>
-        <signal driver="ccl" name="in10" function="n"/>
-        <signal driver="eic" name="extint15" function="a"/>
-        <signal driver="gclk" name="io1" function="m"/>
-        <signal driver="pcc" name="data9" function="k"/>
-        <signal driver="sercom" instance="4" name="pad3" function="c"/>
-        <signal driver="tc" instance="5" name="wo1" function="e"/>
-        <signal driver="tcc" instance="0" name="wo3" function="g"/>
-        <signal driver="tcc" instance="4" name="wo1" function="f"/>
+        <signal driver="adc" instance="0" name="x" function="b" index="29"/>
+        <signal driver="adc" instance="0" name="y" function="b" index="29"/>
+        <signal driver="ccl" name="in" function="n" index="10"/>
+        <signal driver="eic" name="extint" function="a" index="15"/>
+        <signal driver="gclk" name="io" function="m" index="1"/>
+        <signal driver="pcc" name="data" function="k" index="9"/>
+        <signal driver="sercom" instance="4" name="pad" function="c" index="3"/>
+        <signal driver="tc" instance="5" name="wo" function="e" index="1"/>
+        <signal driver="tcc" instance="0" name="wo" function="g" index="3"/>
+        <signal driver="tcc" instance="4" name="wo" function="f" index="1"/>
       </gpio>
       <gpio device-pin="j|n|p" port="B" pin="16">
-        <signal driver="ccl" name="in11" function="n"/>
-        <signal driver="eic" name="extint0" function="a"/>
-        <signal driver="gclk" name="io2" function="m"/>
-        <signal driver="i2s" name="sck0" function="j"/>
+        <signal driver="ccl" name="in" function="n" index="11"/>
+        <signal driver="eic" name="extint" function="a" index="0"/>
+        <signal driver="gclk" name="io" function="m" index="2"/>
+        <signal driver="i2s" name="sck" function="j" index="0"/>
         <signal device-pin="n|p" driver="sdhc" instance="1" name="sdcd" function="i"/>
-        <signal driver="sercom" instance="5" name="pad0" function="c"/>
-        <signal device-pin="n|p" driver="tc" instance="6" name="wo0" function="e"/>
-        <signal driver="tcc" instance="0" name="wo4" function="g"/>
-        <signal driver="tcc" instance="3" name="wo0" function="f"/>
+        <signal driver="sercom" instance="5" name="pad" function="c" index="0"/>
+        <signal device-pin="n|p" driver="tc" instance="6" name="wo" function="e" index="0"/>
+        <signal driver="tcc" instance="0" name="wo" function="g" index="4"/>
+        <signal driver="tcc" instance="3" name="wo" function="f" index="0"/>
       </gpio>
       <gpio device-pin="j|n|p" port="B" pin="17">
-        <signal driver="ccl" name="out3" function="n"/>
-        <signal driver="eic" name="extint1" function="a"/>
-        <signal driver="gclk" name="io3" function="m"/>
-        <signal driver="i2s" name="mck0" function="j"/>
+        <signal driver="ccl" name="out" function="n" index="3"/>
+        <signal driver="eic" name="extint" function="a" index="1"/>
+        <signal driver="gclk" name="io" function="m" index="3"/>
+        <signal driver="i2s" name="mck" function="j" index="0"/>
         <signal device-pin="n|p" driver="sdhc" instance="1" name="sdwp" function="i"/>
-        <signal driver="sercom" instance="5" name="pad1" function="c"/>
-        <signal device-pin="n|p" driver="tc" instance="6" name="wo1" function="e"/>
-        <signal driver="tcc" instance="0" name="wo5" function="g"/>
-        <signal driver="tcc" instance="3" name="wo1" function="f"/>
+        <signal driver="sercom" instance="5" name="pad" function="c" index="1"/>
+        <signal device-pin="n|p" driver="tc" instance="6" name="wo" function="e" index="1"/>
+        <signal driver="tcc" instance="0" name="wo" function="g" index="5"/>
+        <signal driver="tcc" instance="3" name="wo" function="f" index="1"/>
       </gpio>
       <gpio device-pin="n|p" port="B" pin="18">
-        <signal driver="eic" name="extint2" function="a"/>
-        <signal driver="gclk" name="io4" function="m"/>
-        <signal driver="pdec" name="qdi0" function="g"/>
-        <signal driver="sdhc" instance="1" name="sddat0" function="i"/>
-        <signal driver="sercom" instance="5" name="pad2" function="c"/>
-        <signal driver="sercom" instance="7" name="pad2" function="d"/>
-        <signal driver="tcc" instance="1" name="wo0" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="2"/>
+        <signal driver="gclk" name="io" function="m" index="4"/>
+        <signal driver="pdec" name="qdi" function="g" index="0"/>
+        <signal driver="sdhc" instance="1" name="sddat" function="i" index="0"/>
+        <signal driver="sercom" instance="5" name="pad" function="c" index="2"/>
+        <signal driver="sercom" instance="7" name="pad" function="d" index="2"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="0"/>
       </gpio>
       <gpio device-pin="n|p" port="B" pin="19">
-        <signal driver="eic" name="extint3" function="a"/>
-        <signal driver="gclk" name="io5" function="m"/>
-        <signal driver="pdec" name="qdi1" function="g"/>
-        <signal driver="sdhc" instance="1" name="sddat1" function="i"/>
-        <signal driver="sercom" instance="5" name="pad3" function="c"/>
-        <signal driver="sercom" instance="7" name="pad3" function="d"/>
-        <signal driver="tcc" instance="1" name="wo1" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="3"/>
+        <signal driver="gclk" name="io" function="m" index="5"/>
+        <signal driver="pdec" name="qdi" function="g" index="1"/>
+        <signal driver="sdhc" instance="1" name="sddat" function="i" index="1"/>
+        <signal driver="sercom" instance="5" name="pad" function="c" index="3"/>
+        <signal driver="sercom" instance="7" name="pad" function="d" index="3"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="1"/>
       </gpio>
       <gpio device-pin="n|p" port="B" pin="20">
-        <signal driver="eic" name="extint4" function="a"/>
-        <signal driver="gclk" name="io6" function="m"/>
-        <signal driver="pdec" name="qdi2" function="g"/>
-        <signal driver="sdhc" instance="1" name="sddat2" function="i"/>
-        <signal driver="sercom" instance="3" name="pad0" function="c"/>
-        <signal driver="sercom" instance="7" name="pad1" function="d"/>
-        <signal driver="tcc" instance="1" name="wo2" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="4"/>
+        <signal driver="gclk" name="io" function="m" index="6"/>
+        <signal driver="pdec" name="qdi" function="g" index="2"/>
+        <signal driver="sdhc" instance="1" name="sddat" function="i" index="2"/>
+        <signal driver="sercom" instance="3" name="pad" function="c" index="0"/>
+        <signal driver="sercom" instance="7" name="pad" function="d" index="1"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="2"/>
       </gpio>
       <gpio device-pin="n|p" port="B" pin="21">
-        <signal driver="eic" name="extint5" function="a"/>
-        <signal driver="gclk" name="io7" function="m"/>
-        <signal driver="sdhc" instance="1" name="sddat3" function="i"/>
-        <signal driver="sercom" instance="3" name="pad1" function="c"/>
-        <signal driver="sercom" instance="7" name="pad0" function="d"/>
-        <signal driver="tcc" instance="1" name="wo3" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="5"/>
+        <signal driver="gclk" name="io" function="m" index="7"/>
+        <signal driver="sdhc" instance="1" name="sddat" function="i" index="3"/>
+        <signal driver="sercom" instance="3" name="pad" function="c" index="1"/>
+        <signal driver="sercom" instance="7" name="pad" function="d" index="0"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="3"/>
       </gpio>
       <gpio port="B" pin="22">
-        <signal driver="ccl" name="in0" function="n"/>
-        <signal driver="eic" name="extint6" function="a"/>
-        <signal driver="gclk" name="io0" function="m"/>
-        <signal driver="oscctrl" name="xin1" function="xin1"/>
-        <signal driver="pdec" name="qdi2" function="g"/>
-        <signal driver="sercom" instance="1" name="pad2" function="c"/>
-        <signal driver="sercom" instance="5" name="pad2" function="d"/>
-        <signal device-pin="n|p" driver="tc" instance="7" name="wo0" function="e"/>
+        <signal driver="ccl" name="in" function="n" index="0"/>
+        <signal driver="eic" name="extint" function="a" index="6"/>
+        <signal driver="gclk" name="io" function="m" index="0"/>
+        <signal driver="oscctrl" name="xin" function="xin1" index="1"/>
+        <signal driver="pdec" name="qdi" function="g" index="2"/>
+        <signal driver="sercom" instance="1" name="pad" function="c" index="2"/>
+        <signal driver="sercom" instance="5" name="pad" function="d" index="2"/>
+        <signal device-pin="n|p" driver="tc" instance="7" name="wo" function="e" index="0"/>
         <signal driver="usb" name="sof_1khz" function="h"/>
       </gpio>
       <gpio port="B" pin="23">
-        <signal driver="ccl" name="out0" function="n"/>
-        <signal driver="eic" name="extint7" function="a"/>
-        <signal driver="gclk" name="io1" function="m"/>
-        <signal driver="oscctrl" name="xout1" function="xout1"/>
-        <signal driver="pdec" name="qdi0" function="g"/>
-        <signal driver="sercom" instance="1" name="pad3" function="c"/>
-        <signal driver="sercom" instance="5" name="pad3" function="d"/>
-        <signal device-pin="n|p" driver="tc" instance="7" name="wo1" function="e"/>
+        <signal driver="ccl" name="out" function="n" index="0"/>
+        <signal driver="eic" name="extint" function="a" index="7"/>
+        <signal driver="gclk" name="io" function="m" index="1"/>
+        <signal driver="oscctrl" name="xout" function="xout1" index="1"/>
+        <signal driver="pdec" name="qdi" function="g" index="0"/>
+        <signal driver="sercom" instance="1" name="pad" function="c" index="3"/>
+        <signal driver="sercom" instance="5" name="pad" function="d" index="3"/>
+        <signal device-pin="n|p" driver="tc" instance="7" name="wo" function="e" index="1"/>
       </gpio>
       <gpio device-pin="n|p" port="B" pin="24">
-        <signal driver="ac" name="cmp0" function="m"/>
-        <signal driver="eic" name="extint8" function="a"/>
-        <signal driver="pdec" name="qdi1" function="g"/>
-        <signal driver="sercom" instance="0" name="pad0" function="c"/>
-        <signal driver="sercom" instance="2" name="pad1" function="d"/>
+        <signal driver="ac" name="cmp" function="m" index="0"/>
+        <signal driver="eic" name="extint" function="a" index="8"/>
+        <signal driver="pdec" name="qdi" function="g" index="1"/>
+        <signal driver="sercom" instance="0" name="pad" function="c" index="0"/>
+        <signal driver="sercom" instance="2" name="pad" function="d" index="1"/>
       </gpio>
       <gpio device-pin="n|p" port="B" pin="25">
-        <signal driver="ac" name="cmp1" function="m"/>
-        <signal driver="eic" name="extint9" function="a"/>
-        <signal driver="pdec" name="qdi2" function="g"/>
-        <signal driver="sercom" instance="0" name="pad1" function="c"/>
-        <signal driver="sercom" instance="2" name="pad0" function="d"/>
+        <signal driver="ac" name="cmp" function="m" index="1"/>
+        <signal driver="eic" name="extint" function="a" index="9"/>
+        <signal driver="pdec" name="qdi" function="g" index="2"/>
+        <signal driver="sercom" instance="0" name="pad" function="c" index="1"/>
+        <signal driver="sercom" instance="2" name="pad" function="d" index="0"/>
       </gpio>
       <gpio device-pin="p" port="B" pin="26">
-        <signal driver="eic" name="extint12" function="a"/>
-        <signal driver="sercom" instance="2" name="pad0" function="c"/>
-        <signal driver="sercom" instance="4" name="pad1" function="d"/>
-        <signal driver="tcc" instance="1" name="wo2" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="12"/>
+        <signal driver="sercom" instance="2" name="pad" function="c" index="0"/>
+        <signal driver="sercom" instance="4" name="pad" function="d" index="1"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="2"/>
       </gpio>
       <gpio device-pin="p" port="B" pin="27">
-        <signal driver="eic" name="extint13" function="a"/>
-        <signal driver="sercom" instance="2" name="pad1" function="c"/>
-        <signal driver="sercom" instance="4" name="pad0" function="d"/>
-        <signal driver="tcc" instance="1" name="wo3" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="13"/>
+        <signal driver="sercom" instance="2" name="pad" function="c" index="1"/>
+        <signal driver="sercom" instance="4" name="pad" function="d" index="0"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="3"/>
       </gpio>
       <gpio device-pin="p" port="B" pin="28">
-        <signal driver="eic" name="extint14" function="a"/>
-        <signal driver="i2s" name="sck1" function="j"/>
-        <signal driver="sercom" instance="2" name="pad2" function="c"/>
-        <signal driver="sercom" instance="4" name="pad2" function="d"/>
-        <signal driver="tcc" instance="1" name="wo4" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="14"/>
+        <signal driver="i2s" name="sck" function="j" index="1"/>
+        <signal driver="sercom" instance="2" name="pad" function="c" index="2"/>
+        <signal driver="sercom" instance="4" name="pad" function="d" index="2"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="4"/>
       </gpio>
       <gpio device-pin="p" port="B" pin="29">
-        <signal driver="eic" name="extint15" function="a"/>
-        <signal driver="i2s" name="mck1" function="j"/>
-        <signal driver="sercom" instance="2" name="pad3" function="c"/>
-        <signal driver="sercom" instance="4" name="pad3" function="d"/>
-        <signal driver="tcc" instance="1" name="wo5" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="15"/>
+        <signal driver="i2s" name="mck" function="j" index="1"/>
+        <signal driver="sercom" instance="2" name="pad" function="c" index="3"/>
+        <signal driver="sercom" instance="4" name="pad" function="d" index="3"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="5"/>
       </gpio>
       <gpio device-pin="j|n|p" port="B" pin="30">
-        <signal driver="eic" name="extint14" function="a"/>
-        <signal driver="sercom" instance="5" name="pad1" function="d"/>
-        <signal device-pin="n|p" driver="sercom" instance="7" name="pad0" function="c"/>
-        <signal driver="tc" instance="0" name="wo0" function="e"/>
-        <signal driver="tcc" instance="0" name="wo6" function="g"/>
-        <signal driver="tcc" instance="4" name="wo0" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="14"/>
+        <signal driver="sercom" instance="5" name="pad" function="d" index="1"/>
+        <signal device-pin="n|p" driver="sercom" instance="7" name="pad" function="c" index="0"/>
+        <signal driver="tc" instance="0" name="wo" function="e" index="0"/>
+        <signal driver="tcc" instance="0" name="wo" function="g" index="6"/>
+        <signal driver="tcc" instance="4" name="wo" function="f" index="0"/>
       </gpio>
       <gpio device-pin="j|n|p" port="B" pin="31">
-        <signal driver="eic" name="extint15" function="a"/>
-        <signal driver="sercom" instance="5" name="pad0" function="d"/>
-        <signal device-pin="n|p" driver="sercom" instance="7" name="pad1" function="c"/>
-        <signal driver="tc" instance="0" name="wo1" function="e"/>
-        <signal driver="tcc" instance="0" name="wo7" function="g"/>
-        <signal driver="tcc" instance="4" name="wo1" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="15"/>
+        <signal driver="sercom" instance="5" name="pad" function="d" index="0"/>
+        <signal device-pin="n|p" driver="sercom" instance="7" name="pad" function="c" index="1"/>
+        <signal driver="tc" instance="0" name="wo" function="e" index="1"/>
+        <signal driver="tcc" instance="0" name="wo" function="g" index="7"/>
+        <signal driver="tcc" instance="4" name="wo" function="f" index="1"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="00">
-        <signal driver="adc" instance="1" name="ain10" function="b"/>
-        <signal driver="eic" name="extint0" function="a"/>
-        <signal driver="rtc" name="in3" function="rtc"/>
+        <signal driver="adc" instance="1" name="ain" function="b" index="10"/>
+        <signal driver="eic" name="extint" function="a" index="0"/>
+        <signal driver="rtc" name="in" function="rtc" index="3"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="01">
-        <signal driver="adc" instance="1" name="ain11" function="b"/>
-        <signal driver="eic" name="extint1" function="a"/>
-        <signal driver="rtc" name="in4" function="rtc"/>
+        <signal driver="adc" instance="1" name="ain" function="b" index="11"/>
+        <signal driver="eic" name="extint" function="a" index="1"/>
+        <signal driver="rtc" name="in" function="rtc" index="4"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="02">
-        <signal driver="adc" instance="1" name="ain4" function="b"/>
-        <signal driver="eic" name="extint2" function="a"/>
+        <signal driver="adc" instance="1" name="ain" function="b" index="4"/>
+        <signal driver="eic" name="extint" function="a" index="2"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="03">
-        <signal driver="adc" instance="1" name="ain5" function="b"/>
-        <signal driver="eic" name="extint3" function="a"/>
+        <signal driver="adc" instance="1" name="ain" function="b" index="5"/>
+        <signal driver="eic" name="extint" function="a" index="3"/>
       </gpio>
       <gpio device-pin="p" port="C" pin="04">
-        <signal driver="eic" name="extint4" function="a"/>
-        <signal driver="sercom" instance="6" name="pad0" function="c"/>
-        <signal driver="tcc" instance="0" name="wo0" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="4"/>
+        <signal driver="sercom" instance="6" name="pad" function="c" index="0"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="0"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="05">
-        <signal driver="eic" name="extint5" function="a"/>
-        <signal driver="sercom" instance="6" name="pad1" function="c"/>
+        <signal driver="eic" name="extint" function="a" index="5"/>
+        <signal driver="sercom" instance="6" name="pad" function="c" index="1"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="06">
-        <signal driver="eic" name="extint6" function="a"/>
+        <signal driver="eic" name="extint" function="a" index="6"/>
         <signal driver="sdhc" instance="0" name="sdcd" function="i"/>
-        <signal driver="sercom" instance="6" name="pad2" function="c"/>
+        <signal driver="sercom" instance="6" name="pad" function="c" index="2"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="07">
-        <signal driver="eic" name="extint9" function="a"/>
+        <signal driver="eic" name="extint" function="a" index="9"/>
         <signal driver="sdhc" instance="0" name="sdwp" function="i"/>
-        <signal driver="sercom" instance="6" name="pad3" function="c"/>
+        <signal driver="sercom" instance="6" name="pad" function="c" index="3"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="10">
-        <signal driver="eic" name="extint10" function="a"/>
-        <signal driver="sercom" instance="6" name="pad2" function="c"/>
-        <signal driver="sercom" instance="7" name="pad2" function="d"/>
-        <signal driver="tcc" instance="0" name="wo0" function="f"/>
-        <signal driver="tcc" instance="1" name="wo4" function="g"/>
+        <signal driver="eic" name="extint" function="a" index="10"/>
+        <signal driver="sercom" instance="6" name="pad" function="c" index="2"/>
+        <signal driver="sercom" instance="7" name="pad" function="d" index="2"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="0"/>
+        <signal driver="tcc" instance="1" name="wo" function="g" index="4"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="11">
-        <signal driver="eic" name="extint11" function="a"/>
-        <signal driver="sercom" instance="6" name="pad3" function="c"/>
-        <signal driver="sercom" instance="7" name="pad3" function="d"/>
-        <signal driver="tcc" instance="0" name="wo1" function="f"/>
-        <signal driver="tcc" instance="1" name="wo5" function="g"/>
+        <signal driver="eic" name="extint" function="a" index="11"/>
+        <signal driver="sercom" instance="6" name="pad" function="c" index="3"/>
+        <signal driver="sercom" instance="7" name="pad" function="d" index="3"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="1"/>
+        <signal driver="tcc" instance="1" name="wo" function="g" index="5"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="12">
-        <signal driver="eic" name="extint12" function="a"/>
-        <signal driver="pcc" name="data10" function="k"/>
-        <signal driver="sercom" instance="6" name="pad1" function="d"/>
-        <signal driver="sercom" instance="7" name="pad0" function="c"/>
-        <signal driver="tcc" instance="0" name="wo2" function="f"/>
-        <signal driver="tcc" instance="1" name="wo6" function="g"/>
+        <signal driver="eic" name="extint" function="a" index="12"/>
+        <signal driver="pcc" name="data" function="k" index="10"/>
+        <signal driver="sercom" instance="6" name="pad" function="d" index="1"/>
+        <signal driver="sercom" instance="7" name="pad" function="c" index="0"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="2"/>
+        <signal driver="tcc" instance="1" name="wo" function="g" index="6"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="13">
-        <signal driver="eic" name="extint13" function="a"/>
-        <signal driver="pcc" name="data11" function="k"/>
-        <signal driver="sercom" instance="6" name="pad0" function="d"/>
-        <signal driver="sercom" instance="7" name="pad1" function="c"/>
-        <signal driver="tcc" instance="0" name="wo3" function="f"/>
-        <signal driver="tcc" instance="1" name="wo7" function="g"/>
+        <signal driver="eic" name="extint" function="a" index="13"/>
+        <signal driver="pcc" name="data" function="k" index="11"/>
+        <signal driver="sercom" instance="6" name="pad" function="d" index="0"/>
+        <signal driver="sercom" instance="7" name="pad" function="c" index="1"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="3"/>
+        <signal driver="tcc" instance="1" name="wo" function="g" index="7"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="14">
-        <signal driver="eic" name="extint14" function="a"/>
-        <signal driver="pcc" name="data12" function="k"/>
-        <signal driver="sercom" instance="6" name="pad2" function="d"/>
-        <signal driver="sercom" instance="7" name="pad2" function="c"/>
-        <signal driver="tcc" instance="0" name="wo4" function="f"/>
-        <signal driver="tcc" instance="1" name="wo0" function="g"/>
+        <signal driver="eic" name="extint" function="a" index="14"/>
+        <signal driver="pcc" name="data" function="k" index="12"/>
+        <signal driver="sercom" instance="6" name="pad" function="d" index="2"/>
+        <signal driver="sercom" instance="7" name="pad" function="c" index="2"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="4"/>
+        <signal driver="tcc" instance="1" name="wo" function="g" index="0"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="15">
-        <signal driver="eic" name="extint15" function="a"/>
-        <signal driver="pcc" name="data13" function="k"/>
-        <signal driver="sercom" instance="6" name="pad3" function="d"/>
-        <signal driver="sercom" instance="7" name="pad3" function="c"/>
-        <signal driver="tcc" instance="0" name="wo5" function="f"/>
-        <signal driver="tcc" instance="1" name="wo1" function="g"/>
+        <signal driver="eic" name="extint" function="a" index="15"/>
+        <signal driver="pcc" name="data" function="k" index="13"/>
+        <signal driver="sercom" instance="6" name="pad" function="d" index="3"/>
+        <signal driver="sercom" instance="7" name="pad" function="c" index="3"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="5"/>
+        <signal driver="tcc" instance="1" name="wo" function="g" index="1"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="16">
-        <signal driver="eic" name="extint0" function="a"/>
-        <signal driver="pdec" name="qdi0" function="g"/>
-        <signal driver="sercom" instance="0" name="pad1" function="d"/>
-        <signal driver="sercom" instance="6" name="pad0" function="c"/>
-        <signal driver="tcc" instance="0" name="wo0" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="0"/>
+        <signal driver="pdec" name="qdi" function="g" index="0"/>
+        <signal driver="sercom" instance="0" name="pad" function="d" index="1"/>
+        <signal driver="sercom" instance="6" name="pad" function="c" index="0"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="0"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="17">
-        <signal driver="eic" name="extint1" function="a"/>
-        <signal driver="pdec" name="qdi1" function="g"/>
-        <signal driver="sercom" instance="0" name="pad0" function="d"/>
-        <signal driver="sercom" instance="6" name="pad1" function="c"/>
-        <signal driver="tcc" instance="0" name="wo1" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="1"/>
+        <signal driver="pdec" name="qdi" function="g" index="1"/>
+        <signal driver="sercom" instance="0" name="pad" function="d" index="0"/>
+        <signal driver="sercom" instance="6" name="pad" function="c" index="1"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="1"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="18">
-        <signal driver="eic" name="extint2" function="a"/>
-        <signal driver="pdec" name="qdi2" function="g"/>
-        <signal driver="sercom" instance="0" name="pad2" function="d"/>
-        <signal driver="sercom" instance="6" name="pad2" function="c"/>
-        <signal driver="tcc" instance="0" name="wo2" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="2"/>
+        <signal driver="pdec" name="qdi" function="g" index="2"/>
+        <signal driver="sercom" instance="0" name="pad" function="d" index="2"/>
+        <signal driver="sercom" instance="6" name="pad" function="c" index="2"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="2"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="19">
-        <signal driver="eic" name="extint3" function="a"/>
-        <signal driver="sercom" instance="0" name="pad3" function="d"/>
-        <signal driver="sercom" instance="6" name="pad3" function="c"/>
-        <signal driver="tcc" instance="0" name="wo3" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="3"/>
+        <signal driver="sercom" instance="0" name="pad" function="d" index="3"/>
+        <signal driver="sercom" instance="6" name="pad" function="c" index="3"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="3"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="20">
-        <signal driver="ccl" name="in9" function="n"/>
-        <signal driver="eic" name="extint4" function="a"/>
+        <signal driver="ccl" name="in" function="n" index="9"/>
+        <signal driver="eic" name="extint" function="a" index="4"/>
         <signal driver="sdhc" instance="1" name="sdcd" function="i"/>
-        <signal driver="tcc" instance="0" name="wo4" function="f"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="4"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="21">
-        <signal driver="ccl" name="in10" function="n"/>
-        <signal driver="eic" name="extint5" function="a"/>
+        <signal driver="ccl" name="in" function="n" index="10"/>
+        <signal driver="eic" name="extint" function="a" index="5"/>
         <signal driver="sdhc" instance="1" name="sdwp" function="i"/>
-        <signal driver="tcc" instance="0" name="wo5" function="f"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="5"/>
       </gpio>
       <gpio device-pin="p" port="C" pin="22">
-        <signal driver="eic" name="extint6" function="a"/>
-        <signal driver="sercom" instance="1" name="pad0" function="c"/>
-        <signal driver="sercom" instance="3" name="pad1" function="d"/>
-        <signal driver="tcc" instance="0" name="wo6" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="6"/>
+        <signal driver="sercom" instance="1" name="pad" function="c" index="0"/>
+        <signal driver="sercom" instance="3" name="pad" function="d" index="1"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="6"/>
       </gpio>
       <gpio device-pin="p" port="C" pin="23">
-        <signal driver="eic" name="extint7" function="a"/>
-        <signal driver="sercom" instance="1" name="pad1" function="c"/>
-        <signal driver="sercom" instance="3" name="pad0" function="d"/>
-        <signal driver="tcc" instance="0" name="wo7" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="7"/>
+        <signal driver="sercom" instance="1" name="pad" function="c" index="1"/>
+        <signal driver="sercom" instance="3" name="pad" function="d" index="0"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="7"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="24">
-        <signal driver="eic" name="extint8" function="a"/>
-        <signal driver="sercom" instance="0" name="pad2" function="c"/>
-        <signal driver="sercom" instance="2" name="pad2" function="d"/>
+        <signal driver="eic" name="extint" function="a" index="8"/>
+        <signal driver="sercom" instance="0" name="pad" function="c" index="2"/>
+        <signal driver="sercom" instance="2" name="pad" function="d" index="2"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="25">
-        <signal driver="eic" name="extint9" function="a"/>
-        <signal driver="sercom" instance="0" name="pad3" function="c"/>
-        <signal driver="sercom" instance="2" name="pad3" function="d"/>
+        <signal driver="eic" name="extint" function="a" index="9"/>
+        <signal driver="sercom" instance="0" name="pad" function="c" index="3"/>
+        <signal driver="sercom" instance="2" name="pad" function="d" index="3"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="26">
-        <signal driver="eic" name="extint10" function="a"/>
+        <signal driver="eic" name="extint" function="a" index="10"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="27">
-        <signal driver="ccl" name="in4" function="n"/>
-        <signal driver="eic" name="extint11" function="a"/>
-        <signal driver="sercom" instance="1" name="pad0" function="c"/>
+        <signal driver="ccl" name="in" function="n" index="4"/>
+        <signal driver="eic" name="extint" function="a" index="11"/>
+        <signal driver="sercom" instance="1" name="pad" function="c" index="0"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="28">
-        <signal driver="ccl" name="in5" function="n"/>
-        <signal driver="eic" name="extint12" function="a"/>
-        <signal driver="sercom" instance="1" name="pad1" function="c"/>
+        <signal driver="ccl" name="in" function="n" index="5"/>
+        <signal driver="eic" name="extint" function="a" index="12"/>
+        <signal driver="sercom" instance="1" name="pad" function="c" index="1"/>
       </gpio>
       <gpio device-pin="p" port="C" pin="30">
-        <signal driver="adc" instance="1" name="ain12" function="b"/>
-        <signal driver="eic" name="extint14" function="a"/>
+        <signal driver="adc" instance="1" name="ain" function="b" index="12"/>
+        <signal driver="eic" name="extint" function="a" index="14"/>
       </gpio>
       <gpio device-pin="p" port="C" pin="31">
-        <signal driver="adc" instance="1" name="ain13" function="b"/>
-        <signal driver="eic" name="extint15" function="a"/>
+        <signal driver="adc" instance="1" name="ain" function="b" index="13"/>
+        <signal driver="eic" name="extint" function="a" index="15"/>
       </gpio>
       <gpio device-pin="p" port="D" pin="00">
-        <signal driver="adc" instance="1" name="ain14" function="b"/>
-        <signal driver="eic" name="extint0" function="a"/>
+        <signal driver="adc" instance="1" name="ain" function="b" index="14"/>
+        <signal driver="eic" name="extint" function="a" index="0"/>
       </gpio>
       <gpio device-pin="p" port="D" pin="01">
-        <signal driver="adc" instance="1" name="ain15" function="b"/>
-        <signal driver="eic" name="extint1" function="a"/>
+        <signal driver="adc" instance="1" name="ain" function="b" index="15"/>
+        <signal driver="eic" name="extint" function="a" index="1"/>
       </gpio>
       <gpio device-pin="p" port="D" pin="08">
-        <signal driver="eic" name="extint3" function="a"/>
-        <signal driver="sercom" instance="6" name="pad1" function="d"/>
-        <signal driver="sercom" instance="7" name="pad0" function="c"/>
-        <signal driver="tcc" instance="0" name="wo1" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="3"/>
+        <signal driver="sercom" instance="6" name="pad" function="d" index="1"/>
+        <signal driver="sercom" instance="7" name="pad" function="c" index="0"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="1"/>
       </gpio>
       <gpio device-pin="p" port="D" pin="09">
-        <signal driver="eic" name="extint4" function="a"/>
-        <signal driver="sercom" instance="6" name="pad0" function="d"/>
-        <signal driver="sercom" instance="7" name="pad1" function="c"/>
-        <signal driver="tcc" instance="0" name="wo2" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="4"/>
+        <signal driver="sercom" instance="6" name="pad" function="d" index="0"/>
+        <signal driver="sercom" instance="7" name="pad" function="c" index="1"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="2"/>
       </gpio>
       <gpio device-pin="p" port="D" pin="10">
-        <signal driver="eic" name="extint5" function="a"/>
-        <signal driver="sercom" instance="6" name="pad2" function="d"/>
-        <signal driver="sercom" instance="7" name="pad2" function="c"/>
-        <signal driver="tcc" instance="0" name="wo3" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="5"/>
+        <signal driver="sercom" instance="6" name="pad" function="d" index="2"/>
+        <signal driver="sercom" instance="7" name="pad" function="c" index="2"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="3"/>
       </gpio>
       <gpio device-pin="p" port="D" pin="11">
-        <signal driver="eic" name="extint6" function="a"/>
-        <signal driver="sercom" instance="6" name="pad3" function="d"/>
-        <signal driver="sercom" instance="7" name="pad3" function="c"/>
-        <signal driver="tcc" instance="0" name="wo4" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="6"/>
+        <signal driver="sercom" instance="6" name="pad" function="d" index="3"/>
+        <signal driver="sercom" instance="7" name="pad" function="c" index="3"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="4"/>
       </gpio>
       <gpio device-pin="p" port="D" pin="12">
-        <signal driver="eic" name="extint7" function="a"/>
-        <signal driver="tcc" instance="0" name="wo5" function="f"/>
+        <signal driver="eic" name="extint" function="a" index="7"/>
+        <signal driver="tcc" instance="0" name="wo" function="f" index="5"/>
       </gpio>
       <gpio device-pin="p" port="D" pin="20">
-        <signal driver="eic" name="extint10" function="a"/>
+        <signal driver="eic" name="extint" function="a" index="10"/>
         <signal driver="sdhc" instance="1" name="sdcd" function="i"/>
-        <signal driver="sercom" instance="1" name="pad2" function="c"/>
-        <signal driver="sercom" instance="3" name="pad2" function="d"/>
-        <signal driver="tcc" instance="1" name="wo0" function="f"/>
+        <signal driver="sercom" instance="1" name="pad" function="c" index="2"/>
+        <signal driver="sercom" instance="3" name="pad" function="d" index="2"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="0"/>
       </gpio>
       <gpio device-pin="p" port="D" pin="21">
-        <signal driver="eic" name="extint11" function="a"/>
+        <signal driver="eic" name="extint" function="a" index="11"/>
         <signal driver="sdhc" instance="1" name="sdwp" function="i"/>
-        <signal driver="sercom" instance="1" name="pad3" function="c"/>
-        <signal driver="sercom" instance="3" name="pad3" function="d"/>
-        <signal driver="tcc" instance="1" name="wo1" function="f"/>
+        <signal driver="sercom" instance="1" name="pad" function="c" index="3"/>
+        <signal driver="sercom" instance="3" name="pad" function="d" index="3"/>
+        <signal driver="tcc" instance="1" name="wo" function="f" index="1"/>
       </gpio>
     </driver>
   </device>

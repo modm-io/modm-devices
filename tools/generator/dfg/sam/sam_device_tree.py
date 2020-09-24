@@ -246,10 +246,11 @@ class SAMDeviceTree:
                 driver, instance, name = s["module"], s["instance"], s["group"]
                 # add the af node
                 pin_signal = {"driver": driver, "function": s["function"]}
+                if "index" in s:
+                    pin_signal["index"] = s["index"]
                 if instance != driver:
                     pin_signal["instance"] = instance.replace(driver, "")
                 if name != driver and name != "int":
-                    if "index" in s: name += s["index"];
                     pin_signal["name"] = name
                 elif "index" in s:
                     pin_signal["name"] = s["index"]
@@ -257,7 +258,7 @@ class SAMDeviceTree:
                     LOGGER.error("%s has no name!", s)
                     continue
                 af = pin_driver.addChild("signal")
-                af.setAttributes(["driver", "instance", "name", "function"], pin_signal)
+                af.setAttributes(["driver", "instance", "name", "function", "index"], pin_signal)
 
         return tree
 
