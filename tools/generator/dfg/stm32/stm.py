@@ -493,8 +493,13 @@ stm32_memory = \
         },
         'model': [
             {
-                'name': ['22', '32', '23', '30', '33', '45', '46', '50', '56', '65', '67', '68', '69', '77', '78', '79'],
+                'name': ['22', '32', '23', '30', '33', '45', '46', '50', '56'],
                 'memories': {'flash': 0, 'itcm': 16*1024, 'dtcm': 64*1024, 'sram1': 0, 'sram2': 16*1024, 'backup': 4*1024}
+            },
+            {
+                'name': ['65', '67', '68', '69', '77', '78', '79'],
+                'memories': {'flash': 0, 'itcm': 16*1024, 'dtcm': 128*1024, 'sram1': 0, 'sram2': 16*1024, 'backup': 4*1024},
+                'start': {'sram': 0x20020000} # overwrite due to bigger dtcm size!
             }
         ]
     },
@@ -653,7 +658,10 @@ def getMemoryModel(device_id):
     if mem_model == None:
         LOGGER.error("Memory model not found for device '{}'".format(device_id.string))
         exit(1)
-    return (dict(mem_fam['start']), dict(mem_model['memories']))
+    start = dict(mem_fam['start'])
+    memories = dict(mem_model['memories'])
+    start.update(mem_model.get('start', {}))
+    return (start, memories)
 
 def getMemoryForDevice(device_id, total_flash, total_ram):
     mem_start, mem_model = getMemoryModel(device_id)
