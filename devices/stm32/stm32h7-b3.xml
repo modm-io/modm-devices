@@ -22,7 +22,7 @@
     <valid-device>stm32h7b3zit7q</valid-device>
     <driver name="core" type="cortex-m7fd">
       <memory name="itcm" access="rwx" start="0x00" size="65536"/>
-      <memory name="flash" access="rx" start="0x8000000" size="2097152"/>
+      <memory name="flash" access="rx" start="0x200000" size="2097152"/>
       <memory name="dtcm" access="rwx" start="0x20000000" size="131072"/>
       <memory name="d1_sram1" access="rwx" start="0x24000000" size="262144"/>
       <memory name="d1_sram2" access="rwx" start="0x24040000" size="393216"/>

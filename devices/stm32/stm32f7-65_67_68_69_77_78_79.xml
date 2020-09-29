@@ -72,8 +72,8 @@
     <valid-device>stm32f779nih6</valid-device>
     <driver name="core" type="cortex-m7fd">
       <memory name="itcm" access="rwx" start="0x00" size="16384"/>
-      <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
-      <memory device-size="i" name="flash" access="rx" start="0x8000000" size="2097152"/>
+      <memory device-size="g" name="flash" access="rx" start="0x200000" size="1048576"/>
+      <memory device-size="i" name="flash" access="rx" start="0x200000" size="2097152"/>
       <memory name="dtcm" access="rwx" start="0x20000000" size="131072"/>
       <memory name="sram1" access="rwx" start="0x20020000" size="376832"/>
       <memory name="sram2" access="rwx" start="0x2007C000" size="16384"/>

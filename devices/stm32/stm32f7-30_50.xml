@@ -19,7 +19,7 @@
     <valid-device>stm32f750z8t7</valid-device>
     <driver name="core" type="cortex-m7fd">
       <memory name="itcm" access="rwx" start="0x00" size="16384"/>
-      <memory name="flash" access="rx" start="0x8000000" size="65536"/>
+      <memory name="flash" access="rx" start="0x200000" size="65536"/>
       <memory name="dtcm" access="rwx" start="0x20000000" size="65536"/>
       <memory device-name="30" name="sram1" access="rwx" start="0x20010000" size="180224"/>
       <memory device-name="50" name="sram1" access="rwx" start="0x20010000" size="311296"/>
