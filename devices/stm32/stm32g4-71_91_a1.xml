@@ -284,8 +284,7 @@
       <instance device-pin="c|m|q|r|v" value="3"/>
     </driver>
     <driver name="usb" type="stm32-v2.2"/>
-    <driver device-name="71" name="usbpd" type="stm32-v1.0"/>
-    <driver device-name="91|a1" name="usbpd" type="stm32-v1.3"/>
+    <driver name="usbpd" type="stm32-v1.3"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="dma" type="stm32-mux">
       <instance value="1"/>

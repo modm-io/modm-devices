@@ -11,7 +11,9 @@
     <valid-device>stm32l476jgy7</valid-device>
     <valid-device>stm32l476jgy7p</valid-device>
     <valid-device>stm32l476mey6</valid-device>
+    <valid-device>stm32l476mgy3</valid-device>
     <valid-device>stm32l476mgy6</valid-device>
+    <valid-device>stm32l476mgy7</valid-device>
     <valid-device>stm32l476qei6</valid-device>
     <valid-device>stm32l476qgi3</valid-device>
     <valid-device>stm32l476qgi6</valid-device>

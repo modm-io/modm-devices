@@ -106,6 +106,9 @@
     <valid-device>stm32l073czu3</valid-device>
     <valid-device>stm32l073czu6</valid-device>
     <valid-device>stm32l073czu7</valid-device>
+    <valid-device>stm32l073czy3</valid-device>
+    <valid-device>stm32l073czy6</valid-device>
+    <valid-device>stm32l073czy7</valid-device>
     <valid-device>stm32l073rbh6</valid-device>
     <valid-device>stm32l073rbt6</valid-device>
     <valid-device>stm32l073rzh3</valid-device>
@@ -698,12 +701,13 @@
         <signal device-name="73|83" af="1" driver="lcd" name="seg7"/>
         <signal af="2" driver="tim" instance="2" name="ch2"/>
         <signal device-name="72" device-pin="c" device-package="e|t|u|y" af="3" driver="tsc" name="g5_io1"/>
+        <signal device-name="73" device-pin="c" device-package="t|u|y" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="82" device-pin="c" device-package="u|y" af="3" driver="tsc" name="g5_io1"/>
+        <signal device-name="83" device-pin="c" device-package="t|u" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="72|82" device-pin="k" device-package="t" af="3" driver="tsc" name="g5_io1"/>
-        <signal device-name="73|83" device-pin="c" device-package="t|u" af="3" driver="tsc" name="g5_io1"/>
         <signal af="5" driver="usart" instance="1" name="de"/>
         <signal af="5" driver="usart" instance="1" name="rts"/>
         <signal af="6" driver="usart" instance="5" name="tx"/>
@@ -714,12 +718,13 @@
         <signal device-name="73|83" af="1" driver="lcd" name="seg7"/>
         <signal af="2" driver="tim" instance="2" name="ch2"/>
         <signal device-name="72" device-pin="c" device-package="e|t|u|y" af="3" driver="tsc" name="g5_io1"/>
+        <signal device-name="73" device-pin="c" device-package="t|u|y" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="82" device-pin="c" device-package="u|y" af="3" driver="tsc" name="g5_io1"/>
+        <signal device-name="83" device-pin="c" device-package="t|u" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="72|82" device-pin="k" device-package="t" af="3" driver="tsc" name="g5_io1"/>
-        <signal device-name="73|83" device-pin="c" device-package="t|u" af="3" driver="tsc" name="g5_io1"/>
         <signal af="5" driver="usart" instance="1" name="de"/>
         <signal af="5" driver="usart" instance="1" name="rts"/>
         <signal af="6" driver="usart" instance="5" name="tx"/>
@@ -730,12 +735,13 @@
         <signal device-name="73|83" af="1" driver="lcd" name="seg7"/>
         <signal af="2" driver="tim" instance="2" name="ch2"/>
         <signal device-name="72" device-pin="c" device-package="e|t|u|y" af="3" driver="tsc" name="g5_io1"/>
+        <signal device-name="73" device-pin="c" device-package="t|u|y" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="82" device-pin="c" device-package="u|y" af="3" driver="tsc" name="g5_io1"/>
+        <signal device-name="83" device-pin="c" device-package="t|u" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="72|82" device-pin="k" device-package="t" af="3" driver="tsc" name="g5_io1"/>
-        <signal device-name="73|83" device-pin="c" device-package="t|u" af="3" driver="tsc" name="g5_io1"/>
         <signal af="5" driver="usart" instance="1" name="de"/>
         <signal af="5" driver="usart" instance="1" name="rts"/>
         <signal af="6" driver="usart" instance="5" name="tx"/>
@@ -746,12 +752,13 @@
         <signal device-name="73|83" af="1" driver="lcd" name="seg7"/>
         <signal af="2" driver="tim" instance="2" name="ch2"/>
         <signal device-name="72" device-pin="c" device-package="e|t|u|y" af="3" driver="tsc" name="g5_io1"/>
+        <signal device-name="73" device-pin="c" device-package="t|u|y" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="82" device-pin="c" device-package="u|y" af="3" driver="tsc" name="g5_io1"/>
+        <signal device-name="83" device-pin="c" device-package="t|u" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g5_io1"/>
         <signal device-name="72|82" device-pin="k" device-package="t" af="3" driver="tsc" name="g5_io1"/>
-        <signal device-name="73|83" device-pin="c" device-package="t|u" af="3" driver="tsc" name="g5_io1"/>
         <signal af="5" driver="usart" instance="1" name="de"/>
         <signal af="5" driver="usart" instance="1" name="rts"/>
         <signal af="6" driver="usart" instance="5" name="tx"/>
@@ -882,110 +889,137 @@
       <gpio device-pin="c" device-package="e|y" port="c" pin="0">
         <signal driver="adc" name="in10"/>
         <signal af="0" driver="lptim" instance="1" name="in1"/>
-        <signal device-name="73|83" device-pin="r|v" af="1" driver="lcd" name="seg18"/>
+        <signal device-name="73" device-pin="c" device-package="y" af="1" driver="lcd" name="seg18"/>
+        <signal device-name="73" device-pin="r" device-package="h|i|t" af="1" driver="lcd" name="seg18"/>
+        <signal device-name="83" device-pin="r" device-package="h|t" af="1" driver="lcd" name="seg18"/>
+        <signal device-name="73|83" device-pin="v" device-package="i|t" af="1" driver="lcd" name="seg18"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io1"/>
-        <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io1"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io1"/>
         <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io1"/>
         <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io1"/>
+        <signal device-name="73|82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io1"/>
         <signal af="6" driver="lpuart" instance="1" name="rx"/>
         <signal af="7" driver="i2c" instance="3" name="scl"/>
       </gpio>
       <gpio device-pin="r" device-package="h|i|t" port="c" pin="0">
         <signal driver="adc" name="in10"/>
         <signal af="0" driver="lptim" instance="1" name="in1"/>
-        <signal device-name="73|83" device-pin="r|v" af="1" driver="lcd" name="seg18"/>
+        <signal device-name="73" device-pin="c" device-package="y" af="1" driver="lcd" name="seg18"/>
+        <signal device-name="73" device-pin="r" device-package="h|i|t" af="1" driver="lcd" name="seg18"/>
+        <signal device-name="83" device-pin="r" device-package="h|t" af="1" driver="lcd" name="seg18"/>
+        <signal device-name="73|83" device-pin="v" device-package="i|t" af="1" driver="lcd" name="seg18"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io1"/>
-        <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io1"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io1"/>
         <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io1"/>
         <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io1"/>
+        <signal device-name="73|82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io1"/>
         <signal af="6" driver="lpuart" instance="1" name="rx"/>
         <signal af="7" driver="i2c" instance="3" name="scl"/>
       </gpio>
       <gpio device-pin="v" device-package="i|t" port="c" pin="0">
         <signal driver="adc" name="in10"/>
         <signal af="0" driver="lptim" instance="1" name="in1"/>
-        <signal device-name="73|83" device-pin="r|v" af="1" driver="lcd" name="seg18"/>
+        <signal device-name="73" device-pin="c" device-package="y" af="1" driver="lcd" name="seg18"/>
+        <signal device-name="73" device-pin="r" device-package="h|i|t" af="1" driver="lcd" name="seg18"/>
+        <signal device-name="83" device-pin="r" device-package="h|t" af="1" driver="lcd" name="seg18"/>
+        <signal device-name="73|83" device-pin="v" device-package="i|t" af="1" driver="lcd" name="seg18"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io1"/>
-        <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io1"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io1"/>
         <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io1"/>
         <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io1"/>
+        <signal device-name="73|82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io1"/>
         <signal af="6" driver="lpuart" instance="1" name="rx"/>
         <signal af="7" driver="i2c" instance="3" name="scl"/>
       </gpio>
       <gpio device-pin="c" device-package="e|y" port="c" pin="1">
         <signal driver="adc" name="in11"/>
         <signal af="0" driver="lptim" instance="1" name="out"/>
-        <signal device-name="73|83" device-pin="r|v" af="1" driver="lcd" name="seg19"/>
+        <signal device-name="73" device-pin="c" device-package="y" af="1" driver="lcd" name="seg19"/>
+        <signal device-name="73" device-pin="r" device-package="h|i|t" af="1" driver="lcd" name="seg19"/>
+        <signal device-name="83" device-pin="r" device-package="h|t" af="1" driver="lcd" name="seg19"/>
+        <signal device-name="73|83" device-pin="v" device-package="i|t" af="1" driver="lcd" name="seg19"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io2"/>
-        <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io2"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io2"/>
         <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io2"/>
         <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io2"/>
+        <signal device-name="73|82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io2"/>
         <signal af="6" driver="lpuart" instance="1" name="tx"/>
         <signal af="7" driver="i2c" instance="3" name="sda"/>
       </gpio>
       <gpio device-pin="r" device-package="h|i|t" port="c" pin="1">
         <signal driver="adc" name="in11"/>
         <signal af="0" driver="lptim" instance="1" name="out"/>
-        <signal device-name="73|83" device-pin="r|v" af="1" driver="lcd" name="seg19"/>
+        <signal device-name="73" device-pin="c" device-package="y" af="1" driver="lcd" name="seg19"/>
+        <signal device-name="73" device-pin="r" device-package="h|i|t" af="1" driver="lcd" name="seg19"/>
+        <signal device-name="83" device-pin="r" device-package="h|t" af="1" driver="lcd" name="seg19"/>
+        <signal device-name="73|83" device-pin="v" device-package="i|t" af="1" driver="lcd" name="seg19"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io2"/>
-        <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io2"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io2"/>
         <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io2"/>
         <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io2"/>
+        <signal device-name="73|82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io2"/>
         <signal af="6" driver="lpuart" instance="1" name="tx"/>
         <signal af="7" driver="i2c" instance="3" name="sda"/>
       </gpio>
       <gpio device-pin="v" device-package="i|t" port="c" pin="1">
         <signal driver="adc" name="in11"/>
         <signal af="0" driver="lptim" instance="1" name="out"/>
-        <signal device-name="73|83" device-pin="r|v" af="1" driver="lcd" name="seg19"/>
+        <signal device-name="73" device-pin="c" device-package="y" af="1" driver="lcd" name="seg19"/>
+        <signal device-name="73" device-pin="r" device-package="h|i|t" af="1" driver="lcd" name="seg19"/>
+        <signal device-name="83" device-pin="r" device-package="h|t" af="1" driver="lcd" name="seg19"/>
+        <signal device-name="73|83" device-pin="v" device-package="i|t" af="1" driver="lcd" name="seg19"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io2"/>
-        <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io2"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io2"/>
         <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io2"/>
         <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io2"/>
+        <signal device-name="73|82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io2"/>
         <signal af="6" driver="lpuart" instance="1" name="tx"/>
         <signal af="7" driver="i2c" instance="3" name="sda"/>
       </gpio>
       <gpio device-pin="c" device-package="e|y" port="c" pin="2">
         <signal driver="adc" name="in12"/>
         <signal af="0" driver="lptim" instance="1" name="in2"/>
-        <signal device-name="73|83" device-pin="r|v" af="1" driver="lcd" name="seg20"/>
+        <signal device-name="73" device-pin="c" device-package="y" af="1" driver="lcd" name="seg20"/>
+        <signal device-name="73" device-pin="r" device-package="h|i|t" af="1" driver="lcd" name="seg20"/>
+        <signal device-name="83" device-pin="r" device-package="h|t" af="1" driver="lcd" name="seg20"/>
+        <signal device-name="73|83" device-pin="v" device-package="i|t" af="1" driver="lcd" name="seg20"/>
         <signal af="2" driver="i2s" instance="2" name="mck"/>
         <signal af="2" driver="spi" instance="2" name="miso"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io3"/>
-        <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io3"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io3"/>
         <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io3"/>
         <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io3"/>
+        <signal device-name="73|82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io3"/>
       </gpio>
       <gpio device-pin="r" device-package="h|i|t" port="c" pin="2">
         <signal driver="adc" name="in12"/>
         <signal af="0" driver="lptim" instance="1" name="in2"/>
-        <signal device-name="73|83" device-pin="r|v" af="1" driver="lcd" name="seg20"/>
+        <signal device-name="73" device-pin="c" device-package="y" af="1" driver="lcd" name="seg20"/>
+        <signal device-name="73" device-pin="r" device-package="h|i|t" af="1" driver="lcd" name="seg20"/>
+        <signal device-name="83" device-pin="r" device-package="h|t" af="1" driver="lcd" name="seg20"/>
+        <signal device-name="73|83" device-pin="v" device-package="i|t" af="1" driver="lcd" name="seg20"/>
         <signal af="2" driver="i2s" instance="2" name="mck"/>
         <signal af="2" driver="spi" instance="2" name="miso"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io3"/>
-        <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io3"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io3"/>
         <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io3"/>
         <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io3"/>
+        <signal device-name="73|82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io3"/>
       </gpio>
       <gpio device-pin="v" device-package="i|t" port="c" pin="2">
         <signal driver="adc" name="in12"/>
         <signal af="0" driver="lptim" instance="1" name="in2"/>
-        <signal device-name="73|83" device-pin="r|v" af="1" driver="lcd" name="seg20"/>
+        <signal device-name="73" device-pin="c" device-package="y" af="1" driver="lcd" name="seg20"/>
+        <signal device-name="73" device-pin="r" device-package="h|i|t" af="1" driver="lcd" name="seg20"/>
+        <signal device-name="83" device-pin="r" device-package="h|t" af="1" driver="lcd" name="seg20"/>
+        <signal device-name="73|83" device-pin="v" device-package="i|t" af="1" driver="lcd" name="seg20"/>
         <signal af="2" driver="i2s" instance="2" name="mck"/>
         <signal af="2" driver="spi" instance="2" name="miso"/>
         <signal device-name="72" device-pin="c" device-package="e|y" af="3" driver="tsc" name="g7_io3"/>
-        <signal device-name="82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io3"/>
         <signal device-name="83" device-pin="r" device-package="h|t" af="3" driver="tsc" name="g7_io3"/>
         <signal device-name="72|73" device-pin="r" device-package="h|i|t" af="3" driver="tsc" name="g7_io3"/>
         <signal device-name="72|73|83" device-pin="v" device-package="i|t" af="3" driver="tsc" name="g7_io3"/>
+        <signal device-name="73|82" device-pin="c" device-package="y" af="3" driver="tsc" name="g7_io3"/>
       </gpio>
       <gpio device-pin="r" device-package="t" port="c" pin="3">
         <signal driver="adc" name="in13"/>
@@ -1975,7 +2009,7 @@
       </package>
       <package device-package="y" name="WLCSP49">
         <pin device-name="72" device-size="b|z" device-temperature="6" position="A1" name="VDD_USB" type="power"/>
-        <pin device-name="72|82" device-size="z" device-temperature="3|6|7" position="A1" name="VDD_USB" type="power"/>
+        <pin device-name="72|73|82" device-size="z" device-temperature="3|6|7" position="A1" name="VDD_USB" type="power"/>
         <pin device-name="71" device-size="b|z" device-temperature="3|6|7" position="A1" name="VDDIO2" type="power"/>
         <pin position="A2" name="PA15"/>
         <pin position="A3" name="PB3"/>
@@ -1988,7 +2022,10 @@
         <pin position="B3" name="PB4"/>
         <pin position="B4" name="PB6"/>
         <pin position="B5" name="PB8"/>
-        <pin position="B6" name="VDD" type="power"/>
+        <pin device-name="71" device-size="b|z" device-temperature="3|6|7" position="B6" name="VDD" type="power"/>
+        <pin device-name="72" device-size="b|z" device-temperature="6" position="B6" name="VDD" type="power"/>
+        <pin device-name="72|82" device-size="z" device-temperature="3|6|7" position="B6" name="VDD" type="power"/>
+        <pin device-name="73" device-size="z" device-temperature="3|6|7" position="B6" name="VLCD" type="power"/>
         <pin position="B7" name="PC13"/>
         <pin position="C1" name="PA10"/>
         <pin position="C2" name="PA13"/>

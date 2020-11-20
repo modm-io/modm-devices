@@ -25,8 +25,12 @@
     <valid-device>stm32g473mct3</valid-device>
     <valid-device>stm32g473mct6</valid-device>
     <valid-device>stm32g473mct7</valid-device>
+    <valid-device>stm32g473met3</valid-device>
     <valid-device>stm32g473met6</valid-device>
+    <valid-device>stm32g473met7</valid-device>
+    <valid-device>stm32g473mey3</valid-device>
     <valid-device>stm32g473mey6</valid-device>
+    <valid-device>stm32g473mey7</valid-device>
     <valid-device>stm32g473pbi6</valid-device>
     <valid-device>stm32g473pci6</valid-device>
     <valid-device>stm32g473pei6</valid-device>
@@ -35,7 +39,9 @@
     <valid-device>stm32g473qet6</valid-device>
     <valid-device>stm32g473rbt6</valid-device>
     <valid-device>stm32g473rct6</valid-device>
+    <valid-device>stm32g473ret3</valid-device>
     <valid-device>stm32g473ret6</valid-device>
+    <valid-device>stm32g473ret7</valid-device>
     <valid-device>stm32g473vbh3</valid-device>
     <valid-device>stm32g473vbh6</valid-device>
     <valid-device>stm32g473vbh7</valid-device>
@@ -319,7 +325,7 @@
       <instance value="3"/>
     </driver>
     <driver name="usb" type="stm32-v2.2"/>
-    <driver name="usbpd" type="stm32-v1.0"/>
+    <driver name="usbpd" type="stm32-v1.3"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="dma" type="stm32-mux">
       <instance value="1"/>

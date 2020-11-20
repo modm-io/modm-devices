@@ -2915,7 +2915,7 @@
         <pin position="B3" name="PI7"/>
         <pin position="B4" name="PE1"/>
         <pin position="B5" name="PB6"/>
-        <pin position="B6" name="NC" type="nc"/>
+        <pin position="B6" name="VSS" type="power"/>
         <pin position="B7" name="PB4 (NJTRST)"/>
         <pin position="B8" name="PK4"/>
         <pin position="B9" name="PG11"/>

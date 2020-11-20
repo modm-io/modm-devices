@@ -47,10 +47,18 @@
     <valid-device>stm32l496zgt7p</valid-device>
     <valid-device>stm32l4a6agi6</valid-device>
     <valid-device>stm32l4a6agi6p</valid-device>
+    <valid-device>stm32l4a6qgi3</valid-device>
+    <valid-device>stm32l4a6qgi3p</valid-device>
     <valid-device>stm32l4a6qgi6</valid-device>
     <valid-device>stm32l4a6qgi6p</valid-device>
+    <valid-device>stm32l4a6qgi7</valid-device>
+    <valid-device>stm32l4a6qgi7p</valid-device>
+    <valid-device>stm32l4a6rgt3</valid-device>
+    <valid-device>stm32l4a6rgt3p</valid-device>
     <valid-device>stm32l4a6rgt6</valid-device>
     <valid-device>stm32l4a6rgt6p</valid-device>
+    <valid-device>stm32l4a6rgt7</valid-device>
+    <valid-device>stm32l4a6rgt7p</valid-device>
     <valid-device>stm32l4a6vgt6</valid-device>
     <valid-device>stm32l4a6vgt6p</valid-device>
     <valid-device>stm32l4a6vgy6</valid-device>
@@ -2349,36 +2357,24 @@
         <pin position="22" name="PA6"/>
         <pin position="23" name="PA7"/>
         <pin position="24" name="PC4"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="25" name="PB0"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="25" name="PB0"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="p" position="25" name="PB0"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="25" name="PC5"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="25" name="PC5"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="25" name="PC5"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="26" name="PB1"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="26" name="PB1"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="" position="25" name="PC5"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="p" position="26" name="PB1"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="26" name="PB0"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="26" name="PB0"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="26" name="PB0"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="27" name="PB2"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="27" name="PB2"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="" position="26" name="PB0"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="p" position="27" name="PB2"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="27" name="PB1"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="27" name="PB1"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="27" name="PB1"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="28" name="PB10"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="28" name="PB10"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="" position="27" name="PB1"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="p" position="28" name="PB10"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="28" name="PB2"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="28" name="PB2"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="28" name="PB2"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="29" name="PB11"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="29" name="PB11"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="" position="28" name="PB2"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="p" position="29" name="PB11"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="29" name="PB10"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="29" name="PB10"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="29" name="PB10"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="30" name="VDD12" type="power"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="30" name="VDD12" type="power"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="" position="29" name="PB10"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="p" position="30" name="VDD12" type="power"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="30" name="PB11"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="30" name="PB11"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="30" name="PB11"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="" position="30" name="PB11"/>
         <pin position="31" name="VSS" type="power"/>
         <pin position="32" name="VDD" type="power"/>
         <pin position="33" name="PB12"/>
@@ -2402,51 +2398,33 @@
         <pin position="51" name="PC10"/>
         <pin position="52" name="PC11"/>
         <pin position="53" name="PC12"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="54" name="PB3 (JTDO/TRACESWO)"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="54" name="PB3 (JTDO/TRACESWO)"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="p" position="54" name="PB3 (JTDO/TRACESWO)"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="54" name="PD2"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="54" name="PD2"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="54" name="PD2"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="55" name="PB4 (NJTRST)"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="55" name="PB4 (NJTRST)"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="" position="54" name="PD2"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="p" position="55" name="PB4 (NJTRST)"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="55" name="PB3 (JTDO/TRACESWO)"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="55" name="PB3 (JTDO/TRACESWO)"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="55" name="PB3 (JTDO/TRACESWO)"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="56" name="PB5"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="56" name="PB5"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="" position="55" name="PB3 (JTDO/TRACESWO)"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="p" position="56" name="PB5"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="56" name="PB4 (NJTRST)"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="56" name="PB4 (NJTRST)"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="56" name="PB4 (NJTRST)"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="57" name="PB6"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="57" name="PB6"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="" position="56" name="PB4 (NJTRST)"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="p" position="57" name="PB6"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="57" name="PB5"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="57" name="PB5"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="57" name="PB5"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="58" name="PB7"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="58" name="PB7"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="" position="57" name="PB5"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="p" position="58" name="PB7"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="58" name="PB6"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="58" name="PB6"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="58" name="PB6"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="59" name="PH3-BOOT0"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="59" name="PH3-BOOT0"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="" position="58" name="PB6"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="p" position="59" name="PH3-BOOT0"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="59" name="PB7"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="59" name="PB7"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="59" name="PB7"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="60" name="PB8"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="60" name="PB8"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="" position="59" name="PB7"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="p" position="60" name="PB8"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="60" name="PH3-BOOT0"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="60" name="PH3-BOOT0"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="60" name="PH3-BOOT0"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="61" name="PB9"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="61" name="PB9"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="" position="60" name="PH3-BOOT0"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="p" position="61" name="PB9"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="61" name="PB8"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="61" name="PB8"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="61" name="PB8"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="62" name="VDD12" type="power"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="62" name="VDD12" type="power"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="" position="61" name="PB8"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="p" position="62" name="VDD12" type="power"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="62" name="PB9"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="62" name="PB9"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="62" name="PB9"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="" position="62" name="PB9"/>
         <pin position="63" name="VSS" type="power"/>
         <pin position="64" name="VDD" type="power"/>
       </package>
@@ -2480,11 +2458,9 @@
         <pin position="C3" name="PE0"/>
         <pin position="C4" name="VDD" type="power"/>
         <pin position="C5" name="PB5"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="C6" name="VDD12" type="power"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="C6" name="VDD12" type="power"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="p" position="C6" name="VDD12" type="power"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="C6" name="PG14"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="C6" name="PG14"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="C6" name="PG14"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="" position="C6" name="PG14"/>
         <pin position="C7" name="PG13"/>
         <pin position="C8" name="PD2"/>
         <pin position="C9" name="PD0"/>
@@ -2573,11 +2549,9 @@
         <pin position="L8" name="PE10"/>
         <pin position="L9" name="PE12"/>
         <pin position="L10" name="PB10"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="L11" name="VDD12" type="power"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="L11" name="VDD12" type="power"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="p" position="L11" name="VDD12" type="power"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="L11" name="PB11"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="L11" name="PB11"/>
-        <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="L11" name="PB11"/>
+        <pin device-name="96|a6" device-size="g" device-temperature="3|6|7" device-variant="" position="L11" name="PB11"/>
         <pin position="L12" name="PB12"/>
         <pin position="M1" name="VDDA" type="power"/>
         <pin position="M2" name="PA1"/>

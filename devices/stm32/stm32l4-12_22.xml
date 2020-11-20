@@ -5,10 +5,18 @@
     <naming-schema>{platform}{family}{name}{pin}{size}{package}{temperature}{variant}</naming-schema>
     <valid-device>stm32l412c8t6</valid-device>
     <valid-device>stm32l412c8u6</valid-device>
+    <valid-device>stm32l412cbt3</valid-device>
+    <valid-device>stm32l412cbt3p</valid-device>
     <valid-device>stm32l412cbt6</valid-device>
     <valid-device>stm32l412cbt6p</valid-device>
+    <valid-device>stm32l412cbt7</valid-device>
+    <valid-device>stm32l412cbt7p</valid-device>
+    <valid-device>stm32l412cbu3</valid-device>
+    <valid-device>stm32l412cbu3p</valid-device>
     <valid-device>stm32l412cbu6</valid-device>
     <valid-device>stm32l412cbu6p</valid-device>
+    <valid-device>stm32l412cbu7</valid-device>
+    <valid-device>stm32l412cbu7p</valid-device>
     <valid-device>stm32l412k8t6</valid-device>
     <valid-device>stm32l412k8u6</valid-device>
     <valid-device>stm32l412kbt3</valid-device>
@@ -366,7 +374,6 @@
         <signal driver="comp" instance="1" name="inm"/>
         <signal driver="opamp" instance="1" name="vinp"/>
         <signal device-pin="k|t" driver="rcc" name="ck_in"/>
-        <signal driver="rtc" name="tamp2"/>
         <signal driver="sys" name="wkup1"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
         <signal af="7" driver="usart" instance="2" name="cts"/>
@@ -522,7 +529,6 @@
       </gpio>
       <gpio device-pin="c|r|t" port="b" pin="2">
         <signal driver="comp" instance="1" name="inp"/>
-        <signal af="0" driver="rtc" name="out_alarm"/>
         <signal af="0" driver="rtc" name="out_calib"/>
         <signal af="1" driver="lptim" instance="1" name="out"/>
         <signal af="4" driver="i2c" instance="3" name="smba"/>
@@ -679,6 +685,7 @@
         <signal driver="adc" instance="1" name="in14"/>
         <signal driver="adc" instance="2" name="in14"/>
         <signal driver="comp" instance="1" name="inp"/>
+        <signal device-name="12" device-size="8|b" device-package="i|t" driver="sys" name="wkup5"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
       </gpio>
       <gpio device-pin="r" port="c" pin="6">
@@ -709,7 +716,6 @@
         <signal af="9" driver="tsc" name="g3_io4"/>
       </gpio>
       <gpio device-pin="c|r" port="c" pin="13">
-        <signal driver="rtc" name="out_alarm"/>
         <signal driver="rtc" name="out_calib"/>
         <signal driver="rtc" name="tamp1"/>
         <signal driver="rtc" name="ts"/>
@@ -790,9 +796,10 @@
         <pin position="19" name="PB1"/>
         <pin position="20" name="PB2"/>
         <pin position="21" name="PB10"/>
-        <pin device-name="12" device-size="8|b" device-variant="" position="22" name="PB11"/>
-        <pin device-name="22" device-size="b" device-variant="" position="22" name="PB11"/>
-        <pin device-name="12" device-size="b" device-variant="p" position="22" name="VDD12" type="power"/>
+        <pin device-name="12" device-size="8|b" device-temperature="6" device-variant="" position="22" name="PB11"/>
+        <pin device-name="12" device-size="b" device-temperature="3|7" device-variant="" position="22" name="PB11"/>
+        <pin device-name="22" device-size="b" device-temperature="6" device-variant="" position="22" name="PB11"/>
+        <pin device-name="12" device-size="b" device-temperature="3|6|7" device-variant="p" position="22" name="VDD12" type="power"/>
         <pin position="23" name="VSS" type="power"/>
         <pin position="24" name="VDD" type="power"/>
         <pin position="25" name="PB12"/>
@@ -815,12 +822,14 @@
         <pin position="42" name="PB6"/>
         <pin position="43" name="PB7"/>
         <pin position="44" name="PH3-BOOT0 (BOOT0)"/>
-        <pin device-name="12" device-size="8|b" device-variant="" position="45" name="PB8"/>
-        <pin device-name="22" device-size="b" device-variant="" position="45" name="PB8"/>
-        <pin device-name="12" device-size="b" device-variant="p" position="45" name="PB9"/>
-        <pin device-name="12" device-size="8|b" device-variant="" position="46" name="PB9"/>
-        <pin device-name="22" device-size="b" device-variant="" position="46" name="PB9"/>
-        <pin device-name="12" device-size="b" device-variant="p" position="46" name="VDD12" type="power"/>
+        <pin device-name="12" device-size="8|b" device-temperature="6" device-variant="" position="45" name="PB8"/>
+        <pin device-name="12" device-size="b" device-temperature="3|7" device-variant="" position="45" name="PB8"/>
+        <pin device-name="22" device-size="b" device-temperature="6" device-variant="" position="45" name="PB8"/>
+        <pin device-name="12" device-size="b" device-temperature="3|6|7" device-variant="p" position="45" name="PB9"/>
+        <pin device-name="12" device-size="8|b" device-temperature="6" device-variant="" position="46" name="PB9"/>
+        <pin device-name="12" device-size="b" device-temperature="3|7" device-variant="" position="46" name="PB9"/>
+        <pin device-name="22" device-size="b" device-temperature="6" device-variant="" position="46" name="PB9"/>
+        <pin device-name="12" device-size="b" device-temperature="3|6|7" device-variant="p" position="46" name="VDD12" type="power"/>
         <pin position="47" name="VSS" type="power"/>
         <pin position="48" name="VDD" type="power"/>
       </package>
@@ -1046,9 +1055,10 @@
         <pin position="19" name="PB1"/>
         <pin position="20" name="PB2"/>
         <pin position="21" name="PB10"/>
-        <pin device-name="12" device-size="8|b" device-variant="" position="22" name="PB11"/>
-        <pin device-name="22" device-size="b" device-variant="" position="22" name="PB11"/>
-        <pin device-name="12" device-size="b" device-variant="p" position="22" name="VDD12" type="power"/>
+        <pin device-name="12" device-size="8|b" device-temperature="6" device-variant="" position="22" name="PB11"/>
+        <pin device-name="12" device-size="b" device-temperature="3|7" device-variant="" position="22" name="PB11"/>
+        <pin device-name="22" device-size="b" device-temperature="6" device-variant="" position="22" name="PB11"/>
+        <pin device-name="12" device-size="b" device-temperature="3|6|7" device-variant="p" position="22" name="VDD12" type="power"/>
         <pin position="23" name="VSS" type="power"/>
         <pin position="24" name="VDD" type="power"/>
         <pin position="25" name="PB12"/>
@@ -1071,12 +1081,14 @@
         <pin position="42" name="PB6"/>
         <pin position="43" name="PB7"/>
         <pin position="44" name="PH3-BOOT0 (BOOT0)"/>
-        <pin device-name="12" device-size="8|b" device-variant="" position="45" name="PB8"/>
-        <pin device-name="22" device-size="b" device-variant="" position="45" name="PB8"/>
-        <pin device-name="12" device-size="b" device-variant="p" position="45" name="PB9"/>
-        <pin device-name="12" device-size="8|b" device-variant="" position="46" name="PB9"/>
-        <pin device-name="22" device-size="b" device-variant="" position="46" name="PB9"/>
-        <pin device-name="12" device-size="b" device-variant="p" position="46" name="VDD12" type="power"/>
+        <pin device-name="12" device-size="8|b" device-temperature="6" device-variant="" position="45" name="PB8"/>
+        <pin device-name="12" device-size="b" device-temperature="3|7" device-variant="" position="45" name="PB8"/>
+        <pin device-name="22" device-size="b" device-temperature="6" device-variant="" position="45" name="PB8"/>
+        <pin device-name="12" device-size="b" device-temperature="3|6|7" device-variant="p" position="45" name="PB9"/>
+        <pin device-name="12" device-size="8|b" device-temperature="6" device-variant="" position="46" name="PB9"/>
+        <pin device-name="12" device-size="b" device-temperature="3|7" device-variant="" position="46" name="PB9"/>
+        <pin device-name="22" device-size="b" device-temperature="6" device-variant="" position="46" name="PB9"/>
+        <pin device-name="12" device-size="b" device-temperature="3|6|7" device-variant="p" position="46" name="VDD12" type="power"/>
         <pin position="47" name="VSS" type="power"/>
         <pin position="48" name="VDD" type="power"/>
       </package>

@@ -18,11 +18,17 @@
     <valid-device>stm32g031f8p6</valid-device>
     <valid-device>stm32g031g4u6</valid-device>
     <valid-device>stm32g031g6u6</valid-device>
+    <valid-device>stm32g031g8u3</valid-device>
     <valid-device>stm32g031g8u6</valid-device>
+    <valid-device>stm32g031g8u7</valid-device>
     <valid-device>stm32g031j4m6</valid-device>
     <valid-device>stm32g031j6m6</valid-device>
+    <valid-device>stm32g031k4t3</valid-device>
     <valid-device>stm32g031k4t6</valid-device>
+    <valid-device>stm32g031k4t7</valid-device>
+    <valid-device>stm32g031k4u3</valid-device>
     <valid-device>stm32g031k4u6</valid-device>
+    <valid-device>stm32g031k4u7</valid-device>
     <valid-device>stm32g031k6t6</valid-device>
     <valid-device>stm32g031k6u6</valid-device>
     <valid-device>stm32g031k8t3</valid-device>
@@ -486,7 +492,11 @@
         <signal af="6" driver="i2c" instance="1" name="scl"/>
       </gpio>
       <gpio port="b" pin="7">
-        <signal driver="adc" instance="1" name="in11"/>
+        <signal device-pin="c|g" device-package="u" driver="adc" instance="1" name="in11"/>
+        <signal device-pin="f" device-package="p" driver="adc" instance="1" name="in11"/>
+        <signal device-pin="j" device-package="m" driver="adc" instance="1" name="in11"/>
+        <signal device-pin="k" device-package="t|u" driver="adc" instance="1" name="in11"/>
+        <signal device-pin="y" device-package="y" driver="adc" instance="1" name="in11"/>
         <signal driver="sys" name="pvd_in"/>
         <signal af="0" driver="usart" instance="1" name="rx"/>
         <signal af="1" driver="spi" instance="2" name="mosi"/>

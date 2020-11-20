@@ -238,7 +238,7 @@
       <feature value="dnf"/>
       <feature value="fmp"/>
       <instance value="1"/>
-      <instance value="2"/>
+      <instance device-pin="a|i|l|n|q|v|z" value="2"/>
       <instance value="3"/>
       <instance value="4"/>
     </driver>
@@ -457,10 +457,10 @@
         <request position="34">
           <signal driver="i2c" instance="1" name="tx"/>
         </request>
-        <request position="35">
+        <request device-pin="a|i|l|n|q|v|z" position="35">
           <signal driver="i2c" instance="2" name="rx"/>
         </request>
-        <request position="36">
+        <request device-pin="a|i|l|n|q|v|z" position="36">
           <signal driver="i2c" instance="2" name="tx"/>
         </request>
         <request position="37">
@@ -1117,7 +1117,7 @@
       <gpio port="b" pin="10">
         <signal af="1" driver="tim" instance="2" name="ch3"/>
         <signal af="3" driver="lptim" instance="2" name="in1"/>
-        <signal af="4" driver="i2c" instance="2" name="scl"/>
+        <signal device-pin="a|i|l|n|q|v|z" af="4" driver="i2c" instance="2" name="scl"/>
         <signal af="5" driver="i2s" instance="2" name="ck"/>
         <signal af="5" driver="spi" instance="2" name="sck"/>
         <signal af="6" driver="dfsdm" instance="1" name="datin7"/>
@@ -1138,7 +1138,7 @@
       <gpio port="b" pin="12">
         <signal af="1" driver="tim" instance="1" name="bkin"/>
         <signal af="3" driver="octospim" name="p1_nclk"/>
-        <signal af="4" driver="i2c" instance="2" name="smba"/>
+        <signal device-pin="a|i|l|n|q|v|z" af="4" driver="i2c" instance="2" name="smba"/>
         <signal af="5" driver="i2s" instance="2" name="ws"/>
         <signal af="5" driver="spi" instance="2" name="nss"/>
         <signal af="6" driver="dfsdm" instance="1" name="datin1"/>

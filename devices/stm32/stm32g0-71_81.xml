@@ -4,9 +4,15 @@
   <device platform="stm32" family="g0" name="71|81" pin="c|e|g|k|r" size="6|8|b" package="i|t|u|y" temperature="3|6|7" variant="|n">
     <naming-schema>{platform}{family}{name}{pin}{size}{package}{temperature}{variant}</naming-schema>
     <valid-device>stm32g071c6t6</valid-device>
+    <valid-device>stm32g071c6u3</valid-device>
     <valid-device>stm32g071c6u6</valid-device>
+    <valid-device>stm32g071c6u7</valid-device>
+    <valid-device>stm32g071c8t3</valid-device>
     <valid-device>stm32g071c8t6</valid-device>
+    <valid-device>stm32g071c8t7</valid-device>
+    <valid-device>stm32g071c8u3</valid-device>
     <valid-device>stm32g071c8u6</valid-device>
+    <valid-device>stm32g071c8u7</valid-device>
     <valid-device>stm32g071cbt3</valid-device>
     <valid-device>stm32g071cbt6</valid-device>
     <valid-device>stm32g071cbt7</valid-device>
@@ -66,8 +72,12 @@
     <valid-device>stm32g081kbt6n</valid-device>
     <valid-device>stm32g081kbu6</valid-device>
     <valid-device>stm32g081kbu6n</valid-device>
+    <valid-device>stm32g081rbi3</valid-device>
     <valid-device>stm32g081rbi6</valid-device>
+    <valid-device>stm32g081rbi7</valid-device>
+    <valid-device>stm32g081rbt3</valid-device>
     <valid-device>stm32g081rbt6</valid-device>
+    <valid-device>stm32g081rbt7</valid-device>
     <driver name="core" type="cortex-m0+">
       <memory device-size="6" name="flash" access="rx" start="0x8000000" size="32768"/>
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="65536"/>
@@ -203,8 +213,8 @@
       <instance value="3"/>
       <instance value="4"/>
     </driver>
-    <driver device-pin="c|k|r" device-variant="" name="usbpd" type="stm32-v1.0"/>
-    <driver device-pin="g|k" device-variant="n" name="usbpd" type="stm32-v1.0"/>
+    <driver device-pin="c|k|r" device-variant="" name="usbpd" type="stm32-v1.4"/>
+    <driver device-pin="g|k" device-variant="n" name="usbpd" type="stm32-v1.4"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="dma" type="stm32-mux">
       <instance value="1"/>

@@ -27,7 +27,9 @@
     <valid-device>stm32l431rct6</valid-device>
     <valid-device>stm32l431rcy6</valid-device>
     <valid-device>stm32l431vci6</valid-device>
+    <valid-device>stm32l431vci7</valid-device>
     <valid-device>stm32l431vct6</valid-device>
+    <valid-device>stm32l431vct7</valid-device>
     <valid-device>stm32l433cbt6</valid-device>
     <valid-device>stm32l433cbt7</valid-device>
     <valid-device>stm32l433cbu6</valid-device>
@@ -1185,7 +1187,7 @@
         <pin position="72" name="PA13 (JTMS-SWDIO)"/>
         <pin device-name="33" device-temperature="3|6|7" position="73" name="VDDUSB" type="power"/>
         <pin device-name="43" device-temperature="6" position="73" name="VDDUSB" type="power"/>
-        <pin device-name="31" device-temperature="6" position="73" name="VDD" type="power"/>
+        <pin device-name="31" device-temperature="6|7" position="73" name="VDD" type="power"/>
         <pin position="74" name="VSS" type="power"/>
         <pin position="75" name="VDD" type="power"/>
         <pin position="76" name="PA14 (JTCK-SWCLK)"/>
@@ -1418,7 +1420,7 @@
         <pin position="C10" name="PC11"/>
         <pin device-name="33" device-temperature="3|6|7" position="C11" name="VDDUSB" type="power"/>
         <pin device-name="43" device-temperature="6" position="C11" name="VDDUSB" type="power"/>
-        <pin device-name="31" device-temperature="6" position="C11" name="VDD" type="power"/>
+        <pin device-name="31" device-temperature="6|7" position="C11" name="VDD" type="power"/>
         <pin position="C12" name="PA10"/>
         <pin position="D1" name="PC14-OSC32_IN (PC14)"/>
         <pin position="D2" name="PE6"/>

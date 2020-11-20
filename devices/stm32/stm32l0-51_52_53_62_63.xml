@@ -31,7 +31,9 @@
     <valid-device>stm32l052c6t6</valid-device>
     <valid-device>stm32l052c6u6</valid-device>
     <valid-device>stm32l052c8t6</valid-device>
+    <valid-device>stm32l052c8t7</valid-device>
     <valid-device>stm32l052c8u6</valid-device>
+    <valid-device>stm32l052c8u7</valid-device>
     <valid-device>stm32l052k6t6</valid-device>
     <valid-device>stm32l052k6t7</valid-device>
     <valid-device>stm32l052k6u6</valid-device>
@@ -836,6 +838,7 @@
         <pin device-name="53" device-size="6|8" device-temperature="6|7" position="1" name="VLCD" type="power"/>
         <pin device-name="63" device-size="8" device-temperature="6" position="1" name="VLCD" type="power"/>
         <pin device-name="51" device-size="8" device-temperature="3|7" position="1" name="VDD" type="power"/>
+        <pin device-name="52" device-size="8" device-temperature="7" position="1" name="VDD" type="power"/>
         <pin device-name="51|52" device-size="6|8" device-temperature="6" position="1" name="VDD" type="power"/>
         <pin position="2" name="PC13"/>
         <pin position="3" name="PC14-OSC32_IN"/>
@@ -871,8 +874,9 @@
         <pin position="33" name="PA12"/>
         <pin position="34" name="PA13"/>
         <pin position="35" name="VSS" type="power"/>
-        <pin device-name="53" device-size="6|8" device-temperature="7" position="36" name="VDD_USB" type="power"/>
+        <pin device-name="53" device-size="6" device-temperature="7" position="36" name="VDD_USB" type="power"/>
         <pin device-name="63" device-size="8" device-temperature="6" position="36" name="VDD_USB" type="power"/>
+        <pin device-name="52|53" device-size="8" device-temperature="7" position="36" name="VDD_USB" type="power"/>
         <pin device-name="52|53" device-size="6|8" device-temperature="6" position="36" name="VDD_USB" type="power"/>
         <pin device-name="51" device-size="8" device-temperature="3|7" position="36" name="VDDIO2" type="power"/>
         <pin device-name="51" device-size="6|8" device-temperature="6" position="36" name="VDDIO2" type="power"/>
@@ -1079,6 +1083,7 @@
         <pin device-name="53" device-size="6|8" device-temperature="6|7" position="1" name="VLCD" type="power"/>
         <pin device-name="62|63" device-size="8" device-temperature="6" position="1" name="VLCD" type="power"/>
         <pin device-name="51" device-size="8" device-temperature="3|7" position="1" name="VDD" type="power"/>
+        <pin device-name="52" device-size="8" device-temperature="7" position="1" name="VDD" type="power"/>
         <pin device-name="51|52" device-size="6|8" device-temperature="6" position="1" name="VDD" type="power"/>
         <pin position="2" name="PC13"/>
         <pin position="3" name="PC14-OSC32_IN"/>
@@ -1114,7 +1119,8 @@
         <pin position="33" name="PA12"/>
         <pin position="34" name="PA13"/>
         <pin position="35" name="VSS" type="power"/>
-        <pin device-name="53" device-size="6|8" device-temperature="7" position="36" name="VDD_USB" type="power"/>
+        <pin device-name="53" device-size="6" device-temperature="7" position="36" name="VDD_USB" type="power"/>
+        <pin device-name="52|53" device-size="8" device-temperature="7" position="36" name="VDD_USB" type="power"/>
         <pin device-name="52|53" device-size="6|8" device-temperature="6" position="36" name="VDD_USB" type="power"/>
         <pin device-name="62|63" device-size="8" device-temperature="6" position="36" name="VDD_USB" type="power"/>
         <pin device-name="51" device-size="8" device-temperature="3|7" position="36" name="VDDIO2" type="power"/>

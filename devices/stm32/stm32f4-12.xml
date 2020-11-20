@@ -6,8 +6,11 @@
     <valid-device>stm32f412ceu6</valid-device>
     <valid-device>stm32f412cgu6</valid-device>
     <valid-device>stm32f412ret6</valid-device>
+    <valid-device>stm32f412ret7</valid-device>
     <valid-device>stm32f412rey6</valid-device>
     <valid-device>stm32f412rey6p</valid-device>
+    <valid-device>stm32f412rey7</valid-device>
+    <valid-device>stm32f412rey7p</valid-device>
     <valid-device>stm32f412rgt6</valid-device>
     <valid-device>stm32f412rgy6</valid-device>
     <valid-device>stm32f412rgy6p</valid-device>
