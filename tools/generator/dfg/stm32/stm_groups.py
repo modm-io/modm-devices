@@ -190,10 +190,13 @@ stm_groups = \
         'name': ['31', '41']
     },{
         'family': ['g0'],
-        'name': ['70']
+        'name': ['70', 'b0']
     },{
         'family': ['g0'],
         'name': ['71', '81']
+    },{
+        'family': ['g0'],
+        'name': ['b1', 'c1']
     },
 
     # STM32G4 devices
