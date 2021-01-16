@@ -57,16 +57,14 @@ class STMDeviceTree:
 
     @staticmethod
     def _properties_from_partname(partname):
-        p = {}
+        did = STMIdentifier.from_string(partname.lower())
+        LOGGER.info("Parsing '{}'".format(did.string))
+        p = {"id": did}
 
         deviceNames = STMDeviceTree.familyFile.query('//Family/SubFamily/Mcu[starts-with(@RefName,"{}")]'
                                                      .format(partname[:12] + "x" + partname[13:]))
         comboDeviceName = sorted([d.get("Name") for d in deviceNames])[0]
         device_file = XMLReader(os.path.join(STMDeviceTree.rootpath, comboDeviceName + ".xml"))
-        did = STMIdentifier.from_string(partname.lower())
-        p["id"] = did
-
-        LOGGER.info("Parsing '{}'".format(did.string))
 
         # information about the core and architecture
         core = device_file.query('//Core')[0].text.lower().replace("arm ", "")
