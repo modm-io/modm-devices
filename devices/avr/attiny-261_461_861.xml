@@ -42,11 +42,11 @@
     <driver name="clock" type="avr"/>
     <driver name="eeprom" type="avr"/>
     <driver device-name="861" name="tc" type="tc16">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="tc" type="tc8">
-      <instance value="0"/>
-      <instance device-name="261|461" value="1"/>
+      <instance name="0"/>
+      <instance device-name="261|461" name="1"/>
     </driver>
     <driver name="usi" type="avr"/>
     <driver name="wdt" type="avr"/>

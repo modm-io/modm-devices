@@ -154,7 +154,7 @@ class STMDeviceTree:
             modules.append(tuple([m.lower() for m in module]))
 
         modules.append( ("flash", "flash", "v1.0"))
-        modules = [m + stm_peripherals.getPeripheralData(did, m) for m in modules]
+        modules = [m + stm_peripherals.getPeripheralData(did, m, stm_header) for m in modules]
 
         p["modules"] = modules
         LOGGER.debug("Available Modules are:\n" + STMDeviceTree._modulesToString(modules))
@@ -347,10 +347,10 @@ class STMDeviceTree:
             else:
                 allSignals = gpioFile.compactQuery('//GPIO_Pin[@Name="{}"]/PinSignal/SpecificParameter[@Name="GPIO_AF"]/..'.format(rname))
                 signalMap = { a.get("Name"): a[0][0].text.lower().replace("gpio_af", "")[:2].replace("_", "") for a in allSignals }
-                altFunctions = [ (s.lower(), (signalMap[s] if s in signalMap else "-1")) for s in localSignals ]
+                altFunctions = [ (s.lower(), signalMap.get(s, "-1")) for s in localSignals ]
 
             afs = []
-            for af in altFunctions:
+            for af in set(altFunctions):
                 for raf in split_multi_af(af[0]):
                     naf = {}
                     naf["driver"], naf["instance"], naf["name"] = raf
@@ -411,7 +411,7 @@ class STMDeviceTree:
         string = ""
         mods = sorted(modules)
         char = mods[0][0][0:1]
-        for _, instance, _, _, _, _ in mods:
+        for _, instance, _, _, _ in mods:
             if not instance.startswith(char):
                 string += "\n"
             string += instance + " \t"
@@ -460,18 +460,29 @@ class STMDeviceTree:
         STMDeviceTree.addMemoryToNode(p, core_child)
         STMDeviceTree.addInterruptTableToNode(p, core_child)
 
-        modules = {}
-        for m, i, _, h, f, pr in p["modules"]:
+        raw_modules = {}
+        # Group modules by name
+        for m, i, _, h, f in p["modules"]:
             # if m in ["fatfs", "freertos"]: continue;
-            if m+h not in modules:
-                modules[m+h] = (m, h, f, pr, [i])
+            if m+h not in raw_modules:
+                raw_modules[m+h] = (m, h, [(i, f)])
             else:
-                if (modules[m+h][1] != h):
-                    print(modules[m+h], "<-", (m, h, f, pr, i))
-                modules[m+h][4].append(i)
+                if (raw_modules[m+h][1] != h):
+                    print(raw_modules[m+h], "<-", (m, h, i, f))
+                raw_modules[m+h][2].append( (i, f) )
+        # Pull out shared instance features
+        modules = {}
+        for (mid, (name, hardware, instances)) in raw_modules.items():
+            shared = defaultdict(int)
+            for (_, features) in instances:
+                for f in features:
+                    shared[f] += 1
+            shared = [f for (f, count) in shared.items() if count == len(instances)]
+            instances = [(i, [f for f in features if f not in shared]) for (i, features) in instances]
+            modules[mid] = (name, hardware, shared, instances)
 
         # add all other modules
-        for name, hardware, features, protocols, instances in modules.values():
+        for name, hardware, shared_features, instances in modules.values():
             driver = tree.addChild("driver")
             driver.setAttributes("name", name, "type", hardware)
             if name == "gpio":
@@ -482,24 +493,26 @@ class STMDeviceTree:
                 if e.name == "feature":
                     return (0, 0, e.get("value", "AAA"))
                 if e.name == "instance":
-                    if e["value"].isdigit():
-                        return (1, int(e["value"]), "")
-                    return (1, 0, e["value"])
+                    if e.get("name", "a").isdigit():
+                        return (1, int(e["name"]), "")
+                    return (1, 0, e["name"])
                 return (1e6, 1e6, 1e6)
             driver.addSortKey(driver_sort_key)
-            for f in features:
+            #
+            for f in shared_features:
                 feat = driver.addChild("feature")
                 feat.setValue(f)
-            # for pr in protocols:
-            #     prot = driver.addChild("protocol")
-            #     prot.setValue(pr)
             # Add all instances to this driver
-            if any(i != name for i in instances):
-                for i in instances:
+            if any(i[0] != name for i in instances):
+                for (instance, features) in instances:
                     inst = driver.addChild("instance")
-                    iname = i[len(name):]
+                    inst.addSortKey(lambda e: e["value"])
+                    iname = instance[len(name):]
                     iname = iname.replace("_m", "cortex-m")
-                    inst.setValue(iname)
+                    inst.setAttribute("name", iname)
+                    for f in features:
+                        feat = inst.addChild("feature")
+                        feat.setValue(f)
 
             if name == "flash":
                 flv = p["flash_latency"]

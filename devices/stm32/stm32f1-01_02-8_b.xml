@@ -62,7 +62,7 @@
       <vector device-name="02" position="42" name="USBWakeUp"/>
     </driver>
     <driver name="adc" type="stm32">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="crc" type="stm32"/>
     <driver name="flash" type="stm32-v1.0">
@@ -73,35 +73,33 @@
       </latency>
     </driver>
     <driver name="i2c" type="stm32">
-      <instance value="1"/>
-      <instance device-pin="c|r|v" value="2"/>
+      <instance name="1"/>
+      <instance device-pin="c|r|v" name="2"/>
     </driver>
     <driver name="iwdg" type="stm32"/>
     <driver name="rcc" type="stm32-v1.0"/>
     <driver name="rtc" type="stm32-v1.1"/>
     <driver name="spi" type="stm32">
-      <instance value="1"/>
-      <instance device-pin="c|r|v" value="2"/>
+      <instance name="1"/>
+      <instance device-pin="c|r|v" name="2"/>
     </driver>
-    <driver name="sys" type="stm32-f1">
-      <feature value="exti"/>
-      <feature value="remap"/>
-    </driver>
+    <driver name="sys" type="stm32-f1"/>
     <driver name="tim" type="stm32-general-purpose">
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
     </driver>
     <driver name="usart" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance device-pin="c|r|v" value="3"/>
+      <feature value="half-duplex"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance device-pin="c|r|v" name="3"/>
     </driver>
     <driver device-name="02" name="usb" type="stm32-v1.1"/>
     <driver name="wwdg" type="stm32-v1.0"/>
     <driver name="dma" type="stm32-channel">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
       <channels instance="1">
         <channel position="1">
           <signal driver="adc" instance="1"/>

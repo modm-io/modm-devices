@@ -189,8 +189,8 @@
     </driver>
     <driver name="ac" type="sam"/>
     <driver name="adc" type="sam">
-      <instance value="0"/>
-      <instance value="1"/>
+      <instance name="0"/>
+      <instance name="1"/>
     </driver>
     <driver name="aes" type="sam"/>
     <driver name="ccl" type="sam"/>
@@ -225,36 +225,36 @@
     <driver name="rstc" type="sam"/>
     <driver name="rtc" type="sam"/>
     <driver name="sdhc" type="sam">
-      <instance value="0"/>
-      <instance device-pin="n|p" value="1"/>
+      <instance name="0"/>
+      <instance device-pin="n|p" name="1"/>
     </driver>
     <driver name="sercom" type="sam">
-      <instance value="0"/>
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
-      <instance value="5"/>
-      <instance device-pin="n|p" value="6"/>
-      <instance device-pin="n|p" value="7"/>
+      <instance name="0"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
+      <instance name="5"/>
+      <instance device-pin="n|p" name="6"/>
+      <instance device-pin="n|p" name="7"/>
     </driver>
     <driver name="supc" type="sam"/>
     <driver name="tc" type="sam">
-      <instance value="0"/>
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance device-pin="j|n|p" value="4"/>
-      <instance device-pin="j|n|p" value="5"/>
-      <instance device-pin="n|p" value="6"/>
-      <instance device-pin="n|p" value="7"/>
+      <instance name="0"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance device-pin="j|n|p" name="4"/>
+      <instance device-pin="j|n|p" name="5"/>
+      <instance device-pin="n|p" name="6"/>
+      <instance device-pin="n|p" name="7"/>
     </driver>
     <driver name="tcc" type="sam">
-      <instance value="0"/>
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance device-pin="j|n|p" value="3"/>
-      <instance device-pin="j|n|p" value="4"/>
+      <instance name="0"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance device-pin="j|n|p" name="3"/>
+      <instance device-pin="j|n|p" name="4"/>
     </driver>
     <driver name="tpi" type="sam"/>
     <driver name="trng" type="sam"/>

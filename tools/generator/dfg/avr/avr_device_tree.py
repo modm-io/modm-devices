@@ -237,10 +237,10 @@ class AVRDeviceTree:
             driver.setAttributes("name", dtype, "type", compatible)
             # Add all instances to this driver
             if any(i != dtype for i in instances):
-                driver.addSortKey(lambda e: e["value"])
+                driver.addSortKey(lambda e: e["name"])
                 for i in instances:
                     inst = driver.addChild("instance")
-                    inst.setValue(i[len(dtype):])
+                    inst.setAttribute("name", i[len(dtype):])
 
         # GPIO driver
         gpio_driver = tree.addChild("driver")

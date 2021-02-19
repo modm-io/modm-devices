@@ -123,7 +123,7 @@
       <vector device-name="11" position="85" name="SPI5"/>
     </driver>
     <driver name="adc" type="stm32">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="crc" type="stm32"/>
     <driver name="flash" type="stm32-v1.0">
@@ -163,16 +163,16 @@
       </latency>
     </driver>
     <driver name="i2c" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
     </driver>
     <driver name="i2s" type="stm32-v2.2">
-      <instance device-name="11" value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance device-name="11" value="4"/>
-      <instance device-name="11" value="5"/>
+      <instance device-name="11" name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance device-name="11" name="4"/>
+      <instance device-name="11" name="5"/>
     </driver>
     <driver name="iwdg" type="stm32"/>
     <driver name="rcc" type="stm32-v1.0"/>
@@ -180,39 +180,38 @@
     <driver device-name="11" device-pin="c" name="sdio" type="stm32"/>
     <driver device-name="01|11" device-pin="r|v" name="sdio" type="stm32"/>
     <driver name="spi" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance device-name="11" device-pin="c|r" value="4"/>
-      <instance device-name="01|11" device-pin="v" value="4"/>
-      <instance device-name="11" value="5"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance device-name="11" device-pin="c|r" name="4"/>
+      <instance device-name="01|11" device-pin="v" name="4"/>
+      <instance device-name="11" name="5"/>
     </driver>
-    <driver name="sys" type="stm32">
-      <feature value="exti"/>
-    </driver>
+    <driver name="sys" type="stm32"/>
     <driver name="tim" type="stm32-advanced">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="tim" type="stm32-general-purpose">
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
-      <instance value="5"/>
-      <instance value="9"/>
-      <instance value="10"/>
-      <instance value="11"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
+      <instance name="5"/>
+      <instance name="9"/>
+      <instance name="10"/>
+      <instance name="11"/>
     </driver>
     <driver name="usart" type="stm32">
+      <feature value="half-duplex"/>
       <feature value="over8"/>
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="6"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="6"/>
     </driver>
     <driver name="usb_otg_fs" type="stm32-v1.2"/>
     <driver name="wwdg" type="stm32-v1.0"/>
     <driver name="dma" type="stm32-stream-channel">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
       <streams instance="1">
         <stream position="0">
           <channel position="0">

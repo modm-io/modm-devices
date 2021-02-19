@@ -77,13 +77,11 @@
       <vector position="59" name="DMA2_Channel4_5"/>
     </driver>
     <driver name="adc" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
     </driver>
-    <driver name="can" type="stm32">
-      <feature value="filter-14"/>
-    </driver>
+    <driver name="can" type="stm32"/>
     <driver name="crc" type="stm32"/>
     <driver name="dac" type="stm32"/>
     <driver name="flash" type="stm32-v1.0">
@@ -95,60 +93,59 @@
     </driver>
     <driver device-pin="v|z" name="fsmc" type="stm32-v1.0"/>
     <driver name="i2c" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="i2s" type="stm32-v1.0">
-      <instance value="2"/>
-      <instance value="3"/>
+      <instance name="2"/>
+      <instance name="3"/>
     </driver>
     <driver name="iwdg" type="stm32"/>
     <driver name="rcc" type="stm32-v1.0"/>
     <driver name="rtc" type="stm32-v1.1"/>
     <driver name="sdio" type="stm32"/>
     <driver name="spi" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
     </driver>
-    <driver name="sys" type="stm32-f1">
-      <feature value="exti"/>
-      <feature value="remap"/>
-    </driver>
+    <driver name="sys" type="stm32-f1"/>
     <driver name="tim" type="stm32-advanced">
-      <instance value="1"/>
-      <instance value="8"/>
+      <instance name="1"/>
+      <instance name="8"/>
     </driver>
     <driver name="tim" type="stm32-basic">
-      <instance value="6"/>
-      <instance value="7"/>
+      <instance name="6"/>
+      <instance name="7"/>
     </driver>
     <driver name="tim" type="stm32-general-purpose">
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
-      <instance value="5"/>
-      <instance value="9"/>
-      <instance value="10"/>
-      <instance value="11"/>
-      <instance value="12"/>
-      <instance value="13"/>
-      <instance value="14"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
+      <instance name="5"/>
+      <instance name="9"/>
+      <instance name="10"/>
+      <instance name="11"/>
+      <instance name="12"/>
+      <instance name="13"/>
+      <instance name="14"/>
     </driver>
     <driver name="uart" type="stm32">
-      <instance value="4"/>
-      <instance value="5"/>
+      <feature value="half-duplex"/>
+      <instance name="4"/>
+      <instance name="5"/>
     </driver>
     <driver name="usart" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
+      <feature value="half-duplex"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
     </driver>
     <driver name="usb" type="stm32-v1.1"/>
     <driver name="wwdg" type="stm32-v1.0"/>
     <driver name="dma" type="stm32-channel">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
       <channels instance="1">
         <channel position="1">
           <signal driver="adc" instance="1"/>

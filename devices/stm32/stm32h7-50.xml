@@ -160,34 +160,30 @@
       <vector position="149" name="WAKEUP_PIN"/>
     </driver>
     <driver name="adc" type="stm32-h7">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
     </driver>
     <driver name="bdma" type="stm32-v1.2"/>
     <driver name="comp" type="stm32-tsmc90_h7_cube">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
-    <driver name="crc" type="stm32">
-      <feature value="polynomial"/>
-      <feature value="reverse"/>
-    </driver>
+    <driver name="crc" type="stm32"/>
     <driver name="cryp" type="stm32-v2.0"/>
     <driver name="dac" type="stm32">
-      <feature value="status"/>
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="dcmi" type="stm32"/>
     <driver name="debug" type="stm32-v1.0"/>
     <driver name="dfsdm" type="stm32-v1.0">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="dma2d" type="stm32"/>
     <driver name="eth" type="stm32-v3.0"/>
     <driver name="fdcan" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="950">
@@ -215,38 +211,36 @@
     <driver name="hdmi_cec" type="stm32-v2.0"/>
     <driver name="hrtim" type="stm32-hrtim_h7"/>
     <driver name="i2c" type="stm32-extended">
-      <feature value="dnf"/>
-      <feature value="fmp"/>
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
     </driver>
     <driver name="i2s" type="stm32-v1.0">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
     </driver>
     <driver name="iwdg" type="stm32">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="jpeg" type="stm32-v1.0"/>
     <driver name="lptim" type="stm32-v1.1">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
-      <instance value="5"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
+      <instance name="5"/>
     </driver>
     <driver name="lpuart" type="stm32-v1.3">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="ltdc" type="stm32-v1.0"/>
     <driver name="mdios" type="stm32-v1.0"/>
     <driver name="mdma" type="stm32-v1.0"/>
     <driver name="opamp" type="stm32-v1.0">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="pwr" type="stm32-v1.0"/>
     <driver name="quadspi" type="stm32-v1.0"/>
@@ -254,73 +248,81 @@
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v2.7"/>
     <driver name="sai" type="stm32-sai1_h7_cube">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
     </driver>
     <driver name="sdmmc" type="stm32-v1.0">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="spdifrx" type="stm32-spdifrx1_h7_cube">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="spi" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
-      <instance device-pin="i|x|z" value="5"/>
-      <instance value="6"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
+      <instance device-pin="i|x|z" name="5"/>
+      <instance name="6"/>
     </driver>
     <driver name="swpmi" type="stm32-v1.0">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
-    <driver name="sys" type="stm32">
-      <feature value="exti"/>
-    </driver>
+    <driver name="sys" type="stm32"/>
     <driver name="tim" type="stm32-advanced">
-      <instance value="1"/>
-      <instance value="8"/>
+      <instance name="1"/>
+      <instance name="8"/>
     </driver>
     <driver name="tim" type="stm32-basic">
-      <instance value="6"/>
-      <instance value="7"/>
+      <instance name="6"/>
+      <instance name="7"/>
     </driver>
     <driver name="tim" type="stm32-general-purpose">
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
-      <instance value="5"/>
-      <instance value="12"/>
-      <instance value="13"/>
-      <instance value="14"/>
-      <instance value="15"/>
-      <instance value="16"/>
-      <instance value="17"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
+      <instance name="5"/>
+      <instance name="12"/>
+      <instance name="13"/>
+      <instance name="14"/>
+      <instance name="15"/>
+      <instance name="16"/>
+      <instance name="17"/>
     </driver>
     <driver name="uart" type="stm32">
-      <instance value="4"/>
-      <instance value="5"/>
-      <instance value="7"/>
-      <instance value="8"/>
+      <feature value="7-bit"/>
+      <feature value="half-duplex"/>
+      <feature value="over8"/>
+      <feature value="swap"/>
+      <feature value="tcbgt"/>
+      <instance name="4"/>
+      <instance name="5"/>
+      <instance name="7"/>
+      <instance name="8"/>
     </driver>
     <driver name="usart" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="6"/>
+      <feature value="7-bit"/>
+      <feature value="half-duplex"/>
+      <feature value="over8"/>
+      <feature value="swap"/>
+      <feature value="tcbgt"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="6"/>
     </driver>
     <driver name="usb_otg_fs" type="stm32-v2.4"/>
     <driver name="usb_otg_hs" type="stm32-v2.0"/>
     <driver name="vrefbuf" type="stm32-v1.0"/>
     <driver name="wwdg" type="stm32-v2.0">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="dma" type="stm32-mux">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
       <requests>
         <request position="1">
           <signal driver="dma" name="generator0"/>

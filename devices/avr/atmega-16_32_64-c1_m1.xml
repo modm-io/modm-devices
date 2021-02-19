@@ -31,10 +31,10 @@
     <driver device-type="m1" name="psc" type="avr"/>
     <driver name="spi" type="avr"/>
     <driver name="tc" type="tc16">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="tc" type="tc8">
-      <instance value="0"/>
+      <instance name="0"/>
     </driver>
     <driver name="wdt" type="avr"/>
     <driver name="gpio" type="avr">

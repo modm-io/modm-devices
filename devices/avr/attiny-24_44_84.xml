@@ -27,10 +27,10 @@
     <driver name="clock" type="avr"/>
     <driver name="eeprom" type="avr"/>
     <driver name="tc" type="tc16">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="tc" type="tc8">
-      <instance value="0"/>
+      <instance name="0"/>
     </driver>
     <driver name="usi" type="avr"/>
     <driver name="wdt" type="avr"/>

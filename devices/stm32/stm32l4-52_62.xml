@@ -121,24 +121,22 @@
       <vector position="84" name="I2C4_ER"/>
     </driver>
     <driver name="adc" type="stm32-f3">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver device-name="62" name="aes" type="stm32-v1.1"/>
     <driver name="can" type="stm32">
-      <feature value="filter-28"/>
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="comp" type="stm32-tsmc90_orca512_cube">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="crc" type="stm32"/>
     <driver name="dac" type="stm32">
-      <feature value="status"/>
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="dfsdm" type="stm32-v1.0">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1000">
@@ -156,72 +154,75 @@
       </latency>
     </driver>
     <driver name="i2c" type="stm32-extended">
-      <feature value="dnf"/>
-      <feature value="fmp"/>
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
     </driver>
     <driver name="irtim" type="stm32-v1.0"/>
     <driver name="iwdg" type="stm32"/>
     <driver name="lptim" type="stm32-v1.0">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="lpuart" type="stm32-v1.1">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="opamp" type="stm32-v1.0">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="quadspi" type="stm32-v2.2"/>
     <driver name="rcc" type="stm32-v1.0"/>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v2.4"/>
     <driver name="sai" type="stm32-v1.1">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver device-pin="r|v" device-variant="" name="sdmmc" type="stm32-v1.3">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="spi" type="stm32">
       <feature value="data-size"/>
       <feature value="fifo"/>
-      <feature value="nss-pulse"/>
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
     </driver>
-    <driver name="sys" type="stm32">
-      <feature value="exti"/>
-    </driver>
+    <driver name="sys" type="stm32"/>
     <driver name="tim" type="stm32-advanced">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="tim" type="stm32-basic">
-      <instance value="6"/>
+      <instance name="6"/>
     </driver>
     <driver name="tim" type="stm32-general-purpose">
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="15"/>
-      <instance value="16"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="15"/>
+      <instance name="16"/>
     </driver>
     <driver name="tsc" type="stm32-v1.0"/>
     <driver name="uart" type="stm32-extended">
-      <instance value="4"/>
+      <feature value="7-bit"/>
+      <feature value="half-duplex"/>
+      <feature value="over8"/>
+      <feature value="swap"/>
+      <instance name="4"/>
     </driver>
     <driver name="usart" type="stm32-extended">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
+      <feature value="7-bit"/>
+      <feature value="half-duplex"/>
+      <feature value="over8"/>
+      <feature value="swap"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
     </driver>
     <driver name="usb" type="stm32-v2.1"/>
     <driver name="wwdg" type="stm32-v1.0"/>
     <driver name="dma" type="stm32-channel-request">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
       <channels instance="1">
         <channel position="1">
           <request position="0">

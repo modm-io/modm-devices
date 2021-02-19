@@ -42,8 +42,8 @@
     <driver name="comp" type="nrf52"/>
     <driver name="ecb" type="nrf52"/>
     <driver name="egu" type="nrf52">
-      <instance value="0"/>
-      <instance value="1"/>
+      <instance name="0"/>
+      <instance name="1"/>
     </driver>
     <driver name="ficr" type="nrf52"/>
     <driver name="gpiote" type="nrf52"/>
@@ -52,53 +52,53 @@
     <driver name="power" type="nrf52"/>
     <driver name="ppi" type="nrf52"/>
     <driver name="pwm" type="nrf52">
-      <instance value="0"/>
+      <instance name="0"/>
     </driver>
     <driver name="qdec" type="nrf52"/>
     <driver name="radio" type="nrf52"/>
     <driver name="rng" type="nrf52"/>
     <driver name="rtc" type="nrf52">
-      <instance value="0"/>
-      <instance value="1"/>
+      <instance name="0"/>
+      <instance name="1"/>
     </driver>
     <driver name="saadc" type="nrf52"/>
     <driver name="spi" type="nrf52">
-      <instance value="0"/>
+      <instance name="0"/>
     </driver>
     <driver name="spim" type="nrf52">
-      <instance value="0"/>
+      <instance name="0"/>
     </driver>
     <driver name="spis" type="nrf52">
-      <instance value="0"/>
+      <instance name="0"/>
     </driver>
     <driver name="swi" type="nrf52">
-      <instance value="0"/>
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
-      <instance value="5"/>
+      <instance name="0"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
+      <instance name="5"/>
     </driver>
     <driver name="temp" type="nrf52"/>
     <driver name="timer" type="nrf52">
-      <instance value="0"/>
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="0"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="twi" type="nrf52">
-      <instance value="0"/>
+      <instance name="0"/>
     </driver>
     <driver name="twim" type="nrf52">
-      <instance value="0"/>
+      <instance name="0"/>
     </driver>
     <driver name="twis" type="nrf52">
-      <instance value="0"/>
+      <instance name="0"/>
     </driver>
     <driver name="uart" type="nrf52">
-      <instance value="0"/>
+      <instance name="0"/>
     </driver>
     <driver name="uarte" type="nrf52">
-      <instance value="0"/>
+      <instance name="0"/>
     </driver>
     <driver name="uicr" type="nrf52"/>
     <driver name="wdt" type="nrf52"/>

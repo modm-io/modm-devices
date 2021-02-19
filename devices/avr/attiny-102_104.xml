@@ -17,7 +17,7 @@
     <driver name="adc" type="avr"/>
     <driver name="clock" type="avr"/>
     <driver name="tc" type="tc16">
-      <instance value="0"/>
+      <instance name="0"/>
     </driver>
     <driver name="usart" type="avr"/>
     <driver name="wdt" type="avr"/>
