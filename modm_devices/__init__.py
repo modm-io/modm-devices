@@ -10,10 +10,18 @@ from . import device_file
 from . import device_identifier
 from . import device
 from . import parser
+from . import stm32
 
 from .pkg import naturalkey
 from .exception import ParserException
 
-__all__ = ['exception', 'device_file', 'device_identifier', 'device', 'parser', 'pkg']
+__all__ = [
+	'exception',
+	'device_file',
+	'device_identifier',
+	'device',
+	'parser',
+	'pkg'
+]
 
 __version__ = "0.2.8"

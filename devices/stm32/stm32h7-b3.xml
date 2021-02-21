@@ -170,36 +170,32 @@
       <vector position="154" name="BDMA1"/>
     </driver>
     <driver name="adc" type="stm32-h7">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="bdma1" type="stm32-v1.1"/>
     <driver name="bdma2" type="stm32-v1.2"/>
     <driver name="comp" type="stm32-tsmc90_h7_cube">
-      <instance value="1"/>
-      <instance device-pin="a|i|l|n|q|v|z" value="2"/>
+      <instance name="1"/>
+      <instance device-pin="a|i|l|n|q|v|z" name="2"/>
     </driver>
-    <driver name="crc" type="stm32">
-      <feature value="polynomial"/>
-      <feature value="reverse"/>
-    </driver>
+    <driver name="crc" type="stm32"/>
     <driver name="cryp" type="stm32-v2.0"/>
     <driver name="dac" type="stm32">
-      <feature value="status"/>
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver device-pin="a|i|l|n|q|v|z" name="dcmi" type="stm32"/>
     <driver name="debug" type="stm32-v1.0"/>
     <driver name="dfsdm" type="stm32-v1.0">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="dma2d" type="stm32"/>
     <driver name="dts" type="stm32-v1.0"/>
     <driver name="fdcan" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="950">
@@ -227,47 +223,45 @@
     <driver name="hash" type="stm32-v2.0"/>
     <driver name="hdmi_cec" type="stm32-v2.0"/>
     <driver name="i2c" type="stm32-extended">
-      <feature value="dnf"/>
-      <feature value="fmp"/>
-      <instance value="1"/>
-      <instance device-pin="a|i|l|n|q|v|z" value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
+      <instance name="1"/>
+      <instance device-pin="a|i|l|n|q|v|z" name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
     </driver>
     <driver name="i2s" type="stm32-v1.1">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="6"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="6"/>
     </driver>
     <driver name="iwdg" type="stm32">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="jpeg" type="stm32-v1.0"/>
     <driver name="lptim" type="stm32-v1.1">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
     </driver>
     <driver name="lpuart" type="stm32-v1.3">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="ltdc" type="stm32-v1.0"/>
     <driver name="mdios" type="stm32-v1.0"/>
     <driver name="mdma" type="stm32-v1.0"/>
     <driver name="octospi" type="stm32-v2.1">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="octospim" type="stm32-v2.1"/>
     <driver name="opamp" type="stm32-v1.0">
-      <instance value="1"/>
-      <instance device-pin="a|i|l|n|q|v|z" value="2"/>
+      <instance name="1"/>
+      <instance device-pin="a|i|l|n|q|v|z" name="2"/>
     </driver>
     <driver name="otfdec" type="stm32-v1.0">
-      <instance value="1"/>
-      <instance device-pin="a|i|l" device-variant="q" value="2"/>
-      <instance device-pin="i|n|z" device-variant="" value="2"/>
+      <instance name="1"/>
+      <instance device-pin="a|i|l" device-variant="q" name="2"/>
+      <instance device-pin="i|n|z" device-variant="" name="2"/>
     </driver>
     <driver device-pin="a|i|l|n|q|v|z" name="pssi" type="stm32-v3.0"/>
     <driver name="pwr" type="stm32-v1.0"/>
@@ -275,12 +269,12 @@
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v2.7"/>
     <driver name="sai" type="stm32-v2.1">
-      <instance device-pin="a|i|l|n|q|v|z" value="1"/>
-      <instance value="2"/>
+      <instance device-pin="a|i|l|n|q|v|z" name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="sdmmc" type="stm32-v1.0">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver device-pin="l|v" device-package="h" device-variant="q" name="spdifrx" type="stm32-spdifrx1_h7_cube"/>
     <driver device-pin="n|v" device-package="h" device-variant="" name="spdifrx" type="stm32-spdifrx1_h7_cube"/>
@@ -290,67 +284,75 @@
     <driver device-pin="q" device-package="y" device-variant="q" name="spdifrx" type="stm32-spdifrx1_h7_cube"/>
     <driver device-pin="z" device-package="t" device-variant="q" name="spdifrx" type="stm32-spdifrx1_h7_cube"/>
     <driver name="spi" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance device-pin="a|i|l|n|q|v|z" value="4"/>
-      <instance device-pin="a|i|l|n|z" value="5"/>
-      <instance value="6"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance device-pin="a|i|l|n|q|v|z" name="4"/>
+      <instance device-pin="a|i|l|n|z" name="5"/>
+      <instance name="6"/>
     </driver>
     <driver name="swpmi" type="stm32-v1.0">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
-    <driver name="sys" type="stm32">
-      <feature value="exti"/>
-    </driver>
+    <driver name="sys" type="stm32"/>
     <driver name="tim" type="stm32-advanced">
-      <instance value="1"/>
-      <instance value="8"/>
+      <instance name="1"/>
+      <instance name="8"/>
     </driver>
     <driver name="tim" type="stm32-basic">
-      <instance value="6"/>
-      <instance value="7"/>
+      <instance name="6"/>
+      <instance name="7"/>
     </driver>
     <driver name="tim" type="stm32-general-purpose">
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
-      <instance value="5"/>
-      <instance value="12"/>
-      <instance value="13"/>
-      <instance value="14"/>
-      <instance value="15"/>
-      <instance value="16"/>
-      <instance value="17"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
+      <instance name="5"/>
+      <instance name="12"/>
+      <instance name="13"/>
+      <instance name="14"/>
+      <instance name="15"/>
+      <instance name="16"/>
+      <instance name="17"/>
     </driver>
     <driver name="uart" type="stm32">
-      <instance value="4"/>
-      <instance value="5"/>
-      <instance value="7"/>
-      <instance device-pin="a|i|l|n|q|v|z" value="8"/>
-      <instance device-pin="a|i|l|n|q|v|z" value="9"/>
+      <feature value="7-bit"/>
+      <feature value="half-duplex"/>
+      <feature value="over8"/>
+      <feature value="swap"/>
+      <feature value="tcbgt"/>
+      <instance name="4"/>
+      <instance name="5"/>
+      <instance name="7"/>
+      <instance device-pin="a|i|l|n|q|v|z" name="8"/>
+      <instance device-pin="a|i|l|n|q|v|z" name="9"/>
     </driver>
     <driver name="usart" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="6"/>
-      <instance device-pin="l|v" device-package="h" device-variant="q" value="10"/>
-      <instance device-pin="n|v" device-package="h" device-variant="" value="10"/>
-      <instance device-pin="v|z" device-package="t" device-variant="" value="10"/>
-      <instance device-pin="a" device-package="i" device-variant="q" value="10"/>
-      <instance device-pin="i" device-package="k|t" device-variant="|q" value="10"/>
-      <instance device-pin="q" device-package="y" device-variant="q" value="10"/>
-      <instance device-pin="z" device-package="t" device-variant="q" value="10"/>
+      <feature value="7-bit"/>
+      <feature value="half-duplex"/>
+      <feature value="over8"/>
+      <feature value="swap"/>
+      <feature value="tcbgt"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="6"/>
+      <instance device-pin="l|v" device-package="h" device-variant="q" name="10"/>
+      <instance device-pin="n|v" device-package="h" device-variant="" name="10"/>
+      <instance device-pin="v|z" device-package="t" device-variant="" name="10"/>
+      <instance device-pin="a" device-package="i" device-variant="q" name="10"/>
+      <instance device-pin="i" device-package="k|t" device-variant="|q" name="10"/>
+      <instance device-pin="q" device-package="y" device-variant="q" name="10"/>
+      <instance device-pin="z" device-package="t" device-variant="q" name="10"/>
     </driver>
     <driver name="usb_otg_hs" type="stm32-v2.0"/>
     <driver name="vrefbuf" type="stm32-v1.0"/>
     <driver name="wwdg" type="stm32-v2.0">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="dma" type="stm32-mux">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
       <requests>
         <request position="1">
           <signal driver="dma" name="generator0"/>

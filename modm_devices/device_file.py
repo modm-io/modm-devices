@@ -6,12 +6,15 @@
 # All rights reserved.
 
 import lxml.etree
+import copy
 
 from collections import defaultdict
 
 from .device import Device
+from .stm32.device import Stm32Device
 from .device_identifier import DeviceIdentifier
 from .device_identifier import MultiDeviceIdentifier
+from .access import read_only
 
 from .exception import ParserException
 
@@ -45,10 +48,14 @@ class DeviceFile:
         valid_devices = [node.text for node in device_node.iterfind(self._VALID_DEVICE)]
         devices = identifiers
         if len(invalid_devices):
-            devices = [did for did in devices if did.string not in invalid_devices]
+            devices = (did for did in devices if did.string not in invalid_devices)
         if len(valid_devices):
-            devices = [did for did in devices if did.string in valid_devices]
-        return [Device(did, self) for did in devices]
+            devices = (did for did in devices if did.string in valid_devices)
+        def build_device(did, device_file):
+            if did.platform == "stm32":
+                return Stm32Device(did, device_file)
+            return Device(did, device_file)
+        return [build_device(did, self) for did in devices]
 
     @staticmethod
     def is_valid(node, identifier: DeviceIdentifier):
@@ -59,14 +66,13 @@ class DeviceFile:
         Returns:
             True if the selectors match, False otherwise.
         """
-        device_keys = filter(lambda k: k.startswith(DeviceFile._PREFIX_ATTRIBUTE_DEVICE), node.attrib.keys())
-        properties = {k.replace(DeviceFile._PREFIX_ATTRIBUTE_DEVICE, ''):node.attrib[k].split("|") for k in device_keys}
-        return not any(identifier[key] not in value for key, value in properties.items())
+        device_keys = (k for k in node.attrib.keys() if k.startswith(DeviceFile._PREFIX_ATTRIBUTE_DEVICE))
+        properties = ((k.replace(DeviceFile._PREFIX_ATTRIBUTE_DEVICE, ''), node.attrib[k].split("|"))
+                      for k in device_keys)
+        return all(identifier[key] in value for key, value in properties)
 
     def get_properties(self, identifier: DeviceIdentifier):
         class Converter:
-            """
-            """
             def __init__(self, identifier: DeviceIdentifier):
                 self.identifier = identifier
 
@@ -79,9 +85,9 @@ class DeviceFile:
                 return DeviceFile.is_valid(node, self.identifier)
 
             def strip_attrib(self, node):
-                stripped_keys = filter(lambda k: not k.startswith(DeviceFile._PREFIX_ATTRIBUTE_DEVICE), node.attrib.keys())
+                stripped_keys = (k for k in node.attrib.keys() if not k.startswith(DeviceFile._PREFIX_ATTRIBUTE_DEVICE))
                 if node.getparent().getparent() is None and node.tag == 'device':
-                    stripped_keys = filter(lambda k: k not in self.identifier.keys(), stripped_keys)
+                    stripped_keys = (k for k in stripped_keys if k not in self.identifier.keys())
                 return {k:node.attrib[k] for k in stripped_keys}
 
             def to_dict(self, t):
@@ -90,14 +96,13 @@ class DeviceFile:
                     return {}
                 attrib = self.strip_attrib(t)
                 d = {t.tag: {} if len(attrib) else None}
-                children = []
-                for c in t:
-                    if self.is_valid(c):
-                        children.append(c)
+                children = filter(self.is_valid, t)
                 if children:
                     dd = defaultdict(list)
                     for dc in map(self.to_dict, children):
+                        # print(dc)
                         for k, v in dc.items():
+                            # if k == "signal" and v.get("name") == "seg40": print(v)
                             dd[k].append(v)
                     dk = {}
                     for k, v in dd.items():
@@ -106,15 +111,18 @@ class DeviceFile:
                                 raise ParserException("Attribute '{}' cannot be a list!".format(k))
                             k = k.replace(DeviceFile._PREFIX_ATTRIBUTE, '')
                             v = v[0]
-                        dk[k] = v
+                        dk[k] = read_only(v)
                     d = {t.tag: dk}
                 if list(attrib.keys()) == ['value']:
                     d[t.tag] = attrib['value']
                 elif len(attrib):
                     if any(k in d[t.tag] for k in attrib.keys()):
                         raise ParserException("Node children are overwriting attribute '{}'!".format(k))
+                    # print(attrib.items())
                     d[t.tag].update(attrib.items())
-                return d
+                return read_only({k:read_only(v) for k,v in d.items()})
 
         properties = Converter(identifier).to_dict(self.rootnode.find("device"))
+        # print(properties)
+        # exit(1)
         return properties["device"]

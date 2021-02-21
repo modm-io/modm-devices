@@ -47,10 +47,7 @@
       <vector device-size="c" position="29" name="USART3_6"/>
     </driver>
     <driver name="adc" type="stm32-f0"/>
-    <driver name="crc" type="stm32">
-      <feature value="polynomial"/>
-      <feature value="reverse"/>
-    </driver>
+    <driver name="crc" type="stm32"/>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1800">
         <wait-state ws="0" hclk-max="24000000"/>
@@ -58,54 +55,49 @@
       </latency>
     </driver>
     <driver name="i2c" type="stm32-extended">
-      <feature value="dnf"/>
-      <feature value="fmp"/>
-      <instance value="1"/>
-      <instance device-size="8|c" value="2"/>
+      <instance name="1"/>
+      <instance device-size="8|c" name="2"/>
     </driver>
     <driver name="irtim" type="stm32-v1.0"/>
-    <driver name="iwdg" type="stm32">
-      <feature value="window"/>
-    </driver>
+    <driver name="iwdg" type="stm32"/>
     <driver name="rcc" type="stm32-v1.0"/>
     <driver name="rtc" type="stm32-v2.4"/>
     <driver name="spi" type="stm32">
       <feature value="data-size"/>
       <feature value="fifo"/>
-      <feature value="nss-pulse"/>
-      <instance value="1"/>
-      <instance device-size="8|c" value="2"/>
+      <instance name="1"/>
+      <instance device-size="8|c" name="2"/>
     </driver>
-    <driver name="sys" type="stm32">
-      <feature value="cfgr2"/>
-      <feature value="exti"/>
-    </driver>
+    <driver name="sys" type="stm32"/>
     <driver name="tim" type="stm32-advanced">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver device-size="8|c" name="tim" type="stm32-basic">
-      <instance value="6"/>
-      <instance device-size="c" value="7"/>
+      <instance name="6"/>
+      <instance device-size="c" name="7"/>
     </driver>
     <driver name="tim" type="stm32-general-purpose">
-      <instance value="3"/>
-      <instance value="14"/>
-      <instance device-size="8|c" value="15"/>
-      <instance value="16"/>
-      <instance value="17"/>
+      <instance name="3"/>
+      <instance name="14"/>
+      <instance device-size="8|c" name="15"/>
+      <instance name="16"/>
+      <instance name="17"/>
     </driver>
     <driver name="usart" type="stm32-extended">
-      <feature value="wakeup"/>
-      <instance value="1"/>
-      <instance device-size="8|c" value="2"/>
-      <instance device-size="c" value="3"/>
-      <instance device-size="c" value="4"/>
-      <instance device-size="c" value="5"/>
-      <instance device-size="c" value="6"/>
+      <feature device-size="c" value="7-bit"/>
+      <feature value="half-duplex"/>
+      <feature value="over8"/>
+      <feature value="swap"/>
+      <instance name="1"/>
+      <instance device-size="8|c" name="2"/>
+      <instance device-size="c" name="3"/>
+      <instance device-size="c" name="4"/>
+      <instance device-size="c" name="5"/>
+      <instance device-size="c" name="6"/>
     </driver>
     <driver name="wwdg" type="stm32-v1.0"/>
     <driver device-size="4|6|8" name="dma" type="stm32-channel">
-      <instance value="1"/>
+      <instance name="1"/>
       <channels instance="1">
         <channel position="1">
           <signal driver="adc"/>
@@ -213,8 +205,8 @@
       </channels>
     </driver>
     <driver device-size="c" name="dma" type="stm32-channel-request">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
       <channels instance="1">
         <channel position="1">
           <request position="1">

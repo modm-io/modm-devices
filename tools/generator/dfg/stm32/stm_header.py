@@ -86,6 +86,11 @@ class STMHeader:
             STMHeader.CACHE_HEADER[self.header_file]["defines"] = self._get_defines()
         return STMHeader.CACHE_HEADER[self.header_file]["defines"]
 
+    def get_filtered_defines(self):
+        if "filtered_defines" not in STMHeader.CACHE_HEADER[self.header_file]:
+            STMHeader.CACHE_HEADER[self.header_file]["filtered_defines"] = self._get_filtered_defines()
+        return STMHeader.CACHE_HEADER[self.header_file]["filtered_defines"]
+
     def get_memory_map(self):
         if "memmap" not in STMHeader.CACHE_HEADER[self.header_file]:
             STMHeader.CACHE_HEADER[self.header_file]["memmap"] = self._get_memmap()
@@ -128,7 +133,7 @@ class STMHeader:
         # create the destination directory
         destination = (STMHeader.CACHE_PATH / self.family_folder / self.header_file).with_suffix(".cpp").absolute()
         executable = destination.with_suffix("")
-        defines = self._get_filtered_defines()
+        defines = self.get_filtered_defines()
         if not executable.exists():
             # generate the cpp file from the template
             LOGGER.info("Generating {} ...".format(destination.name))

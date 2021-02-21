@@ -119,20 +119,23 @@ class DeviceTree:
         for ch in self.children:
             ch._sortTree()
 
-    def toString(self, indent=0):
+    def toString(self, indent=0, long_ids=False):
         ind = ' ' * indent
         if indent >= 2:
             ind = ind[:-2] + '. '
         if self.parent is None or self.parent.ids == self.ids:
             ident = ""
         else:
-            ident = self.ids.string
+            if long_ids:
+                ident = " ".join(did.string for did in self.ids)
+            else:
+                ident = self.ids.string
         string = "{}{} {}\n".format(
             ind,
             self._toCompactString(),
             ident)
         for ch in self.children:
-            string += ch.toString(indent + 2)
+            string += ch.toString(indent + 2, long_ids)
         return string
 
     def _toCompactString(self):

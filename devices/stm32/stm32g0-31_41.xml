@@ -88,15 +88,10 @@
       <vector device-name="41" position="31" name="AES_RNG"/>
     </driver>
     <driver name="adc" type="stm32-g0">
-      <feature value="calfact"/>
-      <feature value="oversampler"/>
-      <feature value="prescaler"/>
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver device-name="41" name="aes" type="stm32-v1.0"/>
-    <driver name="crc" type="stm32">
-      <feature value="reverse"/>
-    </driver>
+    <driver name="crc" type="stm32"/>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1000">
         <wait-state ws="0" hclk-max="8000000"/>
@@ -109,24 +104,20 @@
       </latency>
     </driver>
     <driver name="i2c" type="stm32-extended">
-      <feature value="dnf"/>
-      <feature value="fmp"/>
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="i2s" type="stm32-v3.5">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="irtim" type="stm32-v1.0"/>
-    <driver name="iwdg" type="stm32">
-      <feature value="window"/>
-    </driver>
+    <driver name="iwdg" type="stm32"/>
     <driver name="lptim" type="stm32-v1.4">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="lpuart" type="stm32-v1.2">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="rcc" type="stm32-v1.0"/>
     <driver device-name="41" name="rng" type="stm32"/>
@@ -134,33 +125,32 @@
     <driver name="spi" type="stm32">
       <feature value="data-size"/>
       <feature value="fifo"/>
-      <feature value="nss-pulse"/>
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
-    <driver name="sys" type="stm32">
-      <feature value="cfgr2"/>
-      <feature value="exti"/>
-      <feature value="itline"/>
-    </driver>
+    <driver name="sys" type="stm32"/>
     <driver name="tim" type="stm32-advanced">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="tim" type="stm32-general-purpose">
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="14"/>
-      <instance value="16"/>
-      <instance value="17"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="14"/>
+      <instance name="16"/>
+      <instance name="17"/>
     </driver>
     <driver name="usart" type="stm32-extended">
+      <feature value="7-bit"/>
+      <feature value="half-duplex"/>
+      <feature value="over8"/>
+      <feature value="swap"/>
       <feature value="tcbgt"/>
-      <instance value="1"/>
-      <instance device-pin="c|f|g|k|y" value="2"/>
+      <instance name="1"/>
+      <instance device-pin="c|f|g|k|y" name="2"/>
     </driver>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="dma" type="stm32-mux">
-      <instance value="1"/>
+      <instance name="1"/>
       <requests>
         <request position="1">
           <signal driver="dma" name="generator0"/>

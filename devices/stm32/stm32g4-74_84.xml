@@ -200,37 +200,34 @@
       <vector position="101" name="FMAC"/>
     </driver>
     <driver name="adc" type="stm32-f3">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
-      <instance value="5"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
+      <instance name="5"/>
     </driver>
     <driver device-name="84" name="aes" type="stm32-v1.0"/>
     <driver name="comp" type="stm32-tsmc90_g4_rockfish_cube">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
-      <instance value="5"/>
-      <instance value="6"/>
-      <instance value="7"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
+      <instance name="5"/>
+      <instance name="6"/>
+      <instance name="7"/>
     </driver>
     <driver name="cordic" type="stm32-v1.0"/>
-    <driver name="crc" type="stm32">
-      <feature value="reverse"/>
-    </driver>
+    <driver name="crc" type="stm32"/>
     <driver name="dac" type="stm32">
-      <feature value="status"/>
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
     </driver>
     <driver name="fdcan" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
     </driver>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1000">
@@ -253,100 +250,98 @@
     <driver name="fmac" type="stm32-v1.0"/>
     <driver device-pin="p|q|v" name="fmc" type="stm32-v2.2"/>
     <driver name="hrtim" type="stm32-hrtim_g4">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="i2c" type="stm32-extended">
-      <feature value="dnf"/>
-      <feature value="fmp"/>
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
     </driver>
     <driver name="i2s" type="stm32-v3.5">
-      <instance value="2"/>
-      <instance value="3"/>
+      <instance name="2"/>
+      <instance name="3"/>
     </driver>
     <driver name="irtim" type="stm32-v1.0"/>
-    <driver name="iwdg" type="stm32">
-      <feature value="window"/>
-    </driver>
+    <driver name="iwdg" type="stm32"/>
     <driver name="lptim" type="stm32-v1.4">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="lpuart" type="stm32-v1.3">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="opamp" type="stm32-g4_tsmc90_fastopamp_cube">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
-      <instance value="5"/>
-      <instance value="6"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
+      <instance name="5"/>
+      <instance name="6"/>
     </driver>
     <driver name="quadspi" type="stm32-v4.1">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="rcc" type="stm32-v1.0"/>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v1.1"/>
     <driver name="sai" type="stm32-v2.1">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="spi" type="stm32">
       <feature value="data-size"/>
       <feature value="fifo"/>
-      <feature value="nss-pulse"/>
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance device-pin="m|p|q|v" value="4"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance device-pin="m|p|q|v" name="4"/>
     </driver>
-    <driver name="sys" type="stm32">
-      <feature value="ccm-wp"/>
-      <feature value="cfgr2"/>
-      <feature value="exti"/>
-      <feature value="fpu"/>
-    </driver>
+    <driver name="sys" type="stm32"/>
     <driver name="tim" type="stm32-advanced">
-      <instance value="1"/>
-      <instance value="8"/>
-      <instance value="20"/>
+      <instance name="1"/>
+      <instance name="8"/>
+      <instance name="20"/>
     </driver>
     <driver name="tim" type="stm32-basic">
-      <instance value="6"/>
-      <instance value="7"/>
+      <instance name="6"/>
+      <instance name="7"/>
     </driver>
     <driver name="tim" type="stm32-general-purpose">
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
-      <instance value="5"/>
-      <instance value="15"/>
-      <instance value="16"/>
-      <instance value="17"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
+      <instance name="5"/>
+      <instance name="15"/>
+      <instance name="16"/>
+      <instance name="17"/>
     </driver>
     <driver device-pin="m|p|q|r|v" name="uart" type="stm32-extended">
+      <feature value="7-bit"/>
+      <feature value="half-duplex"/>
+      <feature value="over8"/>
+      <feature value="swap"/>
       <feature value="tcbgt"/>
-      <instance value="4"/>
-      <instance value="5"/>
+      <instance name="4"/>
+      <instance name="5"/>
     </driver>
     <driver name="ucpd" type="stm32-v1.0">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="usart" type="stm32-extended">
+      <feature value="7-bit"/>
+      <feature value="half-duplex"/>
+      <feature value="over8"/>
+      <feature value="swap"/>
       <feature value="tcbgt"/>
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
     </driver>
     <driver name="usb" type="stm32-v2.2"/>
     <driver name="usbpd" type="stm32-v1.3"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="dma" type="stm32-mux">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
       <requests>
         <request position="1">
           <signal driver="dma" name="generator0"/>

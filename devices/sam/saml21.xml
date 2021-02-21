@@ -119,27 +119,27 @@
     <driver name="rstc" type="sam"/>
     <driver name="rtc" type="sam"/>
     <driver name="sercom" type="sam">
-      <instance value="0"/>
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance device-pin="e|g|j" device-variant="b" value="4"/>
-      <instance device-pin="g|j" device-variant="a" value="4"/>
-      <instance device-pin="e|g|j" device-variant="b" value="5"/>
-      <instance device-pin="g|j" device-variant="a" value="5"/>
+      <instance name="0"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance device-pin="e|g|j" device-variant="b" name="4"/>
+      <instance device-pin="g|j" device-variant="a" name="4"/>
+      <instance device-pin="e|g|j" device-variant="b" name="5"/>
+      <instance device-pin="g|j" device-variant="a" name="5"/>
     </driver>
     <driver name="supc" type="sam"/>
     <driver name="tc" type="sam">
-      <instance value="0"/>
-      <instance value="1"/>
-      <instance device-pin="j" value="2"/>
-      <instance device-pin="j" value="3"/>
-      <instance value="4"/>
+      <instance name="0"/>
+      <instance name="1"/>
+      <instance device-pin="j" name="2"/>
+      <instance device-pin="j" name="3"/>
+      <instance name="4"/>
     </driver>
     <driver name="tcc" type="sam">
-      <instance value="0"/>
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="0"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="trng" type="sam"/>
     <driver name="usb" type="sam"/>

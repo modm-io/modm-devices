@@ -99,12 +99,14 @@ class MultiDeviceIdentifier:
 
         if isinstance(objs, DeviceIdentifier):
             self._ids = [objs.copy()]
-        if isinstance(objs, (list, set, tuple)):
+        elif isinstance(objs, (list, set, tuple)):
             for obj in objs:
-                if isinstance(objs, DeviceIdentifier):
-                    self._ids.append(objs)
-        if isinstance(objs, MultiDeviceIdentifier):
+                if isinstance(obj, DeviceIdentifier):
+                    self._ids.append(obj)
+        elif isinstance(objs, MultiDeviceIdentifier):
             self._ids = [dev for dev in objs.ids]
+        elif objs is not None:
+            print("No known conversion of '{}' to MultiDeviceIdentifier!".format(objs))
 
     @property
     def ids(self):
@@ -126,13 +128,14 @@ class MultiDeviceIdentifier:
         mid._ids = [dev for dev in device_ids]
         return mid
 
-    def append(self, did):
-        assert isinstance(did, DeviceIdentifier)
+    def append(self, *dids):
+        for did in dids:
+            assert isinstance(did, DeviceIdentifier)
 
-        self._ids.append(did)
-        self.__dirty = True
-        self.__string = None
-        self.__naming_schema = None
+            self._ids.append(did)
+            self.__dirty = True
+            self.__string = None
+            self.__naming_schema = None
 
     def extend(self, dids):
         assert isinstance(dids, (MultiDeviceIdentifier, list))

@@ -21,18 +21,18 @@
     <driver name="pll" type="avr"/>
     <driver name="spi" type="avr"/>
     <driver name="tc" type="tc10">
-      <instance value="4"/>
+      <instance name="4"/>
     </driver>
     <driver name="tc" type="tc16">
-      <instance value="1"/>
-      <instance value="3"/>
+      <instance name="1"/>
+      <instance name="3"/>
     </driver>
     <driver name="tc" type="tc8">
-      <instance value="0"/>
+      <instance name="0"/>
     </driver>
     <driver name="twi" type="avr"/>
     <driver name="usart" type="avr">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="usb_device" type="avr"/>
     <driver name="wdt" type="avr"/>

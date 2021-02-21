@@ -79,15 +79,11 @@
       <vector device-name="41" position="29" name="AES_LPUART1"/>
       <vector device-name="31" position="29" name="LPUART1"/>
     </driver>
-    <driver name="adc" type="stm32-l0">
-      <feature value="calfact"/>
-      <feature value="oversampler"/>
-      <feature value="prescaler"/>
-    </driver>
+    <driver name="adc" type="stm32-l0"/>
     <driver device-name="41" name="aes" type="stm32-v1.0"/>
     <driver name="comp" type="stm32-v1.0">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="crc" type="stm32"/>
     <driver name="flash" type="stm32-v1.0">
@@ -104,38 +100,38 @@
       </latency>
     </driver>
     <driver name="i2c" type="stm32-extended">
-      <feature value="dnf"/>
-      <feature value="fmp"/>
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="iwdg" type="stm32"/>
     <driver name="lptim" type="stm32-v1.0">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="lpuart" type="stm32-v1.1">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="rcc" type="stm32-v1.0"/>
     <driver name="rtc" type="stm32-v2.4"/>
     <driver name="spi" type="stm32">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
-    <driver name="sys" type="stm32">
-      <feature value="exti"/>
-    </driver>
+    <driver name="sys" type="stm32"/>
     <driver name="tim" type="stm32-general-purpose">
-      <instance value="2"/>
+      <instance name="2"/>
     </driver>
     <driver name="tim" type="stm32-v2.x">
-      <instance value="21"/>
-      <instance value="22"/>
+      <instance name="21"/>
+      <instance name="22"/>
     </driver>
     <driver name="usart" type="stm32">
-      <instance value="2"/>
+      <feature value="7-bit"/>
+      <feature value="half-duplex"/>
+      <feature value="over8"/>
+      <feature value="swap"/>
+      <instance name="2"/>
     </driver>
     <driver name="wwdg" type="stm32-v1.0"/>
     <driver name="dma" type="stm32-channel-request">
-      <instance value="1"/>
+      <instance name="1"/>
       <channels instance="1">
         <channel position="1">
           <request position="0">

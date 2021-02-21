@@ -28,27 +28,27 @@
     <driver name="eeprom" type="avr"/>
     <driver device-name="328" name="ptc" type="avr"/>
     <driver name="spi" type="avr">
-      <instance device-name="328" value="0"/>
-      <instance device-name="328" value="1"/>
+      <instance device-name="328" name="0"/>
+      <instance device-name="328" name="1"/>
     </driver>
     <driver name="tc" type="tc16">
-      <instance value="1"/>
-      <instance device-name="328" value="3"/>
-      <instance device-name="328" value="4"/>
+      <instance name="1"/>
+      <instance device-name="328" name="3"/>
+      <instance device-name="328" name="4"/>
     </driver>
     <driver name="tc" type="tc8">
-      <instance value="0"/>
+      <instance name="0"/>
     </driver>
     <driver name="tc" type="tc8_async">
-      <instance value="2"/>
+      <instance name="2"/>
     </driver>
     <driver name="twi" type="avr">
-      <instance device-name="328" value="0"/>
-      <instance device-name="328" value="1"/>
+      <instance device-name="328" name="0"/>
+      <instance device-name="328" name="1"/>
     </driver>
     <driver name="usart" type="avr">
-      <instance value="0"/>
-      <instance device-name="328" value="1"/>
+      <instance name="0"/>
+      <instance device-name="328" name="1"/>
     </driver>
     <driver name="wdt" type="avr"/>
     <driver name="gpio" type="avr">

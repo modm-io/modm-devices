@@ -37,7 +37,7 @@
     <driver name="clock" type="avr"/>
     <driver name="eeprom" type="avr"/>
     <driver name="tc" type="tc8">
-      <instance value="0"/>
+      <instance name="0"/>
     </driver>
     <driver name="wdt" type="avr"/>
     <driver name="gpio" type="avr">

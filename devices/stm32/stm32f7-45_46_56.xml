@@ -161,23 +161,17 @@
       <vector position="97" name="SPDIF_RX"/>
     </driver>
     <driver name="adc" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
     </driver>
     <driver name="can" type="stm32">
-      <feature value="filter-28"/>
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
-    <driver name="crc" type="stm32">
-      <feature value="polynomial"/>
-      <feature value="reverse"/>
-    </driver>
+    <driver name="crc" type="stm32"/>
     <driver device-name="56" name="cryp" type="stm32-v2.2"/>
-    <driver name="dac" type="stm32">
-      <feature value="status"/>
-    </driver>
+    <driver name="dac" type="stm32"/>
     <driver name="dcmi" type="stm32"/>
     <driver name="dma2d" type="stm32"/>
     <driver name="eth" type="stm32-v2.0"/>
@@ -230,23 +224,19 @@
     <driver device-name="56" name="hash" type="stm32-v2.2"/>
     <driver name="hdmi_cec" type="stm32-v2.0"/>
     <driver name="i2c" type="stm32-extended">
-      <feature value="dnf"/>
-      <feature value="fmp"/>
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
     </driver>
     <driver name="i2s" type="stm32-v3.2">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
     </driver>
-    <driver name="iwdg" type="stm32">
-      <feature value="window"/>
-    </driver>
+    <driver name="iwdg" type="stm32"/>
     <driver name="lptim" type="stm32-v1.1">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver device-name="46|56" name="ltdc" type="stm32-v1.0"/>
     <driver name="quadspi" type="stm32-v1.0"/>
@@ -254,65 +244,70 @@
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v2.6"/>
     <driver name="sai" type="stm32-v1.1">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="sdmmc" type="stm32-v1.3">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="spdifrx" type="stm32-v1.0"/>
     <driver name="spi" type="stm32">
       <feature value="data-size"/>
       <feature value="fifo"/>
-      <feature value="nss-pulse"/>
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
-      <instance device-pin="b|i|n|z" value="5"/>
-      <instance device-pin="b|i|n|z" value="6"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
+      <instance device-pin="b|i|n|z" name="5"/>
+      <instance device-pin="b|i|n|z" name="6"/>
     </driver>
-    <driver name="sys" type="stm32">
-      <feature value="exti"/>
-    </driver>
+    <driver name="sys" type="stm32"/>
     <driver name="tim" type="stm32-advanced">
-      <instance value="1"/>
-      <instance value="8"/>
+      <instance name="1"/>
+      <instance name="8"/>
     </driver>
     <driver name="tim" type="stm32-basic">
-      <instance value="6"/>
-      <instance value="7"/>
+      <instance name="6"/>
+      <instance name="7"/>
     </driver>
     <driver name="tim" type="stm32-general-purpose">
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
-      <instance value="5"/>
-      <instance value="9"/>
-      <instance value="10"/>
-      <instance value="11"/>
-      <instance value="12"/>
-      <instance value="13"/>
-      <instance value="14"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
+      <instance name="5"/>
+      <instance name="9"/>
+      <instance name="10"/>
+      <instance name="11"/>
+      <instance name="12"/>
+      <instance name="13"/>
+      <instance name="14"/>
     </driver>
     <driver name="uart" type="stm32-extended">
-      <instance value="4"/>
-      <instance value="5"/>
-      <instance value="7"/>
-      <instance value="8"/>
+      <feature value="7-bit"/>
+      <feature value="half-duplex"/>
+      <feature value="over8"/>
+      <feature value="swap"/>
+      <instance name="4"/>
+      <instance name="5"/>
+      <instance name="7"/>
+      <instance name="8"/>
     </driver>
     <driver name="usart" type="stm32-extended">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="6"/>
+      <feature value="7-bit"/>
+      <feature value="half-duplex"/>
+      <feature value="over8"/>
+      <feature value="swap"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="6"/>
     </driver>
     <driver name="usb_otg_fs" type="stm32-v2.1"/>
     <driver name="usb_otg_hs" type="stm32-v2.0"/>
     <driver name="wwdg" type="stm32-v1.0"/>
     <driver name="dma" type="stm32-stream-channel">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
       <streams instance="1">
         <stream position="0">
           <channel position="0">

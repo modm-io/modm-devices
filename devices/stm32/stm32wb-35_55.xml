@@ -110,15 +110,15 @@
       <vector position="62" name="DMAMUX1_OVR"/>
     </driver>
     <driver name="adc" type="stm32-f3">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="aes" type="stm32-v1.0">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="comp" type="stm32-tsmc90_dory_cube">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="crc" type="stm32"/>
     <driver name="flash" type="stm32-v1.0">
@@ -136,22 +136,18 @@
     </driver>
     <driver name="hsem" type="stm32-v1.0"/>
     <driver name="i2c" type="stm32-extended">
-      <feature value="dnf"/>
-      <feature value="fmp"/>
-      <instance value="1"/>
-      <instance value="3"/>
+      <instance name="1"/>
+      <instance name="3"/>
     </driver>
     <driver name="irtim" type="stm32-v1.0"/>
-    <driver name="iwdg" type="stm32">
-      <feature value="window"/>
-    </driver>
+    <driver name="iwdg" type="stm32"/>
     <driver device-name="55" name="lcd" type="stm32-v1.2"/>
     <driver name="lptim" type="stm32-v1.0">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="lpuart" type="stm32-v1.3">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="pka" type="stm32-v1.0"/>
     <driver name="quadspi" type="stm32-v2.2"/>
@@ -160,42 +156,40 @@
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-rtc2_v2_wb_cube"/>
     <driver name="sai" type="stm32-v2.0">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="sequencer" type="stm32-v1.0"/>
     <driver name="spi" type="stm32">
       <feature value="data-size"/>
       <feature value="fifo"/>
-      <feature value="nss-pulse"/>
-      <instance value="1"/>
-      <instance device-pin="r|v" value="2"/>
+      <instance name="1"/>
+      <instance device-pin="r|v" name="2"/>
     </driver>
     <driver name="stm32_wpan" type="stm32-v1.2"/>
-    <driver name="sys" type="stm32">
-      <feature value="cfgr2"/>
-      <feature value="exti"/>
-      <feature value="imr"/>
-      <feature value="sram2-wp"/>
-    </driver>
+    <driver name="sys" type="stm32"/>
     <driver name="tim" type="stm32-advanced">
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="tim" type="stm32-general-purpose">
-      <instance value="2"/>
-      <instance value="16"/>
-      <instance value="17"/>
+      <instance name="2"/>
+      <instance name="16"/>
+      <instance name="17"/>
     </driver>
     <driver name="tiny_lpm" type="stm32-v1.0"/>
     <driver device-pin="r|v" name="tsc" type="stm32-v1.0"/>
     <driver name="usart" type="stm32-extended">
+      <feature value="7-bit"/>
+      <feature value="half-duplex"/>
+      <feature value="over8"/>
+      <feature value="swap"/>
       <feature value="tcbgt"/>
-      <instance value="1"/>
+      <instance name="1"/>
     </driver>
     <driver name="usb" type="stm32-v2.1"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="dma" type="stm32-mux">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
       <requests>
         <request position="1">
           <signal driver="dma" name="generator0"/>

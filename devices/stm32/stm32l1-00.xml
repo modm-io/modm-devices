@@ -77,21 +77,19 @@
     </driver>
     <driver name="adc" type="stm32"/>
     <driver device-size="6|8|b" device-variant="" name="comp" type="stm32-v3.4">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver device-size="6|8|b" device-variant="a" name="comp" type="stm32-v3.6">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver device-size="c" device-variant="" name="comp" type="stm32-v3.6">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver name="crc" type="stm32"/>
-    <driver name="dac" type="stm32">
-      <feature value="status"/>
-    </driver>
+    <driver name="dac" type="stm32"/>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1200">
         <wait-state device-size="c" ws="0" hclk-max="2100000"/>
@@ -109,47 +107,47 @@
       </latency>
     </driver>
     <driver name="i2c" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
+      <instance name="1"/>
+      <instance name="2"/>
     </driver>
     <driver device-size="c" name="i2s" type="stm32-v2.2">
-      <instance value="2"/>
-      <instance value="3"/>
+      <instance name="2"/>
+      <instance name="3"/>
     </driver>
     <driver name="iwdg" type="stm32"/>
     <driver name="lcd" type="stm32-v1.0"/>
     <driver name="rcc" type="stm32-v1.0"/>
     <driver name="rtc" type="stm32-v2.5"/>
     <driver name="spi" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance device-size="c" value="3"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance device-size="c" name="3"/>
     </driver>
-    <driver name="sys" type="stm32">
-      <feature value="exti"/>
-    </driver>
+    <driver name="sys" type="stm32"/>
     <driver name="tim" type="stm32-basic">
-      <instance value="6"/>
-      <instance value="7"/>
+      <instance name="6"/>
+      <instance name="7"/>
     </driver>
     <driver name="tim" type="stm32-general-purpose">
-      <instance value="2"/>
-      <instance value="3"/>
-      <instance value="4"/>
-      <instance value="9"/>
-      <instance value="10"/>
-      <instance value="11"/>
+      <instance name="2"/>
+      <instance name="3"/>
+      <instance name="4"/>
+      <instance name="9"/>
+      <instance name="10"/>
+      <instance name="11"/>
     </driver>
     <driver name="usart" type="stm32">
-      <instance value="1"/>
-      <instance value="2"/>
-      <instance value="3"/>
+      <feature value="half-duplex"/>
+      <feature value="over8"/>
+      <instance name="1"/>
+      <instance name="2"/>
+      <instance name="3"/>
     </driver>
     <driver name="usb" type="stm32-v1.2"/>
     <driver name="wwdg" type="stm32-v1.0"/>
     <driver name="dma" type="stm32-channel">
-      <instance value="1"/>
-      <instance device-size="c" value="2"/>
+      <instance name="1"/>
+      <instance device-size="c" name="2"/>
       <channels instance="1">
         <channel position="1">
           <signal driver="adc"/>
