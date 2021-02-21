@@ -11,6 +11,7 @@ import copy
 from collections import defaultdict
 
 from .device import Device
+from .stm32.device import Stm32Device
 from .device_identifier import DeviceIdentifier
 from .device_identifier import MultiDeviceIdentifier
 from .access import read_only
@@ -47,10 +48,14 @@ class DeviceFile:
         valid_devices = [node.text for node in device_node.iterfind(self._VALID_DEVICE)]
         devices = identifiers
         if len(invalid_devices):
-            devices = [did for did in devices if did.string not in invalid_devices]
+            devices = (did for did in devices if did.string not in invalid_devices)
         if len(valid_devices):
-            devices = [did for did in devices if did.string in valid_devices]
-        return [Device(did, self) for did in devices]
+            devices = (did for did in devices if did.string in valid_devices)
+        def build_device(did, device_file):
+            if did.platform == "stm32":
+                return Stm32Device(did, device_file)
+            return Device(did, device_file)
+        return [build_device(did, self) for did in devices]
 
     @staticmethod
     def is_valid(node, identifier: DeviceIdentifier):

@@ -10,63 +10,69 @@ import itertools
 
 from .exception import ParserException
 from .device_identifier import DeviceIdentifier
-
+from .driver import Driver
+from .cache import *
+import fnmatch
 
 class Device:
     def __init__(self,
                  identifier: DeviceIdentifier,
                  device_file):
         self._identifier = identifier.copy()
-        self.naming_schema = identifier.naming_schema
         self.partname = identifier.string
-        self.device_file = device_file
-
+        self._device_file = device_file
         self.__properties = None
 
     @property
     def _properties(self):
         if self.__properties is None:
-            self.__properties = self.device_file.get_properties(self._identifier)
+            self.__properties = self._device_file.get_properties(self._identifier)
         return self.__properties
 
-    @property
-    def identifier(self):
-        return self._identifier
-
-    def get_all_drivers(self, name):
-        parts = name.split(":")
+    def _find_drivers(self, *patterns):
         results = []
+        for pattern in patterns:
+            parts = pattern.split(":")
 
-        if len(parts) == 1:
-            results = [d for d in self._properties["driver"] if d["name"] == parts[0]]
-        elif len(parts) == 2:
-            find_all = (parts[1][-1] == '*')
-            for driver in self._properties["driver"]:
-                if driver["name"] == parts[0] and \
-                        ((find_all and driver["type"].startswith(parts[1][:-1])) or
-                        (not find_all and driver["type"] == parts[1])):
-                    results.append(driver)
-        else:
-            raise ParserException("Invalid driver name '{}'. "
-                                  "The name must contain no or one ':' to "
-                                  "separate type and name.".format(name))
+            if len(parts) == 1:
+                results.extend(d for d in self._properties["driver"]
+                               if fnmatch.fnmatch(d["name"], parts[0]))
+            elif len(parts) == 2:
+                results.extend(d for d in self._properties["driver"]
+                               if (fnmatch.fnmatch(d["name"], parts[0]) and
+                                   fnmatch.fnmatch(d["type"], parts[1])))
+            else:
+                raise ParserException("Invalid driver pattern '{}'. "
+                                      "The name must contain no or one ':' to "
+                                      "separate `name:type` pattern.".format(parts))
 
         return results
 
-    def get_driver(self, name):
-        results = self.get_all_drivers(name)
+    def _find_first_driver(self, *patterns):
+        results = self._find_drivers(*patterns)
         return results[0] if len(results) else None
 
-    def has_driver(self, name, type: list = []):
-        if len(type) == 0:
-            return self.get_driver(name) is not None
+    @property
+    def did(self):
+        return self._identifier
 
-        if ':' in name:
-            raise ParserException("Invalid driver name '{}'. "
-                                  "The name must contain no ':' when using the "
-                                  "compatible argument.".format(name))
+    @cached_function
+    def driver(self, name):
+        return Driver(self, self._find_first_driver(name))
 
-        return any(self.get_driver(name + ':' + c) is not None for c in type)
+    def drivers(self, *names):
+        return [Driver(self, d) for d in self._find_drivers(*names)]
 
-    def __str__(self):
-        return self.partname
+    def has_driver(self, *names):
+        return len(self._find_drivers(*names))
+
+    # Deprecated stuff
+    def get_driver(self, pattern):
+        return self._find_first_driver(pattern)
+
+    def get_all_drivers(self, *patterns):
+        return self._find_drivers(*patterns)
+
+    @property
+    def identifier(self):
+        return self.did
