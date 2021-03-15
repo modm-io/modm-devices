@@ -35,6 +35,9 @@ class AVRDeviceTree:
         device = device_file.query("//device")[0]
         variant = device_file.query(f'//variants/variant[@ordercode="{devname}"]')[0]
         did = AVRIdentifier.from_string(devname.lower())
+        if did is None:
+            LOGGER.error("Parse Error: unknown platform. Device string: '%s'", devname)
+            return None
         p["id"] = did
 
         LOGGER.info("Parsing '%s'", did.string)

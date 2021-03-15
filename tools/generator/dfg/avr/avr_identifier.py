@@ -61,5 +61,4 @@ class AVRIdentifier:
                             i.set("pin", match.group("package"))
                     return i
 
-        LOGGER.error("Parse Error: unknown platform. Device string: '%s'", string)
-        exit(1)
+        return None
