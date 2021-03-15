@@ -179,6 +179,10 @@ stm32_flash_latency = \
         1200: [18, 36, 54, 64],
         1000: [6, 12, 16]
     },
+    'wl': {
+        1200: [18, 36, 48],
+        1000: [6, 12, 16]
+    },
 }
 
 def getFlashLatencyForDevice(did):
@@ -641,6 +645,18 @@ stm32_memory = \
             },{
                 'name': ['30', '35', '50', '55', '5m'],
                 'memories': {'flash': 0, 'sram1': 0, 'sram2': 64*1024}
+            }
+        ]
+    },
+    'wl': {
+        'start': {
+            'flash': 0x08000000,
+            'sram': 0x20000000
+        },
+        'model': [
+            {
+                'name': ['54', '55', 'e4', 'e5'],
+                'memories': {'flash': 0, 'sram1': 0, 'sram2': 32*1024}
             }
         ]
     },

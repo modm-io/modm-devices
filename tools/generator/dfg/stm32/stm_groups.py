@@ -343,5 +343,14 @@ stm_groups = \
     },{
         'family': ['wb'],
         'name': ['5m']
+    },
+
+    # STM32WL devices
+    {
+        'family': ['wl'],
+        'name': ['54', '55']
+    },{
+        'family': ['wl'],
+        'name': ['e4', 'e5']
     }
 ]
