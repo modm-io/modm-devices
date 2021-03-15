@@ -190,6 +190,12 @@ stm_groups = \
         'name': ['31', '41']
     },{
         'family': ['g0'],
+        'name': ['50']
+    },{
+        'family': ['g0'],
+        'name': ['51', '61']
+    },{
+        'family': ['g0'],
         'name': ['70', 'b0']
     },{
         'family': ['g0'],
@@ -326,6 +332,9 @@ stm_groups = \
 
     # STM32WB devices
     {
+        'family': ['wb'],
+        'name': ['10', '15']
+    },{
         'family': ['wb'],
         'name': ['30', '50']
     },{
