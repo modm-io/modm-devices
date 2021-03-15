@@ -236,19 +236,14 @@
       <gpio port="a" pin="0">
         <signal driver="adc" name="in0"/>
         <signal driver="comp" instance="1" name="inm"/>
-        <signal device-pin="c" driver="comp" instance="1" name="out"/>
-        <signal device-pin="c" driver="lptim" instance="1" name="in1"/>
         <signal device-pin="e|f|g|k" driver="rcc" name="ck_in"/>
         <signal driver="rtc" name="tamp2"/>
         <signal driver="sys" name="wkup1"/>
-        <signal device-pin="c" driver="tim" instance="2" name="ch1"/>
-        <signal device-pin="c" driver="tim" instance="2" name="etr"/>
-        <signal device-pin="c" driver="usart" instance="2" name="cts"/>
-        <signal device-pin="e|f|g|k" af="1" driver="lptim" instance="1" name="in1"/>
-        <signal device-pin="e|f|g|k" af="2" driver="tim" instance="2" name="ch1"/>
-        <signal device-pin="e|f|g|k" af="4" driver="usart" instance="2" name="cts"/>
-        <signal device-pin="e|f|g|k" af="5" driver="tim" instance="2" name="etr"/>
-        <signal device-pin="e|f|g|k" af="7" driver="comp" instance="1" name="out"/>
+        <signal af="1" driver="lptim" instance="1" name="in1"/>
+        <signal af="2" driver="tim" instance="2" name="ch1"/>
+        <signal af="4" driver="usart" instance="2" name="cts"/>
+        <signal af="5" driver="tim" instance="2" name="etr"/>
+        <signal af="7" driver="comp" instance="1" name="out"/>
       </gpio>
       <gpio port="a" pin="1">
         <signal driver="adc" name="in1"/>

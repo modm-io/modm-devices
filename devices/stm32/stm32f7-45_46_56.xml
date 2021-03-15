@@ -14,7 +14,9 @@
     <valid-device>stm32f745igt6</valid-device>
     <valid-device>stm32f745igt7</valid-device>
     <valid-device>stm32f745veh6</valid-device>
+    <valid-device>stm32f745veh7</valid-device>
     <valid-device>stm32f745vet6</valid-device>
+    <valid-device>stm32f745vet7</valid-device>
     <valid-device>stm32f745vgh6</valid-device>
     <valid-device>stm32f745vgt6</valid-device>
     <valid-device>stm32f745zet6</valid-device>

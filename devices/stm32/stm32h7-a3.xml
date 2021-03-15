@@ -1254,45 +1254,14 @@
         <signal device-pin="l" device-package="h" device-variant="q" driver="adc" instance="2" name="inp12"/>
         <signal device-pin="q" device-package="y" device-variant="q" driver="adc" instance="2" name="inp12"/>
         <signal device-pin="r" device-package="t" device-variant="" driver="adc" instance="2" name="inp12"/>
-        <signal device-pin="a" device-package="i" device-variant="q" af="3" driver="dfsdm" instance="1" name="ckin1"/>
-        <signal device-pin="i" device-package="k" device-variant="q" af="3" driver="dfsdm" instance="1" name="ckin1"/>
-        <signal device-pin="l" device-package="h" device-variant="q" af="3" driver="dfsdm" instance="1" name="ckin1"/>
-        <signal device-pin="q" device-package="y" device-variant="q" af="3" driver="dfsdm" instance="1" name="ckin1"/>
-        <signal device-pin="r" device-package="t" device-variant="" af="3" driver="dfsdm" instance="1" name="ckin1"/>
-        <signal device-pin="a" device-package="i" device-variant="q" af="5" driver="i2s" instance="2" name="sdi"/>
-        <signal device-pin="i" device-package="k" device-variant="q" af="5" driver="i2s" instance="2" name="sdi"/>
-        <signal device-pin="l" device-package="h" device-variant="q" af="5" driver="i2s" instance="2" name="sdi"/>
-        <signal device-pin="q" device-package="y" device-variant="q" af="5" driver="i2s" instance="2" name="sdi"/>
-        <signal device-pin="r" device-package="t" device-variant="" af="5" driver="i2s" instance="2" name="sdi"/>
-        <signal device-pin="a" device-package="i" device-variant="q" af="5" driver="spi" instance="2" name="miso"/>
-        <signal device-pin="i" device-package="k" device-variant="q" af="5" driver="spi" instance="2" name="miso"/>
-        <signal device-pin="l" device-package="h" device-variant="q" af="5" driver="spi" instance="2" name="miso"/>
-        <signal device-pin="q" device-package="y" device-variant="q" af="5" driver="spi" instance="2" name="miso"/>
-        <signal device-pin="r" device-package="t" device-variant="" af="5" driver="spi" instance="2" name="miso"/>
-        <signal device-pin="a" device-package="i" device-variant="q" af="6" driver="dfsdm" instance="1" name="ckout"/>
-        <signal device-pin="i" device-package="k" device-variant="q" af="6" driver="dfsdm" instance="1" name="ckout"/>
-        <signal device-pin="l" device-package="h" device-variant="q" af="6" driver="dfsdm" instance="1" name="ckout"/>
-        <signal device-pin="q" device-package="y" device-variant="q" af="6" driver="dfsdm" instance="1" name="ckout"/>
-        <signal device-pin="r" device-package="t" device-variant="" af="6" driver="dfsdm" instance="1" name="ckout"/>
-        <signal device-pin="a" device-package="i" device-variant="q" af="9" driver="octospim" name="p1_io2"/>
-        <signal device-pin="i" device-package="k" device-variant="q" af="9" driver="octospim" name="p1_io2"/>
-        <signal device-pin="l" device-package="h" device-variant="q" af="9" driver="octospim" name="p1_io2"/>
-        <signal device-pin="q" device-package="y" device-variant="q" af="9" driver="octospim" name="p1_io2"/>
-        <signal device-pin="r" device-package="t" device-variant="" af="9" driver="octospim" name="p1_io2"/>
-        <signal device-pin="a" device-package="i" device-variant="q" af="10" driver="usb_otg_hs" name="ulpi_dir"/>
-        <signal device-pin="i" device-package="k" device-variant="q" af="10" driver="usb_otg_hs" name="ulpi_dir"/>
-        <signal device-pin="l" device-package="h" device-variant="q" af="10" driver="usb_otg_hs" name="ulpi_dir"/>
-        <signal device-pin="q" device-package="y" device-variant="q" af="10" driver="usb_otg_hs" name="ulpi_dir"/>
-        <signal device-pin="r" device-package="t" device-variant="" af="10" driver="usb_otg_hs" name="ulpi_dir"/>
-        <signal device-pin="a" device-package="i" device-variant="q" af="11" driver="octospim" name="p1_io5"/>
-        <signal device-pin="i" device-package="k" device-variant="q" af="11" driver="octospim" name="p1_io5"/>
-        <signal device-pin="l" device-package="h" device-variant="q" af="11" driver="octospim" name="p1_io5"/>
-        <signal device-pin="q" device-package="y" device-variant="q" af="11" driver="octospim" name="p1_io5"/>
-        <signal device-pin="r" device-package="t" device-variant="" af="11" driver="octospim" name="p1_io5"/>
-        <signal device-pin="a" device-package="i" device-variant="q" af="12" driver="fmc" name="sdne0"/>
-        <signal device-pin="i" device-package="k" device-variant="q" af="12" driver="fmc" name="sdne0"/>
-        <signal device-pin="l" device-package="h" device-variant="q" af="12" driver="fmc" name="sdne0"/>
-        <signal device-pin="q" device-package="y" device-variant="q" af="12" driver="fmc" name="sdne0"/>
+        <signal af="3" driver="dfsdm" instance="1" name="ckin1"/>
+        <signal af="5" driver="i2s" instance="2" name="sdi"/>
+        <signal af="5" driver="spi" instance="2" name="miso"/>
+        <signal af="6" driver="dfsdm" instance="1" name="ckout"/>
+        <signal af="9" driver="octospim" name="p1_io2"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_dir"/>
+        <signal af="11" driver="octospim" name="p1_io5"/>
+        <signal device-pin="a|i|l|n|q|v|z" af="12" driver="fmc" name="sdne0"/>
       </gpio>
       <gpio port="c" pin="3">
         <signal device-pin="a" device-package="i" device-variant="q" driver="adc" instance="1" name="inn12"/>
@@ -1315,31 +1284,13 @@
         <signal device-pin="i" device-package="k" device-variant="q" driver="adc" instance="2" name="inp13"/>
         <signal device-pin="q" device-package="y" device-variant="q" driver="adc" instance="2" name="inp13"/>
         <signal device-pin="r" device-package="t" device-variant="" driver="adc" instance="2" name="inp13"/>
-        <signal device-pin="a" device-package="i" device-variant="q" af="3" driver="dfsdm" instance="1" name="datin1"/>
-        <signal device-pin="i" device-package="k" device-variant="q" af="3" driver="dfsdm" instance="1" name="datin1"/>
-        <signal device-pin="q" device-package="y" device-variant="q" af="3" driver="dfsdm" instance="1" name="datin1"/>
-        <signal device-pin="r" device-package="t" device-variant="" af="3" driver="dfsdm" instance="1" name="datin1"/>
-        <signal device-pin="a" device-package="i" device-variant="q" af="5" driver="i2s" instance="2" name="sdo"/>
-        <signal device-pin="i" device-package="k" device-variant="q" af="5" driver="i2s" instance="2" name="sdo"/>
-        <signal device-pin="q" device-package="y" device-variant="q" af="5" driver="i2s" instance="2" name="sdo"/>
-        <signal device-pin="r" device-package="t" device-variant="" af="5" driver="i2s" instance="2" name="sdo"/>
-        <signal device-pin="a" device-package="i" device-variant="q" af="5" driver="spi" instance="2" name="mosi"/>
-        <signal device-pin="i" device-package="k" device-variant="q" af="5" driver="spi" instance="2" name="mosi"/>
-        <signal device-pin="q" device-package="y" device-variant="q" af="5" driver="spi" instance="2" name="mosi"/>
-        <signal device-pin="r" device-package="t" device-variant="" af="5" driver="spi" instance="2" name="mosi"/>
-        <signal device-pin="a" device-package="i" device-variant="q" af="9" driver="octospim" name="p1_io0"/>
-        <signal device-pin="i" device-package="k" device-variant="q" af="9" driver="octospim" name="p1_io0"/>
-        <signal device-pin="q" device-package="y" device-variant="q" af="9" driver="octospim" name="p1_io0"/>
-        <signal device-pin="r" device-package="t" device-variant="" af="9" driver="octospim" name="p1_io0"/>
-        <signal device-pin="a" device-package="i" device-variant="q" af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
-        <signal device-pin="i" device-package="k" device-variant="q" af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
-        <signal device-pin="q" device-package="y" device-variant="q" af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
-        <signal device-pin="r" device-package="t" device-variant="" af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
-        <signal device-pin="a" device-package="i" device-variant="q" af="11" driver="octospim" name="p1_io6"/>
-        <signal device-pin="i" device-package="k" device-variant="q" af="11" driver="octospim" name="p1_io6"/>
-        <signal device-pin="q" device-package="y" device-variant="q" af="11" driver="octospim" name="p1_io6"/>
-        <signal device-pin="r" device-package="t" device-variant="" af="11" driver="octospim" name="p1_io6"/>
-        <signal device-package="i|k|y" device-variant="q" af="12" driver="fmc" name="sdcke0"/>
+        <signal af="3" driver="dfsdm" instance="1" name="datin1"/>
+        <signal af="5" driver="i2s" instance="2" name="sdo"/>
+        <signal af="5" driver="spi" instance="2" name="mosi"/>
+        <signal af="9" driver="octospim" name="p1_io0"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
+        <signal af="11" driver="octospim" name="p1_io6"/>
+        <signal device-pin="a|i|l|n|q|v|z" af="12" driver="fmc" name="sdcke0"/>
       </gpio>
       <gpio port="c" pin="4">
         <signal driver="adc" instance="1" name="inp4"/>

@@ -276,7 +276,7 @@
       <instance device-pin="c|m|r|v" value="3"/>
     </driver>
     <driver name="usb" type="stm32-v2.2"/>
-    <driver name="usbpd" type="stm32-v1.3"/>
+    <driver name="usbpd" type="stm32-v1.4"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="dma" type="stm32-mux">
       <instance value="1"/>

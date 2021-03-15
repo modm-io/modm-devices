@@ -2956,10 +2956,7 @@
         <pin device-name="a6" device-temperature="6" device-variant="p" position="H8" name="PA2"/>
         <pin device-name="96" device-temperature="3|6|7" device-variant="" position="H8" name="PA1"/>
         <pin device-name="a6" device-temperature="6" device-variant="" position="H8" name="PA1"/>
-        <pin device-name="96" device-temperature="3|6|7" device-variant="p" position="H9" name="VSSA/VREF-" type="power"/>
-        <pin device-name="a6" device-temperature="6" device-variant="p" position="H9" name="VSSA/VREF-" type="power"/>
-        <pin device-name="96" device-temperature="3|6|7" device-variant="" position="H9" name="VSSA" type="power"/>
-        <pin device-name="a6" device-temperature="6" device-variant="" position="H9" name="VSSA" type="power"/>
+        <pin position="H9" name="VSSA/VREF-" type="power"/>
         <pin device-name="96" device-temperature="3|6|7" device-variant="p" position="H10" name="VREF+" type="monoio"/>
         <pin device-name="a6" device-temperature="6" device-variant="p" position="H10" name="VREF+" type="monoio"/>
         <pin device-name="96" device-temperature="3|6|7" device-variant="" position="H10" name="PC2"/>

@@ -147,7 +147,7 @@
       <vector position="92" name="I2C3_EV"/>
       <vector position="93" name="I2C3_ER"/>
       <vector position="94" name="DMAMUX_OVR"/>
-      <vector device-name="91|a1" position="95" name="QUADSPI"/>
+      <vector position="95" name="QUADSPI"/>
       <vector position="96" name="DMA1_Channel8"/>
       <vector position="97" name="DMA2_Channel6"/>
       <vector position="98" name="DMA2_Channel7"/>
@@ -227,7 +227,7 @@
       <instance value="3"/>
       <instance device-name="91|a1" value="6"/>
     </driver>
-    <driver device-name="91|a1" name="quadspi" type="stm32-v4.1">
+    <driver name="quadspi" type="stm32-v4.1">
       <instance value="1"/>
     </driver>
     <driver name="rcc" type="stm32-v1.0"/>
@@ -284,7 +284,7 @@
       <instance device-pin="c|m|q|r|v" value="3"/>
     </driver>
     <driver name="usb" type="stm32-v2.2"/>
-    <driver name="usbpd" type="stm32-v1.3"/>
+    <driver name="usbpd" type="stm32-v1.4"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="dma" type="stm32-mux">
       <instance value="1"/>
@@ -401,7 +401,7 @@
         <request position="37">
           <signal driver="adc" instance="3"/>
         </request>
-        <request device-name="91|a1" position="40">
+        <request position="40">
           <signal driver="quadspi"/>
         </request>
         <request position="42">
@@ -647,7 +647,7 @@
         <signal af="7" driver="usart" instance="2" name="tx"/>
         <signal af="8" driver="comp" instance="2" name="out"/>
         <signal af="9" driver="tim" instance="15" name="ch1"/>
-        <signal device-name="91|a1" af="10" driver="quadspi" instance="1" name="bk1_ncs"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk1_ncs"/>
         <signal af="12" driver="lpuart" instance="1" name="tx"/>
         <signal af="14" driver="ucpd" instance="1" name="frstx1"/>
         <signal af="14" driver="ucpd" instance="1" name="frstx2"/>
@@ -665,7 +665,7 @@
         <signal af="3" driver="sai" instance="1" name="ck1"/>
         <signal af="7" driver="usart" instance="2" name="rx"/>
         <signal af="9" driver="tim" instance="15" name="ch2"/>
-        <signal device-name="91|a1" af="10" driver="quadspi" instance="1" name="clk"/>
+        <signal af="10" driver="quadspi" instance="1" name="clk"/>
         <signal af="12" driver="lpuart" instance="1" name="rx"/>
         <signal af="13" driver="sai" instance="1" name="mclk_a"/>
       </gpio>
@@ -702,7 +702,7 @@
         <signal af="5" driver="spi" instance="1" name="miso"/>
         <signal af="6" driver="tim" instance="1" name="bkin"/>
         <signal af="8" driver="comp" instance="1" name="out"/>
-        <signal device-name="91|a1" af="10" driver="quadspi" instance="1" name="bk1_io3"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk1_io3"/>
         <signal af="12" driver="lpuart" instance="1" name="cts"/>
       </gpio>
       <gpio port="a" pin="7">
@@ -718,7 +718,7 @@
         <signal af="5" driver="spi" instance="1" name="mosi"/>
         <signal af="6" driver="tim" instance="1" name="ch1n"/>
         <signal af="8" driver="comp" instance="2" name="out"/>
-        <signal device-name="91|a1" af="10" driver="quadspi" instance="1" name="bk1_io2"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk1_io2"/>
         <signal af="14" driver="ucpd" instance="1" name="frstx1"/>
         <signal af="14" driver="ucpd" instance="1" name="frstx2"/>
       </gpio>
@@ -831,7 +831,7 @@
         <signal af="2" driver="tim" instance="3" name="ch3"/>
         <signal af="4" driver="tim" instance="8" name="ch2n"/>
         <signal af="6" driver="tim" instance="1" name="ch2n"/>
-        <signal device-name="91|a1" af="10" driver="quadspi" instance="1" name="bk1_io1"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk1_io1"/>
         <signal af="14" driver="ucpd" instance="1" name="frstx1"/>
         <signal af="14" driver="ucpd" instance="1" name="frstx2"/>
       </gpio>
@@ -847,7 +847,7 @@
         <signal af="4" driver="tim" instance="8" name="ch3n"/>
         <signal af="6" driver="tim" instance="1" name="ch3n"/>
         <signal af="8" driver="comp" instance="4" name="out"/>
-        <signal device-name="91|a1" device-pin="c|m|r|v" af="10" driver="quadspi" instance="1" name="bk1_io0"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk1_io0"/>
         <signal af="12" driver="lpuart" instance="1" name="de"/>
         <signal af="12" driver="lpuart" instance="1" name="rts"/>
       </gpio>
@@ -862,7 +862,7 @@
         <signal device-name="71" af="2" driver="tim" instance="5" name="ch1"/>
         <signal device-name="91|a1" device-pin="c|m|r|v" af="3" driver="tim" instance="20" name="ch1"/>
         <signal af="4" driver="i2c" instance="3" name="smba"/>
-        <signal device-name="91|a1" device-pin="c|m|r|v" af="10" driver="quadspi" instance="1" name="bk2_io1"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk2_io1"/>
       </gpio>
       <gpio port="b" pin="3">
         <signal af="0" driver="sys" name="jtdo"/>
@@ -966,7 +966,7 @@
         <signal af="1" driver="tim" instance="2" name="ch3"/>
         <signal af="7" driver="usart" instance="3" name="tx"/>
         <signal af="8" driver="lpuart" instance="1" name="rx"/>
-        <signal device-name="91|a1" device-pin="c|m|r|v" af="10" driver="quadspi" instance="1" name="clk"/>
+        <signal af="10" driver="quadspi" instance="1" name="clk"/>
         <signal af="12" driver="tim" instance="1" name="bkin"/>
         <signal af="14" driver="sai" instance="1" name="sck_a"/>
       </gpio>
@@ -977,7 +977,7 @@
         <signal af="1" driver="tim" instance="2" name="ch4"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
         <signal af="8" driver="lpuart" instance="1" name="tx"/>
-        <signal device-name="91|a1" device-pin="c|m|r|v" af="10" driver="quadspi" instance="1" name="bk1_ncs"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk1_ncs"/>
       </gpio>
       <gpio device-pin="c|m|q|r|v" port="b" pin="12">
         <signal driver="adc" instance="1" name="in11"/>
@@ -1043,7 +1043,7 @@
         <signal af="1" driver="lptim" instance="1" name="out"/>
         <signal af="2" driver="tim" instance="1" name="ch2"/>
         <signal af="8" driver="lpuart" instance="1" name="tx"/>
-        <signal device-name="91|a1" device-pin="m|r|v" af="10" driver="quadspi" instance="1" name="bk2_io0"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk2_io0"/>
         <signal af="13" driver="sai" instance="1" name="sd_a"/>
       </gpio>
       <gpio device-pin="m|q|r|v" port="c" pin="2">
@@ -1053,7 +1053,7 @@
         <signal af="2" driver="tim" instance="1" name="ch3"/>
         <signal af="3" driver="comp" instance="3" name="out"/>
         <signal device-name="91|a1" device-pin="m|r|v" af="6" driver="tim" instance="20" name="ch2"/>
-        <signal device-name="91|a1" device-pin="m|r|v" af="10" driver="quadspi" instance="1" name="bk2_io1"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk2_io1"/>
       </gpio>
       <gpio device-pin="m|q|r|v" port="c" pin="3">
         <signal driver="adc" instance="1" name="in9"/>
@@ -1062,7 +1062,7 @@
         <signal af="2" driver="tim" instance="1" name="ch4"/>
         <signal af="3" driver="sai" instance="1" name="d1"/>
         <signal af="6" driver="tim" instance="1" name="bkin2"/>
-        <signal device-name="91|a1" device-pin="m|r|v" af="10" driver="quadspi" instance="1" name="bk2_io2"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk2_io2"/>
         <signal af="13" driver="sai" instance="1" name="sd_a"/>
       </gpio>
       <gpio device-pin="m|q|r" device-package="t" port="c" pin="4">
@@ -1070,50 +1070,35 @@
         <signal af="2" driver="tim" instance="1" name="etr"/>
         <signal af="4" driver="i2c" instance="2" name="scl"/>
         <signal af="7" driver="usart" instance="1" name="tx"/>
-        <signal device-name="91|a1" device-pin="c" device-package="u" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
-        <signal device-name="91|a1" device-pin="m" device-package="s|t" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
-        <signal device-name="91|a1" device-pin="r" device-package="i|t|y" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
-        <signal device-name="91|a1" device-pin="v" device-package="t" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk2_io3"/>
       </gpio>
       <gpio device-pin="c" device-package="u" port="c" pin="4">
         <signal driver="adc" instance="2" name="in5"/>
         <signal af="2" driver="tim" instance="1" name="etr"/>
         <signal af="4" driver="i2c" instance="2" name="scl"/>
         <signal af="7" driver="usart" instance="1" name="tx"/>
-        <signal device-name="91|a1" device-pin="c" device-package="u" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
-        <signal device-name="91|a1" device-pin="m" device-package="s|t" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
-        <signal device-name="91|a1" device-pin="r" device-package="i|t|y" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
-        <signal device-name="91|a1" device-pin="v" device-package="t" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk2_io3"/>
       </gpio>
       <gpio device-pin="m" device-package="s|y" port="c" pin="4">
         <signal driver="adc" instance="2" name="in5"/>
         <signal af="2" driver="tim" instance="1" name="etr"/>
         <signal af="4" driver="i2c" instance="2" name="scl"/>
         <signal af="7" driver="usart" instance="1" name="tx"/>
-        <signal device-name="91|a1" device-pin="c" device-package="u" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
-        <signal device-name="91|a1" device-pin="m" device-package="s|t" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
-        <signal device-name="91|a1" device-pin="r" device-package="i|t|y" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
-        <signal device-name="91|a1" device-pin="v" device-package="t" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk2_io3"/>
       </gpio>
       <gpio device-pin="r" device-package="i|y" port="c" pin="4">
         <signal driver="adc" instance="2" name="in5"/>
         <signal af="2" driver="tim" instance="1" name="etr"/>
         <signal af="4" driver="i2c" instance="2" name="scl"/>
         <signal af="7" driver="usart" instance="1" name="tx"/>
-        <signal device-name="91|a1" device-pin="c" device-package="u" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
-        <signal device-name="91|a1" device-pin="m" device-package="s|t" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
-        <signal device-name="91|a1" device-pin="r" device-package="i|t|y" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
-        <signal device-name="91|a1" device-pin="v" device-package="t" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk2_io3"/>
       </gpio>
       <gpio device-pin="v" device-package="h|i|t" port="c" pin="4">
         <signal driver="adc" instance="2" name="in5"/>
         <signal af="2" driver="tim" instance="1" name="etr"/>
         <signal af="4" driver="i2c" instance="2" name="scl"/>
         <signal af="7" driver="usart" instance="1" name="tx"/>
-        <signal device-name="91|a1" device-pin="c" device-package="u" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
-        <signal device-name="91|a1" device-pin="m" device-package="s|t" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
-        <signal device-name="91|a1" device-pin="r" device-package="i|t|y" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
-        <signal device-name="91|a1" device-pin="v" device-package="t" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk2_io3"/>
       </gpio>
       <gpio device-pin="m|q|r|v" port="c" pin="5">
         <signal driver="adc" instance="2" name="in11"/>
@@ -1307,29 +1292,29 @@
         <signal af="2" driver="tim" instance="2" name="etr"/>
         <signal af="7" driver="usart" instance="2" name="cts"/>
         <signal af="7" driver="usart" instance="2" name="nss"/>
-        <signal device-name="91|a1" device-pin="v" af="10" driver="quadspi" instance="1" name="bk2_ncs"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk2_ncs"/>
       </gpio>
       <gpio device-pin="q|v" port="d" pin="4">
         <signal af="2" driver="tim" instance="2" name="ch2"/>
         <signal af="7" driver="usart" instance="2" name="de"/>
         <signal af="7" driver="usart" instance="2" name="rts"/>
-        <signal device-name="91|a1" device-pin="v" af="10" driver="quadspi" instance="1" name="bk2_io0"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk2_io0"/>
       </gpio>
       <gpio device-pin="q|v" port="d" pin="5">
         <signal af="7" driver="usart" instance="2" name="tx"/>
-        <signal device-name="91|a1" device-pin="v" af="10" driver="quadspi" instance="1" name="bk2_io1"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk2_io1"/>
       </gpio>
       <gpio device-pin="q|v" port="d" pin="6">
         <signal af="2" driver="tim" instance="2" name="ch4"/>
         <signal af="3" driver="sai" instance="1" name="d1"/>
         <signal af="7" driver="usart" instance="2" name="rx"/>
-        <signal device-name="91|a1" device-pin="v" af="10" driver="quadspi" instance="1" name="bk2_io2"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk2_io2"/>
         <signal af="13" driver="sai" instance="1" name="sd_a"/>
       </gpio>
       <gpio device-pin="q|v" port="d" pin="7">
         <signal af="2" driver="tim" instance="2" name="ch3"/>
         <signal af="7" driver="usart" instance="2" name="ck"/>
-        <signal device-name="91|a1" device-pin="v" af="10" driver="quadspi" instance="1" name="bk2_io3"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk2_io3"/>
       </gpio>
       <gpio device-pin="m|q|v" port="d" pin="8">
         <signal af="7" driver="usart" instance="3" name="tx"/>
@@ -1470,38 +1455,38 @@
       <gpio device-pin="m|q|v" port="e" pin="10">
         <signal driver="adc" instance="3" name="in14"/>
         <signal af="2" driver="tim" instance="1" name="ch2n"/>
-        <signal device-name="91|a1" device-pin="m|v" af="10" driver="quadspi" instance="1" name="clk"/>
+        <signal af="10" driver="quadspi" instance="1" name="clk"/>
         <signal af="13" driver="sai" instance="1" name="mclk_b"/>
       </gpio>
       <gpio device-pin="m|q|v" port="e" pin="11">
         <signal driver="adc" instance="3" name="in15"/>
         <signal af="2" driver="tim" instance="1" name="ch2"/>
         <signal device-name="71" device-pin="m|q|v" af="5" driver="spi" instance="4" name="nss"/>
-        <signal device-name="91|a1" device-pin="m|v" af="10" driver="quadspi" instance="1" name="bk1_ncs"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk1_ncs"/>
       </gpio>
       <gpio device-pin="m|q|v" port="e" pin="12">
         <signal driver="adc" instance="3" name="in16"/>
         <signal af="2" driver="tim" instance="1" name="ch3n"/>
         <signal device-name="71" device-pin="m|q|v" af="5" driver="spi" instance="4" name="sck"/>
-        <signal device-name="91|a1" device-pin="m|v" af="10" driver="quadspi" instance="1" name="bk1_io0"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk1_io0"/>
       </gpio>
       <gpio device-pin="m|q|v" port="e" pin="13">
         <signal driver="adc" instance="3" name="in3"/>
         <signal af="2" driver="tim" instance="1" name="ch3"/>
         <signal device-name="71" device-pin="m|q|v" af="5" driver="spi" instance="4" name="miso"/>
-        <signal device-name="91|a1" device-pin="m|v" af="10" driver="quadspi" instance="1" name="bk1_io1"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk1_io1"/>
       </gpio>
       <gpio device-pin="m|q|v" port="e" pin="14">
         <signal af="2" driver="tim" instance="1" name="ch4"/>
         <signal device-name="71" device-pin="m|q|v" af="5" driver="spi" instance="4" name="mosi"/>
         <signal af="6" driver="tim" instance="1" name="bkin2"/>
-        <signal device-name="91|a1" device-pin="m|v" af="10" driver="quadspi" instance="1" name="bk1_io2"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk1_io2"/>
       </gpio>
       <gpio device-pin="m|q|v" port="e" pin="15">
         <signal af="2" driver="tim" instance="1" name="bkin"/>
         <signal af="6" driver="tim" instance="1" name="ch4n"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
-        <signal device-name="91|a1" device-pin="m|v" af="10" driver="quadspi" instance="1" name="bk1_io3"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk1_io3"/>
       </gpio>
       <gpio port="f" pin="0">
         <signal driver="adc" instance="1" name="in10"/>
@@ -1537,13 +1522,16 @@
         <signal af="4" driver="i2c" instance="2" name="scl"/>
         <signal af="6" driver="tim" instance="5" name="ch1"/>
         <signal af="7" driver="usart" instance="3" name="rts"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk1_io3"/>
       </gpio>
       <gpio device-pin="q" port="f" pin="7">
         <signal af="6" driver="tim" instance="5" name="ch2"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk1_io2"/>
         <signal af="13" driver="sai" instance="1" name="mclk_b"/>
       </gpio>
       <gpio device-pin="q" port="f" pin="8">
         <signal af="6" driver="tim" instance="5" name="ch3"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk1_io0"/>
         <signal af="13" driver="sai" instance="1" name="sck_b"/>
       </gpio>
       <gpio device-pin="q|v" port="f" pin="9">
@@ -1551,14 +1539,14 @@
         <signal af="3" driver="tim" instance="15" name="ch1"/>
         <signal af="5" driver="spi" instance="2" name="sck"/>
         <signal device-name="71" device-pin="q|v" af="6" driver="tim" instance="5" name="ch4"/>
-        <signal device-name="91|a1" device-pin="v" af="10" driver="quadspi" instance="1" name="bk1_io1"/>
+        <signal af="10" driver="quadspi" instance="1" name="bk1_io1"/>
         <signal af="13" driver="sai" instance="1" name="fs_b"/>
       </gpio>
       <gpio device-pin="q|v" port="f" pin="10">
         <signal device-name="91|a1" device-pin="v" af="2" driver="tim" instance="20" name="bkin2"/>
         <signal af="3" driver="tim" instance="15" name="ch2"/>
         <signal af="5" driver="spi" instance="2" name="sck"/>
-        <signal device-name="91|a1" device-pin="v" af="10" driver="quadspi" instance="1" name="clk"/>
+        <signal af="10" driver="quadspi" instance="1" name="clk"/>
         <signal af="13" driver="sai" instance="1" name="d3"/>
       </gpio>
       <gpio device-pin="q" port="f" pin="11"/>

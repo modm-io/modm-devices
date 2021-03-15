@@ -975,15 +975,10 @@
         <signal af="14" driver="tim" name="ic2"/>
       </gpio>
       <gpio device-pin="q|v|z" port="e" pin="6">
-        <signal device-pin="q|z" device-size="c|d" device-variant="" driver="tim" instance="9" name="ch2"/>
-        <signal device-pin="v" device-size="c" device-variant="a" driver="tim" instance="9" name="ch2"/>
-        <signal device-pin="v" device-size="d" device-variant="" driver="tim" instance="9" name="ch2"/>
         <signal af="0" driver="rtc" name="tamp3"/>
         <signal af="0" driver="sys" name="traced3"/>
         <signal af="0" driver="sys" name="wkup3"/>
-        <signal device-pin="q|v|z" device-size="e" device-variant="" af="3" driver="tim" instance="9" name="ch2"/>
-        <signal device-pin="v" device-size="c" device-variant="" af="3" driver="tim" instance="9" name="ch2"/>
-        <signal device-pin="v" device-size="d" device-variant="x" af="3" driver="tim" instance="9" name="ch2"/>
+        <signal af="3" driver="tim" instance="9" name="ch2"/>
         <signal af="14" driver="tim" name="ic3"/>
       </gpio>
       <gpio device-pin="q|v|z" port="e" pin="7">
