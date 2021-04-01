@@ -93,7 +93,8 @@
       <instance value="21"/>
       <instance device-size="b" value="22"/>
     </driver>
-    <driver name="usart" type="stm32">
+    <driver name="usart" type="stm32-extended">
+      <feature value="over8"/>
       <instance value="2"/>
     </driver>
     <driver name="wwdg" type="stm32-v1.0"/>

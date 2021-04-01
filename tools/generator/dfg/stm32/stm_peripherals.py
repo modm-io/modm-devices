@@ -439,6 +439,11 @@ stm_peripherals = \
                 'protocols': ['uart', 'spi'],
                 'devices': [{'family': ['f7', 'l4']}]
             },{
+                'hardware': 'stm32-extended',
+                'features': ['over8'],
+                'protocols': ['uart', 'spi'],
+                'devices': [{'family': ['l0']}]
+            },{
                 'hardware': 'stm32',
                 'features': ['over8'],
                 'protocols': ['uart', 'spi'],

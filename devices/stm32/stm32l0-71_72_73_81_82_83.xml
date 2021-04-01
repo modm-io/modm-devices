@@ -273,7 +273,8 @@
       <instance value="22"/>
     </driver>
     <driver device-name="72|73|82|83" name="tsc" type="stm32-v1.0"/>
-    <driver name="usart" type="stm32">
+    <driver name="usart" type="stm32-extended">
+      <feature value="over8"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="4"/>
