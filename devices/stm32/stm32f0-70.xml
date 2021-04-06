@@ -212,63 +212,6 @@
             <remap position="25" mask="1" id="0"/>
           </signal>
         </channel>
-        <channel device-size="b" position="6">
-          <signal driver="i2c" instance="1" name="tx">
-            <remap position="27" mask="1" id="1"/>
-          </signal>
-          <signal driver="spi" instance="2" name="rx">
-            <remap position="24" mask="1" id="1"/>
-          </signal>
-          <signal driver="tim" instance="1" name="ch1">
-            <remap position="28" mask="1" id="1"/>
-          </signal>
-          <signal driver="tim" instance="1" name="ch2">
-            <remap position="28" mask="1" id="1"/>
-          </signal>
-          <signal driver="tim" instance="1" name="ch3">
-            <remap position="28" mask="1" id="1"/>
-          </signal>
-          <signal driver="tim" instance="16" name="ch1">
-            <remap position="13" mask="1" id="1"/>
-          </signal>
-          <signal driver="tim" instance="16" name="up">
-            <remap position="13" mask="1" id="1"/>
-          </signal>
-          <signal driver="tim" instance="3" name="ch1">
-            <remap position="30" mask="1" id="1"/>
-          </signal>
-          <signal driver="tim" instance="3" name="trig">
-            <remap position="30" mask="1" id="1"/>
-          </signal>
-          <signal driver="usart" instance="2" name="rx">
-            <remap position="25" mask="1" id="1"/>
-          </signal>
-          <signal driver="usart" instance="3" name="rx">
-            <remap position="26" mask="1" id="0"/>
-          </signal>
-          <signal driver="usart" instance="4" name="rx"/>
-        </channel>
-        <channel device-size="b" position="7">
-          <signal driver="i2c" instance="1" name="rx">
-            <remap position="27" mask="1" id="1"/>
-          </signal>
-          <signal driver="spi" instance="2" name="tx">
-            <remap position="24" mask="1" id="1"/>
-          </signal>
-          <signal driver="tim" instance="17" name="ch1">
-            <remap position="14" mask="1" id="1"/>
-          </signal>
-          <signal driver="tim" instance="17" name="up">
-            <remap position="14" mask="1" id="1"/>
-          </signal>
-          <signal driver="usart" instance="2" name="tx">
-            <remap position="25" mask="1" id="1"/>
-          </signal>
-          <signal driver="usart" instance="3" name="tx">
-            <remap position="26" mask="1" id="0"/>
-          </signal>
-          <signal driver="usart" instance="4" name="tx"/>
-        </channel>
       </channels>
     </driver>
     <driver name="gpio" type="stm32">

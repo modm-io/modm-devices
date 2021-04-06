@@ -324,6 +324,17 @@ class STMDeviceTree:
                 # print(instance, stream, channel)
                 # print(signal)
 
+        # Manually handle condition expressions from XML for
+        # (STM32F030CCTx|STM32F030RCTx) and (STM32F070CBTx|STM32F070RBTx)
+        if did.family in ['f0']:
+            if (did.name == '30' and did.size == 'c'):
+                dma_streams['1'].pop('6')
+                dma_streams['1'].pop('7')
+                dma_streams.pop('2')
+            if (did.name == '70' and did.size == 'b'):
+                dma_streams['1'].pop('6')
+                dma_streams['1'].pop('7')
+
         # if p["dma_naming"][1] == "request":
         #     print(did, dmaFile.filename)
         p["dma"] = dma_streams
