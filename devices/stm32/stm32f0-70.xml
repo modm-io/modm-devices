@@ -200,7 +200,6 @@
           </signal>
           <signal driver="tim" instance="1" name="ch3"/>
           <signal driver="tim" instance="1" name="up"/>
-          <signal device-size="b" driver="tim" instance="1" name="up"/>
           <signal device-size="b" driver="tim" instance="15" name="ch1"/>
           <signal device-size="b" driver="tim" instance="15" name="com"/>
           <signal device-size="b" driver="tim" instance="15" name="trig"/>

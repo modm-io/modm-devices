@@ -144,7 +144,6 @@
           <signal driver="tim" instance="1" name="ch1"/>
           <signal driver="tim" instance="1" name="ch2"/>
           <signal driver="tim" instance="1" name="ch3"/>
-          <signal driver="tim" instance="1" name="ch3"/>
           <signal driver="tim" instance="16" name="ch1"/>
           <signal driver="tim" instance="16" name="up"/>
           <signal driver="tim" instance="3" name="ch1"/>

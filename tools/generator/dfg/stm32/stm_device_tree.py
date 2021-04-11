@@ -335,6 +335,15 @@ class STMDeviceTree:
                 dma_streams['1'].pop('6')
                 dma_streams['1'].pop('7')
 
+        # De-duplicate DMA signal entries
+        def deduplicate_list(l):
+            return [i for n, i in enumerate(l) if i not in l[n + 1:]]
+        for stream in dma_streams:
+            for channel in dma_streams[stream]:
+                for signal in dma_streams[stream][channel]:
+                    dma_streams[stream][channel][signal] = deduplicate_list(
+                        dma_streams[stream][channel][signal])
+
         # if p["dma_naming"][1] == "request":
         #     print(did, dmaFile.filename)
         p["dma"] = dma_streams

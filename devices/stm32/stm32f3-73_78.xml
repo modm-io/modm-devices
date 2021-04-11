@@ -277,12 +277,6 @@
           <signal driver="tim" instance="17" name="ch1">
             <remap position="12" mask="1" id="1"/>
           </signal>
-          <signal driver="tim" instance="17" name="ch1">
-            <remap position="12" mask="1" id="1"/>
-          </signal>
-          <signal driver="tim" instance="17" name="up">
-            <remap position="12" mask="1" id="1"/>
-          </signal>
           <signal driver="tim" instance="17" name="up">
             <remap position="12" mask="1" id="1"/>
           </signal>
