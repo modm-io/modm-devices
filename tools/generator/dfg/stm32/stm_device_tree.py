@@ -351,6 +351,29 @@ class STMDeviceTree:
             for instance, stream, name in sorted(dma_dumped):
                 LOGGER.debug("DMA{}#{}: dumping {}".format(instance, stream, name))
 
+        # If DMAMUX is used, add DMAMUX to DMA peripheral channel mappings
+        if p["dma_naming"] == (None, "request", "signal"):
+            # There can be multiple "//RefParameter[@Name="Instance"]" nodes constrained by
+            # a <Condition> child node filtering by the STM32 die id
+            # Try to match a node with condition first, if nothing matches choose the default one
+            die_id = device_file.query('//Die')[0].text
+            q = '//RefParameter[@Name="Instance"]/Condition[@Expression="%s"]/../PossibleValue/@Value' % die_id
+            channels = dmaFile.query(q)
+            if len(channels) == 0:
+                # match channels from node without <Condition> child node
+                channels = dmaFile.query('//RefParameter[@Name="Instance" and not(Condition)]/PossibleValue/@Value')
+
+            mux_channels = []
+            # H7 has "Stream" instead of "Channel" for DMAMUX1
+            mux_channel_regex = re.compile(r"DMA(?P<instance>([0-9]))_(Channel|Stream)(?P<channel>([0-9]+))")
+            for mux_ch_position, channel in enumerate(channels):
+                m = mux_channel_regex.match(channel)
+                assert m is not None
+                mux_channels.append({'position'     : mux_ch_position,
+                                     'dma-instance' : int(m.group("instance")),
+                                     'dma-channel'  : int(m.group("channel"))})
+            p["dma_mux_channels"] = mux_channels
+
         if did.family == "f1":
             grouped_f1_signals = gpioFile.compactQuery('//GPIO_Pin/PinSignal/@Name')
 
@@ -570,6 +593,16 @@ class STMDeviceTree:
                             rem = sign.addChild("remap")
                             rem.setAttributes(["position", "mask", "id"], remap)
 
+        mux_channels = p.get("dma_mux_channels")
+        if mux_channels is not None:
+            driver_channels = driver.addChild("mux-channels")
+            # TODO: attribute "instance" has to be added to mux-channels for H7 BDMA which uses DMAMUX2
+            driver_channels.addSortKey(lambda e: (int(e.get("position", 0)),
+                                                  int(e.get("dma-instance", 0)),
+                                                  int(e.get("dma-channel", 0))))
+            for channel in mux_channels:
+                chan = driver_channels.addChild("mux-channel")
+                chan.setAttributes(["position", "dma-instance", "dma-channel"], channel)
 
     @staticmethod
     def addGpioToNode(p, gpio_driver):

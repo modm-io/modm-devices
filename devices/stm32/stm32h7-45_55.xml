@@ -693,6 +693,24 @@
           <signal driver="adc" instance="3"/>
         </request>
       </requests>
+      <mux-channels>
+        <mux-channel position="0" dma-instance="1" dma-channel="0"/>
+        <mux-channel position="1" dma-instance="1" dma-channel="1"/>
+        <mux-channel position="2" dma-instance="1" dma-channel="2"/>
+        <mux-channel position="3" dma-instance="1" dma-channel="3"/>
+        <mux-channel position="4" dma-instance="1" dma-channel="4"/>
+        <mux-channel position="5" dma-instance="1" dma-channel="5"/>
+        <mux-channel position="6" dma-instance="1" dma-channel="6"/>
+        <mux-channel position="7" dma-instance="1" dma-channel="7"/>
+        <mux-channel position="8" dma-instance="2" dma-channel="0"/>
+        <mux-channel position="9" dma-instance="2" dma-channel="1"/>
+        <mux-channel position="10" dma-instance="2" dma-channel="2"/>
+        <mux-channel position="11" dma-instance="2" dma-channel="3"/>
+        <mux-channel position="12" dma-instance="2" dma-channel="4"/>
+        <mux-channel position="13" dma-instance="2" dma-channel="5"/>
+        <mux-channel position="14" dma-instance="2" dma-channel="6"/>
+        <mux-channel position="15" dma-instance="2" dma-channel="7"/>
+      </mux-channels>
     </driver>
     <driver name="gpio" type="stm32">
       <gpio port="a" pin="0">
