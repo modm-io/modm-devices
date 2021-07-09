@@ -57,24 +57,28 @@ class STMDeviceTree:
 
     @staticmethod
     def _properties_from_partname(partname):
-        p = {}
-
         deviceNames = STMDeviceTree.familyFile.query('//Family/SubFamily/Mcu[starts-with(@RefName,"{}")]'
                                                      .format(partname[:12] + "x" + partname[13:]))
         comboDeviceName = sorted([d.get("Name") for d in deviceNames])[0]
         device_file = XMLReader(os.path.join(STMDeviceTree.rootpath, comboDeviceName + ".xml"))
         did = STMIdentifier.from_string(partname.lower())
-        p["id"] = did
-
         LOGGER.info("Parsing '{}'".format(did.string))
 
         # information about the core and architecture
-        core = device_file.query('//Core')[0].text.lower().replace("arm ", "")
+        cores = [c.text.lower().replace("arm ", "") for c in device_file.query('//Core')]
+        if len(cores) > 1: did.naming_schema += "@{core}"
+        devices = [STMDeviceTree._properties_from_id(comboDeviceName, device_file, did.copy(), c) for c in cores]
+        return [d for d in devices if d is not None]
+
+    @staticmethod
+    def _properties_from_id(comboDeviceName, device_file, did, core):
         if core.endswith("m4") or core.endswith("m7"):
             core += "f"
         if did.family in ["h7"] or (did.family in ["f7"] and did.name not in ["45", "46", "56"]):
             core += "d"
-        p["core"] = core
+        if "@" in did.naming_schema:
+            did.set("core", core[7:9])
+        p = {"id": did, "core": core}
 
         # Information from the CMSIS headers
         stm_header = STMHeader(did)
@@ -500,7 +504,12 @@ class STMDeviceTree:
         tree.addSortKey(driverOrder)
 
         core_child = tree.addChild("driver")
-        core_child.setAttributes("name", "core", "type", p["core"])
+        core_child.setAttributes("name", "core")
+        if "@" in p["id"].naming_schema:
+            type_child = core_child.addChild("attribute-type")
+            type_child.setValue(p["core"])
+        else:
+            core_child.setAttributes("type", p["core"])
         # Memories
         STMDeviceTree.addMemoryToNode(p, core_child)
         STMDeviceTree.addInterruptTableToNode(p, core_child)
@@ -730,6 +739,5 @@ class STMDeviceTree:
 
     @staticmethod
     def from_partname(partname):
-        p = STMDeviceTree._properties_from_partname(partname)
-        if p is None: return None;
-        return STMDeviceTree._device_tree_from_properties(p)
+        devices = STMDeviceTree._properties_from_partname(partname)
+        return [STMDeviceTree._device_tree_from_properties(d) for d in devices]

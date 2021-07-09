@@ -28,10 +28,14 @@ def extract(text, key):
     return re.search(r"<!--{0}-->(.*?)<!--/{0}-->".format(key), text, flags=re.DOTALL | re.MULTILINE).group(1)
 
 if __name__ == "__main__":
+    devices_short = set()
     devices = []
     for filename in Path(rootpath).glob("devices/**/*.xml"):
         for d in modm_devices.parser.DeviceParser().parse(str(filename)).get_devices():
-            devices.append(d)
+            short_device = d.identifier.string.split("@")[0]
+            if short_device not in devices_short:
+                devices_short.add(short_device)
+                devices.append(d)
 
     families = defaultdict(int)
     for dev in devices:

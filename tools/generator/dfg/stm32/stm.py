@@ -457,15 +457,18 @@ stm32_memory = \
                 'memories' : {'flash': 0, 'sram1' : 0}
             },
             {
-                'name': ['03x6', '03x8', '28', '34'],
+                'name': ['03', '28', '34'],
+                'size': ['4', '6', '8'],
                 'memories': {'flash': 0, 'ccm': 4*1024, 'sram1': 0}
             },
             {
-                'name': ['03xb', '03xc', '58'],
+                'name': ['03', '58'],
+                'size': ['b', 'c'],
                 'memories': {'flash': 0, 'ccm': 8*1024, 'sram1': 0}
             },
             {
-                'name': ['03xd', '03xe', '98'],
+                'name': ['03', '98'],
+                'size': ['d', 'e'],
                 'memories': {'flash': 0, 'ccm': 16*1024, 'sram1': 0}
             }
         ]
@@ -539,8 +542,24 @@ stm32_memory = \
                              'd3_sram': 64*1024}
             },
             {
-                'name': ['23', '25', '30', '33', '35', '40', '43', '45', '47', '50', '53', '55', '57'],
+                'name': ['23', '25', '30', '33', '35', '40', '43', '50', '53'],
                 'memories': {'flash': 0, 'itcm': 64*1024, 'dtcm': 128*1024, 'backup': 4*1024,
+                             'd1_sram': 512*1024,
+                             'd2_sram1': 128*1024, 'd2_sram2': 128*1024, 'd2_sram3': 32*1024,
+                             'd3_sram': 64*1024}
+            },
+            {
+                'name': ['45', '47', '55', '57'],
+                'core': ['m7'],
+                'memories': {'flash': 0, 'itcm': 64*1024, 'dtcm': 128*1024, 'backup': 4*1024,
+                             'd1_sram': 512*1024,
+                             'd2_sram1': 128*1024, 'd2_sram2': 128*1024, 'd2_sram3': 32*1024,
+                             'd3_sram': 64*1024}
+            },
+            {
+                'name': ['45', '47', '55', '57'],
+                'core': ['m4'],
+                'memories': {'flash': 0, 'backup': 4*1024,
                              'd1_sram': 512*1024,
                              'd2_sram1': 128*1024, 'd2_sram2': 128*1024, 'd2_sram3': 32*1024,
                              'd3_sram': 64*1024}
@@ -562,14 +581,16 @@ stm32_memory = \
         },
         'model': [
             {
-                'name': ['10x4'],
+                'name': ['10'],
+                'size': ['4'],
                 'memories': {'flash': 0, 'sram1': 0, 'eeprom': 128}
             },{
-                'name': ['10x8', '10x6'],
+                'name': ['10'],
+                'size': ['6', '8'],
                 'memories': {'flash': 0, 'sram1': 0, 'eeprom': 256}
             },{
                 # CAT1
-                'name': ['10xb', '11', '21'],
+                'name': ['10', '11', '21'],
                 'memories': {'flash': 0, 'sram1': 0, 'eeprom': 512}
             },{
                 # CAT2
@@ -595,22 +616,22 @@ stm32_memory = \
         'model': [
             {
                 # CAT1 & 2
-                'name': ['00x6', '00x8', '00xb', '51x6', '51x8', '51xb', '52x6', '52x8', '52xb'],
+                'name': ['00', '51', '52'],
                 'size': ['6', '8', 'b'],
                 'memories': {'flash': 0, 'sram1': 0, 'eeprom': 4*1024}
             },{
                 # CAT3
-                'name': ['00xc', '51xc', '52xc', '62xc'],
+                'name': ['00', '51', '52', '62'],
                 'size': ['c'],
                 'memories': {'flash': 0, 'sram1': 0, 'eeprom': 8*1024}
             },{
                 # CAT4
-                'name': ['51xd', '52xd', '62xd'],
+                'name': ['51', '52', '62'],
                 'size': ['d'],
                 'memories': {'flash': 0, 'sram1': 0, 'eeprom': 12*1024}
             },{
                 # CAT5 & 6
-                'name': ['51xe', '52xe', '62xe'],
+                'name': ['51', '52', '62'],
                 'size': ['e'],
                 'memories': {'flash': 0, 'sram1': 0, 'eeprom': 16*1024}
             },
@@ -680,13 +701,9 @@ def getMemoryModel(device_id):
     mem_fam = stm32_memory[device_id.family]
     mem_model = None
     for model in mem_fam['model']:
-        if any(name.startswith(device_id.name) for name in model['name']):
-            if device_id.name in model['name']:
-                mem_model = model
-                break
-            elif "{}x{}".format(device_id.name, device_id.size) in model['name']:
-                mem_model = model
-                break
+        if all(device_id[k] in v for k, v in model.items() if k not in ['start', 'memories']):
+            mem_model = model
+            break
     if mem_model == None:
         LOGGER.error("Memory model not found for device '{}'".format(device_id.string))
         exit(1)

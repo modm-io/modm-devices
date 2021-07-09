@@ -27,9 +27,8 @@ deviceNames = sorted(list(set(deviceNames)))
 
 devices = {}
 for deviceName in deviceNames:
-    device = STMDeviceTree.from_partname(deviceName)
-    if device is None: continue;
-    devices[device.ids.string] = device
+    for device in STMDeviceTree.from_partname(deviceName):
+        devices[device.ids.string] = device
 
 def filename(ids):
     p = {}
