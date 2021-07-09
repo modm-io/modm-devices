@@ -81,6 +81,11 @@ stm_peripherals = \
         'instances': '*',
         'groups': [
             {
+                'hardware': 'stm32-h7',
+                'features': [],
+                'protocols': [],
+                'devices': [{'family': ['h7']}]
+            },{
                 'hardware': 'stm32',
                 'features': [],
                 'protocols': [],
@@ -165,6 +170,11 @@ stm_peripherals = \
                 'features': ['data-size', 'nss-pulse', 'fifo'],
                 'protocols': [],
                 'devices': [{'family': ['f0', 'g0', 'f3', 'f7', 'l4', 'g4', 'wb']}]
+            },{
+                'hardware': 'stm32-extended',
+                'features': [],
+                'protocols': [],
+                'devices': [{'family': ['h7']}]
             },{
                 'hardware': 'stm32',
                 'features': [],
@@ -401,7 +411,7 @@ stm_peripherals = \
                 'hardware': 'stm32-extended',
                 'features': ['tcbgt'],
                 'protocols': ['uart'],
-                'devices': [{'family': ['l4'], 'name': ['p5', 'p7', 'p9', 'q5', 'q7', 'q9', 'r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0', 'g4', 'wb']}]
+                'devices': [{'family': ['l4'], 'name': ['p5', 'p7', 'p9', 'q5', 'q7', 'q9', 'r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0', 'g4', 'wb', 'h7']}]
             },{
                 'hardware': 'stm32-extended',
                 'features': [],
@@ -432,7 +442,7 @@ stm_peripherals = \
                 'hardware': 'stm32-extended',
                 'features': ['tcbgt'],
                 'protocols': ['uart', 'spi'],
-                'devices': [{'family': ['l4'], 'name': ['p5', 'p7', 'p9', 'q5', 'q7', 'q9', 'r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0', 'g4', 'wb']}]
+                'devices': [{'family': ['l4'], 'name': ['p5', 'p7', 'p9', 'q5', 'q7', 'q9', 'r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0', 'g4', 'wb', 'h7']}]
             },{
                 'hardware': 'stm32-extended',
                 'features': [],
