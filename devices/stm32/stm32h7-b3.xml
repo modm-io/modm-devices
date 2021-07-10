@@ -22,7 +22,7 @@
     <valid-device>stm32h7b3zit7q</valid-device>
     <driver name="core" type="cortex-m7fd">
       <memory name="itcm" access="rwx" start="0x00" size="65536"/>
-      <memory name="flash" access="rx" start="0x200000" size="2097152"/>
+      <memory name="flash" access="rx" start="0x8000000" size="2097152"/>
       <memory name="dtcm" access="rwx" start="0x20000000" size="131072"/>
       <memory name="d1_sram1" access="rwx" start="0x24000000" size="262144"/>
       <memory name="d1_sram2" access="rwx" start="0x24040000" size="393216"/>
@@ -197,29 +197,40 @@
     </driver>
     <driver name="dma2d" type="stm32"/>
     <driver name="dts" type="stm32-v1.0"/>
-    <driver name="fdcan" type="stm32">
+    <driver name="fdcan" type="stm32-h7">
       <instance value="1"/>
       <instance value="2"/>
     </driver>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="950">
-        <wait-state ws="0" hclk-max="45000000"/>
-        <wait-state ws="1" hclk-max="90000000"/>
-        <wait-state ws="2" hclk-max="135000000"/>
-        <wait-state ws="3" hclk-max="180000000"/>
-        <wait-state ws="4" hclk-max="225000000"/>
+        <wait-state ws="0" hclk-max="22000000"/>
+        <wait-state ws="1" hclk-max="44000000"/>
+        <wait-state ws="2" hclk-max="66000000"/>
+        <wait-state ws="3" hclk-max="88000000"/>
       </latency>
       <latency vcore-min="1050">
-        <wait-state ws="0" hclk-max="55000000"/>
-        <wait-state ws="1" hclk-max="110000000"/>
-        <wait-state ws="2" hclk-max="165000000"/>
-        <wait-state ws="3" hclk-max="225000000"/>
+        <wait-state ws="0" hclk-max="34000000"/>
+        <wait-state ws="1" hclk-max="68000000"/>
+        <wait-state ws="2" hclk-max="102000000"/>
+        <wait-state ws="3" hclk-max="136000000"/>
+        <wait-state ws="4" hclk-max="160000000"/>
       </latency>
       <latency vcore-min="1150">
-        <wait-state ws="0" hclk-max="70000000"/>
-        <wait-state ws="1" hclk-max="140000000"/>
-        <wait-state ws="2" hclk-max="185000000"/>
-        <wait-state ws="3" hclk-max="225000000"/>
+        <wait-state ws="0" hclk-max="38000000"/>
+        <wait-state ws="1" hclk-max="76000000"/>
+        <wait-state ws="2" hclk-max="114000000"/>
+        <wait-state ws="3" hclk-max="152000000"/>
+        <wait-state ws="4" hclk-max="190000000"/>
+        <wait-state ws="5" hclk-max="225000000"/>
+      </latency>
+      <latency vcore-min="1250">
+        <wait-state ws="0" hclk-max="42000000"/>
+        <wait-state ws="1" hclk-max="84000000"/>
+        <wait-state ws="2" hclk-max="126000000"/>
+        <wait-state ws="3" hclk-max="168000000"/>
+        <wait-state ws="4" hclk-max="210000000"/>
+        <wait-state ws="5" hclk-max="252000000"/>
+        <wait-state ws="6" hclk-max="280000000"/>
       </latency>
     </driver>
     <driver device-pin="a|i|l|n|q|v|z" name="fmc" type="stm32-v3.0"/>
@@ -289,7 +300,7 @@
     <driver device-pin="i" device-package="k|t" device-variant="|q" name="spdifrx" type="stm32-spdifrx1_h7_cube"/>
     <driver device-pin="q" device-package="y" device-variant="q" name="spdifrx" type="stm32-spdifrx1_h7_cube"/>
     <driver device-pin="z" device-package="t" device-variant="q" name="spdifrx" type="stm32-spdifrx1_h7_cube"/>
-    <driver name="spi" type="stm32">
+    <driver name="spi" type="stm32-extended">
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -323,14 +334,16 @@
       <instance value="16"/>
       <instance value="17"/>
     </driver>
-    <driver name="uart" type="stm32">
+    <driver name="uart" type="stm32-extended">
+      <feature value="tcbgt"/>
       <instance value="4"/>
       <instance value="5"/>
       <instance value="7"/>
       <instance device-pin="a|i|l|n|q|v|z" value="8"/>
       <instance device-pin="a|i|l|n|q|v|z" value="9"/>
     </driver>
-    <driver name="usart" type="stm32">
+    <driver name="usart" type="stm32-extended">
+      <feature value="tcbgt"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>

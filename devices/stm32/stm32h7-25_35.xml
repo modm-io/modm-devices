@@ -44,8 +44,8 @@
     <valid-device>stm32h735zgt6</valid-device>
     <driver name="core" type="cortex-m7fd">
       <memory name="itcm" access="rwx" start="0x00" size="65536"/>
-      <memory device-size="e" name="flash" access="rx" start="0x200000" size="524288"/>
-      <memory device-size="g" name="flash" access="rx" start="0x200000" size="1048576"/>
+      <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288"/>
+      <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
       <memory name="dtcm" access="rwx" start="0x20000000" size="131072"/>
       <memory name="d1_sram" access="rwx" start="0x24000000" size="524288"/>
       <memory name="d2_sram1" access="rwx" start="0x30000000" size="131072"/>
@@ -223,30 +223,32 @@
     <driver name="dma2d" type="stm32"/>
     <driver name="dts" type="stm32-v1.0"/>
     <driver device-pin="a|i|v|z" name="eth" type="stm32-v3.0"/>
-    <driver name="fdcan" type="stm32">
+    <driver name="fdcan" type="stm32-h7">
       <instance value="1"/>
       <instance value="2"/>
       <instance device-pin="a|i|v|z" value="3"/>
     </driver>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="950">
-        <wait-state ws="0" hclk-max="45000000"/>
-        <wait-state ws="1" hclk-max="90000000"/>
-        <wait-state ws="2" hclk-max="135000000"/>
-        <wait-state ws="3" hclk-max="180000000"/>
-        <wait-state ws="4" hclk-max="225000000"/>
+        <wait-state ws="0" hclk-max="35000000"/>
+        <wait-state ws="1" hclk-max="70000000"/>
+        <wait-state ws="2" hclk-max="85000000"/>
       </latency>
       <latency vcore-min="1050">
-        <wait-state ws="0" hclk-max="55000000"/>
-        <wait-state ws="1" hclk-max="110000000"/>
-        <wait-state ws="2" hclk-max="165000000"/>
-        <wait-state ws="3" hclk-max="225000000"/>
+        <wait-state ws="0" hclk-max="50000000"/>
+        <wait-state ws="1" hclk-max="100000000"/>
+        <wait-state ws="2" hclk-max="150000000"/>
       </latency>
       <latency vcore-min="1150">
+        <wait-state ws="0" hclk-max="67000000"/>
+        <wait-state ws="1" hclk-max="133000000"/>
+        <wait-state ws="2" hclk-max="200000000"/>
+      </latency>
+      <latency vcore-min="1260">
         <wait-state ws="0" hclk-max="70000000"/>
         <wait-state ws="1" hclk-max="140000000"/>
-        <wait-state ws="2" hclk-max="185000000"/>
-        <wait-state ws="3" hclk-max="225000000"/>
+        <wait-state ws="2" hclk-max="210000000"/>
+        <wait-state ws="3" hclk-max="275000000"/>
       </latency>
     </driver>
     <driver name="fmac" type="stm32-v1.0"/>
@@ -315,7 +317,7 @@
     <driver name="spdifrx" type="stm32-spdifrx1_h7_cube">
       <instance value="1"/>
     </driver>
-    <driver name="spi" type="stm32">
+    <driver name="spi" type="stm32-extended">
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -353,7 +355,8 @@
       <instance value="23"/>
       <instance value="24"/>
     </driver>
-    <driver name="uart" type="stm32">
+    <driver name="uart" type="stm32-extended">
+      <feature value="tcbgt"/>
       <instance value="4"/>
       <instance value="5"/>
       <instance value="7"/>
@@ -363,7 +366,8 @@
       <instance device-pin="v" device-package="y" value="9"/>
       <instance device-pin="z" device-package="t" value="9"/>
     </driver>
-    <driver name="usart" type="stm32">
+    <driver name="usart" type="stm32-extended">
+      <feature value="tcbgt"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>

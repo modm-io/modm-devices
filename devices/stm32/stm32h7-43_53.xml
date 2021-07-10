@@ -29,8 +29,8 @@
     <valid-device>stm32h753zit6</valid-device>
     <driver name="core" type="cortex-m7fd">
       <memory name="itcm" access="rwx" start="0x00" size="65536"/>
-      <memory device-size="g" name="flash" access="rx" start="0x200000" size="1048576"/>
-      <memory device-size="i" name="flash" access="rx" start="0x200000" size="2097152"/>
+      <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
+      <memory device-size="i" name="flash" access="rx" start="0x8000000" size="2097152"/>
       <memory name="dtcm" access="rwx" start="0x20000000" size="131072"/>
       <memory name="d1_sram" access="rwx" start="0x24000000" size="524288"/>
       <memory name="d2_sram1" access="rwx" start="0x30000000" size="131072"/>
@@ -206,7 +206,7 @@
     </driver>
     <driver name="dma2d" type="stm32"/>
     <driver name="eth" type="stm32-v3.0"/>
-    <driver name="fdcan" type="stm32">
+    <driver name="fdcan" type="stm32-h7">
       <instance value="1"/>
       <instance value="2"/>
     </driver>
@@ -227,8 +227,15 @@
       <latency vcore-min="1150">
         <wait-state ws="0" hclk-max="70000000"/>
         <wait-state ws="1" hclk-max="140000000"/>
-        <wait-state ws="2" hclk-max="185000000"/>
+        <wait-state ws="2" hclk-max="210000000"/>
         <wait-state ws="3" hclk-max="225000000"/>
+      </latency>
+      <latency vcore-min="1260">
+        <wait-state ws="0" hclk-max="70000000"/>
+        <wait-state ws="1" hclk-max="140000000"/>
+        <wait-state ws="2" hclk-max="210000000"/>
+        <wait-state ws="3" hclk-max="225000000"/>
+        <wait-state ws="4" hclk-max="240000000"/>
       </latency>
     </driver>
     <driver name="fmc" type="stm32-v3.0"/>
@@ -287,7 +294,7 @@
     <driver name="spdifrx" type="stm32-spdifrx1_h7_cube">
       <instance value="1"/>
     </driver>
-    <driver name="spi" type="stm32">
+    <driver name="spi" type="stm32-extended">
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -321,13 +328,15 @@
       <instance value="16"/>
       <instance value="17"/>
     </driver>
-    <driver name="uart" type="stm32">
+    <driver name="uart" type="stm32-extended">
+      <feature value="tcbgt"/>
       <instance value="4"/>
       <instance value="5"/>
       <instance value="7"/>
       <instance value="8"/>
     </driver>
-    <driver name="usart" type="stm32">
+    <driver name="usart" type="stm32-extended">
+      <feature value="tcbgt"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
