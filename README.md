@@ -11,7 +11,6 @@ how to use this data.
 These tools and this data set is maintained and curated by
 [@salkinium][] only at [modm-io/modm-devices][modm-devices].
 It is licensed under the MPLv2 license.
-The CI checks daily for new data: [![](https://travis-ci.org/modm-io/modm-devices.svg?branch=develop)](https://travis-ci.org/modm-io/modm-devices)
 
 Currently data for <!--devicecount-->3552<!--/devicecount--> devices is available.
 Please open an issue or better yet a pull request for additional support.

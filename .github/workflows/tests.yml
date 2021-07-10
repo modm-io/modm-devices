@@ -1,0 +1,119 @@
+name: Generate
+
+on:
+  schedule:
+    - cron:  '23 7 * * *'
+  pull_request:
+
+env:
+  MAKEFLAGS: -j4
+
+jobs:
+  stm32-f4-g4-l0:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install lxml jinja2 deepdiff CppHeaderParser
+      - name: Generate STM32 data
+        run: |
+          cd tools/generator
+          make generate-stm32f4 generate-stm32g4 generate-stm32l0
+      - name: Synchronize Docs
+        run: |
+          python3 tools/scripts/sync_docs.py
+          git diff -- README.md
+          git status --porcelain
+          git diff $(git diff --name-only | sed -n 1p)
+          (( $(git status --porcelain | wc -l) == 0 ))
+
+  stm32-g0-h7-l4:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install lxml jinja2 deepdiff CppHeaderParser
+      - name: Generate STM32 data
+        run: |
+          cd tools/generator
+          make generate-stm32g0 generate-stm32h7 generate-stm32l4
+      - name: Synchronize Docs
+        run: |
+          python3 tools/scripts/sync_docs.py
+          git diff -- README.md
+          git status --porcelain
+          git diff $(git diff --name-only | sed -n 1p)
+          (( $(git status --porcelain | wc -l) == 0 ))
+
+  stm32-f0-f1-f2-f3-f7-l1-wb-wl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install lxml jinja2 deepdiff CppHeaderParser
+      - name: Generate STM32 data
+        run: |
+          cd tools/generator
+          make generate-stm32f0 generate-stm32f1 generate-stm32f2 generate-stm32f3 \
+               generate-stm32f7 generate-stm32l1 generate-stm32wb generate-stm32wl
+      - name: Synchronize Docs
+        run: |
+          python3 tools/scripts/sync_docs.py
+          git diff -- README.md
+          git status --porcelain
+          git diff $(git diff --name-only | sed -n 1p)
+          (( $(git status --porcelain | wc -l) == 0 ))
+
+  avr-sam-nrf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install lxml jinja2 deepdiff CppHeaderParser
+      - name: Run Unit Tests
+        run: |
+          make test
+      - name: Generate AVR data
+        run: |
+          cd tools/generator
+          make generate-avr
+      - name: Generate SAM data
+        run: |
+          cd tools/generator
+          make generate-sam
+      - name: Generate NRF data
+        run: |
+          cd tools/generator
+          make generate-nrf
+      - name: Synchronize Docs
+        run: |
+          python3 tools/scripts/sync_docs.py
+          git diff -- README.md
+          git status --porcelain
+          git diff $(git diff --name-only | sed -n 1p)
+          (( $(git status --porcelain | wc -l) == 0 ))
+
