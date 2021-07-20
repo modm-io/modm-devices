@@ -101,7 +101,7 @@
     <driver name="irtim" type="stm32-v1.0"/>
     <driver name="iwdg" type="stm32"/>
     <driver name="kms" type="stm32-v1.1"/>
-    <driver device-name="55" name="lorawan" type="stm32-v1.2"/>
+    <driver device-name="55" name="lorawan" type="stm32-v2.3"/>
     <driver name="lptim" type="stm32-v2.1">
       <instance value="1"/>
       <instance value="2"/>
@@ -120,13 +120,13 @@
       <instance value="cortex-m0plus"/>
       <instance value="cortex-m4"/>
     </driver>
-    <driver name="sigfox" type="stm32-v0.1.0_cube"/>
+    <driver name="sigfox" type="stm32-v1.7"/>
     <driver name="spi" type="stm32">
       <instance value="1"/>
       <instance value="2"/>
     </driver>
     <driver name="subghz" type="stm32-v1.0"/>
-    <driver name="subghz_phy" type="stm32-v0.1.0_cube"/>
+    <driver name="subghz_phy" type="stm32-v1.1"/>
     <driver name="sys" type="stm32">
       <feature value="exti"/>
     </driver>
@@ -427,6 +427,8 @@
         <signal af="3" driver="lptim" instance="3" name="in1"/>
         <signal af="4" driver="i2c" instance="2" name="scl"/>
         <signal af="5" driver="spi" instance="1" name="mosi"/>
+        <signal af="6" driver="debug" name="busy"/>
+        <signal af="6" driver="debug" name="rf"/>
         <signal af="7" driver="usart" instance="1" name="de"/>
         <signal af="7" driver="usart" instance="1" name="rts"/>
       </gpio>

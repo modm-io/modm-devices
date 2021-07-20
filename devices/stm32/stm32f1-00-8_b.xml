@@ -582,8 +582,8 @@
         <pin position="9" name="PC15-OSC32_OUT"/>
         <pin position="10" name="VSS" type="power"/>
         <pin position="11" name="VDD" type="power"/>
-        <pin position="12" name="OSC_IN"/>
-        <pin position="13" name="OSC_OUT"/>
+        <pin position="12" name="OSC_IN" type="monoio"/>
+        <pin position="13" name="OSC_OUT" type="monoio"/>
         <pin position="14" name="NRST" type="reset"/>
         <pin position="15" name="PC0"/>
         <pin position="16" name="PC1"/>

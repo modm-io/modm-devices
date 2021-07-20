@@ -12,7 +12,7 @@ These tools and this data set is maintained and curated by
 [@salkinium][] only at [modm-io/modm-devices][modm-devices].
 It is licensed under the MPLv2 license.
 
-Currently data for <!--devicecount-->3552<!--/devicecount--> devices is available.
+Currently data for <!--devicecount-->3583<!--/devicecount--> devices is available.
 Please open an issue or better yet a pull request for additional support.
 
 <!--devicetable-->
@@ -22,9 +22,9 @@ Please open an issue or better yet a pull request for additional support.
 | NRF52         |     7   | SAMD          |   209   | SAML          |    47   |
 | STM32F0       |   169   | STM32F1       |   194   | STM32F2       |    71   |
 | STM32F3       |   145   | STM32F4       |   347   | STM32F7       |   183   |
-| STM32G0       |   240   | STM32G4       |   299   | STM32H7       |   204   |
-| STM32L0       |   329   | STM32L1       |   142   | STM32L4       |   399   |
-| STM32WB       |    34   | STM32WL       |    27   |
+| STM32G0       |   243   | STM32G4       |   311   | STM32H7       |   208   |
+| STM32L0       |   333   | STM32L1       |   142   | STM32L4       |   404   |
+| STM32WB       |    37   | STM32WL       |    27   |
 <!--/devicetable-->
 
 

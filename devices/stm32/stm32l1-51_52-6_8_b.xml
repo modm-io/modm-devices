@@ -386,7 +386,6 @@
         <signal af="14" driver="ts" name="g3_io2"/>
       </gpio>
       <gpio port="b" pin="2">
-        <signal device-variant="a" driver="comp" instance="1" name="inp"/>
         <signal device-variant="a" af="14" driver="ts" name="g3_io3"/>
       </gpio>
       <gpio port="b" pin="3">

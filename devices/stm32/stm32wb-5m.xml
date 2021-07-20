@@ -103,6 +103,7 @@
       <instance value="1"/>
       <instance value="3"/>
     </driver>
+    <driver name="ipcc" type="stm32-v1.0"/>
     <driver name="irtim" type="stm32-v1.0"/>
     <driver name="iwdg" type="stm32">
       <feature value="window"/>

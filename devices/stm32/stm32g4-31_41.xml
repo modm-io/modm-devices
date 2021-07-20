@@ -26,8 +26,12 @@
     <valid-device>stm32g431k6u3</valid-device>
     <valid-device>stm32g431k6u6</valid-device>
     <valid-device>stm32g431k6u7</valid-device>
+    <valid-device>stm32g431k8t3</valid-device>
     <valid-device>stm32g431k8t6</valid-device>
+    <valid-device>stm32g431k8t7</valid-device>
+    <valid-device>stm32g431k8u3</valid-device>
     <valid-device>stm32g431k8u6</valid-device>
+    <valid-device>stm32g431k8u7</valid-device>
     <valid-device>stm32g431kbt3</valid-device>
     <valid-device>stm32g431kbt6</valid-device>
     <valid-device>stm32g431kbt7</valid-device>

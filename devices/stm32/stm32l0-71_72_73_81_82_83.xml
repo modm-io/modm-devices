@@ -154,8 +154,12 @@
     <valid-device>stm32l083czu6</valid-device>
     <valid-device>stm32l083rbh6</valid-device>
     <valid-device>stm32l083rbt6</valid-device>
+    <valid-device>stm32l083rzh3</valid-device>
     <valid-device>stm32l083rzh6</valid-device>
+    <valid-device>stm32l083rzh7</valid-device>
+    <valid-device>stm32l083rzt3</valid-device>
     <valid-device>stm32l083rzt6</valid-device>
+    <valid-device>stm32l083rzt7</valid-device>
     <valid-device>stm32l083v8i6</valid-device>
     <valid-device>stm32l083v8t6</valid-device>
     <valid-device>stm32l083vbi6</valid-device>
@@ -690,7 +694,7 @@
         <signal af="4" driver="lpuart" instance="1" name="rts"/>
       </gpio>
       <gpio device-pin="c|r|v" port="b" pin="2">
-        <signal device-name="73|83" driver="lcd" name="vlcd1"/>
+        <signal device-name="73|83" driver="lcd" name="vlcd2"/>
         <signal af="2" driver="lptim" instance="1" name="out"/>
         <signal device-name="82" device-pin="c" af="3" driver="tsc" name="g3_io4"/>
         <signal device-name="72|73|83" device-pin="c|r|v" af="3" driver="tsc" name="g3_io4"/>
@@ -1288,10 +1292,10 @@
         <signal af="6" driver="usart" instance="5" name="tx"/>
       </gpio>
       <gpio device-pin="v" port="e" pin="11">
-        <signal device-name="73" device-size="8|b|z" device-package="t" device-temperature="7" driver="lcd" name="vlcd2"/>
-        <signal device-name="73" device-size="b|z" device-package="i" device-temperature="3|7" driver="lcd" name="vlcd2"/>
-        <signal device-name="73" device-size="z" device-package="t" device-temperature="3" driver="lcd" name="vlcd2"/>
-        <signal device-name="73|83" device-size="8|b|z" device-package="i|t" device-temperature="6" driver="lcd" name="vlcd2"/>
+        <signal device-name="73" device-size="8|b|z" device-package="t" device-temperature="7" driver="lcd" name="vlcd1"/>
+        <signal device-name="73" device-size="b|z" device-package="i" device-temperature="3|7" driver="lcd" name="vlcd1"/>
+        <signal device-name="73" device-size="z" device-package="t" device-temperature="3" driver="lcd" name="vlcd1"/>
+        <signal device-name="73|83" device-size="8|b|z" device-package="i|t" device-temperature="6" driver="lcd" name="vlcd1"/>
         <signal af="0" driver="tim" instance="2" name="ch3"/>
         <signal af="6" driver="usart" instance="5" name="rx"/>
       </gpio>
@@ -1589,8 +1593,8 @@
         <pin position="48" name="VDD" type="power"/>
       </package>
       <package device-pin="r" device-package="t" name="LQFP64">
-        <pin device-name="73" device-size="z" device-temperature="3|7" position="1" name="VLCD" type="power"/>
         <pin device-name="73|83" device-size="b|z" device-temperature="6" position="1" name="VLCD" type="power"/>
+        <pin device-name="73|83" device-size="z" device-temperature="3|7" position="1" name="VLCD" type="power"/>
         <pin device-name="71" device-size="b|z" device-temperature="6|7" position="1" name="VDD" type="power"/>
         <pin device-name="72" device-size="b" device-temperature="3|6|7" position="1" name="VDD" type="power"/>
         <pin device-name="72" device-size="z" device-temperature="6" position="1" name="VDD" type="power"/>
@@ -1641,8 +1645,8 @@
         <pin position="46" name="PA13"/>
         <pin position="47" name="VSS" type="power"/>
         <pin device-name="72" device-size="b" device-temperature="3|6|7" position="48" name="VDD_USB" type="power"/>
-        <pin device-name="73" device-size="z" device-temperature="3|7" position="48" name="VDD_USB" type="power"/>
         <pin device-name="72|73|83" device-size="b|z" device-temperature="6" position="48" name="VDD_USB" type="power"/>
+        <pin device-name="73|83" device-size="z" device-temperature="3|7" position="48" name="VDD_USB" type="power"/>
         <pin device-name="71" device-size="b|z" device-temperature="6|7" position="48" name="VDDIO2" type="power"/>
         <pin position="49" name="PA14"/>
         <pin position="50" name="PA15"/>
@@ -1671,8 +1675,8 @@
         <pin position="A7" name="PA14"/>
         <pin position="A8" name="PA13"/>
         <pin position="B1" name="PC15-OSC32_OUT"/>
-        <pin device-name="73" device-size="z" device-temperature="3|7" position="B2" name="VLCD" type="power"/>
         <pin device-name="73|83" device-size="b|z" device-temperature="6" position="B2" name="VLCD" type="power"/>
+        <pin device-name="73|83" device-size="z" device-temperature="3|7" position="B2" name="VLCD" type="power"/>
         <pin device-name="71" device-size="b|z" device-temperature="6|7" position="B2" name="VDD" type="power"/>
         <pin device-name="72" device-size="b" device-temperature="3|6|7" position="B2" name="VDD" type="power"/>
         <pin device-name="72" device-size="z" device-temperature="6" position="B2" name="VDD" type="power"/>
@@ -1704,8 +1708,8 @@
         <pin position="E4" name="VDD" type="power"/>
         <pin position="E5" name="VDD" type="power"/>
         <pin device-name="72" device-size="b" device-temperature="3|6|7" position="E6" name="VDD_USB" type="power"/>
-        <pin device-name="73" device-size="z" device-temperature="3|7" position="E6" name="VDD_USB" type="power"/>
         <pin device-name="72|73|83" device-size="b|z" device-temperature="6" position="E6" name="VDD_USB" type="power"/>
+        <pin device-name="73|83" device-size="z" device-temperature="3|7" position="E6" name="VDD_USB" type="power"/>
         <pin device-name="71" device-size="b|z" device-temperature="6|7" position="E6" name="VDDIO2" type="power"/>
         <pin position="E7" name="PC7"/>
         <pin position="E8" name="PC8"/>

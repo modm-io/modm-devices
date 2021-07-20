@@ -296,6 +296,7 @@
     </driver>
     <driver name="pwr" type="stm32-v1.0"/>
     <driver name="quadspi" type="stm32-v1.0"/>
+    <driver name="ramecc" type="stm32-v1.0"/>
     <driver name="rcc" type="stm32-v1.0"/>
     <driver name="resmgr_utility" type="stm32-stm32h7_cube"/>
     <driver name="rng" type="stm32"/>
@@ -797,6 +798,7 @@
         <signal driver="adc" instance="2" name="inn18"/>
         <signal driver="adc" instance="2" name="inp19"/>
         <signal driver="dac" instance="1" name="out2"/>
+        <signal driver="pwr" name="ndstop2"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
         <signal af="1" driver="tim" instance="2" name="etr"/>
         <signal af="3" driver="tim" instance="8" name="ch1n"/>
@@ -1207,6 +1209,7 @@
         <signal device-pin="x" driver="adc" instance="3" name="inn11"/>
         <signal device-pin="a|b|i|z" driver="adc" instance="3" name="inp0"/>
         <signal device-pin="x" driver="adc" instance="3" name="inp12"/>
+        <signal driver="pwr" name="cstop"/>
         <signal af="3" driver="dfsdm" instance="1" name="ckin1"/>
         <signal af="5" driver="i2s" instance="2" name="sdi"/>
         <signal af="5" driver="spi" instance="2" name="miso"/>
@@ -1221,6 +1224,7 @@
         <signal device-pin="x" driver="adc" instance="2" name="inn12"/>
         <signal device-pin="x" driver="adc" instance="2" name="inp13"/>
         <signal device-pin="a|b|i|z" driver="adc" instance="3" name="inp1"/>
+        <signal driver="pwr" name="csleep"/>
         <signal af="3" driver="dfsdm" instance="1" name="datin1"/>
         <signal af="5" driver="i2s" instance="2" name="sdo"/>
         <signal af="5" driver="spi" instance="2" name="mosi"/>

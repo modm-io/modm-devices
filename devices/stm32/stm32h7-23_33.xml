@@ -275,6 +275,7 @@
     </driver>
     <driver name="pssi" type="stm32-v3.0"/>
     <driver name="pwr" type="stm32-v1.0"/>
+    <driver name="ramecc" type="stm32-v1.0"/>
     <driver name="rcc" type="stm32-v1.0"/>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v2.7"/>
@@ -841,6 +842,7 @@
         <signal driver="adc" instance="2" name="inn18"/>
         <signal driver="adc" instance="2" name="inp19"/>
         <signal driver="dac" instance="1" name="out2"/>
+        <signal driver="pwr" name="ndstop2"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
         <signal af="1" driver="tim" instance="2" name="etr"/>
         <signal af="3" driver="tim" instance="8" name="ch1n"/>
@@ -1290,6 +1292,7 @@
         <signal device-package="i" driver="i2s" instance="2" name="sdi"/>
         <signal device-package="i" driver="octospim" name="p1_io2"/>
         <signal device-package="i" driver="octospim" name="p1_io5"/>
+        <signal driver="pwr" name="cstop"/>
         <signal device-package="i" driver="spi" instance="2" name="miso"/>
         <signal device-package="i" driver="usb_otg_hs" name="ulpi_dir"/>
         <signal device-package="h|t" af="3" driver="dfsdm" instance="1" name="ckin1"/>
@@ -1314,6 +1317,7 @@
         <signal device-package="i" driver="i2s" instance="2" name="sdo"/>
         <signal device-package="i" driver="octospim" name="p1_io0"/>
         <signal device-package="i" driver="octospim" name="p1_io6"/>
+        <signal driver="pwr" name="csleep"/>
         <signal device-package="i" driver="spi" instance="2" name="mosi"/>
         <signal device-package="i" driver="usb_otg_hs" name="ulpi_nxt"/>
         <signal device-package="h|t" af="3" driver="dfsdm" instance="1" name="datin1"/>

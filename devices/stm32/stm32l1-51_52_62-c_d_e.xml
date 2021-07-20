@@ -500,10 +500,6 @@
         <signal device-pin="q|z" device-size="c|d|e" device-variant="" driver="adc" name="in0b"/>
         <signal device-pin="r|v" device-size="e" device-variant="" driver="adc" name="in0b"/>
         <signal device-pin="v" device-size="d" device-variant="x" driver="adc" name="in0b"/>
-        <signal device-pin="c|r" device-size="c" device-package="t" device-variant="" driver="comp" instance="1" name="inp"/>
-        <signal device-pin="c" device-size="c" device-package="u" device-variant="" driver="comp" instance="1" name="inp"/>
-        <signal device-pin="u" device-size="c" device-package="y" device-variant="" driver="comp" instance="1" name="inp"/>
-        <signal device-pin="v" device-size="c" device-package="h|t" device-variant="" driver="comp" instance="1" name="inp"/>
         <signal af="14" driver="ts" name="g3_io3"/>
       </gpio>
       <gpio port="b" pin="3">
@@ -1076,11 +1072,9 @@
       </gpio>
       <gpio device-pin="q|z" port="f" pin="6">
         <signal driver="adc" name="in27"/>
-        <signal device-pin="q|z" device-size="c|d" driver="comp" instance="1" name="inp"/>
         <signal device-pin="q|z" device-size="e" driver="tim" instance="5" name="etr"/>
         <signal af="2" driver="tim" instance="5" name="ch1"/>
         <signal device-pin="q|z" device-size="c|d" af="2" driver="tim" instance="5" name="etr"/>
-        <signal device-pin="q|z" device-size="e" af="14" driver="comp" instance="1" name="inp"/>
         <signal af="14" driver="ts" name="g11_io1"/>
       </gpio>
       <gpio device-pin="q|z" port="f" pin="7">

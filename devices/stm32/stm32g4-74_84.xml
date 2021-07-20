@@ -73,8 +73,12 @@
     <valid-device>stm32g484ceu3</valid-device>
     <valid-device>stm32g484ceu6</valid-device>
     <valid-device>stm32g484ceu7</valid-device>
+    <valid-device>stm32g484met3</valid-device>
     <valid-device>stm32g484met6</valid-device>
+    <valid-device>stm32g484met7</valid-device>
+    <valid-device>stm32g484mey3</valid-device>
     <valid-device>stm32g484mey6</valid-device>
+    <valid-device>stm32g484mey7</valid-device>
     <valid-device>stm32g484pei6</valid-device>
     <valid-device>stm32g484qet3</valid-device>
     <valid-device>stm32g484qet6</valid-device>
@@ -82,13 +86,9 @@
     <valid-device>stm32g484ret3</valid-device>
     <valid-device>stm32g484ret6</valid-device>
     <valid-device>stm32g484ret7</valid-device>
-    <valid-device>stm32g484veh3</valid-device>
     <valid-device>stm32g484veh6</valid-device>
-    <valid-device>stm32g484veh7</valid-device>
     <valid-device>stm32g484vei6</valid-device>
-    <valid-device>stm32g484vet3</valid-device>
     <valid-device>stm32g484vet6</valid-device>
-    <valid-device>stm32g484vet7</valid-device>
     <driver name="core" type="cortex-m4f">
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
@@ -327,10 +327,30 @@
       <instance value="16"/>
       <instance value="17"/>
     </driver>
-    <driver device-pin="m|p|q|r|v" name="uart" type="stm32-extended">
+    <driver device-pin="m|q|r" device-package="t" name="uart" type="stm32-extended">
       <feature value="tcbgt"/>
       <instance value="4"/>
-      <instance value="5"/>
+      <instance device-pin="m|p|q|r|v" value="5"/>
+    </driver>
+    <driver device-pin="c" device-package="u" name="uart" type="stm32-extended">
+      <feature value="tcbgt"/>
+      <instance value="4"/>
+      <instance device-pin="m|p|q|r|v" value="5"/>
+    </driver>
+    <driver device-pin="m" device-package="y" name="uart" type="stm32-extended">
+      <feature value="tcbgt"/>
+      <instance value="4"/>
+      <instance device-pin="m|p|q|r|v" value="5"/>
+    </driver>
+    <driver device-pin="p" device-package="i" name="uart" type="stm32-extended">
+      <feature value="tcbgt"/>
+      <instance value="4"/>
+      <instance device-pin="m|p|q|r|v" value="5"/>
+    </driver>
+    <driver device-pin="v" device-package="h|i|t" name="uart" type="stm32-extended">
+      <feature value="tcbgt"/>
+      <instance value="4"/>
+      <instance device-pin="m|p|q|r|v" value="5"/>
     </driver>
     <driver name="ucpd" type="stm32-v1.0">
       <instance value="1"/>
@@ -435,10 +455,34 @@
         <request position="29">
           <signal driver="usart" instance="3" name="tx"/>
         </request>
-        <request device-pin="m|p|q|r|v" position="30">
+        <request device-pin="m|q|r" device-package="t" position="30">
           <signal driver="uart" instance="4" name="rx"/>
         </request>
-        <request device-pin="m|p|q|r|v" position="31">
+        <request device-pin="c" device-package="u" position="30">
+          <signal driver="uart" instance="4" name="rx"/>
+        </request>
+        <request device-pin="m" device-package="y" position="30">
+          <signal driver="uart" instance="4" name="rx"/>
+        </request>
+        <request device-pin="p" device-package="i" position="30">
+          <signal driver="uart" instance="4" name="rx"/>
+        </request>
+        <request device-pin="v" device-package="h|i|t" position="30">
+          <signal driver="uart" instance="4" name="rx"/>
+        </request>
+        <request device-pin="m|q|r" device-package="t" position="31">
+          <signal driver="uart" instance="4" name="tx"/>
+        </request>
+        <request device-pin="c" device-package="u" position="31">
+          <signal driver="uart" instance="4" name="tx"/>
+        </request>
+        <request device-pin="m" device-package="y" position="31">
+          <signal driver="uart" instance="4" name="tx"/>
+        </request>
+        <request device-pin="p" device-package="i" position="31">
+          <signal driver="uart" instance="4" name="tx"/>
+        </request>
+        <request device-pin="v" device-package="h|i|t" position="31">
           <signal driver="uart" instance="4" name="tx"/>
         </request>
         <request device-pin="m|p|q|r|v" position="32">
@@ -942,8 +986,16 @@
         <signal af="6" driver="i2s" instance="3" name="ws"/>
         <signal af="6" driver="spi" instance="3" name="nss"/>
         <signal af="7" driver="usart" instance="2" name="rx"/>
-        <signal device-pin="m|p|q|r|v" af="8" driver="uart" instance="4" name="de"/>
-        <signal device-pin="m|p|q|r|v" af="8" driver="uart" instance="4" name="rts"/>
+        <signal device-pin="m|q|r" device-package="t" af="8" driver="uart" instance="4" name="de"/>
+        <signal device-pin="c" device-package="u" af="8" driver="uart" instance="4" name="de"/>
+        <signal device-pin="m" device-package="y" af="8" driver="uart" instance="4" name="de"/>
+        <signal device-pin="p" device-package="i" af="8" driver="uart" instance="4" name="de"/>
+        <signal device-pin="v" device-package="h|i|t" af="8" driver="uart" instance="4" name="de"/>
+        <signal device-pin="m|q|r" device-package="t" af="8" driver="uart" instance="4" name="rts"/>
+        <signal device-pin="c" device-package="u" af="8" driver="uart" instance="4" name="rts"/>
+        <signal device-pin="m" device-package="y" af="8" driver="uart" instance="4" name="rts"/>
+        <signal device-pin="p" device-package="i" af="8" driver="uart" instance="4" name="rts"/>
+        <signal device-pin="v" device-package="h|i|t" af="8" driver="uart" instance="4" name="rts"/>
         <signal af="9" driver="tim" instance="1" name="bkin"/>
         <signal af="11" driver="fdcan" instance="3" name="tx"/>
         <signal af="13" driver="hrtim" instance="1" name="flt2"/>
@@ -1074,7 +1126,11 @@
         <signal af="11" driver="lptim" instance="1" name="in2"/>
         <signal device-pin="p|q|v" af="12" driver="fmc" name="nl"/>
         <signal af="13" driver="hrtim" instance="1" name="eev3"/>
-        <signal device-pin="m|p|q|r|v" af="14" driver="uart" instance="4" name="cts"/>
+        <signal device-pin="m|q|r" device-package="t" af="14" driver="uart" instance="4" name="cts"/>
+        <signal device-pin="c" device-package="u" af="14" driver="uart" instance="4" name="cts"/>
+        <signal device-pin="m" device-package="y" af="14" driver="uart" instance="4" name="cts"/>
+        <signal device-pin="p" device-package="i" af="14" driver="uart" instance="4" name="cts"/>
+        <signal device-pin="v" device-package="h|i|t" af="14" driver="uart" instance="4" name="cts"/>
       </gpio>
       <gpio port="b" pin="8">
         <signal af="1" driver="tim" instance="16" name="ch1"/>
@@ -1361,7 +1417,7 @@
       </gpio>
       <gpio device-pin="m|q|r" device-package="t" port="c" pin="10">
         <signal af="4" driver="tim" instance="8" name="ch1n"/>
-        <signal device-pin="m|p|q|r|v" af="5" driver="uart" instance="4" name="tx"/>
+        <signal af="5" driver="uart" instance="4" name="tx"/>
         <signal af="6" driver="i2s" instance="3" name="ck"/>
         <signal af="6" driver="spi" instance="3" name="sck"/>
         <signal af="7" driver="usart" instance="3" name="tx"/>
@@ -1369,7 +1425,7 @@
       </gpio>
       <gpio device-pin="c" device-package="u" port="c" pin="10">
         <signal af="4" driver="tim" instance="8" name="ch1n"/>
-        <signal device-pin="m|p|q|r|v" af="5" driver="uart" instance="4" name="tx"/>
+        <signal af="5" driver="uart" instance="4" name="tx"/>
         <signal af="6" driver="i2s" instance="3" name="ck"/>
         <signal af="6" driver="spi" instance="3" name="sck"/>
         <signal af="7" driver="usart" instance="3" name="tx"/>
@@ -1377,7 +1433,7 @@
       </gpio>
       <gpio device-pin="m" device-package="y" port="c" pin="10">
         <signal af="4" driver="tim" instance="8" name="ch1n"/>
-        <signal device-pin="m|p|q|r|v" af="5" driver="uart" instance="4" name="tx"/>
+        <signal af="5" driver="uart" instance="4" name="tx"/>
         <signal af="6" driver="i2s" instance="3" name="ck"/>
         <signal af="6" driver="spi" instance="3" name="sck"/>
         <signal af="7" driver="usart" instance="3" name="tx"/>
@@ -1385,7 +1441,7 @@
       </gpio>
       <gpio device-pin="p" device-package="i" port="c" pin="10">
         <signal af="4" driver="tim" instance="8" name="ch1n"/>
-        <signal device-pin="m|p|q|r|v" af="5" driver="uart" instance="4" name="tx"/>
+        <signal af="5" driver="uart" instance="4" name="tx"/>
         <signal af="6" driver="i2s" instance="3" name="ck"/>
         <signal af="6" driver="spi" instance="3" name="sck"/>
         <signal af="7" driver="usart" instance="3" name="tx"/>
@@ -1393,7 +1449,7 @@
       </gpio>
       <gpio device-pin="v" device-package="h|i|t" port="c" pin="10">
         <signal af="4" driver="tim" instance="8" name="ch1n"/>
-        <signal device-pin="m|p|q|r|v" af="5" driver="uart" instance="4" name="tx"/>
+        <signal af="5" driver="uart" instance="4" name="tx"/>
         <signal af="6" driver="i2s" instance="3" name="ck"/>
         <signal af="6" driver="spi" instance="3" name="sck"/>
         <signal af="7" driver="usart" instance="3" name="tx"/>
@@ -1402,7 +1458,7 @@
       <gpio device-pin="m|q|r" device-package="t" port="c" pin="11">
         <signal af="3" driver="hrtim" instance="1" name="eev2"/>
         <signal af="4" driver="tim" instance="8" name="ch2n"/>
-        <signal device-pin="m|p|q|r|v" af="5" driver="uart" instance="4" name="rx"/>
+        <signal af="5" driver="uart" instance="4" name="rx"/>
         <signal af="6" driver="spi" instance="3" name="miso"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
         <signal af="8" driver="i2c" instance="3" name="sda"/>
@@ -1410,7 +1466,7 @@
       <gpio device-pin="c" device-package="u" port="c" pin="11">
         <signal af="3" driver="hrtim" instance="1" name="eev2"/>
         <signal af="4" driver="tim" instance="8" name="ch2n"/>
-        <signal device-pin="m|p|q|r|v" af="5" driver="uart" instance="4" name="rx"/>
+        <signal af="5" driver="uart" instance="4" name="rx"/>
         <signal af="6" driver="spi" instance="3" name="miso"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
         <signal af="8" driver="i2c" instance="3" name="sda"/>
@@ -1418,7 +1474,7 @@
       <gpio device-pin="m" device-package="y" port="c" pin="11">
         <signal af="3" driver="hrtim" instance="1" name="eev2"/>
         <signal af="4" driver="tim" instance="8" name="ch2n"/>
-        <signal device-pin="m|p|q|r|v" af="5" driver="uart" instance="4" name="rx"/>
+        <signal af="5" driver="uart" instance="4" name="rx"/>
         <signal af="6" driver="spi" instance="3" name="miso"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
         <signal af="8" driver="i2c" instance="3" name="sda"/>
@@ -1426,7 +1482,7 @@
       <gpio device-pin="p" device-package="i" port="c" pin="11">
         <signal af="3" driver="hrtim" instance="1" name="eev2"/>
         <signal af="4" driver="tim" instance="8" name="ch2n"/>
-        <signal device-pin="m|p|q|r|v" af="5" driver="uart" instance="4" name="rx"/>
+        <signal af="5" driver="uart" instance="4" name="rx"/>
         <signal af="6" driver="spi" instance="3" name="miso"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
         <signal af="8" driver="i2c" instance="3" name="sda"/>
@@ -1434,7 +1490,7 @@
       <gpio device-pin="v" device-package="h|i|t" port="c" pin="11">
         <signal af="3" driver="hrtim" instance="1" name="eev2"/>
         <signal af="4" driver="tim" instance="8" name="ch2n"/>
-        <signal device-pin="m|p|q|r|v" af="5" driver="uart" instance="4" name="rx"/>
+        <signal af="5" driver="uart" instance="4" name="rx"/>
         <signal af="6" driver="spi" instance="3" name="miso"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
         <signal af="8" driver="i2c" instance="3" name="sda"/>

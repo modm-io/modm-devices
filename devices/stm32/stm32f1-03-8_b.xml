@@ -580,7 +580,7 @@
         <pin position="B8" name="PC11"/>
         <pin position="B9" name="PC10"/>
         <pin position="B10" name="PA12"/>
-        <pin position="C1" name="OSC_IN"/>
+        <pin position="C1" name="OSC_IN" type="monoio"/>
         <pin position="C2" name="VSS" type="power"/>
         <pin position="C3" name="PE4"/>
         <pin position="C4" name="PE1"/>
@@ -590,7 +590,7 @@
         <pin position="C8" name="PC12"/>
         <pin position="C9" name="PA9"/>
         <pin position="C10" name="PA11"/>
-        <pin position="D1" name="OSC_OUT"/>
+        <pin position="D1" name="OSC_OUT" type="monoio"/>
         <pin position="D2" name="VDD" type="power"/>
         <pin position="D3" name="PE5"/>
         <pin position="D4" name="PE0"/>
@@ -673,8 +673,8 @@
         <pin position="9" name="PC15-OSC32_OUT"/>
         <pin position="10" name="VSS" type="power"/>
         <pin position="11" name="VDD" type="power"/>
-        <pin position="12" name="OSC_IN"/>
-        <pin position="13" name="OSC_OUT"/>
+        <pin position="12" name="OSC_IN" type="monoio"/>
+        <pin position="13" name="OSC_OUT" type="monoio"/>
         <pin position="14" name="NRST" type="reset"/>
         <pin position="15" name="PC0"/>
         <pin position="16" name="PC1"/>
@@ -992,11 +992,11 @@
         <pin position="E10" name="PC8"/>
         <pin position="E11" name="PC7"/>
         <pin position="E12" name="PC6"/>
-        <pin position="F1" name="OSC_IN"/>
+        <pin position="F1" name="OSC_IN" type="monoio"/>
         <pin position="F2" name="VSS" type="power"/>
         <pin position="F11" name="VSS" type="power"/>
         <pin position="F12" name="VSS" type="power"/>
-        <pin position="G1" name="OSC_OUT"/>
+        <pin position="G1" name="OSC_OUT" type="monoio"/>
         <pin position="G2" name="VDD" type="power"/>
         <pin position="G11" name="VDD" type="power"/>
         <pin position="G12" name="VDD" type="power"/>

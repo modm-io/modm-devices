@@ -220,7 +220,7 @@
       <instance value="6"/>
     </driver>
     <driver name="usb_drd_fs" type="stm32-v1.0"/>
-    <driver name="usbpd" type="stm32-v1.4"/>
+    <driver name="usbpd" type="stm32-v1.5"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="dma" type="stm32-mux">
       <instance value="1"/>

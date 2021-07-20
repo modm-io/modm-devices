@@ -126,7 +126,7 @@
       <instance device-name="b0" value="5"/>
       <instance device-name="b0" value="6"/>
     </driver>
-    <driver device-name="b0" name="usb_drd_fs" type="stm32-v1.0"/>
+    <driver device-name="b0" device-pin="c|r|v" name="usb_drd_fs" type="stm32-v1.0"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="dma" type="stm32-mux">
       <instance value="1"/>
@@ -383,7 +383,7 @@
         <signal af="0" driver="spi" instance="1" name="nss"/>
         <signal device-name="b0" af="1" driver="i2s" instance="2" name="sd"/>
         <signal af="1" driver="spi" instance="2" name="mosi"/>
-        <signal device-name="b0" af="2" name="usb_noe"/>
+        <signal device-name="b0" device-pin="c|r|v" af="2" name="usb_noe"/>
         <signal device-name="b0" af="3" driver="usart" instance="6" name="tx"/>
         <signal af="4" driver="tim" instance="14" name="ch1"/>
         <signal device-name="b0" af="9" driver="spi" instance="3" name="nss"/>
@@ -452,7 +452,7 @@
         <signal device-name="b0" af="8" driver="i2c" instance="2" name="sda"/>
       </gpio>
       <gpio port="a" pin="11">
-        <signal device-name="b0" name="usb_dm"/>
+        <signal device-name="b0" device-pin="c|r|v" name="usb_dm"/>
         <signal af="0" driver="i2s" instance="1" name="mck"/>
         <signal af="0" driver="spi" instance="1" name="miso"/>
         <signal af="1" driver="usart" instance="1" name="cts"/>
@@ -462,7 +462,7 @@
         <signal af="6" driver="i2c" instance="2" name="scl"/>
       </gpio>
       <gpio port="a" pin="12">
-        <signal device-name="b0" name="usb_dp"/>
+        <signal device-name="b0" device-pin="c|r|v" name="usb_dp"/>
         <signal af="0" driver="i2s" instance="1" name="sd"/>
         <signal af="0" driver="spi" instance="1" name="mosi"/>
         <signal af="1" driver="usart" instance="1" name="ck"/>
@@ -475,7 +475,7 @@
       <gpio port="a" pin="13">
         <signal af="0" driver="sys" name="swdio"/>
         <signal af="1" driver="irtim" name="out"/>
-        <signal device-name="b0" af="2" name="usb_noe"/>
+        <signal device-name="b0" device-pin="c|r|v" af="2" name="usb_noe"/>
       </gpio>
       <gpio port="a" pin="14">
         <signal af="0" driver="sys" name="swclk"/>
@@ -492,7 +492,7 @@
         <signal af="5" driver="usart" instance="3" name="ck"/>
         <signal af="5" driver="usart" instance="3" name="de"/>
         <signal af="5" driver="usart" instance="3" name="rts"/>
-        <signal device-name="b0" af="6" name="usb_noe"/>
+        <signal device-name="b0" device-pin="c|r|v" af="6" name="usb_noe"/>
         <signal device-name="b0" af="8" driver="i2c" instance="2" name="smba"/>
         <signal device-name="b0" af="9" driver="spi" instance="3" name="nss"/>
       </gpio>
@@ -1040,13 +1040,14 @@
         <pin position="99" name="PB7"/>
         <pin position="100" name="PB8"/>
       </package>
-      <package device-name="70" device-pin="k" name="LQFP32">
+      <package device-pin="k" name="LQFP32">
         <pin position="1" name="PB9"/>
         <pin position="2" name="PC14-OSC32_IN (PC14)"/>
         <pin position="3" name="PC15-OSC32_OUT (PC15)"/>
         <pin position="4" name="VDD" type="power"/>
         <pin position="5" name="VSS" type="power"/>
-        <pin position="6" name="NRST" type="reset"/>
+        <pin device-name="70" device-size="b" position="6" name="NRST" type="reset"/>
+        <pin device-name="b0" device-size="e" position="6" name="PF2-NRST"/>
         <pin position="7" name="PA0"/>
         <pin position="8" name="PA1"/>
         <pin position="9" name="PA2"/>
@@ -1203,44 +1204,6 @@
         <pin position="62" name="PB8"/>
         <pin position="63" name="PB9"/>
         <pin position="64" name="PC10"/>
-      </package>
-      <package device-name="b0" device-pin="k" name="UFQFPN32">
-        <pin position="1" name="PB9"/>
-        <pin position="2" name="PC14-OSC32_IN (PC14)"/>
-        <pin position="3" name="PC15-OSC32_OUT (PC15)"/>
-        <pin position="4" name="VDD" type="power"/>
-        <pin position="5" name="VSS" type="power"/>
-        <pin position="6" name="PF2-NRST"/>
-        <pin position="7" name="PA0"/>
-        <pin position="8" name="PA1"/>
-        <pin position="9" name="PA2"/>
-        <pin position="10" name="PA3"/>
-        <pin position="11" name="PA4"/>
-        <pin position="12" name="PA5"/>
-        <pin position="13" name="PA6"/>
-        <pin position="14" name="PA7"/>
-        <pin position="15" name="PB0"/>
-        <pin position="16" name="PB1"/>
-        <pin position="17" name="PB2"/>
-        <pin position="18" name="PA8"/>
-        <pin position="19" name="NC" type="nc" variant="remap"/>
-        <pin position="19" name="PA9" variant="remap-default"/>
-        <pin position="20" name="PC6"/>
-        <pin position="21" name="NC" type="nc" variant="remap"/>
-        <pin position="21" name="PA10" variant="remap-default"/>
-        <pin position="22" name="PA9 [PA11]" variant="remap"/>
-        <pin position="22" name="PA11 [PA9]" variant="remap-default"/>
-        <pin position="23" name="PA10 [PA12]" variant="remap"/>
-        <pin position="23" name="PA12 [PA10]" variant="remap-default"/>
-        <pin position="24" name="PA13"/>
-        <pin position="25" name="PA14-BOOT0"/>
-        <pin position="26" name="PA15"/>
-        <pin position="27" name="PB3"/>
-        <pin position="28" name="PB4"/>
-        <pin position="29" name="PB5"/>
-        <pin position="30" name="PB6"/>
-        <pin position="31" name="PB7"/>
-        <pin position="32" name="PB8"/>
       </package>
     </driver>
   </device>

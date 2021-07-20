@@ -96,7 +96,7 @@
     <driver name="usart" type="stm32-extended">
       <feature value="tcbgt"/>
       <instance value="1"/>
-      <instance device-pin="c|f|k" value="2"/>
+      <instance value="2"/>
     </driver>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="dma" type="stm32-mux">
@@ -201,10 +201,10 @@
         <request position="43">
           <signal driver="usart" instance="1" name="tx"/>
         </request>
-        <request device-pin="c|f|k" position="44">
+        <request position="44">
           <signal driver="usart" instance="2" name="rx"/>
         </request>
-        <request device-pin="c|f|k" position="45">
+        <request position="45">
           <signal driver="usart" instance="2" name="tx"/>
         </request>
       </requests>
@@ -222,16 +222,16 @@
         <signal driver="rtc" name="tamp_in2"/>
         <signal driver="sys" name="wkup1"/>
         <signal af="0" driver="spi" instance="2" name="sck"/>
-        <signal device-pin="c|f|k" af="1" driver="usart" instance="2" name="cts"/>
-        <signal device-pin="c|f|k" af="1" driver="usart" instance="2" name="nss"/>
+        <signal af="1" driver="usart" instance="2" name="cts"/>
+        <signal af="1" driver="usart" instance="2" name="nss"/>
       </gpio>
       <gpio port="a" pin="1">
         <signal driver="adc" instance="1" name="in1"/>
         <signal af="0" driver="i2s" instance="1" name="ck"/>
         <signal af="0" driver="spi" instance="1" name="sck"/>
-        <signal device-pin="c|f|k" af="1" driver="usart" instance="2" name="ck"/>
-        <signal device-pin="c|f|k" af="1" driver="usart" instance="2" name="de"/>
-        <signal device-pin="c|f|k" af="1" driver="usart" instance="2" name="rts"/>
+        <signal af="1" driver="usart" instance="2" name="ck"/>
+        <signal af="1" driver="usart" instance="2" name="de"/>
+        <signal af="1" driver="usart" instance="2" name="rts"/>
         <signal af="6" driver="i2c" instance="1" name="smba"/>
       </gpio>
       <gpio port="a" pin="2">
@@ -240,7 +240,7 @@
         <signal driver="sys" name="wkup4"/>
         <signal af="0" driver="i2s" instance="1" name="sd"/>
         <signal af="0" driver="spi" instance="1" name="mosi"/>
-        <signal device-pin="c|f|k" af="1" driver="usart" instance="2" name="tx"/>
+        <signal af="1" driver="usart" instance="2" name="tx"/>
       </gpio>
       <gpio device-pin="c|f|k" port="a" pin="3">
         <signal driver="adc" instance="1" name="in3"/>
@@ -329,12 +329,12 @@
       <gpio port="a" pin="14">
         <signal driver="adc" instance="1" name="in18"/>
         <signal af="0" driver="sys" name="swclk"/>
-        <signal device-pin="c|f|k" af="1" driver="usart" instance="2" name="tx"/>
+        <signal af="1" driver="usart" instance="2" name="tx"/>
       </gpio>
       <gpio port="a" pin="15">
         <signal af="0" driver="i2s" instance="1" name="ws"/>
         <signal af="0" driver="spi" instance="1" name="nss"/>
-        <signal device-pin="c|f|k" af="1" driver="usart" instance="2" name="rx"/>
+        <signal af="1" driver="usart" instance="2" name="rx"/>
       </gpio>
       <gpio port="b" pin="0">
         <signal driver="adc" instance="1" name="in8"/>

@@ -466,7 +466,7 @@
         <signal af="0" driver="tim" instance="3" name="ch2"/>
       </gpio>
       <gpio device-pin="r" port="c" pin="8">
-        <signal af="1" driver="tim" instance="3" name="ch3"/>
+        <signal af="0" driver="tim" instance="3" name="ch3"/>
       </gpio>
       <gpio device-pin="r" port="c" pin="9">
         <signal af="0" driver="tim" instance="3" name="ch4"/>

@@ -374,6 +374,7 @@
         <signal driver="comp" instance="1" name="inm"/>
         <signal driver="opamp" instance="1" name="vinp"/>
         <signal device-pin="k|t" driver="rcc" name="ck_in"/>
+        <signal driver="rtc" name="tamp2"/>
         <signal driver="sys" name="wkup1"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
         <signal af="7" driver="usart" instance="2" name="cts"/>
@@ -529,6 +530,7 @@
       </gpio>
       <gpio device-pin="c|r|t" port="b" pin="2">
         <signal driver="comp" instance="1" name="inp"/>
+        <signal af="0" driver="rtc" name="out_alarm"/>
         <signal af="0" driver="rtc" name="out_calib"/>
         <signal af="1" driver="lptim" instance="1" name="out"/>
         <signal af="4" driver="i2c" instance="3" name="smba"/>
@@ -716,6 +718,7 @@
         <signal af="9" driver="tsc" name="g3_io4"/>
       </gpio>
       <gpio device-pin="c|r" port="c" pin="13">
+        <signal driver="rtc" name="out_alarm"/>
         <signal driver="rtc" name="out_calib"/>
         <signal driver="rtc" name="tamp1"/>
         <signal driver="rtc" name="ts"/>

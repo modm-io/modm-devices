@@ -24,6 +24,7 @@
     <valid-device>stm32l451vct6</valid-device>
     <valid-device>stm32l451vei6</valid-device>
     <valid-device>stm32l451vet6</valid-device>
+    <valid-device>stm32l471qei3</valid-device>
     <valid-device>stm32l471qei6</valid-device>
     <valid-device>stm32l471qei7</valid-device>
     <valid-device>stm32l471qgi6</valid-device>
@@ -35,8 +36,12 @@
     <valid-device>stm32l471vgt3</valid-device>
     <valid-device>stm32l471vgt6</valid-device>
     <valid-device>stm32l471vgt7</valid-device>
+    <valid-device>stm32l471zej3</valid-device>
     <valid-device>stm32l471zej6</valid-device>
+    <valid-device>stm32l471zej7</valid-device>
+    <valid-device>stm32l471zet3</valid-device>
     <valid-device>stm32l471zet6</valid-device>
+    <valid-device>stm32l471zet7</valid-device>
     <valid-device>stm32l471zgj6</valid-device>
     <valid-device>stm32l471zgt6</valid-device>
     <driver name="core" type="cortex-m4f">

@@ -257,6 +257,7 @@
     </driver>
     <driver name="pwr" type="stm32-v1.0"/>
     <driver name="quadspi" type="stm32-v1.0"/>
+    <driver name="ramecc" type="stm32-v1.0"/>
     <driver name="rcc" type="stm32-v1.0"/>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v2.7"/>
@@ -755,6 +756,7 @@
         <signal driver="adc" instance="2" name="inn18"/>
         <signal driver="adc" instance="2" name="inp19"/>
         <signal driver="dac" instance="1" name="out2"/>
+        <signal driver="pwr" name="ndstop2"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
         <signal af="1" driver="tim" instance="2" name="etr"/>
         <signal af="3" driver="tim" instance="8" name="ch1n"/>
@@ -1163,27 +1165,14 @@
         <signal device-pin="x" driver="adc" instance="3" name="inn11"/>
         <signal device-pin="i|v|z" driver="adc" instance="3" name="inp0"/>
         <signal device-pin="x" driver="adc" instance="3" name="inp12"/>
-        <signal device-pin="v|z" device-package="t" af="3" driver="dfsdm" instance="1" name="ckin1"/>
-        <signal device-pin="i" device-package="k" af="3" driver="dfsdm" instance="1" name="ckin1"/>
-        <signal device-pin="x" device-package="h" af="3" driver="dfsdm" instance="1" name="ckin1"/>
-        <signal device-pin="v|z" device-package="t" af="5" driver="i2s" instance="2" name="sdi"/>
-        <signal device-pin="i" device-package="k" af="5" driver="i2s" instance="2" name="sdi"/>
-        <signal device-pin="x" device-package="h" af="5" driver="i2s" instance="2" name="sdi"/>
-        <signal device-pin="v|z" device-package="t" af="5" driver="spi" instance="2" name="miso"/>
-        <signal device-pin="i" device-package="k" af="5" driver="spi" instance="2" name="miso"/>
-        <signal device-pin="x" device-package="h" af="5" driver="spi" instance="2" name="miso"/>
-        <signal device-pin="v|z" device-package="t" af="6" driver="dfsdm" instance="1" name="ckout"/>
-        <signal device-pin="i" device-package="k" af="6" driver="dfsdm" instance="1" name="ckout"/>
-        <signal device-pin="x" device-package="h" af="6" driver="dfsdm" instance="1" name="ckout"/>
-        <signal device-pin="v|z" device-package="t" af="10" driver="usb_otg_hs" name="ulpi_dir"/>
-        <signal device-pin="i" device-package="k" af="10" driver="usb_otg_hs" name="ulpi_dir"/>
-        <signal device-pin="x" device-package="h" af="10" driver="usb_otg_hs" name="ulpi_dir"/>
-        <signal device-pin="v|z" device-package="t" af="11" driver="eth" name="txd2"/>
-        <signal device-pin="i" device-package="k" af="11" driver="eth" name="txd2"/>
-        <signal device-pin="x" device-package="h" af="11" driver="eth" name="txd2"/>
-        <signal device-pin="v|z" device-package="t" af="12" driver="fmc" name="sdne0"/>
-        <signal device-pin="i" device-package="k" af="12" driver="fmc" name="sdne0"/>
-        <signal device-pin="x" device-package="h" af="12" driver="fmc" name="sdne0"/>
+        <signal driver="pwr" name="cstop"/>
+        <signal af="3" driver="dfsdm" instance="1" name="ckin1"/>
+        <signal af="5" driver="i2s" instance="2" name="sdi"/>
+        <signal af="5" driver="spi" instance="2" name="miso"/>
+        <signal af="6" driver="dfsdm" instance="1" name="ckout"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_dir"/>
+        <signal af="11" driver="eth" name="txd2"/>
+        <signal af="12" driver="fmc" name="sdne0"/>
       </gpio>
       <gpio port="c" pin="3">
         <signal device-pin="x" driver="adc" instance="1" name="inn12"/>
@@ -1191,24 +1180,13 @@
         <signal device-pin="x" driver="adc" instance="2" name="inn12"/>
         <signal device-pin="x" driver="adc" instance="2" name="inp13"/>
         <signal device-pin="i|v|z" driver="adc" instance="3" name="inp1"/>
-        <signal device-pin="v|z" device-package="t" af="3" driver="dfsdm" instance="1" name="datin1"/>
-        <signal device-pin="i" device-package="k" af="3" driver="dfsdm" instance="1" name="datin1"/>
-        <signal device-pin="x" device-package="h" af="3" driver="dfsdm" instance="1" name="datin1"/>
-        <signal device-pin="v|z" device-package="t" af="5" driver="i2s" instance="2" name="sdo"/>
-        <signal device-pin="i" device-package="k" af="5" driver="i2s" instance="2" name="sdo"/>
-        <signal device-pin="x" device-package="h" af="5" driver="i2s" instance="2" name="sdo"/>
-        <signal device-pin="v|z" device-package="t" af="5" driver="spi" instance="2" name="mosi"/>
-        <signal device-pin="i" device-package="k" af="5" driver="spi" instance="2" name="mosi"/>
-        <signal device-pin="x" device-package="h" af="5" driver="spi" instance="2" name="mosi"/>
-        <signal device-pin="v|z" device-package="t" af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
-        <signal device-pin="i" device-package="k" af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
-        <signal device-pin="x" device-package="h" af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
-        <signal device-pin="v|z" device-package="t" af="11" driver="eth" name="tx_clk"/>
-        <signal device-pin="i" device-package="k" af="11" driver="eth" name="tx_clk"/>
-        <signal device-pin="x" device-package="h" af="11" driver="eth" name="tx_clk"/>
-        <signal device-pin="v|z" device-package="t" af="12" driver="fmc" name="sdcke0"/>
-        <signal device-pin="i" device-package="k" af="12" driver="fmc" name="sdcke0"/>
-        <signal device-pin="x" device-package="h" af="12" driver="fmc" name="sdcke0"/>
+        <signal driver="pwr" name="csleep"/>
+        <signal af="3" driver="dfsdm" instance="1" name="datin1"/>
+        <signal af="5" driver="i2s" instance="2" name="sdo"/>
+        <signal af="5" driver="spi" instance="2" name="mosi"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
+        <signal af="11" driver="eth" name="tx_clk"/>
+        <signal af="12" driver="fmc" name="sdcke0"/>
       </gpio>
       <gpio port="c" pin="4">
         <signal driver="adc" instance="1" name="inp4"/>

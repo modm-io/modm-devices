@@ -348,8 +348,7 @@
         <signal af="11" driver="lcd" name="seg6"/>
       </gpio>
       <gpio port="b" pin="2">
-        <signal device-size="6|8|b" device-variant="a" driver="comp" instance="1" name="inp"/>
-        <signal device-size="c" device-variant="" driver="comp" instance="1" name="inp"/>
+        <signal device-size="c" driver="comp" instance="1" name="inp"/>
       </gpio>
       <gpio port="b" pin="3">
         <signal driver="comp" instance="2" name="inm"/>
