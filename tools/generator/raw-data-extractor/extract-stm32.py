@@ -6,12 +6,16 @@ import shutil
 import re
 import io
 import os
+import random
+import time
 
 data_path = "../raw-device-data/stm32-devices/"
 # First check STMUpdaterDefinitions.xml from this zip
-update_url = "http://sw-center.st.com/packs/resource/utility/updaters.zip"
+update_url = "https://sw-center.st.com/packs/resource/utility/updaters.zip"
+update_url2 = "https://www.ebuc23.com/s3/stm_test/software/utility/updaters.zip"
 # Then Release="MX.6.2.0" maps to this: -win, -lin, -mac
-cube_url = "http://sw-center.st.com/packs/resource/library/stm32cube_mx_v{}-lin.zip"
+cube_url = "https://sw-center.st.com/packs/resource/library/stm32cube_mx_v{}-lin.zip"
+cube_url2 = "https://www.ebuc23.com/s3/stm_test/software/library/stm32cube_mx_v{}-lin.zip"
 
 # Set the right headers
 hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
@@ -21,8 +25,16 @@ hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML,
        'Accept-Language': 'en-US,en;q=0.8',
        'Connection': 'keep-alive'}
 
+time.sleep(random.randrange(0,2))
 print("Downloading Update Info...")
-print(update_url)
+try:
+    urllib.request.urlopen(urllib.request.Request(update_url, headers=hdr))
+    print(update_url)
+except:
+    update_url = update_url2
+    cube_url = cube_url2
+    print(update_url)
+
 with urllib.request.urlopen(urllib.request.Request(update_url, headers=hdr)) as content:
     z = zipfile.ZipFile(io.BytesIO(content.read()))
     with io.TextIOWrapper(z.open("STMUpdaterDefinitions.xml"), encoding="utf-8") as defs:
@@ -34,6 +46,7 @@ Path(data_path).mkdir(exist_ok=True, parents=True)
 
 print("Downloading Database...")
 print(cube_url.format(version))
+time.sleep(random.randrange(1,6))
 with urllib.request.urlopen(urllib.request.Request(cube_url.format(version), headers=hdr)) as content:
     z = zipfile.ZipFile(io.BytesIO(content.read()))
     print("Extracting Database...")
@@ -46,7 +59,7 @@ shutil.move(data_path+"MX/db/mcu", data_path+"mcu")
 shutil.move(data_path+"MX/db/plugins", data_path+"plugins")
 shutil.rmtree(data_path+"MX", ignore_errors=True)
 
-print("Patching Database...")
+print("Patching Database...", flush=True)
 shutil.copy("patches/stm32.patch", "../raw-device-data")
 os.system("(cd ../raw-device-data; patch -p1 -l -i stm32.patch)")
 os.remove("../raw-device-data/stm32.patch")
