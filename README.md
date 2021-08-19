@@ -12,13 +12,13 @@ These tools and this data set is maintained and curated by
 [@salkinium][] only at [modm-io/modm-devices][modm-devices].
 It is licensed under the MPLv2 license.
 
-Currently data for <!--devicecount-->3583<!--/devicecount--> devices is available.
+Currently data for <!--devicecount-->3589<!--/devicecount--> devices is available.
 Please open an issue or better yet a pull request for additional support.
 
 <!--devicetable-->
 | Family        | Devices | Family        | Devices | Family        | Devices |
 |:--------------|:--------|:--------------|:--------|:--------------|:--------|
-| AT90          |    12   | ATMEGA        |   346   | ATTINY        |   148   |
+| AT90          |    12   | ATMEGA        |   352   | ATTINY        |   148   |
 | NRF52         |     7   | SAMD          |   209   | SAML          |    47   |
 | STM32F0       |   169   | STM32F1       |   194   | STM32F2       |    71   |
 | STM32F3       |   145   | STM32F4       |   347   | STM32F7       |   183   |

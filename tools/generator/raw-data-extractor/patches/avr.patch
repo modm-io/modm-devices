@@ -89,3 +89,332 @@ index 02a8cc3..4cbd66d 100644
                <signal field="USIPOS" function="USI_ALT" group="SDA" pad="PA0"/>
                <signal field="USIPOS" function="USI" group="DI" pad="PB0"/>
                <signal field="USIPOS" function="USI" group="DO" pad="PB1"/>
+diff --git a/avr-devices/atmega/ATmega128RFA1.atdf b/avr-devices/atmega/ATmega128RFA1.atdf
+index 7cfe8a8..6e23298 100644
+--- a/avr-devices/atmega/ATmega128RFA1.atdf
++++ b/avr-devices/atmega/ATmega128RFA1.atdf
+@@ -1,7 +1,12 @@
+ <?xml version='1.0' encoding='UTF-8'?>
+ <avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
+   <variants>
+-    <variant tempmin="0" tempmax="0" speedmax="0" package="" ordercode="standard" vccmin="1.8" vccmax="3.6"/>
++    <variant ordercode="ATmega128RFA1-ZU" tempmin="-40" tempmax="85" speedmax="16000000" pinout="QFN64" package="QFN64" vccmin="1.8" vccmax="3.6"/>
++    <variant ordercode="ATmega128RFA1-ZUR" tempmin="-40" tempmax="85" speedmax="16000000" pinout="QFN64" package="QFN64" vccmin="1.8" vccmax="3.6"/>
++    <variant ordercode="ATmega128RFA1-ZU00" tempmin="-40" tempmax="85" speedmax="16000000" pinout="QFN64" package="QFN64" vccmin="1.8" vccmax="3.6"/>
++    <variant ordercode="ATmega128RFA1-ZUR00" tempmin="-40" tempmax="85" speedmax="16000000" pinout="QFN64" package="QFN64" vccmin="1.8" vccmax="3.6"/>
++    <variant ordercode="ATmega128RFA1-ZF" tempmin="-40" tempmax="125" speedmax="16000000" pinout="QFN64" package="QFN64" vccmin="1.8" vccmax="3.6"/>
++    <variant ordercode="ATmega128RFA1-ZFR" tempmin="-40" tempmax="125" speedmax="16000000" pinout="QFN64" package="QFN64" vccmin="1.8" vccmax="3.6"/>
+   </variants>
+   <devices>
+     <device name="ATmega128RFA1" architecture="AVR8" family="megaAVR">
+@@ -39,24 +44,48 @@
+         <module name="AC">
+           <instance name="AC" caption="Analog Comparator">
+             <register-group name="AC" name-in-module="AC" offset="0x00" address-space="data" caption="Analog Comparator"/>
++            <signals>
++              <signal group="AIN" index="0" function="default" pad="PE2"/>
++              <signal group="AIN" index="1" function="default" pad="PE3"/>
++            </signals>
+           </instance>
+         </module>
+         <module name="USART">
+           <instance name="USART0" caption="USART">
+             <register-group name="USART0" name-in-module="USART0" offset="0x00" address-space="data" caption="USART"/>
++            <signals>
++              <signal group="RXD" function="default" pad="PE0"/>
++              <signal group="TXD" function="default" pad="PE1"/>
++              <signal group="XCK" function="default" pad="PE2"/>
++            </signals>
+           </instance>
+           <instance name="USART1" caption="USART">
+             <register-group name="USART1" name-in-module="USART1" offset="0x00" address-space="data" caption="USART"/>
++            <signals>
++              <signal group="RXD" function="default" pad="PD2"/>
++              <signal group="TXD" function="default" pad="PD3"/>
++              <signal group="XCK" function="default" pad="PD5"/>
++            </signals>
+           </instance>
+         </module>
+         <module name="TWI">
+           <instance name="TWI" caption="Two Wire Serial Interface">
+             <register-group name="TWI" name-in-module="TWI" offset="0x00" address-space="data" caption="Two Wire Serial Interface"/>
++            <signals>
++              <signal group="SDA" function="default" pad="PD1"/>
++              <signal group="SCL" function="default" pad="PD0"/>
++            </signals>
+           </instance>
+         </module>
+         <module name="SPI">
+           <instance name="SPI" caption="Serial Peripheral Interface">
+             <register-group name="SPI" name-in-module="SPI" offset="0x00" address-space="data" caption="Serial Peripheral Interface"/>
++            <signals>
++              <signal group="MISO" function="default" pad="PB3"/>
++              <signal group="MOSI" function="default" pad="PB2"/>
++              <signal group="SCK" function="default" pad="PB1"/>
++              <signal group="SS" function="default" pad="PB0"/>
++            </signals>
+           </instance>
+           <instance name="USART0_SPI" caption="Serial Peripheral Interface">
+             <register-group name="USART0_SPI" name-in-module="USART0_SPI" offset="0x00" address-space="data" caption="Serial Peripheral Interface"/>
+@@ -68,34 +97,112 @@
+         <module name="PORT">
+           <instance name="PORTA" caption="I/O Port">
+             <register-group name="PORTA" name-in-module="PORTA" offset="0x00" address-space="data" caption="I/O Port"/>
++            <signals>
++              <signal group="P" function="default" pad="PA0" index="0"/>
++              <signal group="P" function="default" pad="PA1" index="1"/>
++              <signal group="P" function="default" pad="PA2" index="2"/>
++              <signal group="P" function="default" pad="PA3" index="3"/>
++              <signal group="P" function="default" pad="PA4" index="4"/>
++              <signal group="P" function="default" pad="PA5" index="5"/>
++              <signal group="P" function="default" pad="PA6" index="6"/>
++              <signal group="P" function="default" pad="PA7" index="7"/>
++            </signals>
+           </instance>
+           <instance name="PORTB" caption="I/O Port">
+             <register-group name="PORTB" name-in-module="PORTB" offset="0x00" address-space="data" caption="I/O Port"/>
++            <signals>
++              <signal group="P" function="default" pad="PB0" index="0"/>
++              <signal group="P" function="default" pad="PB1" index="1"/>
++              <signal group="P" function="default" pad="PB2" index="2"/>
++              <signal group="P" function="default" pad="PB3" index="3"/>
++              <signal group="P" function="default" pad="PB4" index="4"/>
++              <signal group="P" function="default" pad="PB5" index="5"/>
++              <signal group="P" function="default" pad="PB6" index="6"/>
++              <signal group="P" function="default" pad="PB7" index="7"/>
++            </signals>
+           </instance>
+           <instance name="PORTC" caption="I/O Port">
+             <register-group name="PORTC" name-in-module="PORTC" offset="0x00" address-space="data" caption="I/O Port"/>
++            <signals>
++              <signal group="P" function="default" pad="PC0" index="0"/>
++              <signal group="P" function="default" pad="PC1" index="1"/>
++              <signal group="P" function="default" pad="PC2" index="2"/>
++              <signal group="P" function="default" pad="PC3" index="3"/>
++              <signal group="P" function="default" pad="PC4" index="4"/>
++              <signal group="P" function="default" pad="PC5" index="5"/>
++              <signal group="P" function="default" pad="PC6" index="6"/>
++              <signal group="P" function="default" pad="PC7" index="7"/>
++            </signals>
+           </instance>
+           <instance name="PORTD" caption="I/O Port">
+             <register-group name="PORTD" name-in-module="PORTD" offset="0x00" address-space="data" caption="I/O Port"/>
++            <signals>
++              <signal group="P" function="default" pad="PD0" index="0"/>
++              <signal group="P" function="default" pad="PD1" index="1"/>
++              <signal group="P" function="default" pad="PD2" index="2"/>
++              <signal group="P" function="default" pad="PD3" index="3"/>
++              <signal group="P" function="default" pad="PD4" index="4"/>
++              <signal group="P" function="default" pad="PD5" index="5"/>
++              <signal group="P" function="default" pad="PD6" index="6"/>
++              <signal group="P" function="default" pad="PD7" index="7"/>
++            </signals>
+           </instance>
+           <instance name="PORTE" caption="I/O Port">
+             <register-group name="PORTE" name-in-module="PORTE" offset="0x00" address-space="data" caption="I/O Port"/>
++            <signals>
++              <signal group="P" function="default" pad="PE0" index="0"/>
++              <signal group="P" function="default" pad="PE1" index="1"/>
++              <signal group="P" function="default" pad="PE2" index="2"/>
++              <signal group="P" function="default" pad="PE3" index="3"/>
++              <signal group="P" function="default" pad="PE4" index="4"/>
++              <signal group="P" function="default" pad="PE5" index="5"/>
++              <signal group="P" function="default" pad="PE6" index="6"/>
++              <signal group="P" function="default" pad="PE7" index="7"/>
++            </signals>
+           </instance>
+           <instance name="PORTF" caption="I/O Port">
+             <register-group name="PORTF" name-in-module="PORTF" offset="0x00" address-space="data" caption="I/O Port"/>
++            <signals>
++              <signal group="P" function="default" pad="PF0" index="0"/>
++              <signal group="P" function="default" pad="PF1" index="1"/>
++              <signal group="P" function="default" pad="PF2" index="2"/>
++              <signal group="P" function="default" pad="PF3" index="3"/>
++              <signal group="P" function="default" pad="PF4" index="4"/>
++              <signal group="P" function="default" pad="PF5" index="5"/>
++              <signal group="P" function="default" pad="PF6" index="6"/>
++              <signal group="P" function="default" pad="PF7" index="7"/>
++            </signals>
+           </instance>
+           <instance name="PORTG" caption="I/O Port">
+             <register-group name="PORTG" name-in-module="PORTG" offset="0x00" address-space="data" caption="I/O Port"/>
++            <signals>
++              <signal group="P" function="default" pad="PG0" index="0"/>
++              <signal group="P" function="default" pad="PG1" index="1"/>
++              <signal group="P" function="default" pad="PG2" index="2"/>
++              <signal group="P" function="default" pad="PG3" index="3"/>
++              <signal group="P" function="default" pad="PG4" index="4"/>
++              <signal group="P" function="default" pad="PG5" index="5"/>
++            </signals>
+           </instance>
+         </module>
+         <module name="TC8">
+           <instance name="TC0" caption="Timer/Counter, 8-bit">
+             <register-group name="TC0" name-in-module="TC0" offset="0x00" address-space="data" caption="Timer/Counter, 8-bit"/>
++            <signals>
++              <signal group="OCA" function="default" pad="PB7"/>
++              <signal group="OCB" function="default" pad="PG5"/>
++              <signal group="T" function="default" pad="PD7"/>
++            </signals>
+           </instance>
+         </module>
+         <module name="TC8_ASYNC">
+           <instance name="TC2" caption="Timer/Counter, 8-bit Async">
+             <register-group name="TC2" name-in-module="TC2" offset="0x00" address-space="data" caption="Timer/Counter, 8-bit Async"/>
++            <signals>
++              <signal group="OCA" function="default" pad="PB4"/>
++              <signal group="TOSC" index="1" function="default" pad="PG4"/>
++              <signal group="TOSC" index="2" function="default" pad="PG3"/>
++            </signals>
+           </instance>
+         </module>
+         <module name="WDT">
+@@ -112,9 +219,23 @@
+           </instance>
+           <instance name="TC3" caption="Timer/Counter, 16-bit">
+             <register-group name="TC3" name-in-module="TC3" offset="0x00" address-space="data" caption="Timer/Counter, 16-bit"/>
++            <signals>
++              <signal group="OCA" function="default" pad="PE3"/>
++              <signal group="OCB" function="default" pad="PE4"/>
++              <signal group="OCC" function="default" pad="PE5"/>
++              <signal group="T" function="default" pad="PE6"/>
++              <signal group="ICP" function="default" pad="PE7"/>
++            </signals>
+           </instance>
+           <instance name="TC1" caption="Timer/Counter, 16-bit">
+             <register-group name="TC1" name-in-module="TC1" offset="0x00" address-space="data" caption="Timer/Counter, 16-bit"/>
++            <signals>
++              <signal group="OCA" function="default" pad="PB5"/>
++              <signal group="OCB" function="default" pad="PB6"/>
++              <signal group="OCC" function="default" pad="PB7"/>
++              <signal group="T" function="default" pad="PD6"/>
++              <signal group="ICP" function="default" pad="PD4"/>
++            </signals>
+           </instance>
+         </module>
+         <module name="TRX24">
+@@ -135,16 +256,51 @@
+         <module name="JTAG">
+           <instance name="JTAG" caption="JTAG Interface">
+             <register-group name="JTAG" name-in-module="JTAG" offset="0x00" address-space="data" caption="JTAG Interface"/>
++            <signals>
++              <signal group="TCK" function="default" pad="PF4"/>
++              <signal group="TMS" function="default" pad="PF5"/>
++              <signal group="TDI" function="default" pad="PF7"/>
++              <signal group="TDO" function="default" pad="PF6"/>
++            </signals>
+           </instance>
+         </module>
+         <module name="EXINT">
+           <instance name="EXINT" caption="External Interrupts">
+             <register-group name="EXINT" name-in-module="EXINT" offset="0x00" address-space="data" caption="External Interrupts"/>
++            <signals>
++              <signal group="INT" index="0" function="default" pad="PD0"/>
++              <signal group="INT" index="1" function="default" pad="PD1"/>
++              <signal group="INT" index="2" function="default" pad="PD2"/>
++              <signal group="INT" index="3" function="default" pad="PD3"/>
++              <signal group="INT" index="4" function="default" pad="PE4"/>
++              <signal group="INT" index="5" function="default" pad="PE5"/>
++              <signal group="INT" index="6" function="default" pad="PE6"/>
++              <signal group="INT" index="7" function="default" pad="PE7"/>
++              <signal group="PCINT" index="0" function="default" pad="PB0"/>
++              <signal group="PCINT" index="1" function="default" pad="PB1"/>
++              <signal group="PCINT" index="2" function="default" pad="PB2"/>
++              <signal group="PCINT" index="3" function="default" pad="PB3"/>
++              <signal group="PCINT" index="4" function="default" pad="PB4"/>
++              <signal group="PCINT" index="5" function="default" pad="PB5"/>
++              <signal group="PCINT" index="6" function="default" pad="PB6"/>
++              <signal group="PCINT" index="7" function="default" pad="PB7"/>
++              <signal group="PCINT" index="8" function="default" pad="PE0"/>
++            </signals>
+           </instance>
+         </module>
+         <module name="ADC">
+           <instance name="ADC" caption="Analog-to-Digital Converter">
+             <register-group name="ADC" name-in-module="ADC" offset="0x00" address-space="data" caption="Analog-to-Digital Converter"/>
++            <signals>
++              <signal group="ADC" index="0" function="default" pad="PF0"/>
++              <signal group="ADC" index="1" function="default" pad="PF1"/>
++              <signal group="ADC" index="2" function="default" pad="PF2"/>
++              <signal group="ADC" index="3" function="default" pad="PF3"/>
++              <signal group="ADC" index="4" function="default" pad="PF4"/>
++              <signal group="ADC" index="5" function="default" pad="PF5"/>
++              <signal group="ADC" index="6" function="default" pad="PF6"/>
++              <signal group="ADC" index="7" function="default" pad="PF7"/>
++            </signals>
+           </instance>
+         </module>
+         <module name="BOOT_LOAD">
+@@ -2214,4 +2370,72 @@
+       </value-group>
+     </module>
+   </modules>
++  <pinouts>
++    <pinout name="QFN64" caption="QFN64">
++      <pin position="1" pad="PF2"/>
++      <pin position="2" pad="PF3"/>
++      <pin position="3" pad="PF4"/>
++      <pin position="4" pad="PF5"/>
++      <pin position="5" pad="PF6"/>
++      <pin position="6" pad="PF7"/>
++      <pin position="7" pad="GND"/>
++      <pin position="8" pad="RFP"/>
++      <pin position="9" pad="RFN"/>
++      <pin position="10" pad="GND"/>
++      <pin position="11" pad="TST"/>
++      <pin position="12" pad="RESET"/>
++      <pin position="13" pad="RSTON"/>
++      <pin position="14" pad="PG0"/>
++      <pin position="15" pad="PG1"/>
++      <pin position="16" pad="PG2"/>
++      <pin position="17" pad="PG3"/>
++      <pin position="18" pad="PG4"/>
++      <pin position="19" pad="PG5"/>
++      <pin position="20" pad="GND"/>
++      <pin position="21" pad="DVDD"/>
++      <pin position="22" pad="DVDD"/>
++      <pin position="23" pad="VCC"/>
++      <pin position="24" pad="GND"/>
++      <pin position="25" pad="PD0"/>
++      <pin position="26" pad="PD1"/>
++      <pin position="27" pad="PD2"/>
++      <pin position="28" pad="PD3"/>
++      <pin position="29" pad="PD4"/>
++      <pin position="30" pad="PD5"/>
++      <pin position="31" pad="PD6"/>
++      <pin position="32" pad="PD7"/>
++      <pin position="33" pad="CLKI"/>
++      <pin position="34" pad="VCC"/>
++      <pin position="35" pad="GND"/>
++      <pin position="36" pad="PB0"/>
++      <pin position="37" pad="PB1"/>
++      <pin position="38" pad="PB2"/>
++      <pin position="39" pad="PB3"/>
++      <pin position="40" pad="PB4"/>
++      <pin position="41" pad="PB5"/>
++      <pin position="42" pad="PB6"/>
++      <pin position="43" pad="PB7"/>
++      <pin position="44" pad="VCC"/>
++      <pin position="45" pad="GND"/>
++      <pin position="46" pad="PE0"/>
++      <pin position="47" pad="PE1"/>
++      <pin position="48" pad="PE2"/>
++      <pin position="49" pad="PE3"/>
++      <pin position="50" pad="PE4"/>
++      <pin position="51" pad="PE5"/>
++      <pin position="52" pad="PE6"/>
++      <pin position="53" pad="PE7"/>
++      <pin position="54" pad="VCC"/>
++      <pin position="55" pad="GND"/>
++      <pin position="56" pad="XTAL2"/>
++      <pin position="57" pad="XTAL1"/>
++      <pin position="58" pad="AGND"/>
++      <pin position="59" pad="AVCC"/>
++      <pin position="60" pad="AVCC"/>
++      <pin position="61" pad="AGND"/>
++      <pin position="62" pad="AREF"/>
++      <pin position="63" pad="PF0"/>
++      <pin position="64" pad="PF1"/>
++    </pinout>
++  </pinouts>
+ </avr-tools-device-file>

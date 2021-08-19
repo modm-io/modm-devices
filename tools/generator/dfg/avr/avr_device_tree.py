@@ -81,6 +81,8 @@ class AVRDeviceTree:
                    "instance": m.get("name").lower()}
             # module SPI has two instances USART0_SPI, USART1_SPI, wtf?
             if tmp["module"] == "spi" and tmp["instance"].startswith("usart"): continue;
+            # some RF modules mistakenly claim flash module
+            if tmp["module"] == "flash": continue
             if tmp["module"] == "port":
                 ports.append(tmp)
             else:
