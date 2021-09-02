@@ -46,7 +46,7 @@ generate-sam%: raw-device-data/sam-devices ext/cmsis-5-partial
 	./sam_generator.py $(@:generate-%=%)
 
 .PHONY: generate-sam
-generate-sam: generate-saml21 generate-samd21 generate-samd51
+generate-sam: generate-saml21 generate-samd21 generate-samd51 generate-samg
 
 
 

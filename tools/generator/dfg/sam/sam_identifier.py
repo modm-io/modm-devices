@@ -25,7 +25,7 @@ class SAMIdentifier:
 
         # SAM platform with SAMD, SAML, SAMC, SAM4, SAMG, SAMS, SAME, and SAMV
         if string.startswith("sam") or string.startswith("atsam"):
-            matchString = r"sam(?P<family>\w)(?P<series>\d{2})(?P<pin>\w)(?P<flash>\d{2})(?P<variant>\w)-(?P<package>\w)(?P<grade>\w)"
+            matchString = r"sam(?P<family>\w)(?P<series>\d{2})(?P<pin>\w)(?P<flash>\d{2})(?P<variant>\w)?-(?P<package>\w)(?P<grade>\w)"
             match = re.search(matchString, string.lower())
             if match:
                 i = DeviceIdentifier("{platform}{family}{series}{pin}{flash}{variant}-{package}{grade}")
@@ -34,7 +34,8 @@ class SAMIdentifier:
                 i.set("series", match.group("series"))
                 i.set("pin", match.group("pin"))
                 i.set("flash", match.group("flash"))
-                i.set("variant", match.group("variant"))
+
+                i.set("variant", match.group("variant") or "")
                 i.set("package", match.group("package"))
                 i.set("grade", match.group("grade"))
                 return i

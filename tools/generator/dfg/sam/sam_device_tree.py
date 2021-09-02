@@ -59,12 +59,12 @@ class SAMDeviceTree:
             name = memory_segment.get("name")
             start = memory_segment.get("start")
             size = int(memory_segment.get("size"), 16)
-            access = memory_segment.get("rw").lower()
+            access = memory_segment.get("rw", "r").lower()
             if memory_segment.get("exec") == "true":
                 access += "x"
-            if name in ["FLASH"]:
+            if name in ["FLASH", "IFLASH"]:
                 memories.append({"name":"flash", "access":"rx", "size":str(size), "start":start})
-            elif name in ["HMCRAMC0", "HMCRAM0", "HSRAM"]:
+            elif name in ["HMCRAMC0", "HMCRAM0", "HSRAM", "IRAM"]:
                 memories.append({"name":"ram", "access":access, "size":str(size), "start":start})
             elif name in ["LPRAM", "BKUPRAM"]:
                 memories.append({"name":"lpram", "access":access, "size":str(size), "start":start})
@@ -157,6 +157,19 @@ class SAMDeviceTree:
         tree = DeviceTree("device")
         tree.ids.append(p["id"])
 
+        def driver_compatibility(id):
+            s = id.string
+            if s.startswith("samg55"):
+                return "samg55"
+            elif s.startswith("samg54"):
+                return "samg54"
+            elif s.startswith("samg53"):
+                return "samg53"
+            elif s.startswith("samg51"):
+                return "samg51"
+            else:
+                return "sam"
+
         def topLevelOrder(e):
             order = ["attribute-flash", "attribute-ram", "attribute-eeprom", "attribute-core", "attribute-mcu", "header", "attribute-define"]
             if e.name in order:
@@ -217,11 +230,12 @@ class SAMDeviceTree:
             else:
                 modules[m].append(i)
 
+        compatible = driver_compatibility(p['id'])
+
         # add all other modules
         for name, instances in modules.items():
             driver = tree.addChild("driver")
             dtype = name
-            compatible = "sam"
 
             driver.setAttributes("name", dtype, "type", compatible)
             # Add all instances to this driver
@@ -233,7 +247,7 @@ class SAMDeviceTree:
 
         # GPIO driver
         gpio_driver = tree.addChild("driver")
-        gpio_driver.setAttributes("name", "gpio", "type", "sam")
+        gpio_driver.setAttributes("name", "gpio", "type", compatible)
         gpio_driver.addSortKey(lambda e : (e["port"], int(e["pin"])))
         for port, pin in p["gpios"]:
             pin_driver = gpio_driver.addChild("gpio")
