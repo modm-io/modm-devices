@@ -167,6 +167,10 @@ class SAMDeviceTree:
                 return "samg53"
             elif s.startswith("samg51"):
                 return "samg51"
+            elif s.startswith("samv70"):
+                return "samv70"
+            elif s.startswith("samv71"):
+                return "samv71"
             else:
                 return "sam"
 
