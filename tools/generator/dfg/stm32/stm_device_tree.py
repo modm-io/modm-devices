@@ -136,11 +136,13 @@ class STMDeviceTree:
             return version
 
         modules = []
+        dmaFile = None
         for ip in device_file.query('//IP'):
             # These IPs are all software modules, NOT hardware modules. Their version string is weird too.
             software_ips = {"GFXSIMULATOR", "GRAPHICS", "FATFS", "TOUCHSENSING", "PDM2PCM",
                             "MBEDTLS", "FREERTOS", "CORTEX_M", "NVIC", "USB_DEVICE",
-                            "USB_HOST", "LWIP", "LIBJPEG", "GUI_INTERFACE", "TRACER"}
+                            "USB_HOST", "LWIP", "LIBJPEG", "GUI_INTERFACE", "TRACER",
+                            "FILEX", "LEVELX", "THREADX", "USBX", "LINKEDLIST", "NETXDUO"}
             if any(ip.get("Name").upper().startswith(p) for p in software_ips):
                 continue
 
@@ -266,117 +268,118 @@ class STMDeviceTree:
                 rafs.append( (driver, instance, name) )
             return rafs
 
-        dma_dumped = []
-        dma_streams = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
-        requests = dmaFile.query('//RefParameter[@Name="Request"]/PossibleValue/@Comment')
-        if did.family == "h7": requests.insert(54, "Reserved"); # Secret NSA peripheral
-        for sig in dmaFile.query('//ModeLogicOperator[@Name="XOR"]/Mode'):
-            name = rname = sig.get("Name")
-            parent = sig.getparent().getparent().get("Name")
-            instance = parent.split("_")[0][3:]
-            parent = parent.split("_")[1]
+        if dmaFile is not None:
+            dma_dumped = []
+            dma_streams = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
+            requests = dmaFile.query('//RefParameter[@Name="Request"]/PossibleValue/@Comment')
+            if did.family == "h7": requests.insert(54, "Reserved"); # Secret NSA peripheral
+            for sig in dmaFile.query('//ModeLogicOperator[@Name="XOR"]/Mode'):
+                name = rname = sig.get("Name")
+                parent = sig.getparent().getparent().get("Name")
+                instance = parent.split("_")[0][3:]
+                parent = parent.split("_")[1]
 
-            request = dmaFile.query('//RefMode[@Name="{}"]'.format(name))[0]
-            def rv(param, default=[]):
-                vls = request.xpath('./Parameter[@Name="{}"]/PossibleValue/text()'.format(param))
-                if not len(vls): vls = default;
-                return vls
+                request = dmaFile.query('//RefMode[@Name="{}"]'.format(name))[0]
+                def rv(param, default=[]):
+                    vls = request.xpath('./Parameter[@Name="{}"]/PossibleValue/text()'.format(param))
+                    if not len(vls): vls = default;
+                    return vls
 
-            name = name.lower().split(":")[0]
-            if name == "memtomem":
-                continue
-            # Several corrections
-            name = name.replace("spdif_rx", "spdifrx")
-            if name.startswith("dac") and "_" not in name: name = "dac_{}".format(name);
-            if any(name == n for n in ["sdio", "sdmmc2", "sdmmc1"]): continue
-            if len(name.split("_")) < 2: name = "{}_default".format(name);
-            driver, inst, name = split_af(name)
+                name = name.lower().split(":")[0]
+                if name == "memtomem":
+                    continue
+                # Several corrections
+                name = name.replace("spdif_rx", "spdifrx")
+                if name.startswith("dac") and "_" not in name: name = "dac_{}".format(name);
+                if any(name == n for n in ["sdio", "sdmmc2", "sdmmc1"]): continue
+                if len(name.split("_")) < 2: name = "{}_default".format(name);
+                driver, inst, name = split_af(name)
 
-            if "[" in parent:
-                channel = requests.index(rname)
-                stream = instance = 0
-                p["dma_naming"] = (None, "request", "signal")
-            elif "Stream" in parent:
-                channel = rv("Channel", ["software"])[0].replace("DMA_CHANNEL_", "")
-                stream = parent.replace("Stream", "")
-                p["dma_naming"] = ("stream", "channel", "signal")
-            elif rv("Request"):
-                channel = rv("Request", ["software"])[0].replace("DMA_REQUEST_", "")
-                stream = parent.replace("Channel", "")
-                p["dma_naming"] = ("channel", "request", "signal")
-            else:
-                channel = parent.replace("Channel", "")
-                stream = channel
-                p["dma_naming"] = (None, "channel", "signal")
+                if "[" in parent:
+                    channel = requests.index(rname)
+                    stream = instance = 0
+                    p["dma_naming"] = (None, "request", "signal")
+                elif "Stream" in parent:
+                    channel = rv("Channel", ["software"])[0].replace("DMA_CHANNEL_", "")
+                    stream = parent.replace("Stream", "")
+                    p["dma_naming"] = ("stream", "channel", "signal")
+                elif rv("Request"):
+                    channel = rv("Request", ["software"])[0].replace("DMA_REQUEST_", "")
+                    stream = parent.replace("Channel", "")
+                    p["dma_naming"] = ("channel", "request", "signal")
+                else:
+                    channel = parent.replace("Channel", "")
+                    stream = channel
+                    p["dma_naming"] = (None, "channel", "signal")
 
-            if driver is None: # peripheral is not part of this device
-                dma_dumped.append( (instance, stream, name) )
-                continue
-            mode = [v[4:].lower() for v in rv("Mode")]
-            for sname in ([None] if name == "default" else name.split("/")):
-                signal = {
-                    "driver": driver,
-                    "name": sname,
-                    "direction": [v[4:].replace("PERIPH", "p").replace("MEMORY", "m").replace("_TO_", "2") for v in rv("Direction")],
-                    "mode": mode,
-                    "increase": "ENABLE" in rv("PeriphInc", ["DMA_PINC_ENABLE"])[0],
-                }
-                if inst: signal["instance"] = inst;
-                remaps = stm.getDmaRemap(did, instance, channel, driver, inst, sname)
-                if remaps: signal["remap"] = remaps;
-                dma_streams[instance][stream][channel].append(signal)
-                # print(instance, stream, channel)
-                # print(signal)
+                if driver is None: # peripheral is not part of this device
+                    dma_dumped.append( (instance, stream, name) )
+                    continue
+                mode = [v[4:].lower() for v in rv("Mode")]
+                for sname in ([None] if name == "default" else name.split("/")):
+                    signal = {
+                        "driver": driver,
+                        "name": sname,
+                        "direction": [v[4:].replace("PERIPH", "p").replace("MEMORY", "m").replace("_TO_", "2") for v in rv("Direction")],
+                        "mode": mode,
+                        "increase": "ENABLE" in rv("PeriphInc", ["DMA_PINC_ENABLE"])[0],
+                    }
+                    if inst: signal["instance"] = inst;
+                    remaps = stm.getDmaRemap(did, instance, channel, driver, inst, sname)
+                    if remaps: signal["remap"] = remaps;
+                    dma_streams[instance][stream][channel].append(signal)
+                    # print(instance, stream, channel)
+                    # print(signal)
 
-        # Manually handle condition expressions from XML for
-        # (STM32F030CCTx|STM32F030RCTx) and (STM32F070CBTx|STM32F070RBTx)
-        if did.family in ['f0']:
-            if (did.name == '30' and did.size == 'c'):
-                dma_streams['1'].pop('6')
-                dma_streams['1'].pop('7')
-                dma_streams.pop('2')
-            if (did.name == '70' and did.size == 'b'):
-                dma_streams['1'].pop('6')
-                dma_streams['1'].pop('7')
+            # Manually handle condition expressions from XML for
+            # (STM32F030CCTx|STM32F030RCTx) and (STM32F070CBTx|STM32F070RBTx)
+            if did.family in ['f0']:
+                if (did.name == '30' and did.size == 'c'):
+                    dma_streams['1'].pop('6')
+                    dma_streams['1'].pop('7')
+                    dma_streams.pop('2')
+                if (did.name == '70' and did.size == 'b'):
+                    dma_streams['1'].pop('6')
+                    dma_streams['1'].pop('7')
 
-        # De-duplicate DMA signal entries
-        def deduplicate_list(l):
-            return [i for n, i in enumerate(l) if i not in l[n + 1:]]
-        for stream in dma_streams:
-            for channel in dma_streams[stream]:
-                for signal in dma_streams[stream][channel]:
-                    dma_streams[stream][channel][signal] = deduplicate_list(
-                        dma_streams[stream][channel][signal])
+            # De-duplicate DMA signal entries
+            def deduplicate_list(l):
+                return [i for n, i in enumerate(l) if i not in l[n + 1:]]
+            for stream in dma_streams:
+                for channel in dma_streams[stream]:
+                    for signal in dma_streams[stream][channel]:
+                        dma_streams[stream][channel][signal] = deduplicate_list(
+                            dma_streams[stream][channel][signal])
 
-        # if p["dma_naming"][1] == "request":
-        #     print(did, dmaFile.filename)
-        p["dma"] = dma_streams
-        if len(dma_dumped):
-            for instance, stream, name in sorted(dma_dumped):
-                LOGGER.debug("DMA{}#{}: dumping {}".format(instance, stream, name))
+            # if p["dma_naming"][1] == "request":
+            #     print(did, dmaFile.filename)
+            p["dma"] = dma_streams
+            if len(dma_dumped):
+                for instance, stream, name in sorted(dma_dumped):
+                    LOGGER.debug("DMA{}#{}: dumping {}".format(instance, stream, name))
 
-        # If DMAMUX is used, add DMAMUX to DMA peripheral channel mappings
-        if p["dma_naming"] == (None, "request", "signal"):
-            # There can be multiple "//RefParameter[@Name="Instance"]" nodes constrained by
-            # a <Condition> child node filtering by the STM32 die id
-            # Try to match a node with condition first, if nothing matches choose the default one
-            die_id = device_file.query('//Die')[0].text
-            q = '//RefParameter[@Name="Instance"]/Condition[@Expression="%s"]/../PossibleValue/@Value' % die_id
-            channels = dmaFile.query(q)
-            if len(channels) == 0:
-                # match channels from node without <Condition> child node
-                channels = dmaFile.query('//RefParameter[@Name="Instance" and not(Condition)]/PossibleValue/@Value')
+            # If DMAMUX is used, add DMAMUX to DMA peripheral channel mappings
+            if p["dma_naming"] == (None, "request", "signal"):
+                # There can be multiple "//RefParameter[@Name="Instance"]" nodes constrained by
+                # a <Condition> child node filtering by the STM32 die id
+                # Try to match a node with condition first, if nothing matches choose the default one
+                die_id = device_file.query('//Die')[0].text
+                q = '//RefParameter[@Name="Instance"]/Condition[@Expression="%s"]/../PossibleValue/@Value' % die_id
+                channels = dmaFile.query(q)
+                if len(channels) == 0:
+                    # match channels from node without <Condition> child node
+                    channels = dmaFile.query('//RefParameter[@Name="Instance" and not(Condition)]/PossibleValue/@Value')
 
-            mux_channels = []
-            # H7 has "Stream" instead of "Channel" for DMAMUX1
-            mux_channel_regex = re.compile(r"DMA(?P<instance>([0-9]))_(Channel|Stream)(?P<channel>([0-9]+))")
-            for mux_ch_position, channel in enumerate(channels):
-                m = mux_channel_regex.match(channel)
-                assert m is not None
-                mux_channels.append({'position'     : mux_ch_position,
-                                     'dma-instance' : int(m.group("instance")),
-                                     'dma-channel'  : int(m.group("channel"))})
-            p["dma_mux_channels"] = mux_channels
+                mux_channels = []
+                # H7 has "Stream" instead of "Channel" for DMAMUX1
+                mux_channel_regex = re.compile(r"DMA(?P<instance>([0-9]))_(Channel|Stream)(?P<channel>([0-9]+))")
+                for mux_ch_position, channel in enumerate(channels):
+                    m = mux_channel_regex.match(channel)
+                    assert m is not None
+                    mux_channels.append({'position'     : mux_ch_position,
+                                         'dma-instance' : int(m.group("instance")),
+                                         'dma-channel'  : int(m.group("channel"))})
+                p["dma_mux_channels"] = mux_channels
 
         if did.family == "f1":
             grouped_f1_signals = gpioFile.compactQuery('//GPIO_Pin/PinSignal/@Name')

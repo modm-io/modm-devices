@@ -352,5 +352,11 @@ stm_groups = \
     },{
         'family': ['wl'],
         'name': ['e4', 'e5']
-    }
+    },
+
+    # STM32U5 devices
+    {
+        'family': ['u5'],
+        'name': ['75', '85'],
+    },
 ]
