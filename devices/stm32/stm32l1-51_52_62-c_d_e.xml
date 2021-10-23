@@ -181,7 +181,9 @@
       <instance value="2"/>
       <instance device-size="d" device-variant="" value="3"/>
     </driver>
-    <driver name="rcc" type="stm32-v1.0"/>
+    <driver name="rcc" type="stm32-v1.0">
+      <max-frequency value="32000000"/>
+    </driver>
     <driver name="rtc" type="stm32-v2.5"/>
     <driver device-size="d" device-variant="" name="sdio" type="stm32"/>
     <driver name="spi" type="stm32">

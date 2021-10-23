@@ -159,7 +159,9 @@
     <driver device-pin="c|r|t" name="lpuart" type="stm32-v1.1">
       <instance value="1"/>
     </driver>
-    <driver name="rcc" type="stm32-v1.0"/>
+    <driver name="rcc" type="stm32-v1.0">
+      <max-frequency value="32000000"/>
+    </driver>
     <driver device-name="52|53|62|63" name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v2.4"/>
     <driver name="spi" type="stm32">

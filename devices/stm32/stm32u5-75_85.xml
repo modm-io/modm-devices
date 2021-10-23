@@ -290,7 +290,9 @@
     <driver device-pin="r" device-variant="" name="pssi" type="stm32-v3.0"/>
     <driver name="pwr" type="stm32-v1.0"/>
     <driver name="ramcfg" type="stm32-v1.0"/>
-    <driver name="rcc" type="stm32-v1.0"/>
+    <driver name="rcc" type="stm32-v1.0">
+      <max-frequency value="160000000"/>
+    </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-rtc2_v2_u5_cube"/>
     <driver device-name="85" name="saes" type="stm32-v2.0"/>

@@ -139,7 +139,9 @@
     <driver name="misc" type="stm32-v1.0"/>
     <driver name="pka" type="stm32-v1.0"/>
     <driver name="pwr" type="stm32-v1.0"/>
-    <driver name="rcc" type="stm32-v1.0"/>
+    <driver name="rcc" type="stm32-v1.0">
+      <max-frequency value="48000000"/>
+    </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v3.0"/>
     <driver name="sequencer" type="stm32-v1.0"/>

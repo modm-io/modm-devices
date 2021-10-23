@@ -252,7 +252,9 @@
     </driver>
     <driver name="iwdg" type="stm32"/>
     <driver device-name="29|39" name="ltdc" type="stm32-v1.0"/>
-    <driver name="rcc" type="stm32-v1.0"/>
+    <driver name="rcc" type="stm32-v1.0">
+      <max-frequency value="180000000"/>
+    </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v2.3"/>
     <driver name="sai" type="stm32-v1.0">

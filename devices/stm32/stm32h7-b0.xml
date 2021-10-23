@@ -271,7 +271,9 @@
     <driver device-pin="a|i|v|z" name="pssi" type="stm32-v3.0"/>
     <driver name="pwr" type="stm32-v1.0"/>
     <driver name="ramecc" type="stm32-v1.0"/>
-    <driver name="rcc" type="stm32-v1.0"/>
+    <driver name="rcc" type="stm32-v1.0">
+      <max-frequency value="280000000"/>
+    </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v2.7"/>
     <driver name="sai" type="stm32-v2.1">

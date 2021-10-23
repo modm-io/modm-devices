@@ -175,7 +175,10 @@
       <instance device-name="11" value="5"/>
     </driver>
     <driver name="iwdg" type="stm32"/>
-    <driver name="rcc" type="stm32-v1.0"/>
+    <driver name="rcc" type="stm32-v1.0">
+      <max-frequency device-name="11" value="100000000"/>
+      <max-frequency device-name="01" value="84000000"/>
+    </driver>
     <driver name="rtc" type="stm32-v2.3"/>
     <driver device-name="11" device-pin="c" name="sdio" type="stm32"/>
     <driver device-name="01|11" device-pin="r|v" name="sdio" type="stm32"/>

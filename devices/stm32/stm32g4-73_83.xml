@@ -267,7 +267,9 @@
     <driver name="quadspi" type="stm32-v4.1">
       <instance value="1"/>
     </driver>
-    <driver name="rcc" type="stm32-v1.0"/>
+    <driver name="rcc" type="stm32-v1.0">
+      <max-frequency value="170000000"/>
+    </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v1.1"/>
     <driver name="sai" type="stm32-v2.1">

@@ -87,7 +87,9 @@
     <driver name="iwdg" type="stm32">
       <feature value="window"/>
     </driver>
-    <driver name="rcc" type="stm32-v1.0"/>
+    <driver name="rcc" type="stm32-v1.0">
+      <max-frequency value="64000000"/>
+    </driver>
     <driver name="rtc" type="stm32-v1.0"/>
     <driver name="spi" type="stm32">
       <feature value="data-size"/>

@@ -75,7 +75,9 @@
       <instance value="2"/>
     </driver>
     <driver name="iwdg" type="stm32"/>
-    <driver name="rcc" type="stm32-v1.0"/>
+    <driver name="rcc" type="stm32-v1.0">
+      <max-frequency value="24000000"/>
+    </driver>
     <driver name="rtc" type="stm32-v1.1"/>
     <driver name="spi" type="stm32">
       <instance value="1"/>
