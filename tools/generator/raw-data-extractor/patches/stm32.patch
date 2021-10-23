@@ -44,3 +44,193 @@ index c8a77f2..43d92ee 100644
           </ModeLogicOperator>
         </Mode>
       </ModeLogicOperator>
+--- a/stm32-devices/mcu/STM32F303K(6-8)Ux.xml
++++ b/stm32-devices/mcu/STM32F303K(6-8)Ux.xml
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <Mcu ClockTree="STM32F3" DBVersion="V3.0" Family="STM32F3" HasPowerPad="false" IOType="" Line="STM32F3x3" Package="UFQFPN32" RefName="STM32F303K(6-8)Ux" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+	<Core>Arm Cortex-M4</Core>
++	<Frequency>72</Frequency>
+	<CCMRam>4</CCMRam>
+	<Ram>12</Ram>
+	<Ram>12</Ram>
+diff --git a/stm32-devices/mcu/STM32F401C(B-C)Yx.xml b/stm32-devices/mcu/STM32F401C(B-C)Yx.xml
+index 1bc6ebb..a83ec16 100644
+--- a/stm32-devices/mcu/STM32F401C(B-C)Yx.xml
++++ b/stm32-devices/mcu/STM32F401C(B-C)Yx.xml
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <Mcu ClockTree="STM32F4_F401" DBVersion="V3.0" Family="STM32F4" HasPowerPad="false" IOType="" Line="STM32F401" Package="WLCSP49" RefName="STM32F401C(B-C)Yx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+	<Core>Arm Cortex-M4</Core>
++	<Frequency>84</Frequency>
+	<Ram>64</Ram>
+	<IONb>36</IONb>
+	<Die>DIE423</Die>
+diff --git a/stm32-devices/mcu/STM32G473V(B-C-E)Ix.xml b/stm32-devices/mcu/STM32G473V(B-C-E)Ix.xml
+index 6e2c71b..1ecae5f 100644
+--- a/stm32-devices/mcu/STM32G473V(B-C-E)Ix.xml
++++ b/stm32-devices/mcu/STM32G473V(B-C-E)Ix.xml
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <Mcu ClockTree="STM32G4" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x3" Package="UFBGA100" RefName="STM32G473V(B-C-E)Ix" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+	<Core>ARM Cortex-M4</Core>
++	<Frequency>170</Frequency>
+	<Ram>128</Ram>
+	<IONb>86</IONb>
+	<Die>DIE469</Die>
+diff --git a/stm32-devices/mcu/STM32G483VEIx.xml b/stm32-devices/mcu/STM32G483VEIx.xml
+index 3d987ed..1fc3389 100644
+--- a/stm32-devices/mcu/STM32G483VEIx.xml
++++ b/stm32-devices/mcu/STM32G483VEIx.xml
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <Mcu ClockTree="STM32G4" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x3" Package="UFBGA100" RefName="STM32G483VEIx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+	<Core>ARM Cortex-M4</Core>
++	<Frequency>170</Frequency>
+	<Ram>128</Ram>
+	<IONb>86</IONb>
+	<Die>DIE469</Die>
+diff --git a/stm32-devices/mcu/STM32G484VEIx.xml b/stm32-devices/mcu/STM32G484VEIx.xml
+index 46a992d..2f29a24 100644
+--- a/stm32-devices/mcu/STM32G484VEIx.xml
++++ b/stm32-devices/mcu/STM32G484VEIx.xml
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <Mcu ClockTree="STM32G4" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x4" Package="UFBGA100" RefName="STM32G484VEIx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+	<Core>ARM Cortex-M4</Core>
++	<Frequency>170</Frequency>
+	<Ram>128</Ram>
+	<IONb>86</IONb>
+	<Die>DIE469</Die>
+diff --git a/stm32-devices/mcu/STM32L021F4Px.xml b/stm32-devices/mcu/STM32L021F4Px.xml
+index 623ae91..7cb119a 100644
+--- a/stm32-devices/mcu/STM32L021F4Px.xml
++++ b/stm32-devices/mcu/STM32L021F4Px.xml
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <Mcu ClockTree="STM32L0" DBVersion="V3.0" Family="STM32L0" HasPowerPad="false" IOType="" Line="STM32L0x1" Package="TSSOP20" RefName="STM32L021F4Px" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+	<Core>Arm Cortex-M0+</Core>
++	<Frequency>32</Frequency>
+	<E2prom>512</E2prom>
+	<Ram>2</Ram>
+	<IONb>16</IONb>
+diff --git a/stm32-devices/mcu/STM32L021K4Ux.xml b/stm32-devices/mcu/STM32L021K4Ux.xml
+index 0b9f5b9..6d75d93 100644
+--- a/stm32-devices/mcu/STM32L021K4Ux.xml
++++ b/stm32-devices/mcu/STM32L021K4Ux.xml
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <Mcu ClockTree="STM32L0" DBVersion="V3.0" Family="STM32L0" HasPowerPad="true" IOType="" Line="STM32L0x1" Package="UFQFPN32" RefName="STM32L021K4Ux" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+	<Core>Arm Cortex-M0+</Core>
++	<Frequency>32</Frequency>
+	<E2prom>512</E2prom>
+	<Ram>2</Ram>
+	<IONb>28</IONb>
+diff --git a/stm32-devices/mcu/STM32L071V(B-Z)Ix.xml b/stm32-devices/mcu/STM32L071V(B-Z)Ix.xml
+index 05ad59f..e50dad9 100644
+--- a/stm32-devices/mcu/STM32L071V(B-Z)Ix.xml
++++ b/stm32-devices/mcu/STM32L071V(B-Z)Ix.xml
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <Mcu ClockTree="STM32L0" DBVersion="V3.0" Family="STM32L0" HasPowerPad="false" IOType="" Line="STM32L0x1" Package="UFBGA100" RefName="STM32L071V(B-Z)Ix" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+	<Core>Arm Cortex-M0+</Core>
++	<Frequency>32</Frequency>
+	<E2prom>6144</E2prom>
+	<Ram>20</Ram>
+	<IONb>84</IONb>
+diff --git a/stm32-devices/mcu/STM32L071V8Ix.xml b/stm32-devices/mcu/STM32L071V8Ix.xml
+index 6a86fe1..4b249bb 100644
+--- a/stm32-devices/mcu/STM32L071V8Ix.xml
++++ b/stm32-devices/mcu/STM32L071V8Ix.xml
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <Mcu ClockTree="STM32L0" DBVersion="V3.0" Family="STM32L0" HasPowerPad="false" IOType="" Line="STM32L0x1" Package="UFBGA100" RefName="STM32L071V8Ix" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+	<Core>Arm Cortex-M0+</Core>
++	<Frequency>32</Frequency>
+	<E2prom>3072</E2prom>
+	<Ram>20</Ram>
+	<IONb>84</IONb>
+diff --git a/stm32-devices/mcu/STM32L073V8Ix.xml b/stm32-devices/mcu/STM32L073V8Ix.xml
+index d645bc3..6ec1eb2 100644
+--- a/stm32-devices/mcu/STM32L073V8Ix.xml
++++ b/stm32-devices/mcu/STM32L073V8Ix.xml
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <Mcu ClockTree="STM32L0" DBVersion="V3.0" Family="STM32L0" HasPowerPad="false" IOType="" Line="STM32L0x3" Package="UFBGA100" RefName="STM32L073V8Ix" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+	<Core>Arm Cortex-M0+</Core>
++	<Frequency>32</Frequency>
+	<E2prom>3072</E2prom>
+	<Ram>20</Ram>
+	<IONb>84</IONb>
+diff --git a/stm32-devices/mcu/STM32L083V8Ix.xml b/stm32-devices/mcu/STM32L083V8Ix.xml
+index 2c80a6f..15e0f6f 100644
+--- a/stm32-devices/mcu/STM32L083V8Ix.xml
++++ b/stm32-devices/mcu/STM32L083V8Ix.xml
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <Mcu ClockTree="STM32L0" DBVersion="V3.0" Family="STM32L0" HasPowerPad="false" IOType="" Line="STM32L0x3" Package="UFBGA100" RefName="STM32L083V8Ix" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+	<Core>Arm Cortex-M0+</Core>
++	<Frequency>32</Frequency>
+	<E2prom>3072</E2prom>
+	<Ram>20</Ram>
+	<IONb>84</IONb>
+diff --git a/stm32-devices/mcu/STM32U575OGYxQ.xml b/stm32-devices/mcu/STM32U575OGYxQ.xml
+index 979fd68..369dd7b 100644
+--- a/stm32-devices/mcu/STM32U575OGYxQ.xml
++++ b/stm32-devices/mcu/STM32U575OGYxQ.xml
+@@ -6,6 +6,7 @@
+	<Context Comment="Enable the Cortex-M33 secure context for the peripheral(s) that you want to use from the secure world, whether a basic secure monitor or a trusted execution environment" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 secure" Name="CortexM33S" Secure="true" SemaphoreSuffix="_SECURE" ShortName="M33S"/>
+	<Context Comment="Enable the Cortex-M33 non-secure context for the peripheral(s) that you plan to use from the non secure world" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 non secure" Name="CortexM33NS" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33NS"/>
+	<Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
++	<Frequency>160</Frequency>
+	<TrustZone>Available</TrustZone>
+	<Ram>256</Ram>
+	<IONb>69</IONb>
+diff --git a/stm32-devices/mcu/STM32U585QEIxQ.xml b/stm32-devices/mcu/STM32U585QEIxQ.xml
+index 11d686f..2366469 100644
+--- a/stm32-devices/mcu/STM32U585QEIxQ.xml
++++ b/stm32-devices/mcu/STM32U585QEIxQ.xml
+@@ -6,6 +6,7 @@
+	<Context Comment="Enable the Cortex-M33 secure context for the peripheral(s) that you want to use from the secure world, whether a basic secure monitor or a trusted execution environment" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 secure" Name="CortexM33S" Secure="true" SemaphoreSuffix="_SECURE" ShortName="M33S"/>
+	<Context Comment="Enable the Cortex-M33 non-secure context for the peripheral(s) that you plan to use from the non secure world" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 non secure" Name="CortexM33NS" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33NS"/>
+	<Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
++	<Frequency>160</Frequency>
+	<TrustZone>Available</TrustZone>
+	<Ram>256</Ram>
+	<IONb>106</IONb>
+diff --git a/stm32-devices/mcu/STM32U585ZETxQ.xml b/stm32-devices/mcu/STM32U585ZETxQ.xml
+index bf7eafe..dd7dd6a 100644
+--- a/stm32-devices/mcu/STM32U585ZETxQ.xml
++++ b/stm32-devices/mcu/STM32U585ZETxQ.xml
+@@ -6,6 +6,7 @@
+	<Context Comment="Enable the Cortex-M33 secure context for the peripheral(s) that you want to use from the secure world, whether a basic secure monitor or a trusted execution environment" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 secure" Name="CortexM33S" Secure="true" SemaphoreSuffix="_SECURE" ShortName="M33S"/>
+	<Context Comment="Enable the Cortex-M33 non-secure context for the peripheral(s) that you plan to use from the non secure world" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 non secure" Name="CortexM33NS" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33NS"/>
+	<Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
++	<Frequency>160</Frequency>
+	<TrustZone>Available</TrustZone>
+	<Ram>256</Ram>
+	<IONb>111</IONb>
+diff --git a/stm32-devices/mcu/STM32WB30CEUxA.xml b/stm32-devices/mcu/STM32WB30CEUxA.xml
+index d03f748..fca698e 100644
+--- a/stm32-devices/mcu/STM32WB30CEUxA.xml
++++ b/stm32-devices/mcu/STM32WB30CEUxA.xml
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <Mcu ClockTree="STM32W" DBVersion="V3.0" Family="STM32WB" HasPowerPad="false" IOType="" Line="STM32WBx0 Value Line" Package="UFQFPN48" RefName="STM32WB30CEUxA" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+	<Core>ARM Cortex-M4</Core>
++	<Frequency>64</Frequency>
+	<Ram>96</Ram>
+	<IONb>30</IONb>
+	<Die>DIE495</Die>
+diff --git a/stm32-devices/mcu/STM32WB35C(C-E)UxA.xml b/stm32-devices/mcu/STM32WB35C(C-E)UxA.xml
+index a2bc61d..f63966a 100644
+--- a/stm32-devices/mcu/STM32WB35C(C-E)UxA.xml
++++ b/stm32-devices/mcu/STM32WB35C(C-E)UxA.xml
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <Mcu ClockTree="STM32W" DBVersion="V3.0" Family="STM32WB" HasPowerPad="false" IOType="" Line="STM32WBx5" Package="UFQFPN48" RefName="STM32WB35C(C-E)UxA" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+	<Core>ARM Cortex-M4</Core>
++	<Frequency>64</Frequency>
+	<Ram>96</Ram>
+	<IONb>30</IONb>
+	<Die>DIE495</Die>

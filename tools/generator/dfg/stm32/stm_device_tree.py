@@ -80,6 +80,12 @@ class STMDeviceTree:
             did.set("core", core[7:9])
         p = {"id": did, "core": core}
 
+        # Maximum operating frequency
+        max_frequency = float(device_file.query('//Frequency')[0].text)
+        # H7 dual-core devices run the M4 core at half the frequency as the M7 core
+        if did.get("core", "") == "m4": max_frequency /= 2.0;
+        p["max_frequency"] = int(max_frequency * 1e6)
+
         # Information from the CMSIS headers
         stm_header = STMHeader(did)
         if not stm_header.is_valid:
@@ -569,6 +575,10 @@ class STMDeviceTree:
                         fc = vddc.addChild("wait-state")
                         fc.setAttributes("ws", fi, "hclk-max", fmax)
 
+            if name == "rcc":
+                driver.addSortKey(lambda e: int(e.get("max-frequency", 1e10)))
+                freq = driver.addChild("max-frequency")
+                freq.setValue(p["max_frequency"])
 
             if name == "dma":
                 STMDeviceTree.addDmaToNode(p, driver)
