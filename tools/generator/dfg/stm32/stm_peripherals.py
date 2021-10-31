@@ -124,7 +124,13 @@ stm_peripherals = \
                 'hardware': 'stm32-mux',
                 'features': [],
                 'protocols': ['mem2mem', 'mem2per', 'per2per'],
-                'devices': [{'family': ['h7', 'g0', 'g4', 'wb']}, {'family': ['l4'], 'name': ['p5', 'p7', 'p9', 'q5', 'q7', 'q9', 'r5', 'r7', 'r9', 's5', 's7', 's9']}]
+                'devices': [{'family': ['g0', 'g4', 'l5', 'wb', 'wl']}, {'family': ['l4'], 'name': ['p5', 'p7', 'p9', 'q5', 'q7', 'q9', 'r5', 'r7', 'r9', 's5', 's7', 's9']}]
+            },
+            {
+                'hardware': 'stm32-mux-stream',
+                'features': [],
+                'protocols': ['mem2mem', 'mem2per', 'per2per'],
+                'devices': [{'family': ['h7']}]
             },
             {
                 'hardware': 'stm32-stream-channel',
