@@ -684,6 +684,10 @@ class STMDeviceTree:
                 # if driver.startswith("tc"): driver = "tc";
                 # if driver == "cpu": driver = "core"; instance = "core";
                 # add the af node
+                if driver == "spdifrx" and instance == "1":
+                    # Only one peripheral ever exists, but some H7 have instance "1"
+                    # Naming in manuals and headers is always without "1"
+                    instance = None
                 af = pin_driver.addChild("signal")
                 if afid == "": LOGGER.error("afid is not set: {}".format(s));
                 if afid:     af.setAttributes("af", afid);
