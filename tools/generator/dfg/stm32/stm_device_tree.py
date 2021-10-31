@@ -14,6 +14,7 @@ from ..input.xml import XMLReader
 from .stm_header import STMHeader
 from .stm_identifier import STMIdentifier
 from . import stm
+from . import stm_dmamux_requests
 from . import stm_peripherals
 
 LOGGER = logging.getLogger("dfg.stm.reader")
@@ -277,10 +278,12 @@ class STMDeviceTree:
         if dmaFile is not None:
             dma_dumped = []
             dma_streams = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
-            requests = dmaFile.query('//RefParameter[@Name="Request"]/PossibleValue/@Comment')
-            if did.family == "h7": requests.insert(54, "Reserved"); # Secret NSA peripheral
+            dma_request_map = None
             for sig in dmaFile.query('//ModeLogicOperator[@Name="XOR"]/Mode'):
                 name = rname = sig.get("Name")
+                if did.family == "wl" and rname in ["SAI1_A", "SAI1_B", "QUADSPI"]:
+                    continue  # CubeMX data is wrong, WL devices don't have these peripherals
+
                 parent = sig.getparent().getparent().get("Name")
                 instance = parent.split("_")[0][3:]
                 parent = parent.split("_")[1]
@@ -294,6 +297,7 @@ class STMDeviceTree:
                 name = name.lower().split(":")[0]
                 if name == "memtomem":
                     continue
+
                 # Several corrections
                 name = name.replace("spdif_rx", "spdifrx")
                 if name.startswith("dac") and "_" not in name: name = "dac_{}".format(name);
@@ -302,7 +306,9 @@ class STMDeviceTree:
                 driver, inst, name = split_af(name)
 
                 if "[" in parent:
-                    channel = requests.index(rname)
+                    if dma_request_map is None:
+                        dma_request_map = stm_dmamux_requests.read_request_map(did)
+                    channel = dma_request_map[rname]
                     stream = instance = 0
                     p["dma_naming"] = (None, "request", "signal")
                 elif "Stream" in parent:

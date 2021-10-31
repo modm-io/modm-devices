@@ -3,8 +3,11 @@
 ext/%:
 	@git clone https://github.com/modm-io/$(@:ext/%=%).git $@
 
+ext/stm32-cube-hal-drivers:
+	@git clone https://github.com/modm-ext/stm32-cube-hal-drivers.git $@
+
 .PHONY: init
-init: ext/cmsis-header-stm32 ext/cmsis-5-partial #ext/cmsis-header-sam
+init: ext/cmsis-header-stm32 ext/cmsis-5-partial ext/stm32-cube-hal-drivers #ext/cmsis-header-sam
 
 .PHONY: clean_init
 clean_init:
@@ -62,7 +65,7 @@ generate-nrf: generate-nrf52810 generate-nrf52811 generate-nrf52820 generate-nrf
 
 # STM32 device files
 .PHONY: generate-stm32%
-generate-stm32%: raw-device-data/stm32-devices ext/cmsis-5-partial ext/cmsis-header-stm32
+generate-stm32%: raw-device-data/stm32-devices ext/cmsis-5-partial ext/cmsis-header-stm32 ext/stm32-cube-hal-drivers
 	@rm -f ../../devices/stm32/$(@:generate-%=%)*
 	./stm_generator.py $(@:generate-%=%)
 
