@@ -59,6 +59,14 @@ shutil.move(data_path+"MX/db/mcu", data_path+"mcu")
 shutil.move(data_path+"MX/db/plugins", data_path+"plugins")
 shutil.rmtree(data_path+"MX", ignore_errors=True)
 
+print("Normalizing file endings...")
+for file in Path(data_path).glob("**/*"):
+    if str(file).endswith(".xml"):
+        with file.open("r", newline=None, encoding="utf-8", errors="replace") as rfile:
+            content = [l.rstrip()+"\n" for l in rfile.readlines()]
+        with file.open("w", encoding="utf-8") as wfile:
+            wfile.writelines(content)
+
 print("Patching Database...", flush=True)
 shutil.copy("patches/stm32.patch", "../raw-device-data")
 os.system("(cd ../raw-device-data; patch -p1 -l -i stm32.patch)")

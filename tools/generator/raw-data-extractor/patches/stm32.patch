@@ -174,42 +174,6 @@ index 2c80a6f..15e0f6f 100644
 	<E2prom>3072</E2prom>
 	<Ram>20</Ram>
 	<IONb>84</IONb>
-diff --git a/stm32-devices/mcu/STM32U575OGYxQ.xml b/stm32-devices/mcu/STM32U575OGYxQ.xml
-index 979fd68..369dd7b 100644
---- a/stm32-devices/mcu/STM32U575OGYxQ.xml
-+++ b/stm32-devices/mcu/STM32U575OGYxQ.xml
-@@ -6,6 +6,7 @@
-	<Context Comment="Enable the Cortex-M33 secure context for the peripheral(s) that you want to use from the secure world, whether a basic secure monitor or a trusted execution environment" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 secure" Name="CortexM33S" Secure="true" SemaphoreSuffix="_SECURE" ShortName="M33S"/>
-	<Context Comment="Enable the Cortex-M33 non-secure context for the peripheral(s) that you plan to use from the non secure world" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 non secure" Name="CortexM33NS" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33NS"/>
-	<Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
-+	<Frequency>160</Frequency>
-	<TrustZone>Available</TrustZone>
-	<Ram>256</Ram>
-	<IONb>69</IONb>
-diff --git a/stm32-devices/mcu/STM32U585QEIxQ.xml b/stm32-devices/mcu/STM32U585QEIxQ.xml
-index 11d686f..2366469 100644
---- a/stm32-devices/mcu/STM32U585QEIxQ.xml
-+++ b/stm32-devices/mcu/STM32U585QEIxQ.xml
-@@ -6,6 +6,7 @@
-	<Context Comment="Enable the Cortex-M33 secure context for the peripheral(s) that you want to use from the secure world, whether a basic secure monitor or a trusted execution environment" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 secure" Name="CortexM33S" Secure="true" SemaphoreSuffix="_SECURE" ShortName="M33S"/>
-	<Context Comment="Enable the Cortex-M33 non-secure context for the peripheral(s) that you plan to use from the non secure world" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 non secure" Name="CortexM33NS" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33NS"/>
-	<Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
-+	<Frequency>160</Frequency>
-	<TrustZone>Available</TrustZone>
-	<Ram>256</Ram>
-	<IONb>106</IONb>
-diff --git a/stm32-devices/mcu/STM32U585ZETxQ.xml b/stm32-devices/mcu/STM32U585ZETxQ.xml
-index bf7eafe..dd7dd6a 100644
---- a/stm32-devices/mcu/STM32U585ZETxQ.xml
-+++ b/stm32-devices/mcu/STM32U585ZETxQ.xml
-@@ -6,6 +6,7 @@
-	<Context Comment="Enable the Cortex-M33 secure context for the peripheral(s) that you want to use from the secure world, whether a basic secure monitor or a trusted execution environment" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 secure" Name="CortexM33S" Secure="true" SemaphoreSuffix="_SECURE" ShortName="M33S"/>
-	<Context Comment="Enable the Cortex-M33 non-secure context for the peripheral(s) that you plan to use from the non secure world" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 non secure" Name="CortexM33NS" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33NS"/>
-	<Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
-+	<Frequency>160</Frequency>
-	<TrustZone>Available</TrustZone>
-	<Ram>256</Ram>
-	<IONb>111</IONb>
 diff --git a/stm32-devices/mcu/STM32WB30CEUxA.xml b/stm32-devices/mcu/STM32WB30CEUxA.xml
 index d03f748..fca698e 100644
 --- a/stm32-devices/mcu/STM32WB30CEUxA.xml
