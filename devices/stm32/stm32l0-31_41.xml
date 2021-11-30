@@ -12,7 +12,9 @@
     <valid-device>stm32l031c6u6</valid-device>
     <valid-device>stm32l031c6u7</valid-device>
     <valid-device>stm32l031e4y6</valid-device>
+    <valid-device>stm32l031e6y3</valid-device>
     <valid-device>stm32l031e6y6</valid-device>
+    <valid-device>stm32l031e6y7</valid-device>
     <valid-device>stm32l031f4p3</valid-device>
     <valid-device>stm32l031f4p6</valid-device>
     <valid-device>stm32l031f4p7</valid-device>
@@ -41,15 +43,19 @@
     <valid-device>stm32l041c6t7</valid-device>
     <valid-device>stm32l041c6u6</valid-device>
     <valid-device>stm32l041c6u7</valid-device>
+    <valid-device>stm32l041e6y3</valid-device>
     <valid-device>stm32l041e6y6</valid-device>
+    <valid-device>stm32l041e6y7</valid-device>
     <valid-device>stm32l041f6p6</valid-device>
     <valid-device>stm32l041f6p7</valid-device>
     <valid-device>stm32l041g6u6</valid-device>
     <valid-device>stm32l041g6u6s</valid-device>
     <valid-device>stm32l041g6u7</valid-device>
     <valid-device>stm32l041g6u7s</valid-device>
+    <valid-device>stm32l041k6t3</valid-device>
     <valid-device>stm32l041k6t6</valid-device>
     <valid-device>stm32l041k6t7</valid-device>
+    <valid-device>stm32l041k6u3</valid-device>
     <valid-device>stm32l041k6u6</valid-device>
     <valid-device>stm32l041k6u7</valid-device>
     <driver name="core" type="cortex-m0+">

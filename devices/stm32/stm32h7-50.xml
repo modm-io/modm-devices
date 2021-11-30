@@ -2678,7 +2678,7 @@
         <pin position="E15" name="PA8"/>
         <pin position="E16" name="PA12"/>
         <pin position="E17" name="PA11"/>
-        <pin position="F1" name="NC" type="nc"/>
+        <pin position="F1" name="VSS" type="power"/>
         <pin position="F2" name="VSS" type="power"/>
         <pin position="F3" name="PI10"/>
         <pin position="F4" name="PI11"/>
@@ -2689,7 +2689,7 @@
         <pin position="F16" name="PG7"/>
         <pin position="F17" name="VDD33_USB" type="power"/>
         <pin position="G1" name="PF2"/>
-        <pin position="G2" name="NC" type="nc"/>
+        <pin position="G2" name="VSS" type="power"/>
         <pin position="G3" name="PF1"/>
         <pin position="G4" name="PF0"/>
         <pin position="G5" name="VDD" type="power"/>

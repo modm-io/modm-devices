@@ -89,9 +89,15 @@
     <valid-device>stm32l072rbt3</valid-device>
     <valid-device>stm32l072rbt6</valid-device>
     <valid-device>stm32l072rbt7</valid-device>
+    <valid-device>stm32l072rzh3</valid-device>
     <valid-device>stm32l072rzh6</valid-device>
+    <valid-device>stm32l072rzh7</valid-device>
+    <valid-device>stm32l072rzi3</valid-device>
     <valid-device>stm32l072rzi6</valid-device>
+    <valid-device>stm32l072rzi7</valid-device>
+    <valid-device>stm32l072rzt3</valid-device>
     <valid-device>stm32l072rzt6</valid-device>
+    <valid-device>stm32l072rzt7</valid-device>
     <valid-device>stm32l072v8i6</valid-device>
     <valid-device>stm32l072v8t6</valid-device>
     <valid-device>stm32l072vbi6</valid-device>
@@ -1597,9 +1603,8 @@
       <package device-pin="r" device-package="t" name="LQFP64">
         <pin device-name="73|83" device-size="b|z" device-temperature="6" position="1" name="VLCD" type="power"/>
         <pin device-name="73|83" device-size="z" device-temperature="3|7" position="1" name="VLCD" type="power"/>
-        <pin device-name="71" device-size="b|z" device-temperature="6|7" position="1" name="VDD" type="power"/>
-        <pin device-name="72" device-size="b" device-temperature="3|6|7" position="1" name="VDD" type="power"/>
-        <pin device-name="72" device-size="z" device-temperature="6" position="1" name="VDD" type="power"/>
+        <pin device-name="72" device-size="b|z" device-temperature="3" position="1" name="VDD" type="power"/>
+        <pin device-name="71|72" device-size="b|z" device-temperature="6|7" position="1" name="VDD" type="power"/>
         <pin position="2" name="PC13"/>
         <pin position="3" name="PC14-OSC32_IN"/>
         <pin position="4" name="PC15-OSC32_OUT"/>
@@ -1646,8 +1651,8 @@
         <pin position="45" name="PA12"/>
         <pin position="46" name="PA13"/>
         <pin position="47" name="VSS" type="power"/>
-        <pin device-name="72" device-size="b" device-temperature="3|6|7" position="48" name="VDD_USB" type="power"/>
-        <pin device-name="72|73|83" device-size="b|z" device-temperature="6" position="48" name="VDD_USB" type="power"/>
+        <pin device-name="72" device-size="b|z" device-temperature="3|6|7" position="48" name="VDD_USB" type="power"/>
+        <pin device-name="73|83" device-size="b|z" device-temperature="6" position="48" name="VDD_USB" type="power"/>
         <pin device-name="73|83" device-size="z" device-temperature="3|7" position="48" name="VDD_USB" type="power"/>
         <pin device-name="71" device-size="b|z" device-temperature="6|7" position="48" name="VDDIO2" type="power"/>
         <pin position="49" name="PA14"/>
@@ -1679,9 +1684,8 @@
         <pin position="B1" name="PC15-OSC32_OUT"/>
         <pin device-name="73|83" device-size="b|z" device-temperature="6" position="B2" name="VLCD" type="power"/>
         <pin device-name="73|83" device-size="z" device-temperature="3|7" position="B2" name="VLCD" type="power"/>
-        <pin device-name="71" device-size="b|z" device-temperature="6|7" position="B2" name="VDD" type="power"/>
-        <pin device-name="72" device-size="b" device-temperature="3|6|7" position="B2" name="VDD" type="power"/>
-        <pin device-name="72" device-size="z" device-temperature="6" position="B2" name="VDD" type="power"/>
+        <pin device-name="72" device-size="b|z" device-temperature="3" position="B2" name="VDD" type="power"/>
+        <pin device-name="71|72" device-size="b|z" device-temperature="6|7" position="B2" name="VDD" type="power"/>
         <pin position="B3" name="PB8"/>
         <pin position="B4" name="BOOT0" type="boot"/>
         <pin position="B5" name="PD2"/>
@@ -1709,8 +1713,8 @@
         <pin position="E3" name="PC0"/>
         <pin position="E4" name="VDD" type="power"/>
         <pin position="E5" name="VDD" type="power"/>
-        <pin device-name="72" device-size="b" device-temperature="3|6|7" position="E6" name="VDD_USB" type="power"/>
-        <pin device-name="72|73|83" device-size="b|z" device-temperature="6" position="E6" name="VDD_USB" type="power"/>
+        <pin device-name="72" device-size="b|z" device-temperature="3|6|7" position="E6" name="VDD_USB" type="power"/>
+        <pin device-name="73|83" device-size="b|z" device-temperature="6" position="E6" name="VDD_USB" type="power"/>
         <pin device-name="73|83" device-size="z" device-temperature="3|7" position="E6" name="VDD_USB" type="power"/>
         <pin device-name="71" device-size="b|z" device-temperature="6|7" position="E6" name="VDDIO2" type="power"/>
         <pin position="E7" name="PC7"/>
@@ -1857,8 +1861,7 @@
         <pin position="A8" name="PA13"/>
         <pin position="B1" name="PC15-OSC32_OUT"/>
         <pin device-name="73" device-size="z" device-temperature="3|6|7" position="B2" name="VLCD" type="power"/>
-        <pin device-name="72" device-size="b" device-temperature="3|6|7" position="B2" name="VDD" type="power"/>
-        <pin device-name="72" device-size="z" device-temperature="6" position="B2" name="VDD" type="power"/>
+        <pin device-name="72" device-size="b|z" device-temperature="3|6|7" position="B2" name="VDD" type="power"/>
         <pin position="B3" name="PB8"/>
         <pin position="B4" name="BOOT0" type="boot"/>
         <pin position="B5" name="PD2"/>

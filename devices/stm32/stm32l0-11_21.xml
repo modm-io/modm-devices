@@ -33,6 +33,7 @@
     <valid-device>stm32l011k4u3</valid-device>
     <valid-device>stm32l011k4u6</valid-device>
     <valid-device>stm32l011k4u7</valid-device>
+    <valid-device>stm32l021d4p3</valid-device>
     <valid-device>stm32l021d4p6</valid-device>
     <valid-device>stm32l021d4p7</valid-device>
     <valid-device>stm32l021f4p6</valid-device>

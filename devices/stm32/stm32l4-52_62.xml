@@ -5,8 +5,11 @@
     <naming-schema>{platform}{family}{name}{pin}{size}{package}{temperature}{variant}</naming-schema>
     <valid-device>stm32l452ccu6</valid-device>
     <valid-device>stm32l452cet3</valid-device>
+    <valid-device>stm32l452cet3p</valid-device>
     <valid-device>stm32l452cet6</valid-device>
+    <valid-device>stm32l452cet6p</valid-device>
     <valid-device>stm32l452cet7</valid-device>
+    <valid-device>stm32l452cet7p</valid-device>
     <valid-device>stm32l452ceu3</valid-device>
     <valid-device>stm32l452ceu6</valid-device>
     <valid-device>stm32l452ceu7</valid-device>
@@ -23,8 +26,11 @@
     <valid-device>stm32l452ret7</valid-device>
     <valid-device>stm32l452ret7p</valid-device>
     <valid-device>stm32l452rey3</valid-device>
+    <valid-device>stm32l452rey3p</valid-device>
     <valid-device>stm32l452rey6</valid-device>
+    <valid-device>stm32l452rey6p</valid-device>
     <valid-device>stm32l452rey7</valid-device>
+    <valid-device>stm32l452rey7p</valid-device>
     <valid-device>stm32l452vci6</valid-device>
     <valid-device>stm32l452vct6</valid-device>
     <valid-device>stm32l452vei3</valid-device>
@@ -184,7 +190,10 @@
     <driver name="sai" type="stm32-v1.1">
       <instance value="1"/>
     </driver>
-    <driver device-pin="r|v" device-variant="" name="sdmmc" type="stm32-v1.3">
+    <driver device-pin="r|v" device-package="i|t" device-variant="" name="sdmmc" type="stm32-v1.3">
+      <instance value="1"/>
+    </driver>
+    <driver device-pin="r" device-package="y" device-variant="|p" name="sdmmc" type="stm32-v1.3">
       <instance value="1"/>
     </driver>
     <driver name="spi" type="stm32">
@@ -419,7 +428,11 @@
           <request position="4">
             <signal driver="spi" instance="1" name="tx"/>
           </request>
-          <request device-pin="r|v" device-variant="" position="7">
+          <request device-pin="r|v" device-package="i|t" device-variant="" position="7">
+            <signal driver="sdmmc" instance="1" name="rx"/>
+            <signal driver="sdmmc" instance="1" name="tx"/>
+          </request>
+          <request device-pin="r" device-package="y" device-variant="|p" position="7">
             <signal driver="sdmmc" instance="1" name="rx"/>
             <signal driver="sdmmc" instance="1" name="tx"/>
           </request>
@@ -434,7 +447,11 @@
           <request device-name="62" position="6">
             <signal driver="aes" name="in"/>
           </request>
-          <request device-pin="r|v" device-variant="" position="7">
+          <request device-pin="r|v" device-package="i|t" device-variant="" position="7">
+            <signal driver="sdmmc" instance="1" name="rx"/>
+            <signal driver="sdmmc" instance="1" name="tx"/>
+          </request>
+          <request device-pin="r" device-package="y" device-variant="|p" position="7">
             <signal driver="sdmmc" instance="1" name="rx"/>
             <signal driver="sdmmc" instance="1" name="tx"/>
           </request>
@@ -724,7 +741,8 @@
       <gpio port="b" pin="8">
         <signal af="4" driver="i2c" instance="1" name="scl"/>
         <signal af="9" driver="can" instance="1" name="rx"/>
-        <signal device-pin="r|v" device-variant="" af="12" driver="sdmmc" instance="1" name="d4"/>
+        <signal device-pin="r|v" device-package="i|t" device-variant="" af="12" driver="sdmmc" instance="1" name="d4"/>
+        <signal device-pin="r" device-package="y" device-variant="|p" af="12" driver="sdmmc" instance="1" name="d4"/>
         <signal af="13" driver="sai" instance="1" name="mclk_a"/>
         <signal af="14" driver="tim" instance="16" name="ch1"/>
       </gpio>
@@ -733,7 +751,8 @@
         <signal af="4" driver="i2c" instance="1" name="sda"/>
         <signal af="5" driver="spi" instance="2" name="nss"/>
         <signal af="9" driver="can" instance="1" name="tx"/>
-        <signal device-pin="r|v" device-variant="" af="12" driver="sdmmc" instance="1" name="d5"/>
+        <signal device-pin="r|v" device-package="i|t" device-variant="" af="12" driver="sdmmc" instance="1" name="d5"/>
+        <signal device-pin="r" device-package="y" device-variant="|p" af="12" driver="sdmmc" instance="1" name="d5"/>
         <signal af="13" driver="sai" instance="1" name="fs_a"/>
       </gpio>
       <gpio port="b" pin="10">
@@ -837,7 +856,13 @@
         <signal driver="comp" instance="1" name="inm"/>
         <signal af="7" driver="usart" instance="3" name="tx"/>
       </gpio>
-      <gpio device-pin="r|v" device-variant="" port="c" pin="5">
+      <gpio device-pin="r|v" device-package="i|t" device-variant="" port="c" pin="5">
+        <signal driver="adc" instance="1" name="in14"/>
+        <signal driver="comp" instance="1" name="inp"/>
+        <signal driver="sys" name="wkup5"/>
+        <signal af="7" driver="usart" instance="3" name="rx"/>
+      </gpio>
+      <gpio device-pin="r" device-package="y" device-variant="|p" port="c" pin="5">
         <signal driver="adc" instance="1" name="in14"/>
         <signal driver="comp" instance="1" name="inp"/>
         <signal driver="sys" name="wkup5"/>
@@ -847,24 +872,28 @@
         <signal af="2" driver="tim" instance="3" name="ch1"/>
         <signal af="6" driver="dfsdm" instance="1" name="ckin3"/>
         <signal af="9" driver="tsc" name="g4_io1"/>
-        <signal device-pin="r|v" device-variant="" af="12" driver="sdmmc" instance="1" name="d6"/>
+        <signal device-pin="r|v" device-package="i|t" device-variant="" af="12" driver="sdmmc" instance="1" name="d6"/>
+        <signal device-pin="r" device-package="y" device-variant="|p" af="12" driver="sdmmc" instance="1" name="d6"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="7">
         <signal af="2" driver="tim" instance="3" name="ch2"/>
         <signal af="6" driver="dfsdm" instance="1" name="datin3"/>
         <signal af="9" driver="tsc" name="g4_io2"/>
-        <signal device-pin="r|v" device-variant="" af="12" driver="sdmmc" instance="1" name="d7"/>
+        <signal device-pin="r|v" device-package="i|t" device-variant="" af="12" driver="sdmmc" instance="1" name="d7"/>
+        <signal device-pin="r" device-package="y" device-variant="|p" af="12" driver="sdmmc" instance="1" name="d7"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="8">
         <signal af="2" driver="tim" instance="3" name="ch3"/>
         <signal af="9" driver="tsc" name="g4_io3"/>
-        <signal device-pin="r|v" device-variant="" af="12" driver="sdmmc" instance="1" name="d0"/>
+        <signal device-pin="r|v" device-package="i|t" device-variant="" af="12" driver="sdmmc" instance="1" name="d0"/>
+        <signal device-pin="r" device-package="y" device-variant="|p" af="12" driver="sdmmc" instance="1" name="d0"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="9">
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="9" driver="tsc" name="g4_io4"/>
         <signal af="10" driver="usb" name="noe"/>
-        <signal device-pin="r|v" device-variant="" af="12" driver="sdmmc" instance="1" name="d1"/>
+        <signal device-pin="r|v" device-package="i|t" device-variant="" af="12" driver="sdmmc" instance="1" name="d1"/>
+        <signal device-pin="r" device-package="y" device-variant="|p" af="12" driver="sdmmc" instance="1" name="d1"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="10">
         <signal af="0" driver="sys" name="traced1"/>
@@ -872,21 +901,24 @@
         <signal af="7" driver="usart" instance="3" name="tx"/>
         <signal af="8" driver="uart" instance="4" name="tx"/>
         <signal af="9" driver="tsc" name="g3_io2"/>
-        <signal device-pin="r|v" device-variant="" af="12" driver="sdmmc" instance="1" name="d2"/>
+        <signal device-pin="r|v" device-package="i|t" device-variant="" af="12" driver="sdmmc" instance="1" name="d2"/>
+        <signal device-pin="r" device-package="y" device-variant="|p" af="12" driver="sdmmc" instance="1" name="d2"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="11">
         <signal af="6" driver="spi" instance="3" name="miso"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
         <signal af="8" driver="uart" instance="4" name="rx"/>
         <signal af="9" driver="tsc" name="g3_io3"/>
-        <signal device-pin="r|v" device-variant="" af="12" driver="sdmmc" instance="1" name="d3"/>
+        <signal device-pin="r|v" device-package="i|t" device-variant="" af="12" driver="sdmmc" instance="1" name="d3"/>
+        <signal device-pin="r" device-package="y" device-variant="|p" af="12" driver="sdmmc" instance="1" name="d3"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="12">
         <signal af="0" driver="sys" name="traced3"/>
         <signal af="6" driver="spi" instance="3" name="mosi"/>
         <signal af="7" driver="usart" instance="3" name="ck"/>
         <signal af="9" driver="tsc" name="g3_io4"/>
-        <signal device-pin="r|v" device-variant="" af="12" driver="sdmmc" instance="1" name="ck"/>
+        <signal device-pin="r|v" device-package="i|t" device-variant="" af="12" driver="sdmmc" instance="1" name="ck"/>
+        <signal device-pin="r" device-package="y" device-variant="|p" af="12" driver="sdmmc" instance="1" name="ck"/>
       </gpio>
       <gpio port="c" pin="13">
         <signal driver="rtc" name="out_alarm"/>
@@ -909,7 +941,15 @@
         <signal af="5" driver="spi" instance="2" name="sck"/>
         <signal af="9" driver="can" instance="1" name="tx"/>
       </gpio>
-      <gpio device-pin="r|v" device-variant="" port="d" pin="2">
+      <gpio device-pin="r|v" device-package="i|t" device-variant="" port="d" pin="2">
+        <signal af="0" driver="sys" name="traced2"/>
+        <signal af="2" driver="tim" instance="3" name="etr"/>
+        <signal af="7" driver="usart" instance="3" name="de"/>
+        <signal af="7" driver="usart" instance="3" name="rts"/>
+        <signal af="9" driver="tsc" name="sync"/>
+        <signal af="12" driver="sdmmc" instance="1" name="cmd"/>
+      </gpio>
+      <gpio device-pin="r" device-package="y" device-variant="|p" port="d" pin="2">
         <signal af="0" driver="sys" name="traced2"/>
         <signal af="2" driver="tim" instance="3" name="etr"/>
         <signal af="7" driver="usart" instance="3" name="de"/>
@@ -1250,27 +1290,27 @@
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="25" name="PC5"/>
         <pin device-name="52" device-size="e" device-temperature="3|7" device-variant="" position="25" name="PC5"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="25" name="PC5"/>
-        <pin device-variant="p" position="25" name="PB0"/>
+        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="p" position="25" name="PB0"/>
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="26" name="PB0"/>
         <pin device-name="52" device-size="e" device-temperature="3|7" device-variant="" position="26" name="PB0"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="26" name="PB0"/>
-        <pin device-variant="p" position="26" name="PB1"/>
+        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="p" position="26" name="PB1"/>
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="27" name="PB1"/>
         <pin device-name="52" device-size="e" device-temperature="3|7" device-variant="" position="27" name="PB1"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="27" name="PB1"/>
-        <pin device-variant="p" position="27" name="PB2"/>
+        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="p" position="27" name="PB2"/>
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="28" name="PB2"/>
         <pin device-name="52" device-size="e" device-temperature="3|7" device-variant="" position="28" name="PB2"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="28" name="PB2"/>
-        <pin device-variant="p" position="28" name="PB10"/>
+        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="p" position="28" name="PB10"/>
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="29" name="PB10"/>
         <pin device-name="52" device-size="e" device-temperature="3|7" device-variant="" position="29" name="PB10"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="29" name="PB10"/>
-        <pin device-variant="p" position="29" name="PB11"/>
+        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="p" position="29" name="PB11"/>
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="30" name="PB11"/>
         <pin device-name="52" device-size="e" device-temperature="3|7" device-variant="" position="30" name="PB11"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="30" name="PB11"/>
-        <pin device-variant="p" position="30" name="VDD12" type="power"/>
+        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="p" position="30" name="VDD12" type="power"/>
         <pin position="31" name="VSS" type="power"/>
         <pin position="32" name="VDD" type="power"/>
         <pin position="33" name="PB12"/>
@@ -1297,39 +1337,39 @@
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="54" name="PD2"/>
         <pin device-name="52" device-size="e" device-temperature="3|7" device-variant="" position="54" name="PD2"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="54" name="PD2"/>
-        <pin device-variant="p" position="54" name="PB3 (JTDO/TRACESWO)"/>
+        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="p" position="54" name="PB3 (JTDO/TRACESWO)"/>
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="55" name="PB3 (JTDO/TRACESWO)"/>
         <pin device-name="52" device-size="e" device-temperature="3|7" device-variant="" position="55" name="PB3 (JTDO/TRACESWO)"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="55" name="PB3 (JTDO/TRACESWO)"/>
-        <pin device-variant="p" position="55" name="PB4 (NJTRST)"/>
+        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="p" position="55" name="PB4 (NJTRST)"/>
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="56" name="PB4 (NJTRST)"/>
         <pin device-name="52" device-size="e" device-temperature="3|7" device-variant="" position="56" name="PB4 (NJTRST)"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="56" name="PB4 (NJTRST)"/>
-        <pin device-variant="p" position="56" name="PB5"/>
+        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="p" position="56" name="PB5"/>
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="57" name="PB5"/>
         <pin device-name="52" device-size="e" device-temperature="3|7" device-variant="" position="57" name="PB5"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="57" name="PB5"/>
-        <pin device-variant="p" position="57" name="PB6"/>
+        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="p" position="57" name="PB6"/>
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="58" name="PB6"/>
         <pin device-name="52" device-size="e" device-temperature="3|7" device-variant="" position="58" name="PB6"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="58" name="PB6"/>
-        <pin device-variant="p" position="58" name="PB7"/>
+        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="p" position="58" name="PB7"/>
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="59" name="PB7"/>
         <pin device-name="52" device-size="e" device-temperature="3|7" device-variant="" position="59" name="PB7"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="59" name="PB7"/>
-        <pin device-variant="p" position="59" name="PH3-BOOT0 (BOOT0)"/>
+        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="p" position="59" name="PH3-BOOT0 (BOOT0)"/>
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="60" name="PH3-BOOT0 (BOOT0)"/>
         <pin device-name="52" device-size="e" device-temperature="3|7" device-variant="" position="60" name="PH3-BOOT0 (BOOT0)"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="60" name="PH3-BOOT0 (BOOT0)"/>
-        <pin device-variant="p" position="60" name="PB8"/>
+        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="p" position="60" name="PB8"/>
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="61" name="PB8"/>
         <pin device-name="52" device-size="e" device-temperature="3|7" device-variant="" position="61" name="PB8"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="61" name="PB8"/>
-        <pin device-variant="p" position="61" name="PB9"/>
+        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="p" position="61" name="PB9"/>
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="62" name="PB9"/>
         <pin device-name="52" device-size="e" device-temperature="3|7" device-variant="" position="62" name="PB9"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="62" name="PB9"/>
-        <pin device-variant="p" position="62" name="VDD12" type="power"/>
+        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="p" position="62" name="VDD12" type="power"/>
         <pin position="63" name="VSS" type="power"/>
         <pin position="64" name="VDD" type="power"/>
       </package>

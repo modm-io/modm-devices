@@ -20,6 +20,7 @@
     <valid-device>stm32f103t8u6</valid-device>
     <valid-device>stm32f103t8u7</valid-device>
     <valid-device>stm32f103tbu6</valid-device>
+    <valid-device>stm32f103tbu7</valid-device>
     <valid-device>stm32f103v8h6</valid-device>
     <valid-device>stm32f103v8t6</valid-device>
     <valid-device>stm32f103vbh6</valid-device>

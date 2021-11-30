@@ -7,6 +7,7 @@
     <valid-device>stm32f410c8t6</valid-device>
     <valid-device>stm32f410c8t7</valid-device>
     <valid-device>stm32f410c8u6</valid-device>
+    <valid-device>stm32f410c8u7</valid-device>
     <valid-device>stm32f410cbt3</valid-device>
     <valid-device>stm32f410cbt6</valid-device>
     <valid-device>stm32f410cbt7</valid-device>

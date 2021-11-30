@@ -37,7 +37,9 @@
     <valid-device>stm32f401vdh6</valid-device>
     <valid-device>stm32f401vdt6</valid-device>
     <valid-device>stm32f401veh6</valid-device>
+    <valid-device>stm32f401veh7</valid-device>
     <valid-device>stm32f401vet6</valid-device>
+    <valid-device>stm32f401vet7</valid-device>
     <valid-device>stm32f411ccu6</valid-device>
     <valid-device>stm32f411ccu7</valid-device>
     <valid-device>stm32f411ccy6</valid-device>
@@ -973,9 +975,9 @@
         <pin position="18" name="PC3"/>
         <pin position="19" name="VDD" type="power"/>
         <pin device-name="11" device-size="c|e" device-temperature="6" position="20" name="VSSA" type="power"/>
-        <pin device-name="01" device-size="d|e" device-temperature="6" position="20" name="VSSA/VREF-" type="power"/>
+        <pin device-name="01" device-size="c|e" device-temperature="6|7" position="20" name="VSSA/VREF-" type="power"/>
         <pin device-name="01" device-size="b" device-temperature="3|6|7" position="20" name="VSSA/VREF-" type="power"/>
-        <pin device-name="01" device-size="c" device-temperature="6|7" position="20" name="VSSA/VREF-" type="power"/>
+        <pin device-name="01" device-size="d" device-temperature="6" position="20" name="VSSA/VREF-" type="power"/>
         <pin position="21" name="VREF+" type="power"/>
         <pin position="22" name="VDDA" type="power"/>
         <pin position="23" name="PA0-WKUP"/>

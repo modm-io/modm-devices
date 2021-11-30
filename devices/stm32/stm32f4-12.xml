@@ -21,7 +21,9 @@
     <valid-device>stm32f412vet6</valid-device>
     <valid-device>stm32f412vet7</valid-device>
     <valid-device>stm32f412vgh6</valid-device>
+    <valid-device>stm32f412vgh7</valid-device>
     <valid-device>stm32f412vgt6</valid-device>
+    <valid-device>stm32f412vgt7</valid-device>
     <valid-device>stm32f412zej3</valid-device>
     <valid-device>stm32f412zej6</valid-device>
     <valid-device>stm32f412zej7</valid-device>
@@ -29,7 +31,9 @@
     <valid-device>stm32f412zet6</valid-device>
     <valid-device>stm32f412zet7</valid-device>
     <valid-device>stm32f412zgj6</valid-device>
+    <valid-device>stm32f412zgj7</valid-device>
     <valid-device>stm32f412zgt6</valid-device>
+    <valid-device>stm32f412zgt7</valid-device>
     <driver name="core" type="cortex-m4f">
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288"/>
       <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>

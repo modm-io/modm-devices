@@ -2177,7 +2177,7 @@
         <pin position="10" name="PC2"/>
         <pin position="11" name="PC3"/>
         <pin position="12" name="VSSA" type="power"/>
-        <pin position="13" name="VREF+" type="power"/>
+        <pin position="13" name="VDDA" type="power"/>
         <pin position="14" name="PA0-WKUP"/>
         <pin position="15" name="PA1"/>
         <pin position="16" name="PA2"/>

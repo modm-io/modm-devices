@@ -26,12 +26,15 @@
     <valid-device>stm32l051r8t6</valid-device>
     <valid-device>stm32l051r8t7</valid-device>
     <valid-device>stm32l051t6y6</valid-device>
+    <valid-device>stm32l051t8y3</valid-device>
     <valid-device>stm32l051t8y6</valid-device>
     <valid-device>stm32l051t8y7</valid-device>
     <valid-device>stm32l052c6t6</valid-device>
     <valid-device>stm32l052c6u6</valid-device>
+    <valid-device>stm32l052c8t3</valid-device>
     <valid-device>stm32l052c8t6</valid-device>
     <valid-device>stm32l052c8t7</valid-device>
+    <valid-device>stm32l052c8u3</valid-device>
     <valid-device>stm32l052c8u6</valid-device>
     <valid-device>stm32l052c8u7</valid-device>
     <valid-device>stm32l052k6t6</valid-device>
@@ -52,16 +55,20 @@
     <valid-device>stm32l052r8t7</valid-device>
     <valid-device>stm32l052t6y6</valid-device>
     <valid-device>stm32l052t6y7</valid-device>
+    <valid-device>stm32l052t8f3</valid-device>
     <valid-device>stm32l052t8f6</valid-device>
     <valid-device>stm32l052t8f7</valid-device>
+    <valid-device>stm32l052t8y3</valid-device>
     <valid-device>stm32l052t8y6</valid-device>
     <valid-device>stm32l052t8y7</valid-device>
     <valid-device>stm32l053c6t6</valid-device>
     <valid-device>stm32l053c6t7</valid-device>
     <valid-device>stm32l053c6u6</valid-device>
     <valid-device>stm32l053c6u7</valid-device>
+    <valid-device>stm32l053c8t3</valid-device>
     <valid-device>stm32l053c8t6</valid-device>
     <valid-device>stm32l053c8t7</valid-device>
+    <valid-device>stm32l053c8u3</valid-device>
     <valid-device>stm32l053c8u6</valid-device>
     <valid-device>stm32l053c8u7</valid-device>
     <valid-device>stm32l053r6h6</valid-device>
@@ -78,6 +85,7 @@
     <valid-device>stm32l063c8t6</valid-device>
     <valid-device>stm32l063c8u6</valid-device>
     <valid-device>stm32l063r8t6</valid-device>
+    <valid-device>stm32l063r8t7</valid-device>
     <driver name="core" type="cortex-m0+">
       <memory device-size="6" name="flash" access="rx" start="0x8000000" size="32768"/>
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="65536"/>
@@ -641,9 +649,9 @@
         <signal af="0" driver="lptim" instance="1" name="in1"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3|7" af="1" driver="lcd" name="seg18"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" device-temperature="6" af="1" driver="lcd" name="seg18"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="1" driver="lcd" name="seg18"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="1" driver="lcd" name="seg18"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3" af="3" driver="tsc" name="g7_io1"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="3" driver="tsc" name="g7_io1"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="3" driver="tsc" name="g7_io1"/>
         <signal device-name="52|53" device-size="8" device-package="h|t" device-temperature="7" af="3" driver="tsc" name="g7_io1"/>
         <signal device-name="52|53" device-size="6|8" device-package="h|t" device-temperature="6" af="3" driver="tsc" name="g7_io1"/>
       </gpio>
@@ -652,9 +660,9 @@
         <signal af="0" driver="lptim" instance="1" name="out"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3|7" af="1" driver="lcd" name="seg19"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" device-temperature="6" af="1" driver="lcd" name="seg19"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="1" driver="lcd" name="seg19"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="1" driver="lcd" name="seg19"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3" af="3" driver="tsc" name="g7_io2"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="3" driver="tsc" name="g7_io2"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="3" driver="tsc" name="g7_io2"/>
         <signal device-name="52|53" device-size="8" device-package="h|t" device-temperature="7" af="3" driver="tsc" name="g7_io2"/>
         <signal device-name="52|53" device-size="6|8" device-package="h|t" device-temperature="6" af="3" driver="tsc" name="g7_io2"/>
       </gpio>
@@ -663,11 +671,11 @@
         <signal af="0" driver="lptim" instance="1" name="in2"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3|7" af="1" driver="lcd" name="seg20"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" device-temperature="6" af="1" driver="lcd" name="seg20"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="1" driver="lcd" name="seg20"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="1" driver="lcd" name="seg20"/>
         <signal af="2" driver="i2s" instance="2" name="mck"/>
         <signal af="2" driver="spi" instance="2" name="miso"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3" af="3" driver="tsc" name="g7_io3"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="3" driver="tsc" name="g7_io3"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="3" driver="tsc" name="g7_io3"/>
         <signal device-name="52|53" device-size="8" device-package="h|t" device-temperature="7" af="3" driver="tsc" name="g7_io3"/>
         <signal device-name="52|53" device-size="6|8" device-package="h|t" device-temperature="6" af="3" driver="tsc" name="g7_io3"/>
       </gpio>
@@ -676,29 +684,28 @@
         <signal af="0" driver="lptim" instance="1" name="etr"/>
         <signal device-name="53" device-size="8" device-temperature="3|7" af="1" driver="lcd" name="seg21"/>
         <signal device-name="53" device-size="6|8" device-temperature="6" af="1" driver="lcd" name="seg21"/>
-        <signal device-name="63" device-size="8" device-temperature="6" af="1" driver="lcd" name="seg21"/>
+        <signal device-name="63" device-size="8" device-temperature="6|7" af="1" driver="lcd" name="seg21"/>
         <signal af="2" driver="i2s" instance="2" name="sd"/>
         <signal af="2" driver="spi" instance="2" name="mosi"/>
         <signal device-name="53" device-size="8" device-temperature="3" af="3" driver="tsc" name="g7_io4"/>
-        <signal device-name="63" device-size="8" device-temperature="6" af="3" driver="tsc" name="g7_io4"/>
-        <signal device-name="52|53" device-size="8" device-temperature="7" af="3" driver="tsc" name="g7_io4"/>
         <signal device-name="52|53" device-size="6|8" device-temperature="6" af="3" driver="tsc" name="g7_io4"/>
+        <signal device-name="52|53|63" device-size="8" device-temperature="6|7" af="3" driver="tsc" name="g7_io4"/>
       </gpio>
       <gpio device-pin="r" port="c" pin="4">
         <signal driver="adc" name="in14"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3|7" af="1" driver="lcd" name="seg22"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" device-temperature="6" af="1" driver="lcd" name="seg22"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="1" driver="lcd" name="seg22"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="1" driver="lcd" name="seg22"/>
         <signal af="2" driver="lpuart" instance="1" name="tx"/>
       </gpio>
       <gpio device-pin="r" port="c" pin="5">
         <signal driver="adc" name="in15"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3|7" af="1" driver="lcd" name="seg23"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" device-temperature="6" af="1" driver="lcd" name="seg23"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="1" driver="lcd" name="seg23"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="1" driver="lcd" name="seg23"/>
         <signal af="2" driver="lpuart" instance="1" name="rx"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3" af="3" driver="tsc" name="g3_io1"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="3" driver="tsc" name="g3_io1"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="3" driver="tsc" name="g3_io1"/>
         <signal device-name="52|53" device-size="8" device-package="h|t" device-temperature="7" af="3" driver="tsc" name="g3_io1"/>
         <signal device-name="52|53" device-size="6|8" device-package="h|t" device-temperature="6" af="3" driver="tsc" name="g3_io1"/>
       </gpio>
@@ -706,9 +713,9 @@
         <signal af="0" driver="tim" instance="22" name="ch1"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3|7" af="1" driver="lcd" name="seg24"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" device-temperature="6" af="1" driver="lcd" name="seg24"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="1" driver="lcd" name="seg24"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="1" driver="lcd" name="seg24"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3" af="3" driver="tsc" name="g8_io1"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="3" driver="tsc" name="g8_io1"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="3" driver="tsc" name="g8_io1"/>
         <signal device-name="52|53" device-size="8" device-package="h|t" device-temperature="7" af="3" driver="tsc" name="g8_io1"/>
         <signal device-name="52|53" device-size="6|8" device-package="h|t" device-temperature="6" af="3" driver="tsc" name="g8_io1"/>
       </gpio>
@@ -716,9 +723,9 @@
         <signal af="0" driver="tim" instance="22" name="ch2"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3|7" af="1" driver="lcd" name="seg25"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" device-temperature="6" af="1" driver="lcd" name="seg25"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="1" driver="lcd" name="seg25"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="1" driver="lcd" name="seg25"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3" af="3" driver="tsc" name="g8_io2"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="3" driver="tsc" name="g8_io2"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="3" driver="tsc" name="g8_io2"/>
         <signal device-name="52|53" device-size="8" device-package="h|t" device-temperature="7" af="3" driver="tsc" name="g8_io2"/>
         <signal device-name="52|53" device-size="6|8" device-package="h|t" device-temperature="6" af="3" driver="tsc" name="g8_io2"/>
       </gpio>
@@ -726,9 +733,9 @@
         <signal af="0" driver="tim" instance="22" name="etr"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3|7" af="1" driver="lcd" name="seg26"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" device-temperature="6" af="1" driver="lcd" name="seg26"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="1" driver="lcd" name="seg26"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="1" driver="lcd" name="seg26"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3" af="3" driver="tsc" name="g8_io3"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="3" driver="tsc" name="g8_io3"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="3" driver="tsc" name="g8_io3"/>
         <signal device-name="52|53" device-size="8" device-package="h|t" device-temperature="7" af="3" driver="tsc" name="g8_io3"/>
         <signal device-name="52|53" device-size="6|8" device-package="h|t" device-temperature="6" af="3" driver="tsc" name="g8_io3"/>
       </gpio>
@@ -736,13 +743,13 @@
         <signal af="0" driver="tim" instance="21" name="etr"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3|7" af="1" driver="lcd" name="seg27"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" device-temperature="6" af="1" driver="lcd" name="seg27"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="1" driver="lcd" name="seg27"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="1" driver="lcd" name="seg27"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3" af="2" driver="usb" name="noe"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="2" driver="usb" name="noe"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="2" driver="usb" name="noe"/>
         <signal device-name="52|53" device-size="8" device-package="h|t" device-temperature="7" af="2" driver="usb" name="noe"/>
         <signal device-name="52|53" device-size="6|8" device-package="h|t" device-temperature="6" af="2" driver="usb" name="noe"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3" af="3" driver="tsc" name="g8_io4"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="3" driver="tsc" name="g8_io4"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="3" driver="tsc" name="g8_io4"/>
         <signal device-name="52|53" device-size="8" device-package="h|t" device-temperature="7" af="3" driver="tsc" name="g8_io4"/>
         <signal device-name="52|53" device-size="6|8" device-package="h|t" device-temperature="6" af="3" driver="tsc" name="g8_io4"/>
       </gpio>
@@ -750,27 +757,27 @@
         <signal af="0" driver="lpuart" instance="1" name="tx"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3|7" af="1" driver="lcd" name="com4"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" device-temperature="6" af="1" driver="lcd" name="com4"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="1" driver="lcd" name="com4"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="1" driver="lcd" name="com4"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3|7" af="1" driver="lcd" name="seg28"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" device-temperature="6" af="1" driver="lcd" name="seg28"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="1" driver="lcd" name="seg28"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="1" driver="lcd" name="seg28"/>
       </gpio>
       <gpio device-pin="r" port="c" pin="11">
         <signal af="0" driver="lpuart" instance="1" name="rx"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3|7" af="1" driver="lcd" name="com5"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" device-temperature="6" af="1" driver="lcd" name="com5"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="1" driver="lcd" name="com5"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="1" driver="lcd" name="com5"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3|7" af="1" driver="lcd" name="seg29"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" device-temperature="6" af="1" driver="lcd" name="seg29"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="1" driver="lcd" name="seg29"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="1" driver="lcd" name="seg29"/>
       </gpio>
       <gpio device-pin="r" port="c" pin="12">
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3|7" af="1" driver="lcd" name="com6"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" device-temperature="6" af="1" driver="lcd" name="com6"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="1" driver="lcd" name="com6"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="1" driver="lcd" name="com6"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3|7" af="1" driver="lcd" name="seg30"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" device-temperature="6" af="1" driver="lcd" name="seg30"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="1" driver="lcd" name="seg30"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="1" driver="lcd" name="seg30"/>
       </gpio>
       <gpio device-pin="c|r" port="c" pin="13">
         <signal driver="rtc" name="out_alarm"/>
@@ -790,10 +797,10 @@
         <signal af="0" driver="lpuart" instance="1" name="rts"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3|7" af="1" driver="lcd" name="com7"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" device-temperature="6" af="1" driver="lcd" name="com7"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="1" driver="lcd" name="com7"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="1" driver="lcd" name="com7"/>
         <signal device-name="53" device-size="8" device-package="h|t" device-temperature="3|7" af="1" driver="lcd" name="seg31"/>
         <signal device-name="53" device-size="6|8" device-package="h|t" device-temperature="6" af="1" driver="lcd" name="seg31"/>
-        <signal device-name="63" device-size="8" device-package="t" device-temperature="6" af="1" driver="lcd" name="seg31"/>
+        <signal device-name="63" device-size="8" device-package="t" device-temperature="6|7" af="1" driver="lcd" name="seg31"/>
       </gpio>
       <gpio device-pin="c|r" port="h" pin="0">
         <signal driver="rcc" name="osc_in"/>
@@ -838,10 +845,10 @@
         <pin position="32" name="VSS" type="power"/>
       </package>
       <package device-pin="c" device-package="t" name="LQFP48">
+        <pin device-name="53" device-size="8" device-temperature="3" position="1" name="VLCD" type="power"/>
         <pin device-name="53" device-size="6|8" device-temperature="6|7" position="1" name="VLCD" type="power"/>
         <pin device-name="63" device-size="8" device-temperature="6" position="1" name="VLCD" type="power"/>
-        <pin device-name="51" device-size="8" device-temperature="3|7" position="1" name="VDD" type="power"/>
-        <pin device-name="52" device-size="8" device-temperature="7" position="1" name="VDD" type="power"/>
+        <pin device-name="51|52" device-size="8" device-temperature="3|7" position="1" name="VDD" type="power"/>
         <pin device-name="51|52" device-size="6|8" device-temperature="6" position="1" name="VDD" type="power"/>
         <pin position="2" name="PC13"/>
         <pin position="3" name="PC14-OSC32_IN"/>
@@ -879,7 +886,7 @@
         <pin position="35" name="VSS" type="power"/>
         <pin device-name="53" device-size="6" device-temperature="7" position="36" name="VDD_USB" type="power"/>
         <pin device-name="63" device-size="8" device-temperature="6" position="36" name="VDD_USB" type="power"/>
-        <pin device-name="52|53" device-size="8" device-temperature="7" position="36" name="VDD_USB" type="power"/>
+        <pin device-name="52|53" device-size="8" device-temperature="3|7" position="36" name="VDD_USB" type="power"/>
         <pin device-name="52|53" device-size="6|8" device-temperature="6" position="36" name="VDD_USB" type="power"/>
         <pin device-name="51" device-size="8" device-temperature="3|7" position="36" name="VDDIO2" type="power"/>
         <pin device-name="51" device-size="6|8" device-temperature="6" position="36" name="VDDIO2" type="power"/>
@@ -899,7 +906,7 @@
       <package device-pin="r" device-package="t" name="LQFP64">
         <pin device-name="53" device-size="8" device-temperature="3|7" position="1" name="VLCD" type="power"/>
         <pin device-name="53" device-size="6|8" device-temperature="6" position="1" name="VLCD" type="power"/>
-        <pin device-name="63" device-size="8" device-temperature="6" position="1" name="VLCD" type="power"/>
+        <pin device-name="63" device-size="8" device-temperature="6|7" position="1" name="VLCD" type="power"/>
         <pin device-name="51|52" device-size="8" device-temperature="7" position="1" name="VDD" type="power"/>
         <pin device-name="51|52" device-size="6|8" device-temperature="6" position="1" name="VDD" type="power"/>
         <pin position="2" name="PC13"/>
@@ -949,9 +956,8 @@
         <pin position="46" name="PA13"/>
         <pin position="47" name="VSS" type="power"/>
         <pin device-name="53" device-size="8" device-temperature="3" position="48" name="VDD_USB" type="power"/>
-        <pin device-name="63" device-size="8" device-temperature="6" position="48" name="VDD_USB" type="power"/>
-        <pin device-name="52|53" device-size="8" device-temperature="7" position="48" name="VDD_USB" type="power"/>
         <pin device-name="52|53" device-size="6|8" device-temperature="6" position="48" name="VDD_USB" type="power"/>
+        <pin device-name="52|53|63" device-size="8" device-temperature="6|7" position="48" name="VDD_USB" type="power"/>
         <pin device-name="51" device-size="8" device-temperature="7" position="48" name="VDDIO2" type="power"/>
         <pin device-name="51" device-size="6|8" device-temperature="6" position="48" name="VDDIO2" type="power"/>
         <pin position="49" name="PA14"/>
@@ -1083,10 +1089,10 @@
         <pin position="32" name="PB8"/>
       </package>
       <package device-pin="c" device-package="u" name="UFQFPN48">
+        <pin device-name="53" device-size="8" device-temperature="3" position="1" name="VLCD" type="power"/>
         <pin device-name="53" device-size="6|8" device-temperature="6|7" position="1" name="VLCD" type="power"/>
         <pin device-name="62|63" device-size="8" device-temperature="6" position="1" name="VLCD" type="power"/>
-        <pin device-name="51" device-size="8" device-temperature="3|7" position="1" name="VDD" type="power"/>
-        <pin device-name="52" device-size="8" device-temperature="7" position="1" name="VDD" type="power"/>
+        <pin device-name="51|52" device-size="8" device-temperature="3|7" position="1" name="VDD" type="power"/>
         <pin device-name="51|52" device-size="6|8" device-temperature="6" position="1" name="VDD" type="power"/>
         <pin position="2" name="PC13"/>
         <pin position="3" name="PC14-OSC32_IN"/>
@@ -1123,7 +1129,7 @@
         <pin position="34" name="PA13"/>
         <pin position="35" name="VSS" type="power"/>
         <pin device-name="53" device-size="6" device-temperature="7" position="36" name="VDD_USB" type="power"/>
-        <pin device-name="52|53" device-size="8" device-temperature="7" position="36" name="VDD_USB" type="power"/>
+        <pin device-name="52|53" device-size="8" device-temperature="3|7" position="36" name="VDD_USB" type="power"/>
         <pin device-name="52|53" device-size="6|8" device-temperature="6" position="36" name="VDD_USB" type="power"/>
         <pin device-name="62|63" device-size="8" device-temperature="6" position="36" name="VDD_USB" type="power"/>
         <pin device-name="51" device-size="8" device-temperature="3|7" position="36" name="VDDIO2" type="power"/>

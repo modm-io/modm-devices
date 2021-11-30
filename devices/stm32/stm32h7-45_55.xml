@@ -1732,7 +1732,7 @@
         <signal af="12" driver="fmc" name="a5"/>
       </gpio>
       <gpio port="f" pin="6">
-        <signal driver="adc" instance="3" name="inn4"/>
+        <signal device-pin="b|i|x" driver="adc" instance="3" name="inn4"/>
         <signal driver="adc" instance="3" name="inp8"/>
         <signal af="1" driver="tim" instance="16" name="ch1"/>
         <signal af="5" driver="spi" instance="5" name="nss"/>

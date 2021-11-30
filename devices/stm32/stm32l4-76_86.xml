@@ -16,8 +16,11 @@
     <valid-device>stm32l476mgy7</valid-device>
     <valid-device>stm32l476qei6</valid-device>
     <valid-device>stm32l476qgi3</valid-device>
+    <valid-device>stm32l476qgi3p</valid-device>
     <valid-device>stm32l476qgi6</valid-device>
+    <valid-device>stm32l476qgi6p</valid-device>
     <valid-device>stm32l476qgi7</valid-device>
+    <valid-device>stm32l476qgi7p</valid-device>
     <valid-device>stm32l476rct6</valid-device>
     <valid-device>stm32l476ret6</valid-device>
     <valid-device>stm32l476rgt3</valid-device>
@@ -875,7 +878,7 @@
         <signal af="12" driver="comp" instance="1" name="out"/>
         <signal af="13" driver="sai" instance="1" name="sck_a"/>
       </gpio>
-      <gpio device-pin="j|m|q|r|v|z" device-variant="" port="b" pin="11">
+      <gpio device-pin="j|q" device-variant="|p" port="b" pin="11">
         <signal af="1" driver="tim" instance="2" name="ch4"/>
         <signal af="4" driver="i2c" instance="2" name="sda"/>
         <signal af="6" driver="dfsdm" instance="1" name="ckin7"/>
@@ -885,7 +888,7 @@
         <signal af="11" driver="lcd" name="seg11"/>
         <signal af="12" driver="comp" instance="2" name="out"/>
       </gpio>
-      <gpio device-pin="j" device-variant="p" port="b" pin="11">
+      <gpio device-pin="m|r|v|z" device-variant="" port="b" pin="11">
         <signal af="1" driver="tim" instance="2" name="ch4"/>
         <signal af="4" driver="i2c" instance="2" name="sda"/>
         <signal af="6" driver="dfsdm" instance="1" name="ckin7"/>
@@ -996,7 +999,7 @@
         <signal af="7" driver="usart" instance="3" name="tx"/>
         <signal af="11" driver="lcd" name="seg22"/>
       </gpio>
-      <gpio device-pin="j|m|q|r|v|z" device-variant="" port="c" pin="5">
+      <gpio device-pin="j|m|r|v" device-variant="" port="c" pin="5">
         <signal driver="adc" instance="1" name="in14"/>
         <signal driver="adc" instance="2" name="in14"/>
         <signal driver="comp" instance="1" name="inp"/>
@@ -1004,7 +1007,7 @@
         <signal af="7" driver="usart" instance="3" name="rx"/>
         <signal af="11" driver="lcd" name="seg23"/>
       </gpio>
-      <gpio device-pin="z" device-variant="p" port="c" pin="5">
+      <gpio device-pin="q|z" device-variant="|p" port="c" pin="5">
         <signal driver="adc" instance="1" name="in14"/>
         <signal driver="adc" instance="2" name="in14"/>
         <signal driver="comp" instance="1" name="inp"/>
@@ -1457,14 +1460,14 @@
         <signal af="13" driver="sai" instance="2" name="fs_a"/>
         <signal af="14" driver="tim" instance="15" name="ch1"/>
       </gpio>
-      <gpio device-pin="j|m|q|z" device-variant="" port="g" pin="11">
+      <gpio device-pin="j|m" device-variant="" port="g" pin="11">
         <signal af="1" driver="lptim" instance="1" name="in2"/>
         <signal af="6" driver="spi" instance="3" name="mosi"/>
         <signal af="7" driver="usart" instance="1" name="cts"/>
         <signal af="13" driver="sai" instance="2" name="mclk_a"/>
         <signal af="14" driver="tim" instance="15" name="ch2"/>
       </gpio>
-      <gpio device-pin="z" device-variant="p" port="g" pin="11">
+      <gpio device-pin="q|z" device-variant="|p" port="g" pin="11">
         <signal af="1" driver="lptim" instance="1" name="in2"/>
         <signal af="6" driver="spi" instance="3" name="mosi"/>
         <signal af="7" driver="usart" instance="1" name="cts"/>
@@ -1488,7 +1491,11 @@
         <signal af="4" driver="i2c" instance="1" name="scl"/>
         <signal device-pin="q|z" af="12" driver="fmc" name="a25"/>
       </gpio>
-      <gpio device-pin="q|z" device-variant="" port="g" pin="15">
+      <gpio device-pin="q" device-variant="|p" port="g" pin="15">
+        <signal af="1" driver="lptim" instance="1" name="out"/>
+        <signal af="4" driver="i2c" instance="1" name="smba"/>
+      </gpio>
+      <gpio device-pin="z" device-variant="" port="g" pin="15">
         <signal af="1" driver="lptim" instance="1" name="out"/>
         <signal af="4" driver="i2c" instance="1" name="smba"/>
       </gpio>
