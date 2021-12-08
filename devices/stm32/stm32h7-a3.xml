@@ -367,7 +367,7 @@
     <driver name="wwdg" type="stm32-v2.0">
       <instance value="1"/>
     </driver>
-    <driver name="dma" type="stm32-mux">
+    <driver name="dma" type="stm32-mux-stream">
       <instance value="1"/>
       <instance value="2"/>
       <requests>
@@ -677,88 +677,88 @@
         <request device-pin="z" device-package="t" device-variant="q" position="94">
           <signal driver="spdifrx" name="cs"/>
         </request>
-        <request position="95">
+        <request position="101">
           <signal driver="dfsdm" instance="1" name="flt0"/>
         </request>
-        <request position="96">
+        <request position="102">
           <signal driver="dfsdm" instance="1" name="flt1"/>
         </request>
-        <request position="97">
+        <request position="103">
           <signal driver="dfsdm" instance="1" name="flt2"/>
         </request>
-        <request position="98">
+        <request position="104">
           <signal driver="dfsdm" instance="1" name="flt3"/>
         </request>
-        <request position="99">
+        <request position="105">
           <signal driver="tim" instance="15" name="ch1"/>
         </request>
-        <request position="100">
+        <request position="106">
           <signal driver="tim" instance="15" name="up"/>
         </request>
-        <request position="101">
+        <request position="107">
           <signal driver="tim" instance="15" name="trig"/>
         </request>
-        <request position="102">
+        <request position="108">
           <signal driver="tim" instance="15" name="com"/>
         </request>
-        <request position="103">
+        <request position="109">
           <signal driver="tim" instance="16" name="ch1"/>
         </request>
-        <request position="104">
+        <request position="110">
           <signal driver="tim" instance="16" name="up"/>
         </request>
-        <request position="105">
+        <request position="111">
           <signal driver="tim" instance="17" name="ch1"/>
         </request>
-        <request position="106">
+        <request position="112">
           <signal driver="tim" instance="17" name="up"/>
         </request>
-        <request device-pin="a|i|l|n|q|v|z" position="107">
+        <request device-pin="a|i|l|n|q|v|z" position="116">
           <signal driver="uart" instance="9" name="rx"/>
         </request>
-        <request device-pin="a|i|l|n|q|v|z" position="108">
+        <request device-pin="a|i|l|n|q|v|z" position="117">
           <signal driver="uart" instance="9" name="tx"/>
         </request>
-        <request device-pin="l|v" device-package="h" device-variant="q" position="109">
+        <request device-pin="l|v" device-package="h" device-variant="q" position="118">
           <signal driver="usart" instance="10" name="rx"/>
         </request>
-        <request device-pin="n|v" device-package="h" device-variant="" position="109">
+        <request device-pin="n|v" device-package="h" device-variant="" position="118">
           <signal driver="usart" instance="10" name="rx"/>
         </request>
-        <request device-pin="v|z" device-package="t" device-variant="" position="109">
+        <request device-pin="v|z" device-package="t" device-variant="" position="118">
           <signal driver="usart" instance="10" name="rx"/>
         </request>
-        <request device-pin="a" device-package="i" device-variant="q" position="109">
+        <request device-pin="a" device-package="i" device-variant="q" position="118">
           <signal driver="usart" instance="10" name="rx"/>
         </request>
-        <request device-pin="i" device-package="k|t" device-variant="|q" position="109">
+        <request device-pin="i" device-package="k|t" device-variant="|q" position="118">
           <signal driver="usart" instance="10" name="rx"/>
         </request>
-        <request device-pin="q" device-package="y" device-variant="q" position="109">
+        <request device-pin="q" device-package="y" device-variant="q" position="118">
           <signal driver="usart" instance="10" name="rx"/>
         </request>
-        <request device-pin="z" device-package="t" device-variant="q" position="109">
+        <request device-pin="z" device-package="t" device-variant="q" position="118">
           <signal driver="usart" instance="10" name="rx"/>
         </request>
-        <request device-pin="l|v" device-package="h" device-variant="q" position="110">
+        <request device-pin="l|v" device-package="h" device-variant="q" position="119">
           <signal driver="usart" instance="10" name="tx"/>
         </request>
-        <request device-pin="n|v" device-package="h" device-variant="" position="110">
+        <request device-pin="n|v" device-package="h" device-variant="" position="119">
           <signal driver="usart" instance="10" name="tx"/>
         </request>
-        <request device-pin="v|z" device-package="t" device-variant="" position="110">
+        <request device-pin="v|z" device-package="t" device-variant="" position="119">
           <signal driver="usart" instance="10" name="tx"/>
         </request>
-        <request device-pin="a" device-package="i" device-variant="q" position="110">
+        <request device-pin="a" device-package="i" device-variant="q" position="119">
           <signal driver="usart" instance="10" name="tx"/>
         </request>
-        <request device-pin="i" device-package="k|t" device-variant="|q" position="110">
+        <request device-pin="i" device-package="k|t" device-variant="|q" position="119">
           <signal driver="usart" instance="10" name="tx"/>
         </request>
-        <request device-pin="q" device-package="y" device-variant="q" position="110">
+        <request device-pin="q" device-package="y" device-variant="q" position="119">
           <signal driver="usart" instance="10" name="tx"/>
         </request>
-        <request device-pin="z" device-package="t" device-variant="q" position="110">
+        <request device-pin="z" device-package="t" device-variant="q" position="119">
           <signal driver="usart" instance="10" name="tx"/>
         </request>
       </requests>

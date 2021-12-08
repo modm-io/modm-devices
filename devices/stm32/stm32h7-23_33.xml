@@ -351,7 +351,7 @@
     <driver name="wwdg" type="stm32-v2.0">
       <instance value="1"/>
     </driver>
-    <driver name="dma" type="stm32-mux">
+    <driver name="dma" type="stm32-mux-stream">
       <instance value="1"/>
       <instance value="2"/>
       <requests>
@@ -628,110 +628,110 @@
         <request position="94">
           <signal driver="spdifrx" name="cs"/>
         </request>
-        <request position="95">
+        <request position="101">
           <signal driver="dfsdm" instance="1" name="flt0"/>
         </request>
-        <request position="96">
+        <request position="102">
           <signal driver="dfsdm" instance="1" name="flt1"/>
         </request>
-        <request position="97">
+        <request position="103">
           <signal driver="dfsdm" instance="1" name="flt2"/>
         </request>
-        <request position="98">
+        <request position="104">
           <signal driver="dfsdm" instance="1" name="flt3"/>
         </request>
-        <request position="99">
+        <request position="105">
           <signal driver="tim" instance="15" name="ch1"/>
         </request>
-        <request position="100">
+        <request position="106">
           <signal driver="tim" instance="15" name="up"/>
         </request>
-        <request position="101">
+        <request position="107">
           <signal driver="tim" instance="15" name="trig"/>
         </request>
-        <request position="102">
+        <request position="108">
           <signal driver="tim" instance="15" name="com"/>
         </request>
-        <request position="103">
+        <request position="109">
           <signal driver="tim" instance="16" name="ch1"/>
         </request>
-        <request position="104">
+        <request position="110">
           <signal driver="tim" instance="16" name="up"/>
         </request>
-        <request position="105">
+        <request position="111">
           <signal driver="tim" instance="17" name="ch1"/>
         </request>
-        <request position="106">
+        <request position="112">
           <signal driver="tim" instance="17" name="up"/>
         </request>
-        <request position="107">
-          <signal driver="uart" instance="9" name="rx"/>
-        </request>
-        <request position="108">
-          <signal driver="uart" instance="9" name="tx"/>
-        </request>
-        <request position="109">
-          <signal driver="usart" instance="10" name="rx"/>
-        </request>
-        <request position="110">
-          <signal driver="usart" instance="10" name="tx"/>
-        </request>
-        <request position="111">
+        <request position="115">
           <signal driver="adc" instance="3"/>
         </request>
-        <request position="112">
-          <signal driver="fmac" name="rd"/>
-        </request>
-        <request position="113">
-          <signal driver="fmac" name="wr"/>
-        </request>
-        <request position="114">
-          <signal driver="cordic" name="rd"/>
-        </request>
-        <request position="115">
-          <signal driver="cordic" name="wr"/>
-        </request>
         <request position="116">
-          <signal driver="i2c" instance="5" name="rx"/>
+          <signal driver="uart" instance="9" name="rx"/>
         </request>
         <request position="117">
-          <signal driver="i2c" instance="5" name="tx"/>
+          <signal driver="uart" instance="9" name="tx"/>
         </request>
         <request position="118">
-          <signal driver="tim" instance="23" name="ch1"/>
+          <signal driver="usart" instance="10" name="rx"/>
         </request>
         <request position="119">
-          <signal driver="tim" instance="23" name="ch2"/>
+          <signal driver="usart" instance="10" name="tx"/>
         </request>
         <request position="120">
-          <signal driver="tim" instance="23" name="ch3"/>
+          <signal driver="fmac" name="rd"/>
         </request>
         <request position="121">
-          <signal driver="tim" instance="23" name="ch4"/>
+          <signal driver="fmac" name="wr"/>
         </request>
         <request position="122">
-          <signal driver="tim" instance="23" name="trig"/>
+          <signal driver="cordic" name="rd"/>
         </request>
         <request position="123">
-          <signal driver="tim" instance="23" name="up"/>
+          <signal driver="cordic" name="wr"/>
         </request>
         <request position="124">
-          <signal driver="tim" instance="24" name="ch1"/>
+          <signal driver="i2c" instance="5" name="rx"/>
         </request>
         <request position="125">
-          <signal driver="tim" instance="24" name="ch2"/>
+          <signal driver="i2c" instance="5" name="tx"/>
         </request>
         <request position="126">
-          <signal driver="tim" instance="24" name="ch3"/>
+          <signal driver="tim" instance="23" name="ch1"/>
         </request>
         <request position="127">
-          <signal driver="tim" instance="24" name="ch4"/>
+          <signal driver="tim" instance="23" name="ch2"/>
         </request>
         <request position="128">
-          <signal driver="tim" instance="24" name="trig"/>
+          <signal driver="tim" instance="23" name="ch3"/>
         </request>
         <request position="129">
+          <signal driver="tim" instance="23" name="ch4"/>
+        </request>
+        <request position="130">
+          <signal driver="tim" instance="23" name="up"/>
+        </request>
+        <request position="131">
+          <signal driver="tim" instance="23" name="trig"/>
+        </request>
+        <request position="132">
+          <signal driver="tim" instance="24" name="ch1"/>
+        </request>
+        <request position="133">
+          <signal driver="tim" instance="24" name="ch2"/>
+        </request>
+        <request position="134">
+          <signal driver="tim" instance="24" name="ch3"/>
+        </request>
+        <request position="135">
+          <signal driver="tim" instance="24" name="ch4"/>
+        </request>
+        <request position="136">
           <signal driver="tim" instance="24" name="up"/>
+        </request>
+        <request position="137">
+          <signal driver="tim" instance="24" name="trig"/>
         </request>
       </requests>
       <mux-channels>
@@ -1336,7 +1336,7 @@
         <signal driver="adc" instance="2" name="inp4"/>
         <signal driver="comp" instance="1" name="inm"/>
         <signal driver="opamp" instance="1" name="vout"/>
-        <signal driver="spdifrx" instance="1" name="in2"/>
+        <signal driver="spdifrx" name="in2"/>
         <signal af="1" driver="fmc" name="a22"/>
         <signal af="3" driver="dfsdm" instance="1" name="ckin2"/>
         <signal af="5" driver="i2s" instance="1" name="mck"/>
@@ -1351,7 +1351,7 @@
         <signal driver="adc" instance="2" name="inn4"/>
         <signal driver="adc" instance="2" name="inp8"/>
         <signal driver="opamp" instance="1" name="vinm"/>
-        <signal driver="spdifrx" instance="1" name="in3"/>
+        <signal driver="spdifrx" name="in3"/>
         <signal af="1" driver="sai" instance="4" name="d3"/>
         <signal af="2" driver="sai" instance="1" name="d3"/>
         <signal af="3" driver="dfsdm" instance="1" name="datin2"/>
@@ -1551,7 +1551,7 @@
         <signal af="14" driver="ltdc" name="b2"/>
       </gpio>
       <gpio port="d" pin="7">
-        <signal driver="spdifrx" instance="1" name="in0"/>
+        <signal driver="spdifrx" name="in0"/>
         <signal af="3" driver="dfsdm" instance="1" name="datin4"/>
         <signal af="5" driver="i2s" instance="1" name="sdo"/>
         <signal af="5" driver="spi" instance="1" name="mosi"/>
@@ -1562,7 +1562,7 @@
         <signal af="12" driver="fmc" name="ne1"/>
       </gpio>
       <gpio port="d" pin="8">
-        <signal driver="spdifrx" instance="1" name="in1"/>
+        <signal driver="spdifrx" name="in1"/>
         <signal af="3" driver="dfsdm" instance="1" name="ckin3"/>
         <signal af="7" driver="usart" instance="3" name="tx"/>
         <signal af="12" driver="fmc" name="d13"/>
@@ -1994,7 +1994,7 @@
         <signal af="14" driver="ltdc" name="clk"/>
       </gpio>
       <gpio device-pin="z" port="g" pin="8">
-        <signal driver="spdifrx" instance="1" name="in2"/>
+        <signal driver="spdifrx" name="in2"/>
         <signal af="3" driver="tim" instance="8" name="etr"/>
         <signal af="5" driver="i2s" instance="6" name="ws"/>
         <signal af="5" driver="spi" instance="6" name="nss"/>
@@ -2005,7 +2005,7 @@
         <signal af="14" driver="ltdc" name="g7"/>
       </gpio>
       <gpio device-pin="z" port="g" pin="9">
-        <signal driver="spdifrx" instance="1" name="in3"/>
+        <signal driver="spdifrx" name="in3"/>
         <signal af="2" driver="fdcan" instance="3" name="tx"/>
         <signal af="5" driver="i2s" instance="1" name="sdi"/>
         <signal af="5" driver="spi" instance="1" name="miso"/>
@@ -2032,7 +2032,7 @@
         <signal af="14" driver="ltdc" name="b2"/>
       </gpio>
       <gpio device-pin="z" port="g" pin="11">
-        <signal driver="spdifrx" instance="1" name="in0"/>
+        <signal driver="spdifrx" name="in0"/>
         <signal af="1" driver="lptim" instance="1" name="in2"/>
         <signal af="4" driver="usart" instance="10" name="rx"/>
         <signal af="5" driver="i2s" instance="1" name="ck"/>
@@ -2045,7 +2045,7 @@
         <signal af="14" driver="ltdc" name="b3"/>
       </gpio>
       <gpio device-pin="z" port="g" pin="12">
-        <signal driver="spdifrx" instance="1" name="in1"/>
+        <signal driver="spdifrx" name="in1"/>
         <signal af="1" driver="lptim" instance="1" name="in1"/>
         <signal af="3" driver="octospim" name="p2_ncs"/>
         <signal af="4" driver="usart" instance="10" name="tx"/>

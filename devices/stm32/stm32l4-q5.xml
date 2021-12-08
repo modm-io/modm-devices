@@ -508,19 +508,17 @@
         <request position="88">
           <signal driver="dfsdm" instance="1" name="flt1"/>
         </request>
-        <request device-pin="a|q|r|v|z" position="89">
+        <request device-pin="a|q|r|v|z" position="91">
           <signal driver="dcmi"/>
-        </request>
-        <request device-pin="a|q|r|v|z" position="90">
           <signal driver="pssi"/>
         </request>
-        <request position="91">
+        <request position="92">
           <signal driver="aes" name="in"/>
         </request>
-        <request position="92">
+        <request position="93">
           <signal driver="aes" name="out"/>
         </request>
-        <request position="93">
+        <request position="94">
           <signal driver="hash" name="in"/>
         </request>
       </requests>

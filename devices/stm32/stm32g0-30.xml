@@ -119,94 +119,94 @@
         <request position="5">
           <signal driver="adc" instance="1"/>
         </request>
-        <request position="8">
+        <request position="10">
           <signal driver="i2c" instance="1" name="rx"/>
         </request>
-        <request position="9">
+        <request position="11">
           <signal driver="i2c" instance="1" name="tx"/>
         </request>
-        <request position="10">
+        <request position="12">
           <signal driver="i2c" instance="2" name="rx"/>
         </request>
-        <request position="11">
+        <request position="13">
           <signal driver="i2c" instance="2" name="tx"/>
         </request>
-        <request position="14">
+        <request position="16">
           <signal driver="spi" instance="1" name="rx"/>
         </request>
-        <request position="15">
+        <request position="17">
           <signal driver="spi" instance="1" name="tx"/>
         </request>
-        <request position="16">
+        <request position="18">
           <signal driver="spi" instance="2" name="rx"/>
         </request>
-        <request position="17">
+        <request position="19">
           <signal driver="spi" instance="2" name="tx"/>
         </request>
-        <request position="18">
+        <request position="20">
           <signal driver="tim" instance="1" name="ch1"/>
         </request>
-        <request position="19">
+        <request position="21">
           <signal driver="tim" instance="1" name="ch2"/>
         </request>
-        <request position="20">
+        <request position="22">
           <signal driver="tim" instance="1" name="ch3"/>
         </request>
-        <request position="21">
+        <request position="23">
           <signal driver="tim" instance="1" name="ch4"/>
         </request>
-        <request position="22">
+        <request position="24">
           <signal driver="tim" instance="1" name="trig_com"/>
         </request>
-        <request position="23">
+        <request position="25">
           <signal driver="tim" instance="1" name="up"/>
         </request>
-        <request position="30">
+        <request position="32">
           <signal driver="tim" instance="3" name="ch1"/>
         </request>
-        <request position="31">
+        <request position="33">
           <signal driver="tim" instance="3" name="ch2"/>
         </request>
-        <request position="32">
+        <request position="34">
           <signal driver="tim" instance="3" name="ch3"/>
         </request>
-        <request position="33">
+        <request position="35">
           <signal driver="tim" instance="3" name="ch4"/>
         </request>
-        <request position="34">
+        <request position="36">
           <signal driver="tim" instance="3" name="trig"/>
         </request>
-        <request position="35">
+        <request position="37">
           <signal driver="tim" instance="3" name="up"/>
         </request>
-        <request position="36">
+        <request position="44">
           <signal driver="tim" instance="16" name="ch1"/>
         </request>
-        <request position="37">
+        <request position="45">
           <signal driver="tim" instance="16" name="trig_com"/>
         </request>
-        <request position="38">
+        <request position="46">
           <signal driver="tim" instance="16" name="up"/>
         </request>
-        <request position="39">
+        <request position="47">
           <signal driver="tim" instance="17" name="ch1"/>
         </request>
-        <request position="40">
+        <request position="48">
           <signal driver="tim" instance="17" name="trig_com"/>
         </request>
-        <request position="41">
+        <request position="49">
           <signal driver="tim" instance="17" name="up"/>
         </request>
-        <request position="42">
+        <request position="50">
           <signal driver="usart" instance="1" name="rx"/>
         </request>
-        <request position="43">
+        <request position="51">
           <signal driver="usart" instance="1" name="tx"/>
         </request>
-        <request position="44">
+        <request position="52">
           <signal driver="usart" instance="2" name="rx"/>
         </request>
-        <request position="45">
+        <request position="53">
           <signal driver="usart" instance="2" name="tx"/>
         </request>
       </requests>

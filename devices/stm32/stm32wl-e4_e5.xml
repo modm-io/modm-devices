@@ -173,7 +173,7 @@
     </driver>
     <driver name="vrefbuf" type="stm32-v1.0"/>
     <driver name="wwdg" type="stm32-v2.0"/>
-    <driver name="dma" type="stm32-channel">
+    <driver name="dma" type="stm32-mux">
       <instance value="1"/>
       <instance value="2"/>
       <requests>
@@ -243,64 +243,64 @@
         <request position="22">
           <signal driver="lpuart" instance="1" name="tx"/>
         </request>
-        <request position="26">
+        <request position="23">
           <signal driver="tim" instance="1" name="ch1"/>
         </request>
-        <request position="27">
+        <request position="24">
           <signal driver="tim" instance="1" name="ch2"/>
         </request>
-        <request position="28">
+        <request position="25">
           <signal driver="tim" instance="1" name="ch3"/>
         </request>
-        <request position="29">
+        <request position="26">
           <signal driver="tim" instance="1" name="ch4"/>
         </request>
-        <request position="30">
+        <request position="27">
           <signal driver="tim" instance="1" name="up"/>
         </request>
-        <request position="31">
+        <request position="28">
           <signal driver="tim" instance="1" name="trig"/>
         </request>
-        <request position="32">
+        <request position="29">
           <signal driver="tim" instance="1" name="com"/>
         </request>
-        <request position="33">
+        <request position="30">
           <signal driver="tim" instance="2" name="ch1"/>
         </request>
-        <request position="34">
+        <request position="31">
           <signal driver="tim" instance="2" name="ch2"/>
         </request>
-        <request position="35">
+        <request position="32">
           <signal driver="tim" instance="2" name="ch3"/>
         </request>
-        <request position="36">
+        <request position="33">
           <signal driver="tim" instance="2" name="ch4"/>
         </request>
-        <request position="37">
+        <request position="34">
           <signal driver="tim" instance="2" name="up"/>
         </request>
-        <request position="38">
+        <request position="35">
           <signal driver="tim" instance="16" name="ch1"/>
         </request>
-        <request position="39">
+        <request position="36">
           <signal driver="tim" instance="16" name="up"/>
         </request>
-        <request position="40">
+        <request position="37">
           <signal driver="tim" instance="17" name="ch1"/>
         </request>
-        <request position="41">
+        <request position="38">
           <signal driver="tim" instance="17" name="up"/>
         </request>
-        <request position="42">
+        <request position="39">
           <signal driver="aes" name="in"/>
         </request>
-        <request position="43">
+        <request position="40">
           <signal driver="aes" name="out"/>
         </request>
-        <request position="44">
+        <request position="41">
           <signal driver="subghz" name="rx"/>
         </request>
-        <request position="45">
+        <request position="42">
           <signal driver="subghz" name="tx"/>
         </request>
       </requests>
