@@ -330,6 +330,12 @@ stm_groups = \
         'name': ['q5']
     },
 
+    # STM32L5 devices
+    {
+        'family': ['l5'],
+        'name': ['52', '62']
+    },
+
     # STM32WB devices
     {
         'family': ['wb'],
