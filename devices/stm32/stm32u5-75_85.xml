@@ -64,7 +64,7 @@
     <valid-device>stm32u585vit7q</valid-device>
     <valid-device>stm32u585zit6</valid-device>
     <valid-device>stm32u585zit6q</valid-device>
-    <driver name="core" type="cortex-m33">
+    <driver name="core" type="cortex-m33f">
       <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
       <memory device-size="i" name="flash" access="rx" start="0x8000000" size="2097152"/>
       <memory name="sram1" access="rwx" start="0x20000000" size="196608"/>
