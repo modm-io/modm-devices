@@ -13,12 +13,15 @@ init: ext/cmsis-header-stm32 ext/cmsis-5-partial ext/stm32-cube-hal-drivers #ext
 clean_init:
 	@rm -rf ext/
 
+
 # Raw device data management
 raw-device-data/%-devices:
 	(cd raw-data-extractor && python3 extract-$(@:raw-device-data/%-devices=%).py)
 
 .PHONY: extract
-extract: raw-device-data/avr-devices raw-device-data/stm32-devices raw-device-data/sam-devices raw-device-data/nrf-devices
+extract: raw-device-data/avr-devices raw-device-data/stm32-devices \
+			raw-device-data/sam-devices raw-device-data/nrf-devices \
+			raw-device-data/rp-devices
 
 .PHONY: clean_extract
 clean_extract:
@@ -31,6 +34,7 @@ update-data-%:
 
 .PHONY: update-data
 update-data: update-data-avr update-data-stm32 update-data-sam update-data-nrf
+
 
 # AVR device files
 .PHONY: generate-at%
@@ -50,7 +54,6 @@ generate-sam%: raw-device-data/sam-devices ext/cmsis-5-partial
 
 .PHONY: generate-sam
 generate-sam: generate-saml21 generate-samd21 generate-samd51 generate-samg generate-samv70
-
 
 
 # NRF device files
@@ -74,3 +77,13 @@ generate-stm32: generate-stm32f0 generate-stm32f1 generate-stm32f2 generate-stm3
 				generate-stm32f4 generate-stm32f7 generate-stm32g0 generate-stm32g4 \
 				generate-stm32h7 generate-stm32l0 generate-stm32l1 generate-stm32l4 \
 				generate-stm32l5 generate-stm32wb generate-stm32wl generate-stm32u5
+
+
+# RP device files
+.PHONY: generate-rp%
+generate-rp%: raw-device-data/rp-devices
+	@rm -f ../../devices/rp/$(@:generate-%=%)*
+	./rp_generator.py $(@:generate-%=%)
+
+.PHONY: generate-rp
+generate-rp: generate-rp2040
