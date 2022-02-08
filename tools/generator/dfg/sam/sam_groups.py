@@ -35,7 +35,6 @@ sam_groups = \
         'series': ['51']
     },
     {
-        'family': ['v'],
-        'series': ['70']
+        'series': ['70', '71']
     },
 ]
