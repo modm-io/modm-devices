@@ -12,6 +12,9 @@ sam_groups = \
         'family': ['d'],
         'series': ['51']
     },{
+        'family': ['e'],
+        'series': ['51', '53', '54']
+    },{
         'family': ['l'],
         'series': ['21']
     },

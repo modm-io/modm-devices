@@ -70,8 +70,6 @@ class SAMDeviceTree:
                 memories.append({"name":"lpram", "access":access, "size":str(size), "start":start})
             elif name in ["SEEPROM", "RWW"]:
                 memories.append({"name":"eeprom", "access":"r", "size":str(size), "start":start})
-            elif name in ["QSPI"]:
-                memories.append({"name":"extram", "access":access, "size":str(size), "start":start})
             else:
                 LOGGER.debug("Memory segment '%s' not used", name)
         p["memories"] = memories
