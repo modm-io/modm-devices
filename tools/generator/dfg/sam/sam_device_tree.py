@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
 # Copyright (c) 2013-2016, Niklas Hauser
 # Copyright (c)      2016, Fabian Greif
+# Copyright (c)      2022, Christopher Durand
 # All rights reserved.
 
 import math
 import logging
+import re
+
+from collections import defaultdict
 
 from ..device_tree import DeviceTree
 from ..input.xml import XMLReader
@@ -77,13 +81,29 @@ class SAMDeviceTree:
         raw_modules = device_file.query("//peripherals/module/instance")
         modules = []
         ports = []
+        p["gclk_data"] = {}
+        p["gclk_data"]["clocks"] = defaultdict(list)
         for m in raw_modules:
-            tmp = {"module": m.getparent().get("name").lower(), "instance": m.get("name").lower()}
-            if tmp["module"] == "port":
+            module_name = m.getparent().get("name").lower()
+            instance = m.get("name").lower()
+            tmp = {"module": module_name, "instance": instance}
+            parameters = {}
+            for param in m.xpath("parameters/param"):
+                if param.get("name").startswith("GCLK_ID"):
+                    clock_name = param.get("name")[8:].lower()
+                    clock_info = (clock_name if clock_name != "" else None, param.get("value"))
+                    p["gclk_data"]["clocks"][instance].append(clock_info)
+            if module_name == "gclk":
+                p["gclk_data"]["generator_count"] = int(m.xpath('parameters/param[@name="GEN_NUM"]')[0].attrib["value"])
+            if module_name == "port":
                 ports.append(tmp)
             else:
                 modules.append(tmp)
         p["modules"] = sorted(list(set([(m["module"], m["instance"]) for m in modules])))
+
+        # parse GCLK sources from register section
+        generators = device_file.query('//modules/module[@name="GCLK"]/value-group[@name="GCLK_GENCTRL__SRC"]/value')
+        p["gclk_data"]["sources"] = dict([(g.get("name").capitalize(), g.get("value")) for g in generators])
 
         signals = []
         gpios = []
@@ -246,6 +266,26 @@ class SAMDeviceTree:
                 for i in instances:
                     inst = driver.addChild("instance")
                     inst.setValue(i[len(dtype):])
+            if name == "gclk":
+                instance_pattern = re.compile(r"^(?P<per>([a-z]+))(?P<instance>([0-9]+))$")
+                driver.addSortKey(lambda e: (e.name, int(e["value"])))
+                for instance, instance_clocks in p["gclk_data"]["clocks"].items():
+                    for clock_info in instance_clocks:
+                        clock = driver.addChild("clock")
+                        clock_name, clock_id = clock_info
+                        m = instance_pattern.match(instance)
+                        if m:
+                            clock.setAttributes("peripheral", m.group("per"), "instance", m.group("instance"))
+                        else:
+                            clock.setAttributes("peripheral", instance)
+                        if clock_name is not None:
+                            clock.setAttribute("name", clock_name)
+                        clock.setAttribute("value", clock_id)
+                for name, source_id in p["gclk_data"]["sources"].items():
+                    source = driver.addChild("source")
+                    source.setAttributes("name", name, "value", source_id)
+                generators = driver.addChild("generators")
+                generators.setAttributes("value", str(p["gclk_data"]["generator_count"]))
 
         # GPIO driver
         gpio_driver = tree.addChild("driver")
