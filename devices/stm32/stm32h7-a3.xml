@@ -198,7 +198,7 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver device-pin="a|i|l|n|q|v|z" name="dcmi" type="stm32"/>
+    <driver name="dcmi" type="stm32"/>
     <driver name="debug" type="stm32-v1.0"/>
     <driver name="dfsdm" type="stm32-v1.0">
       <instance value="1"/>
@@ -283,7 +283,7 @@
       <instance value="1"/>
       <instance device-pin="a|i|l|n|q|v|z" value="2"/>
     </driver>
-    <driver device-pin="a|i|l|n|q|v|z" name="pssi" type="stm32-v3.0"/>
+    <driver name="pssi" type="stm32-v3.0"/>
     <driver name="pwr" type="stm32-v1.0"/>
     <driver name="ramecc" type="stm32-v1.0"/>
     <driver name="rcc" type="stm32-v1.0">
@@ -590,7 +590,7 @@
         <request position="74">
           <signal driver="i2c" instance="3" name="tx"/>
         </request>
-        <request device-pin="a|i|l|n|q|v|z" position="75">
+        <request position="75">
           <signal driver="dcmi" name="pssi"/>
         </request>
         <request position="79">
@@ -848,8 +848,8 @@
         <signal af="7" driver="usart" instance="2" name="ck"/>
         <signal af="8" driver="i2s" instance="6" name="ws"/>
         <signal af="8" driver="spi" instance="6" name="nss"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="dcmi" name="hsync"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="de"/>
+        <signal af="13" driver="dcmi" name="hsync"/>
+        <signal af="13" driver="pssi" name="de"/>
         <signal af="14" driver="ltdc" name="vsync"/>
       </gpio>
       <gpio port="a" pin="5">
@@ -865,7 +865,7 @@
         <signal af="8" driver="i2s" instance="6" name="ck"/>
         <signal af="8" driver="spi" instance="6" name="sck"/>
         <signal af="10" driver="usb_otg_hs" name="ulpi_ck"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="d14"/>
+        <signal af="13" driver="pssi" name="d14"/>
         <signal af="14" driver="ltdc" name="r4"/>
       </gpio>
       <gpio port="a" pin="6">
@@ -886,8 +886,8 @@
         <signal af="11" driver="mdios" name="mdc"/>
         <signal af="12" driver="tim" instance="1" name="bkin_comp1"/>
         <signal device-pin="a|i|l|n|q|v|z" af="12" driver="tim" instance="1" name="bkin_comp2"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="dcmi" name="pixclk"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="pdck"/>
+        <signal af="13" driver="dcmi" name="pixclk"/>
+        <signal af="13" driver="pssi" name="pdck"/>
         <signal af="14" driver="ltdc" name="g2"/>
       </gpio>
       <gpio port="a" pin="7">
@@ -930,8 +930,8 @@
         <signal af="5" driver="i2s" instance="2" name="ck"/>
         <signal af="5" driver="spi" instance="2" name="sck"/>
         <signal af="7" driver="usart" instance="1" name="tx"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="dcmi" name="d0"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="d0"/>
+        <signal af="13" driver="dcmi" name="d0"/>
+        <signal af="13" driver="pssi" name="d0"/>
         <signal af="14" driver="ltdc" name="r5"/>
       </gpio>
       <gpio port="a" pin="10">
@@ -941,8 +941,8 @@
         <signal af="10" driver="usb_otg_hs" name="id"/>
         <signal af="11" driver="mdios" name="mdio"/>
         <signal af="12" driver="ltdc" name="b4"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="dcmi" name="d1"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="d1"/>
+        <signal af="13" driver="dcmi" name="d1"/>
+        <signal af="13" driver="pssi" name="d1"/>
         <signal af="14" driver="ltdc" name="b1"/>
       </gpio>
       <gpio port="a" pin="11">
@@ -1083,8 +1083,8 @@
         <signal af="10" driver="usb_otg_hs" name="ulpi_d7"/>
         <signal af="11" driver="ltdc" name="b5"/>
         <signal device-pin="a|i|l|n|q|v|z" af="12" driver="fmc" name="sdcke1"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="dcmi" name="d10"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="d10"/>
+        <signal af="13" driver="dcmi" name="d10"/>
+        <signal af="13" driver="pssi" name="d10"/>
         <signal af="14" driver="uart" instance="5" name="rx"/>
       </gpio>
       <gpio port="b" pin="6">
@@ -1099,8 +1099,8 @@
         <signal af="10" driver="octospim" name="p1_ncs"/>
         <signal af="11" driver="dfsdm" instance="1" name="datin5"/>
         <signal device-pin="a|i|l|n|q|v|z" af="12" driver="fmc" name="sdne1"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="dcmi" name="d5"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="d5"/>
+        <signal af="13" driver="dcmi" name="d5"/>
+        <signal af="13" driver="pssi" name="d5"/>
         <signal af="14" driver="uart" instance="5" name="tx"/>
       </gpio>
       <gpio port="b" pin="7">
@@ -1113,8 +1113,8 @@
         <signal af="8" driver="lpuart" instance="1" name="rx"/>
         <signal af="11" driver="dfsdm" instance="1" name="ckin5"/>
         <signal device-pin="a|i|l|n|q|v|z" af="12" driver="fmc" name="nl"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="dcmi" name="vsync"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="rdy"/>
+        <signal af="13" driver="dcmi" name="vsync"/>
+        <signal af="13" driver="pssi" name="rdy"/>
       </gpio>
       <gpio port="b" pin="8">
         <signal af="1" driver="tim" instance="16" name="ch1"/>
@@ -1127,8 +1127,8 @@
         <signal af="9" driver="fdcan" instance="1" name="rx"/>
         <signal af="10" driver="sdmmc" instance="2" name="d4"/>
         <signal af="12" driver="sdmmc" instance="1" name="d4"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="dcmi" name="d6"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="d6"/>
+        <signal af="13" driver="dcmi" name="d6"/>
+        <signal af="13" driver="pssi" name="d6"/>
         <signal af="14" driver="ltdc" name="b6"/>
       </gpio>
       <gpio port="b" pin="9">
@@ -1145,8 +1145,8 @@
         <signal af="10" driver="sdmmc" instance="2" name="d5"/>
         <signal af="11" driver="i2c" instance="4" name="smba"/>
         <signal af="12" driver="sdmmc" instance="1" name="d5"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="dcmi" name="d7"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="d7"/>
+        <signal af="13" driver="dcmi" name="d7"/>
+        <signal af="13" driver="pssi" name="d7"/>
         <signal af="14" driver="ltdc" name="b7"/>
       </gpio>
       <gpio port="b" pin="10">
@@ -1197,8 +1197,8 @@
         <signal af="9" driver="fdcan" instance="2" name="tx"/>
         <signal af="10" driver="usb_otg_hs" name="ulpi_d6"/>
         <signal af="12" driver="sdmmc" instance="1" name="d0"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="dcmi" name="d2"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="d2"/>
+        <signal af="13" driver="dcmi" name="d2"/>
+        <signal af="13" driver="pssi" name="d2"/>
         <signal af="14" driver="uart" instance="5" name="tx"/>
       </gpio>
       <gpio port="b" pin="14">
@@ -1361,7 +1361,7 @@
         <signal device-pin="z" device-package="t" device-variant="q" driver="spdifrx" name="in3"/>
         <signal device-pin="a|i|l|n|q|v|z" af="2" driver="sai" instance="1" name="d3"/>
         <signal af="3" driver="dfsdm" instance="1" name="datin2"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="4" driver="pssi" name="d15"/>
+        <signal af="4" driver="pssi" name="d15"/>
         <signal af="10" driver="octospim" name="p1_dqs"/>
         <signal device-pin="a|i|l|n|q|v|z" af="12" driver="fmc" name="sdcke0"/>
         <signal af="13" driver="comp" instance="1" name="out"/>
@@ -1378,8 +1378,8 @@
         <signal device-pin="a|i|l|n|q|v|z" af="9" driver="fmc" name="nwait"/>
         <signal af="10" driver="sdmmc" instance="2" name="d6"/>
         <signal af="12" driver="sdmmc" instance="1" name="d6"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="dcmi" name="d0"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="d0"/>
+        <signal af="13" driver="dcmi" name="d0"/>
+        <signal af="13" driver="pssi" name="d0"/>
         <signal af="14" driver="ltdc" name="hsync"/>
       </gpio>
       <gpio port="c" pin="7">
@@ -1394,8 +1394,8 @@
         <signal af="10" driver="sdmmc" instance="2" name="d7"/>
         <signal af="11" driver="swpmi" instance="1" name="tx"/>
         <signal af="12" driver="sdmmc" instance="1" name="d7"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="dcmi" name="d1"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="d1"/>
+        <signal af="13" driver="dcmi" name="d1"/>
+        <signal af="13" driver="pssi" name="d1"/>
         <signal af="14" driver="ltdc" name="g6"/>
       </gpio>
       <gpio device-pin="a|i|l|n|v|z" port="c" pin="8">
@@ -1424,8 +1424,8 @@
         <signal af="10" driver="ltdc" name="g3"/>
         <signal af="11" driver="swpmi" instance="1" name="suspend"/>
         <signal af="12" driver="sdmmc" instance="1" name="d1"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="dcmi" name="d3"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="d3"/>
+        <signal af="13" driver="dcmi" name="d3"/>
+        <signal af="13" driver="pssi" name="d3"/>
         <signal af="14" driver="ltdc" name="b2"/>
       </gpio>
       <gpio port="c" pin="10">
@@ -1439,8 +1439,8 @@
         <signal af="10" driver="ltdc" name="b1"/>
         <signal af="11" driver="swpmi" instance="1" name="rx"/>
         <signal af="12" driver="sdmmc" instance="1" name="d2"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="dcmi" name="d8"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="d8"/>
+        <signal af="13" driver="dcmi" name="d8"/>
+        <signal af="13" driver="pssi" name="d8"/>
         <signal af="14" driver="ltdc" name="r2"/>
       </gpio>
       <gpio port="c" pin="11">
@@ -1452,8 +1452,8 @@
         <signal af="8" driver="uart" instance="4" name="rx"/>
         <signal af="9" driver="octospim" name="p1_ncs"/>
         <signal af="12" driver="sdmmc" instance="1" name="d3"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="dcmi" name="d4"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="d4"/>
+        <signal af="13" driver="dcmi" name="d4"/>
+        <signal af="13" driver="pssi" name="d4"/>
         <signal af="14" driver="ltdc" name="b4"/>
       </gpio>
       <gpio port="c" pin="12">
@@ -1467,8 +1467,8 @@
         <signal af="7" driver="usart" instance="3" name="ck"/>
         <signal af="8" driver="uart" instance="5" name="tx"/>
         <signal af="12" driver="sdmmc" instance="1" name="ck"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="dcmi" name="d9"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="d9"/>
+        <signal af="13" driver="dcmi" name="d9"/>
+        <signal af="13" driver="pssi" name="d9"/>
         <signal af="14" driver="ltdc" name="r6"/>
       </gpio>
       <gpio port="c" pin="13">
@@ -1507,8 +1507,8 @@
         <signal af="8" driver="uart" instance="5" name="rx"/>
         <signal af="9" driver="ltdc" name="b7"/>
         <signal af="12" driver="sdmmc" instance="1" name="cmd"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="dcmi" name="d11"/>
-        <signal device-pin="a|i|l|n|q|v|z" af="13" driver="pssi" name="d11"/>
+        <signal af="13" driver="dcmi" name="d11"/>
+        <signal af="13" driver="pssi" name="d11"/>
         <signal af="14" driver="ltdc" name="b2"/>
       </gpio>
       <gpio device-pin="a|i|l|n|q|v|z" port="d" pin="3">

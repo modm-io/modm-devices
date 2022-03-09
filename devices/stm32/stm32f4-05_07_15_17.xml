@@ -148,7 +148,7 @@
       <feature value="status"/>
     </driver>
     <driver device-name="07|17" name="dcmi" type="stm32"/>
-    <driver device-name="07|17" name="eth" type="stm32-v2.0"/>
+    <driver device-name="07|17" name="eth" type="stm32-v2.1"/>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1800">
         <wait-state ws="0" hclk-max="20000000"/>

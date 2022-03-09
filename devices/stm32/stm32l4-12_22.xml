@@ -689,7 +689,7 @@
         <signal driver="adc" instance="1" name="in14"/>
         <signal driver="adc" instance="2" name="in14"/>
         <signal driver="comp" instance="1" name="inp"/>
-        <signal device-name="12" device-size="8|b" device-package="i|t" driver="sys" name="wkup5"/>
+        <signal driver="sys" name="wkup5"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
       </gpio>
       <gpio device-pin="r" port="c" pin="6">

@@ -66,42 +66,6 @@ index 1bc6ebb..a83ec16 100644
 	<Ram>64</Ram>
 	<IONb>36</IONb>
 	<Die>DIE423</Die>
-diff --git a/stm32-devices/mcu/STM32G473V(B-C-E)Ix.xml b/stm32-devices/mcu/STM32G473V(B-C-E)Ix.xml
-index 6e2c71b..1ecae5f 100644
---- a/stm32-devices/mcu/STM32G473V(B-C-E)Ix.xml
-+++ b/stm32-devices/mcu/STM32G473V(B-C-E)Ix.xml
-@@ -1,6 +1,7 @@
- <?xml version="1.0" encoding="UTF-8" standalone="no"?>
- <Mcu ClockTree="STM32G4" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x3" Package="UFBGA100" RefName="STM32G473V(B-C-E)Ix" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
-	<Core>ARM Cortex-M4</Core>
-+	<Frequency>170</Frequency>
-	<Ram>128</Ram>
-	<IONb>86</IONb>
-	<Die>DIE469</Die>
-diff --git a/stm32-devices/mcu/STM32G483VEIx.xml b/stm32-devices/mcu/STM32G483VEIx.xml
-index 3d987ed..1fc3389 100644
---- a/stm32-devices/mcu/STM32G483VEIx.xml
-+++ b/stm32-devices/mcu/STM32G483VEIx.xml
-@@ -1,6 +1,7 @@
- <?xml version="1.0" encoding="UTF-8" standalone="no"?>
- <Mcu ClockTree="STM32G4" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x3" Package="UFBGA100" RefName="STM32G483VEIx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
-	<Core>ARM Cortex-M4</Core>
-+	<Frequency>170</Frequency>
-	<Ram>128</Ram>
-	<IONb>86</IONb>
-	<Die>DIE469</Die>
-diff --git a/stm32-devices/mcu/STM32G484VEIx.xml b/stm32-devices/mcu/STM32G484VEIx.xml
-index 46a992d..2f29a24 100644
---- a/stm32-devices/mcu/STM32G484VEIx.xml
-+++ b/stm32-devices/mcu/STM32G484VEIx.xml
-@@ -1,6 +1,7 @@
- <?xml version="1.0" encoding="UTF-8" standalone="no"?>
- <Mcu ClockTree="STM32G4" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x4" Package="UFBGA100" RefName="STM32G484VEIx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
-	<Core>ARM Cortex-M4</Core>
-+	<Frequency>170</Frequency>
-	<Ram>128</Ram>
-	<IONb>86</IONb>
-	<Die>DIE469</Die>
 diff --git a/stm32-devices/mcu/STM32L021F4Px.xml b/stm32-devices/mcu/STM32L021F4Px.xml
 index 623ae91..7cb119a 100644
 --- a/stm32-devices/mcu/STM32L021F4Px.xml

@@ -172,9 +172,11 @@
       </gpio>
       <gpio port="C" pin="6">
         <signal driver="exint" name="pcint22"/>
+        <signal driver="tc" instance="2" name="tosc1"/>
       </gpio>
       <gpio port="C" pin="7">
         <signal driver="exint" name="pcint23"/>
+        <signal driver="tc" instance="2" name="tosc2"/>
       </gpio>
       <gpio port="D" pin="0">
         <signal driver="exint" name="pcint24"/>

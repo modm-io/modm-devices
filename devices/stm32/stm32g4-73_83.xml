@@ -45,21 +45,18 @@
     <valid-device>stm32g473vbh3</valid-device>
     <valid-device>stm32g473vbh6</valid-device>
     <valid-device>stm32g473vbh7</valid-device>
-    <valid-device>stm32g473vbi6</valid-device>
     <valid-device>stm32g473vbt3</valid-device>
     <valid-device>stm32g473vbt6</valid-device>
     <valid-device>stm32g473vbt7</valid-device>
     <valid-device>stm32g473vch3</valid-device>
     <valid-device>stm32g473vch6</valid-device>
     <valid-device>stm32g473vch7</valid-device>
-    <valid-device>stm32g473vci6</valid-device>
     <valid-device>stm32g473vct3</valid-device>
     <valid-device>stm32g473vct6</valid-device>
     <valid-device>stm32g473vct7</valid-device>
     <valid-device>stm32g473veh3</valid-device>
     <valid-device>stm32g473veh6</valid-device>
     <valid-device>stm32g473veh7</valid-device>
-    <valid-device>stm32g473vei6</valid-device>
     <valid-device>stm32g473vet3</valid-device>
     <valid-device>stm32g473vet6</valid-device>
     <valid-device>stm32g473vet7</valid-device>
@@ -77,7 +74,6 @@
     <valid-device>stm32g483ret6</valid-device>
     <valid-device>stm32g483ret7</valid-device>
     <valid-device>stm32g483veh6</valid-device>
-    <valid-device>stm32g483vei6</valid-device>
     <valid-device>stm32g483vet6</valid-device>
     <driver name="core" type="cortex-m4f">
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
@@ -328,7 +324,7 @@
       <instance value="4"/>
       <instance device-pin="m|p|q|r|v" value="5"/>
     </driver>
-    <driver device-pin="v" device-package="h|i|t" name="uart" type="stm32-extended">
+    <driver device-pin="v" device-package="h|t" name="uart" type="stm32-extended">
       <feature value="tcbgt"/>
       <instance value="4"/>
       <instance device-pin="m|p|q|r|v" value="5"/>
@@ -448,7 +444,7 @@
         <request device-pin="p" device-package="i" position="30">
           <signal driver="uart" instance="4" name="rx"/>
         </request>
-        <request device-pin="v" device-package="h|i|t" position="30">
+        <request device-pin="v" device-package="h|t" position="30">
           <signal driver="uart" instance="4" name="rx"/>
         </request>
         <request device-pin="m|q|r" device-package="t" position="31">
@@ -463,7 +459,7 @@
         <request device-pin="p" device-package="i" position="31">
           <signal driver="uart" instance="4" name="tx"/>
         </request>
-        <request device-pin="v" device-package="h|i|t" position="31">
+        <request device-pin="v" device-package="h|t" position="31">
           <signal driver="uart" instance="4" name="tx"/>
         </request>
         <request device-pin="m|p|q|r|v" position="32">
@@ -945,12 +941,12 @@
         <signal device-pin="c" device-package="u" af="8" driver="uart" instance="4" name="de"/>
         <signal device-pin="m" device-package="y" af="8" driver="uart" instance="4" name="de"/>
         <signal device-pin="p" device-package="i" af="8" driver="uart" instance="4" name="de"/>
-        <signal device-pin="v" device-package="h|i|t" af="8" driver="uart" instance="4" name="de"/>
+        <signal device-pin="v" device-package="h|t" af="8" driver="uart" instance="4" name="de"/>
         <signal device-pin="m|q|r" device-package="t" af="8" driver="uart" instance="4" name="rts"/>
         <signal device-pin="c" device-package="u" af="8" driver="uart" instance="4" name="rts"/>
         <signal device-pin="m" device-package="y" af="8" driver="uart" instance="4" name="rts"/>
         <signal device-pin="p" device-package="i" af="8" driver="uart" instance="4" name="rts"/>
-        <signal device-pin="v" device-package="h|i|t" af="8" driver="uart" instance="4" name="rts"/>
+        <signal device-pin="v" device-package="h|t" af="8" driver="uart" instance="4" name="rts"/>
         <signal af="9" driver="tim" instance="1" name="bkin"/>
         <signal af="11" driver="fdcan" instance="3" name="tx"/>
         <signal af="14" driver="tim" instance="2" name="etr"/>
@@ -1074,7 +1070,7 @@
         <signal device-pin="c" device-package="u" af="14" driver="uart" instance="4" name="cts"/>
         <signal device-pin="m" device-package="y" af="14" driver="uart" instance="4" name="cts"/>
         <signal device-pin="p" device-package="i" af="14" driver="uart" instance="4" name="cts"/>
-        <signal device-pin="v" device-package="h|i|t" af="14" driver="uart" instance="4" name="cts"/>
+        <signal device-pin="v" device-package="h|t" af="14" driver="uart" instance="4" name="cts"/>
       </gpio>
       <gpio port="b" pin="8">
         <signal af="1" driver="tim" instance="16" name="ch1"/>
@@ -1259,7 +1255,7 @@
         <signal af="7" driver="usart" instance="1" name="tx"/>
         <signal af="10" driver="quadspi" instance="1" name="bk2_io3"/>
       </gpio>
-      <gpio device-pin="v" device-package="h|i|t" port="c" pin="4">
+      <gpio device-pin="v" device-package="h|t" port="c" pin="4">
         <signal driver="adc" instance="2" name="in5"/>
         <signal af="2" driver="tim" instance="1" name="etr"/>
         <signal af="4" driver="i2c" instance="2" name="scl"/>
@@ -1308,7 +1304,7 @@
         <signal af="7" driver="comp" instance="6" name="out"/>
         <signal af="8" driver="i2c" instance="4" name="scl"/>
       </gpio>
-      <gpio device-pin="v" device-package="h|i|t" port="c" pin="6">
+      <gpio device-pin="v" device-package="h|t" port="c" pin="6">
         <signal af="2" driver="tim" instance="3" name="ch1"/>
         <signal af="4" driver="tim" instance="8" name="ch1"/>
         <signal af="6" driver="i2s" instance="2" name="mck"/>
@@ -1364,7 +1360,7 @@
         <signal af="6" driver="spi" instance="3" name="sck"/>
         <signal af="7" driver="usart" instance="3" name="tx"/>
       </gpio>
-      <gpio device-pin="v" device-package="h|i|t" port="c" pin="10">
+      <gpio device-pin="v" device-package="h|t" port="c" pin="10">
         <signal af="4" driver="tim" instance="8" name="ch1n"/>
         <signal af="5" driver="uart" instance="4" name="tx"/>
         <signal af="6" driver="i2s" instance="3" name="ck"/>
@@ -1399,7 +1395,7 @@
         <signal af="7" driver="usart" instance="3" name="rx"/>
         <signal af="8" driver="i2c" instance="3" name="sda"/>
       </gpio>
-      <gpio device-pin="v" device-package="h|i|t" port="c" pin="11">
+      <gpio device-pin="v" device-package="h|t" port="c" pin="11">
         <signal af="4" driver="tim" instance="8" name="ch2n"/>
         <signal af="5" driver="uart" instance="4" name="rx"/>
         <signal af="6" driver="spi" instance="3" name="miso"/>
@@ -1554,7 +1550,7 @@
         <signal af="7" driver="usart" instance="3" name="nss"/>
         <signal device-pin="p|q|v" af="12" driver="fmc" name="a16"/>
       </gpio>
-      <gpio device-pin="v" device-package="h|i|t" port="d" pin="11">
+      <gpio device-pin="v" device-package="h|t" port="d" pin="11">
         <signal driver="adc" instance="3" name="in8"/>
         <signal driver="adc" instance="4" name="in8"/>
         <signal driver="adc" instance="5" name="in8"/>
@@ -2439,108 +2435,6 @@
         <pin position="K8" name="PB12"/>
         <pin position="K9" name="PB15"/>
         <pin position="K10" name="PD8"/>
-      </package>
-      <package device-pin="v" device-package="i" name="UFBGA100">
-        <pin position="A1" name="PE2"/>
-        <pin position="A2" name="PB9"/>
-        <pin position="A3" name="PB7"/>
-        <pin position="A4" name="PB5"/>
-        <pin position="A5" name="PB4"/>
-        <pin position="A6" name="PD7"/>
-        <pin position="A7" name="PD6"/>
-        <pin position="A8" name="PD4"/>
-        <pin position="A9" name="PD3"/>
-        <pin position="A10" name="PD1"/>
-        <pin position="A11" name="PC12"/>
-        <pin position="A12" name="PC10"/>
-        <pin position="B1" name="PE4"/>
-        <pin position="B2" name="PE3"/>
-        <pin position="B3" name="PE1"/>
-        <pin position="B4" name="PB8-BOOT0"/>
-        <pin position="B5" name="PB6"/>
-        <pin position="B6" name="PB3"/>
-        <pin position="B7" name="PD5"/>
-        <pin position="B8" name="PD2"/>
-        <pin position="B9" name="PD0"/>
-        <pin position="B10" name="PC11"/>
-        <pin position="B11" name="PA15"/>
-        <pin position="B12" name="PA14"/>
-        <pin position="C1" name="PE6"/>
-        <pin position="C2" name="PE5"/>
-        <pin position="C3" name="PE0"/>
-        <pin position="C4" name="VDD" type="power"/>
-        <pin position="C5" name="VSS" type="power"/>
-        <pin position="C8" name="VDD" type="power"/>
-        <pin position="C9" name="VSS" type="power"/>
-        <pin position="C10" name="PA13"/>
-        <pin position="C11" name="PA10"/>
-        <pin position="C12" name="PA12"/>
-        <pin position="D1" name="PC14-OSC32_IN"/>
-        <pin position="D2" name="VBAT" type="power"/>
-        <pin position="D3" name="PC13"/>
-        <pin position="D10" name="PC8"/>
-        <pin position="D11" name="PA9"/>
-        <pin position="D12" name="PA11"/>
-        <pin position="E1" name="PC15-OSC32_OUT"/>
-        <pin position="E2" name="PF9"/>
-        <pin position="E3" name="PC0"/>
-        <pin position="E10" name="PC6"/>
-        <pin position="E11" name="PC9"/>
-        <pin position="E12" name="PA8"/>
-        <pin position="F1" name="PF0-OSC_IN"/>
-        <pin position="F2" name="PF10"/>
-        <pin position="F11" name="PC7"/>
-        <pin position="F12" name="PD14"/>
-        <pin position="G1" name="PF1-OSC_OUT"/>
-        <pin position="G2" name="PG10-NRST"/>
-        <pin position="G11" name="PD15"/>
-        <pin position="G12" name="PD13"/>
-        <pin position="H1" name="PC2"/>
-        <pin position="H2" name="PC1"/>
-        <pin position="H3" name="VSS" type="power"/>
-        <pin position="H10" name="VDD" type="power"/>
-        <pin position="H11" name="PD11"/>
-        <pin position="H12" name="PD12"/>
-        <pin position="J1" name="PC3"/>
-        <pin position="J2" name="PF2"/>
-        <pin position="J3" name="VDD" type="power"/>
-        <pin position="J10" name="VSS" type="power"/>
-        <pin position="J11" name="PD9"/>
-        <pin position="J12" name="PD10"/>
-        <pin position="K1" name="PA0"/>
-        <pin position="K2" name="PA1"/>
-        <pin position="K3" name="PA2"/>
-        <pin position="K4" name="PC5"/>
-        <pin position="K5" name="PB2"/>
-        <pin position="K8" name="PE8"/>
-        <pin position="K9" name="PE11"/>
-        <pin position="K10" name="PB11"/>
-        <pin position="K11" name="PB13"/>
-        <pin position="K12" name="PD8"/>
-        <pin position="L1" name="PA3"/>
-        <pin position="L2" name="PA4"/>
-        <pin position="L3" name="PC4"/>
-        <pin position="L4" name="PB0"/>
-        <pin position="L5" name="VSSA" type="power"/>
-        <pin position="L6" name="VSS" type="power"/>
-        <pin position="L7" name="VDD" type="power"/>
-        <pin position="L8" name="PE10"/>
-        <pin position="L9" name="PE13"/>
-        <pin position="L10" name="PB10"/>
-        <pin position="L11" name="PB12"/>
-        <pin position="L12" name="PB15"/>
-        <pin position="M1" name="PA5"/>
-        <pin position="M2" name="PA6"/>
-        <pin position="M3" name="PA7"/>
-        <pin position="M4" name="PB1"/>
-        <pin position="M5" name="VREF+" type="monoio"/>
-        <pin position="M6" name="VDDA" type="power"/>
-        <pin position="M7" name="PE7"/>
-        <pin position="M8" name="PE9"/>
-        <pin position="M9" name="PE12"/>
-        <pin position="M10" name="PE14"/>
-        <pin position="M11" name="PE15"/>
-        <pin position="M12" name="PB14"/>
       </package>
       <package device-pin="p" name="UFBGA121">
         <pin position="A1" name="PE4"/>

@@ -268,6 +268,42 @@
     <driver name="icache" type="stm32-v1.0"/>
     <driver name="irtim" type="stm32-v1.0"/>
     <driver name="iwdg" type="stm32"/>
+    <driver name="lpbam" type="stm32-stm32u5xx"/>
+    <driver name="lpbamadc" type="stm32-stm32u5xx">
+      <instance value="4"/>
+    </driver>
+    <driver name="lpbamcomp" type="stm32-stm32u5xx">
+      <instance value="1"/>
+      <instance value="2"/>
+    </driver>
+    <driver name="lpbamdac" type="stm32-stm32u5xx">
+      <instance value="1"/>
+    </driver>
+    <driver name="lpbami2c" type="stm32-stm32u5xx">
+      <instance value="3"/>
+    </driver>
+    <driver name="lpbamlpdma" type="stm32-stm32u5xx">
+      <instance value="1"/>
+    </driver>
+    <driver name="lpbamlpgpio" type="stm32-stm32u5xx">
+      <instance value="1"/>
+    </driver>
+    <driver name="lpbamlptim" type="stm32-stm32u5xx">
+      <instance value="1"/>
+      <instance value="3"/>
+    </driver>
+    <driver name="lpbamlpuart" type="stm32-stm32u5xx">
+      <instance value="1"/>
+    </driver>
+    <driver name="lpbamopamp" type="stm32-stm32u5xx">
+      <instance value="1"/>
+      <instance value="2"/>
+    </driver>
+    <driver name="lpbamqueue" type="stm32-stm32u5xx"/>
+    <driver name="lpbamspi" type="stm32-stm32u5xx">
+      <instance value="3"/>
+    </driver>
+    <driver name="lpbamvrefbuf" type="stm32-stm32u5xx"/>
     <driver name="lpdma" type="stm32-stm32u5_dma3_cube">
       <instance value="1"/>
     </driver>

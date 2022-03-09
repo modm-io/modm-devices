@@ -99,10 +99,14 @@
         <signal device-name="328" driver="usart" instance="1" name="xck"/>
       </gpio>
       <gpio port="B" pin="6">
+        <signal driver="core" name="xtal1"/>
         <signal driver="exint" name="pcint6"/>
+        <signal driver="tc" instance="2" name="tosc1"/>
       </gpio>
       <gpio port="B" pin="7">
+        <signal driver="core" name="xtal2"/>
         <signal driver="exint" name="pcint7"/>
+        <signal driver="tc" instance="2" name="tosc2"/>
       </gpio>
       <gpio port="C" pin="0">
         <signal driver="adc" name="0"/>
