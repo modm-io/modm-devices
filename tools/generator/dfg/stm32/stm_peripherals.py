@@ -101,7 +101,7 @@ stm_peripherals = \
                 'hardware': 'stm32',
                 'features': ['polynomial', 'reverse'],
                 'protocols': ['crc32'],
-                'devices': [{'family': ['f0', 'f3', 'f7', 'h7', 'l5']}]
+                'devices': [{'family': ['f0', 'f3', 'f7', 'h7', 'l5', 'u5']}]
             },{
                 # Custom polynomial and reverse data
                 'hardware': 'stm32',
@@ -159,7 +159,7 @@ stm_peripherals = \
                 'hardware': 'stm32',
                 'features': ['window'],
                 'protocols': [],
-                'devices': [{'family': ['f0', 'f3', 'f7', 'g0', 'g4', 'l5', 'wb']}]
+                'devices': [{'family': ['f0', 'f3', 'f7', 'g0', 'g4', 'l5', 'u5', 'wb']}]
             },{
                 'hardware': 'stm32',
                 'features': [],
@@ -180,7 +180,7 @@ stm_peripherals = \
                 'hardware': 'stm32-extended',
                 'features': [],
                 'protocols': [],
-                'devices': [{'family': ['h7']}]
+                'devices': [{'family': ['h7', 'u5']}]
             },{
                 'hardware': 'stm32',
                 'features': [],
@@ -388,7 +388,7 @@ stm_peripherals = \
                     'hardware': 'stm32-extended',
                     'features': ['dnf', 'fmp'],
                     'protocols': ['i2c-v3.0', 'smb-v2.0', 'pmb-v1.1'],
-                    'devices': [{'family': ['f3', 'f7', 'l4', 'l5', 'h7', 'g4', 'wb']}]
+                    'devices': [{'family': ['f3', 'f7', 'l4', 'l5', 'h7', 'g4', 'u5', 'wb']}]
                 }
             ]
         },{
@@ -400,7 +400,7 @@ stm_peripherals = \
                     'hardware': 'stm32-extended',
                     'features': ['dnf', 'fmp'],
                     'protocols': ['i2c-v3.0', 'smb-v2.0', 'pmb-v1.1'],
-                    'devices': [{'family': ['f0', 'g0', 'f3', 'f7', 'l0', 'l4', 'l5', 'h7', 'g4', 'wb']}]
+                    'devices': [{'family': ['f0', 'g0', 'f3', 'f7', 'l0', 'l4', 'l5', 'h7', 'g4', 'u5', 'wb']}]
                 }
             ]
         }
@@ -417,7 +417,7 @@ stm_peripherals = \
                 'hardware': 'stm32-extended',
                 'features': ['tcbgt'],
                 'protocols': ['uart'],
-                'devices': [{'family': ['l4'], 'name': ['p5', 'p7', 'p9', 'q5', 'q7', 'q9', 'r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0', 'g4', 'wb', 'h7', 'l5']}]
+                'devices': [{'family': ['l4'], 'name': ['p5', 'p7', 'p9', 'q5', 'q7', 'q9', 'r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0', 'g4', 'wb', 'h7', 'l5', 'u5']}]
             },{
                 'hardware': 'stm32-extended',
                 'features': [],
@@ -448,7 +448,7 @@ stm_peripherals = \
                 'hardware': 'stm32-extended',
                 'features': ['tcbgt'],
                 'protocols': ['uart', 'spi'],
-                'devices': [{'family': ['l4'], 'name': ['p5', 'p7', 'p9', 'q5', 'q7', 'q9', 'r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0', 'g4', 'wb', 'h7', 'l5']}]
+                'devices': [{'family': ['l4'], 'name': ['p5', 'p7', 'p9', 'q5', 'q7', 'q9', 'r5', 'r7', 'r9', 's5', 's7', 's9']}, {'family': ['g0', 'g4', 'wb', 'h7', 'l5', 'u5']}]
             },{
                 'hardware': 'stm32-extended',
                 'features': [],

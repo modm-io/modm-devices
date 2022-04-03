@@ -73,7 +73,7 @@
       <memory name="sram4" access="rwx" start="0x28000000" size="16384"/>
       <memory name="bkpsram" access="rwx" start="0x40036400" size="2048"/>
       <vector position="0" name="WWDG"/>
-      <vector position="1" name="PVD_AVD"/>
+      <vector position="1" name="PVD_PVM"/>
       <vector position="2" name="RTC"/>
       <vector position="3" name="RTC_S"/>
       <vector position="4" name="TAMP"/>
@@ -208,7 +208,10 @@
       <instance value="2"/>
     </driver>
     <driver name="cordic" type="stm32-v1.0"/>
-    <driver name="crc" type="stm32"/>
+    <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
+      <feature value="reverse"/>
+    </driver>
     <driver name="dac" type="stm32">
       <feature value="status"/>
       <instance value="1"/>
@@ -259,7 +262,9 @@
       <instance value="_s"/>
     </driver>
     <driver name="hash" type="stm32-v2.2"/>
-    <driver name="i2c" type="stm32-v1.1">
+    <driver name="i2c" type="stm32-extended">
+      <feature value="dnf"/>
+      <feature value="fmp"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -267,7 +272,9 @@
     </driver>
     <driver name="icache" type="stm32-v1.0"/>
     <driver name="irtim" type="stm32-v1.0"/>
-    <driver name="iwdg" type="stm32"/>
+    <driver name="iwdg" type="stm32">
+      <feature value="window"/>
+    </driver>
     <driver name="lpbam" type="stm32-stm32u5xx"/>
     <driver name="lpbamadc" type="stm32-stm32u5xx">
       <instance value="4"/>
@@ -353,7 +360,7 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver name="spi" type="stm32">
+    <driver name="spi" type="stm32-extended">
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -381,14 +388,16 @@
       <instance value="17"/>
     </driver>
     <driver name="tsc" type="stm32-v1.0"/>
-    <driver name="uart" type="stm32">
+    <driver name="uart" type="stm32-extended">
+      <feature value="tcbgt"/>
       <instance value="4"/>
       <instance device-pin="a|o|q|r|v|z" value="5"/>
     </driver>
     <driver name="ucpd" type="stm32-v1.0">
       <instance value="1"/>
     </driver>
-    <driver name="usart" type="stm32">
+    <driver name="usart" type="stm32-extended">
+      <feature value="tcbgt"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>

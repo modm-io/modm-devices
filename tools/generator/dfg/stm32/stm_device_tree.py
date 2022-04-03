@@ -53,6 +53,7 @@ class STMDeviceTree:
     def getDevicesFromPrefix(prefix):
         devices = STMDeviceTree.familyFile.query('//Family/SubFamily/Mcu[starts-with(@RefName,"{}")]'.format(prefix))
         devices = STMDeviceTree._format_raw_devices(devices)
+        devices = [d for d in devices if not stm.ignoreDevice(d)]
         LOGGER.info("Found devices for prefix '{}': {}".format(prefix, ", ".join(devices)))
         return list(sorted(devices))
 

@@ -6,6 +6,18 @@ import logging
 
 LOGGER = logging.getLogger("dfg.stm.data")
 
+ignored_devices = \
+[
+    "STM32U59",
+    "STM32U5A",
+]
+
+def ignoreDevice(device_id: str) -> bool:
+    for ignore in ignored_devices:
+        if device_id.startswith(ignore):
+            return True
+    return False
+
 def getDefineForDevice(device_id, familyDefines):
     # get all defines for this device name
     devName = 'STM32{}{}'.format(device_id.family.upper(), device_id.name.upper())
@@ -738,6 +750,10 @@ stm32_memory = \
                 'name': ['75', '85'],
                 'memories': {'flash': 0, 'sram1': 192*1024, 'sram2': 64*1024, 'sram3': 512*1024, 'sram4': 16*1024, 'bkpsram': 2*1024}
             }
+            # ,{
+            #     'name': ['95', '99', 'a5', 'a9'], # This devices are not published yet...
+            #     'memories': # TODO...
+            # }
         ]
     },
 }
