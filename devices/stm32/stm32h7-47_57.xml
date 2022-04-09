@@ -290,10 +290,6 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver name="openamp" type="stm32-v1.0">
-      <instance value="cortex-m4"/>
-      <instance value="cortex-m7"/>
-    </driver>
     <driver name="pwr" type="stm32-v1.0"/>
     <driver name="quadspi" type="stm32-v1.0"/>
     <driver name="ramecc" type="stm32-v1.0"/>
@@ -301,7 +297,6 @@
       <max-frequency device-core="m4" value="240000000"/>
       <max-frequency device-core="m7" value="480000000"/>
     </driver>
-    <driver name="resmgr_utility" type="stm32-stm32h7_cube"/>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v2.7"/>
     <driver name="sai" type="stm32-sai1_h7_cube">
