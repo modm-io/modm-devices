@@ -32,7 +32,7 @@
     <valid-device>stm32h757ziy6@m4</valid-device>
     <valid-device>stm32h757ziy6@m7</valid-device>
     <driver name="core">
-      <attribute-type device-core="m4" value="cortex-m4fd"/>
+      <attribute-type device-core="m4" value="cortex-m4f"/>
       <attribute-type device-core="m7" value="cortex-m7fd"/>
       <memory device-core="m7" name="itcm" access="rwx" start="0x00" size="65536"/>
       <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
