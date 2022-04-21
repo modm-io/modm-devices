@@ -227,7 +227,7 @@ class NRFDeviceTree:
         modules = {}
         for m, i in p['modules']:
             # filter out non-peripherals: fuses, micro-trace buffer
-            if m in ['fuses', 'mtb', 'systemcontrol', 'systick', 'hmatrixb', 'hmatrix']: continue;
+            if m in ['fuses', 'mtb', 'systemcontrol', 'systick', 'hmatrixb', 'hmatrix', 'approtect']: continue;
             if m not in modules:
                 modules[m] = [i]
             else:
@@ -271,14 +271,14 @@ class NRFDeviceTree:
 
             af = gpio_driver.addChild('signal')
             af.setAttributes(['driver', 'instance', 'name'], gpio_signal)
+            af.addSortKey(lambda e: (e['driver'],
+                                     int(e.get('instance', '-1')),
+                                     e.get('name', '')))
 
         # add all GPIOs
         for port, pin in p['gpios']:
             pin_driver = gpio_driver.addChild('gpio')
             pin_driver.setAttributes('port', port, 'pin', pin)
-            pin_driver.addSortKey(lambda e: (e['driver'],
-                                             e['instance'] if e['instance'] is not None else '',
-                                             e['name'] if e['name'] is not None else ''))
 
         return tree
 

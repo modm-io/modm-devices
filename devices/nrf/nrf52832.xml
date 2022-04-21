@@ -143,6 +143,9 @@
       <signal driver="uarte" instance="0" name="txd"/>
       <signal driver="uarte" instance="0" name="cts"/>
       <signal driver="uarte" instance="0" name="rxd"/>
+      <signal driver="spi" instance="0" name="sck"/>
+      <signal driver="spi" instance="0" name="mosi"/>
+      <signal driver="spi" instance="0" name="miso"/>
       <signal driver="spim" instance="0" name="sck"/>
       <signal driver="spim" instance="0" name="mosi"/>
       <signal driver="spim" instance="0" name="miso"/>
@@ -154,9 +157,6 @@
       <signal driver="twim" instance="0" name="sda"/>
       <signal driver="twis" instance="0" name="scl"/>
       <signal driver="twis" instance="0" name="sda"/>
-      <signal driver="spi" instance="0" name="sck"/>
-      <signal driver="spi" instance="0" name="mosi"/>
-      <signal driver="spi" instance="0" name="miso"/>
       <signal driver="qdec" name="led"/>
       <signal driver="qdec" name="a"/>
       <signal driver="qdec" name="b"/>
@@ -167,6 +167,9 @@
       <signal driver="i2s" name="lrck"/>
       <signal driver="i2s" name="sdin"/>
       <signal driver="i2s" name="sdout"/>
+      <signal driver="spi" instance="1" name="sck"/>
+      <signal driver="spi" instance="1" name="mosi"/>
+      <signal driver="spi" instance="1" name="miso"/>
       <signal driver="spim" instance="1" name="sck"/>
       <signal driver="spim" instance="1" name="mosi"/>
       <signal driver="spim" instance="1" name="miso"/>
@@ -178,9 +181,9 @@
       <signal driver="twim" instance="1" name="sda"/>
       <signal driver="twis" instance="1" name="scl"/>
       <signal driver="twis" instance="1" name="sda"/>
-      <signal driver="spi" instance="1" name="sck"/>
-      <signal driver="spi" instance="1" name="mosi"/>
-      <signal driver="spi" instance="1" name="miso"/>
+      <signal driver="spi" instance="2" name="sck"/>
+      <signal driver="spi" instance="2" name="mosi"/>
+      <signal driver="spi" instance="2" name="miso"/>
       <signal driver="spim" instance="2" name="sck"/>
       <signal driver="spim" instance="2" name="mosi"/>
       <signal driver="spim" instance="2" name="miso"/>
@@ -188,9 +191,6 @@
       <signal driver="spis" instance="2" name="miso"/>
       <signal driver="spis" instance="2" name="mosi"/>
       <signal driver="spis" instance="2" name="csn"/>
-      <signal driver="spi" instance="2" name="sck"/>
-      <signal driver="spi" instance="2" name="mosi"/>
-      <signal driver="spi" instance="2" name="miso"/>
       <gpio port="0" pin="0"/>
       <gpio port="0" pin="1"/>
       <gpio port="0" pin="2"/>
