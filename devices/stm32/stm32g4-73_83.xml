@@ -80,8 +80,8 @@
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288"/>
       <memory name="ccm" access="rwx" start="0x10000000" size="32768"/>
-      <memory name="sram1" access="rwx" start="0x20000000" size="114688"/>
-      <memory name="sram2" access="rwx" start="0x2001C000" size="16384"/>
+      <memory name="sram1" access="rwx" start="0x20000000" size="81920"/>
+      <memory name="sram2" access="rwx" start="0x20014000" size="16384"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD_PVM"/>
       <vector position="2" name="RTC_TAMP_LSECSS"/>
