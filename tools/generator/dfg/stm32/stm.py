@@ -435,11 +435,11 @@ stm32_memory = \
                 'memories': {'flash': 0, 'sram1': 0, 'sram2':  6*1024, 'ccm': 10*1024}
             },
             {
-                'name': ['71', '91', 'a1'],
+                'name': ['91', 'a1'],
                 'memories': {'flash': 0, 'sram1': 0, 'sram2': 16*1024, 'ccm': 16*1024}
             },
             {
-                'name': ['73', '74', '83', '84'],
+                'name': ['71', '73', '74', '83', '84'],
                 'memories': {'flash': 0, 'sram1': 0, 'sram2': 16*1024, 'ccm': 32*1024}
             }
         ]
@@ -789,7 +789,8 @@ def getMemoryForDevice(device_id, total_flash, total_ram):
         main_sram_index = int(main_sram.split("sram")[-1]) if main_sram[-1].isdigit() else 0
         for name, size in mem_model.items():
             mem_index = int(name.split("sram")[-1]) if name[-1].isdigit() else 0
-            if name.startswith(main_sram_name) and mem_index != main_sram_index:
+            if ((name.startswith(main_sram_name) and mem_index != main_sram_index) or
+                (device_id.family == "g4" and name.startswith("ccm"))):
                 mem_model[main_sram] -= size
 
     # Assemble flattened memories

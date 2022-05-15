@@ -162,3 +162,237 @@ index a2bc61d..f63966a 100644
 	<Ram>96</Ram>
 	<IONb>30</IONb>
 	<Die>DIE495</Die>
+diff --git a/stm32-devices/mcu/STM32G491C(C-E)Tx.xml b/stm32-devices/mcu/STM32G491C(C-E)Tx.xml
+index 65f6156..ff9132d 100644
+--- a/stm32-devices/mcu/STM32G491C(C-E)Tx.xml
++++ b/stm32-devices/mcu/STM32G491C(C-E)Tx.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="LQFP48" RefName="STM32G491C(C-E)Tx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>38</IONb>
+     <Die>DIE479</Die>
+     <Flash>256</Flash>
+diff --git a/stm32-devices/mcu/STM32G491C(C-E)Ux.xml b/stm32-devices/mcu/STM32G491C(C-E)Ux.xml
+index ad99ba7..81b65ca 100644
+--- a/stm32-devices/mcu/STM32G491C(C-E)Ux.xml
++++ b/stm32-devices/mcu/STM32G491C(C-E)Ux.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="UFQFPN48" RefName="STM32G491C(C-E)Ux" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>42</IONb>
+     <Die>DIE479</Die>
+     <Flash>256</Flash>
+diff --git a/stm32-devices/mcu/STM32G491K(C-E)Ux.xml b/stm32-devices/mcu/STM32G491K(C-E)Ux.xml
+index e130b99..71c0866 100644
+--- a/stm32-devices/mcu/STM32G491K(C-E)Ux.xml
++++ b/stm32-devices/mcu/STM32G491K(C-E)Ux.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="UFQFPN32" RefName="STM32G491K(C-E)Ux" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>26</IONb>
+     <Die>DIE479</Die>
+     <Flash>256</Flash>
+diff --git a/stm32-devices/mcu/STM32G491M(C-E)Sx.xml b/stm32-devices/mcu/STM32G491M(C-E)Sx.xml
+index 251c0da..f280c91 100644
+--- a/stm32-devices/mcu/STM32G491M(C-E)Sx.xml
++++ b/stm32-devices/mcu/STM32G491M(C-E)Sx.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="LQFP80" RefName="STM32G491M(C-E)Sx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>66</IONb>
+     <Die>DIE479</Die>
+     <Flash>256</Flash>
+diff --git a/stm32-devices/mcu/STM32G491M(C-E)Tx.xml b/stm32-devices/mcu/STM32G491M(C-E)Tx.xml
+index 035e6df..7a6aa05 100644
+--- a/stm32-devices/mcu/STM32G491M(C-E)Tx.xml
++++ b/stm32-devices/mcu/STM32G491M(C-E)Tx.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="LQFP80" RefName="STM32G491M(C-E)Tx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>66</IONb>
+     <Die>DIE479</Die>
+     <Flash>256</Flash>
+diff --git a/stm32-devices/mcu/STM32G491R(C-E)Ix.xml b/stm32-devices/mcu/STM32G491R(C-E)Ix.xml
+index 6e447a4..17dcde7 100644
+--- a/stm32-devices/mcu/STM32G491R(C-E)Ix.xml
++++ b/stm32-devices/mcu/STM32G491R(C-E)Ix.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="UFBGA64" RefName="STM32G491R(C-E)Ix" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>52</IONb>
+     <Die>DIE479</Die>
+     <Flash>256</Flash>
+diff --git a/stm32-devices/mcu/STM32G491R(C-E)Tx.xml b/stm32-devices/mcu/STM32G491R(C-E)Tx.xml
+index 53954a2..20b5b30 100644
+--- a/stm32-devices/mcu/STM32G491R(C-E)Tx.xml
++++ b/stm32-devices/mcu/STM32G491R(C-E)Tx.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="LQFP64" RefName="STM32G491R(C-E)Tx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>52</IONb>
+     <Die>DIE479</Die>
+     <Flash>256</Flash>
+diff --git a/stm32-devices/mcu/STM32G491REYx.xml b/stm32-devices/mcu/STM32G491REYx.xml
+index 86ca3a1..ba7c77c 100644
+--- a/stm32-devices/mcu/STM32G491REYx.xml
++++ b/stm32-devices/mcu/STM32G491REYx.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="WLCSP64" RefName="STM32G491REYx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>52</IONb>
+     <Die>DIE479</Die>
+     <Flash>512</Flash>
+diff --git a/stm32-devices/mcu/STM32G491V(C-E)Tx.xml b/stm32-devices/mcu/STM32G491V(C-E)Tx.xml
+index 5a107b2..4db0d98 100644
+--- a/stm32-devices/mcu/STM32G491V(C-E)Tx.xml
++++ b/stm32-devices/mcu/STM32G491V(C-E)Tx.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="LQFP100" RefName="STM32G491V(C-E)Tx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>86</IONb>
+     <Die>DIE479</Die>
+     <Flash>256</Flash>
+diff --git a/stm32-devices/mcu/STM32G4A1CETx.xml b/stm32-devices/mcu/STM32G4A1CETx.xml
+index 48f57b5..50733a7 100644
+--- a/stm32-devices/mcu/STM32G4A1CETx.xml
++++ b/stm32-devices/mcu/STM32G4A1CETx.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="LQFP48" RefName="STM32G4A1CETx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>38</IONb>
+     <Die>DIE479</Die>
+     <Flash>512</Flash>
+diff --git a/stm32-devices/mcu/STM32G4A1CEUx.xml b/stm32-devices/mcu/STM32G4A1CEUx.xml
+index b6f2e9e..d0401b7 100644
+--- a/stm32-devices/mcu/STM32G4A1CEUx.xml
++++ b/stm32-devices/mcu/STM32G4A1CEUx.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="UFQFPN48" RefName="STM32G4A1CEUx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>42</IONb>
+     <Die>DIE479</Die>
+     <Flash>512</Flash>
+diff --git a/stm32-devices/mcu/STM32G4A1KEUx.xml b/stm32-devices/mcu/STM32G4A1KEUx.xml
+index 1603692..ccc7c61 100644
+--- a/stm32-devices/mcu/STM32G4A1KEUx.xml
++++ b/stm32-devices/mcu/STM32G4A1KEUx.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="UFQFPN32" RefName="STM32G4A1KEUx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>26</IONb>
+     <Die>DIE479</Die>
+     <Flash>512</Flash>
+diff --git a/stm32-devices/mcu/STM32G4A1MESx.xml b/stm32-devices/mcu/STM32G4A1MESx.xml
+index 11d976a..b8e17e4 100644
+--- a/stm32-devices/mcu/STM32G4A1MESx.xml
++++ b/stm32-devices/mcu/STM32G4A1MESx.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="LQFP80" RefName="STM32G4A1MESx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>66</IONb>
+     <Die>DIE479</Die>
+     <Flash>512</Flash>
+diff --git a/stm32-devices/mcu/STM32G4A1METx.xml b/stm32-devices/mcu/STM32G4A1METx.xml
+index 5480d7d..1db94a7 100644
+--- a/stm32-devices/mcu/STM32G4A1METx.xml
++++ b/stm32-devices/mcu/STM32G4A1METx.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="LQFP80" RefName="STM32G4A1METx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>66</IONb>
+     <Die>DIE479</Die>
+     <Flash>512</Flash>
+diff --git a/stm32-devices/mcu/STM32G4A1REIx.xml b/stm32-devices/mcu/STM32G4A1REIx.xml
+index cadf888..d6b927c 100644
+--- a/stm32-devices/mcu/STM32G4A1REIx.xml
++++ b/stm32-devices/mcu/STM32G4A1REIx.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="UFBGA64" RefName="STM32G4A1REIx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>52</IONb>
+     <Die>DIE479</Die>
+     <Flash>512</Flash>
+diff --git a/stm32-devices/mcu/STM32G4A1RETx.xml b/stm32-devices/mcu/STM32G4A1RETx.xml
+index 1104460..1937790 100644
+--- a/stm32-devices/mcu/STM32G4A1RETx.xml
++++ b/stm32-devices/mcu/STM32G4A1RETx.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="LQFP64" RefName="STM32G4A1RETx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>52</IONb>
+     <Die>DIE479</Die>
+     <Flash>512</Flash>
+diff --git a/stm32-devices/mcu/STM32G4A1REYx.xml b/stm32-devices/mcu/STM32G4A1REYx.xml
+index b4429a5..3b6d972 100644
+--- a/stm32-devices/mcu/STM32G4A1REYx.xml
++++ b/stm32-devices/mcu/STM32G4A1REYx.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="WLCSP64" RefName="STM32G4A1REYx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>52</IONb>
+     <Die>DIE479</Die>
+     <Flash>512</Flash>
+diff --git a/stm32-devices/mcu/STM32G4A1VETx.xml b/stm32-devices/mcu/STM32G4A1VETx.xml
+index 58dcd13..b230c80 100644
+--- a/stm32-devices/mcu/STM32G4A1VETx.xml
++++ b/stm32-devices/mcu/STM32G4A1VETx.xml
+@@ -2,7 +2,7 @@
+ <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="LQFP100" RefName="STM32G4A1VETx" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>ARM Cortex-M4</Core>
+     <Frequency>170</Frequency>
+-    <Ram>128</Ram>
++    <Ram>112</Ram>
+     <IONb>86</IONb>
+     <Die>DIE479</Die>
+     <Flash>512</Flash>
