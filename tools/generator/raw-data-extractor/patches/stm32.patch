@@ -138,6 +138,18 @@ index 2c80a6f..15e0f6f 100644
 	<E2prom>3072</E2prom>
 	<Ram>20</Ram>
 	<IONb>84</IONb>
+diff --git a/stm32-devices/mcu/STM32L476VGYxP.xml b/stm32-devices/mcu/STM32L476VGYxP.xml
+index 2c80a6f..15e0f6f 100644
+--- a/stm32-devices/mcu/STM32L476VGYxP.xml
++++ b/stm32-devices/mcu/STM32L476VGYxP.xml
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <Mcu ClockTree="STM32L4" DBVersion="V3.0" Family="STM32L4" HasPowerPad="false" IOType="" Line="STM32L4x6" Package="WLCSP99" RefName="STM32L476VGYxP" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
+     <Core>Arm Cortex-M4</Core>
++    <Frequency>80</Frequency>
+     <Ram>128</Ram>
+     <IONb>66</IONb>
+     <Die>DIE415</Die>
 diff --git a/stm32-devices/mcu/STM32WB30CEUxA.xml b/stm32-devices/mcu/STM32WB30CEUxA.xml
 index d03f748..fca698e 100644
 --- a/stm32-devices/mcu/STM32WB30CEUxA.xml

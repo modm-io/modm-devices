@@ -901,9 +901,6 @@
         <signal af="0" driver="rcc" name="osc_en"/>
         <signal af="2" driver="tim" instance="15" name="ch1n"/>
       </gpio>
-      <gpio device-name="b0" port="f" pin="2">
-        <signal af="0" driver="rcc" name="mco"/>
-      </gpio>
       <gpio device-pin="v" port="f" pin="3">
         <signal af="3" driver="usart" instance="6" name="ck"/>
         <signal af="3" driver="usart" instance="6" name="de"/>
@@ -953,7 +950,7 @@
         <pin position="14" name="VSS" type="power"/>
         <pin position="15" name="PF0-OSC_IN (PF0)"/>
         <pin position="16" name="PF1-OSC_OUT (PF1)"/>
-        <pin position="17" name="PF2-NRST"/>
+        <pin position="17" name="NRST" type="reset"/>
         <pin position="18" name="PF3"/>
         <pin position="19" name="PF4"/>
         <pin position="20" name="PF5"/>
@@ -1048,8 +1045,7 @@
         <pin position="3" name="PC15-OSC32_OUT (PC15)"/>
         <pin position="4" name="VDD" type="power"/>
         <pin position="5" name="VSS" type="power"/>
-        <pin device-name="70" device-size="b" position="6" name="NRST" type="reset"/>
-        <pin device-name="b0" device-size="e" position="6" name="PF2-NRST"/>
+        <pin position="6" name="NRST" type="reset"/>
         <pin position="7" name="PA0"/>
         <pin position="8" name="PA1"/>
         <pin position="9" name="PA2"/>
@@ -1091,8 +1087,7 @@
         <pin position="7" name="VSS" type="power"/>
         <pin position="8" name="PF0-OSC_IN (PF0)"/>
         <pin position="9" name="PF1-OSC_OUT (PF1)"/>
-        <pin device-name="70" device-size="b" position="10" name="NRST" type="reset"/>
-        <pin device-name="b0" device-size="e" position="10" name="PF2-NRST"/>
+        <pin position="10" name="NRST" type="reset"/>
         <pin position="11" name="PA0"/>
         <pin position="12" name="PA1"/>
         <pin position="13" name="PA2"/>
@@ -1148,8 +1143,7 @@
         <pin position="9" name="VSS" type="power"/>
         <pin position="10" name="PF0-OSC_IN (PF0)"/>
         <pin position="11" name="PF1-OSC_OUT (PF1)"/>
-        <pin device-name="70" device-size="b" position="12" name="NRST" type="reset"/>
-        <pin device-name="b0" device-size="e" position="12" name="PF2-NRST"/>
+        <pin position="12" name="NRST" type="reset"/>
         <pin position="13" name="PC0"/>
         <pin position="14" name="PC1"/>
         <pin position="15" name="PC2"/>

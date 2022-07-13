@@ -61,8 +61,12 @@
     <valid-device>stm32g071kbu7n</valid-device>
     <valid-device>stm32g071r6t6</valid-device>
     <valid-device>stm32g071r8t6</valid-device>
+    <valid-device>stm32g071rbi3</valid-device>
     <valid-device>stm32g071rbi6</valid-device>
+    <valid-device>stm32g071rbi7</valid-device>
+    <valid-device>stm32g071rbt3</valid-device>
     <valid-device>stm32g071rbt6</valid-device>
+    <valid-device>stm32g071rbt7</valid-device>
     <valid-device>stm32g081cbt6</valid-device>
     <valid-device>stm32g081cbu6</valid-device>
     <valid-device>stm32g081eby6</valid-device>
