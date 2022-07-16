@@ -87,7 +87,6 @@
       <vector position="59" name="ISI"/>
       <vector position="60" name="PWM1"/>
       <vector position="61" name="FPU"/>
-      <vector device-pin="q" position="62" name="SDRAMC"/>
       <vector position="63" name="RSWDT"/>
       <vector position="64" name="CCW"/>
       <vector position="65" name="CCF"/>
@@ -106,9 +105,13 @@
       <instance value="1"/>
     </driver>
     <driver name="chipid" type="samv70"/>
+    <driver device-variant="b" name="coredebug" type="samv70"/>
     <driver name="dacc" type="samv70"/>
+    <driver device-variant="b" name="dwt" type="samv70"/>
     <driver device-pin="q" name="ebi" type="samv70"/>
     <driver name="efc" type="samv70"/>
+    <driver device-variant="b" name="etm" type="samv70"/>
+    <driver device-variant="b" name="fpb" type="samv70"/>
     <driver name="fpu" type="samv70"/>
     <driver name="gpbr" type="samv70"/>
     <driver device-pin="j|n|q" device-variant="a" name="hsmci" type="samv70"/>
@@ -121,6 +124,7 @@
     <driver device-variant="b" name="ice" type="samv70"/>
     <driver name="icm" type="samv70"/>
     <driver name="isi" type="samv70"/>
+    <driver device-variant="b" name="itm" type="samv70"/>
     <driver name="lockbit" type="samv70"/>
     <driver name="matrix" type="samv70"/>
     <driver name="mcan" type="samv70">
@@ -151,7 +155,6 @@
     <driver name="rtt" type="samv70"/>
     <driver name="scb" type="samv70"/>
     <driver name="scnscb" type="samv70"/>
-    <driver device-pin="q" name="sdramc" type="samv70"/>
     <driver device-pin="q" name="smc" type="samv70"/>
     <driver device-pin="n|q" name="spi" type="samv70">
       <instance value="0"/>
@@ -191,11 +194,9 @@
     <driver name="gpio" type="samv70">
       <gpio device-pin="n|q" port="A" pin="0">
         <signal device-pin="q" driver="ebi" name="a" function="c" index="17"/>
-        <signal device-pin="q" driver="ebi" name="ba" function="c" index="1"/>
+        <signal device-pin="q" device-variant="a" driver="ebi" name="ba" function="c" index="1"/>
         <signal device-pin="n|q" device-variant="b" driver="i2sc" instance="0" name="mck" function="d"/>
         <signal driver="pwm" instance="0" name="pwmh" function="a" index="0"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="a" function="c" index="17"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="ba" function="c" index="1"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="a" function="c" index="17"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="ba" function="c" index="1"/>
         <signal device-pin="n|q" device-variant="b" driver="supc" name="wkup" function="x1" index="0"/>
@@ -205,7 +206,6 @@
         <signal device-pin="q" driver="ebi" name="a" function="c" index="18"/>
         <signal device-pin="n|q" device-variant="b" driver="i2sc" instance="0" name="ck" function="d"/>
         <signal driver="pwm" instance="0" name="pwml" function="a" index="0"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="a" function="c" index="18"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="a" function="c" index="18"/>
         <signal device-pin="n|q" device-variant="b" driver="supc" name="wkup" function="x1" index="1"/>
         <signal driver="tc" instance="0" name="tiob" function="b" index="0"/>
@@ -291,7 +291,6 @@
         <signal device-pin="q" driver="ebi" name="d" function="a" index="14"/>
         <signal device-pin="n|q" device-variant="b" driver="i2sc" instance="0" name="ws" function="d"/>
         <signal driver="pwm" instance="0" name="pwml" function="c" index="3"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="d" function="a" index="14"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="d" function="a" index="14"/>
         <signal driver="tc" instance="0" name="tioa" function="b" index="1"/>
       </gpio>
@@ -299,7 +298,6 @@
         <signal device-pin="q" driver="ebi" name="d" function="a" index="15"/>
         <signal device-pin="n|q" device-variant="b" driver="i2sc" instance="0" name="di" function="d" index="0"/>
         <signal driver="pwm" instance="0" name="pwml" function="c" index="2"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="d" function="a" index="15"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="d" function="a" index="15"/>
         <signal driver="tc" instance="0" name="tiob" function="b" index="1"/>
       </gpio>
@@ -312,20 +310,16 @@
       <gpio device-pin="n|q" port="A" pin="18">
         <signal driver="afec" instance="0" name="ad" function="x1" index="7"/>
         <signal device-pin="q" driver="ebi" name="a" function="c" index="14"/>
-        <signal device-pin="q" device-variant="b" driver="ebi" name="sda12" function="c"/>
         <signal driver="pmc" name="pck" function="b" index="2"/>
         <signal driver="pwm" instance="1" name="pwmextrg" function="a" index="1"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="a" function="c" index="14"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="a" function="c" index="14"/>
       </gpio>
       <gpio device-pin="n|q" port="A" pin="19">
         <signal driver="afec" instance="0" name="ad" function="x1" index="8"/>
         <signal device-pin="n|q" device-variant="a" driver="afec" instance="0" name="wkup" function="x1" index="9"/>
         <signal device-pin="q" driver="ebi" name="a" function="c" index="15"/>
-        <signal device-pin="q" device-variant="b" driver="ebi" name="sda13" function="c"/>
         <signal device-pin="q" device-variant="b" driver="i2sc" instance="1" name="mck" function="d"/>
         <signal driver="pwm" instance="0" name="pwml" function="b" index="0"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="a" function="c" index="15"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="a" function="c" index="15"/>
         <signal device-pin="n|q" device-variant="b" driver="supc" name="wkup" function="x1" index="9"/>
       </gpio>
@@ -333,11 +327,9 @@
         <signal driver="afec" instance="0" name="ad" function="x1" index="9"/>
         <signal device-pin="n|q" device-variant="a" driver="afec" instance="0" name="wkup" function="x1" index="10"/>
         <signal device-pin="q" driver="ebi" name="a" function="c" index="16"/>
-        <signal device-pin="q" driver="ebi" name="ba" function="c" index="0"/>
+        <signal device-pin="q" device-variant="a" driver="ebi" name="ba" function="c" index="0"/>
         <signal device-pin="q" device-variant="b" driver="i2sc" instance="1" name="ck" function="d"/>
         <signal driver="pwm" instance="0" name="pwml" function="b" index="1"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="a" function="c" index="16"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="ba" function="c" index="0"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="a" function="c" index="16"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="ba" function="c" index="0"/>
         <signal device-pin="n|q" device-variant="b" driver="supc" name="wkup" function="x1" index="10"/>
@@ -354,7 +346,6 @@
         <signal device-pin="q" driver="ebi" name="ncs" function="c" index="2"/>
         <signal device-variant="b" driver="pio" instance="a" name="piodcclk" function="x1"/>
         <signal driver="pwm" instance="0" name="pwmextrg" function="b" index="1"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="ncs" function="c" index="2"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="ncs" function="c" index="2"/>
         <signal driver="ssc" name="rk" function="a"/>
       </gpio>
@@ -362,7 +353,6 @@
         <signal device-pin="q" driver="ebi" name="a" function="c" index="19"/>
         <signal driver="pwm" instance="0" name="pwmh" function="b" index="0"/>
         <signal driver="pwm" instance="1" name="pwml" function="d" index="2"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="a" function="c" index="19"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="a" function="c" index="19"/>
         <signal driver="usart" instance="1" name="sck" function="a" index="1"/>
       </gpio>
@@ -370,7 +360,6 @@
         <signal device-pin="q" driver="ebi" name="a" function="c" index="20"/>
         <signal driver="isi" name="pck" function="d"/>
         <signal driver="pwm" instance="0" name="pwmh" function="b" index="1"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="a" function="c" index="20"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="a" function="c" index="20"/>
         <signal driver="usart" instance="1" name="rts" function="a" index="1"/>
       </gpio>
@@ -378,7 +367,6 @@
         <signal device-pin="q" driver="ebi" name="a" function="c" index="23"/>
         <signal driver="hsmci" name="mcck" function="d"/>
         <signal driver="pwm" instance="0" name="pwmh" function="b" index="2"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="a" function="c" index="23"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="a" function="c" index="23"/>
         <signal driver="usart" instance="1" name="cts" function="a" index="1"/>
       </gpio>
@@ -494,62 +482,46 @@
         <signal driver="afec" instance="1" name="ad" function="x1" index="9"/>
         <signal driver="ebi" name="d" function="a" index="0"/>
         <signal driver="pwm" instance="0" name="pwml" function="b" index="0"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="d" function="a" index="0"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="d" function="a" index="0"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="d" function="a" index="0"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="d" function="a" index="0"/>
       </gpio>
       <gpio device-pin="q" port="C" pin="1">
         <signal driver="ebi" name="d" function="a" index="1"/>
         <signal driver="pwm" instance="0" name="pwml" function="b" index="1"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="d" function="a" index="1"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="d" function="a" index="1"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="d" function="a" index="1"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="d" function="a" index="1"/>
       </gpio>
       <gpio device-pin="q" port="C" pin="2">
         <signal driver="ebi" name="d" function="a" index="2"/>
         <signal driver="pwm" instance="0" name="pwml" function="b" index="2"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="d" function="a" index="2"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="d" function="a" index="2"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="d" function="a" index="2"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="d" function="a" index="2"/>
       </gpio>
       <gpio device-pin="q" port="C" pin="3">
         <signal driver="ebi" name="d" function="a" index="3"/>
         <signal driver="pwm" instance="0" name="pwml" function="b" index="3"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="d" function="a" index="3"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="d" function="a" index="3"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="d" function="a" index="3"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="d" function="a" index="3"/>
       </gpio>
       <gpio device-pin="q" port="C" pin="4">
         <signal driver="ebi" name="d" function="a" index="4"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="d" function="a" index="4"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="d" function="a" index="4"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="d" function="a" index="4"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="d" function="a" index="4"/>
       </gpio>
       <gpio device-pin="q" port="C" pin="5">
         <signal driver="ebi" name="d" function="a" index="5"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="d" function="a" index="5"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="d" function="a" index="5"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="d" function="a" index="5"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="d" function="a" index="5"/>
         <signal driver="tc" instance="2" name="tioa" function="b" index="6"/>
       </gpio>
       <gpio device-pin="q" port="C" pin="6">
         <signal driver="ebi" name="d" function="a" index="6"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="d" function="a" index="6"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="d" function="a" index="6"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="d" function="a" index="6"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="d" function="a" index="6"/>
         <signal driver="tc" instance="2" name="tiob" function="b" index="6"/>
       </gpio>
       <gpio device-pin="q" port="C" pin="7">
         <signal driver="ebi" name="d" function="a" index="7"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="d" function="a" index="7"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="d" function="a" index="7"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="d" function="a" index="7"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="d" function="a" index="7"/>
         <signal driver="tc" instance="2" name="tclk" function="b" index="6"/>
@@ -557,10 +529,6 @@
       <gpio device-pin="q" port="C" pin="8">
         <signal driver="ebi" name="nwe" function="a"/>
         <signal driver="ebi" name="nwr" function="a" index="0"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="nwe" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="nwe" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="nwr" function="a" index="0"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="nwr" function="a" index="0"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="nwe" function="a"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="nwe" function="a"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="nwr" function="a" index="0"/>
@@ -569,24 +537,18 @@
       </gpio>
       <gpio device-pin="q" port="C" pin="9">
         <signal driver="ebi" name="nandoe" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="nandoe" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="nandoe" function="a"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="nandoe" function="a"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="nandoe" function="a"/>
         <signal driver="tc" instance="2" name="tiob" function="b" index="7"/>
       </gpio>
       <gpio device-pin="q" port="C" pin="10">
         <signal driver="ebi" name="nandwe" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="nandwe" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="nandwe" function="a"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="nandwe" function="a"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="nandwe" function="a"/>
         <signal driver="tc" instance="2" name="tclk" function="b" index="7"/>
       </gpio>
       <gpio device-pin="q" port="C" pin="11">
         <signal driver="ebi" name="nrd" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="nrd" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="nrd" function="a"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="nrd" function="a"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="nrd" function="a"/>
         <signal driver="tc" instance="2" name="tioa" function="b" index="8"/>
@@ -595,8 +557,6 @@
         <signal driver="afec" instance="1" name="ad" function="x1" index="3"/>
         <signal driver="ebi" name="ncs" function="a" index="3"/>
         <signal driver="mcan" instance="1" name="canrx" function="c" index="1"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="ncs" function="a" index="3"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="ncs" function="a" index="3"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="ncs" function="a" index="3"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="ncs" function="a" index="3"/>
         <signal driver="tc" instance="2" name="tiob" function="b" index="8"/>
@@ -604,12 +564,9 @@
       <gpio device-pin="q" port="C" pin="13">
         <signal driver="afec" instance="1" name="ad" function="x1" index="1"/>
         <signal driver="ebi" name="nwait" function="a"/>
-        <signal driver="ebi" name="sda" function="c" index="10"/>
+        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="ebi" name="sda" function="c" index="10"/>
+        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="ebi" name="sda" function="c" index="10"/>
         <signal driver="pwm" instance="0" name="pwmh" function="b" index="3"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="nwait" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="nwait" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="sda" function="c" index="10"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="sda" function="c" index="10"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="nwait" function="a"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="nwait" function="a"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="sda" function="c" index="10"/>
@@ -618,8 +575,6 @@
       <gpio device-pin="q" port="C" pin="14">
         <signal driver="ebi" name="ncs" function="a" index="0"/>
         <signal driver="mcan" instance="1" name="cantx" function="c" index="1"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="ncs" function="a" index="0"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="ncs" function="a" index="0"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="ncs" function="a" index="0"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="ncs" function="a" index="0"/>
         <signal driver="tc" instance="2" name="tclk" function="b" index="8"/>
@@ -627,12 +582,9 @@
       <gpio device-pin="q" port="C" pin="15">
         <signal driver="afec" instance="1" name="ad" function="x1" index="2"/>
         <signal driver="ebi" name="ncs" function="a" index="1"/>
-        <signal driver="ebi" name="sdcs" function="a"/>
+        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="ebi" name="sdcs" function="a"/>
+        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="ebi" name="sdcs" function="a"/>
         <signal driver="pwm" instance="0" name="pwml" function="b" index="3"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="ncs" function="a" index="1"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="ncs" function="a" index="1"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="sdcs" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="sdcs" function="a"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="ncs" function="a" index="1"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="ncs" function="a" index="1"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="sdcs" function="a"/>
@@ -641,10 +593,6 @@
       <gpio device-pin="q" port="C" pin="16">
         <signal driver="ebi" name="a" function="a" index="21"/>
         <signal driver="ebi" name="nandale" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="a" function="a" index="21"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="a" function="a" index="21"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="nandale" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="nandale" function="a"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="a" function="a" index="21"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="a" function="a" index="21"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="nandale" function="a"/>
@@ -653,10 +601,6 @@
       <gpio device-pin="q" port="C" pin="17">
         <signal driver="ebi" name="a" function="a" index="22"/>
         <signal driver="ebi" name="nandcle" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="a" function="a" index="22"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="a" function="a" index="22"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="nandcle" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="nandcle" function="a"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="a" function="a" index="22"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="a" function="a" index="22"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="nandcle" function="a"/>
@@ -664,14 +608,8 @@
       </gpio>
       <gpio device-pin="q" port="C" pin="18">
         <signal driver="ebi" name="a" function="a" index="0"/>
-        <signal device-flash="19|20" device-variant="b" device-package="a" device-grade="a" driver="ebi" name="dqm0" function="a"/>
-        <signal device-flash="19|20" device-variant="b" device-package="c" device-grade="b" driver="ebi" name="dqm0" function="a"/>
         <signal driver="ebi" name="nbs" function="a" index="0"/>
         <signal driver="pwm" instance="0" name="pwml" function="b" index="1"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="a" function="a" index="0"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="a" function="a" index="0"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="nbs" function="a" index="0"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="nbs" function="a" index="0"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="a" function="a" index="0"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="a" function="a" index="0"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="nbs" function="a" index="0"/>
@@ -680,57 +618,35 @@
       <gpio device-pin="q" port="C" pin="19">
         <signal driver="ebi" name="a" function="a" index="1"/>
         <signal driver="pwm" instance="0" name="pwmh" function="b" index="2"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="a" function="a" index="1"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="a" function="a" index="1"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="a" function="a" index="1"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="a" function="a" index="1"/>
       </gpio>
       <gpio device-pin="q" port="C" pin="20">
         <signal driver="ebi" name="a" function="a" index="2"/>
-        <signal device-flash="19|20" device-variant="b" device-package="a" device-grade="a" driver="ebi" name="sda0" function="a"/>
-        <signal device-flash="19|20" device-variant="b" device-package="c" device-grade="b" driver="ebi" name="sda0" function="a"/>
         <signal driver="pwm" instance="0" name="pwml" function="b" index="2"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="a" function="a" index="2"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="a" function="a" index="2"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="a" function="a" index="2"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="a" function="a" index="2"/>
       </gpio>
       <gpio device-pin="q" port="C" pin="21">
         <signal driver="ebi" name="a" function="a" index="3"/>
-        <signal device-flash="19|20" device-variant="b" device-package="a" device-grade="a" driver="ebi" name="sda1" function="a"/>
-        <signal device-flash="19|20" device-variant="b" device-package="c" device-grade="b" driver="ebi" name="sda1" function="a"/>
         <signal driver="pwm" instance="0" name="pwmh" function="b" index="3"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="a" function="a" index="3"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="a" function="a" index="3"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="a" function="a" index="3"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="a" function="a" index="3"/>
       </gpio>
       <gpio device-pin="q" port="C" pin="22">
         <signal driver="ebi" name="a" function="a" index="4"/>
-        <signal device-flash="19|20" device-variant="b" device-package="a" device-grade="a" driver="ebi" name="sda2" function="a"/>
-        <signal device-flash="19|20" device-variant="b" device-package="c" device-grade="b" driver="ebi" name="sda2" function="a"/>
         <signal driver="pwm" instance="0" name="pwml" function="b" index="3"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="a" function="a" index="4"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="a" function="a" index="4"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="a" function="a" index="4"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="a" function="a" index="4"/>
       </gpio>
       <gpio device-pin="q" port="C" pin="23">
         <signal driver="ebi" name="a" function="a" index="5"/>
-        <signal device-flash="19|20" device-variant="b" device-package="a" device-grade="a" driver="ebi" name="sda3" function="a"/>
-        <signal device-flash="19|20" device-variant="b" device-package="c" device-grade="b" driver="ebi" name="sda3" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="a" function="a" index="5"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="a" function="a" index="5"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="a" function="a" index="5"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="a" function="a" index="5"/>
         <signal driver="tc" instance="1" name="tioa" function="b" index="3"/>
       </gpio>
       <gpio device-pin="q" port="C" pin="24">
         <signal driver="ebi" name="a" function="a" index="6"/>
-        <signal device-flash="19|20" device-variant="b" device-package="a" device-grade="a" driver="ebi" name="sda4" function="a"/>
-        <signal device-flash="19|20" device-variant="b" device-package="c" device-grade="b" driver="ebi" name="sda4" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="a" function="a" index="6"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="a" function="a" index="6"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="a" function="a" index="6"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="a" function="a" index="6"/>
         <signal driver="spi" instance="1" name="spck" function="c"/>
@@ -738,10 +654,6 @@
       </gpio>
       <gpio device-pin="q" port="C" pin="25">
         <signal driver="ebi" name="a" function="a" index="7"/>
-        <signal device-flash="19|20" device-variant="b" device-package="a" device-grade="a" driver="ebi" name="sda5" function="a"/>
-        <signal device-flash="19|20" device-variant="b" device-package="c" device-grade="b" driver="ebi" name="sda5" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="a" function="a" index="7"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="a" function="a" index="7"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="a" function="a" index="7"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="a" function="a" index="7"/>
         <signal driver="spi" instance="1" name="npcs" function="c" index="0"/>
@@ -750,10 +662,6 @@
       <gpio device-pin="q" port="C" pin="26">
         <signal driver="afec" instance="1" name="ad" function="x1" index="7"/>
         <signal driver="ebi" name="a" function="a" index="8"/>
-        <signal device-flash="19|20" device-variant="b" device-package="a" device-grade="a" driver="ebi" name="sda6" function="a"/>
-        <signal device-flash="19|20" device-variant="b" device-package="c" device-grade="b" driver="ebi" name="sda6" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="a" function="a" index="8"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="a" function="a" index="8"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="a" function="a" index="8"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="a" function="a" index="8"/>
         <signal driver="spi" instance="1" name="miso" function="c"/>
@@ -762,10 +670,6 @@
       <gpio device-pin="q" port="C" pin="27">
         <signal driver="afec" instance="1" name="ad" function="x1" index="8"/>
         <signal driver="ebi" name="a" function="a" index="9"/>
-        <signal device-flash="19|20" device-variant="b" device-package="a" device-grade="a" driver="ebi" name="sda7" function="a"/>
-        <signal device-flash="19|20" device-variant="b" device-package="c" device-grade="b" driver="ebi" name="sda7" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="a" function="a" index="9"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="a" function="a" index="9"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="a" function="a" index="9"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="a" function="a" index="9"/>
         <signal driver="spi" instance="1" name="mosi" function="c"/>
@@ -773,10 +677,6 @@
       </gpio>
       <gpio device-pin="q" port="C" pin="28">
         <signal driver="ebi" name="a" function="a" index="10"/>
-        <signal device-flash="19|20" device-variant="b" device-package="a" device-grade="a" driver="ebi" name="sda8" function="a"/>
-        <signal device-flash="19|20" device-variant="b" device-package="c" device-grade="b" driver="ebi" name="sda8" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="a" function="a" index="10"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="a" function="a" index="10"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="a" function="a" index="10"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="a" function="a" index="10"/>
         <signal driver="spi" instance="1" name="npcs" function="c" index="1"/>
@@ -785,10 +685,6 @@
       <gpio device-pin="q" port="C" pin="29">
         <signal driver="afec" instance="1" name="ad" function="x1" index="4"/>
         <signal driver="ebi" name="a" function="a" index="11"/>
-        <signal device-flash="19|20" device-variant="b" device-package="a" device-grade="a" driver="ebi" name="sda9" function="a"/>
-        <signal device-flash="19|20" device-variant="b" device-package="c" device-grade="b" driver="ebi" name="sda9" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="a" function="a" index="11"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="a" function="a" index="11"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="a" function="a" index="11"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="a" function="a" index="11"/>
         <signal driver="spi" instance="1" name="npcs" function="c" index="2"/>
@@ -797,8 +693,6 @@
       <gpio device-pin="q" port="C" pin="30">
         <signal driver="afec" instance="1" name="ad" function="x1" index="5"/>
         <signal driver="ebi" name="a" function="a" index="12"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="a" function="a" index="12"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="a" function="a" index="12"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="a" function="a" index="12"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="a" function="a" index="12"/>
         <signal driver="spi" instance="1" name="npcs" function="c" index="3"/>
@@ -807,10 +701,6 @@
       <gpio device-pin="q" port="C" pin="31">
         <signal driver="afec" instance="1" name="ad" function="x1" index="6"/>
         <signal driver="ebi" name="a" function="a" index="13"/>
-        <signal device-flash="19|20" device-variant="b" device-package="a" device-grade="a" driver="ebi" name="sda11" function="a"/>
-        <signal device-flash="19|20" device-variant="b" device-package="c" device-grade="b" driver="ebi" name="sda11" function="a"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="a" function="a" index="13"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="a" function="a" index="13"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="a" function="a" index="13"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="a" function="a" index="13"/>
         <signal driver="tc" instance="1" name="tclk" function="b" index="5"/>
@@ -881,42 +771,33 @@
         <signal device-pin="n|q" driver="spi" instance="0" name="npcs" function="c" index="2"/>
       </gpio>
       <gpio device-pin="n|q" port="D" pin="13">
-        <signal device-pin="q" driver="ebi" name="sda" function="c" index="10"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="sda" function="c" index="10"/>
+        <signal device-pin="q" device-variant="a" driver="ebi" name="sda" function="c" index="10"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="sda" function="c" index="10"/>
       </gpio>
       <gpio device-pin="n|q" port="D" pin="14">
-        <signal device-pin="q" driver="ebi" name="sdcke" function="c"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="sdcke" function="c"/>
+        <signal device-pin="q" device-variant="a" driver="ebi" name="sdcke" function="c"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="sdcke" function="c"/>
       </gpio>
       <gpio device-pin="n|q" port="D" pin="15">
-        <signal device-pin="q" device-variant="b" driver="ebi" name="dqm1" function="c"/>
         <signal device-pin="q" driver="ebi" name="nbs" function="c" index="1"/>
         <signal device-pin="q" driver="ebi" name="nwr" function="c" index="1"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="nbs" function="c" index="1"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="nwr" function="c" index="1"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="nbs" function="c" index="1"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="nwr" function="c" index="1"/>
         <signal driver="usart" instance="2" name="rxd" function="b" index="2"/>
       </gpio>
       <gpio device-pin="n|q" port="D" pin="16">
-        <signal device-pin="q" driver="ebi" name="ras" function="c"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="ras" function="c"/>
+        <signal device-pin="q" device-variant="a" driver="ebi" name="ras" function="c"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="ras" function="c"/>
         <signal driver="usart" instance="2" name="txd" function="b" index="2"/>
       </gpio>
       <gpio device-pin="n|q" port="D" pin="17">
-        <signal device-pin="q" driver="ebi" name="cas" function="c"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="cas" function="c"/>
+        <signal device-pin="q" device-variant="a" driver="ebi" name="cas" function="c"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="cas" function="c"/>
         <signal driver="usart" instance="2" name="sck" function="b" index="2"/>
       </gpio>
       <gpio device-pin="n|q" port="D" pin="18">
         <signal device-pin="q" driver="ebi" name="ncs" function="a" index="1"/>
-        <signal device-pin="q" driver="ebi" name="sdcs" function="a"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="ncs" function="a" index="1"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="sdcs" function="a"/>
+        <signal device-pin="q" device-variant="a" driver="ebi" name="sdcs" function="a"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="ncs" function="a" index="1"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="sdcs" function="a"/>
         <signal driver="uart" instance="4" name="urxd" function="c" index="4"/>
@@ -924,7 +805,6 @@
       </gpio>
       <gpio device-pin="n|q" port="D" pin="19">
         <signal device-pin="q" driver="ebi" name="ncs" function="a" index="3"/>
-        <signal device-pin="q" device-variant="a" driver="sdramc" name="ncs" function="a" index="3"/>
         <signal device-pin="q" device-variant="a" driver="smc" name="ncs" function="a" index="3"/>
         <signal driver="uart" instance="4" name="utxd" function="c" index="4"/>
         <signal driver="usart" instance="2" name="cts" function="b" index="2"/>
@@ -946,10 +826,9 @@
         <signal driver="tc" instance="3" name="tiob" function="c" index="11"/>
       </gpio>
       <gpio device-pin="q" port="D" pin="23">
-        <signal driver="ebi" name="sdck" function="c"/>
+        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="ebi" name="sdck" function="c"/>
+        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="ebi" name="sdck" function="c"/>
         <signal driver="pwm" instance="0" name="pwmh" function="a" index="3"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="sdck" function="c"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="sdck" function="c"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="sdck" function="c"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="sdck" function="c"/>
       </gpio>
@@ -987,9 +866,8 @@
         <signal driver="uart" instance="3" name="urxd" function="a" index="3"/>
       </gpio>
       <gpio device-pin="q" port="D" pin="29">
-        <signal driver="ebi" name="sdwe" function="c"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="sdwe" function="c"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="sdwe" function="c"/>
+        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="ebi" name="sdwe" function="c"/>
+        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="ebi" name="sdwe" function="c"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="sdwe" function="c"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="sdwe" function="c"/>
       </gpio>
@@ -1009,8 +887,6 @@
         <signal driver="ebi" name="d" function="a" index="8"/>
         <signal device-flash="19|20" device-variant="b" device-package="a" device-grade="a" driver="i2sc" instance="1" name="ws" function="c"/>
         <signal device-flash="19|20" device-variant="b" device-package="c" device-grade="b" driver="i2sc" instance="1" name="ws" function="c"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="d" function="a" index="8"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="d" function="a" index="8"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="d" function="a" index="8"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="d" function="a" index="8"/>
         <signal driver="tc" instance="3" name="tioa" function="b" index="9"/>
@@ -1019,8 +895,6 @@
         <signal driver="ebi" name="d" function="a" index="9"/>
         <signal device-flash="19|20" device-variant="b" device-package="a" device-grade="a" driver="i2sc" instance="1" name="do" function="c" index="0"/>
         <signal device-flash="19|20" device-variant="b" device-package="c" device-grade="b" driver="i2sc" instance="1" name="do" function="c" index="0"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="d" function="a" index="9"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="d" function="a" index="9"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="d" function="a" index="9"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="d" function="a" index="9"/>
         <signal driver="tc" instance="3" name="tiob" function="b" index="9"/>
@@ -1029,8 +903,6 @@
         <signal driver="ebi" name="d" function="a" index="10"/>
         <signal device-flash="19|20" device-variant="b" device-package="a" device-grade="a" driver="i2sc" instance="1" name="di" function="c" index="0"/>
         <signal device-flash="19|20" device-variant="b" device-package="c" device-grade="b" driver="i2sc" instance="1" name="di" function="c" index="0"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="d" function="a" index="10"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="d" function="a" index="10"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="d" function="a" index="10"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="d" function="a" index="10"/>
         <signal driver="tc" instance="3" name="tclk" function="b" index="9"/>
@@ -1038,8 +910,6 @@
       <gpio device-pin="q" port="E" pin="3">
         <signal driver="afec" instance="1" name="ad" function="x1" index="10"/>
         <signal driver="ebi" name="d" function="a" index="11"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="d" function="a" index="11"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="d" function="a" index="11"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="d" function="a" index="11"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="d" function="a" index="11"/>
         <signal driver="tc" instance="3" name="tioa" function="b" index="10"/>
@@ -1047,8 +917,6 @@
       <gpio device-pin="q" port="E" pin="4">
         <signal driver="afec" instance="0" name="ad" function="x1" index="4"/>
         <signal driver="ebi" name="d" function="a" index="12"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="d" function="a" index="12"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="d" function="a" index="12"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="d" function="a" index="12"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="d" function="a" index="12"/>
         <signal driver="tc" instance="3" name="tiob" function="b" index="10"/>
@@ -1056,8 +924,6 @@
       <gpio device-pin="q" port="E" pin="5">
         <signal driver="afec" instance="0" name="ad" function="x1" index="3"/>
         <signal driver="ebi" name="d" function="a" index="13"/>
-        <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="sdramc" name="d" function="a" index="13"/>
-        <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="sdramc" name="d" function="a" index="13"/>
         <signal device-flash="19|20" device-variant="a" device-package="a" device-grade="a" driver="smc" name="d" function="a" index="13"/>
         <signal device-flash="19|20" device-variant="a" device-package="c" device-grade="b" driver="smc" name="d" function="a" index="13"/>
         <signal driver="tc" instance="3" name="tclk" function="b" index="10"/>
