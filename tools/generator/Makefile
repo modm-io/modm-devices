@@ -52,8 +52,20 @@ generate-sam%: raw-device-data/sam-devices ext/cmsis-5-partial
 	@rm -f ../../devices/sam/$(@:generate-%=%)*
 	./sam_generator.py $(@:generate-%=%)
 
+.PHONY: generate-samd5x-e5x
+generate-samd5x-e5x: raw-device-data/sam-devices ext/cmsis-5-partial
+	@rm -f ../../devices/sam/samd5*
+	@rm -f ../../devices/sam/same5*
+	./sam_generator.py samd5 same5
+
+.PHONY: generate-samx7x
+generate-samx7x: raw-device-data/sam-devices ext/cmsis-5-partial
+	@rm -f ../../devices/sam/sam*7*
+	./sam_generator.py same7 sams7 samv7
+
 .PHONY: generate-sam
-generate-sam: generate-saml21 generate-samd21 generate-samd51 generate-same5 generate-samg generate-same70 generate-sams70 generate-samv7
+generate-sam:	generate-samda generate-samd1 generate-samd2 generate-samd09 \
+				generate-saml2 generate-samg5 generate-samd5x-e5x generate-samx7x
 
 # NRF device files
 .PHONY: generate-nrf%
