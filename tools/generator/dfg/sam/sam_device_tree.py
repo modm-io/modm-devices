@@ -112,6 +112,12 @@ class SAMDeviceTree:
             tmp = {"module": s.getparent().getparent().getparent().get("name").lower(),
                     "instance": s.getparent().getparent().get("name").lower()}
             tmp.update({k:v.lower() for k,v in s.items()})
+
+            # Fix duplicate GPIO data for SAMx7x revision A devices
+            if did.family == "E7x/S7x/V7x" and did.variant == "a":
+                if tmp["module"] in ("sdramc", "smc"):
+                    continue
+
             if tmp["group"] in ["p", "pin"] or tmp["group"].startswith("port"):
                 gpios.append(tmp)
             else:
