@@ -40,8 +40,12 @@ if __name__ == "__main__":
     families = defaultdict(int)
     for dev in devices:
         did = dev.identifier
-        family = did.string.split(did.family)[0] + did.family
-        families[family.upper()] += 1
+        if "family" in did.naming_schema:
+            family = did.string.split(did.family)[0] + did.family
+            families[family.upper()] += 1
+        else:
+            family = did.platform.upper() + did.family.upper().replace("X", "x")
+            families[family] += 1
 
     readme_path = Path(rootpath) / "README.md"
     readme = readme_path.read_text()
