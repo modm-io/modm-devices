@@ -38,7 +38,7 @@ def filename(ids):
         if k in ['type', 'pin']: v.sort()
         if len(v) > 0:
             p[k] = "_".join(v)
-    fmt = "{platform}{family}{series}"
+    fmt = "{platform}{series}"
     return fmt.format(**p)
 
 dfg.generator.run(output="sam", devices=devices, groups=sam_groups,

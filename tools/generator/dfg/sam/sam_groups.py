@@ -4,37 +4,27 @@
 
 sam_groups = \
 [
-    # SAMD devices
     {
-        'family': ['d'],
-        'series': ['21']
+        'series': ['d10', 'd11']
     },{
-        'family': ['d'],
-        'series': ['51']
+        'series': ['d09']
     },{
-        'family': ['e'],
-        'series': ['51', '53', '54']
+        'series': ['da1']
     },{
-        'family': ['l'],
-        'series': ['21']
-    },
-    {
-        'family': ['g'],
-        'series': ['55']
-    },
-    {
-        'family': ['g'],
-        'series': ['54']
-    },
-    {
-        'family': ['g'],
-        'series': ['53']
-    },
-    {
-        'family': ['g'],
-        'series': ['51']
-    },
-    {
-        'series': ['70', '71']
+        'series': ['d20']
+    },{
+        'series': ['d21']
+    },{
+        'series': ['d51', 'e51', 'e53', 'e54']
+    },{
+        'series': ['l21']
+    },{
+        'series': ['l22']
+    },{
+        'series': ['g51', 'g53', 'g54']
+    },{
+        'series': ['g55']
+    },{
+        'series': ['e70', 's70', 'v70', 'v71']
     },
 ]
