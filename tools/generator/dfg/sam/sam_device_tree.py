@@ -183,18 +183,13 @@ class SAMDeviceTree:
 
         def driver_compatibility(id):
             s = id.string
-            if s.startswith("samg55"):
-                return "samg55"
-            elif s.startswith("samg54"):
-                return "samg54"
-            elif s.startswith("samg53"):
-                return "samg53"
-            elif s.startswith("samg51"):
-                return "samg51"
-            elif s.startswith("samv70"):
-                return "samv70"
-            elif s.startswith("samv71"):
-                return "samv71"
+            # TODO: do we really need this distinction?
+            # There are two groups of devices with common peripherals:
+            # - SAM x7x,G5x
+            # - SAM D09,D1x,D2x,L2x,D51,E5x
+            # TODO: What would be the appropriate naming for those groups?
+            if s.startswith("samg5"):
+                return "samg"
             else:
                 return "sam"
 
