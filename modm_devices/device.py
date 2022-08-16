@@ -75,5 +75,19 @@ class Device:
 
         return any(self.get_driver(name + ':' + c) is not None for c in type)
 
+    def patch_driver(self, name, patch):
+        self.__parse_properties()
+
+        if ':' in name:
+            raise ParserException("Unsupported driver name '{}' (contains ':').".format(name))
+
+        drivers = self._properties["driver"]
+        for i, driver in enumerate(drivers):
+            if driver["name"] == name:
+                drivers[i] = patch
+                return
+
+        raise ParserException("Couldn't patch driver '{}'.".format(name))
+
     def __str__(self):
         return self.partname
