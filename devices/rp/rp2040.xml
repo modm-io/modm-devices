@@ -4,7 +4,6 @@
   <device platform="rp" cores="2" type="0" ram="4" flash="0" family="20">
     <naming-schema>{platform}{cores}{type}{ram}{flash}</naming-schema>
     <driver name="core" type="cortex-m0+">
-      <memory name="flash" access="rx" start="0x10000000" size="2097152"/>
       <memory name="ram" access="rwx" start="0x20000000" size="262144"/>
       <memory name="core1" access="rwx" start="0x20040000" size="4096"/>
       <memory name="core0" access="rwx" start="0x20041000" size="4096"/>

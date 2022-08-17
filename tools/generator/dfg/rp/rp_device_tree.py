@@ -81,7 +81,6 @@ class RPDeviceTree:
 
         # @todo
         memories = [
-            # FLASH(rx) : ORIGIN = 0x10000000, LENGTH = 2048k
             # RAM(rwx) : ORIGIN =  0x20000000, LENGTH = 256k
             # CORE1(rwx) : ORIGIN = 0x20040000, LENGTH = 4k
             # CORE0(rwx) : ORIGIN = 0x20041000, LENGTH = 4k
@@ -103,12 +102,6 @@ class RPDeviceTree:
                 "size": str(int("0x1000",16)),
                 "start": "0x20041000"
             },
-            {
-                "name": "flash",
-                "access": "rx",
-                "size": str(int("0x200000",16)), #2M - min
-                "start": "0x10000000"
-            }
         ]
 
         p["memories"] = memories
