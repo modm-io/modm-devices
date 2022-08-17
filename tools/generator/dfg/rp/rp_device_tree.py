@@ -42,6 +42,8 @@ class RPDeviceTree:
             'name': '_'.join(parts[idx+1:eidx+1]),
             'af': func['value'],
         }
+        if res['driver'] == 'adc' and res['af'] == '31':
+          res['af'] = '-1'
         if res['name'] == '':
             res['name'] = 'pad' #default name
         if m['module'] != m['instance']:
@@ -112,6 +114,7 @@ class RPDeviceTree:
         raw_modules = device_file.query("//peripherals/peripheral")
         modules = []
         gpios = []
+        adc_channels = []
         dma_channels = []
         modules_map = {}
         clocks = []
@@ -162,6 +165,16 @@ class RPDeviceTree:
                             'bank':'qspi',
                             'funcs': funcs }
                         gpios.append(pin)
+            elif modulename == 'ADC':
+                # TODO: Find way to get ADC channels info
+                adc_channels = [
+                    {'id': 0, 'name': 'Ch0'},
+                    {'id': 1, 'name': 'Ch1'},
+                    {'id': 2, 'name': 'Ch2'},
+                    {'id': 3, 'name': 'Ch3'},
+                    {'id': 4, 'name': 'Temperature'},
+                ]
+                modules.append({'module': 'adc', 'instance': 'adc'})
             elif modulename == 'DMA':
                 chMatchString = r"^CH(?P<name>\d+)_READ_ADDR$"
                 for r in m.findall('./registers/register'):
@@ -199,6 +212,7 @@ class RPDeviceTree:
 
         p['modules'] = sorted(list(set([(m['module'], m['instance']) for m in modules])))
         p['gpios'] = gpios
+        p['adc_channels'] = adc_channels
         p['dma_channels'] = dma_channels
         p['clocks'] = clocks
 
@@ -284,13 +298,15 @@ class RPDeviceTree:
         for m, i in p['modules']:
             # filter out non-peripherals: fuses, micro-trace buffer
             # gpio part
-            if m in ['pads_bank', 'pads_qspi']: continue;
+            if m in ['pads_bank', 'pads_qspi']: continue
             # clock subsystem
-            if m in ['pll_usb', 'pll_sys', 'xosc']: continue;
+            if m in ['pll_usb', 'pll_sys', 'xosc']: continue
             # usb subsystem
-            if m in ['usbctrl_regs', 'usbctrl_dpram']: continue;
+            if m in ['usbctrl_regs', 'usbctrl_dpram']: continue
             # xip subsystem
-            if m in ['xip_ctrl']: continue;
+            if m in ['xip_ctrl']: continue
+            # adc subsystem
+            if m in ['adc']: continue
             if m not in modules:
                 modules[m] = [i]
             else:
@@ -321,7 +337,7 @@ class RPDeviceTree:
         for pin in p['gpios']:
             pin_driver = gpio_driver.addChild('gpio')
             pin_driver.setAttributes(
-                'port', pin['bank'], 
+                'port', pin['bank'],
                 'pin', str(pin['idx']),
                 'name', pin['name'])
             for s in pin['signals']:
@@ -331,6 +347,15 @@ class RPDeviceTree:
                     signal.setAttribute('instance',s['instance'])
             pin_driver.addSortKey(lambda e: (e['af'],
                                              e['name']))
+
+        # ADC driver
+        adc_driver = tree.addChild('driver')
+        adc_driver.setAttributes('name', 'adc', 'type', compatible)
+        for ch in p['adc_channels']:
+            ch_driver = adc_driver.addChild('channel')
+            ch_driver.setAttribute('id', ch['id'])
+            ch_driver.setAttribute('name', ch['name'])
+            ch_driver.addSortKey(lambda e: (-1, e['id']))
 
         # DMA driver
         dma_driver = tree.addChild('driver')
@@ -347,7 +372,7 @@ class RPDeviceTree:
         clocks_driver.setAttributes('name', 'clocks', 'type', compatible)
         for clk in p['clocks']:
             clk_driver = clocks_driver.addChild('clock')
-            clk_driver.setAttributes('name', clk['name'], 
+            clk_driver.setAttributes('name', clk['name'],
                 'glitchless', clk['glitchless'] and 'true' or 'false',
                 'idx', clk['idx'])
             for src in clk['sources']:

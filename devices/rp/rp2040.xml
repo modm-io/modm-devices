@@ -34,7 +34,13 @@
       <vector position="24" name="I2C1_IRQ"/>
       <vector position="25" name="RTC_IRQ"/>
     </driver>
-    <driver name="adc" type="rp20"/>
+    <driver name="adc" type="rp20">
+      <channel id="0" name="Ch0"/>
+      <channel id="1" name="Ch1"/>
+      <channel id="2" name="Ch2"/>
+      <channel id="3" name="Ch3"/>
+      <channel id="4" name="Temperature"/>
+    </driver>
     <driver name="busctrl" type="rp20"/>
     <driver name="clocks" type="rp20">
       <clock name="gpout0" glitchless="false" idx="0">
@@ -469,6 +475,7 @@
         <signal driver="usb" name="muxing_vbus_detect" af="9"/>
       </gpio>
       <gpio port="bank0" pin="26" name="26">
+        <signal driver="adc" name="in0" af="-1"/>
         <signal driver="spi" name="sclk" af="1" instance="1"/>
         <signal driver="uart" name="cts" af="2" instance="1"/>
         <signal driver="i2c" name="sda" af="3" instance="1"/>
@@ -479,6 +486,7 @@
         <signal driver="usb" name="muxing_vbus_en" af="9"/>
       </gpio>
       <gpio port="bank0" pin="27" name="27">
+        <signal driver="adc" name="in1" af="-1"/>
         <signal driver="spi" name="tx" af="1" instance="1"/>
         <signal driver="uart" name="rts" af="2" instance="1"/>
         <signal driver="i2c" name="scl" af="3" instance="1"/>
@@ -489,6 +497,7 @@
         <signal driver="usb" name="muxing_overcurr_detect" af="9"/>
       </gpio>
       <gpio port="bank0" pin="28" name="28">
+        <signal driver="adc" name="in2" af="-1"/>
         <signal driver="spi" name="rx" af="1" instance="1"/>
         <signal driver="uart" name="tx" af="2" instance="0"/>
         <signal driver="i2c" name="sda" af="3" instance="0"/>
@@ -499,6 +508,7 @@
         <signal driver="usb" name="muxing_vbus_detect" af="9"/>
       </gpio>
       <gpio port="bank0" pin="29" name="29">
+        <signal driver="adc" name="in3" af="-1"/>
         <signal driver="spi" name="ss_n" af="1" instance="1"/>
         <signal driver="uart" name="rx" af="2" instance="0"/>
         <signal driver="i2c" name="scl" af="3" instance="0"/>

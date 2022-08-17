@@ -1,9 +1,6 @@
 from pathlib import Path
 import urllib.request
-import zipfile
 import shutil
-import io
-import glob
 import os
 
 svdurls = [
@@ -21,4 +18,9 @@ if __name__ == "__main__":
             file = Path(dest + '/' + svdurl[0])
             with file.open("w", encoding="utf-8") as wfile:
                 wfile.writelines(content.read().decode("utf-8"))
-        
+
+
+print("Patching Database...", flush=True)
+shutil.copy("patches/rp2040.patch", "../raw-device-data")
+os.system("(cd ../raw-device-data; patch -p1 -l -i rp2040.patch)")
+os.remove("../raw-device-data/rp2040.patch")

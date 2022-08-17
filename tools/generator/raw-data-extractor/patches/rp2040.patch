@@ -1,0 +1,48 @@
+diff --git a/rp-devices/rp2040.svd b/rp-devices/rp2040.svd
+index 3849776..a629e00 100644
+--- a/rp-devices/rp2040.svd
++++ b/rp-devices/rp2040.svd
+@@ -10017,6 +10017,10 @@
+                   <name>usb_muxing_vbus_en</name>
+                   <value>9</value>
+                 </enumeratedValue>
++                <enumeratedValue>
++                  <name>adc_in0</name>
++                  <value>31</value>
++                </enumeratedValue>
+                 <enumeratedValue>
+                   <name>null</name>
+                   <value>31</value>
+@@ -10234,6 +10238,10 @@
+                   <name>usb_muxing_overcurr_detect</name>
+                   <value>9</value>
+                 </enumeratedValue>
++                <enumeratedValue>
++                  <name>adc_in1</name>
++                  <value>31</value>
++                </enumeratedValue>
+                 <enumeratedValue>
+                   <name>null</name>
+                   <value>31</value>
+@@ -10451,6 +10459,10 @@
+                   <name>usb_muxing_vbus_detect</name>
+                   <value>9</value>
+                 </enumeratedValue>
++                <enumeratedValue>
++                  <name>adc_in2</name>
++                  <value>31</value>
++                </enumeratedValue>
+                 <enumeratedValue>
+                   <name>null</name>
+                   <value>31</value>
+@@ -10668,6 +10680,10 @@
+                   <name>usb_muxing_vbus_en</name>
+                   <value>9</value>
+                 </enumeratedValue>
++                <enumeratedValue>
++                  <name>adc_in3</name>
++                  <value>31</value>
++                </enumeratedValue>
+                 <enumeratedValue>
+                   <name>null</name>
+                   <value>31</value>
