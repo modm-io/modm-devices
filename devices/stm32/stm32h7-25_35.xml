@@ -360,8 +360,6 @@
       <instance value="15"/>
       <instance value="16"/>
       <instance value="17"/>
-    </driver>
-    <driver name="tim" type="stm32-v3.x">
       <instance value="23"/>
       <instance value="24"/>
     </driver>

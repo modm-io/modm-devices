@@ -279,8 +279,6 @@
     <driver name="tim" type="stm32-general-purpose">
       <instance value="2"/>
       <instance value="3"/>
-    </driver>
-    <driver name="tim" type="stm32-v2.x">
       <instance value="21"/>
       <instance value="22"/>
     </driver>

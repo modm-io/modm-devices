@@ -167,6 +167,7 @@
     <driver name="tim" type="stm32-basic">
       <instance value="6"/>
       <instance value="7"/>
+      <instance value="18"/>
     </driver>
     <driver name="tim" type="stm32-general-purpose">
       <instance value="2"/>
@@ -179,9 +180,6 @@
       <instance value="15"/>
       <instance value="16"/>
       <instance value="17"/>
-    </driver>
-    <driver name="tim" type="stm32-v2.x">
-      <instance value="18"/>
       <instance value="19"/>
     </driver>
     <driver name="tsc" type="stm32-v1.0"/>
