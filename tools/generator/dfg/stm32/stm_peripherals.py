@@ -250,7 +250,7 @@ stm_peripherals = \
                 }
             ]
         },{
-            'instances': ['2', '3', '4', '5'],
+            'instances': ['2', '3', '4', '5', '19', '23', '24'],
             'groups': [
                 {
                     'hardware': 'stm32-general-purpose',
@@ -260,7 +260,7 @@ stm_peripherals = \
                 }
             ]
         },{
-            'instances': ['9', '10', '11', '12', '13', '14', '15', '16', '17'],
+            'instances': ['9', '10', '11', '12', '13', '14', '15', '16', '17', '21', '22'],
             'groups': [
                 {
                     'hardware': 'stm32-general-purpose',
@@ -270,7 +270,7 @@ stm_peripherals = \
                 }
             ]
         },{
-            'instances': ['6', '7'],
+            'instances': ['6', '7', '18'],
             'groups': [
                 {
                     'hardware': 'stm32-basic',
