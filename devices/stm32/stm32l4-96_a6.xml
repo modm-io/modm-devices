@@ -1046,7 +1046,7 @@
         <signal af="11" driver="lcd" name="seg11"/>
         <signal af="12" driver="comp" instance="2" name="out"/>
       </gpio>
-      <gpio device-pin="q" device-package="i" device-variant="" port="b" pin="11">
+      <gpio device-pin="q" device-package="i" device-variant="|s" port="b" pin="11">
         <signal af="1" driver="tim" instance="2" name="ch4"/>
         <signal af="3" driver="i2c" instance="4" name="sda"/>
         <signal af="4" driver="i2c" instance="2" name="sda"/>
@@ -1958,7 +1958,7 @@
         <signal af="4" driver="i2c" instance="1" name="scl"/>
         <signal af="12" driver="fmc" name="a25"/>
       </gpio>
-      <gpio device-pin="q" device-variant="" port="g" pin="14">
+      <gpio device-pin="q" device-variant="|s" port="g" pin="14">
         <signal af="4" driver="i2c" instance="1" name="scl"/>
         <signal af="12" driver="fmc" name="a25"/>
       </gpio>
@@ -2534,10 +2534,10 @@
         <pin position="C3" name="PE0"/>
         <pin position="C4" name="VDD" type="power"/>
         <pin position="C5" name="PB5"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p|s" position="C6" name="VDD12" type="power"/>
+        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="C6" name="VDD12" type="power"/>
         <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="C6" name="VDD12" type="power"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="C6" name="PG14"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="C6" name="PG14"/>
+        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="|s" position="C6" name="PG14"/>
         <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="C6" name="PG14"/>
         <pin position="C7" name="PG13"/>
         <pin position="C8" name="PD2"/>
@@ -2627,10 +2627,10 @@
         <pin position="L8" name="PE10"/>
         <pin position="L9" name="PE12"/>
         <pin position="L10" name="PB10"/>
-        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p|s" position="L11" name="VDD12" type="power"/>
+        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="p" position="L11" name="VDD12" type="power"/>
         <pin device-name="a6" device-size="g" device-temperature="6" device-variant="p" position="L11" name="VDD12" type="power"/>
         <pin device-name="96" device-size="e|g" device-temperature="6" device-variant="" position="L11" name="PB11"/>
-        <pin device-name="96" device-size="g" device-temperature="3|7" device-variant="" position="L11" name="PB11"/>
+        <pin device-name="96" device-size="g" device-temperature="3|6|7" device-variant="|s" position="L11" name="PB11"/>
         <pin device-name="a6" device-size="g" device-temperature="6" device-variant="" position="L11" name="PB11"/>
         <pin position="L12" name="PB12"/>
         <pin position="M1" name="VDDA" type="power"/>

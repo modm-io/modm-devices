@@ -673,7 +673,6 @@
         <signal af="8" driver="lpuart" instance="1" name="tx"/>
         <signal af="10" driver="octospi" instance="1" name="ncs"/>
         <signal af="11" driver="ucpd" instance="1" name="frstx1"/>
-        <signal af="11" driver="ucpd" instance="1" name="frstx2"/>
         <signal af="13" driver="sai" instance="2" name="extclk"/>
         <signal af="14" driver="tim" instance="15" name="ch1"/>
       </gpio>
@@ -842,7 +841,6 @@
         <signal af="6" driver="dfsdm" instance="1" name="ckin0"/>
         <signal af="10" driver="octospi" instance="1" name="dqs"/>
         <signal af="11" driver="ucpd" instance="1" name="frstx1"/>
-        <signal af="11" driver="ucpd" instance="1" name="frstx2"/>
       </gpio>
       <gpio port="b" pin="3">
         <signal driver="comp" instance="2" name="inm"/>
@@ -1110,7 +1108,6 @@
         <signal af="7" driver="usart" instance="3" name="nss"/>
         <signal af="8" driver="lpuart" instance="1" name="cts"/>
         <signal af="9" driver="tsc" name="g1_io2"/>
-        <signal af="11" driver="ucpd" instance="1" name="frstx1"/>
         <signal af="11" driver="ucpd" instance="1" name="frstx2"/>
         <signal af="13" driver="sai" instance="2" name="sck_a"/>
         <signal af="14" driver="tim" instance="15" name="ch1n"/>
@@ -1305,7 +1302,6 @@
         <signal af="7" driver="usart" instance="3" name="rx"/>
         <signal af="8" driver="uart" instance="4" name="rx"/>
         <signal af="9" driver="tsc" name="g3_io3"/>
-        <signal af="11" driver="ucpd" instance="1" name="frstx1"/>
         <signal af="11" driver="ucpd" instance="1" name="frstx2"/>
         <signal device-pin="r|v|z" device-variant="|q" af="12" driver="sdmmc" instance="1" name="d3"/>
         <signal device-pin="m" device-variant="p|q" af="12" driver="sdmmc" instance="1" name="d3"/>
@@ -1756,14 +1752,12 @@
         <signal af="8" driver="lpuart" instance="1" name="de"/>
         <signal af="8" driver="lpuart" instance="1" name="rts"/>
         <signal af="11" driver="ucpd" instance="1" name="frstx1"/>
-        <signal af="11" driver="ucpd" instance="1" name="frstx2"/>
       </gpio>
       <gpio device-pin="q|z" port="g" pin="7">
         <signal af="3" driver="sai" instance="1" name="ck1"/>
         <signal af="4" driver="i2c" instance="3" name="scl"/>
         <signal af="6" driver="dfsdm" instance="1" name="ckout"/>
         <signal af="8" driver="lpuart" instance="1" name="tx"/>
-        <signal af="11" driver="ucpd" instance="1" name="frstx1"/>
         <signal af="11" driver="ucpd" instance="1" name="frstx2"/>
         <signal af="12" driver="fmc" name="int"/>
         <signal af="13" driver="sai" instance="1" name="mclk_a"/>
@@ -1908,14 +1902,14 @@
         <pin device-name="52" device-size="e" device-variant="" position="19" name="VSSA/VREF-" type="power"/>
         <pin device-name="62" device-size="e" device-variant="q" position="19" name="VSSA/VREF-" type="power"/>
         <pin device-name="62" device-size="e" device-variant="" position="19" name="VSSA" type="power"/>
-        <pin device-name="52" device-size="c|e" device-variant="q" position="20" name="VREF+" type="monoio"/>
-        <pin device-name="52" device-size="e" device-variant="" position="20" name="VREF+" type="monoio"/>
-        <pin device-name="62" device-size="e" device-variant="q" position="20" name="VREF+" type="monoio"/>
+        <pin device-name="52" device-size="c|e" device-variant="q" position="20" name="VREF+" type="power"/>
+        <pin device-name="52" device-size="e" device-variant="" position="20" name="VREF+" type="power"/>
+        <pin device-name="62" device-size="e" device-variant="q" position="20" name="VREF+" type="power"/>
         <pin device-name="62" device-size="e" device-variant="" position="20" name="VREF-" type="power"/>
         <pin device-name="52" device-size="c|e" device-variant="q" position="21" name="VDDA" type="power"/>
         <pin device-name="52" device-size="e" device-variant="" position="21" name="VDDA" type="power"/>
         <pin device-name="62" device-size="e" device-variant="q" position="21" name="VDDA" type="power"/>
-        <pin device-name="62" device-size="e" device-variant="" position="21" name="VREF+" type="monoio"/>
+        <pin device-name="62" device-size="e" device-variant="" position="21" name="VREF+" type="power"/>
         <pin device-name="52" device-size="c|e" device-variant="q" position="22" name="PA0"/>
         <pin device-name="52" device-size="e" device-variant="" position="22" name="PA0"/>
         <pin device-name="62" device-size="e" device-variant="q" position="22" name="PA0"/>
@@ -2123,14 +2117,14 @@
         <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="|q" position="30" name="VSSA/VREF-" type="power"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="q" position="30" name="VSSA/VREF-" type="power"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="30" name="VSSA" type="power"/>
-        <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="q" position="31" name="VREF+" type="monoio"/>
-        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="|q" position="31" name="VREF+" type="monoio"/>
-        <pin device-name="62" device-size="e" device-temperature="6" device-variant="q" position="31" name="VREF+" type="monoio"/>
+        <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="q" position="31" name="VREF+" type="power"/>
+        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="|q" position="31" name="VREF+" type="power"/>
+        <pin device-name="62" device-size="e" device-temperature="6" device-variant="q" position="31" name="VREF+" type="power"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="31" name="VREF-" type="power"/>
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="q" position="32" name="VDDA" type="power"/>
         <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="|q" position="32" name="VDDA" type="power"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="q" position="32" name="VDDA" type="power"/>
-        <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="32" name="VREF+" type="monoio"/>
+        <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="32" name="VREF+" type="power"/>
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="q" position="33" name="PA0"/>
         <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="|q" position="33" name="PA0"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="q" position="33" name="PA0"/>
@@ -2674,7 +2668,7 @@
         <pin position="H10" name="PD14"/>
         <pin position="H11" name="PD13"/>
         <pin position="H12" name="PD15"/>
-        <pin position="J1" name="VREF+" type="monoio"/>
+        <pin position="J1" name="VREF+" type="power"/>
         <pin position="J2" name="PA0"/>
         <pin position="J3" name="PC5"/>
         <pin position="J4" name="VDD" type="power"/>
@@ -2858,7 +2852,7 @@
         <pin position="G5" name="PA6"/>
         <pin position="G6" name="PA2"/>
         <pin position="G7" name="PC3"/>
-        <pin position="G8" name="VREF+" type="monoio"/>
+        <pin position="G8" name="VREF+" type="power"/>
         <pin position="G9" name="VSSA/VREF-" type="power"/>
         <pin position="H1" name="VDD" type="power"/>
         <pin position="H2" name="VSS" type="power"/>

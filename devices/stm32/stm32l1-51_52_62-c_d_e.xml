@@ -463,21 +463,15 @@
         <signal af="14" driver="ts" name="g4_io3"/>
       </gpio>
       <gpio port="a" pin="11">
-        <signal device-size="d" device-variant="x" driver="usb" name="dm"/>
-        <signal device-size="e" device-variant="" driver="usb" name="dm"/>
+        <signal driver="usb" name="dm"/>
         <signal af="5" driver="spi" instance="1" name="miso"/>
         <signal af="7" driver="usart" instance="1" name="cts"/>
-        <signal device-size="c|d" device-variant="" af="10" driver="usb" name="dm"/>
-        <signal device-size="c" device-variant="a" af="10" driver="usb" name="dm"/>
         <signal af="14" driver="tim" name="ic4"/>
       </gpio>
       <gpio port="a" pin="12">
-        <signal device-size="d" device-variant="x" driver="usb" name="dp"/>
-        <signal device-size="e" device-variant="" driver="usb" name="dp"/>
+        <signal driver="usb" name="dp"/>
         <signal af="5" driver="spi" instance="1" name="mosi"/>
         <signal af="7" driver="usart" instance="1" name="rts"/>
-        <signal device-size="c|d" device-variant="" af="10" driver="usb" name="dp"/>
-        <signal device-size="c" device-variant="a" af="10" driver="usb" name="dp"/>
         <signal af="14" driver="tim" name="ic1"/>
       </gpio>
       <gpio port="a" pin="13">

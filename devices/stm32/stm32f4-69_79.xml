@@ -766,6 +766,7 @@
         <signal af="10" driver="quadspi" name="clk"/>
         <signal device-pin="b|i|n" af="11" driver="eth" name="rcc_crs_dv"/>
         <signal device-pin="b|i|n" af="11" driver="eth" name="rx_dv"/>
+        <signal af="12" driver="fmc" name="sdnwe"/>
       </gpio>
       <gpio port="a" pin="8">
         <signal af="0" driver="rcc" name="mco_1"/>

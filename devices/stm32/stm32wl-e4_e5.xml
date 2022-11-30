@@ -90,7 +90,7 @@
       <vector position="61" name="DMAMUX1_OVR"/>
     </driver>
     <driver name="adc" type="stm32"/>
-    <driver name="adv_trace" type="stm32-v1.0"/>
+    <driver name="adv_trace" type="stm32-v1.1"/>
     <driver name="aes" type="stm32-v1.0"/>
     <driver name="comp" type="stm32-tsmc90_wlxx_cube">
       <instance value="1"/>
@@ -125,7 +125,7 @@
     <driver name="irtim" type="stm32-v1.0"/>
     <driver name="iwdg" type="stm32"/>
     <driver name="kms" type="stm32-v1.1"/>
-    <driver device-name="e5" name="lorawan" type="stm32-v2.4"/>
+    <driver device-name="e5" name="lorawan" type="stm32-v2.5"/>
     <driver name="lptim" type="stm32-v2.1">
       <instance value="1"/>
       <instance value="2"/>
@@ -142,14 +142,14 @@
     </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v3.0"/>
-    <driver name="sequencer" type="stm32-v1.0"/>
-    <driver name="sigfox" type="stm32-v1.7"/>
+    <driver name="sequencer" type="stm32-v1.1"/>
+    <driver name="sigfox" type="stm32-v1.8"/>
     <driver name="spi" type="stm32">
       <instance value="1"/>
       <instance value="2"/>
     </driver>
     <driver name="subghz" type="stm32-v1.0"/>
-    <driver name="subghz_phy" type="stm32-v1.2"/>
+    <driver name="subghz_phy" type="stm32-v1.3"/>
     <driver name="sys" type="stm32">
       <feature value="exti"/>
     </driver>
@@ -161,10 +161,10 @@
       <instance value="16"/>
       <instance value="17"/>
     </driver>
-    <driver name="tim" type="stm32-v1.0">
+    <driver name="tim" type="stm32-v1.1">
       <instance value="er"/>
     </driver>
-    <driver name="tiny_lpm" type="stm32-v1.0"/>
+    <driver name="tiny_lpm" type="stm32-v1.1"/>
     <driver name="usart" type="stm32">
       <instance value="1"/>
       <instance value="2"/>

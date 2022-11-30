@@ -160,8 +160,7 @@
         <wait-state ws="2" hclk-max="72000000"/>
       </latency>
     </driver>
-    <driver device-pin="v" device-size="d|e" device-package="h|t" name="fmc" type="stm32-v1.0"/>
-    <driver device-pin="z" device-size="d|e" device-package="t" name="fmc" type="stm32-v1.0"/>
+    <driver device-pin="v|z" device-size="d|e" name="fmc" type="stm32-v1.0"/>
     <driver name="i2c" type="stm32-extended">
       <feature value="dnf"/>
       <feature value="fmp"/>
@@ -678,8 +677,7 @@
         <signal af="5" driver="tim" instance="8" name="bkin"/>
         <signal af="7" driver="usart" instance="1" name="rx"/>
         <signal af="10" driver="tim" instance="3" name="ch4"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="nl"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="nl"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="nl"/>
       </gpio>
       <gpio port="b" pin="8">
         <signal af="1" driver="tim" instance="16" name="ch1"/>
@@ -868,20 +866,16 @@
         <signal driver="rcc" name="osc32_out"/>
       </gpio>
       <gpio device-pin="v|z" port="d" pin="0">
-        <signal device-pin="v" device-size="d|e" device-package="h|t" driver="fmc" name="da2"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" driver="fmc" name="da2"/>
+        <signal device-pin="v|z" device-size="d|e" driver="fmc" name="da2"/>
         <signal af="7" driver="can" name="rx"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="d2"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="d2"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d2"/>
       </gpio>
       <gpio device-pin="v|z" port="d" pin="1">
-        <signal device-pin="v" device-size="d|e" device-package="h|t" driver="fmc" name="da3"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" driver="fmc" name="da3"/>
+        <signal device-pin="v|z" device-size="d|e" driver="fmc" name="da3"/>
         <signal af="4" driver="tim" instance="8" name="ch4"/>
         <signal af="6" driver="tim" instance="8" name="bkin2"/>
         <signal af="7" driver="can" name="tx"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="d3"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="d3"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d3"/>
       </gpio>
       <gpio device-pin="r|v|z" port="d" pin="2">
         <signal af="2" driver="tim" instance="3" name="etr"/>
@@ -892,15 +886,13 @@
         <signal af="2" driver="tim" instance="2" name="ch1"/>
         <signal af="2" driver="tim" instance="2" name="etr"/>
         <signal af="7" driver="usart" instance="2" name="cts"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="clk"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="clk"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="clk"/>
       </gpio>
       <gpio device-pin="v|z" port="d" pin="4">
         <signal af="2" driver="tim" instance="2" name="ch2"/>
         <signal af="7" driver="usart" instance="2" name="de"/>
         <signal af="7" driver="usart" instance="2" name="rts"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="noe"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="noe"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="noe"/>
       </gpio>
       <gpio device-pin="v" device-package="h|t" port="d" pin="5">
         <signal af="7" driver="usart" instance="2" name="tx"/>
@@ -927,10 +919,8 @@
       <gpio device-pin="v|z" port="d" pin="7">
         <signal af="2" driver="tim" instance="2" name="ch3"/>
         <signal af="7" driver="usart" instance="2" name="ck"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="nce2"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="nce2"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="ne1"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="ne1"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="nce2"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="ne1"/>
       </gpio>
       <gpio device-pin="v" device-package="h|t" port="d" pin="8">
         <signal driver="adc" instance="4" name="in12"/>
@@ -954,46 +944,38 @@
       </gpio>
       <gpio device-pin="v|z" port="d" pin="9">
         <signal driver="adc" instance="4" name="in13"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" driver="fmc" name="da14"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" driver="fmc" name="da14"/>
+        <signal device-pin="v|z" device-size="d|e" driver="fmc" name="da14"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="d14"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="d14"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d14"/>
       </gpio>
       <gpio device-pin="v|z" port="d" pin="10">
         <signal driver="adc" instance="3" name="in7"/>
         <signal driver="adc" instance="4" name="in7"/>
         <signal driver="comp" instance="6" name="inm"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" driver="fmc" name="da15"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" driver="fmc" name="da15"/>
+        <signal device-pin="v|z" device-size="d|e" driver="fmc" name="da15"/>
         <signal af="7" driver="usart" instance="3" name="ck"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="d15"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="d15"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d15"/>
       </gpio>
       <gpio device-pin="v|z" port="d" pin="11">
         <signal driver="adc" instance="3" name="in8"/>
         <signal driver="adc" instance="4" name="in8"/>
         <signal device-pin="v" device-size="b|c" driver="comp" instance="6" name="inp"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" driver="fmc" name="cle"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" driver="fmc" name="cle"/>
+        <signal device-pin="v|z" device-size="d|e" driver="fmc" name="cle"/>
         <signal driver="opamp" instance="4" name="vinp"/>
         <signal driver="opamp" instance="4" name="vinp_sec"/>
         <signal af="7" driver="usart" instance="3" name="cts"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="a16"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="a16"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="a16"/>
       </gpio>
       <gpio device-pin="v|z" port="d" pin="12">
         <signal driver="adc" instance="3" name="in9"/>
         <signal driver="adc" instance="4" name="in9"/>
         <signal device-pin="v" device-size="b|c" driver="comp" instance="5" name="inp"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" driver="fmc" name="ale"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" driver="fmc" name="ale"/>
+        <signal device-pin="v|z" device-size="d|e" driver="fmc" name="ale"/>
         <signal af="2" driver="tim" instance="4" name="ch1"/>
         <signal af="3" driver="tsc" name="g8_io1"/>
         <signal af="7" driver="usart" instance="3" name="de"/>
         <signal af="7" driver="usart" instance="3" name="rts"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="a17"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="a17"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="a17"/>
       </gpio>
       <gpio device-pin="v|z" port="d" pin="13">
         <signal driver="adc" instance="3" name="in10"/>
@@ -1001,46 +983,39 @@
         <signal driver="comp" instance="5" name="inm"/>
         <signal af="2" driver="tim" instance="4" name="ch2"/>
         <signal af="3" driver="tsc" name="g8_io2"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="a18"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="a18"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="a18"/>
       </gpio>
       <gpio device-pin="v|z" port="d" pin="14">
         <signal driver="adc" instance="3" name="in11"/>
         <signal driver="adc" instance="4" name="in11"/>
         <signal device-pin="v" device-size="b|c" driver="comp" instance="3" name="inp"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" driver="fmc" name="da0"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" driver="fmc" name="da0"/>
+        <signal device-pin="v|z" device-size="d|e" driver="fmc" name="da0"/>
         <signal driver="opamp" instance="2" name="vinp"/>
         <signal driver="opamp" instance="2" name="vinp_sec"/>
         <signal af="2" driver="tim" instance="4" name="ch3"/>
         <signal af="3" driver="tsc" name="g8_io3"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="d0"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="d0"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d0"/>
       </gpio>
       <gpio device-pin="v|z" port="d" pin="15">
         <signal driver="comp" instance="3" name="inm"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" driver="fmc" name="da1"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" driver="fmc" name="da1"/>
+        <signal device-pin="v|z" device-size="d|e" driver="fmc" name="da1"/>
         <signal af="2" driver="tim" instance="4" name="ch4"/>
         <signal af="3" driver="tsc" name="g8_io4"/>
         <signal af="6" driver="spi" instance="2" name="nss"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="d1"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="d1"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d1"/>
       </gpio>
       <gpio device-pin="v|z" port="e" pin="0">
         <signal af="2" driver="tim" instance="4" name="etr"/>
         <signal af="4" driver="tim" instance="16" name="ch1"/>
         <signal device-pin="v|z" device-size="d|e" af="6" driver="tim" instance="20" name="etr"/>
         <signal af="7" driver="usart" instance="1" name="tx"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="nbl0"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="nbl0"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="nbl0"/>
       </gpio>
       <gpio device-pin="v|z" port="e" pin="1">
         <signal af="4" driver="tim" instance="17" name="ch1"/>
         <signal device-pin="v|z" device-size="d|e" af="6" driver="tim" instance="20" name="ch4"/>
         <signal af="7" driver="usart" instance="1" name="rx"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="nbl1"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="nbl1"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="nbl1"/>
       </gpio>
       <gpio device-pin="v|z" port="e" pin="2">
         <signal af="0" driver="sys" name="traceck"/>
@@ -1048,8 +1023,7 @@
         <signal af="3" driver="tsc" name="g7_io1"/>
         <signal device-pin="v|z" device-size="d|e" af="5" driver="spi" instance="4" name="sck"/>
         <signal device-pin="v|z" device-size="d|e" af="6" driver="tim" instance="20" name="ch1"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="a23"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="a23"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="a23"/>
       </gpio>
       <gpio device-pin="v|z" port="e" pin="3">
         <signal af="0" driver="sys" name="traced0"/>
@@ -1057,8 +1031,7 @@
         <signal af="3" driver="tsc" name="g7_io2"/>
         <signal device-pin="v|z" device-size="d|e" af="5" driver="spi" instance="4" name="nss"/>
         <signal device-pin="v|z" device-size="d|e" af="6" driver="tim" instance="20" name="ch2"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="a19"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="a19"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="a19"/>
       </gpio>
       <gpio device-pin="v|z" port="e" pin="4">
         <signal af="0" driver="sys" name="traced1"/>
@@ -1066,8 +1039,7 @@
         <signal af="3" driver="tsc" name="g7_io3"/>
         <signal device-pin="v|z" device-size="d|e" af="5" driver="spi" instance="4" name="nss"/>
         <signal device-pin="v|z" device-size="d|e" af="6" driver="tim" instance="20" name="ch1n"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="a20"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="a20"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="a20"/>
       </gpio>
       <gpio device-pin="v|z" port="e" pin="5">
         <signal af="0" driver="sys" name="traced2"/>
@@ -1075,8 +1047,7 @@
         <signal af="3" driver="tsc" name="g7_io4"/>
         <signal device-pin="v|z" device-size="d|e" af="5" driver="spi" instance="4" name="miso"/>
         <signal device-pin="v|z" device-size="d|e" af="6" driver="tim" instance="20" name="ch2n"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="a21"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="a21"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="a21"/>
       </gpio>
       <gpio device-pin="v|z" port="e" pin="6">
         <signal driver="rtc" name="tamp3"/>
@@ -1084,27 +1055,22 @@
         <signal af="0" driver="sys" name="traced3"/>
         <signal device-pin="v|z" device-size="d|e" af="5" driver="spi" instance="4" name="mosi"/>
         <signal device-pin="v|z" device-size="d|e" af="6" driver="tim" instance="20" name="ch3n"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="a22"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="a22"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="a22"/>
       </gpio>
       <gpio device-pin="v|z" port="e" pin="7">
         <signal driver="adc" instance="3" name="in13"/>
         <signal device-pin="v" device-size="b|c" driver="comp" instance="4" name="inp"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" driver="fmc" name="da4"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" driver="fmc" name="da4"/>
+        <signal device-pin="v|z" device-size="d|e" driver="fmc" name="da4"/>
         <signal af="2" driver="tim" instance="1" name="etr"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="d4"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="d4"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d4"/>
       </gpio>
       <gpio device-pin="v|z" port="e" pin="8">
         <signal driver="adc" instance="3" name="in6"/>
         <signal driver="adc" instance="4" name="in6"/>
         <signal driver="comp" instance="4" name="inm"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" driver="fmc" name="da5"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" driver="fmc" name="da5"/>
+        <signal device-pin="v|z" device-size="d|e" driver="fmc" name="da5"/>
         <signal af="2" driver="tim" instance="1" name="ch1n"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="d5"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="d5"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d5"/>
       </gpio>
       <gpio device-pin="v" device-package="h|t" port="e" pin="9">
         <signal driver="adc" instance="3" name="in2"/>
@@ -1140,21 +1106,17 @@
       </gpio>
       <gpio device-pin="v|z" port="e" pin="11">
         <signal driver="adc" instance="3" name="in15"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" driver="fmc" name="da8"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" driver="fmc" name="da8"/>
+        <signal device-pin="v|z" device-size="d|e" driver="fmc" name="da8"/>
         <signal af="2" driver="tim" instance="1" name="ch2"/>
         <signal device-pin="v|z" device-size="d|e" af="5" driver="spi" instance="4" name="nss"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="d8"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="d8"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d8"/>
       </gpio>
       <gpio device-pin="v|z" port="e" pin="12">
         <signal driver="adc" instance="3" name="in16"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" driver="fmc" name="da9"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" driver="fmc" name="da9"/>
+        <signal device-pin="v|z" device-size="d|e" driver="fmc" name="da9"/>
         <signal af="2" driver="tim" instance="1" name="ch3n"/>
         <signal device-pin="v|z" device-size="d|e" af="5" driver="spi" instance="4" name="sck"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="d9"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="d9"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="d9"/>
       </gpio>
       <gpio device-pin="v" device-package="h|t" port="e" pin="13">
         <signal driver="adc" instance="3" name="in3"/>
@@ -1233,8 +1195,7 @@
         <signal driver="adc" instance="1" name="in10"/>
         <signal driver="adc" instance="2" name="in10"/>
         <signal device-pin="v|z" device-size="d|e" af="2" driver="tim" instance="20" name="ch3"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="a2"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="a2"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="a2"/>
       </gpio>
       <gpio device-pin="z" port="f" pin="3">
         <signal af="2" driver="tim" instance="20" name="ch4"/>
@@ -1261,8 +1222,7 @@
         <signal af="4" driver="i2c" instance="2" name="scl"/>
         <signal af="7" driver="usart" instance="3" name="de"/>
         <signal af="7" driver="usart" instance="3" name="rts"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="niord"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="niord"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="niord"/>
       </gpio>
       <gpio device-pin="z" port="f" pin="7">
         <signal af="2" driver="tim" instance="20" name="bkin"/>
@@ -1276,15 +1236,13 @@
         <signal device-pin="v|z" device-size="d|e" af="2" driver="tim" instance="20" name="bkin"/>
         <signal af="3" driver="tim" instance="15" name="ch1"/>
         <signal af="5" driver="spi" instance="2" name="sck"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="cd"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="cd"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="cd"/>
       </gpio>
       <gpio device-pin="v|z" port="f" pin="10">
         <signal device-pin="v|z" device-size="d|e" af="2" driver="tim" instance="20" name="bkin2"/>
         <signal af="3" driver="tim" instance="15" name="ch2"/>
         <signal af="5" driver="spi" instance="2" name="sck"/>
-        <signal device-pin="v" device-size="d|e" device-package="h|t" af="12" driver="fmc" name="intr"/>
-        <signal device-pin="z" device-size="d|e" device-package="t" af="12" driver="fmc" name="intr"/>
+        <signal device-pin="v|z" device-size="d|e" af="12" driver="fmc" name="intr"/>
       </gpio>
       <gpio device-pin="z" port="f" pin="11">
         <signal af="2" driver="tim" instance="20" name="etr"/>
