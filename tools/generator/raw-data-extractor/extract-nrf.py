@@ -22,8 +22,8 @@ Path(dest).mkdir(exist_ok=True, parents=True)
 
 with urllib.request.urlopen(urllib.request.Request(dl_page, headers=hdr)) as response:
     html = response.read().decode("utf-8")
-    packurl = re.search('href="(/-/media/.*?/nRF_MDK_.*?_GCC_BSDLicense.zip)"', html)
-    packurl = "https://www.nordicsemi.com" + packurl.group(1)
+    packurl = re.search('href="(.*?nsscprodmedia.*?/nrf_mdk_.*?_gcc_bsdlicense.zip)"', html)
+    packurl = packurl.group(1)
 
 print("Downloading...", packurl)
 with urllib.request.urlopen(urllib.request.Request(packurl, headers=hdr)) as content:
