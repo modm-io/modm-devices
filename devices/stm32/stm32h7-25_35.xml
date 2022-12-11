@@ -614,8 +614,7 @@
           <signal driver="i2c" instance="3" name="tx"/>
         </request>
         <request position="75">
-          <signal driver="dcmi"/>
-          <signal driver="pssi"/>
+          <signal driver="dcmi" name="pssi"/>
         </request>
         <request device-name="35" position="76">
           <signal driver="cryp" name="in"/>
