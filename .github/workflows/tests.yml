@@ -4,6 +4,7 @@ on:
   schedule:
     - cron:  '23 7 * * *'
   pull_request:
+  workflow_dispatch:
 
 env:
   MAKEFLAGS: -j4
