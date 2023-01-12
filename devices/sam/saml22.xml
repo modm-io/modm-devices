@@ -79,7 +79,35 @@
     <driver name="adc" type="sam"/>
     <driver name="aes" type="sam"/>
     <driver name="ccl" type="sam"/>
-    <driver name="dmac" type="sam"/>
+    <driver name="dmac" type="sam">
+      <request peripheral="rtc" signal="timestamp" id="1"/>
+      <request peripheral="sercom" instance="0" signal="rx" id="2"/>
+      <request peripheral="sercom" instance="0" signal="tx" id="3"/>
+      <request peripheral="sercom" instance="1" signal="rx" id="4"/>
+      <request peripheral="sercom" instance="1" signal="tx" id="5"/>
+      <request peripheral="sercom" instance="2" signal="rx" id="6"/>
+      <request peripheral="sercom" instance="2" signal="tx" id="7"/>
+      <request peripheral="sercom" instance="3" signal="rx" id="8"/>
+      <request peripheral="sercom" instance="3" signal="tx" id="9"/>
+      <request device-pin="n" peripheral="sercom" instance="4" signal="rx" id="10"/>
+      <request device-pin="n" peripheral="sercom" instance="4" signal="tx" id="11"/>
+      <request device-pin="n" peripheral="sercom" instance="5" signal="rx" id="12"/>
+      <request device-pin="n" peripheral="sercom" instance="5" signal="tx" id="13"/>
+      <request peripheral="tcc" instance="0" signal="ovf" id="14"/>
+      <request peripheral="tc" instance="0" signal="ovf" id="19"/>
+      <request peripheral="tc" instance="1" signal="ovf" id="22"/>
+      <request peripheral="tc" instance="2" signal="ovf" id="25"/>
+      <request peripheral="tc" instance="3" signal="ovf" id="28"/>
+      <request peripheral="adc" signal="resrdy" id="31"/>
+      <request peripheral="slcd" signal="dmu" id="32"/>
+      <request peripheral="slcd" signal="acmdrdy" id="33"/>
+      <request peripheral="slcd" signal="abmdrdy" id="34"/>
+      <request peripheral="aes" signal="wr" id="35"/>
+      <request peripheral="aes" signal="rd" id="36"/>
+      <request peripheral="ptc" signal="eoc" id="37"/>
+      <request peripheral="ptc" signal="seq" id="38"/>
+      <request peripheral="ptc" signal="wcomp" id="39"/>
+    </driver>
     <driver name="dsu" type="sam"/>
     <driver name="eic" type="sam"/>
     <driver name="evsys" type="sam"/>

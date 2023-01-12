@@ -324,7 +324,67 @@
     <driver name="usbhs" type="sam"/>
     <driver name="utmi" type="sam"/>
     <driver name="wdt" type="sam"/>
-    <driver name="xdmac" type="sam"/>
+    <driver name="xdmac" type="sam">
+      <request device-series="e70|s70|v70|v71" device-pin="n|q" device-variant="a|b" peripheral="hsmci" signal="rx" id="0"/>
+      <request device-series="v70|v71" device-pin="j|n|q" device-variant="a" peripheral="hsmci" signal="rx" id="0"/>
+      <request device-series="e70|s70|v70|v71" device-pin="n|q" device-variant="a|b" peripheral="hsmci" signal="tx" id="0"/>
+      <request device-series="v70|v71" device-pin="j|n|q" device-variant="a" peripheral="hsmci" signal="tx" id="0"/>
+      <request device-pin="n|q" peripheral="spi" instance="0" signal="tx" id="1"/>
+      <request device-pin="n|q" peripheral="spi" instance="0" signal="rx" id="2"/>
+      <request device-pin="q" peripheral="spi" instance="1" signal="tx" id="3"/>
+      <request device-pin="q" peripheral="spi" instance="1" signal="rx" id="4"/>
+      <request peripheral="qspi" signal="tx" id="5"/>
+      <request peripheral="qspi" signal="rx" id="6"/>
+      <request peripheral="usart" instance="0" signal="tx" id="7"/>
+      <request peripheral="usart" instance="0" signal="rx" id="8"/>
+      <request peripheral="usart" instance="1" signal="tx" id="9"/>
+      <request peripheral="usart" instance="1" signal="rx" id="10"/>
+      <request device-pin="n|q" peripheral="usart" instance="2" signal="tx" id="11"/>
+      <request device-pin="n|q" peripheral="usart" instance="2" signal="rx" id="12"/>
+      <request peripheral="pwm" instance="0" signal="tx" id="13"/>
+      <request peripheral="twihs" instance="0" signal="tx" id="14"/>
+      <request peripheral="twihs" instance="0" signal="rx" id="15"/>
+      <request peripheral="twihs" instance="1" signal="tx" id="16"/>
+      <request peripheral="twihs" instance="1" signal="rx" id="17"/>
+      <request device-pin="n|q" peripheral="twihs" instance="2" signal="tx" id="18"/>
+      <request device-pin="n|q" peripheral="twihs" instance="2" signal="rx" id="19"/>
+      <request peripheral="uart" instance="0" signal="tx" id="20"/>
+      <request peripheral="uart" instance="0" signal="rx" id="21"/>
+      <request peripheral="uart" instance="1" signal="tx" id="22"/>
+      <request peripheral="uart" instance="1" signal="rx" id="23"/>
+      <request peripheral="uart" instance="2" signal="tx" id="24"/>
+      <request peripheral="uart" instance="2" signal="rx" id="25"/>
+      <request device-pin="n|q" peripheral="uart" instance="3" signal="tx" id="26"/>
+      <request device-pin="n|q" peripheral="uart" instance="3" signal="rx" id="27"/>
+      <request device-pin="n|q" peripheral="uart" instance="4" signal="tx" id="28"/>
+      <request device-pin="n|q" peripheral="uart" instance="4" signal="rx" id="29"/>
+      <request device-variant="b" peripheral="dacc" signal="ch0_tx" id="30"/>
+      <request device-series="e70|s70" device-pin="n" device-flash="21" device-variant="a" peripheral="dacc" signal="tx" id="30"/>
+      <request device-series="e70|s70|v70" device-pin="j|n|q" device-flash="19|20" device-variant="a" peripheral="dacc" signal="tx" id="30"/>
+      <request device-series="e70|s70|v71" device-pin="j|q" device-flash="20|21" device-variant="a" peripheral="dacc" signal="tx" id="30"/>
+      <request device-series="v71" device-pin="n|q" device-flash="19" device-variant="a" peripheral="dacc" signal="tx" id="30"/>
+      <request device-variant="b" peripheral="dacc" signal="ch1_tx" id="31"/>
+      <request peripheral="ssc" signal="tx" id="32"/>
+      <request peripheral="ssc" signal="rx" id="33"/>
+      <request peripheral="pioa" signal="rx" id="34"/>
+      <request peripheral="afec" instance="0" signal="rx" id="35"/>
+      <request peripheral="afec" instance="1" signal="rx" id="36"/>
+      <request peripheral="aes" signal="tx" id="37"/>
+      <request peripheral="aes" signal="rx" id="38"/>
+      <request peripheral="pwm" instance="1" signal="tx" id="39"/>
+      <request peripheral="tc" instance="0" signal="rx" id="40"/>
+      <request peripheral="tc" instance="1" signal="rx" id="41"/>
+      <request peripheral="tc" instance="2" signal="rx" id="42"/>
+      <request peripheral="tc" instance="3" signal="rx" id="43"/>
+      <request device-pin="n|q" device-variant="b" peripheral="i2sc" instance="0" signal="tx_left" id="44"/>
+      <request device-pin="n|q" device-variant="b" peripheral="i2sc" instance="0" signal="rx_left" id="45"/>
+      <request device-pin="q" device-variant="b" peripheral="i2sc" instance="1" signal="tx_left" id="46"/>
+      <request device-pin="q" device-variant="b" peripheral="i2sc" instance="1" signal="rx_left" id="47"/>
+      <request device-pin="n|q" device-variant="b" peripheral="i2sc" instance="0" signal="tx_right" id="48"/>
+      <request device-pin="n|q" device-variant="b" peripheral="i2sc" instance="0" signal="rx_right" id="49"/>
+      <request device-pin="q" device-variant="b" peripheral="i2sc" instance="1" signal="tx_right" id="50"/>
+      <request device-pin="q" device-variant="b" peripheral="i2sc" instance="1" signal="rx_right" id="51"/>
+    </driver>
     <driver name="gpio" type="sam">
       <gpio device-pin="n|q" port="A" pin="0">
         <signal device-pin="q" driver="ebi" name="a" function="c" index="17"/>

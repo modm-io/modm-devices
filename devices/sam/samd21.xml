@@ -223,7 +223,63 @@
     </driver>
     <driver name="adc" type="sam"/>
     <driver name="dac" type="sam"/>
-    <driver name="dmac" type="sam"/>
+    <driver name="dmac" type="sam">
+      <request peripheral="sercom" instance="0" signal="rx" id="1"/>
+      <request peripheral="sercom" instance="0" signal="tx" id="2"/>
+      <request peripheral="sercom" instance="1" signal="rx" id="3"/>
+      <request peripheral="sercom" instance="1" signal="tx" id="4"/>
+      <request peripheral="sercom" instance="2" signal="rx" id="5"/>
+      <request peripheral="sercom" instance="2" signal="tx" id="6"/>
+      <request peripheral="sercom" instance="3" signal="rx" id="7"/>
+      <request peripheral="sercom" instance="3" signal="tx" id="8"/>
+      <request device-pin="g|j" peripheral="sercom" instance="4" signal="rx" id="9"/>
+      <request device-pin="g|j" peripheral="sercom" instance="4" signal="tx" id="10"/>
+      <request device-pin="g|j" peripheral="sercom" instance="5" signal="rx" id="11"/>
+      <request device-pin="g|j" peripheral="sercom" instance="5" signal="tx" id="12"/>
+      <request peripheral="tcc" instance="0" signal="ovf" id="13"/>
+      <request peripheral="tcc" instance="0" signal="mc0" id="14"/>
+      <request peripheral="tcc" instance="0" signal="mc1" id="15"/>
+      <request peripheral="tcc" instance="0" signal="mc2" id="16"/>
+      <request peripheral="tcc" instance="0" signal="mc3" id="17"/>
+      <request peripheral="tcc" instance="1" signal="ovf" id="18"/>
+      <request peripheral="tcc" instance="1" signal="mc0" id="19"/>
+      <request peripheral="tcc" instance="1" signal="mc1" id="20"/>
+      <request peripheral="tc" instance="5" signal="mc0" id="21"/>
+      <request peripheral="tcc" instance="2" signal="ovf" id="21"/>
+      <request peripheral="tcc" instance="2" signal="mc0" id="22"/>
+      <request peripheral="tcc" instance="2" signal="mc1" id="23"/>
+      <request peripheral="tc" instance="3" signal="ovf" id="24"/>
+      <request peripheral="tc" instance="3" signal="mc0" id="25"/>
+      <request peripheral="tc" instance="3" signal="mc1" id="26"/>
+      <request peripheral="tc" instance="4" signal="ovf" id="27"/>
+      <request peripheral="tc" instance="4" signal="mc0" id="28"/>
+      <request peripheral="tc" instance="4" signal="mc1" id="29"/>
+      <request peripheral="tc" instance="5" signal="ovf" id="30"/>
+      <request peripheral="tc" instance="5" signal="mc1" id="32"/>
+      <request device-pin="g" device-variant="a" device-package="u" peripheral="tc" instance="6" signal="ovf" id="33"/>
+      <request device-pin="g" device-variant="l" device-package="m" peripheral="tc" instance="6" signal="ovf" id="33"/>
+      <request device-pin="j" device-variant="a|b|d" device-package="a|c|m" peripheral="tc" instance="6" signal="ovf" id="33"/>
+      <request device-pin="g" device-variant="a" device-package="u" peripheral="tc" instance="6" signal="mc0" id="34"/>
+      <request device-pin="g" device-variant="l" device-package="m" peripheral="tc" instance="6" signal="mc0" id="34"/>
+      <request device-pin="j" device-variant="a|b|d" device-package="a|c|m" peripheral="tc" instance="6" signal="mc0" id="34"/>
+      <request device-pin="g" device-variant="a" device-package="u" peripheral="tc" instance="6" signal="mc1" id="35"/>
+      <request device-pin="g" device-variant="l" device-package="m" peripheral="tc" instance="6" signal="mc1" id="35"/>
+      <request device-pin="j" device-variant="a|b|d" device-package="a|c|m" peripheral="tc" instance="6" signal="mc1" id="35"/>
+      <request device-pin="g" device-variant="a" device-package="u" peripheral="tc" instance="7" signal="ovf" id="36"/>
+      <request device-pin="g" device-variant="l" device-package="m" peripheral="tc" instance="7" signal="ovf" id="36"/>
+      <request device-pin="j" device-variant="a|b|d" device-package="a|c|m" peripheral="tc" instance="7" signal="ovf" id="36"/>
+      <request device-pin="g" device-variant="a" device-package="u" peripheral="tc" instance="7" signal="mc0" id="37"/>
+      <request device-pin="g" device-variant="l" device-package="m" peripheral="tc" instance="7" signal="mc0" id="37"/>
+      <request device-pin="j" device-variant="a|b|d" device-package="a|c|m" peripheral="tc" instance="7" signal="mc0" id="37"/>
+      <request device-pin="g" device-variant="a" device-package="u" peripheral="tc" instance="7" signal="mc1" id="38"/>
+      <request device-pin="g" device-variant="l" device-package="m" peripheral="tc" instance="7" signal="mc1" id="38"/>
+      <request device-pin="j" device-variant="a|b|d" device-package="a|c|m" peripheral="tc" instance="7" signal="mc1" id="38"/>
+      <request peripheral="adc" signal="resrdy" id="39"/>
+      <request peripheral="dac" signal="empty" id="40"/>
+      <request device-flash="17" device-variant="d|l" peripheral="tcc" instance="3" signal="ovf" id="45"/>
+      <request device-flash="17" device-variant="d|l" peripheral="tcc" instance="3" signal="mc0" id="46"/>
+      <request device-flash="17" device-variant="d|l" peripheral="tcc" instance="3" signal="mc1" id="47"/>
+    </driver>
     <driver name="dsu" type="sam"/>
     <driver name="eic" type="sam"/>
     <driver name="evsys" type="sam"/>

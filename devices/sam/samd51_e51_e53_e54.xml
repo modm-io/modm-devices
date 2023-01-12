@@ -278,7 +278,93 @@
     <driver name="cmcc" type="sam"/>
     <driver name="coredebug" type="sam"/>
     <driver name="dac" type="sam"/>
-    <driver name="dmac" type="sam"/>
+    <driver name="dmac" type="sam">
+      <request peripheral="rtc" signal="timestamp" id="1"/>
+      <request peripheral="dsu" signal="dcc0" id="2"/>
+      <request peripheral="dsu" signal="dcc1" id="3"/>
+      <request peripheral="sercom" instance="0" signal="rx" id="4"/>
+      <request peripheral="sercom" instance="0" signal="tx" id="5"/>
+      <request peripheral="sercom" instance="1" signal="rx" id="6"/>
+      <request peripheral="sercom" instance="1" signal="tx" id="7"/>
+      <request peripheral="sercom" instance="2" signal="rx" id="8"/>
+      <request peripheral="sercom" instance="2" signal="tx" id="9"/>
+      <request peripheral="sercom" instance="3" signal="rx" id="10"/>
+      <request peripheral="sercom" instance="3" signal="tx" id="11"/>
+      <request peripheral="sercom" instance="4" signal="rx" id="12"/>
+      <request peripheral="sercom" instance="4" signal="tx" id="13"/>
+      <request peripheral="sercom" instance="5" signal="rx" id="14"/>
+      <request peripheral="sercom" instance="5" signal="tx" id="15"/>
+      <request device-pin="n|p" peripheral="sercom" instance="6" signal="rx" id="16"/>
+      <request device-pin="n|p" peripheral="sercom" instance="6" signal="tx" id="17"/>
+      <request device-pin="n|p" peripheral="sercom" instance="7" signal="rx" id="18"/>
+      <request device-pin="n|p" peripheral="sercom" instance="7" signal="tx" id="19"/>
+      <request device-series="e51|e54" peripheral="can" instance="0" signal="debug" id="20"/>
+      <request device-series="e51" device-pin="j|n" peripheral="can" instance="1" signal="debug" id="21"/>
+      <request device-series="e54" device-pin="n|p" peripheral="can" instance="1" signal="debug" id="21"/>
+      <request peripheral="tcc" instance="0" signal="ovf" id="22"/>
+      <request peripheral="tcc" instance="0" signal="mc0" id="23"/>
+      <request peripheral="tcc" instance="0" signal="mc1" id="24"/>
+      <request peripheral="tcc" instance="0" signal="mc2" id="25"/>
+      <request peripheral="tcc" instance="0" signal="mc3" id="26"/>
+      <request peripheral="tcc" instance="0" signal="mc4" id="27"/>
+      <request peripheral="tcc" instance="0" signal="mc5" id="28"/>
+      <request peripheral="tcc" instance="1" signal="ovf" id="29"/>
+      <request peripheral="tcc" instance="1" signal="mc0" id="30"/>
+      <request peripheral="tcc" instance="1" signal="mc1" id="31"/>
+      <request peripheral="tcc" instance="1" signal="mc2" id="32"/>
+      <request peripheral="tcc" instance="1" signal="mc3" id="33"/>
+      <request peripheral="tcc" instance="2" signal="ovf" id="34"/>
+      <request peripheral="tcc" instance="2" signal="mc0" id="35"/>
+      <request peripheral="tcc" instance="2" signal="mc1" id="36"/>
+      <request peripheral="tcc" instance="2" signal="mc2" id="37"/>
+      <request device-pin="j|n|p" peripheral="tcc" instance="3" signal="ovf" id="38"/>
+      <request device-pin="j|n|p" peripheral="tcc" instance="3" signal="mc0" id="39"/>
+      <request device-pin="j|n|p" peripheral="tcc" instance="3" signal="mc1" id="40"/>
+      <request device-pin="j|n|p" peripheral="tcc" instance="4" signal="ovf" id="41"/>
+      <request device-pin="j|n|p" peripheral="tcc" instance="4" signal="mc0" id="42"/>
+      <request device-pin="j|n|p" peripheral="tcc" instance="4" signal="mc1" id="43"/>
+      <request peripheral="tc" instance="0" signal="ovf" id="44"/>
+      <request peripheral="tc" instance="0" signal="mc0" id="45"/>
+      <request peripheral="tc" instance="0" signal="mc1" id="46"/>
+      <request peripheral="tc" instance="1" signal="ovf" id="47"/>
+      <request peripheral="tc" instance="1" signal="mc0" id="48"/>
+      <request peripheral="tc" instance="1" signal="mc1" id="49"/>
+      <request peripheral="tc" instance="2" signal="ovf" id="50"/>
+      <request peripheral="tc" instance="2" signal="mc0" id="51"/>
+      <request peripheral="tc" instance="2" signal="mc1" id="52"/>
+      <request peripheral="tc" instance="3" signal="ovf" id="53"/>
+      <request peripheral="tc" instance="3" signal="mc0" id="54"/>
+      <request peripheral="tc" instance="3" signal="mc1" id="55"/>
+      <request device-pin="j|n|p" peripheral="tc" instance="4" signal="ovf" id="56"/>
+      <request device-pin="j|n|p" peripheral="tc" instance="4" signal="mc0" id="57"/>
+      <request device-pin="j|n|p" peripheral="tc" instance="4" signal="mc1" id="58"/>
+      <request device-pin="j|n|p" peripheral="tc" instance="5" signal="ovf" id="59"/>
+      <request device-pin="j|n|p" peripheral="tc" instance="5" signal="mc0" id="60"/>
+      <request device-pin="j|n|p" peripheral="tc" instance="5" signal="mc1" id="61"/>
+      <request device-pin="n|p" peripheral="tc" instance="6" signal="ovf" id="62"/>
+      <request device-pin="n|p" peripheral="tc" instance="6" signal="mc0" id="63"/>
+      <request device-pin="n|p" peripheral="tc" instance="6" signal="mc1" id="64"/>
+      <request device-pin="n|p" peripheral="tc" instance="7" signal="ovf" id="65"/>
+      <request device-pin="n|p" peripheral="tc" instance="7" signal="mc0" id="66"/>
+      <request device-pin="n|p" peripheral="tc" instance="7" signal="mc1" id="67"/>
+      <request peripheral="adc" instance="0" signal="resrdy" id="68"/>
+      <request peripheral="adc" instance="0" signal="seq" id="69"/>
+      <request peripheral="adc" instance="1" signal="resrdy" id="70"/>
+      <request peripheral="adc" instance="1" signal="seq" id="71"/>
+      <request peripheral="dac" signal="empty0" id="72"/>
+      <request peripheral="dac" signal="empty1" id="73"/>
+      <request peripheral="dac" signal="resrdy0" id="74"/>
+      <request peripheral="dac" signal="resrdy1" id="75"/>
+      <request device-pin="j|n|p" peripheral="i2s" signal="rx_0" id="76"/>
+      <request device-pin="j|n|p" peripheral="i2s" signal="rx_1" id="77"/>
+      <request device-pin="j|n|p" peripheral="i2s" signal="tx_0" id="78"/>
+      <request device-pin="j|n|p" peripheral="i2s" signal="tx_1" id="79"/>
+      <request peripheral="pcc" signal="rx" id="80"/>
+      <request peripheral="aes" signal="wr" id="81"/>
+      <request peripheral="aes" signal="rd" id="82"/>
+      <request peripheral="qspi" signal="rx" id="83"/>
+      <request peripheral="qspi" signal="tx" id="84"/>
+    </driver>
     <driver name="dsu" type="sam"/>
     <driver name="dwt" type="sam"/>
     <driver name="eic" type="sam"/>
@@ -293,6 +379,8 @@
       <clock peripheral="oscctrl" name="fdpll032k" value="3"/>
       <clock peripheral="oscctrl" name="fdpll132k" value="3"/>
       <clock peripheral="sdhc" instance="0" name="slow" value="3"/>
+      <clock device-series="d51|e53|e54" device-pin="n" peripheral="sdhc" instance="1" name="slow" value="3"/>
+      <clock device-series="d51|e54" device-pin="p" peripheral="sdhc" instance="1" name="slow" value="3"/>
       <clock peripheral="sercom" instance="0" name="slow" value="3"/>
       <clock peripheral="sercom" instance="1" name="slow" value="3"/>
       <clock peripheral="sercom" instance="2" name="slow" value="3"/>
@@ -301,8 +389,6 @@
       <clock peripheral="sercom" instance="5" name="slow" value="3"/>
       <clock device-pin="n|p" peripheral="sercom" instance="6" name="slow" value="3"/>
       <clock device-pin="n|p" peripheral="sercom" instance="7" name="slow" value="3"/>
-      <clock device-series="d51|e53|e54" device-pin="n" peripheral="sdhc" instance="1" name="slow" value="3"/>
-      <clock device-series="d51|e54" device-pin="p" peripheral="sdhc" instance="1" name="slow" value="3"/>
       <clock peripheral="eic" value="4"/>
       <clock peripheral="freqm" name="msr" value="5"/>
       <clock peripheral="freqm" name="ref" value="6"/>
