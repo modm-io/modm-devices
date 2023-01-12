@@ -83,16 +83,23 @@ class SAMDeviceTree:
         ports = []
         p["gclk_data"] = {}
         p["gclk_data"]["clocks"] = defaultdict(list)
+        p["dma_requests"] = defaultdict(list)
         for m in raw_modules:
             module_name = m.getparent().get("name").lower()
             instance = m.get("name").lower()
             tmp = {"module": module_name, "instance": instance}
             parameters = {}
             for param in m.xpath("parameters/param"):
-                if param.get("name").startswith("GCLK_ID"):
-                    clock_name = param.get("name")[8:].lower()
+                name = param.get("name")
+                if name.startswith("GCLK_ID"):
+                    clock_name = name[8:].lower()
                     clock_info = (clock_name if clock_name != "" else None, param.get("value"))
                     p["gclk_data"]["clocks"][instance].append(clock_info)
+                if name.startswith("DMAC_ID_"):
+                    signal = "_".join(name.lower().split("_")[2:])
+                    request_id = int(param.get("value"))
+                    p["dma_requests"][instance].append((signal, request_id))
+
             if module_name == "gclk":
                 p["gclk_data"]["generator_count"] = int(m.xpath('parameters/param[@name="GEN_NUM"]')[0].attrib["value"])
             if module_name == "port":
@@ -256,6 +263,7 @@ class SAMDeviceTree:
         compatible = driver_compatibility(p['id'])
 
         # add all other modules
+        instance_pattern = re.compile(r"^(?P<per>([a-z0-9]*[a-z]+))(?P<instance>([0-9]+))$")
         for name, instances in modules.items():
             driver = tree.addChild("driver")
             dtype = name
@@ -268,8 +276,7 @@ class SAMDeviceTree:
                     inst = driver.addChild("instance")
                     inst.setValue(i[len(dtype):])
             if name == "gclk":
-                instance_pattern = re.compile(r"^(?P<per>([a-z]+))(?P<instance>([0-9]+))$")
-                driver.addSortKey(lambda e: (e.name, int(e["value"])))
+                driver.addSortKey(lambda e: (e.name, int(e["value"]), e.get("peripheral", ""), e.get("instance", ""), e.get("name", "")))
                 for instance, instance_clocks in p["gclk_data"]["clocks"].items():
                     for clock_info in instance_clocks:
                         clock = driver.addChild("clock")
@@ -287,6 +294,19 @@ class SAMDeviceTree:
                     source.setAttributes("name", name, "value", source_id)
                 generators = driver.addChild("generators")
                 generators.setAttributes("value", str(p["gclk_data"]["generator_count"]))
+            # Add request data to DMA module
+            # Skip D09 devices, information is missing in raw data.
+            elif name in ("dmac", "xdmac", "pdc") and p["id"].series != "d09":
+                driver.addSortKey(lambda e: (int(e["id"]), e["peripheral"], e.get("instance", ""), e["signal"]))
+                for instance, request_list in p["dma_requests"].items():
+                    for signal, request_id in request_list:
+                        req = driver.addChild("request")
+                        m = instance_pattern.match(instance)
+                        if m:
+                            req.setAttributes("peripheral", m.group("per"), "instance", m.group("instance"))
+                        else:
+                            req.setAttributes("peripheral", instance)
+                        req.setAttributes("signal", signal, "id", request_id)
 
         # GPIO driver
         gpio_driver = tree.addChild("driver")
