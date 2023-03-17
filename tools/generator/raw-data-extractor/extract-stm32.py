@@ -18,7 +18,7 @@ cube_url = "https://sw-center.st.com/packs/resource/library/stm32cube_mx_v{}-lin
 cube_url2 = "https://www.ebuc23.com/s3/stm_test/software/library/stm32cube_mx_v{}-lin.zip"
 
 # Set the right headers
-hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
+hdr = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.3 Safari/605.1.15',
        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
        'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
        'Accept-Encoding': 'none',
