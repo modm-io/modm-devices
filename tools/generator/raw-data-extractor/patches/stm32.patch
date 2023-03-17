@@ -408,3 +408,1179 @@ index 58dcd13..b230c80 100644
      <IONb>86</IONb>
      <Die>DIE479</Die>
      <Flash>512</Flash>
+diff --git a/stm32-devices/mcu/STM32H562AGIx.xml b/stm32-devices/mcu/STM32H562AGIx.xml
+index 5d8c5980..21d8d60d 100644
+--- a/stm32-devices/mcu/STM32H562AGIx.xml
++++ b/stm32-devices/mcu/STM32H562AGIx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <BootPath>Available</BootPath>
++    <Frequency>250</Frequency>
+     <Ram>640</Ram>
+     <IONb>136</IONb>
+     <Die>DIE484</Die>
+diff --git a/stm32-devices/mcu/STM32H562IGKx.xml b/stm32-devices/mcu/STM32H562IGKx.xml
+index a069b42c..1f009de6 100644
+--- a/stm32-devices/mcu/STM32H562IGKx.xml
++++ b/stm32-devices/mcu/STM32H562IGKx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <BootPath>Available</BootPath>
++    <Frequency>250</Frequency>
+     <Ram>640</Ram>
+     <IONb>140</IONb>
+     <Die>DIE484</Die>
+diff --git a/stm32-devices/mcu/STM32H562IGTx.xml b/stm32-devices/mcu/STM32H562IGTx.xml
+index b8dc34fa..499de79a 100644
+--- a/stm32-devices/mcu/STM32H562IGTx.xml
++++ b/stm32-devices/mcu/STM32H562IGTx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <BootPath>Available</BootPath>
++    <Frequency>250</Frequency>
+     <Ram>640</Ram>
+     <IONb>140</IONb>
+     <Die>DIE484</Die>
+diff --git a/stm32-devices/mcu/STM32H562RGTx.xml b/stm32-devices/mcu/STM32H562RGTx.xml
+index ccd25772..c6cc01d5 100644
+--- a/stm32-devices/mcu/STM32H562RGTx.xml
++++ b/stm32-devices/mcu/STM32H562RGTx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <BootPath>Available</BootPath>
++    <Frequency>250</Frequency>
+     <Ram>640</Ram>
+     <IONb>49</IONb>
+     <Die>DIE484</Die>
+diff --git a/stm32-devices/mcu/STM32H562RGVx.xml b/stm32-devices/mcu/STM32H562RGVx.xml
+index a61ff323..47a98610 100644
+--- a/stm32-devices/mcu/STM32H562RGVx.xml
++++ b/stm32-devices/mcu/STM32H562RGVx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <BootPath>Available</BootPath>
++    <Frequency>250</Frequency>
+     <Ram>640</Ram>
+     <IONb>53</IONb>
+     <Die>DIE484</Die>
+diff --git a/stm32-devices/mcu/STM32H562VGTx.xml b/stm32-devices/mcu/STM32H562VGTx.xml
+index 5544e424..cca5a70b 100644
+--- a/stm32-devices/mcu/STM32H562VGTx.xml
++++ b/stm32-devices/mcu/STM32H562VGTx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <BootPath>Available</BootPath>
++    <Frequency>250</Frequency>
+     <Ram>640</Ram>
+     <IONb>80</IONb>
+     <Die>DIE484</Die>
+diff --git a/stm32-devices/mcu/STM32H562ZGTx.xml b/stm32-devices/mcu/STM32H562ZGTx.xml
+index 96b1e812..cee15e93 100644
+--- a/stm32-devices/mcu/STM32H562ZGTx.xml
++++ b/stm32-devices/mcu/STM32H562ZGTx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <BootPath>Available</BootPath>
++    <Frequency>250</Frequency>
+     <Ram>640</Ram>
+     <IONb>112</IONb>
+     <Die>DIE484</Die>
+diff --git a/stm32-devices/mcu/STM32H563AGIx.xml b/stm32-devices/mcu/STM32H563AGIx.xml
+index 55f95a16..f1694561 100644
+--- a/stm32-devices/mcu/STM32H563AGIx.xml
++++ b/stm32-devices/mcu/STM32H563AGIx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <BootPath>Available</BootPath>
++    <Frequency>250</Frequency>
+     <Ram>640</Ram>
+     <IONb>136</IONb>
+     <Die>DIE484</Die>
+diff --git a/stm32-devices/mcu/STM32H563IGTx.xml b/stm32-devices/mcu/STM32H563IGTx.xml
+index 9307391e..140d3542 100644
+--- a/stm32-devices/mcu/STM32H563IGTx.xml
++++ b/stm32-devices/mcu/STM32H563IGTx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <BootPath>Available</BootPath>
++    <Frequency>250</Frequency>
+     <Ram>640</Ram>
+     <IONb>140</IONb>
+     <Die>DIE484</Die>
+diff --git a/stm32-devices/mcu/STM32H563RGVx.xml b/stm32-devices/mcu/STM32H563RGVx.xml
+index cc09a6b4..2fae6338 100644
+--- a/stm32-devices/mcu/STM32H563RGVx.xml
++++ b/stm32-devices/mcu/STM32H563RGVx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <BootPath>Available</BootPath>
++    <Frequency>250</Frequency>
+     <Ram>640</Ram>
+     <IONb>53</IONb>
+     <Die>DIE484</Die>
+diff --git a/stm32-devices/mcu/STM32H563ZGTx.xml b/stm32-devices/mcu/STM32H563ZGTx.xml
+index 9a2a823b..8199aaa8 100644
+--- a/stm32-devices/mcu/STM32H563ZGTx.xml
++++ b/stm32-devices/mcu/STM32H563ZGTx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <BootPath>Available</BootPath>
++    <Frequency>250</Frequency>
+     <Ram>640</Ram>
+     <IONb>112</IONb>
+     <Die>DIE484</Die>
+diff --git a/stm32-devices/mcu/STM32U535CBTx.xml b/stm32-devices/mcu/STM32U535CBTx.xml
+index ca430f67..b70b3cc1 100644
+--- a/stm32-devices/mcu/STM32U535CBTx.xml
++++ b/stm32-devices/mcu/STM32U535CBTx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>37</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535CBTxQ.xml b/stm32-devices/mcu/STM32U535CBTxQ.xml
+index 3cb4487a..8ea4e464 100644
+--- a/stm32-devices/mcu/STM32U535CBTxQ.xml
++++ b/stm32-devices/mcu/STM32U535CBTxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>33</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535CBUx.xml b/stm32-devices/mcu/STM32U535CBUx.xml
+index 8f82722e..c3b423ba 100644
+--- a/stm32-devices/mcu/STM32U535CBUx.xml
++++ b/stm32-devices/mcu/STM32U535CBUx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>37</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535CBUxQ.xml b/stm32-devices/mcu/STM32U535CBUxQ.xml
+index 3adb4be5..85c82e6e 100644
+--- a/stm32-devices/mcu/STM32U535CBUxQ.xml
++++ b/stm32-devices/mcu/STM32U535CBUxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>33</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535CCTx.xml b/stm32-devices/mcu/STM32U535CCTx.xml
+index 877f2fe5..788d2afd 100644
+--- a/stm32-devices/mcu/STM32U535CCTx.xml
++++ b/stm32-devices/mcu/STM32U535CCTx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>37</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535CCTxQ.xml b/stm32-devices/mcu/STM32U535CCTxQ.xml
+index 19305f90..49b049db 100644
+--- a/stm32-devices/mcu/STM32U535CCTxQ.xml
++++ b/stm32-devices/mcu/STM32U535CCTxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>33</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535CCUx.xml b/stm32-devices/mcu/STM32U535CCUx.xml
+index 0519aaeb..d9cafc5a 100644
+--- a/stm32-devices/mcu/STM32U535CCUx.xml
++++ b/stm32-devices/mcu/STM32U535CCUx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>37</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535CCUxQ.xml b/stm32-devices/mcu/STM32U535CCUxQ.xml
+index 795ceebf..cc39bdba 100644
+--- a/stm32-devices/mcu/STM32U535CCUxQ.xml
++++ b/stm32-devices/mcu/STM32U535CCUxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>33</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535CETx.xml b/stm32-devices/mcu/STM32U535CETx.xml
+index 89aa0373..5c8382b9 100644
+--- a/stm32-devices/mcu/STM32U535CETx.xml
++++ b/stm32-devices/mcu/STM32U535CETx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>37</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535CETxQ.xml b/stm32-devices/mcu/STM32U535CETxQ.xml
+index 1d48b28a..af6f3793 100644
+--- a/stm32-devices/mcu/STM32U535CETxQ.xml
++++ b/stm32-devices/mcu/STM32U535CETxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>33</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535CEUx.xml b/stm32-devices/mcu/STM32U535CEUx.xml
+index 3d197af7..26f73f1b 100644
+--- a/stm32-devices/mcu/STM32U535CEUx.xml
++++ b/stm32-devices/mcu/STM32U535CEUx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>37</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535CEUxQ.xml b/stm32-devices/mcu/STM32U535CEUxQ.xml
+index 3eb16ee1..6f99fcab 100644
+--- a/stm32-devices/mcu/STM32U535CEUxQ.xml
++++ b/stm32-devices/mcu/STM32U535CEUxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>33</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535JEYxQ.xml b/stm32-devices/mcu/STM32U535JEYxQ.xml
+index 2dbd8fb0..6194a5f2 100644
+--- a/stm32-devices/mcu/STM32U535JEYxQ.xml
++++ b/stm32-devices/mcu/STM32U535JEYxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>50</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535NCYxQ.xml b/stm32-devices/mcu/STM32U535NCYxQ.xml
+index df03cc85..330d61f7 100644
+--- a/stm32-devices/mcu/STM32U535NCYxQ.xml
++++ b/stm32-devices/mcu/STM32U535NCYxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>39</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535NEYxQ.xml b/stm32-devices/mcu/STM32U535NEYxQ.xml
+index 8297d596..9effa180 100644
+--- a/stm32-devices/mcu/STM32U535NEYxQ.xml
++++ b/stm32-devices/mcu/STM32U535NEYxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>39</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535RBIx.xml b/stm32-devices/mcu/STM32U535RBIx.xml
+index 67758bbd..1f7f85d5 100644
+--- a/stm32-devices/mcu/STM32U535RBIx.xml
++++ b/stm32-devices/mcu/STM32U535RBIx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>51</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535RBIxQ.xml b/stm32-devices/mcu/STM32U535RBIxQ.xml
+index e6a2c031..a7be4daf 100644
+--- a/stm32-devices/mcu/STM32U535RBIxQ.xml
++++ b/stm32-devices/mcu/STM32U535RBIxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>47</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535RBTx.xml b/stm32-devices/mcu/STM32U535RBTx.xml
+index e6ec8885..6c8e419b 100644
+--- a/stm32-devices/mcu/STM32U535RBTx.xml
++++ b/stm32-devices/mcu/STM32U535RBTx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>51</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535RBTxQ.xml b/stm32-devices/mcu/STM32U535RBTxQ.xml
+index c2bfd807..a775d2bf 100644
+--- a/stm32-devices/mcu/STM32U535RBTxQ.xml
++++ b/stm32-devices/mcu/STM32U535RBTxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>47</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535RCIx.xml b/stm32-devices/mcu/STM32U535RCIx.xml
+index 103dd67f..a7753ef5 100644
+--- a/stm32-devices/mcu/STM32U535RCIx.xml
++++ b/stm32-devices/mcu/STM32U535RCIx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>51</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535RCIxQ.xml b/stm32-devices/mcu/STM32U535RCIxQ.xml
+index 58eed6b7..b4aa51e9 100644
+--- a/stm32-devices/mcu/STM32U535RCIxQ.xml
++++ b/stm32-devices/mcu/STM32U535RCIxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>47</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535RCTx.xml b/stm32-devices/mcu/STM32U535RCTx.xml
+index 99384562..3eaba09a 100644
+--- a/stm32-devices/mcu/STM32U535RCTx.xml
++++ b/stm32-devices/mcu/STM32U535RCTx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>51</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535RCTxQ.xml b/stm32-devices/mcu/STM32U535RCTxQ.xml
+index 53a7961c..fb1cda8a 100644
+--- a/stm32-devices/mcu/STM32U535RCTxQ.xml
++++ b/stm32-devices/mcu/STM32U535RCTxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>47</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535REIx.xml b/stm32-devices/mcu/STM32U535REIx.xml
+index aa8f9d40..e43c3520 100644
+--- a/stm32-devices/mcu/STM32U535REIx.xml
++++ b/stm32-devices/mcu/STM32U535REIx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>51</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535REIxQ.xml b/stm32-devices/mcu/STM32U535REIxQ.xml
+index df4c15fb..61dc18e7 100644
+--- a/stm32-devices/mcu/STM32U535REIxQ.xml
++++ b/stm32-devices/mcu/STM32U535REIxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>47</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535RETx.xml b/stm32-devices/mcu/STM32U535RETx.xml
+index 71f42549..d3c1aa71 100644
+--- a/stm32-devices/mcu/STM32U535RETx.xml
++++ b/stm32-devices/mcu/STM32U535RETx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>51</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535RETxQ.xml b/stm32-devices/mcu/STM32U535RETxQ.xml
+index 25a458bc..d45dadcc 100644
+--- a/stm32-devices/mcu/STM32U535RETxQ.xml
++++ b/stm32-devices/mcu/STM32U535RETxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>47</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535VCIx.xml b/stm32-devices/mcu/STM32U535VCIx.xml
+index d1acb05f..b2840a9c 100644
+--- a/stm32-devices/mcu/STM32U535VCIx.xml
++++ b/stm32-devices/mcu/STM32U535VCIx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>82</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535VCIxQ.xml b/stm32-devices/mcu/STM32U535VCIxQ.xml
+index 251c4e73..17216ef1 100644
+--- a/stm32-devices/mcu/STM32U535VCIxQ.xml
++++ b/stm32-devices/mcu/STM32U535VCIxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>79</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535VCTx.xml b/stm32-devices/mcu/STM32U535VCTx.xml
+index d0ed631f..6df38358 100644
+--- a/stm32-devices/mcu/STM32U535VCTx.xml
++++ b/stm32-devices/mcu/STM32U535VCTx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>82</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535VCTxQ.xml b/stm32-devices/mcu/STM32U535VCTxQ.xml
+index 33752dda..a41c63cf 100644
+--- a/stm32-devices/mcu/STM32U535VCTxQ.xml
++++ b/stm32-devices/mcu/STM32U535VCTxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>79</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535VEIx.xml b/stm32-devices/mcu/STM32U535VEIx.xml
+index 1da2439f..92403ecd 100644
+--- a/stm32-devices/mcu/STM32U535VEIx.xml
++++ b/stm32-devices/mcu/STM32U535VEIx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>82</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535VEIxQ.xml b/stm32-devices/mcu/STM32U535VEIxQ.xml
+index 9b285992..44b25164 100644
+--- a/stm32-devices/mcu/STM32U535VEIxQ.xml
++++ b/stm32-devices/mcu/STM32U535VEIxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>79</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535VETx.xml b/stm32-devices/mcu/STM32U535VETx.xml
+index 874acddd..ffa178f2 100644
+--- a/stm32-devices/mcu/STM32U535VETx.xml
++++ b/stm32-devices/mcu/STM32U535VETx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>82</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U535VETxQ.xml b/stm32-devices/mcu/STM32U535VETxQ.xml
+index eb547c5f..4ca15954 100644
+--- a/stm32-devices/mcu/STM32U535VETxQ.xml
++++ b/stm32-devices/mcu/STM32U535VETxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>79</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U545CETx.xml b/stm32-devices/mcu/STM32U545CETx.xml
+index 416262c6..5f682dc0 100644
+--- a/stm32-devices/mcu/STM32U545CETx.xml
++++ b/stm32-devices/mcu/STM32U545CETx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>37</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U545CETxQ.xml b/stm32-devices/mcu/STM32U545CETxQ.xml
+index 283c45db..1dc8ed81 100644
+--- a/stm32-devices/mcu/STM32U545CETxQ.xml
++++ b/stm32-devices/mcu/STM32U545CETxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>33</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U545CEUx.xml b/stm32-devices/mcu/STM32U545CEUx.xml
+index a1d5c5af..664f6c4e 100644
+--- a/stm32-devices/mcu/STM32U545CEUx.xml
++++ b/stm32-devices/mcu/STM32U545CEUx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>37</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U545CEUxQ.xml b/stm32-devices/mcu/STM32U545CEUxQ.xml
+index 2928d24c..2912b2df 100644
+--- a/stm32-devices/mcu/STM32U545CEUxQ.xml
++++ b/stm32-devices/mcu/STM32U545CEUxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>33</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U545JEYxQ.xml b/stm32-devices/mcu/STM32U545JEYxQ.xml
+index a4e5cf13..3c0514d7 100644
+--- a/stm32-devices/mcu/STM32U545JEYxQ.xml
++++ b/stm32-devices/mcu/STM32U545JEYxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>50</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U545NEYxQ.xml b/stm32-devices/mcu/STM32U545NEYxQ.xml
+index ffb75e7a..afb903a6 100644
+--- a/stm32-devices/mcu/STM32U545NEYxQ.xml
++++ b/stm32-devices/mcu/STM32U545NEYxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>39</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U545REIx.xml b/stm32-devices/mcu/STM32U545REIx.xml
+index 074cb3eb..37859bf2 100644
+--- a/stm32-devices/mcu/STM32U545REIx.xml
++++ b/stm32-devices/mcu/STM32U545REIx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>51</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U545REIxQ.xml b/stm32-devices/mcu/STM32U545REIxQ.xml
+index e0635262..43961c34 100644
+--- a/stm32-devices/mcu/STM32U545REIxQ.xml
++++ b/stm32-devices/mcu/STM32U545REIxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>47</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U545RETx.xml b/stm32-devices/mcu/STM32U545RETx.xml
+index 3867e922..cb3a1c71 100644
+--- a/stm32-devices/mcu/STM32U545RETx.xml
++++ b/stm32-devices/mcu/STM32U545RETx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>51</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U545RETxQ.xml b/stm32-devices/mcu/STM32U545RETxQ.xml
+index 933cb5e9..c3837854 100644
+--- a/stm32-devices/mcu/STM32U545RETxQ.xml
++++ b/stm32-devices/mcu/STM32U545RETxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>47</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U545VEIx.xml b/stm32-devices/mcu/STM32U545VEIx.xml
+index ef09a3c8..491d0255 100644
+--- a/stm32-devices/mcu/STM32U545VEIx.xml
++++ b/stm32-devices/mcu/STM32U545VEIx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>82</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U545VEIxQ.xml b/stm32-devices/mcu/STM32U545VEIxQ.xml
+index 919e43a0..36495f1d 100644
+--- a/stm32-devices/mcu/STM32U545VEIxQ.xml
++++ b/stm32-devices/mcu/STM32U545VEIxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>79</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U545VETx.xml b/stm32-devices/mcu/STM32U545VETx.xml
+index 56d2aa97..0e5d4a4f 100644
+--- a/stm32-devices/mcu/STM32U545VETx.xml
++++ b/stm32-devices/mcu/STM32U545VETx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>82</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U545VETxQ.xml b/stm32-devices/mcu/STM32U545VETxQ.xml
+index 809ce48b..e2325e9e 100644
+--- a/stm32-devices/mcu/STM32U545VETxQ.xml
++++ b/stm32-devices/mcu/STM32U545VETxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>274</Ram>
+     <IONb>79</IONb>
+     <Die>DIE455</Die>
+diff --git a/stm32-devices/mcu/STM32U595AIHx.xml b/stm32-devices/mcu/STM32U595AIHx.xml
+index 0bd5e729..ed7a821c 100644
+--- a/stm32-devices/mcu/STM32U595AIHx.xml
++++ b/stm32-devices/mcu/STM32U595AIHx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>136</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595AIHxQ.xml b/stm32-devices/mcu/STM32U595AIHxQ.xml
+index b9e08f5f..cbb228be 100644
+--- a/stm32-devices/mcu/STM32U595AIHxQ.xml
++++ b/stm32-devices/mcu/STM32U595AIHxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>133</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595AJHx.xml b/stm32-devices/mcu/STM32U595AJHx.xml
+index 24f880a2..9a074f0f 100644
+--- a/stm32-devices/mcu/STM32U595AJHx.xml
++++ b/stm32-devices/mcu/STM32U595AJHx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>136</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595AJHxQ.xml b/stm32-devices/mcu/STM32U595AJHxQ.xml
+index 00981e5b..6a5d3195 100644
+--- a/stm32-devices/mcu/STM32U595AJHxQ.xml
++++ b/stm32-devices/mcu/STM32U595AJHxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>133</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595QIIx.xml b/stm32-devices/mcu/STM32U595QIIx.xml
+index d7f1af62..aad6aab5 100644
+--- a/stm32-devices/mcu/STM32U595QIIx.xml
++++ b/stm32-devices/mcu/STM32U595QIIx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>110</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595QIIxQ.xml b/stm32-devices/mcu/STM32U595QIIxQ.xml
+index f5d8b9b7..2de25808 100644
+--- a/stm32-devices/mcu/STM32U595QIIxQ.xml
++++ b/stm32-devices/mcu/STM32U595QIIxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>106</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595QJIx.xml b/stm32-devices/mcu/STM32U595QJIx.xml
+index 3e9a32fe..a34ff5c8 100644
+--- a/stm32-devices/mcu/STM32U595QJIx.xml
++++ b/stm32-devices/mcu/STM32U595QJIx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>110</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595QJIxQ.xml b/stm32-devices/mcu/STM32U595QJIxQ.xml
+index f4c73e73..d69caf09 100644
+--- a/stm32-devices/mcu/STM32U595QJIxQ.xml
++++ b/stm32-devices/mcu/STM32U595QJIxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>106</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595RITx.xml b/stm32-devices/mcu/STM32U595RITx.xml
+index 20a9fdb5..232d2797 100644
+--- a/stm32-devices/mcu/STM32U595RITx.xml
++++ b/stm32-devices/mcu/STM32U595RITx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>51</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595RITxQ.xml b/stm32-devices/mcu/STM32U595RITxQ.xml
+index 29cef4d0..3dd1e6c0 100644
+--- a/stm32-devices/mcu/STM32U595RITxQ.xml
++++ b/stm32-devices/mcu/STM32U595RITxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>47</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595RJTx.xml b/stm32-devices/mcu/STM32U595RJTx.xml
+index cb7238ab..4d3c7d7e 100644
+--- a/stm32-devices/mcu/STM32U595RJTx.xml
++++ b/stm32-devices/mcu/STM32U595RJTx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>51</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595RJTxQ.xml b/stm32-devices/mcu/STM32U595RJTxQ.xml
+index cc1d778d..497898c4 100644
+--- a/stm32-devices/mcu/STM32U595RJTxQ.xml
++++ b/stm32-devices/mcu/STM32U595RJTxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>47</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595VITx.xml b/stm32-devices/mcu/STM32U595VITx.xml
+index 4c806d4f..6287ae3f 100644
+--- a/stm32-devices/mcu/STM32U595VITx.xml
++++ b/stm32-devices/mcu/STM32U595VITx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>82</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595VITxQ.xml b/stm32-devices/mcu/STM32U595VITxQ.xml
+index 3f55893d..c161a3a2 100644
+--- a/stm32-devices/mcu/STM32U595VITxQ.xml
++++ b/stm32-devices/mcu/STM32U595VITxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>79</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595VJTx.xml b/stm32-devices/mcu/STM32U595VJTx.xml
+index 21912620..f9684286 100644
+--- a/stm32-devices/mcu/STM32U595VJTx.xml
++++ b/stm32-devices/mcu/STM32U595VJTx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>82</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595VJTxQ.xml b/stm32-devices/mcu/STM32U595VJTxQ.xml
+index 9ff17762..2ff82729 100644
+--- a/stm32-devices/mcu/STM32U595VJTxQ.xml
++++ b/stm32-devices/mcu/STM32U595VJTxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>79</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595ZITx.xml b/stm32-devices/mcu/STM32U595ZITx.xml
+index dce57ed0..8ea7e92c 100644
+--- a/stm32-devices/mcu/STM32U595ZITx.xml
++++ b/stm32-devices/mcu/STM32U595ZITx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>114</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595ZITxQ.xml b/stm32-devices/mcu/STM32U595ZITxQ.xml
+index 56683eb4..9865a0e2 100644
+--- a/stm32-devices/mcu/STM32U595ZITxQ.xml
++++ b/stm32-devices/mcu/STM32U595ZITxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>111</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595ZIYxQ.xml b/stm32-devices/mcu/STM32U595ZIYxQ.xml
+index 2f920913..71e0611c 100644
+--- a/stm32-devices/mcu/STM32U595ZIYxQ.xml
++++ b/stm32-devices/mcu/STM32U595ZIYxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>115</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U595ZJYxQ.xml b/stm32-devices/mcu/STM32U595ZJYxQ.xml
+index 40293ef6..c87ee3d7 100644
+--- a/stm32-devices/mcu/STM32U595ZJYxQ.xml
++++ b/stm32-devices/mcu/STM32U595ZJYxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>115</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U599VITxQ.xml b/stm32-devices/mcu/STM32U599VITxQ.xml
+index a13ae100..e14ad260 100644
+--- a/stm32-devices/mcu/STM32U599VITxQ.xml
++++ b/stm32-devices/mcu/STM32U599VITxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>79</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U599VJTx.xml b/stm32-devices/mcu/STM32U599VJTx.xml
+index d21cd653..cf2645a8 100644
+--- a/stm32-devices/mcu/STM32U599VJTx.xml
++++ b/stm32-devices/mcu/STM32U599VJTx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>82</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U599VJTxQ.xml b/stm32-devices/mcu/STM32U599VJTxQ.xml
+index 1388c5ad..f252a6a6 100644
+--- a/stm32-devices/mcu/STM32U599VJTxQ.xml
++++ b/stm32-devices/mcu/STM32U599VJTxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>79</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U599ZITxQ.xml b/stm32-devices/mcu/STM32U599ZITxQ.xml
+index 9be327ce..ad30244e 100644
+--- a/stm32-devices/mcu/STM32U599ZITxQ.xml
++++ b/stm32-devices/mcu/STM32U599ZITxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>111</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U599ZIYxQ.xml b/stm32-devices/mcu/STM32U599ZIYxQ.xml
+index 0bcca423..4e6747de 100644
+--- a/stm32-devices/mcu/STM32U599ZIYxQ.xml
++++ b/stm32-devices/mcu/STM32U599ZIYxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>108</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U599ZJYxQ.xml b/stm32-devices/mcu/STM32U599ZJYxQ.xml
+index 8717d222..904b9bbb 100644
+--- a/stm32-devices/mcu/STM32U599ZJYxQ.xml
++++ b/stm32-devices/mcu/STM32U599ZJYxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>108</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U5A5AJHx.xml b/stm32-devices/mcu/STM32U5A5AJHx.xml
+index 5e3fa599..23d77cf7 100644
+--- a/stm32-devices/mcu/STM32U5A5AJHx.xml
++++ b/stm32-devices/mcu/STM32U5A5AJHx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>136</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U5A5AJHxQ.xml b/stm32-devices/mcu/STM32U5A5AJHxQ.xml
+index d2eef146..934a263a 100644
+--- a/stm32-devices/mcu/STM32U5A5AJHxQ.xml
++++ b/stm32-devices/mcu/STM32U5A5AJHxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>133</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U5A5QJIx.xml b/stm32-devices/mcu/STM32U5A5QJIx.xml
+index 8946d060..f8649211 100644
+--- a/stm32-devices/mcu/STM32U5A5QJIx.xml
++++ b/stm32-devices/mcu/STM32U5A5QJIx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>110</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U5A5QJIxQ.xml b/stm32-devices/mcu/STM32U5A5QJIxQ.xml
+index 2a44e1f5..2d84fa51 100644
+--- a/stm32-devices/mcu/STM32U5A5QJIxQ.xml
++++ b/stm32-devices/mcu/STM32U5A5QJIxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>106</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U5A5RJTx.xml b/stm32-devices/mcu/STM32U5A5RJTx.xml
+index 471cb0f3..77ee896a 100644
+--- a/stm32-devices/mcu/STM32U5A5RJTx.xml
++++ b/stm32-devices/mcu/STM32U5A5RJTx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>51</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U5A5RJTxQ.xml b/stm32-devices/mcu/STM32U5A5RJTxQ.xml
+index 40962959..83103b3c 100644
+--- a/stm32-devices/mcu/STM32U5A5RJTxQ.xml
++++ b/stm32-devices/mcu/STM32U5A5RJTxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>47</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U5A5VJTx.xml b/stm32-devices/mcu/STM32U5A5VJTx.xml
+index 7946f3a0..e234a55b 100644
+--- a/stm32-devices/mcu/STM32U5A5VJTx.xml
++++ b/stm32-devices/mcu/STM32U5A5VJTx.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>82</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U5A5VJTxQ.xml b/stm32-devices/mcu/STM32U5A5VJTxQ.xml
+index f7ddf377..cf8a28c5 100644
+--- a/stm32-devices/mcu/STM32U5A5VJTxQ.xml
++++ b/stm32-devices/mcu/STM32U5A5VJTxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>79</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U5A5ZJYxQ.xml b/stm32-devices/mcu/STM32U5A5ZJYxQ.xml
+index 5ff6af47..6177ed56 100644
+--- a/stm32-devices/mcu/STM32U5A5ZJYxQ.xml
++++ b/stm32-devices/mcu/STM32U5A5ZJYxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>115</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U5A9VJTxQ.xml b/stm32-devices/mcu/STM32U5A9VJTxQ.xml
+index 32c6e284..fc551403 100644
+--- a/stm32-devices/mcu/STM32U5A9VJTxQ.xml
++++ b/stm32-devices/mcu/STM32U5A9VJTxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>79</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U5A9ZJTxQ.xml b/stm32-devices/mcu/STM32U5A9ZJTxQ.xml
+index e5d2205c..e889826f 100644
+--- a/stm32-devices/mcu/STM32U5A9ZJTxQ.xml
++++ b/stm32-devices/mcu/STM32U5A9ZJTxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>111</IONb>
+     <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/STM32U5A9ZJYxQ.xml b/stm32-devices/mcu/STM32U5A9ZJYxQ.xml
+index e8ffb555..9e46d578 100644
+--- a/stm32-devices/mcu/STM32U5A9ZJYxQ.xml
++++ b/stm32-devices/mcu/STM32U5A9ZJYxQ.xml
+@@ -8,6 +8,7 @@
+     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>2514</Ram>
+     <IONb>108</IONb>
+     <Die>DIE481</Die>
