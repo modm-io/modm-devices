@@ -11,6 +11,8 @@ ignored_devices = \
     "STM32U59",
     "STM32U5A",
     "STM32WL5M",
+    "STM32WB1M",
+    "STM32WB5M",
 ]
 
 def ignoreDevice(device_id: str) -> bool:
