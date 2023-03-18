@@ -181,6 +181,12 @@ stm_groups = \
         'name': ['65', '67', '68', '69', '77', '78', '79']
     },
 
+    # STM32C0 devices
+    {
+        'family': ['c0'],
+        'name': ['11', '31']
+    },
+
     # STM32G0 devices
     {
         'family': ['g0'],
@@ -221,6 +227,18 @@ stm_groups = \
     },{
         'family': ['g4'],
         'name': ['74', '84']
+    },
+
+    # STM32H5 devices
+    {
+        'family': ['h5'],
+        'name': ['03']
+    },{
+        'family': ['h5'],
+        'name': ['62']
+    },{
+        'family': ['h5'],
+        'name': ['63', '73']
     },
 
     # STM32H7 devices

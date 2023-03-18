@@ -23,7 +23,7 @@ class CmsisHeader:
     def get_header(filename, replace = []):
         replacers = replace + CmsisHeader.REPLACE
         try:
-            content = filename.read_text(encoding="utf-8", errors="replace")
+            content = filename.read_text(encoding="utf-8-sig", errors="replace")
             for r in replacers:
                 content = re.sub(r[0], r[1], content, flags=(re.DOTALL | re.MULTILINE))
             # print(content)

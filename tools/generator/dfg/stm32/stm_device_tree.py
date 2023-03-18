@@ -61,6 +61,7 @@ class STMDeviceTree:
     def _properties_from_partname(partname):
         deviceNames = STMDeviceTree.familyFile.query('//Family/SubFamily/Mcu[starts-with(@RefName,"{}")]'
                                                      .format(partname[:12] + "x" + partname[13:]))
+        if not deviceNames: return []
         comboDeviceName = sorted([d.get("Name") for d in deviceNames])[0]
         device_file = XMLReader(os.path.join(STMDeviceTree.rootpath, comboDeviceName + ".xml"))
         did = STMIdentifier.from_string(partname.lower())

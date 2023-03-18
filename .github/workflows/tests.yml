@@ -11,7 +11,7 @@ env:
 
 jobs:
   group-1:
-    name: "STM32: F4, G4, L0"
+    name: "STM32: F4, G4, L0, H5"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -26,7 +26,7 @@ jobs:
       - name: Generate STM32 data
         run: |
           cd tools/generator
-          make generate-stm32f4 generate-stm32g4 generate-stm32l0
+          make generate-stm32f4 generate-stm32g4 generate-stm32l0 generate-stm32h5
       - name: Synchronize Docs
         run: |
           python3 tools/scripts/sync_docs.py
@@ -36,7 +36,7 @@ jobs:
           (( $(git status --porcelain | wc -l) == 0 ))
 
   group-2:
-    name: "STM32: G0, H7, L4"
+    name: "STM32: C0, G0, H7, L4"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -51,7 +51,7 @@ jobs:
       - name: Generate STM32 data
         run: |
           cd tools/generator
-          make generate-stm32g0 generate-stm32h7 generate-stm32l4
+          make generate-stm32c0 generate-stm32g0 generate-stm32h7 generate-stm32l4
       - name: Synchronize Docs
         run: |
           python3 tools/scripts/sync_docs.py

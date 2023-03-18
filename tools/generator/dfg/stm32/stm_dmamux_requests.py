@@ -14,7 +14,7 @@ def read_request_map(did):
     dma_header = _get_hal_dma_header_path(did.family)
     dmamux_header = _get_ll_dmamux_header_path(did.family)
     request_map = None
-    if did.family in ["g4", "h7", "l5"]:
+    if did.family in ["c0", "g4", "h7", "l5"]:
         request_map = _read_requests(dma_header)
     elif did.family in ["g0", "wb", "wl"]:
         request_map = _read_requests_from_ll_dmamux(dma_header, dmamux_header)

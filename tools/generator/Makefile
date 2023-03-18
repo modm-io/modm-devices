@@ -85,9 +85,10 @@ generate-stm32%: raw-device-data/stm32-devices ext/cmsis-5-partial ext/cmsis-hea
 
 .PHONY: generate-stm32
 generate-stm32: generate-stm32f0 generate-stm32f1 generate-stm32f2 generate-stm32f3 \
-				generate-stm32f4 generate-stm32f7 generate-stm32g0 generate-stm32g4 \
-				generate-stm32h7 generate-stm32l0 generate-stm32l1 generate-stm32l4 \
-				generate-stm32l5 generate-stm32wb generate-stm32wl generate-stm32u5
+				generate-stm32f4 generate-stm32f7 generate-stm32c0 generate-stm32g0 \
+				generate-stm32g4 generate-stm32h5 generate-stm32h7 generate-stm32l0 \
+				generate-stm32l1 generate-stm32l4 generate-stm32l5 generate-stm32wb \
+				generate-stm32wl generate-stm32u5
 
 
 # RP device files
