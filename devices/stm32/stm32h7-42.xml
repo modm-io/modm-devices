@@ -675,7 +675,7 @@
     <driver name="gpio" type="stm32">
       <gpio port="a" pin="0">
         <signal driver="adc" instance="1" name="inp16"/>
-        <signal driver="pwr" name="wkup0"/>
+        <signal driver="pwr" name="wkup1"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
         <signal af="1" driver="tim" instance="2" name="etr"/>
         <signal af="2" driver="tim" instance="5" name="ch1"/>
@@ -706,7 +706,7 @@
       <gpio port="a" pin="2">
         <signal driver="adc" instance="1" name="inp14"/>
         <signal driver="adc" instance="2" name="inp14"/>
-        <signal driver="pwr" name="wkup1"/>
+        <signal driver="pwr" name="wkup2"/>
         <signal af="1" driver="tim" instance="2" name="ch3"/>
         <signal af="2" driver="tim" instance="5" name="ch3"/>
         <signal af="3" driver="lptim" instance="4" name="out"/>
@@ -1114,7 +1114,7 @@
         <signal driver="adc" instance="2" name="inp11"/>
         <signal driver="adc" instance="3" name="inn10"/>
         <signal driver="adc" instance="3" name="inp11"/>
-        <signal driver="pwr" name="wkup5"/>
+        <signal driver="pwr" name="wkup6"/>
         <signal driver="rtc" name="tamp3"/>
         <signal af="0" driver="debug" name="traced0"/>
         <signal af="2" driver="sai" instance="1" name="d1"/>
@@ -1275,7 +1275,7 @@
         <signal af="13" driver="dcmi" name="d9"/>
       </gpio>
       <gpio port="c" pin="13">
-        <signal driver="pwr" name="wkup2"/>
+        <signal driver="pwr" name="wkup4"/>
         <signal driver="rtc" name="out_alarm"/>
         <signal driver="rtc" name="out_calib"/>
         <signal driver="rtc" name="tamp1"/>
@@ -1969,7 +1969,7 @@
         <signal af="12" driver="fmc" name="d31"/>
       </gpio>
       <gpio device-pin="a|b|i|x" port="i" pin="11">
-        <signal driver="pwr" name="wkup4"/>
+        <signal driver="pwr" name="wkup5"/>
         <signal af="10" driver="usb_otg_hs" name="ulpi_dir"/>
       </gpio>
       <gpio device-pin="a|b|x" port="i" pin="12"/>

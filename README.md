@@ -12,7 +12,7 @@ These tools and this data set is maintained and curated by
 [@salkinium][] only at [modm-io/modm-devices][modm-devices].
 It is licensed under the MPLv2 license.
 
-Currently data for <!--devicecount-->4200<!--/devicecount--> devices is available.
+Currently data for <!--devicecount-->4282<!--/devicecount--> devices is available.
 Please open an issue or better yet a pull request for additional support.
 
 <!--devicetable-->
@@ -21,12 +21,13 @@ Please open an issue or better yet a pull request for additional support.
 | AT90          |    12   | ATMEGA        |   352   | ATTINY        |   148   |
 | NRF52         |     7   | RP20          |     1   | SAMD1x/D2x/DAx|   322   |
 | SAMD5x/E5x    |   114   | SAME7x/S7x/V7x|   134   | SAMG5x        |    12   |
-| SAML2x        |    82   | STM32F0       |   169   | STM32F1       |   174   |
-| STM32F2       |    71   | STM32F3       |   145   | STM32F4       |   354   |
-| STM32F7       |   181   | STM32G0       |   278   | STM32G4       |   297   |
-| STM32H7       |   206   | STM32L0       |   354   | STM32L1       |   180   |
-| STM32L4       |   420   | STM32L5       |    52   | STM32U5       |    73   |
-| STM32WB       |    38   | STM32WL       |    24   |
+| SAML2x        |    82   | STM32C0       |    19   | STM32F0       |   169   |
+| STM32F1       |   174   | STM32F2       |    71   | STM32F3       |   145   |
+| STM32F4       |   354   | STM32F7       |   181   | STM32G0       |   262   |
+| STM32G4       |   295   | STM32H5       |    56   | STM32H7       |   206   |
+| STM32L0       |   354   | STM32L1       |   180   | STM32L4       |   418   |
+| STM32L5       |    44   | STM32U5       |   110   | STM32WB       |    36   |
+| STM32WL       |    24   |
 <!--/devicetable-->
 
 

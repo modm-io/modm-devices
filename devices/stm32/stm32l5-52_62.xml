@@ -31,18 +31,10 @@
     <valid-device>stm32l552zet6q</valid-device>
     <valid-device>stm32l552zet7</valid-device>
     <valid-device>stm32l552zet7q</valid-device>
-    <valid-device>stm32l562cet3</valid-device>
-    <valid-device>stm32l562cet3p</valid-device>
     <valid-device>stm32l562cet6</valid-device>
     <valid-device>stm32l562cet6p</valid-device>
-    <valid-device>stm32l562cet7</valid-device>
-    <valid-device>stm32l562cet7p</valid-device>
-    <valid-device>stm32l562ceu3</valid-device>
-    <valid-device>stm32l562ceu3p</valid-device>
     <valid-device>stm32l562ceu6</valid-device>
     <valid-device>stm32l562ceu6p</valid-device>
-    <valid-device>stm32l562ceu7</valid-device>
-    <valid-device>stm32l562ceu7p</valid-device>
     <valid-device>stm32l562mey6p</valid-device>
     <valid-device>stm32l562mey6q</valid-device>
     <valid-device>stm32l562qei6</valid-device>
@@ -2434,10 +2426,9 @@
         <pin position="19" name="PB1"/>
         <pin position="20" name="PB2"/>
         <pin position="21" name="PB10"/>
-        <pin device-name="62" device-size="e" device-temperature="3|7" device-variant="p" position="22" name="VDD12" type="power"/>
-        <pin device-name="52|62" device-size="e" device-temperature="6" device-variant="p" position="22" name="VDD12" type="power"/>
-        <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="22" name="PB11"/>
-        <pin device-name="62" device-size="e" device-temperature="3|6|7" device-variant="" position="22" name="PB11"/>
+        <pin device-name="52|62" device-size="e" device-variant="p" position="22" name="VDD12" type="power"/>
+        <pin device-name="52" device-size="c|e" device-variant="" position="22" name="PB11"/>
+        <pin device-name="62" device-size="e" device-variant="" position="22" name="PB11"/>
         <pin position="23" name="VSS" type="power"/>
         <pin position="24" name="VDD" type="power"/>
         <pin position="25" name="PB12"/>
@@ -2461,10 +2452,9 @@
         <pin position="43" name="PB7"/>
         <pin position="44" name="PH3-BOOT0"/>
         <pin position="45" name="PB8"/>
-        <pin device-name="62" device-size="e" device-temperature="3|7" device-variant="p" position="46" name="VDD12" type="power"/>
-        <pin device-name="52|62" device-size="e" device-temperature="6" device-variant="p" position="46" name="VDD12" type="power"/>
-        <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="46" name="PB9"/>
-        <pin device-name="62" device-size="e" device-temperature="3|6|7" device-variant="" position="46" name="PB9"/>
+        <pin device-name="52|62" device-size="e" device-variant="p" position="46" name="VDD12" type="power"/>
+        <pin device-name="52" device-size="c|e" device-variant="" position="46" name="PB9"/>
+        <pin device-name="62" device-size="e" device-variant="" position="46" name="PB9"/>
         <pin position="47" name="VSS" type="power"/>
         <pin position="48" name="VDD" type="power"/>
       </package>
@@ -2755,10 +2745,9 @@
         <pin position="19" name="PB1"/>
         <pin position="20" name="PB2"/>
         <pin position="21" name="PB10"/>
-        <pin device-name="62" device-size="e" device-temperature="3|7" device-variant="p" position="22" name="VDD12" type="power"/>
-        <pin device-name="52|62" device-size="e" device-temperature="6" device-variant="p" position="22" name="VDD12" type="power"/>
-        <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="22" name="PB11"/>
-        <pin device-name="62" device-size="e" device-temperature="3|6|7" device-variant="" position="22" name="PB11"/>
+        <pin device-name="52|62" device-size="e" device-variant="p" position="22" name="VDD12" type="power"/>
+        <pin device-name="52" device-size="c|e" device-variant="" position="22" name="PB11"/>
+        <pin device-name="62" device-size="e" device-variant="" position="22" name="PB11"/>
         <pin position="23" name="VSS" type="power"/>
         <pin position="24" name="VDD" type="power"/>
         <pin position="25" name="PB12"/>
@@ -2782,10 +2771,9 @@
         <pin position="43" name="PB7"/>
         <pin position="44" name="PH3-BOOT0"/>
         <pin position="45" name="PB8"/>
-        <pin device-name="62" device-size="e" device-temperature="3|7" device-variant="p" position="46" name="VDD12" type="power"/>
-        <pin device-name="52|62" device-size="e" device-temperature="6" device-variant="p" position="46" name="VDD12" type="power"/>
-        <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="" position="46" name="PB9"/>
-        <pin device-name="62" device-size="e" device-temperature="3|6|7" device-variant="" position="46" name="PB9"/>
+        <pin device-name="52|62" device-size="e" device-variant="p" position="46" name="VDD12" type="power"/>
+        <pin device-name="52" device-size="c|e" device-variant="" position="46" name="PB9"/>
+        <pin device-name="62" device-size="e" device-variant="" position="46" name="PB9"/>
         <pin position="47" name="VSS" type="power"/>
         <pin position="48" name="VDD" type="power"/>
       </package>

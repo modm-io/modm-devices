@@ -16,4 +16,4 @@ from .exception import ParserException
 
 __all__ = ['exception', 'device_file', 'device_identifier', 'device', 'parser', 'pkg']
 
-__version__ = "0.9.4"
+__version__ = "0.10.0"
