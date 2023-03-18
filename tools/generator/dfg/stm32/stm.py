@@ -743,20 +743,35 @@ stm32_memory = \
         'start': {
             'flash': 0x08000000,
             'sram1': 0x20000000,
-            'sram2': 0x20030000,
-            'sram3': 0x20040000,
+            'sram2': 0x200C0000,
+            'sram3': 0x200D0000,
+            'sram5': 0x201A0000,
+            'sram6': 0x20270000,
             'sram4': 0x28000000,
             'bkpsram': 0x40036400,
         },
         'model': [
             {
+                'name': ['35', '45'],
+                'memories': {'flash': 0, 'sram1': 192*1024, 'sram2': 64*1024, 'sram4': 16*1024, 'bkpsram': 2*1024},
+                'start': { # overwrite due to smaller sram1/3 sizes
+                    'sram2': 0x20030000,
+                    'sram3': 0x20040000,
+                }
+            },{
                 'name': ['75', '85'],
-                'memories': {'flash': 0, 'sram1': 192*1024, 'sram2': 64*1024, 'sram3': 512*1024, 'sram4': 16*1024, 'bkpsram': 2*1024}
+                'memories': {'flash': 0, 'sram1': 192*1024, 'sram2': 64*1024, 'sram3': 512*1024, 'sram4': 16*1024, 'bkpsram': 2*1024},
+                'start': { # overwrite due to smaller sram1/3 sizes
+                    'sram2': 0x20030000,
+                    'sram3': 0x20040000,
+                }
+            },{
+                'name': ['95', 'a5'],
+                'memories': {'flash': 0, 'sram1': 768*1024, 'sram2': 64*1024, 'sram3': 832*1024, 'sram4': 16*1024, 'sram5': 832*1024, 'bkpsram': 2*1024}
+            },{
+                'name': ['f5', 'g5'],
+                'memories': {'flash': 0, 'sram1': 768*1024, 'sram2': 64*1024, 'sram3': 832*1024, 'sram4': 16*1024, 'sram5': 832*1024, 'sram6': 512*1024, 'bkpsram': 2*1024},
             }
-            # ,{
-            #     'name': ['95', '99', 'a5', 'a9'], # This devices are not published yet...
-            #     'memories': # TODO...
-            # }
         ]
     },
 }
