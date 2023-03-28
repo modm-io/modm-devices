@@ -2863,7 +2863,7 @@
         <pin position="E16" name="PA12"/>
         <pin position="E17" name="PA11"/>
         <pin position="F1" name="VSS" type="power"/>
-        <pin position="F2" name="VSS" type="power"/>
+        <pin position="F2" name="NC" type="nc"/>
         <pin position="F3" name="PI10"/>
         <pin position="F4" name="PI11"/>
         <pin position="F5" name="VDD" type="power"/>
