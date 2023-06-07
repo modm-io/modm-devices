@@ -1584,3 +1584,19 @@ index e8ffb555..9e46d578 100644
      <Ram>2514</Ram>
      <IONb>108</IONb>
      <Die>DIE481</Die>
+diff --git a/stm32-devices/mcu/IP/DMA-STM32G0B1_dma1_v1_3_Modes.xml b/stm32-devices/mcu/IP/DMA-STM32G0B1_dma1_v1_3_Modes.xml
+index 16f4362..9843602 100644
+--- a/stm32-devices/mcu/IP/DMA-STM32G0B1_dma1_v1_3_Modes.xml
++++ b/stm32-devices/mcu/IP/DMA-STM32G0B1_dma1_v1_3_Modes.xml
+@@ -9,11 +9,6 @@
+         <PossibleValue Comment="DMA1 Channel 5" Value="DMA1_Channel5"/>
+         <PossibleValue Comment="DMA1 Channel 6" Value="DMA1_Channel6"/>
+         <PossibleValue Comment="DMA1 Channel 7" Value="DMA1_Channel7"/>
+-        <PossibleValue Comment="DMA1 Channel 8" Value="DMA1_Channel8"/>
+-        <PossibleValue Comment="DMA1 Channel 9" Value="DMA1_Channel9"/>
+-        <PossibleValue Comment="DMA1 Channel 10" Value="DMA1_Channel10"/>
+-        <PossibleValue Comment="DMA1 Channel 11" Value="DMA1_Channel11"/>
+-        <PossibleValue Comment="DMA1 Channel 12" Value="DMA1_Channel12"/>
+         <PossibleValue Comment="DMA2 Channel 1" Value="DMA2_Channel1"/>
+         <PossibleValue Comment="DMA2 Channel 2" Value="DMA2_Channel2"/>
+         <PossibleValue Comment="DMA2 Channel 3" Value="DMA2_Channel3"/>
