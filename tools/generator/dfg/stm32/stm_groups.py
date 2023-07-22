@@ -391,5 +391,11 @@ stm_groups = \
     },{
         'family': ['u5'],
         'name': ['f5', 'g5'],
+    },{
+        'family': ['u5'],
+        'name': ['f7', 'g7'],
+    },{
+        'family': ['u5'],
+        'name': ['f9', 'g9'],
     },
 ]

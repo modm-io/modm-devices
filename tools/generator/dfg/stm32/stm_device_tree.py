@@ -151,7 +151,8 @@ class STMDeviceTree:
             software_ips = {"GFXSIMULATOR", "GRAPHICS", "FATFS", "TOUCHSENSING", "PDM2PCM",
                             "MBEDTLS", "FREERTOS", "CORTEX_M", "NVIC", "USB_DEVICE",
                             "USB_HOST", "LWIP", "LIBJPEG", "GUI_INTERFACE", "TRACER",
-                            "FILEX", "LEVELX", "THREADX", "USBX", "LINKEDLIST", "NETXDUO"}
+                            "FILEX", "LEVELX", "THREADX", "USBX", "LINKEDLIST", "NETXDUO",
+                            "BOOTPATH", "MEMORYMAP"}
             if any(ip.get("Name").upper().startswith(p) for p in software_ips):
                 continue
 

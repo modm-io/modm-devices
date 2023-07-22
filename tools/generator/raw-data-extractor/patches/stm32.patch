@@ -159,9 +159,9 @@ index d03f748..fca698e 100644
  <Mcu ClockTree="STM32W" DBVersion="V3.0" Family="STM32WB" HasPowerPad="false" IOType="" Line="STM32WBx0 Value Line" Package="UFQFPN48" RefName="STM32WB30CEUxA" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
 	<Core>ARM Cortex-M4</Core>
 +	<Frequency>64</Frequency>
+	<MemoryMap>Available</MemoryMap>
 	<Ram>96</Ram>
 	<IONb>30</IONb>
-	<Die>DIE495</Die>
 diff --git a/stm32-devices/mcu/STM32WB35C(C-E)UxA.xml b/stm32-devices/mcu/STM32WB35C(C-E)UxA.xml
 index a2bc61d..f63966a 100644
 --- a/stm32-devices/mcu/STM32WB35C(C-E)UxA.xml
@@ -171,9 +171,9 @@ index a2bc61d..f63966a 100644
  <Mcu ClockTree="STM32W" DBVersion="V3.0" Family="STM32WB" HasPowerPad="false" IOType="" Line="STM32WBx5" Package="UFQFPN48" RefName="STM32WB35C(C-E)UxA" xmlns="http://mcd.rou.st.com/modules.php?name=mcu">
 	<Core>ARM Cortex-M4</Core>
 +	<Frequency>64</Frequency>
+	<MemoryMap>Available</MemoryMap>
 	<Ram>96</Ram>
 	<IONb>30</IONb>
-	<Die>DIE495</Die>
 diff --git a/stm32-devices/mcu/STM32G491C(C-E)Tx.xml b/stm32-devices/mcu/STM32G491C(C-E)Tx.xml
 index 65f6156..ff9132d 100644
 --- a/stm32-devices/mcu/STM32G491C(C-E)Tx.xml
@@ -1600,3 +1600,231 @@ index 16f4362..9843602 100644
          <PossibleValue Comment="DMA2 Channel 1" Value="DMA2_Channel1"/>
          <PossibleValue Comment="DMA2 Channel 2" Value="DMA2_Channel2"/>
          <PossibleValue Comment="DMA2 Channel 3" Value="DMA2_Channel3"/>
+diff --git a/stm32-devices/mcu/STM32U5F7VITx.xml b/stm32-devices/mcu/STM32U5F7VITx.xml
+index 4ec0f8dc..49f067cb 100644
+--- a/stm32-devices/mcu/STM32U5F7VITx.xml
++++ b/stm32-devices/mcu/STM32U5F7VITx.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>82</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5F7VITxQ.xml b/stm32-devices/mcu/STM32U5F7VITxQ.xml
+index d09f108c..9b27c017 100644
+--- a/stm32-devices/mcu/STM32U5F7VITxQ.xml
++++ b/stm32-devices/mcu/STM32U5F7VITxQ.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>79</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5F7VJTx.xml b/stm32-devices/mcu/STM32U5F7VJTx.xml
+index 5f07e069..2258bd84 100644
+--- a/stm32-devices/mcu/STM32U5F7VJTx.xml
++++ b/stm32-devices/mcu/STM32U5F7VJTx.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>82</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5F7VJTxQ.xml b/stm32-devices/mcu/STM32U5F7VJTxQ.xml
+index d67ebfae..ad2f2892 100644
+--- a/stm32-devices/mcu/STM32U5F7VJTxQ.xml
++++ b/stm32-devices/mcu/STM32U5F7VJTxQ.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>79</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5F9BJYxQ.xml b/stm32-devices/mcu/STM32U5F9BJYxQ.xml
+index 39858785..89d8bba5 100644
+--- a/stm32-devices/mcu/STM32U5F9BJYxQ.xml
++++ b/stm32-devices/mcu/STM32U5F9BJYxQ.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>145</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5F9NJHxQ.xml b/stm32-devices/mcu/STM32U5F9NJHxQ.xml
+index 55bcc1ee..05db779d 100644
+--- a/stm32-devices/mcu/STM32U5F9NJHxQ.xml
++++ b/stm32-devices/mcu/STM32U5F9NJHxQ.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>156</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5F9VITxQ.xml b/stm32-devices/mcu/STM32U5F9VITxQ.xml
+index 0949c901..9d868f78 100644
+--- a/stm32-devices/mcu/STM32U5F9VITxQ.xml
++++ b/stm32-devices/mcu/STM32U5F9VITxQ.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>63</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5F9VJTxQ.xml b/stm32-devices/mcu/STM32U5F9VJTxQ.xml
+index 6f0f6fcf..ecea2eb9 100644
+--- a/stm32-devices/mcu/STM32U5F9VJTxQ.xml
++++ b/stm32-devices/mcu/STM32U5F9VJTxQ.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>63</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5F9ZIJxQ.xml b/stm32-devices/mcu/STM32U5F9ZIJxQ.xml
+index edf26c16..3d133d82 100644
+--- a/stm32-devices/mcu/STM32U5F9ZIJxQ.xml
++++ b/stm32-devices/mcu/STM32U5F9ZIJxQ.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>101</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5F9ZITxQ.xml b/stm32-devices/mcu/STM32U5F9ZITxQ.xml
+index a2f1f821..a5834078 100644
+--- a/stm32-devices/mcu/STM32U5F9ZITxQ.xml
++++ b/stm32-devices/mcu/STM32U5F9ZITxQ.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>101</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5F9ZJJxQ.xml b/stm32-devices/mcu/STM32U5F9ZJJxQ.xml
+index dc37abf2..f3fe7be3 100644
+--- a/stm32-devices/mcu/STM32U5F9ZJJxQ.xml
++++ b/stm32-devices/mcu/STM32U5F9ZJJxQ.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>101</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5F9ZJTxQ.xml b/stm32-devices/mcu/STM32U5F9ZJTxQ.xml
+index c0e4f1d7..229756dc 100644
+--- a/stm32-devices/mcu/STM32U5F9ZJTxQ.xml
++++ b/stm32-devices/mcu/STM32U5F9ZJTxQ.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>101</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5G7VJTx.xml b/stm32-devices/mcu/STM32U5G7VJTx.xml
+index 5825cff8..49e995fd 100644
+--- a/stm32-devices/mcu/STM32U5G7VJTx.xml
++++ b/stm32-devices/mcu/STM32U5G7VJTx.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>82</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5G7VJTxQ.xml b/stm32-devices/mcu/STM32U5G7VJTxQ.xml
+index bf024edc..a3a70ca0 100644
+--- a/stm32-devices/mcu/STM32U5G7VJTxQ.xml
++++ b/stm32-devices/mcu/STM32U5G7VJTxQ.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>79</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5G9BJYxQ.xml b/stm32-devices/mcu/STM32U5G9BJYxQ.xml
+index 938bb377..6548e91a 100644
+--- a/stm32-devices/mcu/STM32U5G9BJYxQ.xml
++++ b/stm32-devices/mcu/STM32U5G9BJYxQ.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>145</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5G9NJHxQ.xml b/stm32-devices/mcu/STM32U5G9NJHxQ.xml
+index 9c7d9a9c..70c40787 100644
+--- a/stm32-devices/mcu/STM32U5G9NJHxQ.xml
++++ b/stm32-devices/mcu/STM32U5G9NJHxQ.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>156</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5G9VJTxQ.xml b/stm32-devices/mcu/STM32U5G9VJTxQ.xml
+index c33874ca..7c5d58f4 100644
+--- a/stm32-devices/mcu/STM32U5G9VJTxQ.xml
++++ b/stm32-devices/mcu/STM32U5G9VJTxQ.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>63</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5G9ZJJxQ.xml b/stm32-devices/mcu/STM32U5G9ZJJxQ.xml
+index 32452f18..0d31d98f 100644
+--- a/stm32-devices/mcu/STM32U5G9ZJJxQ.xml
++++ b/stm32-devices/mcu/STM32U5G9ZJJxQ.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>101</IONb>
+     <Die>DIE476</Die>
+diff --git a/stm32-devices/mcu/STM32U5G9ZJTxQ.xml b/stm32-devices/mcu/STM32U5G9ZJTxQ.xml
+index 08e92cb2..a7a39d27 100644
+--- a/stm32-devices/mcu/STM32U5G9ZJTxQ.xml
++++ b/stm32-devices/mcu/STM32U5G9ZJTxQ.xml
+@@ -9,6 +9,7 @@
+     <MemoryMap>Available</MemoryMap>
+     <TrustZone>Available</TrustZone>
+     <LPBAM>Available</LPBAM>
++    <Frequency>160</Frequency>
+     <Ram>3026</Ram>
+     <IONb>101</IONb>
+     <Die>DIE476</Die>

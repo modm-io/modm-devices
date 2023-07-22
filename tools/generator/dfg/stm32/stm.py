@@ -807,7 +807,7 @@ stm32_memory = \
                 'name': ['95', 'a5'],
                 'memories': {'flash': 0, 'sram1': 768*1024, 'sram2': 64*1024, 'sram3': 832*1024, 'sram4': 16*1024, 'sram5': 832*1024, 'bkpsram': 2*1024}
             },{
-                'name': ['f5', 'g5'],
+                'name': ['f5', 'g5', 'f7', 'g7', 'f9', 'g9'],
                 'memories': {'flash': 0, 'sram1': 768*1024, 'sram2': 64*1024, 'sram3': 832*1024, 'sram4': 16*1024, 'sram5': 832*1024, 'sram6': 512*1024, 'bkpsram': 2*1024},
             }
         ]
