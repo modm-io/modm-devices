@@ -179,6 +179,7 @@
     </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-rtc2_v2_u5_cube"/>
+    <driver name="sau" type="stm32-v2.0"/>
     <driver name="spi" type="stm32">
       <instance value="1"/>
       <instance value="2"/>

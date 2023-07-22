@@ -1894,14 +1894,14 @@
         <pin device-name="52" device-size="e" device-variant="" position="19" name="VSSA/VREF-" type="power"/>
         <pin device-name="62" device-size="e" device-variant="q" position="19" name="VSSA/VREF-" type="power"/>
         <pin device-name="62" device-size="e" device-variant="" position="19" name="VSSA" type="power"/>
-        <pin device-name="52" device-size="c|e" device-variant="q" position="20" name="VREF+" type="power"/>
-        <pin device-name="52" device-size="e" device-variant="" position="20" name="VREF+" type="power"/>
-        <pin device-name="62" device-size="e" device-variant="q" position="20" name="VREF+" type="power"/>
+        <pin device-name="52" device-size="c|e" device-variant="q" position="20" name="VREF+" type="monoio"/>
+        <pin device-name="52" device-size="e" device-variant="" position="20" name="VREF+" type="monoio"/>
+        <pin device-name="62" device-size="e" device-variant="q" position="20" name="VREF+" type="monoio"/>
         <pin device-name="62" device-size="e" device-variant="" position="20" name="VREF-" type="power"/>
         <pin device-name="52" device-size="c|e" device-variant="q" position="21" name="VDDA" type="power"/>
         <pin device-name="52" device-size="e" device-variant="" position="21" name="VDDA" type="power"/>
         <pin device-name="62" device-size="e" device-variant="q" position="21" name="VDDA" type="power"/>
-        <pin device-name="62" device-size="e" device-variant="" position="21" name="VREF+" type="power"/>
+        <pin device-name="62" device-size="e" device-variant="" position="21" name="VREF+" type="monoio"/>
         <pin device-name="52" device-size="c|e" device-variant="q" position="22" name="PA0"/>
         <pin device-name="52" device-size="e" device-variant="" position="22" name="PA0"/>
         <pin device-name="62" device-size="e" device-variant="q" position="22" name="PA0"/>
@@ -2109,14 +2109,14 @@
         <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="|q" position="30" name="VSSA/VREF-" type="power"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="q" position="30" name="VSSA/VREF-" type="power"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="30" name="VSSA" type="power"/>
-        <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="q" position="31" name="VREF+" type="power"/>
-        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="|q" position="31" name="VREF+" type="power"/>
-        <pin device-name="62" device-size="e" device-temperature="6" device-variant="q" position="31" name="VREF+" type="power"/>
+        <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="q" position="31" name="VREF+" type="monoio"/>
+        <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="|q" position="31" name="VREF+" type="monoio"/>
+        <pin device-name="62" device-size="e" device-temperature="6" device-variant="q" position="31" name="VREF+" type="monoio"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="31" name="VREF-" type="power"/>
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="q" position="32" name="VDDA" type="power"/>
         <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="|q" position="32" name="VDDA" type="power"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="q" position="32" name="VDDA" type="power"/>
-        <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="32" name="VREF+" type="power"/>
+        <pin device-name="62" device-size="e" device-temperature="6" device-variant="" position="32" name="VREF+" type="monoio"/>
         <pin device-name="52" device-size="c|e" device-temperature="6" device-variant="q" position="33" name="PA0"/>
         <pin device-name="52" device-size="e" device-temperature="3|6|7" device-variant="|q" position="33" name="PA0"/>
         <pin device-name="62" device-size="e" device-temperature="6" device-variant="q" position="33" name="PA0"/>
@@ -2658,7 +2658,7 @@
         <pin position="H10" name="PD14"/>
         <pin position="H11" name="PD13"/>
         <pin position="H12" name="PD15"/>
-        <pin position="J1" name="VREF+" type="power"/>
+        <pin position="J1" name="VREF+" type="monoio"/>
         <pin position="J2" name="PA0"/>
         <pin position="J3" name="PC5"/>
         <pin position="J4" name="VDD" type="power"/>
@@ -2840,7 +2840,7 @@
         <pin position="G5" name="PA6"/>
         <pin position="G6" name="PA2"/>
         <pin position="G7" name="PC3"/>
-        <pin position="G8" name="VREF+" type="power"/>
+        <pin position="G8" name="VREF+" type="monoio"/>
         <pin position="G9" name="VSSA/VREF-" type="power"/>
         <pin position="H1" name="VDD" type="power"/>
         <pin position="H2" name="VSS" type="power"/>

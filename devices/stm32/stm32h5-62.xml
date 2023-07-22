@@ -151,7 +151,6 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver name="bootpath" type="stm32-stm32xx"/>
     <driver name="cordic" type="stm32-v1.0"/>
     <driver name="crc" type="stm32"/>
     <driver name="dac" type="stm32">
@@ -256,6 +255,7 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
+    <driver name="sau" type="stm32-v2.0"/>
     <driver name="sdmmc" type="stm32-v2.1">
       <instance value="1"/>
     </driver>

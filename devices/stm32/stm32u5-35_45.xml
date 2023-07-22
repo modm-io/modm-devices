@@ -319,6 +319,7 @@
     <driver name="sai" type="stm32-sai1_l5_cube">
       <instance value="1"/>
     </driver>
+    <driver name="sau" type="stm32-v1.0"/>
     <driver device-pin="r|v" name="sdmmc" type="stm32-v2.1">
       <instance value="1"/>
     </driver>
@@ -360,9 +361,7 @@
       <instance value="1"/>
       <instance value="3"/>
     </driver>
-    <driver name="usb_drd_fs" type="stm32-v1.0">
-      <instance value=""/>
-    </driver>
+    <driver name="usb_drd_fs" type="stm32-v1.0"/>
     <driver name="vrefbuf" type="stm32-v1.0"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="gpio" type="stm32">
@@ -484,7 +483,7 @@
         <signal af="3" driver="sai" instance="1" name="ck2"/>
         <signal af="5" driver="spi" instance="1" name="rdy"/>
         <signal af="7" driver="usart" instance="1" name="ck"/>
-        <signal af="10" driver="usb_drd_fs" instance="usb" name="sof"/>
+        <signal af="10" name="usb_sof"/>
         <signal af="12" driver="debug" name="traceclk"/>
         <signal af="13" driver="sai" instance="1" name="sck_a"/>
         <signal af="14" driver="lptim" instance="2" name="ch1"/>
@@ -515,7 +514,7 @@
         <signal af="5" driver="spi" instance="1" name="miso"/>
         <signal af="7" driver="usart" instance="1" name="cts"/>
         <signal af="9" driver="fdcan" instance="1" name="rx"/>
-        <signal af="10" driver="usb_drd_fs" instance="usb" name="dm"/>
+        <signal af="10" name="usb_dm"/>
       </gpio>
       <gpio port="a" pin="12">
         <signal af="1" driver="tim" instance="1" name="etr"/>
@@ -524,13 +523,13 @@
         <signal af="7" driver="usart" instance="1" name="de"/>
         <signal af="7" driver="usart" instance="1" name="rts"/>
         <signal af="9" driver="fdcan" instance="1" name="tx"/>
-        <signal af="10" driver="usb_drd_fs" instance="usb" name="dp"/>
+        <signal af="10" name="usb_dp"/>
       </gpio>
       <gpio port="a" pin="13">
         <signal af="0" driver="debug" name="jtms"/>
         <signal af="0" driver="debug" name="swdio"/>
         <signal af="1" driver="irtim" name="out"/>
-        <signal af="10" driver="usb_drd_fs" instance="usb" name="noe"/>
+        <signal af="10" name="usb_noe"/>
         <signal af="13" driver="sai" instance="1" name="sd_b"/>
       </gpio>
       <gpio port="a" pin="14">
@@ -539,7 +538,7 @@
         <signal af="1" driver="lptim" instance="1" name="ch1"/>
         <signal af="4" driver="i2c" instance="1" name="smba"/>
         <signal af="5" driver="i2c" instance="4" name="smba"/>
-        <signal af="10" driver="usb_drd_fs" instance="usb" name="sof"/>
+        <signal af="10" name="usb_sof"/>
         <signal af="13" driver="sai" instance="1" name="fs_b"/>
       </gpio>
       <gpio port="a" pin="15">
@@ -951,7 +950,7 @@
         <signal device-pin="v" af="4" driver="dcmi" name="d3"/>
         <signal device-pin="v" af="4" driver="pssi" name="d3"/>
         <signal af="9" driver="tsc" name="g4_io4"/>
-        <signal af="10" driver="usb_drd_fs" instance="usb" name="noe"/>
+        <signal af="10" name="usb_noe"/>
         <signal af="12" driver="sdmmc" instance="1" name="d1"/>
         <signal af="14" driver="lptim" instance="3" name="ch2"/>
       </gpio>

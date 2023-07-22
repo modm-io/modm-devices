@@ -184,7 +184,6 @@
       <instance value="2"/>
     </driver>
     <driver device-name="73" name="aes" type="stm32-v2.0"/>
-    <driver name="bootpath" type="stm32-stm32xx"/>
     <driver name="cordic" type="stm32-v1.0"/>
     <driver name="crc" type="stm32"/>
     <driver name="dac" type="stm32">
@@ -298,6 +297,7 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
+    <driver name="sau" type="stm32-v2.0"/>
     <driver name="sdmmc" type="stm32-v2.1">
       <instance value="1"/>
       <instance device-pin="a|i|z" value="2"/>
@@ -924,9 +924,9 @@
         <signal af="7" driver="usart" instance="3" name="cts"/>
         <signal af="7" driver="usart" instance="3" name="nss"/>
         <signal af="9" driver="fdcan" instance="2" name="tx"/>
-        <signal device-pin="a|i" device-variant="|q" af="11" driver="eth" name="txd1"/>
-        <signal device-pin="r|v|z" device-variant="" af="11" driver="eth" name="txd1"/>
-        <signal device-pin="m" device-variant="q" af="11" driver="eth" name="txd1"/>
+        <signal device-name="73" device-pin="a|i" device-variant="|q" af="11" driver="eth" name="txd1"/>
+        <signal device-name="73" device-pin="r|v|z" device-variant="" af="11" driver="eth" name="txd1"/>
+        <signal device-name="73" device-pin="m" device-variant="q" af="11" driver="eth" name="txd1"/>
         <signal af="12" driver="sdmmc" instance="1" name="d0"/>
         <signal af="14" driver="uart" instance="5" name="tx"/>
       </gpio>
@@ -942,9 +942,9 @@
         <signal af="8" driver="uart" instance="4" name="de"/>
         <signal af="8" driver="uart" instance="4" name="rts"/>
         <signal device-pin="a|i|z" af="9" driver="sdmmc" instance="2" name="d0"/>
-        <signal device-pin="a|i" device-variant="|q" af="11" driver="eth" name="tx_en"/>
-        <signal device-pin="r|v|z" device-variant="" af="11" driver="eth" name="tx_en"/>
-        <signal device-pin="m" device-variant="q" af="11" driver="eth" name="tx_en"/>
+        <signal device-name="73" device-pin="a|i" device-variant="|q" af="11" driver="eth" name="tx_en"/>
+        <signal device-name="73" device-pin="r|v|z" device-variant="" af="11" driver="eth" name="tx_en"/>
+        <signal device-name="73" device-pin="m" device-variant="q" af="11" driver="eth" name="tx_en"/>
         <signal af="14" driver="lptim" instance="3" name="etr"/>
       </gpio>
       <gpio port="b" pin="15">
