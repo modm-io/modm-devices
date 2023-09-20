@@ -164,7 +164,71 @@
       <instance value="2"/>
       <instance value="3"/>
     </driver>
-    <driver name="bdma" type="stm32-v1.2"/>
+    <driver name="bdma" type="stm32h7">
+      <requests>
+        <request position="1">
+          <signal driver="bdma" name="generator0"/>
+        </request>
+        <request position="2">
+          <signal driver="bdma" name="generator1"/>
+        </request>
+        <request position="3">
+          <signal driver="bdma" name="generator2"/>
+        </request>
+        <request position="4">
+          <signal driver="bdma" name="generator3"/>
+        </request>
+        <request position="5">
+          <signal driver="bdma" name="generator4"/>
+        </request>
+        <request position="6">
+          <signal driver="bdma" name="generator5"/>
+        </request>
+        <request position="7">
+          <signal driver="bdma" name="generator6"/>
+        </request>
+        <request position="8">
+          <signal driver="bdma" name="generator7"/>
+        </request>
+        <request position="9">
+          <signal driver="lpuart" instance="1" name="rx"/>
+        </request>
+        <request position="10">
+          <signal driver="lpuart" instance="1" name="tx"/>
+        </request>
+        <request position="11">
+          <signal driver="spi" instance="6" name="rx"/>
+        </request>
+        <request position="12">
+          <signal driver="spi" instance="6" name="tx"/>
+        </request>
+        <request position="13">
+          <signal driver="i2c" instance="4" name="rx"/>
+        </request>
+        <request position="14">
+          <signal driver="i2c" instance="4" name="tx"/>
+        </request>
+        <request position="15">
+          <signal driver="sai" instance="4" name="a"/>
+        </request>
+        <request position="16">
+          <signal driver="sai" instance="4" name="b"/>
+        </request>
+        <request position="17">
+          <signal driver="adc" instance="3"/>
+        </request>
+      </requests>
+      <mux-channels>
+        <mux-channel position="0" dma-channel="0"/>
+        <mux-channel position="1" dma-channel="1"/>
+        <mux-channel position="2" dma-channel="2"/>
+        <mux-channel position="3" dma-channel="3"/>
+        <mux-channel position="4" dma-channel="4"/>
+        <mux-channel position="5" dma-channel="5"/>
+        <mux-channel position="6" dma-channel="6"/>
+        <mux-channel position="7" dma-channel="7"/>
+      </mux-channels>
+    </driver>
     <driver name="comp" type="stm32-tsmc90_h7_cube">
       <instance value="1"/>
       <instance value="2"/>
