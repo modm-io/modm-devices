@@ -146,6 +146,7 @@ class STMDeviceTree:
 
         modules = []
         dmaFile = None
+        bdmaFile = None
         for ip in device_file.query('//IP'):
             # These IPs are all software modules, NOT hardware modules. Their version string is weird too.
             software_ips = {"GFXSIMULATOR", "GRAPHICS", "FATFS", "TOUCHSENSING", "PDM2PCM",
@@ -166,7 +167,13 @@ class STMDeviceTree:
                     for dma in rdma.split(","):
                         modules.append((module[0].lower(), dma.strip().lower(), module[2].lower()))
                 continue
-            if module[0].startswith("TIM"):
+            elif module[0].startswith("BDMA"):
+                module = ("BDMA",) + module[1:]
+                # Ignore BDMA1 data
+                # If two instances exist the first one is hard-wired to DFSDM channels and has no associated DMAMUX data
+                if module[1] != "BDMA1":
+                    bdmaFile = XMLReader(os.path.join(STMDeviceTree.rootpath, "IP", module[1] + "-" + rversion + "_Modes.xml"))
+            elif module[0].startswith("TIM"):
                 module = ("TIM",) + module[1:]
 
             modules.append(tuple([m.lower() for m in module]))
@@ -396,6 +403,60 @@ class STMDeviceTree:
                                          'dma-channel'  : int(m.group("channel"))})
                 p["dma_mux_channels"] = mux_channels
 
+        if bdmaFile is not None:
+            bdma_channels = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
+            p["bdma_naming"] = (None, "request", "signal")
+            bdma_request_map = None
+            for sig in bdmaFile.query('//ModeLogicOperator[@Name="XOR"]/Mode'):
+                name = rname = sig.get("Name")
+
+                request = bdmaFile.query('//RefMode[@Name="{}"]'.format(name))[0]
+                name = name.lower().split(":")[0]
+                if name == "memtomem":
+                    continue
+
+                if name.startswith("dac") and "_" not in name: name = "dac_{}".format(name);
+                if len(name.split("_")) < 2: name = "{}_default".format(name);
+                driver, inst, name = split_af(name)
+
+                if bdma_request_map is None:
+                    bdma_request_map = stm_dmamux_requests.read_bdma_request_map(did)
+                channel = bdma_request_map[rname]
+
+                if driver is None:  # peripheral is not part of this device
+                    continue
+
+                mode = [v[4:].lower() for v in rv("Mode")]
+                for sname in ([None] if name == "default" else name.split("/")):
+                    signal = {
+                        "driver": driver,
+                        "name": sname,
+                        "direction": [v[4:].replace("PERIPH", "p").replace("MEMORY", "m").replace("_TO_", "2") for v in rv("Direction")],
+                        "mode": mode,
+                        "increase": "ENABLE" in rv("PeriphInc", ["DMA_PINC_ENABLE"])[0],
+                    }
+                    if inst: signal["instance"] = inst;
+                    bdma_channels[0][0][channel].append(signal)
+                    # print(channel)
+                    # print(signal)
+
+            p["bdma"] = bdma_channels
+
+            mux_channels = []
+            mux_channel_regex = re.compile(r"BDMA(?P<instance>2)?_Channel(?P<channel>([0-9]+))")
+            channel_names = bdmaFile.query('//RefParameter[@Name="Instance" and not(Condition)]/PossibleValue/@Value')
+            for mux_ch_position, channel in enumerate(channel_names):
+                m = mux_channel_regex.match(channel)
+                assert m is not None
+                if m.group("instance"):
+                    mux_channels.append({'position'     : mux_ch_position,
+                                         'dma-instance' : int(m.group("instance")),
+                                         'dma-channel'  : int(m.group("channel"))})
+                else:
+                    mux_channels.append({'position'     : mux_ch_position,
+                                         'dma-channel'  : int(m.group("channel"))})
+            p["bdma_mux_channels"] = mux_channels
+
         if did.family == "f1":
             grouped_f1_signals = gpioFile.compactQuery('//GPIO_Pin/PinSignal/@Name')
 
@@ -589,16 +650,19 @@ class STMDeviceTree:
                 freq = driver.addChild("max-frequency")
                 freq.setValue(p["max_frequency"])
 
-            if name == "dma":
-                STMDeviceTree.addDmaToNode(p, driver)
-
+            if name in ["dma", "bdma"]:
+                # BDMA1 channel requests are hard-wired to the DFSDM filter channels.
+                # The routing is fixed. Thus, no configuration data is available.
+                if instances != ["bdma1"]:
+                    STMDeviceTree.addDmaToNode(p, driver)
         return tree
 
     @staticmethod
     def addDmaToNode(p, driver):
-        naming = p["dma_naming"]
+        driver_name = driver["name"]
+        naming = p[driver_name + "_naming"]
         driver.addSortKey(lambda e: (int(e.get("instance", 0)), int(e.get("position", 0))))
-        for instance, streams in p["dma"].items():
+        for instance, streams in p[driver_name].items():
             inst = driver.addChild((naming[1] if naming[0] is None else naming[0]) + "s")
             if naming[0] is not None or naming[1] == "channel":
                 inst.setAttribute("instance", instance)
@@ -624,7 +688,7 @@ class STMDeviceTree:
                             rem = sign.addChild("remap")
                             rem.setAttributes(["position", "mask", "id"], remap)
 
-        mux_channels = p.get("dma_mux_channels")
+        mux_channels = p.get(driver_name + "_mux_channels")
         if mux_channels is not None:
             driver_channels = driver.addChild("mux-channels")
             # TODO: attribute "instance" has to be added to mux-channels for H7 BDMA which uses DMAMUX2

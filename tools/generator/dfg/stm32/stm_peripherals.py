@@ -152,6 +152,18 @@ stm_peripherals = \
             }
         ]
     }],
+    'bdma': [{
+        'instances': '*',
+        'groups': [
+            {
+                'hardware': 'stm32h7',
+                'features': [],
+                'protocols': ['mem2mem', 'mem2per', 'per2per'],
+                'devices': [{'family': ['h7']}]
+
+            }
+        ]
+    }],
     'iwdg': [{
         'instances': '*',
         'groups': [
