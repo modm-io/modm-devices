@@ -470,7 +470,7 @@
         <signal device-pin="c|r|t" af="4" driver="lpuart" instance="1" name="rts"/>
       </gpio>
       <gpio device-pin="c" device-package="t|u" port="b" pin="2">
-        <signal device-name="53|63" driver="lcd" name="vlcd1"/>
+        <signal device-name="53|63" driver="lcd" name="vlcd2"/>
         <signal af="2" driver="lptim" instance="1" name="out"/>
         <signal device-name="52" device-pin="t" device-package="f|y" af="3" driver="tsc" name="g3_io4"/>
         <signal device-name="63" device-pin="r" device-package="t" af="3" driver="tsc" name="g3_io4"/>
@@ -479,7 +479,7 @@
         <signal device-name="52|62" device-pin="c|k" device-package="u" af="3" driver="tsc" name="g3_io4"/>
       </gpio>
       <gpio device-pin="k" device-package="u" port="b" pin="2">
-        <signal device-name="53|63" driver="lcd" name="vlcd1"/>
+        <signal device-name="53|63" driver="lcd" name="vlcd2"/>
         <signal af="2" driver="lptim" instance="1" name="out"/>
         <signal device-name="52" device-pin="t" device-package="f|y" af="3" driver="tsc" name="g3_io4"/>
         <signal device-name="63" device-pin="r" device-package="t" af="3" driver="tsc" name="g3_io4"/>
@@ -488,7 +488,7 @@
         <signal device-name="52|62" device-pin="c|k" device-package="u" af="3" driver="tsc" name="g3_io4"/>
       </gpio>
       <gpio device-pin="r" device-package="h|t" port="b" pin="2">
-        <signal device-name="53|63" driver="lcd" name="vlcd1"/>
+        <signal device-name="53|63" driver="lcd" name="vlcd2"/>
         <signal af="2" driver="lptim" instance="1" name="out"/>
         <signal device-name="52" device-pin="t" device-package="f|y" af="3" driver="tsc" name="g3_io4"/>
         <signal device-name="63" device-pin="r" device-package="t" af="3" driver="tsc" name="g3_io4"/>
@@ -497,7 +497,7 @@
         <signal device-name="52|62" device-pin="c|k" device-package="u" af="3" driver="tsc" name="g3_io4"/>
       </gpio>
       <gpio device-pin="t" device-package="f|y" port="b" pin="2">
-        <signal device-name="53|63" driver="lcd" name="vlcd1"/>
+        <signal device-name="53|63" driver="lcd" name="vlcd2"/>
         <signal af="2" driver="lptim" instance="1" name="out"/>
         <signal device-name="52" device-pin="t" device-package="f|y" af="3" driver="tsc" name="g3_io4"/>
         <signal device-name="63" device-pin="r" device-package="t" af="3" driver="tsc" name="g3_io4"/>
@@ -604,7 +604,7 @@
         <signal af="6" driver="i2c" instance="2" name="sda"/>
       </gpio>
       <gpio device-pin="c|r" port="b" pin="12">
-        <signal device-name="53|63" driver="lcd" name="vlcd2"/>
+        <signal device-name="53|63" driver="lcd" name="vlcd1"/>
         <signal af="0" driver="i2s" instance="2" name="ws"/>
         <signal af="0" driver="spi" instance="2" name="nss"/>
         <signal device-name="53|63" af="1" driver="lcd" name="seg12"/>

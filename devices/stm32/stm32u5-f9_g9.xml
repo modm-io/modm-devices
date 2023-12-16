@@ -591,6 +591,7 @@
         <signal af="1" driver="lptim" instance="1" name="ch1"/>
         <signal af="4" driver="i2c" instance="1" name="smba"/>
         <signal af="5" driver="i2c" instance="4" name="smba"/>
+        <signal af="10" driver="usb_otg_hs" name="sof"/>
         <signal af="13" driver="sai" instance="1" name="fs_b"/>
       </gpio>
       <gpio port="a" pin="15">

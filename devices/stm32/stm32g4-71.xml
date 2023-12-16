@@ -198,6 +198,7 @@
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
+      <instance value="6"/>
     </driver>
     <driver name="quadspi" type="stm32-v4.1">
       <instance value="1"/>
@@ -625,6 +626,9 @@
         <signal driver="opamp" instance="1" name="vinp_sec"/>
         <signal driver="opamp" instance="3" name="vinp"/>
         <signal driver="opamp" instance="3" name="vinp_sec"/>
+        <signal driver="opamp" instance="6" name="vinm"/>
+        <signal driver="opamp" instance="6" name="vinm0"/>
+        <signal driver="opamp" instance="6" name="vinm_sec"/>
         <signal af="0" driver="rtc" name="refin"/>
         <signal af="1" driver="tim" instance="2" name="ch2"/>
         <signal af="7" driver="usart" instance="2" name="de"/>
@@ -838,6 +842,9 @@
         <signal driver="adc" instance="3" name="in1"/>
         <signal driver="comp" instance="1" name="inp"/>
         <signal driver="opamp" instance="3" name="vout"/>
+        <signal driver="opamp" instance="6" name="vinm"/>
+        <signal driver="opamp" instance="6" name="vinm1"/>
+        <signal driver="opamp" instance="6" name="vinm_sec"/>
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="4" driver="tim" instance="8" name="ch3n"/>
         <signal af="6" driver="tim" instance="1" name="ch3n"/>
@@ -970,6 +977,7 @@
       <gpio port="b" pin="11">
         <signal driver="adc" instance="1" name="in14"/>
         <signal driver="adc" instance="2" name="in14"/>
+        <signal driver="opamp" instance="6" name="vout"/>
         <signal af="1" driver="tim" instance="2" name="ch4"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
         <signal af="8" driver="lpuart" instance="1" name="tx"/>
@@ -977,6 +985,8 @@
       </gpio>
       <gpio port="b" pin="12">
         <signal driver="adc" instance="1" name="in11"/>
+        <signal driver="opamp" instance="6" name="vinp"/>
+        <signal driver="opamp" instance="6" name="vinp_sec"/>
         <signal af="4" driver="i2c" instance="2" name="smba"/>
         <signal af="5" driver="i2s" instance="2" name="ws"/>
         <signal af="5" driver="spi" instance="2" name="nss"/>
@@ -990,6 +1000,8 @@
         <signal driver="adc" instance="3" name="in5"/>
         <signal driver="opamp" instance="3" name="vinp"/>
         <signal driver="opamp" instance="3" name="vinp_sec"/>
+        <signal driver="opamp" instance="6" name="vinp"/>
+        <signal driver="opamp" instance="6" name="vinp_sec"/>
         <signal af="5" driver="i2s" instance="2" name="ck"/>
         <signal af="5" driver="spi" instance="2" name="sck"/>
         <signal af="6" driver="tim" instance="1" name="ch1n"/>
@@ -1268,6 +1280,8 @@
         <signal af="7" driver="usart" instance="3" name="tx"/>
       </gpio>
       <gpio device-pin="m|q|v" port="d" pin="9">
+        <signal driver="opamp" instance="6" name="vinp"/>
+        <signal driver="opamp" instance="6" name="vinp_sec"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
       </gpio>
       <gpio device-pin="m|q|v" port="d" pin="10">
