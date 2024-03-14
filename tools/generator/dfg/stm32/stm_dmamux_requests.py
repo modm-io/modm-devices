@@ -94,7 +94,7 @@ def _read_requests(hal_dma_file, request_pattern):
 # For G0, WB and WL
 def _read_requests_from_ll_dmamux(hal_dma_file, ll_dmamux_file):
     dmamux_map = _read_map(ll_dmamux_file, DMAMUX_PATTERN)
-    request_pattern = re.compile("^\s*#define\s+(?P<name>(DMA_REQUEST_\w+))\s+(?P<id>(LL_DMAMUX?_REQ_\w+))\s*")
+    request_pattern = re.compile(r"^\s*#define\s+(?P<name>(DMA_REQUEST_\w+))\s+(?P<id>(LL_DMAMUX?_REQ_\w+))\s*")
     requests_map = _read_map(hal_dma_file, request_pattern)
     out_map = {}
     for r in requests_map.keys():
