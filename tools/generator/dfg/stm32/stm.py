@@ -435,7 +435,20 @@ stm32_memory = \
             {
                 'name': ['11', '31', '71'],
                 'memories': {'flash': 0, 'sram1': 0}
+            },
+            {
+                'name': ['51'],
+                'memories': {'flash': 0, 'sram1': 12*1024}
+            },
+            {
+                'name': ['91'],
+                'memories': {'flash': 0, 'sram1': 36*1024}
+            },
+            {
+                'name': ['92'],
+                'memories': {'flash': 0, 'sram1': 30*1024}
             }
+
         ]
     },
     'g0': {
@@ -460,6 +473,10 @@ stm32_memory = \
             {
                 'name': ['31', '41'],
                 'memories': {'flash': 0, 'sram1': 0, 'sram2':  6*1024, 'ccm': 10*1024}
+            },
+            {
+                'name': ['11'],
+                'memories': {'flash': 0, 'sram1': 0, 'sram2':  22*1024, 'ccm': 10*1024}
             },
             {
                 'name': ['91', 'a1'],
