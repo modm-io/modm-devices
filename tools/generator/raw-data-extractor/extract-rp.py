@@ -4,7 +4,8 @@ import shutil
 import os
 
 svdurls = [
-    ["rp2040.svd","https://github.com/raspberrypi/pico-sdk/raw/master/src/rp2040/hardware_regs/RP2040.svd"]
+    ["rp2040.svd","https://github.com/raspberrypi/pico-sdk/raw/master/src/rp2040/hardware_regs/RP2040.svd"],
+    ["rp2350.svd","https://github.com/raspberrypi/pico-sdk/raw/master/src/rp2350/hardware_regs/RP2350.svd"]
 ]
 
 shutil.rmtree("../raw-device-data/rp-devices", ignore_errors=True)

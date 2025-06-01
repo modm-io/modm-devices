@@ -99,4 +99,4 @@ generate-rp%: raw-device-data/rp-devices
 	./rp_generator.py $(@:generate-%=%)
 
 .PHONY: generate-rp
-generate-rp: generate-rp2040
+generate-rp: generate-rp2040 generate-rp2350
