@@ -55,9 +55,12 @@ class AVRDeviceTree:
         p["max_fcpu"] = variant.get("speedmax")
         p["package"] = variant.get("package")
         p["pinout"] = variant.get("pinout")
+        pinouts = device_file.query(f'//pinouts/pinout[@name="{p["pinout"]}"]/pin')
+        if not pinouts:
+            pinouts = device_file.query(f'//pinouts/pinout[1]/pin')
         p["pinout_pins"] = {
             p.get("position"): p.get("pad")
-            for p in device_file.query(f'//pinouts/pinout[@name="{p["pinout"]}"]/pin')
+            for p in pinouts
         }
 
         # find the values for flash, ram and (optional) eeprom

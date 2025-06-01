@@ -93,20 +93,6 @@ diff --git a/avr-devices/atmega/ATmega128RFA1.atdf b/avr-devices/atmega/ATmega12
 index 7cfe8a8..6e23298 100644
 --- a/avr-devices/atmega/ATmega128RFA1.atdf
 +++ b/avr-devices/atmega/ATmega128RFA1.atdf
-@@ -1,7 +1,12 @@
- <?xml version='1.0' encoding='UTF-8'?>
- <avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
-   <variants>
--    <variant tempmin="0" tempmax="0" speedmax="0" package="" ordercode="standard" vccmin="1.8" vccmax="3.6"/>
-+    <variant ordercode="ATmega128RFA1-ZU" tempmin="-40" tempmax="85" speedmax="16000000" pinout="QFN64" package="QFN64" vccmin="1.8" vccmax="3.6"/>
-+    <variant ordercode="ATmega128RFA1-ZUR" tempmin="-40" tempmax="85" speedmax="16000000" pinout="QFN64" package="QFN64" vccmin="1.8" vccmax="3.6"/>
-+    <variant ordercode="ATmega128RFA1-ZU00" tempmin="-40" tempmax="85" speedmax="16000000" pinout="QFN64" package="QFN64" vccmin="1.8" vccmax="3.6"/>
-+    <variant ordercode="ATmega128RFA1-ZUR00" tempmin="-40" tempmax="85" speedmax="16000000" pinout="QFN64" package="QFN64" vccmin="1.8" vccmax="3.6"/>
-+    <variant ordercode="ATmega128RFA1-ZF" tempmin="-40" tempmax="125" speedmax="16000000" pinout="QFN64" package="QFN64" vccmin="1.8" vccmax="3.6"/>
-+    <variant ordercode="ATmega128RFA1-ZFR" tempmin="-40" tempmax="125" speedmax="16000000" pinout="QFN64" package="QFN64" vccmin="1.8" vccmax="3.6"/>
-   </variants>
-   <devices>
-     <device name="ATmega128RFA1" architecture="AVR8" family="megaAVR">
 @@ -39,24 +44,48 @@
          <module name="AC">
            <instance name="AC" caption="Analog Comparator">
