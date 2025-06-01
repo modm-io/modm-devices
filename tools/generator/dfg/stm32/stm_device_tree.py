@@ -84,7 +84,10 @@ class STMDeviceTree:
         p = {"id": did, "core": core}
 
         # Maximum operating frequency
-        max_frequency = float(device_file.query('//Frequency')[0].text)
+        if (max_frequency := device_file.query('//Frequency')):
+            max_frequency = float(max_frequency[0].text)
+        else:
+            max_frequency = stm.getMaxFrequencyForDevice(did)
         # H7 dual-core devices run the M4 core at half the frequency as the M7 core
         if did.get("core", "") == "m4": max_frequency /= 2.0;
         p["max_frequency"] = int(max_frequency * 1e6)
