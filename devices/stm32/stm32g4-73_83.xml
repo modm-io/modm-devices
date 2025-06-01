@@ -209,9 +209,7 @@
       <instance value="3"/>
       <instance value="4"/>
     </driver>
-    <driver device-variant="z" name="dcache" type="stm32-stm32h5xx1_v0_0"/>
     <driver device-variant="z" name="debug" type="stm32-v1.0"/>
-    <driver device-variant="z" name="dmamux" type="stm32-v1.0"/>
     <driver name="fdcan" type="stm32">
       <instance value="1"/>
       <instance value="2"/>
@@ -238,12 +236,6 @@
     <driver name="fmac" type="stm32-v1.0"/>
     <driver device-pin="p|q|v" device-variant="" name="fmc" type="stm32-v2.2"/>
     <driver device-pin="q|r" device-variant="z" name="fmc" type="stm32-v2.2"/>
-    <driver device-variant="z" name="gpdma" type="stm32-instance2_stm32h5_dma3_cube">
-      <instance value="2"/>
-    </driver>
-    <driver device-variant="z" name="gpdma" type="stm32-stm32h5_dma3_cube">
-      <instance value="1"/>
-    </driver>
     <driver name="i2c" type="stm32-extended">
       <feature value="dnf"/>
       <feature value="fmp"/>
@@ -256,7 +248,6 @@
       <instance value="2"/>
       <instance value="3"/>
     </driver>
-    <driver device-variant="z" name="icache" type="stm32-v1.0"/>
     <driver name="irtim" type="stm32-v1.0"/>
     <driver name="iwdg" type="stm32">
       <feature value="window"/>

@@ -203,7 +203,7 @@
       </latency>
     </driver>
     <driver device-pin="a|q|v|w|z" name="fmc" type="stm32-v2.0"/>
-    <driver device-name="a6" name="hash" type="stm32-v2.2"/>
+    <driver name="hash" type="stm32-v2.2"/>
     <driver name="i2c" type="stm32-extended">
       <feature value="dnf"/>
       <feature value="fmp"/>
@@ -665,7 +665,7 @@
           <request position="5">
             <signal driver="i2c" instance="1" name="tx"/>
           </request>
-          <request device-name="a6" position="6">
+          <request position="6">
             <signal driver="hash" name="in"/>
           </request>
           <request position="7">

@@ -249,8 +249,7 @@
       <instance value="1"/>
     </driver>
     <driver name="dcmi" type="stm32"/>
-    <driver device-package="k" name="debug" type="stm32-v1.0"/>
-    <driver device-package="h|i|t" name="debug" type="stm32-v1.1"/>
+    <driver name="debug" type="stm32-v1.1"/>
     <driver name="dfsdm" type="stm32-v1.0">
       <instance value="1"/>
     </driver>
@@ -877,7 +876,7 @@
         <signal af="5" driver="i2s" instance="2" name="ck"/>
         <signal af="5" driver="spi" instance="2" name="sck"/>
         <signal af="7" driver="usart" instance="1" name="tx"/>
-        <signal device-package="h|i|t" af="11" driver="eth" name="tx_er"/>
+        <signal af="11" driver="eth" name="tx_er"/>
         <signal af="13" driver="dcmi" name="d0"/>
       </gpio>
       <gpio port="a" pin="10">
@@ -976,7 +975,7 @@
         <signal af="8" driver="sai" instance="4" name="sd_a"/>
         <signal af="9" driver="quadspi" name="clk"/>
         <signal af="10" driver="sai" instance="4" name="d1"/>
-        <signal device-package="h|i|t" af="11" driver="eth" name="tx_er"/>
+        <signal af="11" driver="eth" name="tx_er"/>
       </gpio>
       <gpio port="b" pin="3">
         <signal af="0" driver="debug" name="jtdo"/>
@@ -3283,7 +3282,7 @@
         <pin position="N12" name="PB12"/>
         <pin position="N13" name="PB14"/>
       </package>
-      <package device-package="k" name="UFBGA176">
+      <package device-package="k" name="UFBGA176+25">
         <pin position="A1" name="PE3"/>
         <pin position="A2" name="PE2"/>
         <pin position="A3" name="PE1"/>
@@ -3319,7 +3318,7 @@
         <pin position="C3" name="PI6"/>
         <pin position="C4" name="PI5"/>
         <pin position="C5" name="VDD" type="power"/>
-        <pin position="C6" name="PDR_ON" type="reset"/>
+        <pin position="C6" name="PDR_ON" type="power"/>
         <pin position="C7" name="VDD" type="power"/>
         <pin position="C8" name="VDD" type="power"/>
         <pin position="C9" name="VDD" type="power"/>

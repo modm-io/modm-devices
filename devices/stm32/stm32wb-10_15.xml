@@ -137,7 +137,6 @@
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="dma" type="stm32-mux">
       <instance value="1"/>
-      <instance value="2"/>
       <requests>
         <request position="1">
           <signal driver="dma" name="generator0"/>
@@ -229,13 +228,6 @@
         <mux-channel position="4" dma-instance="1" dma-channel="5"/>
         <mux-channel position="5" dma-instance="1" dma-channel="6"/>
         <mux-channel position="6" dma-instance="1" dma-channel="7"/>
-        <mux-channel position="7" dma-instance="2" dma-channel="1"/>
-        <mux-channel position="8" dma-instance="2" dma-channel="2"/>
-        <mux-channel position="9" dma-instance="2" dma-channel="3"/>
-        <mux-channel position="10" dma-instance="2" dma-channel="4"/>
-        <mux-channel position="11" dma-instance="2" dma-channel="5"/>
-        <mux-channel position="12" dma-instance="2" dma-channel="6"/>
-        <mux-channel position="13" dma-instance="2" dma-channel="7"/>
       </mux-channels>
     </driver>
     <driver name="gpio" type="stm32">

@@ -4,11 +4,11 @@
   <device platform="nrf" family="52" series="840" package="xx" function="aa">
     <naming-schema>{platform}{family}{series}-{package}{function}</naming-schema>
     <driver name="core" type="cortex-m4f">
-      <vector position="0" name="POWER_CLOCK"/>
+      <vector position="0" name="CLOCK_POWER"/>
       <vector position="1" name="RADIO"/>
-      <vector position="2" name="UARTE0_UART0"/>
-      <vector position="3" name="SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0"/>
-      <vector position="4" name="SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1"/>
+      <vector position="2" name="UART0_UARTE0"/>
+      <vector position="3" name="SPI0_SPIM0_SPIS0_TWI0_TWIM0_TWIS0"/>
+      <vector position="4" name="SPI1_SPIM1_SPIS1_TWI1_TWIM1_TWIS1"/>
       <vector position="5" name="NFCT"/>
       <vector position="6" name="GPIOTE"/>
       <vector position="7" name="SAADC"/>
@@ -19,17 +19,17 @@
       <vector position="12" name="TEMP"/>
       <vector position="13" name="RNG"/>
       <vector position="14" name="ECB"/>
-      <vector position="15" name="CCM_AAR"/>
+      <vector position="15" name="AAR_CCM"/>
       <vector position="16" name="WDT"/>
       <vector position="17" name="RTC1"/>
       <vector position="18" name="QDEC"/>
       <vector position="19" name="COMP_LPCOMP"/>
-      <vector position="20" name="SWI0_EGU0"/>
-      <vector position="21" name="SWI1_EGU1"/>
-      <vector position="22" name="SWI2_EGU2"/>
-      <vector position="23" name="SWI3_EGU3"/>
-      <vector position="24" name="SWI4_EGU4"/>
-      <vector position="25" name="SWI5_EGU5"/>
+      <vector position="20" name="EGU0_SWI0"/>
+      <vector position="21" name="EGU1_SWI1"/>
+      <vector position="22" name="EGU2_SWI2"/>
+      <vector position="23" name="EGU3_SWI3"/>
+      <vector position="24" name="EGU4_SWI4"/>
+      <vector position="25" name="EGU5_SWI5"/>
       <vector position="26" name="TIMER3"/>
       <vector position="27" name="TIMER4"/>
       <vector position="28" name="PWM0"/>
@@ -37,7 +37,7 @@
       <vector position="32" name="MWU"/>
       <vector position="33" name="PWM1"/>
       <vector position="34" name="PWM2"/>
-      <vector position="35" name="SPIM2_SPIS2_SPI2"/>
+      <vector position="35" name="SPI2_SPIM2_SPIS2"/>
       <vector position="36" name="RTC2"/>
       <vector position="37" name="I2S"/>
       <vector position="38" name="FPU"/>
@@ -54,7 +54,17 @@
     </driver>
     <driver name="aar" type="nrf52"/>
     <driver name="acl" type="nrf52"/>
+    <driver name="cc_aes" type="nrf52"/>
+    <driver name="cc_chacha" type="nrf52"/>
+    <driver name="cc_ctl" type="nrf52"/>
+    <driver name="cc_din" type="nrf52"/>
+    <driver name="cc_dout" type="nrf52"/>
+    <driver name="cc_hash" type="nrf52"/>
     <driver name="cc_host_rgf" type="nrf52"/>
+    <driver name="cc_misc" type="nrf52"/>
+    <driver name="cc_pka" type="nrf52"/>
+    <driver name="cc_rng" type="nrf52"/>
+    <driver name="cc_rng_sram" type="nrf52"/>
     <driver name="ccm" type="nrf52"/>
     <driver name="clock" type="nrf52"/>
     <driver name="comp" type="nrf52"/>
