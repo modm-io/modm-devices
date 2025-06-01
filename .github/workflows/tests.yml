@@ -104,18 +104,22 @@ jobs:
         run: |
           make test
       - name: Generate AVR data
+        if: always()
         run: |
           cd tools/generator
           make generate-avr
       - name: Generate SAM data
+        if: always()
         run: |
           cd tools/generator
           make generate-sam
       - name: Generate NRF data
+        if: always()
         run: |
           cd tools/generator
           make generate-nrf
       - name: Generate RP data
+        if: always()
         run: |
           cd tools/generator
           make generate-rp
