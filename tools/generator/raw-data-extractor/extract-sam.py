@@ -10,7 +10,7 @@ from collections import defaultdict
 from packaging.version import Version
 
 
-packurl = "http://packs.download.atmel.com/"
+packurl = "https://packs.download.microchip.com/"
 
 shutil.rmtree("../raw-device-data/sam-devices", ignore_errors=True)
 Path("../raw-device-data/sam-devices").mkdir(exist_ok=True, parents=True)
@@ -18,7 +18,7 @@ Path("../raw-device-data/sam-devices").mkdir(exist_ok=True, parents=True)
 with urllib.request.urlopen(packurl) as response:
     html = response.read().decode("utf-8")
     family_links = defaultdict(list)
-    for link, family, version in re.findall(r'data-link="(Atmel\.(SAM.*?)_DFP\.(.*?)\.atpack)"', html):
+    for link, family, version in re.findall(r'(?:data-link|href)="(Microchip\.(SAM.*?)_DFP\.(.*?)\.atpack)"', html):
         family_links[family].append((link, Version(version),))
     # Choose only the latest version of the atpack
     family_links = [(family, sorted(data, key=lambda d: d[1])[-1][0])
