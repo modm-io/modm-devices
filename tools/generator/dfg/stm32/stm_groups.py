@@ -420,6 +420,12 @@ stm_groups = \
         'name': ['73', '83']
     },
 
+    # STM32U3 devices
+    {
+        'family': ['u3'],
+        'name': ['75', '85']
+    },
+
     # STM32U5 devices
     {
         'family': ['u5'],
