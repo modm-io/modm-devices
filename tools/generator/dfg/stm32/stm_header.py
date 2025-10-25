@@ -58,8 +58,20 @@ class STMHeader:
     def __init__(self, did):
         self.did = did
         self.family_folder = "stm32{}xx".format(self.did.family)
+        if self.did.string[5:8] in ["h7r", "h7s"]:
+            self.family_folder = "stm32h7rsxx"
+        elif self.did.string[5:8] == "wb0":
+            self.family_folder = "stm32wb0xx"
+        elif self.did.string[5:8] == "wba":
+            self.family_folder = "stm32wbaxx"
+        elif self.did.string[5:8] == "wl3":
+            self.family_folder = "stm32wl3xx"
         self.cmsis_folder = STMHeader.HEADER_PATH / self.family_folder / "Include"
         self.family_header_file = "{}.h".format(self.family_folder)
+        if self.did.string[5:8] == "wb0":
+            self.family_header_file = "stm32wb0x.h"
+        elif self.did.string[5:8] == "wl3":
+            self.family_header_file = "stm32wl3x.h"
 
         self.family_defines = self._get_family_defines()
         self.define = stm.getDefineForDevice(self.did, self.family_defines)
@@ -102,13 +114,14 @@ class STMHeader:
 
 
     def _get_family_defines(self):
-        if self.did.family not in STMHeader.CACHE_FAMILY:
+        if self.family_folder not in STMHeader.CACHE_FAMILY:
             defines = []
-            match = re.findall(r"if defined\((?P<define>STM32(?:C|F|G|L|H|W|U).....)\)", (self.cmsis_folder / self.family_header_file).read_text(encoding="utf-8", errors="replace"))
+            content = (self.cmsis_folder / self.family_header_file).read_text(encoding="utf-8", errors="replace")
+            match = re.findall(r"if +defined\( *(STM32[A-Z][\w\d]+) *\)", content)
             if match: defines = match;
             else: LOGGER.error("Cannot find family defines for {}!".format(self.did.string));
-            STMHeader.CACHE_FAMILY[self.did.family]["family_defines"] = defines
-        return STMHeader.CACHE_FAMILY[self.did.family]["family_defines"]
+            STMHeader.CACHE_FAMILY[self.family_folder]["family_defines"] = defines
+        return STMHeader.CACHE_FAMILY[self.family_folder]["family_defines"]
 
     def _get_filtered_defines(self):
         defines = {}

@@ -12,15 +12,15 @@ REQUEST_PATTERN = re.compile(r"^\s*#define\s+(?P<name>(DMA_REQUEST_\w+))\s+(?P<i
 BDMA_REQUEST_PATTERN = re.compile(r"^\s*#define\s+(?P<name>(BDMA_REQUEST_\w+))\s+(?P<id>([0-9]+))U")
 
 def read_request_map(did):
-    dma_header = _get_hal_dma_header_path(did.family)
-    dmamux_header = _get_ll_dmamux_header_path(did.family)
+    dma_header = _get_hal_dma_header_path(did)
+    dmamux_header = _get_ll_dmamux_header_path(did)
     request_map = None
     if did.family in ["c0", "g4", "h7", "l5"]:
         request_map = _read_requests(dma_header, REQUEST_PATTERN)
     elif did.family in ["g0", "u0", "wb", "wl"]:
         request_map = _read_requests_from_ll_dmamux(dma_header, dmamux_header)
     elif did.family == "l4" and did.name[0] in ["p", "q", "r", "s"]:
-        request_map = _read_requests_l4(did.name in ["p5", "q5"])
+        request_map = _read_requests_l4(did)
     else:
         raise RuntimeError("No DMAMUX request data available for {}".format(did))
     _fix_request_data(request_map, "DMA")
@@ -28,7 +28,7 @@ def read_request_map(did):
 
 
 def read_bdma_request_map(did):
-    dma_header = _get_hal_dma_header_path(did.family)
+    dma_header = _get_hal_dma_header_path(did)
     request_map = _read_requests(dma_header, BDMA_REQUEST_PATTERN)
     _fix_request_data(request_map, "BDMA")
     return request_map
@@ -62,6 +62,16 @@ def _fix_request_data(request_map, prefix):
             fix_requests["SUBGHZ_RX"] = number
         elif name == "SUBGHZSPI_TX":
             fix_requests["SUBGHZ_TX"] = number
+        elif name == "DAC":
+            fix_requests["DAC_OUT1"] = number
+        elif name == "USART_TX":
+            fix_requests["USART1_TX"] = number
+        elif name == "USART_RX":
+            fix_requests["USART1_RX"] = number
+        elif name == "LPUART_TX":
+            fix_requests["LPUART1_TX"] = number
+        elif name == "LPUART_RX":
+            fix_requests["LPUART1_RX"] = number
         else:
             m = dac_pattern.match(name)
             if m:
@@ -69,16 +79,31 @@ def _fix_request_data(request_map, prefix):
 
     request_map.update(fix_requests)
 
+def _get_family(did):
+    family = f"{did.family}xx"
+    if did.string[5:8] in ["h7r", "h7s"]:
+        family = "h7rsxx"
+    elif did.string[5:8] == "wb0":
+        family = "wb0x"
+    elif did.string[5:8] == "wba":
+        family = "wbax"
+    elif did.string[5:8] == "wl3":
+        family = "wl3x"
+    return family
+
+
 def _get_include_path(family):
-    return CUBE_PATH / Path("stm32{}xx/Inc".format(family))
+    return CUBE_PATH / Path("stm32{}/Inc".format(family))
 
 
-def _get_hal_dma_header_path(family):
-    return _get_include_path(family) / Path("stm32{}xx_hal_dma.h".format(family))
+def _get_hal_dma_header_path(did):
+    family = _get_family(did)
+    return _get_include_path(family) / Path("stm32{}_hal_dma.h".format(family))
 
 
-def _get_ll_dmamux_header_path(family):
-    return _get_include_path(family) / Path("stm32{}xx_ll_dmamux.h".format(family))
+def _get_ll_dmamux_header_path(did):
+    family = _get_family(did)
+    return _get_include_path(family) / Path("stm32{}_ll_dmamux.h".format(family))
 
 
 # For G4, H7 and L5
@@ -94,16 +119,17 @@ def _read_requests(hal_dma_file, request_pattern):
 # For G0, WB and WL
 def _read_requests_from_ll_dmamux(hal_dma_file, ll_dmamux_file):
     dmamux_map = _read_map(ll_dmamux_file, DMAMUX_PATTERN)
-    request_pattern = re.compile(r"^\s*#define\s+(?P<name>(DMA_REQUEST_\w+))\s+(?P<id>(LL_DMAMUX?_REQ_\w+))\s*")
+    request_pattern = re.compile(r"^\s*#define\s+(?P<name>(DMAM?U?X?_REQU?E?S?T?_\w+))\s+(?P<id>(LL_DMAMUX?_REQ_\w+))\s*")
     requests_map = _read_map(hal_dma_file, request_pattern)
     out_map = {}
     for r in requests_map.keys():
-        out_map[r.replace("DMA_REQUEST_", "", 1)] = int(dmamux_map[requests_map[r]], 16)
+        out_map[r.replace("DMA_REQUEST_", "", 1).replace("DMAMUX_REQ_", "", 1)] = int(dmamux_map[requests_map[r]], 16)
     return out_map
 
 
 # For L4+
-def _read_requests_l4(read_for_p5_q5):
+def _read_requests_l4(did):
+    read_for_p5_q5 = did.name in ["p5", "q5"]
     out_map = {}
     p5_q5_if = "#if defined (STM32L4P5xx) || defined (STM32L4Q5xx)"
     if_pattern = re.compile(r"^\s*#\s*if\s+")
@@ -111,7 +137,7 @@ def _read_requests_l4(read_for_p5_q5):
     endif_pattern = re.compile(r"^\s*#\s*endif")
     in_p5_q5_section = False
     ignore = False
-    with open(_get_hal_dma_header_path("l4"), "r") as header_file:
+    with open(_get_hal_dma_header_path(did), "r") as header_file:
         if_counter = 0
         for line in header_file.readlines():
             if p5_q5_if in line:

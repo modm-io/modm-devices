@@ -284,6 +284,12 @@ stm_groups = \
     },{
         'family': ['h7'],
         'name': ['a3', 'b3']
+    },{
+        'family': ['h7'],
+        'name': ['r3', 's3']
+    },{
+        'family': ['h7'],
+        'name': ['r7', 's7']
     },
 
     # STM32L0 devices
@@ -379,6 +385,14 @@ stm_groups = \
     },
 
     # STM32WL devices
+    {
+        'family': ['wl'],
+        'name': ['30', '31']
+    },
+    {
+        'family': ['wl'],
+        'name': ['33']
+    },
     {
         'family': ['wl'],
         'name': ['54', '55']

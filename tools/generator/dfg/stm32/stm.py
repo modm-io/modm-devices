@@ -22,6 +22,9 @@ def ignoreDevice(device_id: str) -> bool:
     return False
 
 def getDefineForDevice(device_id, familyDefines):
+    if len(familyDefines) == 1:
+        return familyDefines[0]
+
     # get all defines for this device name
     devName = 'STM32{}{}'.format(device_id.family.upper(), device_id.name.upper())
 
@@ -130,6 +133,7 @@ stm32_max_frequency = \
     'h7': [
         {'name': ['a3', 'b0', 'b3'], 'f': 280},
         {'name': ['23', '25', '30', '33', '35'], 'f': 550},
+        {'name': ['r3', 's3', 'r7', 's7'], 'f': 600},
         480,
     ],
     'l0': 32,
@@ -715,7 +719,13 @@ stm32_memory = \
                              'd1_sram1': 256*1024, 'd1_sram2': 384*1024, 'd1_sram3': 384*1024,
                              'd2_sram1': 64*1024, 'd2_sram2': 64*1024,
                              'd3_sram': 32*1024}
-            }
+            },
+            {
+                'name': ['r3', 'r7', 's3', 's7'],
+                'memories': {'flash': 0, 'itcm': 64*1024, 'dtcm': 64*1024, 'backup': 4*1024,
+                             'd1_sram1': 128*1024, 'd1_sram2': 128*1024, 'd1_sram3': 128*1024, 'd1_sram4': 72*1024,
+                             'd2_sram1': 16*1024, 'd2_sram2': 16*1024}
+            },
         ]
     },
     'l0': {
@@ -831,6 +841,12 @@ stm32_memory = \
         },
         'model': [
             {
+                'name': ['05'],
+                'memories': {'flash': 0, 'sram0': 0, 'sram1': 12*1024}
+            },{
+                'name': ['06', '07', '09'],
+                'memories': {'flash': 0, 'sram0': 0, 'sram1': 16*1024, 'sram2': 16*1024, 'sram3': 16*1024}
+            },{
                 'name': ['10', '15', '1m'],
                 'memories': {'flash': 0, 'sram1': 0, 'sram2': 36*1024}
             },{
@@ -845,6 +861,14 @@ stm32_memory = \
             'sram': 0x20000000
         },
         'model': [
+            {
+                'name': ['30', '31'],
+                'memories': {'flash': 0, 'sram0': 0}
+            },
+            {
+                'name': ['33'],
+                'memories': {'flash': 0, 'sram0': 0, 'sram1': 16*1024}
+            },
             {
                 'name': ['54', '55', 'e4', 'e5'],
                 'memories': {'flash': 0, 'sram1': 0, 'sram2': 32*1024}

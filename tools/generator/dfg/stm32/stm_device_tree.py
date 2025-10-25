@@ -178,6 +178,8 @@ class STMDeviceTree:
                     bdmaFile = XMLReader(os.path.join(STMDeviceTree.rootpath, "IP", module[1] + "-" + rversion + "_Modes.xml"))
             elif module[0].startswith("TIM"):
                 module = ("TIM",) + module[1:]
+            elif module[0] == "MDF" and module[1].startswith("ADF"):
+                module = ("ADF",) + module[1:]
 
             modules.append(tuple([m.lower() for m in module]))
 
