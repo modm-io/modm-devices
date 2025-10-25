@@ -842,10 +842,10 @@ stm32_memory = \
         'model': [
             {
                 'name': ['05'],
-                'memories': {'flash': 0, 'sram0': 0, 'sram1': 12*1024}
+                'memories': {'flash': 0, 'sram0': 12*1024, 'sram1': 0}
             },{
                 'name': ['06', '07', '09'],
-                'memories': {'flash': 0, 'sram0': 0, 'sram1': 16*1024, 'sram2': 16*1024, 'sram3': 16*1024}
+                'memories': {'flash': 0, 'sram0': 16*1024, 'sram1': 16*1024, 'sram2': 16*1024, 'sram3': 0}
             },{
                 'name': ['10', '15', '1m'],
                 'memories': {'flash': 0, 'sram1': 0, 'sram2': 36*1024}
@@ -867,11 +867,11 @@ stm32_memory = \
             },
             {
                 'name': ['33'],
-                'memories': {'flash': 0, 'sram0': 0, 'sram1': 16*1024}
+                'memories': {'flash': 0, 'sram0': 16*1024, 'sram1': 0}
             },
             {
                 'name': ['54', '55', 'e4', 'e5'],
-                'memories': {'flash': 0, 'sram1': 0, 'sram2': 32*1024}
+                'memories': {'flash': 0, 'sram1': 32*1024, 'sram2': 0}
             }
         ]
     },
@@ -964,6 +964,7 @@ def getMemoryForDevice(device_id, total_flash, total_ram):
     # Assemble flattened memories
     memories = []
     for name, size in mem_model.items():
+        if size <= 0: continue
         sram_name = next( ram for ram in mem_start.keys() if name.startswith(ram) )
         index = int(name.split("sram")[-1]) if name[-1].isdigit() else 0
         start = mem_start[sram_name]
