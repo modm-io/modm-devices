@@ -1,5 +1,5 @@
 from pathlib import Path
-import urllib.request
+import urllib.request, urllib.error
 import zipfile
 import shutil
 import io
@@ -20,10 +20,13 @@ dest = "../raw-device-data/nrf-devices/nrf"
 shutil.rmtree("../raw-device-data/nrf-devices", ignore_errors=True)
 Path(dest).mkdir(exist_ok=True, parents=True)
 
-with urllib.request.urlopen(urllib.request.Request(dl_page, headers=hdr)) as response:
-    html = response.read().decode("utf-8")
-    packurl = re.search('<span.*?>(.*?nsscprodmedia.*?/nrf_mdk_.*?_gcc_bsdlicense.zip)<', html)
-    packurl = packurl.group(1)
+try:
+    with urllib.request.urlopen(urllib.request.Request(dl_page, headers=hdr)) as response:
+        html = response.read().decode("utf-8")
+        packurl = re.search('<span.*?>(.*?nsscprodmedia.*?/nrf_mdk_.*?_gcc_bsdlicense.zip)<', html)
+        packurl = packurl.group(1)
+except urllib.error.HTTPError:
+    packurl = "https://nsscprodmedia.blob.core.windows.net/prod/software-and-other-downloads/desktop-software/nrf-mdk/sw/8-69-0/250509---nrf_webrelease_339_may_2025/nrf_mdk_8_69_0_gcc_bsdlicense.zip"
 
 print("Downloading...", packurl)
 with urllib.request.urlopen(urllib.request.Request(packurl, headers=hdr)) as content:
