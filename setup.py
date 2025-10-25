@@ -10,7 +10,7 @@ with open("README.md") as f:
 setup(
     name = "modm-devices",
     version = __version__,
-    python_requires=">=3.5.0",
+    python_requires=">=3.9.0",
     packages = find_packages(exclude=["test"]),
     package_data = {
         "": ["resources/devices/*/*",
@@ -38,7 +38,6 @@ setup(
         "Operating System :: OS Independent",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.5",
         "Topic :: Database",
         "Topic :: Software Development",
         "Topic :: Software Development :: Code Generators",
