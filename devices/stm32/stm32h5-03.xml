@@ -102,7 +102,7 @@
       <feature value="status"/>
       <instance value="1"/>
     </driver>
-    <driver name="debug" type="stm32-v1.0"/>
+    <driver name="debug" type="stm32-v1.1"/>
     <driver name="dts" type="stm32-v1.0"/>
     <driver name="fdcan" type="stm32">
       <instance value="1"/>
@@ -539,7 +539,7 @@
         <signal af="14" driver="tim" instance="1" name="bkin"/>
       </gpio>
       <gpio port="b" pin="4">
-        <signal af="0" driver="debug" name="jtrst"/>
+        <signal af="0" driver="debug" name="njtrst"/>
         <signal af="1" driver="tim" instance="1" name="ch4n"/>
         <signal af="2" driver="tim" instance="3" name="ch1"/>
         <signal af="3" driver="i3c" instance="2" name="sda"/>

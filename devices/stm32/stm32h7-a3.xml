@@ -1117,7 +1117,7 @@
         <signal af="11" driver="uart" instance="7" name="rx"/>
       </gpio>
       <gpio port="b" pin="4">
-        <signal driver="debug" name="jtrst"/>
+        <signal af="0" driver="debug" name="njtrst"/>
         <signal af="1" driver="tim" instance="16" name="bkin"/>
         <signal af="2" driver="tim" instance="3" name="ch1"/>
         <signal af="5" driver="i2s" instance="1" name="sdi"/>

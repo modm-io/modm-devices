@@ -172,6 +172,9 @@
       <instance value="2"/>
       <instance value="4"/>
     </driver>
+    <driver name="adf" type="stm32-v1.0">
+      <instance value="1"/>
+    </driver>
     <driver device-name="a9" name="aes" type="stm32-v2.0"/>
     <driver name="comp" type="stm32-tsmc90_u5_cube">
       <instance value="1"/>
@@ -304,7 +307,6 @@
     </driver>
     <driver name="ltdc" type="stm32-v1.1"/>
     <driver name="mdf" type="stm32-v1.0">
-      <instance value="1"/>
       <instance value="1"/>
     </driver>
     <driver name="octospi" type="stm32-v3.0">
@@ -650,7 +652,7 @@
         <signal af="0" driver="debug" name="swo"/>
         <signal af="1" driver="tim" instance="2" name="ch2"/>
         <signal af="2" driver="lptim" instance="1" name="ch1"/>
-        <signal af="3" driver="mdf" instance="adf1" name="cck0"/>
+        <signal af="3" driver="adf" instance="1" name="cck0"/>
         <signal af="4" driver="i2c" instance="1" name="sda"/>
         <signal af="5" driver="spi" instance="1" name="sck"/>
         <signal af="6" driver="spi" instance="3" name="sck"/>
@@ -665,7 +667,7 @@
         <signal af="0" driver="debug" name="jtrst"/>
         <signal af="1" driver="lptim" instance="1" name="ch2"/>
         <signal af="2" driver="tim" instance="3" name="ch1"/>
-        <signal af="3" driver="mdf" instance="adf1" name="sdi0"/>
+        <signal af="3" driver="adf" instance="1" name="sdi0"/>
         <signal af="4" driver="i2c" instance="3" name="sda"/>
         <signal af="5" driver="spi" instance="1" name="miso"/>
         <signal af="6" driver="spi" instance="3" name="miso"/>
@@ -1008,7 +1010,7 @@
       <gpio port="c" pin="10">
         <signal af="0" driver="debug" name="traced1"/>
         <signal af="2" driver="lptim" instance="3" name="etr"/>
-        <signal af="3" driver="mdf" instance="adf1" name="cck1"/>
+        <signal af="3" driver="adf" instance="1" name="cck1"/>
         <signal af="6" driver="spi" instance="3" name="sck"/>
         <signal af="7" driver="usart" instance="3" name="tx"/>
         <signal af="8" driver="uart" instance="4" name="tx"/>
@@ -1020,7 +1022,7 @@
       </gpio>
       <gpio port="c" pin="11">
         <signal af="2" driver="lptim" instance="3" name="in1"/>
-        <signal af="3" driver="mdf" instance="adf1" name="sdi0"/>
+        <signal af="3" driver="adf" instance="1" name="sdi0"/>
         <signal af="4" driver="dcmi" name="d2"/>
         <signal af="4" driver="pssi" name="d2"/>
         <signal af="5" driver="octospim" name="p1_ncs"/>
@@ -1332,7 +1334,7 @@
       </gpio>
       <gpio port="e" pin="9">
         <signal af="1" driver="tim" instance="1" name="ch1"/>
-        <signal af="3" driver="mdf" instance="adf1" name="cck0"/>
+        <signal af="3" driver="adf" instance="1" name="cck0"/>
         <signal af="6" driver="mdf" instance="1" name="cck0"/>
         <signal af="8" driver="ltdc" name="g2"/>
         <signal af="10" driver="octospim" name="p1_nclk"/>
@@ -1342,7 +1344,7 @@
       </gpio>
       <gpio port="e" pin="10">
         <signal af="1" driver="tim" instance="1" name="ch2n"/>
-        <signal af="3" driver="mdf" instance="adf1" name="sdi0"/>
+        <signal af="3" driver="adf" instance="1" name="sdi0"/>
         <signal af="6" driver="mdf" instance="1" name="sdi4"/>
         <signal af="8" driver="ltdc" name="g3"/>
         <signal af="9" driver="tsc" name="g5_io1"/>
@@ -1423,7 +1425,7 @@
       </gpio>
       <gpio device-pin="b|n|z" port="f" pin="3">
         <signal af="2" driver="lptim" instance="3" name="in1"/>
-        <signal af="3" driver="mdf" instance="adf1" name="cck0"/>
+        <signal af="3" driver="adf" instance="1" name="cck0"/>
         <signal af="5" driver="octospim" name="p2_io3"/>
         <signal af="6" driver="mdf" instance="1" name="cck0"/>
         <signal af="7" driver="usart" instance="6" name="cts"/>
@@ -1432,7 +1434,7 @@
       </gpio>
       <gpio device-pin="b|n|z" port="f" pin="4">
         <signal af="2" driver="lptim" instance="3" name="etr"/>
-        <signal af="3" driver="mdf" instance="adf1" name="sdi0"/>
+        <signal af="3" driver="adf" instance="1" name="sdi0"/>
         <signal af="5" driver="octospim" name="p2_clk"/>
         <signal af="6" driver="mdf" instance="1" name="sdi0"/>
         <signal af="7" driver="usart" instance="6" name="de"/>

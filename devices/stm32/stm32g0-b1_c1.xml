@@ -1526,7 +1526,7 @@
         <pin position="61" name="PD10"/>
         <pin position="62" name="PD11"/>
         <pin position="63" name="VSS" type="power"/>
-        <pin position="64" name="VDD" type="power"/>
+        <pin position="64" name="VDDIO2" type="power"/>
         <pin position="65" name="PD12"/>
         <pin position="66" name="PD13"/>
         <pin position="67" name="PD14"/>
@@ -1591,8 +1591,8 @@
         <pin position="18" name="PA8"/>
         <pin position="19" name="UCPD1_DBCC1" type="monoio" variant="remap"/>
         <pin position="19" name="PA9" variant="remap-default"/>
-        <pin device-name="b1|c1" device-size="c|e" device-temperature="6" device-variant="n" position="20" name="VDD" type="power"/>
-        <pin device-name="b1" device-size="b" device-temperature="3|6|7" device-variant="n" position="20" name="VDD" type="power"/>
+        <pin device-name="b1|c1" device-size="c|e" device-temperature="6" device-variant="n" position="20" name="VDDIO2" type="power"/>
+        <pin device-name="b1" device-size="b" device-temperature="3|6|7" device-variant="n" position="20" name="VDDIO2" type="power"/>
         <pin device-name="b1|c1" device-size="c|e" device-temperature="6" device-variant="" position="20" name="PC6"/>
         <pin device-name="b1" device-size="b" device-temperature="3|6|7" device-variant="" position="20" name="PC6"/>
         <pin position="21" name="UCPD1_DBCC2" type="monoio" variant="remap"/>
@@ -1658,8 +1658,8 @@
         <pin device-name="c1" device-size="c|e" device-variant="n" position="30" name="VSS" type="power"/>
         <pin device-name="b1" device-size="b|c|e" device-variant="" position="30" name="PC6"/>
         <pin device-name="c1" device-size="c|e" device-variant="" position="30" name="PC6"/>
-        <pin device-name="b1" device-size="b|c|e" device-variant="n" position="31" name="VDD" type="power"/>
-        <pin device-name="c1" device-size="c|e" device-variant="n" position="31" name="VDD" type="power"/>
+        <pin device-name="b1" device-size="b|c|e" device-variant="n" position="31" name="VDDIO2" type="power"/>
+        <pin device-name="c1" device-size="c|e" device-variant="n" position="31" name="VDDIO2" type="power"/>
         <pin device-name="b1" device-size="b|c|e" device-variant="" position="31" name="PC7"/>
         <pin device-name="c1" device-size="c|e" device-variant="" position="31" name="PC7"/>
         <pin position="32" name="UCPD1_DBCC2" type="monoio" variant="remap"/>
@@ -1730,9 +1730,9 @@
         <pin device-name="b1" device-size="b|c|e" device-temperature="6" device-variant="" position="40" name="PD8"/>
         <pin device-name="b1" device-size="c" device-temperature="7" device-variant="" position="40" name="PD8"/>
         <pin device-name="c1" device-size="c|e" device-temperature="6" device-variant="" position="40" name="PD8"/>
-        <pin device-name="b1" device-size="b|c|e" device-temperature="6" device-variant="n" position="41" name="VDD" type="power"/>
-        <pin device-name="b1" device-size="c" device-temperature="7" device-variant="n" position="41" name="VDD" type="power"/>
-        <pin device-name="c1" device-size="c|e" device-temperature="6" device-variant="n" position="41" name="VDD" type="power"/>
+        <pin device-name="b1" device-size="b|c|e" device-temperature="6" device-variant="n" position="41" name="VDDIO2" type="power"/>
+        <pin device-name="b1" device-size="c" device-temperature="7" device-variant="n" position="41" name="VDDIO2" type="power"/>
+        <pin device-name="c1" device-size="c|e" device-temperature="6" device-variant="n" position="41" name="VDDIO2" type="power"/>
         <pin device-name="b1" device-size="b|c|e" device-temperature="6" device-variant="" position="41" name="PD9"/>
         <pin device-name="b1" device-size="c" device-temperature="7" device-variant="" position="41" name="PD9"/>
         <pin device-name="c1" device-size="c|e" device-temperature="6" device-variant="" position="41" name="PD9"/>
@@ -1815,7 +1815,7 @@
         <pin position="48" name="PD10"/>
         <pin position="49" name="PD11"/>
         <pin position="50" name="VSS" type="power"/>
-        <pin position="51" name="VDD" type="power"/>
+        <pin position="51" name="VDDIO2" type="power"/>
         <pin position="52" name="PD12"/>
         <pin position="53" name="PD13"/>
         <pin position="54" name="PD14"/>
@@ -1902,7 +1902,7 @@
         <pin position="F1" name="VDD" type="power"/>
         <pin position="F2" name="VREF+" type="monoio"/>
         <pin position="F11" name="PD12"/>
-        <pin position="F12" name="VDD" type="power"/>
+        <pin position="F12" name="VDDIO2" type="power"/>
         <pin position="G1" name="VSS" type="power"/>
         <pin position="G2" name="PF2-NRST"/>
         <pin position="G11" name="PD11"/>
@@ -1990,7 +1990,7 @@
         <pin position="D6" name="UCPD1_DBCC2" type="monoio" variant="remap"/>
         <pin position="D6" name="PA10" variant="remap-default"/>
         <pin position="D7" name="PA13"/>
-        <pin position="D8" name="VDD" type="power"/>
+        <pin position="D8" name="VDDIO2" type="power"/>
         <pin position="E1" name="VSS" type="power"/>
         <pin position="E2" name="PF2-NRST"/>
         <pin position="E3" name="PC0"/>
@@ -2049,8 +2049,8 @@
         <pin position="18" name="PA8"/>
         <pin position="19" name="UCPD1_DBCC1" type="monoio" variant="remap"/>
         <pin position="19" name="PA9" variant="remap-default"/>
-        <pin device-name="b1|c1" device-size="c|e" device-temperature="6" device-variant="n" position="20" name="VDD" type="power"/>
-        <pin device-name="b1" device-size="b" device-temperature="3|6|7" device-variant="n" position="20" name="VDD" type="power"/>
+        <pin device-name="b1|c1" device-size="c|e" device-temperature="6" device-variant="n" position="20" name="VDDIO2" type="power"/>
+        <pin device-name="b1" device-size="b" device-temperature="3|6|7" device-variant="n" position="20" name="VDDIO2" type="power"/>
         <pin device-name="b1|c1" device-size="c|e" device-temperature="6" device-variant="" position="20" name="PC6"/>
         <pin device-name="b1" device-size="b" device-temperature="3|6|7" device-variant="" position="20" name="PC6"/>
         <pin position="21" name="UCPD1_DBCC2" type="monoio" variant="remap"/>
@@ -2116,8 +2116,8 @@
         <pin device-name="c1" device-size="c|e" device-variant="n" position="30" name="VSS" type="power"/>
         <pin device-name="b1" device-size="b|c|e" device-variant="" position="30" name="PC6"/>
         <pin device-name="c1" device-size="c|e" device-variant="" position="30" name="PC6"/>
-        <pin device-name="b1" device-size="b|c|e" device-variant="n" position="31" name="VDD" type="power"/>
-        <pin device-name="c1" device-size="c|e" device-variant="n" position="31" name="VDD" type="power"/>
+        <pin device-name="b1" device-size="b|c|e" device-variant="n" position="31" name="VDDIO2" type="power"/>
+        <pin device-name="c1" device-size="c|e" device-variant="n" position="31" name="VDDIO2" type="power"/>
         <pin device-name="b1" device-size="b|c|e" device-variant="" position="31" name="PC7"/>
         <pin device-name="c1" device-size="c|e" device-variant="" position="31" name="PC7"/>
         <pin position="32" name="UCPD1_DBCC2" type="monoio" variant="remap"/>
@@ -2164,7 +2164,7 @@
         <pin position="C8" name="PB6"/>
         <pin position="C10" name="VBAT" type="power"/>
         <pin position="C12" name="PC15-OSC32_OUT (PC15)"/>
-        <pin position="D1" name="VDD" type="power"/>
+        <pin position="D1" name="VDDIO2" type="power"/>
         <pin position="D3" name="PC7"/>
         <pin position="D5" name="PC6"/>
         <pin position="D7" name="PB7"/>

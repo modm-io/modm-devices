@@ -51,6 +51,12 @@
       <vector position="43" name="PLL_USB_IRQ"/>
       <vector position="44" name="POWMAN_IRQ_POW"/>
       <vector position="45" name="POWMAN_IRQ_TIMER"/>
+      <vector position="46" name="SPARE_IRQ_0"/>
+      <vector position="47" name="SPARE_IRQ_1"/>
+      <vector position="48" name="SPARE_IRQ_2"/>
+      <vector position="49" name="SPARE_IRQ_3"/>
+      <vector position="50" name="SPARE_IRQ_4"/>
+      <vector position="51" name="SPARE_IRQ_5"/>
     </driver>
     <driver name="accessctrl" type="rp23"/>
     <driver name="adc" type="rp23">
@@ -231,6 +237,7 @@
     </driver>
     <driver name="sio" type="rp23"/>
     <driver name="sio_ns" type="rp23"/>
+    <driver name="spare_irq" type="rp23"/>
     <driver name="spi" type="rp23">
       <instance value="0"/>
       <instance value="1"/>

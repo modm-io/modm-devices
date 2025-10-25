@@ -162,7 +162,7 @@
       <instance value="1"/>
     </driver>
     <driver name="dcmi" type="stm32"/>
-    <driver name="debug" type="stm32-v1.0"/>
+    <driver name="debug" type="stm32-v1.1"/>
     <driver name="dts" type="stm32-v1.0"/>
     <driver name="fdcan" type="stm32">
       <instance value="1"/>
@@ -579,7 +579,7 @@
         <signal af="14" driver="lptim" instance="6" name="etr"/>
       </gpio>
       <gpio port="b" pin="4">
-        <signal af="0" driver="debug" name="jtrst"/>
+        <signal af="0" driver="debug" name="njtrst"/>
         <signal af="1" driver="tim" instance="16" name="bkin"/>
         <signal af="2" driver="tim" instance="3" name="ch1"/>
         <signal af="3" driver="octospi" instance="1" name="clk"/>

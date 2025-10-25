@@ -42,11 +42,13 @@
     <valid-device>samd51p19a-az</valid-device>
     <valid-device>samd51p19a-ctf</valid-device>
     <valid-device>samd51p19a-ctu</valid-device>
+    <valid-device>samd51p19a-ctz</valid-device>
     <valid-device>samd51p20a-af</valid-device>
     <valid-device>samd51p20a-au</valid-device>
     <valid-device>samd51p20a-az</valid-device>
     <valid-device>samd51p20a-ctf</valid-device>
     <valid-device>samd51p20a-ctu</valid-device>
+    <valid-device>samd51p20a-ctz</valid-device>
     <valid-device>same51g18a-mf</valid-device>
     <valid-device>same51g18a-mu</valid-device>
     <valid-device>same51g18a-mz</valid-device>
@@ -112,11 +114,13 @@
     <valid-device>same54p19a-az</valid-device>
     <valid-device>same54p19a-ctf</valid-device>
     <valid-device>same54p19a-ctu</valid-device>
+    <valid-device>same54p19a-ctz</valid-device>
     <valid-device>same54p20a-af</valid-device>
     <valid-device>same54p20a-au</valid-device>
     <valid-device>same54p20a-az</valid-device>
     <valid-device>same54p20a-ctf</valid-device>
     <valid-device>same54p20a-ctu</valid-device>
+    <valid-device>same54p20a-ctz</valid-device>
     <driver name="core" type="cortex-m4f">
       <vector position="0" name="PM"/>
       <vector position="1" name="MCLK"/>
@@ -440,7 +444,7 @@
       <clock peripheral="sdhc" instance="0" value="45"/>
       <clock device-series="d51|e53|e54" device-pin="n" peripheral="sdhc" instance="1" value="46"/>
       <clock device-series="d51|e54" device-pin="p" peripheral="sdhc" instance="1" value="46"/>
-      <clock device-series="e53" device-pin="n" peripheral="tpiu" value="47"/>
+      <clock device-pin="n|p" peripheral="tpiu" value="47"/>
       <generators value="12"/>
       <source name="Xosc0" value="0"/>
       <source name="Xosc1" value="1"/>
@@ -504,8 +508,7 @@
       <instance device-pin="j|n|p" value="3"/>
       <instance device-pin="j|n|p" value="4"/>
     </driver>
-    <driver device-series="d51|e51|e54" name="tpi" type="sam"/>
-    <driver device-series="e53" name="tpiu" type="sam"/>
+    <driver name="tpiu" type="sam"/>
     <driver name="trng" type="sam"/>
     <driver name="usb" type="sam"/>
     <driver name="wdt" type="sam"/>
@@ -530,7 +533,7 @@
       </gpio>
       <gpio port="A" pin="03">
         <signal driver="adc" instance="0" name="ain" function="b" index="1"/>
-        <signal device-series="e53" driver="adc" instance="0" name="vrefa" function="b"/>
+        <signal driver="adc" instance="0" name="vrefa" function="b"/>
         <signal driver="adc" instance="0" name="x" function="b" index="0"/>
         <signal driver="adc" instance="0" name="y" function="b" index="0"/>
         <signal driver="eic" name="extint" function="a" index="3"/>
@@ -538,7 +541,7 @@
       <gpio port="A" pin="04">
         <signal driver="ac" name="ain" function="b" index="0"/>
         <signal driver="adc" instance="0" name="ain" function="b" index="4"/>
-        <signal device-series="e53" driver="adc" instance="0" name="vrefb" function="b"/>
+        <signal driver="adc" instance="0" name="vrefb" function="b"/>
         <signal driver="adc" instance="0" name="x" function="b" index="3"/>
         <signal driver="adc" instance="0" name="y" function="b" index="3"/>
         <signal driver="ccl" name="in" function="n" index="0"/>
@@ -558,7 +561,7 @@
       <gpio port="A" pin="06">
         <signal driver="ac" name="ain" function="b" index="2"/>
         <signal driver="adc" instance="0" name="ain" function="b" index="6"/>
-        <signal device-series="e53" driver="adc" instance="0" name="vrefc" function="b"/>
+        <signal driver="adc" instance="0" name="vrefc" function="b"/>
         <signal driver="adc" instance="0" name="x" function="b" index="4"/>
         <signal driver="adc" instance="0" name="y" function="b" index="4"/>
         <signal driver="ccl" name="in" function="n" index="2"/>
@@ -1307,16 +1310,14 @@
       </gpio>
       <gpio device-pin="p" port="C" pin="22">
         <signal driver="eic" name="extint" function="a" index="6"/>
-        <signal device-series="e54" device-flash="19|20" device-package="a|ct" device-grade="f|u" driver="gmac" name="gmdc" function="l"/>
-        <signal device-series="e54" device-flash="19|20" device-package="a" device-grade="z" driver="gmac" name="gmdc" function="l"/>
+        <signal device-series="e54" device-flash="19|20" device-package="a|ct" device-grade="f|u|z" driver="gmac" name="gmdc" function="l"/>
         <signal driver="sercom" instance="1" name="pad" function="c" index="0"/>
         <signal driver="sercom" instance="3" name="pad" function="d" index="1"/>
         <signal driver="tcc" instance="0" name="wo" function="f" index="6"/>
       </gpio>
       <gpio device-pin="p" port="C" pin="23">
         <signal driver="eic" name="extint" function="a" index="7"/>
-        <signal device-series="e54" device-flash="19|20" device-package="a|ct" device-grade="f|u" driver="gmac" name="gmdio" function="l"/>
-        <signal device-series="e54" device-flash="19|20" device-package="a" device-grade="z" driver="gmac" name="gmdio" function="l"/>
+        <signal device-series="e54" device-flash="19|20" device-package="a|ct" device-grade="f|u|z" driver="gmac" name="gmdio" function="l"/>
         <signal driver="sercom" instance="1" name="pad" function="c" index="1"/>
         <signal driver="sercom" instance="3" name="pad" function="d" index="0"/>
         <signal driver="tcc" instance="0" name="wo" function="f" index="7"/>
@@ -1325,29 +1326,29 @@
         <signal driver="eic" name="extint" function="a" index="8"/>
         <signal driver="sercom" instance="0" name="pad" function="c" index="2"/>
         <signal driver="sercom" instance="2" name="pad" function="d" index="2"/>
-        <signal device-series="e53" device-pin="n" driver="tpiu" name="traced" function="h" index="3"/>
+        <signal driver="tpiu" name="traced" function="h" index="3"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="25">
         <signal driver="eic" name="extint" function="a" index="9"/>
         <signal driver="sercom" instance="0" name="pad" function="c" index="3"/>
         <signal driver="sercom" instance="2" name="pad" function="d" index="3"/>
-        <signal device-series="e53" device-pin="n" driver="tpiu" name="traced" function="h" index="2"/>
+        <signal driver="tpiu" name="traced" function="h" index="2"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="26">
         <signal driver="eic" name="extint" function="a" index="10"/>
-        <signal device-series="e53" device-pin="n" driver="tpiu" name="traced" function="h" index="1"/>
+        <signal driver="tpiu" name="traced" function="h" index="1"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="27">
         <signal driver="ccl" name="in" function="n" index="4"/>
         <signal driver="eic" name="extint" function="a" index="11"/>
         <signal driver="sercom" instance="1" name="pad" function="c" index="0"/>
-        <signal device-series="e53" device-pin="n" driver="tpiu" name="traceclk" function="h"/>
+        <signal driver="tpiu" name="traceclk" function="h"/>
       </gpio>
       <gpio device-pin="n|p" port="C" pin="28">
         <signal driver="ccl" name="in" function="n" index="5"/>
         <signal driver="eic" name="extint" function="a" index="12"/>
         <signal driver="sercom" instance="1" name="pad" function="c" index="1"/>
-        <signal device-series="e53" device-pin="n" driver="tpiu" name="traced" function="h" index="0"/>
+        <signal driver="tpiu" name="traced" function="h" index="0"/>
       </gpio>
       <gpio device-pin="p" port="C" pin="30">
         <signal driver="adc" instance="1" name="ain" function="b" index="12"/>
