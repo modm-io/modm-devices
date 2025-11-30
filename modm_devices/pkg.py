@@ -9,8 +9,6 @@ fashion to pkgutil.get_data().
 
 import os
 import re
-import sys
-import pkgutil
 
 import urllib.request
 import urllib.parse
@@ -28,9 +26,19 @@ def naturalkey(key):
 
     return [atoi(c) for c in re.split(r"([-]?\d+)", key)]
 
+
 def get_filename(package, resource):
     """Rewrite of pkgutil.get_data() that return the file path.
     """
+    if os.sys.version_info >= (3, 14):
+        import importlib.resources
+        package_files = importlib.resources.files(package)
+        return (package_files / resource).resolve()
+
+    # Old deprecated way to work with Python ≤3.8
+    import sys
+    import pkgutil
+
     loader = pkgutil.get_loader(package)
     if loader is None or not hasattr(loader, 'get_data'):
         return None
@@ -43,9 +51,8 @@ def get_filename(package, resource):
     # the package's __file__
     parts = resource.split('/')
     parts.insert(0, os.path.dirname(mod.__file__))
-    resource_name = os.path.normpath(os.path.join(*parts))
+    return os.path.normpath(os.path.join(*parts))
 
-    return resource_name
 
 CATALOGFILE = get_filename('modm_devices', 'resources/catalog.xml')
 os.environ['XML_CATALOG_FILES'] = \
