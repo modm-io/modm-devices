@@ -65,7 +65,7 @@
     </driver>
     <driver name="i2c" type="stm32-v1.1">
       <instance value="1"/>
-      <instance value="2"/>
+      <instance device-pin="c" value="2"/>
     </driver>
     <driver name="i2s" type="stm32-v3.3">
       <instance value="3"/>
@@ -130,10 +130,10 @@
         <request position="9">
           <signal driver="i2c" instance="1" name="tx"/>
         </request>
-        <request position="10">
+        <request device-pin="c" position="10">
           <signal driver="i2c" instance="2" name="rx"/>
         </request>
-        <request position="11">
+        <request device-pin="c" position="11">
           <signal driver="i2c" instance="2" name="tx"/>
         </request>
         <request position="12">
@@ -190,6 +190,7 @@
         <mux-channel position="4" dma-instance="1" dma-channel="5"/>
         <mux-channel position="5" dma-instance="1" dma-channel="6"/>
         <mux-channel position="6" dma-instance="1" dma-channel="7"/>
+        <mux-channel position="7" dma-instance="1" dma-channel="8"/>
       </mux-channels>
     </driver>
     <driver name="gpio" type="stm32">
@@ -438,7 +439,7 @@
       </gpio>
       <gpio port="b" pin="13">
         <signal driver="rcc" name="osc32_in"/>
-        <signal af="0" driver="i2c" instance="2" name="smba"/>
+        <signal device-pin="c" af="0" driver="i2c" instance="2" name="smba"/>
         <signal af="4" driver="tim" instance="2" name="ch4"/>
       </gpio>
       <gpio port="b" pin="14">

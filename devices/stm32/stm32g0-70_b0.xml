@@ -128,7 +128,7 @@
       <instance device-name="b0" value="5"/>
       <instance device-name="b0" value="6"/>
     </driver>
-    <driver device-name="b0" name="usb_drd_fs" type="stm32-v1.0"/>
+    <driver device-name="b0" name="usb" type="stm32-v1.0"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="dma" type="stm32-mux">
       <instance value="1"/>
@@ -380,7 +380,7 @@
         <signal af="0" driver="spi" instance="1" name="nss"/>
         <signal device-name="b0" af="1" driver="i2s" instance="2" name="sd"/>
         <signal af="1" driver="spi" instance="2" name="mosi"/>
-        <signal device-name="b0" af="2" name="usb_noe"/>
+        <signal device-name="b0" af="2" driver="usb" name="noe"/>
         <signal device-name="b0" af="3" driver="usart" instance="6" name="tx"/>
         <signal af="4" driver="tim" instance="14" name="ch1"/>
         <signal device-name="b0" af="9" driver="spi" instance="3" name="nss"/>
@@ -449,7 +449,7 @@
         <signal device-name="b0" af="8" driver="i2c" instance="2" name="sda"/>
       </gpio>
       <gpio port="a" pin="11">
-        <signal device-name="b0" name="usb_dm"/>
+        <signal device-name="b0" driver="usb" name="dm"/>
         <signal af="0" driver="i2s" instance="1" name="mck"/>
         <signal af="0" driver="spi" instance="1" name="miso"/>
         <signal af="1" driver="usart" instance="1" name="cts"/>
@@ -459,7 +459,7 @@
         <signal af="6" driver="i2c" instance="2" name="scl"/>
       </gpio>
       <gpio port="a" pin="12">
-        <signal device-name="b0" name="usb_dp"/>
+        <signal device-name="b0" driver="usb" name="dp"/>
         <signal af="0" driver="i2s" instance="1" name="sd"/>
         <signal af="0" driver="spi" instance="1" name="mosi"/>
         <signal af="1" driver="usart" instance="1" name="ck"/>
@@ -472,7 +472,7 @@
       <gpio port="a" pin="13">
         <signal af="0" driver="sys" name="swdio"/>
         <signal af="1" driver="irtim" name="out"/>
-        <signal device-name="b0" af="2" name="usb_noe"/>
+        <signal device-name="b0" af="2" driver="usb" name="noe"/>
       </gpio>
       <gpio port="a" pin="14">
         <signal af="0" driver="sys" name="swclk"/>
@@ -489,7 +489,7 @@
         <signal af="5" driver="usart" instance="3" name="ck"/>
         <signal af="5" driver="usart" instance="3" name="de"/>
         <signal af="5" driver="usart" instance="3" name="rts"/>
-        <signal device-name="b0" af="6" name="usb_noe"/>
+        <signal device-name="b0" af="6" driver="usb" name="noe"/>
         <signal device-name="b0" af="8" driver="i2c" instance="2" name="smba"/>
         <signal device-name="b0" af="9" driver="spi" instance="3" name="nss"/>
       </gpio>
@@ -693,7 +693,7 @@
         <signal af="0" driver="i2s" name="ckin"/>
         <signal af="1" driver="tim" instance="3" name="ch4"/>
         <signal af="2" driver="tim" instance="1" name="ch2"/>
-        <signal device-name="b0" device-pin="r|v" af="6" name="usb_noe"/>
+        <signal device-name="b0" device-pin="r|v" af="6" driver="usb" name="noe"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="10">
         <signal af="0" driver="usart" instance="3" name="tx"/>

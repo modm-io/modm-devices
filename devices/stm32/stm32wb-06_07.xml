@@ -31,6 +31,7 @@
       <vector position="17" name="DMA"/>
       <vector position="18" name="RADIO_TXRX"/>
       <vector position="20" name="RADIO_TIMER_ERROR"/>
+      <vector position="22" name="RADIO_RRM"/>
       <vector position="23" name="RADIO_TIMER_CPU_WKUP"/>
       <vector position="24" name="RADIO_TIMER_TXRX_WKUP"/>
       <vector position="25" name="RADIO_TXRX_SEQ"/>
