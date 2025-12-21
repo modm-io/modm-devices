@@ -404,6 +404,10 @@ stm_groups = \
     },
     {
         'family': ['wl'],
+        'name': ['3r']
+    },
+    {
+        'family': ['wl'],
         'name': ['54', '55']
     },{
         'family': ['wl'],

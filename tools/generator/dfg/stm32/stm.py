@@ -31,6 +31,9 @@ def getDefineForDevice(device_id, familyDefines):
     # Map STM32F7x8 -> STM32F7x7
     if device_id.family == 'f7' and devName[8] == '8':
         devName = devName[:8] + '7'
+    # Map STM32WL33 -> STM32WL3X
+    if device_id.family == 'wl' and devName[7:9] in ["30", "31", "33"]:
+        devName = devName[:-1] + 'X'
 
     deviceDefines = sorted([define for define in familyDefines if define.startswith(devName)])
     # if there is only one define thats the one
@@ -62,7 +65,7 @@ stm32f1_gpio_remap = \
     'usart3':       {'position':  4, 'mask': 3, 'mapping': [0, 1,    3]},
     'tim1':         {'position':  6, 'mask': 3, 'mapping': [0, 1,    3]},
     'tim2':         {'position':  8, 'mask': 3, 'mapping': [0, 1, 2, 3]},
-    'tim3':         {'position': 10, 'mask': 3, 'mapping': [0,    2, 3]},
+    'tim3':         {'position': 10, 'mask': 3, 'mapping': [0, 0, 2, 3]}, # CubeMX db bug
     'tim4':         {'position': 12, 'mask': 1, 'mapping': [0, 1]},
     'can':          {'position': 13, 'mask': 3, 'mapping': [0,    2, 3]},
     'can1':         {'position': 13, 'mask': 3, 'mapping': [0,    2, 3]},
@@ -873,6 +876,10 @@ stm32_memory = \
             {
                 'name': ['33'],
                 'memories': {'flash': 0, 'sram0': 16*1024, 'sram1': 0}
+            },
+            {
+                'name': ['3r'],
+                'memories': {'flash': 0, 'sram0': 0}
             },
             {
                 'name': ['54', '55', 'e4', 'e5'],

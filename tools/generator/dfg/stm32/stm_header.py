@@ -73,7 +73,10 @@ class STMHeader:
         elif self.did.string[5:8] == "wl3":
             self.family_header_file = "stm32wl3x.h"
 
-        self.family_defines = self._get_family_defines()
+        if self.did.string[5:8] == "wl3":
+            self.family_defines = ["STM32WL3XX", "STM32WL3RX"]
+        else:
+            self.family_defines = self._get_family_defines()
         self.define = stm.getDefineForDevice(self.did, self.family_defines)
         self.is_valid = self.define is not None
         if not self.is_valid: return;

@@ -7,9 +7,10 @@ from pathlib import Path
 
 ROOT_PATH = Path(__file__).parents[2]
 CUBE_PATH = ROOT_PATH / "ext/stm32-cube-hal-drivers"
-DMAMUX_PATTERN = re.compile(r"^\s*#define\s+(?P<name>(LL_DMAMUX_REQ_\w+))\s+(?P<id>(0x[0-9A-Fa-f]+))U")
+DMAMUX_LL_PATTERN = re.compile(r"^\s*#define\s+(?P<name>(LL_DMAMUX?_REQ_\w+))\s+(?P<id>(0x[0-9A-Fa-f]+))U")
 REQUEST_PATTERN = re.compile(r"^\s*#define\s+(?P<name>(DMA_REQUEST_\w+))\s+(?P<id>([0-9]+))U")
 BDMA_REQUEST_PATTERN = re.compile(r"^\s*#define\s+(?P<name>(BDMA_REQUEST_\w+))\s+(?P<id>([0-9]+))U")
+DMAMUX_PATTERN = re.compile(r"^\s*#define\s+(?P<name>(DMAM?U?X?_REQU?E?S?T?_\w+))\s+(?P<id>(LL_DMAMUX?_REQ_\w+))\s*")
 
 def read_request_map(did):
     dma_header = _get_hal_dma_header_path(did)
@@ -20,7 +21,7 @@ def read_request_map(did):
     elif did.family in ["g0", "u0", "wb", "wl"]:
         request_map = _read_requests_from_ll_dmamux(dma_header, dmamux_header)
     elif did.family == "l4" and did.name[0] in ["p", "q", "r", "s"]:
-        request_map = _read_requests_l4(did)
+        request_map = _read_requests_l4(dma_header, dmamux_header, did)
     else:
         raise RuntimeError("No DMAMUX request data available for {}".format(did))
     _fix_request_data(request_map, "DMA")
@@ -118,9 +119,8 @@ def _read_requests(hal_dma_file, request_pattern):
 
 # For G0, WB and WL
 def _read_requests_from_ll_dmamux(hal_dma_file, ll_dmamux_file):
-    dmamux_map = _read_map(ll_dmamux_file, DMAMUX_PATTERN)
-    request_pattern = re.compile(r"^\s*#define\s+(?P<name>(DMAM?U?X?_REQU?E?S?T?_\w+))\s+(?P<id>(LL_DMAMUX?_REQ_\w+))\s*")
-    requests_map = _read_map(hal_dma_file, request_pattern)
+    dmamux_map = _read_map(ll_dmamux_file, DMAMUX_LL_PATTERN)
+    requests_map = _read_map(hal_dma_file, DMAMUX_PATTERN)
     out_map = {}
     for r in requests_map.keys():
         out_map[r.replace("DMA_REQUEST_", "", 1).replace("DMAMUX_REQ_", "", 1)] = int(dmamux_map[requests_map[r]], 16)
@@ -128,50 +128,33 @@ def _read_requests_from_ll_dmamux(hal_dma_file, ll_dmamux_file):
 
 
 # For L4+
-def _read_requests_l4(did):
-    read_for_p5_q5 = did.name in ["p5", "q5"]
+def _read_requests_l4(hal_dma_file, ll_dmamux_file, did):
+    dmamux_pattern = re.compile(r"^\s*#define\s+(?P<name>(LL_DMAMUX_REQ_\w+))\s+(?P<id>\(? ?\d+)U")
+    dmamux_map = _read_map(ll_dmamux_file, dmamux_pattern, ignore_duplicates=True)
+    del dmamux_map["LL_DMAMUX_REQ_ADC2_SHIFT"]
+    if (is_p5_q5 := did.name in ["p5", "q5"]):
+        dmamux_map = {k: ((int(v[1:]) + 1) if "(" in v else v) for k, v in dmamux_map.items()}
+    else:
+        dmamux_map = {k: v.replace("(", "") for k, v in dmamux_map.items() if k != "LL_DMAMUX_REQ_ADC2"}
+
+    requests_map = _read_map(hal_dma_file, DMAMUX_PATTERN)
+    if not is_p5_q5:
+        del requests_map["DMA_REQUEST_ADC2"]
+
     out_map = {}
-    p5_q5_if = "#if defined (STM32L4P5xx) || defined (STM32L4Q5xx)"
-    if_pattern = re.compile(r"^\s*#\s*if\s+")
-    else_pattern = re.compile(r"^\s*#\s*else")
-    endif_pattern = re.compile(r"^\s*#\s*endif")
-    in_p5_q5_section = False
-    ignore = False
-    with open(_get_hal_dma_header_path(did), "r") as header_file:
-        if_counter = 0
-        for line in header_file.readlines():
-            if p5_q5_if in line:
-                in_p5_q5_section = True
-                ignore = not read_for_p5_q5
-            elif in_p5_q5_section:
-                if if_pattern.match(line):
-                    if_counter += 1
-                elif endif_pattern.match(line):
-                    if if_counter == 0:
-                        in_p5_q5_section = False
-                        ignore = False
-                    else:
-                        if_counter -= 1
-                elif else_pattern.match(line) and if_counter == 0:
-                    ignore = read_for_p5_q5
-            if not ignore:
-                m = REQUEST_PATTERN.match(line)
-                if m:
-                    name = m.group("name").replace("DMA_REQUEST_", "", 1)
-                    if name in out_map:
-                        raise RuntimeError("Duplicate entry {}".format(name))
-                    out_map[name] = int(m.group("id"))
+    for r in requests_map.keys():
+        out_map[r.replace("DMA_REQUEST_", "", 1).replace("DMAMUX_REQ_", "", 1)] = int(dmamux_map[requests_map[r]])
     return out_map
 
 
-def _read_map(filename, pattern):
+def _read_map(filename, pattern, ignore_duplicates=False):
     out_map = {}
     with open(filename, "r") as header_file:
         for line in header_file.readlines():
             m = pattern.match(line)
             if m:
                 name = m.group("name")
-                if name in out_map:
+                if name in out_map and not ignore_duplicates:
                     raise RuntimeError("Duplicate entry {}".format(name))
                 out_map[name] = m.group("id")
     return out_map

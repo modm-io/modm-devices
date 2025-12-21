@@ -180,6 +180,8 @@ class STMDeviceTree:
                 module = ("TIM",) + module[1:]
             elif module[0] == "MDF" and module[1].startswith("ADF"):
                 module = ("ADF",) + module[1:]
+            elif module[0] == "USB_DRD_FS":
+                module = ("USB","USB",) + module[2:]
 
             modules.append(tuple([m.lower() for m in module]))
 
