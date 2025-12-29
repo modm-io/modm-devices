@@ -8,8 +8,6 @@ LOGGER = logging.getLogger("dfg.stm.data")
 
 ignored_devices = \
 [
-    "STM32G411",
-    "STM32G414",
     "STM32WL5M",
     "STM32WB1M",
     "STM32WB5M",

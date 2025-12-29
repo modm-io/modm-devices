@@ -220,6 +220,12 @@ stm_groups = \
     # STM32G4 devices
     {
         'family': ['g4'],
+        'name': ['11']
+    },{
+        'family': ['g4'],
+        'name': ['14']
+    },{
+        'family': ['g4'],
         'name': ['31', '41']
     },{
         'family': ['g4'],
