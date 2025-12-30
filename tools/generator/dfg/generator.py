@@ -10,7 +10,7 @@ from .merger import DeviceMerger
 from .output.device_file import DeviceFileWriter
 from modm_devices.parser import DeviceParser
 
-def run(output, devices, groups, filename, check_merge=False):
+def run(output, devices, groups, filename, check_merge=False, merger=DeviceMerger.merge):
     def localpath(path):
         return Path(__file__).resolve().parents[1] / path
 
@@ -18,7 +18,7 @@ def run(output, devices, groups, filename, check_merge=False):
         devs_to_merge = (d.copy() for d in devices.values())
     else:
         devs_to_merge = devices.values()
-    mergedDevices = DeviceMerger.merge(groups, devs_to_merge)
+    mergedDevices = merger(groups, devs_to_merge)
 
     output = localpath("../../devices/") / output
     parser = DeviceParser()
