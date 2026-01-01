@@ -70,20 +70,15 @@ class STMDeviceTree:
         LOGGER.info("Parsing '{}'".format(did.string))
 
         # information about the core and architecture
-        cores = [c.text.lower().replace("arm ", "") for c in device_file.query('//Core')]
+        cores = [c.text.lower().replace("arm ", "").replace("+", "plus") for c in device_file.query('//Core')]
         if len(cores) > 1: did.naming_schema += "@{core}"
         devices = [STMDeviceTree._properties_from_id(raw_partname, comboDeviceName, device_file, did.copy(), c) for c in cores]
         return [d for d in devices if d is not None]
 
     @staticmethod
     def _properties_from_id(partname, comboDeviceName, device_file, did, core):
-        if core.endswith("m4") or core.endswith("m7") or core.endswith("m33"):
-            core += "f"
-        if did.family in ["h7"] or (did.family in ["f7"] and (did.name[0] in ("6", "7"))):
-            core += "d"
-        if "@" in did.naming_schema:
-            did.set("core", core[7:9])
-        p = {"id": did, "core": core}
+        if "@" in did.naming_schema: did.set("core", core[7:9])
+        p = {"id": did}
 
         # Maximum operating frequency
         if (max_frequency := device_file.query('//Frequency')):
@@ -140,6 +135,15 @@ class STMDeviceTree:
             return None
         p["define"] = stm_header.define
 
+        # Find out about the CPU
+        p["core"] = core
+        processor = dfp_findall("processor", ["DcoreVersion", "Dclock", "Dfpu"])
+        if (fpu := processor.get("Dfpu")) in ("1", "SP_FPU"):
+            p["fpu"] = "fpv4-sp-d16" if "m4" in core else "fpv5-sp-d16"
+        elif fpu == "DP_FPU":
+            p["fpu"] = "fpv5-d16"
+        if rev := processor.get("DcoreVersion"):
+            p["revision"] = rev.lower()
 
         # Find all internal memories
         memories = {
@@ -612,10 +616,17 @@ class STMDeviceTree:
         core_child = tree.addChild("driver")
         core_child.setAttributes("name", "core")
         if "@" in p["id"].naming_schema:
-            type_child = core_child.addChild("attribute-type")
-            type_child.setValue(p["core"])
+            core_child.addChild("attribute-type").setValue(p["core"])
+            if "revision" in p:
+                core_child.addChild("attribute-revision").setValue(p["revision"])
+            if "fpu" in p:
+                core_child.addChild("attribute-fpu").setValue(p["fpu"])
         else:
             core_child.setAttributes("type", p["core"])
+            core_child.setAttributes(["fpu", "revision"], p)
+        core_child.addChild("attribute-cmsis-define").setValue(p["define"])
+        core_child.addChild("attribute-cmsis-header").setValue(p["cmsis_header"])
+        core_child.addSortKey(lambda e: (e.name, e["value"]) if e.name.startswith("attribute-") else ("", ""))
         # Memories
         STMDeviceTree.addMemoryToNode(p, core_child)
         STMDeviceTree.addInterruptTableToNode(p, core_child)
