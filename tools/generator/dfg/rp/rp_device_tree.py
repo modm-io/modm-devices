@@ -74,10 +74,11 @@ class RPDeviceTree:
         LOGGER.info("Parsing '%s'", did.string)
 
         # information about the core and architecture
-        core = device_file.query("//device/cpu/name")[0].text.lower().replace("cm", "cortex-m").replace("plus", "+")
-        if device_file.query("//device/cpu/fpuPresent")[0].text == '1':
-            core += "f"
+        core = device_file.query("//device/cpu/name")[0].text.lower().replace("cm", "cortex-m")
+        if device_file.query("//device/cpu/fpuPresent")[0].text in ('1', 'true'):
+            p["fpu"] = "fpv5-sp-d16"
         p["core"] = core
+        p["revision"] = device_file.query("//device/cpu/revision")[0].text
 
         # @todo
         memories = [
@@ -287,6 +288,8 @@ class RPDeviceTree:
         # Core
         core_child = tree.addChild('driver')
         core_child.setAttributes('name', 'core', 'type', p['core'])
+        core_child.setAttributes(["fpu", "revision"], p)
+        core_child.addSortKey(lambda e: (e.name, e["value"]) if e.name.startswith("attribute-") else ("", ""))
 
         for section in p["memories"]:
             memory_section = core_child.addChild("memory")

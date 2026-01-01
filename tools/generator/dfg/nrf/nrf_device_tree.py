@@ -39,9 +39,10 @@ class NRFDeviceTree:
 
         # information about the core and architecture
         core = device_file.query("//device/cpu/name")[0].text.lower().replace("cm", "cortex-m")
-        if device_file.query("//device/cpu/fpuPresent")[0].text == '1':
-            core += "f"
+        if device_file.query("//device/cpu/fpuPresent")[0].text in ('1', 'true'):
+            p["fpu"] = "fpv4-sp-d16" if "m4" in core else "fpv5-sp-d16"
         p["core"] = core
+        p["revision"] = device_file.query("//device/cpu/revision")[0].text
 
 
         # find the values for flash and ram
@@ -204,8 +205,10 @@ class NRFDeviceTree:
         # Core
         core_child = tree.addChild('driver')
         core_child.setAttributes('name', 'core', 'type', p['core'])
+        core_child.setAttributes(["fpu", "revision"], p)
         core_child.addSortKey(lambda e: (int(e['position']), e['name']) if e.name == 'vector' else (-1, ""))
         core_child.addSortKey(lambda e: (e['name'], int(e['size'])) if e.name == 'memory' else ("", -1))
+        core_child.addSortKey(lambda e: (e.name, e["value"]) if e.name.startswith("attribute-") else ("", ""))
 
         for section in p["memories"]:
             memory_section = core_child.addChild("memory")

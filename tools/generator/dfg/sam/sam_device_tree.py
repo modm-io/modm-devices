@@ -50,11 +50,19 @@ class SAMDeviceTree:
         }
 
         # information about the core and architecture
-        core = device_file.query("//device")[0].get("architecture").lower().replace("plus", "+")
+        p["core"] = core = device_file.query("//device")[0].get("architecture").lower()
+        fpu, dp, rev = False, False, None
         for param in (device_file.query("//device/parameters")[0]):
-            if param.get("name") == "__FPU_PRESENT" and param.get("value") == "1":
-                core += "f"
-        p["core"] = core
+            name, value = param.get("name"), param.get("value")
+            if name == "__FPU_PRESENT" and value == "1":
+                fpu = True
+            if name == "__FPU_DP" and value == "1":
+                dp = True
+            if name.startswith("__CM") and name.endswith("_REV"):
+                rev = int(value, 0)
+                p["revision"] = f"r{rev >> 8}p{rev & 0xff}"
+        if fpu:
+            p["fpu"] = "fpv4-sp-d16" if "m4" in core else ("fpv5-d16" if dp else "fpv5-sp-d16")
 
         # find the values for flash, ram and (optional) eeprom
         memories = []
@@ -233,8 +241,10 @@ class SAMDeviceTree:
         # Core
         core_child = tree.addChild("driver")
         core_child.setAttributes("name", "core", "type", p["core"])
+        core_child.setAttributes(["fpu", "revision"], p)
         core_child.addSortKey(lambda e: (int(e["position"]), e["name"]) if e.name == "vector" else (-1, ""))
         core_child.addSortKey(lambda e: (e["name"], int(e["size"])) if e.name == "memory" else ("", -1))
+        core_child.addSortKey(lambda e: (e.name, e["value"]) if e.name.startswith("attribute-") else ("", ""))
 
         for section in p["memories"]:
             memory_section = core_child.addChild("memory")
