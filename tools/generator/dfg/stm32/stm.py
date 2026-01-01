@@ -454,8 +454,6 @@ def stm32_memory_rename(name, data):
         "axi_sram": "d1_sram",
         "ahb_sram": "d2_sram1",
 
-        "sram": "sram1", # backward compatibility for now
-
         "ccm_ram": "ccm",
         "dtcmram": "dtcm",
         "dtcm_ram": "dtcm",
@@ -493,20 +491,21 @@ def fixMemoryForDevice(did, memories: dict[str, dict], header) -> list[dict]:
     # Correct memories for specific devices
     if did.string.startswith("stm32l083"):
         # https://github.com/Open-CMSIS-Pack/STM32L0xx_DFP/pull/2
-        mems["sram1"]["size"] = 0x00005000
+        mems["sram"]["size"] = 0x00005000
 
     elif did.family == "f2":
         # Split SRAM1 into SRAM1/2
+        mems["sram1"] = mems.pop("sram")
         add_ram(mems, "sram2", 16*1024, target="sram1")
 
     elif did.family == "f3" and did.name in ["03", "28", "58", "98"]:
         ccm = 4 # Add CCM memory manually, since the headers are not helpful
         if did.size in ["b", "c"]: ccm = 8
         elif did.size in ["d", "e"]: ccm = 16
-        add_ram(mems, "ccm", ccm*1024, start=0x10000000, target="sram1")
+        add_ram(mems, "ccm", ccm*1024, start=0x10000000, target="sram")
         # F3x8 devices do not count the CCM memory as part of SRAM1
-        if did.name == "58": mems["sram1"]["size"] = 40*1024
-        if did.name == "98": mems["sram1"]["size"] = 64*1024
+        if did.name == "58": mems["sram"]["size"] = 40*1024
+        if did.name == "98": mems["sram"]["size"] = 64*1024
 
     elif did.family == "f4":
         # add CCM and Backup SRAM memories manually, since the headers are not helpful
@@ -518,6 +517,9 @@ def fixMemoryForDevice(did, memories: dict[str, dict], header) -> list[dict]:
         if did.name in ["05", "07", "15", "17"]: sram2 = 16
         elif did.name in ["27", "29", "37", "39"]: sram2, sram3 = 16, 64
         elif did.name in ["69", "79"]: sram2, sram3 = 32, 128
+
+        if (sram2 or sram3) and "sram" in mems:
+            mems["sram1"] = mems.pop("sram")
         if sram3: add_ram(mems, "sram3", sram3*1024, target="sram1")
         if sram2: add_ram(mems, "sram2", sram2*1024, target="sram1")
 
@@ -527,13 +529,15 @@ def fixMemoryForDevice(did, memories: dict[str, dict], header) -> list[dict]:
 
     elif did.string.startswith("stm32g0b0vet"):
         # https://github.com/Open-CMSIS-Pack/STM32G0xx_DFP/pull/3
-        mems["sram1"]["size"] = 0x00024000
+        mems["sram"]["size"] = 0x00024000
 
     elif did.family == "g4":
         # Fix missing CCM and SRAM2
         sizes = header.get_memory_sizes()
-        add_ram(mems, "ccm", sizes["CCMSRAM"], start=0x10000000, target="sram1")
-        if (sram2 := sizes.get("SRAM2")): add_ram(mems, "sram2", sram2, target="sram1")
+        add_ram(mems, "ccm", sizes["CCMSRAM"], start=0x10000000, target="sram")
+        if (sram2 := sizes.get("SRAM2")):
+            mems["sram1"] = mems.pop("sram")
+            add_ram(mems, "sram2", sram2, target="sram1")
 
     elif did.family == "h5":
         # Fix missing Backup and SRAM2/3
