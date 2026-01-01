@@ -78,7 +78,7 @@ class STMDeviceTree:
     @staticmethod
     def _properties_from_id(partname, comboDeviceName, device_file, did, core):
         if "@" in did.naming_schema: did.set("core", core[7:9])
-        p = {"id": did}
+        p = {"id": did, "die": device_file.query('//Die/text()')[0]}
 
         dfp_folder = "STM32{}xx_DFP".format(did.family.upper())
         if did.string[5:8] in ["h7r", "h7s"]:
@@ -601,7 +601,7 @@ class STMDeviceTree:
             if e.name == "driver":
                 if e["name"] == "core":
                     # place the core at the very beginning
-                    return ("aaaaaaa", e["type"])
+                    return ("aaaaaaa", e.get("type", ""))
                 if e["name"] == "dma":
                     # place the dma before the gpio
                     return ("yyyyyyy", e["type"])
@@ -610,8 +610,11 @@ class STMDeviceTree:
                     return ("zzzzzzz", e["type"])
                 # sort remaining drivers by type and compatible strings
                 return (e["name"], e["type"])
+            if e.name == "attribute-die":
+                return ("0000000", e["value"])
             return ("", "")
         tree.addSortKey(driverOrder)
+        tree.addChild("attribute-die").setValue(p["die"])
 
         core_child = tree.addChild("driver")
         core_child.setAttributes("name", "core")
