@@ -140,40 +140,18 @@ class STMDeviceTree:
             return None
         p["define"] = stm_header.define
 
-        # flash and ram sizes
-        # The <ram> and <flash> can occur multiple times.
-        # they are "ordered" in the same way as the `(S-I-Z-E)` ids in the device combo name
-        # we must first find out which index the current did.size has inside `(S-I-Z-E)`
-        sizeIndexFlash = 0
-        sizeIndexRam = 0
 
-        match = re.search(r"\(.(-.)*\)", comboDeviceName)
-        if match:
-            sizeArray = match.group(0)[1:-1].lower().split("-")
-            sizeIndexFlash = sizeArray.index(did.size)
-            sizeIndexRam = sizeIndexFlash
-
-        rams = sorted([int(r.text) for r in device_file.query('//Ram')])
-        if sizeIndexRam >= len(rams):
-            sizeIndexRam = len(rams) - 1
-
-        flashs = sorted([int(f.text) for f in device_file.query('//Flash')])
-        if sizeIndexFlash >= len(flashs):
-            sizeIndexFlash = len(flashs) - 1
-
-
-        p["ram"] = rams[sizeIndexRam] * 1024
-        p["flash"] = flashs[sizeIndexFlash] * 1024
-
-        memories = []
-        for (mem_name, mem_start, mem_size) in stm.getMemoryForDevice(did, p["flash"], p["ram"]):
-            access = "rwx"
-            if did.family == "f4" and mem_name == "ccm": access = "rw";
-            if "flash" in mem_name: access = "rx";
-            memories.append({"name": mem_name, "access": access, "size": str(mem_size),
-                             "start": "0x{:02X}".format(mem_start)})
-
-        p["memories"] = memories
+        # Find all internal memories
+        memories = {
+            m.get("name", m.get("id")).lower(): {
+                "access": m.get("access", "rwx"),
+                "start": int(m.get('start'), 0),
+                "size": int(m.get("size"), 0),
+                "alias": m.get("alias", "").lower(),
+            }
+            for m in (dfp_findall("memory") + dfp_findall("algorithm"))
+        }
+        p["memories"] = stm.fixMemoryForDevice(did, memories, stm_header)
 
         # packaging
         package = device_file.query('//@Package')[0]
@@ -832,7 +810,8 @@ class STMDeviceTree:
     def addMemoryToNode(p, node):
         for section in p["memories"]:
             memory_section = node.addChild("memory")
-            memory_section.setAttributes(["name", "access", "start", "size"], section)
+            section["start"] = f"0x{section['start']:02X}"
+            memory_section.setAttributes(["name", "access", "start", "size", "alias"], section)
         # sort the node children by start address and size
         node.addSortKey(lambda e: (int(e["start"], 16), int(e["size"])) if e.name == "memory" else (-1, -1))
 

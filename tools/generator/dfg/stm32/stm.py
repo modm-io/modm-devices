@@ -2,6 +2,7 @@
 # Copyright (c) 2015-2016, Niklas Hauser
 # All rights reserved.
 
+import re
 import logging
 
 LOGGER = logging.getLogger("dfg.stm.data")
@@ -19,6 +20,7 @@ def ignoreDevice(device_id: str) -> bool:
             return True
     return False
 
+# ================================ CMSIS DEFINE ===============================
 def getDefineForDevice(device_id, familyDefines):
     if len(familyDefines) == 1:
         return familyDefines[0]
@@ -49,6 +51,7 @@ def getDefineForDevice(device_id, familyDefines):
 
     return None
 
+# ================================ GPIO REMAP =================================
 stm32f1_gpio_remap = \
 {
     # (position % 32) -> local bit position
@@ -148,6 +151,7 @@ stm32_max_frequency = \
     'wl': 48,
 }
 
+# ================================= FREQUENCY =================================
 def getMaxFrequencyForDevice(did):
     freq = stm32_max_frequency.get(did.family)
     assert freq, f"No max frequency defined for family {did.family}"
@@ -162,6 +166,7 @@ def getMaxFrequencyForDevice(did):
         if all(did[k] in v for k, v in lt.items() if not isinstance(v, int)):
             return lconv(lt) # return filtered table
 
+# =============================== FLASH LATENCY ===============================
 stm32_flash_latency = \
 {
     'f0': {
@@ -311,6 +316,7 @@ def getFlashLatencyForDevice(did):
     return lconv(lts[-1]) # if non were found, return last table
 
 
+# ==================================== DMA ====================================
 stm32f3_dma_remap = \
 {
     'dma1ch1': {
@@ -473,529 +479,154 @@ def getDmaRemap(did, dma, channel, driver, inst, signal):
     assert( isinstance(signal, list) )
     return signal
 
-
-stm32_memory = \
-{
-    'f0': {
-        'start': {
-            'flash': 0x08000000,
-            'sram': 0x20000000
-        },
-        'model': [
-            {
-                'name': ['30', '31', '38', '42', '48', '51', '58', '70', '71', '72', '78', '91', '98'],
-                'memories': {'flash': 0, 'sram1': 0}
-            }
-        ]
-    },
-    'c0': {
-        'start': {
-            'flash': 0x08000000,
-            'sram': 0x20000000
-        },
-        'model': [
-            {
-                'name': ['11', '31', '71'],
-                'memories': {'flash': 0, 'sram1': 0}
-            },
-            {
-                'name': ['51'],
-                'memories': {'flash': 0, 'sram1': 12*1024}
-            },
-            {
-                'name': ['91'],
-                'memories': {'flash': 0, 'sram1': 36*1024}
-            },
-            {
-                'name': ['92'],
-                'memories': {'flash': 0, 'sram1': 30*1024}
-            }
-
-        ]
-    },
-    'g0': {
-        'start': {
-            'flash': 0x08000000,
-            'sram': 0x20000000
-        },
-        'model': [
-            {
-                'name': ['30', '31', '41', '50', '51', '61', '70', '71', '81', 'b0', 'b1', 'c0', 'c1'],
-                'memories': {'flash': 0, 'sram1': 0}
-            }
-        ]
-    },
-    'g4': {
-        'start': {
-            'flash': 0x08000000,
-            'ccm': 0x10000000,
-            'sram': 0x20000000
-        },
-        'model': [
-            {
-                'name': ['31', '41'],
-                'memories': {'flash': 0, 'sram1': 0, 'sram2':  6*1024, 'ccm': 10*1024}
-            },
-            {
-                'name': ['91', 'a1'],
-                'memories': {'flash': 0, 'sram1': 0, 'sram2': 16*1024, 'ccm': 16*1024}
-            },
-            {
-                'name': ['71', '73', '74', '83', '84'],
-                'memories': {'flash': 0, 'sram1': 0, 'sram2': 16*1024, 'ccm': 32*1024}
-            }
-        ]
-    },
-    'f1': {
-        'start': {
-            'flash': 0x08000000,
-            'sram': 0x20000000
-        },
-        'model': [
-            {
-                'name': ['00', '01', '02', '03', '05', '07'],
-                'memories': {'flash': 0, 'sram1': 0}
-            }
-        ]
-    },
-    'f2': {
-        'start': {
-            'flash': 0x08000000,
-            'sram': 0x20000000
-        },
-        'model': [
-            {
-                'name': ['05', '07', '15', '17'],
-                'memories': {'flash': 0, 'sram1': 0, 'sram2': 16*1024}
-            }
-        ]
-    },
-    'f3': {
-        'start': {
-            'flash': 0x08000000,
-            'ccm': 0x10000000,
-            'sram': 0x20000000
-        },
-        'model': [
-            {
-                'name' : ['01', '02', '18', '78', '73'],
-                'memories' : {'flash': 0, 'sram1' : 0}
-            },
-            {
-                'name': ['03', '28', '34'],
-                'size': ['4', '6', '8'],
-                'memories': {'flash': 0, 'ccm': 4*1024, 'sram1': 0}
-            },
-            {
-                'name': ['03', '58'],
-                'size': ['b', 'c'],
-                'memories': {'flash': 0, 'ccm': 8*1024, 'sram1': 0}
-            },
-            {
-                'name': ['03', '98'],
-                'size': ['d', 'e'],
-                'memories': {'flash': 0, 'ccm': 16*1024, 'sram1': 0}
-            }
-        ]
-    },
-    'f4': {
-        'start': {
-            'flash': 0x08000000,
-            'ccm': 0x10000000,
-            'sram': 0x20000000,
-            'backup': 0x40024000
-        },
-        'model': [
-            {
-                'name' : ['01', '10', '11', '12', '46'],
-                'memories' : {'flash': 0, 'sram1' : 0}
-            },
-            {
-                'name': ['05', '07', '15', '17'],
-                'memories': {'flash': 0, 'ccm': 64*1024, 'sram1': 0, 'sram2': 16*1024, 'backup': 4*1024}
-            },
-            {
-                'name': ['13', '23'],
-                'memories': {'flash': 0, 'ccm': 64*1024, 'sram1': 0, 'backup': 4*1024}
-            },
-            {
-                'name': ['27', '29', '37', '39'],
-                'memories': {'flash': 0, 'ccm': 64*1024, 'sram1': 0, 'sram2': 16*1024, 'sram3': 64*1024, 'backup': 4*1024}
-            },
-            {
-                'name': ['69', '79'],
-                'memories': {'flash': 0, 'ccm': 64*1024, 'sram1': 0, 'sram2': 32*1024, 'sram3': 128*1024, 'backup': 4*1024}
-            }
-        ]
-    },
-    'f7': {
-        'start': {
-            'flash': 0x00200000,
-            'dtcm': 0x20000000,
-            'itcm': 0x00000000,
-            'sram': 0x20010000,
-            'backup': 0x40024000
-        },
-        'model': [
-            {
-                'name': ['22', '32', '23', '30', '33', '45', '46', '50', '56'],
-                'memories': {'flash': 0, 'itcm': 16*1024, 'dtcm': 64*1024, 'sram1': 0, 'sram2': 16*1024, 'backup': 4*1024}
-            },
-            {
-                'name': ['65', '67', '68', '69', '77', '78', '79'],
-                'memories': {'flash': 0, 'itcm': 16*1024, 'dtcm': 128*1024, 'sram1': 0, 'sram2': 16*1024, 'backup': 4*1024},
-                'start': {'sram': 0x20020000} # overwrite due to bigger dtcm size!
-            }
-        ]
-    },
-    'h5': {
-        'start': {
-            'flash': 0x08000000,
-            'itcm': 0x00000000,
-            'sram': 0x20000000,
-            'backup': 0x40036400
-        },
-        'model': [
-            {
-                'name': ['03'],
-                'memories': {'flash': 0, 'sram1': 0, 'sram2': 16*1024, 'backup': 2*1024}
-            },{
-                'name': ['23', '33'],
-                'memories': {'flash': 0, 'sram1': 128*1024, 'sram2': 80*1024, 'sram3': 64*1024, 'backup': 2*1024}
-            },{
-                'name': ['62', '63', '73'],
-                'memories': {'flash': 0, 'sram1': 256*1024, 'sram2': 64*1024, 'sram3': 320*1024, 'backup': 4*1024}
-            },
-        ]
-    },
-    'h7': {
-        'start': {
-            'flash': 0x08000000,
-            'dtcm': 0x20000000,
-            'itcm': 0x00000000,
-            'd1_sram': 0x24000000,
-            'd2_sram': 0x30000000,
-            'd3_sram': 0x38000000,
-            'backup': 0x38800000
-        },
-        'model': [
-            {
-                'name': ['42'],
-                'memories': {'flash': 0, 'itcm': 64*1024, 'dtcm': 128*1024, 'backup': 4*1024,
-                             'd1_sram': 384*1024,
-                             'd2_sram1': 32*1024, 'd2_sram2': 16*1024,
-                             'd3_sram': 64*1024}
-            },
-            {
-                'name': ['23', '25', '30', '33', '35'],
-                'memories': {'flash': 0, 'itcm': 64*1024, 'dtcm': 128*1024, 'backup': 4*1024,
-                             'd1_sram': 320*1024,
-                             'd2_sram1': 16*1024, 'd2_sram2': 16*1024,
-                             'd3_sram': 16*1024}
-            },
-            {
-                'name': ['40', '43', '50', '53'],
-                'memories': {'flash': 0, 'itcm': 64*1024, 'dtcm': 128*1024, 'backup': 4*1024,
-                             'd1_sram': 512*1024,
-                             'd2_sram1': 128*1024, 'd2_sram2': 128*1024, 'd2_sram3': 32*1024,
-                             'd3_sram': 64*1024}
-            },
-            {
-                'name': ['45', '47', '55', '57'],
-                'core': ['m7'],
-                'memories': {'flash': 0, 'itcm': 64*1024, 'dtcm': 128*1024, 'backup': 4*1024,
-                             'd1_sram': 512*1024,
-                             'd2_sram1': 128*1024, 'd2_sram2': 128*1024, 'd2_sram3': 32*1024,
-                             'd3_sram': 64*1024}
-            },
-            {
-                'name': ['45', '47', '55', '57'],
-                'core': ['m4'],
-                'memories': {'flash': 0, 'backup': 4*1024,
-                             'd1_sram': 512*1024,
-                             'd2_sram1': 128*1024, 'd2_sram2': 128*1024, 'd2_sram3': 32*1024,
-                             'd3_sram': 64*1024}
-            },
-            {
-                'name': ['a0', 'a3', 'b0', 'b3'],
-                'memories': {'flash': 0, 'itcm': 64*1024, 'dtcm': 128*1024, 'backup': 4*1024,
-                             'd1_sram1': 256*1024, 'd1_sram2': 384*1024, 'd1_sram3': 384*1024,
-                             'd2_sram1': 64*1024, 'd2_sram2': 64*1024,
-                             'd3_sram': 32*1024}
-            },
-            {
-                'name': ['r3', 'r7', 's3', 's7'],
-                'memories': {'flash': 0, 'itcm': 64*1024, 'dtcm': 64*1024, 'backup': 4*1024,
-                             'd1_sram1': 128*1024, 'd1_sram2': 128*1024, 'd1_sram3': 128*1024, 'd1_sram4': 72*1024,
-                             'd2_sram1': 16*1024, 'd2_sram2': 16*1024}
-            },
-        ]
-    },
-    'l0': {
-        'start': {
-            'flash': 0x08000000,
-            'eeprom': 0x08080000,
-            'sram': 0x20000000
-        },
-        'model': [
-            {
-                'name': ['10'],
-                'size': ['4'],
-                'memories': {'flash': 0, 'sram1': 0, 'eeprom': 128}
-            },{
-                'name': ['10'],
-                'size': ['6', '8'],
-                'memories': {'flash': 0, 'sram1': 0, 'eeprom': 256}
-            },{
-                # CAT1
-                'name': ['10', '11', '21'],
-                'memories': {'flash': 0, 'sram1': 0, 'eeprom': 512}
-            },{
-                # CAT2
-                'name': ['31', '41'],
-                'memories': {'flash': 0, 'sram1': 0, 'eeprom': 1024}
-            },{
-                # CAT3
-                'name': ['51', '52', '53', '62', '63'],
-                'memories': {'flash': 0, 'sram1': 0, 'eeprom': 2*1024}
-            },{
-                # CAT5
-                'name': ['71', '72', '73', '81', '82', '83'],
-                'memories': {'flash': 0, 'sram1': 0, 'eeprom': 6*1024}
-            },
-        ]
-    },
-    'l1': {
-        'start': {
-            'flash': 0x08000000,
-            'eeprom': 0x08080000,
-            'sram': 0x20000000
-        },
-        'model': [
-            {
-                # CAT1 & 2
-                'name': ['00', '51', '52'],
-                'size': ['6', '8', 'b'],
-                'memories': {'flash': 0, 'sram1': 0, 'eeprom': 4*1024}
-            },{
-                # CAT3
-                'name': ['00', '51', '52', '62'],
-                'size': ['c'],
-                'memories': {'flash': 0, 'sram1': 0, 'eeprom': 8*1024}
-            },{
-                # CAT4
-                'name': ['51', '52', '62'],
-                'size': ['d'],
-                'memories': {'flash': 0, 'sram1': 0, 'eeprom': 12*1024}
-            },{
-                # CAT5 & 6
-                'name': ['51', '52', '62'],
-                'size': ['e'],
-                'memories': {'flash': 0, 'sram1': 0, 'eeprom': 16*1024}
-            },
-        ]
-    },
-    'l4': {
-        'start': {
-            'flash': 0x08000000,
-            'ccm': 0x10000000,
-            'sram': 0x20000000
-        },
-        'model': [
-            {
-                'name': ['12', '22'],
-                'memories': {'flash': 0, 'sram1': 0, 'ccm': 8*1024}
-            },{
-                'name': ['51', '71', '75', '76', '85', '86'],
-                'memories': {'flash': 0, 'sram1': 0, 'ccm': 32*1024}
-            },{
-                'name': ['31', '32', '33', '42', '43', '52', '62'],
-                'memories': {'flash': 0, 'sram1': 0, 'ccm': 16*1024}
-            },{
-                'name': ['96', 'a6'],
-                'memories': {'flash': 0, 'sram1': 0, 'ccm': 64*1024}
-            },
-            # Technically part of the STM32L4+ family
-            {
-                'name': ['r5', 'r7', 'r9', 's5', 's7', 's9'],
-                'memories': {'flash': 0, 'sram1': 0, 'sram2': 64*1024, 'sram3': 384*1024}
-            },{
-                'name': ['p5', 'q5'],
-                'memories': {'flash': 0, 'sram1': 0, 'sram2': 64*1024, 'sram3': 128*1024}
-            }
-        ]
-    },
-    'l5': {
-        'start': {
-            'flash': 0x08000000,
-            'sram': 0x20000000
-        },
-        'model': [
-            {
-                'name': ['52', '62'],
-                'memories': {'flash': 0, 'sram1': 0, 'sram2': 64*1024}
-            }
-        ]
-    },
-    'wb': {
-        'start': {
-            'flash': 0x08000000,
-            'sram': 0x20000000
-        },
-        'model': [
-            {
-                'name': ['05'],
-                'memories': {'flash': 0, 'sram0': 12*1024, 'sram1': 0}
-            },{
-                'name': ['06', '07', '09'],
-                'memories': {'flash': 0, 'sram0': 16*1024, 'sram1': 16*1024, 'sram2': 16*1024, 'sram3': 0}
-            },{
-                'name': ['10', '15', '1m'],
-                'memories': {'flash': 0, 'sram1': 0, 'sram2': 36*1024}
-            },{
-                'name': ['30', '35', '50', '55', '5m'],
-                'memories': {'flash': 0, 'sram1': 0, 'sram2': 64*1024}
-            }
-        ]
-    },
-    'wl': {
-        'start': {
-            'flash': 0x08000000,
-            'sram': 0x20000000
-        },
-        'model': [
-            {
-                'name': ['30', '31'],
-                'memories': {'flash': 0, 'sram0': 0}
-            },
-            {
-                'name': ['33'],
-                'memories': {'flash': 0, 'sram0': 16*1024, 'sram1': 0}
-            },
-            {
-                'name': ['3r'],
-                'memories': {'flash': 0, 'sram0': 0}
-            },
-            {
-                'name': ['54', '55', 'e4', 'e5'],
-                'memories': {'flash': 0, 'sram1': 32*1024, 'sram2': 0}
-            }
-        ]
-    },
-    'u0': {
-        'start': {
-            "flash": 0x08000000,
-            "sram2": 0x10000000,
-            "sram1": 0x20000000,
-        },
-        'model': [
-            {
-                'name': ['31', '73', '83'],
-                'memories': {'flash': 0, 'sram1': 2*1024, 'sram2': 1*1024}
-            },
-        ]
-
-    },
-    'u3': {
-        'start': {
-            "flash": 0x08000000,
-            "sram": 0x20000000,
-        },
-        'model': [
-            {
-                'name': ['75', '85'],
-                'memories': {'flash': 0, 'sram1': 0, 'sram2': 64*1024}
-            },
-        ]
-
-    },
-    'u5': {
-        'start': {
-            'flash': 0x08000000,
-            'sram1': 0x20000000,
-            'sram2': 0x200C0000,
-            'sram3': 0x200D0000,
-            'sram5': 0x201A0000,
-            'sram6': 0x20270000,
-            'sram4': 0x28000000,
-            'bkpsram': 0x40036400,
-        },
-        'model': [
-            {
-                'name': ['35', '45'],
-                'memories': {'flash': 0, 'sram1': 192*1024, 'sram2': 64*1024, 'sram4': 16*1024, 'bkpsram': 2*1024},
-                'start': { # overwrite due to smaller sram1/3 sizes
-                    'sram2': 0x20030000,
-                    'sram3': 0x20040000,
-                }
-            },{
-                'name': ['75', '85'],
-                'memories': {'flash': 0, 'sram1': 192*1024, 'sram2': 64*1024, 'sram3': 512*1024, 'sram4': 16*1024, 'bkpsram': 2*1024},
-                'start': { # overwrite due to smaller sram1/3 sizes
-                    'sram2': 0x20030000,
-                    'sram3': 0x20040000,
-                }
-            },{
-                'name': ['95', '99', 'a5', 'a9'],
-                'memories': {'flash': 0, 'sram1': 768*1024, 'sram2': 64*1024, 'sram3': 832*1024, 'sram4': 16*1024, 'sram5': 832*1024, 'bkpsram': 2*1024}
-            },{
-                'name': ['f5', 'g5', 'f7', 'g7', 'f9', 'g9'],
-                'memories': {'flash': 0, 'sram1': 768*1024, 'sram2': 64*1024, 'sram3': 832*1024, 'sram4': 16*1024, 'sram5': 832*1024, 'sram6': 512*1024, 'bkpsram': 2*1024},
-            }
-        ]
-    },
-}
+# =================================== MEMORY ==================================
+def add_ram(m, name, size, start=None, target=None, access=None):
+    if name in m: return
+    if target: m[target]["size"] -= size
+    m[name] = {
+        "access": "rwx" if access is None else access,
+        "start": m[target]["start"] + m[target]["size"] if start is None else start,
+        "size": size
+    }
 
 
-def getMemoryModel(device_id):
-    mem_fam = stm32_memory[device_id.family]
-    mem_model = None
-    for model in mem_fam['model']:
-        if all(device_id[k] in v for k, v in model.items() if k not in ['start', 'memories']):
-            mem_model = model
-            break
-    if mem_model == None:
-        LOGGER.error("Memory model not found for device '{}'".format(device_id.string))
-        exit(1)
-    start = dict(mem_fam['start'])
-    memories = dict(mem_model['memories'])
-    start.update(mem_model.get('start', {}))
-    return (start, memories)
+def stm32_memory_rename(name, data):
+    renames = {
+        "irom1": "flash",
+        "main_flash": "flash",
+        "flash-secure": "flash_s",
+        "flash-non-secure": "flash_ns",
+        "flash_bank1": "flash1",
+        "flash_bank2": "flash2",
 
-def getMemoryForDevice(device_id, total_flash, total_ram):
-    mem_start, mem_model = getMemoryModel(device_id)
+        "iram1": "sram1",
+        "iram2": "sram2",
+        "sram-secure": "sram_s",
+        "sram-non-secure": "sram_ns",
+        "sram1_2": "sram1",
+        "ram_d1": "d1_sram",
+        "ram_d2": "d2_sram1",
+        "ram_d2s2": "d2_sram2",
+        "ram_d2s3": "d2_sram3",
+        "ram_d3": "d3_sram",
+        "axi_sram": "d1_sram",
+        "ahb_sram": "d2_sram1",
 
-    # Correct Flash size
-    mem_model["flash"] = total_flash
+        "sram": "sram1", # backward compatibility for now
 
-    # Correct RAM size
-    main_sram = next( (name for (name, size) in mem_model.items() if size == 0), None )
-    if main_sram is not None:
-        main_sram_name = next( ram for ram in mem_start.keys() if main_sram.startswith(ram) )
-        # compute the size from total ram
-        mem_model[main_sram] = total_ram
-        main_sram_index = int(main_sram.split("sram")[-1]) if main_sram[-1].isdigit() else 0
-        for name, size in mem_model.items():
-            mem_index = int(name.split("sram")[-1]) if name[-1].isdigit() else 0
-            if ((name.startswith(main_sram_name) and mem_index != main_sram_index) or
-                (device_id.family == "g4" and name.startswith("ccm"))):
-                mem_model[main_sram] -= size
+        "ccm_ram": "ccm",
+        "dtcmram": "dtcm",
+        "dtcm_ram": "dtcm",
 
-    # Assemble flattened memories
-    memories = []
-    for name, size in mem_model.items():
-        if size <= 0: continue
-        sram_name = next( ram for ram in mem_start.keys() if name.startswith(ram) )
-        index = int(name.split("sram")[-1]) if name[-1].isdigit() else 0
-        start = mem_start[sram_name]
-        if index > 1:
-            # correct start address
-            for mem_name, mem_size in mem_model.items():
-                mem_index = int(mem_name.split("sram")[-1]) if mem_name[-1].isdigit() else 0
-                if mem_name.startswith(sram_name) and mem_index < index:
-                    start += mem_size
-        memories.append( (name, start, size) )
+        "bkp_sram": "backup",
+    }
+    name = renames.get(name, name)
+    # also fix any potential aliases
+    data["alias"] = renames.get(data["alias"], data["alias"])
 
-    return memories
+    # EEPROM is not explicitly listed in STM32 memory map, but we can deduce it
+    if "_eeprom.flm" in name: name = "eeprom"
 
+    return name
+
+
+def fixMemoryForDevice(did, memories: dict[str, dict], header) -> list[dict]:
+    mems = {}
+    for name, data in memories.items():
+        name = stm32_memory_rename(name, data)
+        if ".flm" in name: continue
+        # remove empty aliases
+        if not data["alias"]: del data["alias"]
+
+        # Fix access for FLASH and EEPROM
+        if "flash" in name: data["access"] = "rx"
+        if "eeprom" in name: data["access"] = "r"
+        # On STM32F4 CCM memory is rw only
+        if did.family in ["f4", "l4"] and data["start"] == 0x10000000:
+            name = "ccm"
+            data["access"] = "rw"
+
+        mems[name] = data
+
+    # Correct memories for specific devices
+    if did.string.startswith("stm32l083"):
+        # https://github.com/Open-CMSIS-Pack/STM32L0xx_DFP/pull/2
+        mems["sram1"]["size"] = 0x00005000
+
+    elif did.family == "f2":
+        # Split SRAM1 into SRAM1/2
+        add_ram(mems, "sram2", 16*1024, target="sram1")
+
+    elif did.family == "f3" and did.name in ["03", "28", "58", "98"]:
+        ccm = 4 # Add CCM memory manually, since the headers are not helpful
+        if did.size in ["b", "c"]: ccm = 8
+        elif did.size in ["d", "e"]: ccm = 16
+        add_ram(mems, "ccm", ccm*1024, start=0x10000000, target="sram1")
+        # F3x8 devices do not count the CCM memory as part of SRAM1
+        if did.name == "58": mems["sram1"]["size"] = 40*1024
+        if did.name == "98": mems["sram1"]["size"] = 64*1024
+
+    elif did.family == "f4":
+        # add CCM and Backup SRAM memories manually, since the headers are not helpful
+        if did.name not in ["01", "10", "11", "12", "46"]:
+            mems["backup"] = {"start": 0x40024000, "size": 4096, "access": "rwx"}
+            mems["ccm"] = {"start": 0x10000000, "size": 64*1024, "access": "rw"}
+        # Split SRAM1 into SRAM1/2/3
+        sram2, sram3 = 0, 0
+        if did.name in ["05", "07", "15", "17"]: sram2 = 16
+        elif did.name in ["27", "29", "37", "39"]: sram2, sram3 = 16, 64
+        elif did.name in ["69", "79"]: sram2, sram3 = 32, 128
+        if sram3: add_ram(mems, "sram3", sram3*1024, target="sram1")
+        if sram2: add_ram(mems, "sram2", sram2*1024, target="sram1")
+
+    elif did.family == "f7":
+        # Fix missing alias, ITCM_FLASH is faster
+        mems["flash"]["alias"] = "itcm_flash"
+
+    elif did.string.startswith("stm32g0b0vet"):
+        # https://github.com/Open-CMSIS-Pack/STM32G0xx_DFP/pull/3
+        mems["sram1"]["size"] = 0x00024000
+
+    elif did.family == "g4":
+        # Fix missing CCM and SRAM2
+        sizes = header.get_memory_sizes()
+        add_ram(mems, "ccm", sizes["CCMSRAM"], start=0x10000000, target="sram1")
+        if (sram2 := sizes.get("SRAM2")): add_ram(mems, "sram2", sram2, target="sram1")
+
+    elif did.family == "h5":
+        # Fix missing Backup and SRAM2/3
+        sizes = header.get_memory_sizes()
+        if (sram3 := sizes.get("SRAM3")): add_ram(mems, "sram3", sram3, target="sram1")
+        if (sram2 := sizes.get("SRAM2")): add_ram(mems, "sram2", sram2, target="sram1")
+        mems["backup"] = {"start": 0x40036400, "size": sizes["BKPSRAM"], "access": "rwx"}
+
+    elif did.family == "h7":
+        # Fix missing ITCM and Backup memory
+        mems["backup"] = {"start": 0x38800000, "size": 4096, "access": "rwx"}
+        if "m7" in did.get("core", "m7"):
+            mems["itcm"] = {"start": 0, "size": 64*1024, "access": "rwx"}
+
+        d2_sram2, d2_sram3 = 0, 0
+        if did.name[0] in "23":
+            d2_sram2 = 16
+        if did.name[0] in "45" and did.name[1] in "357" and did.get("core", "m4") == "m4":
+            d2_sram2, d2_sram3 = 128, 32
+            # CM4 also missing d3_SRAM
+            mems["d3_sram"] = {"start": 0x38000000, "size": 64*1024, "access": "rwx"}
+        # STM32H755/57 has the wrong size d2_sram1
+        if did.name in ["55", "57"] and did.get("core") == "m4":
+            # https://github.com/Open-CMSIS-Pack/STM32H7xx_DFP/pull/7
+            mems["d2_sram1"]["size"] = 0x40000
+
+        if d2_sram3: add_ram(mems, "d2_sram3", d2_sram3*1024, target="d2_sram1")
+        if d2_sram2: add_ram(mems, "d2_sram2", d2_sram2*1024, target="d2_sram1")
+
+        for name, data in mems.items():
+            if "flash" not in name: data["access"] = "rwx"
+
+    elif did.family == "u5":
+        # Fix missing Backup memory
+        mems["backup"] = {"start": 0x40036400, "size": 2048, "access": "rwx"}
+
+    return [{"name": name} | data for name, data in mems.items()]
 

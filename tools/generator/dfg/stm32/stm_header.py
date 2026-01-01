@@ -94,6 +94,12 @@ class STMHeader:
             STMHeader.CACHE_HEADER[self.header_file]["memmap"] = self._get_memmap()
         return STMHeader.CACHE_HEADER[self.header_file]["memmap"]
 
+    def get_memory_sizes(self):
+        if "memsizes" not in STMHeader.CACHE_HEADER[self.header_file]:
+            sizes = {m.group(1): int(m.group(2), 0) for d in self.header.defines
+                     if (m := re.match(r"(\w+)_SIZE +\((0x.+?)UL\)", d))}
+            STMHeader.CACHE_HEADER[self.header_file]["memsizes"] = sizes
+        return STMHeader.CACHE_HEADER[self.header_file]["memsizes"]
 
     def get_interrupt_table(self):
         if "vectors" not in STMHeader.CACHE_HEADER[self.header_file]:
