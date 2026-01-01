@@ -26,9 +26,6 @@ def getDefineForDevice(device_id, familyDefines):
     # get all defines for this device name
     devName = 'STM32{}{}'.format(device_id.family.upper(), device_id.name.upper())
 
-    # Map STM32F7x8 -> STM32F7x7
-    if device_id.family == 'f7' and devName[8] == '8':
-        devName = devName[:8] + '7'
     # Map STM32WL33 -> STM32WL3X
     if device_id.family == 'wl' and devName[7:9] in ["30", "31", "33"]:
         devName = devName[:-1] + 'X'

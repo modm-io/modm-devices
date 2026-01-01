@@ -25,6 +25,7 @@ class STMDeviceTree:
     translates the data into a platform independent format.
     """
     rootpath = os.path.join(os.path.dirname(__file__), "..", "..", "raw-device-data", "stm32-devices", "mcu")
+    extpath = os.path.join(os.path.dirname(__file__), "..", "..", "ext")
     familyFile = XMLReader(os.path.join(rootpath, "families.xml"))
     TemperatureMap = {0: "6", 85: "6", 105: "7", 125: "3"}
 
@@ -59,8 +60,9 @@ class STMDeviceTree:
 
     @staticmethod
     def _properties_from_partname(partname):
+        raw_partname = partname[:12] + "x" + partname[13:]
         deviceNames = STMDeviceTree.familyFile.query('//Family/SubFamily/Mcu[starts-with(@RefName,"{}")]'
-                                                     .format(partname[:12] + "x" + partname[13:]))
+                                                     .format(raw_partname))
         if not deviceNames: return []
         comboDeviceName = sorted([d.get("Name") for d in deviceNames])[0]
         device_file = XMLReader(os.path.join(STMDeviceTree.rootpath, comboDeviceName + ".xml"))
@@ -70,11 +72,11 @@ class STMDeviceTree:
         # information about the core and architecture
         cores = [c.text.lower().replace("arm ", "") for c in device_file.query('//Core')]
         if len(cores) > 1: did.naming_schema += "@{core}"
-        devices = [STMDeviceTree._properties_from_id(comboDeviceName, device_file, did.copy(), c) for c in cores]
+        devices = [STMDeviceTree._properties_from_id(raw_partname, comboDeviceName, device_file, did.copy(), c) for c in cores]
         return [d for d in devices if d is not None]
 
     @staticmethod
-    def _properties_from_id(comboDeviceName, device_file, did, core):
+    def _properties_from_id(partname, comboDeviceName, device_file, did, core):
         if core.endswith("m4") or core.endswith("m7") or core.endswith("m33"):
             core += "f"
         if did.family in ["h7"] or (did.family in ["f7"] and (did.name[0] in ("6", "7"))):
@@ -91,12 +93,52 @@ class STMDeviceTree:
         # H7 dual-core devices run the M4 core at half the frequency as the M7 core
         if did.get("core", "") == "m4": max_frequency /= 2.0;
         p["max_frequency"] = int(max_frequency * 1e6)
+        dfp_folder = "STM32{}xx_DFP".format(did.family.upper())
+        if did.string[5:8] in ["h7r", "h7s"]:
+            dfp_folder = "STM32H7RSxx_DFP"
+        elif did.string[5:8] == "wb0":
+            dfp_folder = "STM32WB0x_DFP"
+        elif did.string[5:8] == "wba":
+            dfp_folder = "STM32WBAxx_DFP"
+        elif did.string[5:8] == "wl3":
+            dfp_folder = "STM32WL3x_DFP"
 
-        # Information from the CMSIS headers
-        stm_header = STMHeader(did)
+        # Find OpenCMSIS pack file
+        dfp_file = XMLReader(os.path.join(STMDeviceTree.extpath, dfp_folder, f"Keil.{dfp_folder}.pdsc"))
+
+        # Find the correct DFP start node
+        dfp_node = dfp_file.query(f'//variant[starts-with(@Dvariant,"{partname}")]')
+        if not dfp_node:
+            dfp_node = dfp_file.query(f'//device[starts-with(@Dname,"{partname}")]')
+            if not dfp_node:
+                dfp_node = dfp_file.query(f'//device[starts-with(@Dname,"{partname[:11]}")]')
+
+        if not dfp_node:
+            LOGGER.error(f"No DFP device entry found for {did.string}: {partname}")
+            return None
+
+        def dfp_findall(key, attribs=None):
+            values = []
+            node = dfp_node[0]
+            while node.tag != "devices":
+                values += node.findall(key)
+                node = node.getparent()
+            if (core := did.get("core")):
+                values = [v for v in values if core.upper() in v.get("Pname", core.upper())]
+            if attribs is not None:
+                values = {a: v.get(a) for v in values for a in attribs if v.get(a)}
+            return values
+
+        # Find the correct CMSIS header
+        dfp_compile = dfp_findall("compile")[0].get("define")
+        p["cmsis_header"] = cmsis_header = dfp_folder[:-4].lower()
+        # https://github.com/Open-CMSIS-Pack/STM32H7xx_DFP/pull/7
+        if did.string == "stm32h730ibt6q": dfp_compile = "STM32H730xxQ"
+        stm_header = STMHeader(did, cmsis_header, dfp_compile)
         if not stm_header.is_valid:
             LOGGER.error("CMSIS Header invalid for %s", did.string)
             return None
+        p["define"] = stm_header.define
 
         # flash and ram sizes
         # The <ram> and <flash> can occur multiple times.
@@ -560,7 +602,7 @@ class STMDeviceTree:
         LOGGER.info("Generating Device Tree for '{}'".format(p["id"].string))
 
         # def topLevelOrder(e):
-        #     order = ["attribute-flash", "attribute-ram", "attribute-core", "header", "attribute-define"]
+        #     order = ["attribute-flash", "attribute-ram", "attribute-core"]
         #     if e.name in order:
         #         if e.name in ["attribute-flash", "attribute-ram"]:
         #             return (order.index(e.name), int(e["value"]))

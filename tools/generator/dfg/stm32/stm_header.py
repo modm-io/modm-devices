@@ -55,34 +55,22 @@ class STMHeader:
         "uint8_t":  1,
     }
 
-    def __init__(self, did):
+    def __init__(self, did, family_header_file, define):
         self.did = did
-        self.family_folder = "stm32{}xx".format(self.did.family)
-        if self.did.string[5:8] in ["h7r", "h7s"]:
-            self.family_folder = "stm32h7rsxx"
-        elif self.did.string[5:8] == "wb0":
-            self.family_folder = "stm32wb0xx"
-        elif self.did.string[5:8] == "wba":
-            self.family_folder = "stm32wbaxx"
-        elif self.did.string[5:8] == "wl3":
-            self.family_folder = "stm32wl3xx"
+        self.family_folder = family_header_file
+        if "xx" not in self.family_folder: self.family_folder += "x"
         self.cmsis_folder = STMHeader.HEADER_PATH / self.family_folder / "Include"
-        self.family_header_file = "{}.h".format(self.family_folder)
-        if self.did.string[5:8] == "wb0":
-            self.family_header_file = "stm32wb0x.h"
-        elif self.did.string[5:8] == "wl3":
-            self.family_header_file = "stm32wl3x.h"
+        self.family_header_file = "{}.h".format(family_header_file)
 
-        if self.did.string[5:8] == "wl3":
-            self.family_defines = ["STM32WL3XX", "STM32WL3RX"]
-        else:
-            self.family_defines = self._get_family_defines()
-        self.define = stm.getDefineForDevice(self.did, self.family_defines)
+        self.family_defines = self._get_family_defines()
+        self.define = define[:9].upper() + define[9:]
+        if self.define not in self.family_defines:
+            # LOGGER.warning(f"Device define {self.define} not found in header {self.family_folder}!");
+            self.define = stm.getDefineForDevice(self.did, self.family_defines)
         self.is_valid = self.define is not None
         if not self.is_valid: return;
 
         self.header_file = "{}.h".format(self.define.lower())
-        self.device_map = None
 
         if self.header_file not in STMHeader.CACHE_HEADER:
             replace_patterns = [
@@ -120,9 +108,10 @@ class STMHeader:
         if self.family_folder not in STMHeader.CACHE_FAMILY:
             defines = []
             content = (self.cmsis_folder / self.family_header_file).read_text(encoding="utf-8", errors="replace")
-            match = re.findall(r"if +defined\( *(STM32[A-Z][\w\d]+) *\)", content)
-            if match: defines = match;
-            else: LOGGER.error("Cannot find family defines for {}!".format(self.did.string));
+            defines = []
+            for include in re.findall(r'#include +"(stm32.*?(?<!_hal))\.h"', content):
+                define = re.search(rf"defined *\( *({include}) *\)", content, flags=re.IGNORECASE)
+                defines.append(define.group(1))
             STMHeader.CACHE_FAMILY[self.family_folder]["family_defines"] = defines
         return STMHeader.CACHE_FAMILY[self.family_folder]["family_defines"]
 
