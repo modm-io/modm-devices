@@ -80,14 +80,6 @@ class STMDeviceTree:
         if "@" in did.naming_schema: did.set("core", core[7:9])
         p = {"id": did}
 
-        # Maximum operating frequency
-        if (max_frequency := device_file.query('//Frequency')):
-            max_frequency = float(max_frequency[0].text)
-        else:
-            max_frequency = stm.getMaxFrequencyForDevice(did)
-        # H7 dual-core devices run the M4 core at half the frequency as the M7 core
-        if did.get("core", "") == "m4": max_frequency /= 2.0;
-        p["max_frequency"] = int(max_frequency * 1e6)
         dfp_folder = "STM32{}xx_DFP".format(did.family.upper())
         if did.string[5:8] in ["h7r", "h7s"]:
             dfp_folder = "STM32H7RSxx_DFP"
@@ -144,6 +136,14 @@ class STMDeviceTree:
             p["fpu"] = "fpv5-d16"
         if rev := processor.get("DcoreVersion"):
             p["revision"] = rev.lower()
+
+        # Maximum operating frequency
+        if max_frequency := processor.get("Dclock"):
+            max_frequency = int(max_frequency)
+        elif (max_frequency := device_file.query('//Frequency')):
+            LOGGER.warning(f"Fallback to //Frequency for max frequency for {did.string}!")
+            max_frequency = int(float(max_frequency[0].text) * 1e6)
+        p["max_frequency"] = max_frequency
 
         # Find all internal memories
         memories = {

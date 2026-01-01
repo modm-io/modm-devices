@@ -108,64 +108,6 @@ def getGpioRemapForModuleConfig(module, config):
         mmm['mapping'] = stm32f1_gpio_remap[module]['mapping'][int(config)]
     return mmm
 
-
-stm32_max_frequency = \
-{
-    'c0': 48,
-    'f0': 48,
-    'f1': [
-        {'name': ['00'], 'f': 24},
-        {'name': ['01'], 'f': 36},
-        {'name': ['02'], 'f': 48},
-        72,
-    ],
-    'f2': 120,
-    'f3': 72,
-    'f4': [
-        {'name': ['01'], 'f': 84},
-        {'name': ['10', '11', '12', '13', '23'], 'f': 100},
-        {'name': ['05', '07', '15', '17'], 'f': 168},
-        180,
-    ],
-    'f7': 216,
-    'g0': 64,
-    'g4': 170,
-    'h5': 250,
-    'h7': [
-        {'name': ['a3', 'b0', 'b3'], 'f': 280},
-        {'name': ['23', '25', '30', '33', '35'], 'f': 550},
-        {'name': ['r3', 's3', 'r7', 's7'], 'f': 600},
-        480,
-    ],
-    'l0': 32,
-    'l1': 32,
-    'l4': [
-        {'name': ['s5', 's7', 's9', 'q5', 'p5', 'r5', 'r7', 'r9'], 'f': 120},
-        80,
-    ],
-    'l5': 110,
-    'u0': 56,
-    'u3': 96,
-    'u5': 160,
-    'wb': 64,
-    'wl': 48,
-}
-
-# ================================= FREQUENCY =================================
-def getMaxFrequencyForDevice(did):
-    freq = stm32_max_frequency.get(did.family)
-    assert freq, f"No max frequency defined for family {did.family}"
-    if isinstance(freq, int):
-        return freq
-    # Convert MHz to Hz and filter out string keys
-    lconv = lambda l: (l if isinstance(l, int) else l['f'])
-    for lt in freq:
-        if isinstance(lt, int):
-            return lt
-        # check if all conditions match
-        if all(did[k] in v for k, v in lt.items() if not isinstance(v, int)):
-            return lconv(lt) # return filtered table
-
 # =============================== FLASH LATENCY ===============================
 stm32_flash_latency = \
 {
