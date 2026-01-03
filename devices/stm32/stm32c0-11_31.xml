@@ -30,8 +30,8 @@
       <attribute-cmsis-header value="stm32c0xx"/>
       <memory device-size="4" name="flash" access="rx" start="0x8000000" size="16384"/>
       <memory device-size="6" name="flash" access="rx" start="0x8000000" size="32768"/>
-      <memory device-name="11" name="sram1" access="rwx" start="0x20000000" size="6144"/>
-      <memory device-name="31" name="sram1" access="rwx" start="0x20000000" size="12288"/>
+      <memory device-name="11" name="sram" access="rwx" start="0x20000000" size="6144"/>
+      <memory device-name="31" name="sram" access="rwx" start="0x20000000" size="12288"/>
       <vector position="0" name="WWDG"/>
       <vector position="2" name="RTC"/>
       <vector position="3" name="FLASH"/>

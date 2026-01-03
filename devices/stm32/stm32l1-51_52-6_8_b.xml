@@ -91,10 +91,10 @@
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="65536"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory name="eeprom" access="r" start="0x8080000" size="4096"/>
-      <memory device-size="6|8" device-variant="" name="sram1" access="rwx" start="0x20000000" size="10240"/>
-      <memory device-size="6" device-variant="a" name="sram1" access="rwx" start="0x20000000" size="16384"/>
-      <memory device-size="b" device-variant="" name="sram1" access="rwx" start="0x20000000" size="16384"/>
-      <memory device-size="8|b" device-variant="a" name="sram1" access="rwx" start="0x20000000" size="32768"/>
+      <memory device-size="6|8" device-variant="" name="sram" access="rwx" start="0x20000000" size="10240"/>
+      <memory device-size="6" device-variant="a" name="sram" access="rwx" start="0x20000000" size="16384"/>
+      <memory device-size="b" device-variant="" name="sram" access="rwx" start="0x20000000" size="16384"/>
+      <memory device-size="8|b" device-variant="a" name="sram" access="rwx" start="0x20000000" size="32768"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD"/>
       <vector position="2" name="TAMPER_STAMP"/>

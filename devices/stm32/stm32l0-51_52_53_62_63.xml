@@ -97,7 +97,7 @@
       <memory device-size="6" name="flash" access="rx" start="0x8000000" size="32768"/>
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="65536"/>
       <memory name="eeprom" access="r" start="0x8080000" size="2048"/>
-      <memory name="sram1" access="rwx" start="0x20000000" size="8192"/>
+      <memory name="sram" access="rwx" start="0x20000000" size="8192"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD"/>
       <vector position="2" name="RTC"/>

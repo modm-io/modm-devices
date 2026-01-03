@@ -26,9 +26,9 @@
       <memory device-size="4" name="eeprom" access="r" start="0x8080000" size="128"/>
       <memory device-size="6|8" name="eeprom" access="r" start="0x8080000" size="256"/>
       <memory device-size="b" name="eeprom" access="r" start="0x8080000" size="512"/>
-      <memory device-size="4" name="sram1" access="rwx" start="0x20000000" size="2048"/>
-      <memory device-size="6|8" name="sram1" access="rwx" start="0x20000000" size="8192"/>
-      <memory device-size="b" name="sram1" access="rwx" start="0x20000000" size="20480"/>
+      <memory device-size="4" name="sram" access="rwx" start="0x20000000" size="2048"/>
+      <memory device-size="6|8" name="sram" access="rwx" start="0x20000000" size="8192"/>
+      <memory device-size="b" name="sram" access="rwx" start="0x20000000" size="20480"/>
       <vector position="0" name="WWDG"/>
       <vector position="2" name="RTC"/>
       <vector position="3" name="FLASH"/>
