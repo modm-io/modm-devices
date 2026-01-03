@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import re, os, sys
+import re, os, sys, json
 from pathlib import Path
 from jinja2 import Environment
 from collections import defaultdict
@@ -29,13 +29,13 @@ def extract(text, key):
 
 if __name__ == "__main__":
     devices_short = set()
-    devices = []
+    devices = {}
     for filename in Path(rootpath).glob("devices/**/*.xml"):
         for d in modm_devices.parser.DeviceParser().parse(str(filename)).get_devices():
             short_device = d.identifier.string.split("@")[0]
             if short_device not in devices_short:
                 devices_short.add(short_device)
-                devices.append(d)
+                devices[d] = filename
 
     families = defaultdict(int)
     for dev in devices:
@@ -53,5 +53,19 @@ if __name__ == "__main__":
     readme = replace(readme, "devicecount", sum(families.values()))
     readme_path.write_text(readme)
 
+    # Group by device prefix
+    db = defaultdict(dict)
+    for d, f in devices.items():
+        if d.identifier.platform == "rp":
+            prefix = "rp"
+        elif d.identifier.platform == "sam":
+            series = d.identifier["series"]
+            prefix = d.partname.split(series)[0] + series
+        else:
+            family = d.identifier["family"]
+            prefix = d.partname.split(family)[0] + family
 
+        db[prefix][d.partname] = str(f.relative_to(Path(rootpath) / "devices"))
 
+    db_path = Path(rootpath) / "devices/db.json"
+    db_path.write_text(json.dumps(db, indent=4, sort_keys=True))

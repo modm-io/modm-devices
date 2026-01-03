@@ -34,6 +34,11 @@ clean_init:
 update_init: clean_init
 	@$(MAKE) init
 
+.PHONY: sync_docs
+sync_docs:
+	@python3 ../scripts/sync_docs.py
+
+
 # Raw device data management
 raw-device-data/%-devices:
 	(cd raw-data-extractor && python3 extract-$(@:raw-device-data/%-devices=%).py)
