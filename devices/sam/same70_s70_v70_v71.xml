@@ -72,7 +72,7 @@
     <valid-device>samv71q21b-cb</valid-device>
     <valid-device>samv71q21b-dhb</valid-device>
     <valid-device>samv71q21b-h8x</valid-device>
-    <driver name="core" type="cortex-m7f">
+    <driver name="core" type="cortex-m7" fpu="fpv5-d16" revision="r1p1">
       <vector position="0" name="SUPC"/>
       <vector position="1" name="RSTC"/>
       <vector position="2" name="RTC"/>

@@ -19,13 +19,18 @@
     <valid-device>stm32wle5jbi6</valid-device>
     <valid-device>stm32wle5jci6</valid-device>
     <valid-device>stm32wle5jci7</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <attribute-die value="DIE497"/>
+    <driver name="core" type="cortex-m4" revision="r0p1">
+      <attribute-cmsis-define device-name="e4" value="STM32WLE4xx"/>
+      <attribute-cmsis-define device-name="e5" value="STM32WLE5xx"/>
+      <attribute-cmsis-header value="stm32wlxx"/>
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="65536"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
-      <memory name="sram1" access="rwx" start="0x20000000" size="32768"/>
-      <memory device-size="b" name="sram2" access="rwx" start="0x20008000" size="16384"/>
-      <memory device-size="c" name="sram2" access="rwx" start="0x20008000" size="32768"/>
+      <memory device-size="b" name="sram1" access="rwx" start="0x20000000" size="16384"/>
+      <memory device-size="c" name="sram1" access="rwx" start="0x20000000" size="32768"/>
+      <memory device-size="8" name="sram2" access="rwx" start="0x20008000" size="20480"/>
+      <memory device-size="b|c" name="sram2" access="rwx" start="0x20008000" size="32768"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD_PVM"/>
       <vector position="2" name="TAMP_STAMP_LSECSS_SSRU"/>

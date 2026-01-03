@@ -66,7 +66,11 @@
     <valid-device>stm32f423zht3</valid-device>
     <valid-device>stm32f423zht6</valid-device>
     <valid-device>stm32f423zht7</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <attribute-die value="DIE463"/>
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
+      <attribute-cmsis-define device-name="13" value="STM32F413xx"/>
+      <attribute-cmsis-define device-name="23" value="STM32F423xx"/>
+      <attribute-cmsis-header value="stm32f4xx"/>
       <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
       <memory device-size="h" name="flash" access="rx" start="0x8000000" size="1572864"/>
       <memory name="ccm" access="rw" start="0x10000000" size="65536"/>

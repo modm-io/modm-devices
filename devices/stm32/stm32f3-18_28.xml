@@ -8,7 +8,12 @@
     <valid-device>stm32f318k8u6</valid-device>
     <valid-device>stm32f318k8u7</valid-device>
     <valid-device>stm32f328c8t6</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <attribute-die device-name="28" value="DIE438"/>
+    <attribute-die device-name="18" value="DIE439"/>
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
+      <attribute-cmsis-define device-name="18" value="STM32F318xx"/>
+      <attribute-cmsis-define device-name="28" value="STM32F328xx"/>
+      <attribute-cmsis-header value="stm32f3xx"/>
       <memory name="flash" access="rx" start="0x8000000" size="65536"/>
       <memory device-name="28" name="ccm" access="rwx" start="0x10000000" size="4096"/>
       <memory device-name="28" name="sram1" access="rwx" start="0x20000000" size="12288"/>

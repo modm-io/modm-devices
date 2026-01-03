@@ -27,7 +27,11 @@
     <valid-device>stm32f378rcy6</valid-device>
     <valid-device>stm32f378vch6</valid-device>
     <valid-device>stm32f378vct6</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <attribute-die value="DIE432"/>
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
+      <attribute-cmsis-define device-name="73" value="STM32F373xC"/>
+      <attribute-cmsis-define device-name="78" value="STM32F378xx"/>
+      <attribute-cmsis-header value="stm32f3xx"/>
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="65536"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>

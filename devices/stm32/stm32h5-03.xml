@@ -8,7 +8,10 @@
     <valid-device>stm32h503eby6</valid-device>
     <valid-device>stm32h503kbu6</valid-device>
     <valid-device>stm32h503rbt6</valid-device>
-    <driver name="core" type="cortex-m33f">
+    <attribute-die value="DIE474"/>
+    <driver name="core" type="cortex-m33" fpu="fpv5-sp-d16" revision="r0p0">
+      <attribute-cmsis-define value="STM32H503xx"/>
+      <attribute-cmsis-header value="stm32h5xx"/>
       <memory name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory name="sram1" access="rwx" start="0x20000000" size="16384"/>
       <memory name="sram2" access="rwx" start="0x20004000" size="16384"/>
@@ -175,7 +178,7 @@
     <driver name="pwr" type="stm32-v1.0"/>
     <driver name="ramcfg" type="stm32-v1.0"/>
     <driver name="rcc" type="stm32-v1.1">
-      <max-frequency value="250000000"/>
+      <max-frequency value="240000000"/>
     </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-rtc2_v2_u5_cube"/>

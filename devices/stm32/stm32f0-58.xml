@@ -9,7 +9,10 @@
     <valid-device>stm32f058r8t6</valid-device>
     <valid-device>stm32f058r8t7</valid-device>
     <valid-device>stm32f058t8y6</valid-device>
-    <driver name="core" type="cortex-m0">
+    <attribute-die value="DIE440"/>
+    <driver name="core" type="cortex-m0" revision="r0p0">
+      <attribute-cmsis-define value="STM32F058xx"/>
+      <attribute-cmsis-header value="stm32f0xx"/>
       <memory name="flash" access="rx" start="0x8000000" size="65536"/>
       <memory name="sram1" access="rwx" start="0x20000000" size="8192"/>
       <vector position="0" name="WWDG"/>

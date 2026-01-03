@@ -57,7 +57,11 @@
     <valid-device>stm32g041k8t6</valid-device>
     <valid-device>stm32g041k8u6</valid-device>
     <valid-device>stm32g041y8y6</valid-device>
-    <driver name="core" type="cortex-m0+">
+    <attribute-die value="DIE466"/>
+    <driver name="core" type="cortex-m0plus" revision="r0p1">
+      <attribute-cmsis-define device-name="31" value="STM32G031xx"/>
+      <attribute-cmsis-define device-name="41" value="STM32G041xx"/>
+      <attribute-cmsis-header value="stm32g0xx"/>
       <memory device-size="4" name="flash" access="rx" start="0x8000000" size="16384"/>
       <memory device-size="6" name="flash" access="rx" start="0x8000000" size="32768"/>
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="65536"/>

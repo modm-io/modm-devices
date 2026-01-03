@@ -79,11 +79,18 @@
     <valid-device>stm32l152vbh6a</valid-device>
     <valid-device>stm32l152vbt6</valid-device>
     <valid-device>stm32l152vbt6a</valid-device>
-    <driver name="core" type="cortex-m3">
+    <attribute-die device-variant="" value="DIE416"/>
+    <attribute-die device-variant="a" value="DIE429"/>
+    <driver name="core" type="cortex-m3" revision="r1p1">
+      <attribute-cmsis-define device-name="51" device-variant="" value="STM32L151xB"/>
+      <attribute-cmsis-define device-name="51" device-variant="a" value="STM32L151xBA"/>
+      <attribute-cmsis-define device-name="52" device-variant="" value="STM32L152xB"/>
+      <attribute-cmsis-define device-name="52" device-variant="a" value="STM32L152xBA"/>
+      <attribute-cmsis-header value="stm32l1xx"/>
       <memory device-size="6" name="flash" access="rx" start="0x8000000" size="32768"/>
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="65536"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
-      <memory name="eeprom" access="rwx" start="0x8080000" size="4096"/>
+      <memory name="eeprom" access="r" start="0x8080000" size="4096"/>
       <memory device-size="6|8" device-variant="" name="sram1" access="rwx" start="0x20000000" size="10240"/>
       <memory device-size="6" device-variant="a" name="sram1" access="rwx" start="0x20000000" size="16384"/>
       <memory device-size="b" device-variant="" name="sram1" access="rwx" start="0x20000000" size="16384"/>

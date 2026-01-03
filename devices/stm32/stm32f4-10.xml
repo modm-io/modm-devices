@@ -28,7 +28,12 @@
     <valid-device>stm32f410tby3</valid-device>
     <valid-device>stm32f410tby6</valid-device>
     <valid-device>stm32f410tby7</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <attribute-die value="DIE458"/>
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
+      <attribute-cmsis-define device-pin="c" value="STM32F410Cx"/>
+      <attribute-cmsis-define device-pin="r" value="STM32F410Rx"/>
+      <attribute-cmsis-define device-pin="t" value="STM32F410Tx"/>
+      <attribute-cmsis-header value="stm32f4xx"/>
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="65536"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory name="sram1" access="rwx" start="0x20000000" size="32768"/>

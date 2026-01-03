@@ -73,17 +73,27 @@
     <valid-device>stm32h755zit6@m7</valid-device>
     <valid-device>stm32h755zit7@m4</valid-device>
     <valid-device>stm32h755zit7@m7</valid-device>
+    <attribute-die value="DIE450"/>
     <driver name="core">
-      <attribute-type device-core="m4" value="cortex-m4fd"/>
-      <attribute-type device-core="m7" value="cortex-m7fd"/>
+      <attribute-cmsis-define device-size="g" value="STM32H745xG"/>
+      <attribute-cmsis-define device-name="45" device-size="i" value="STM32H745xx"/>
+      <attribute-cmsis-define device-name="55" value="STM32H755xx"/>
+      <attribute-cmsis-header value="stm32h7xx"/>
+      <attribute-fpu device-core="m4" value="fpv4-sp-d16"/>
+      <attribute-fpu device-core="m7" value="fpv5-d16"/>
+      <attribute-revision value="r0p1"/>
+      <attribute-type device-core="m4" value="cortex-m4"/>
+      <attribute-type device-core="m7" value="cortex-m7"/>
       <memory device-core="m7" name="itcm" access="rwx" start="0x00" size="65536"/>
-      <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
-      <memory device-size="i" name="flash" access="rx" start="0x8000000" size="2097152"/>
+      <memory device-size="g" device-core="m7" name="flash1" access="rx" start="0x8000000" size="524288"/>
+      <memory device-size="i" device-core="m7" name="flash1" access="rx" start="0x8000000" size="1048576"/>
+      <memory device-size="g" device-core="m4" name="flash2" access="rx" start="0x8100000" size="524288"/>
+      <memory device-size="i" device-core="m4" name="flash2" access="rx" start="0x8100000" size="1048576"/>
+      <memory device-core="m4" name="d2_sram1" access="rwx" start="0x10000000" size="131072"/>
+      <memory device-core="m4" name="d2_sram2" access="rwx" start="0x10020000" size="131072"/>
+      <memory device-core="m4" name="d2_sram3" access="rwx" start="0x10040000" size="32768"/>
       <memory device-core="m7" name="dtcm" access="rwx" start="0x20000000" size="131072"/>
-      <memory name="d1_sram" access="rwx" start="0x24000000" size="524288"/>
-      <memory name="d2_sram1" access="rwx" start="0x30000000" size="131072"/>
-      <memory name="d2_sram2" access="rwx" start="0x30020000" size="131072"/>
-      <memory name="d2_sram3" access="rwx" start="0x30040000" size="32768"/>
+      <memory device-core="m7" name="d1_sram" access="rwx" start="0x24000000" size="524288"/>
       <memory name="d3_sram" access="rwx" start="0x38000000" size="65536"/>
       <memory name="backup" access="rwx" start="0x38800000" size="4096"/>
       <vector position="0" name="WWDG"/>

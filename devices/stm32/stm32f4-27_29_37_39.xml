@@ -77,7 +77,13 @@
     <valid-device>stm32f439zgy7</valid-device>
     <valid-device>stm32f439zit6</valid-device>
     <valid-device>stm32f439ziy6</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <attribute-die value="DIE419"/>
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
+      <attribute-cmsis-define device-name="27" value="STM32F427xx"/>
+      <attribute-cmsis-define device-name="29" value="STM32F429xx"/>
+      <attribute-cmsis-define device-name="37" value="STM32F437xx"/>
+      <attribute-cmsis-define device-name="39" value="STM32F439xx"/>
+      <attribute-cmsis-header value="stm32f4xx"/>
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288"/>
       <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
       <memory device-size="i" name="flash" access="rx" start="0x8000000" size="2097152"/>

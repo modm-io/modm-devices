@@ -7,7 +7,12 @@
     <valid-device>stm32f070cbt6</valid-device>
     <valid-device>stm32f070f6p6</valid-device>
     <valid-device>stm32f070rbt6</valid-device>
-    <driver name="core" type="cortex-m0">
+    <attribute-die device-size="6" value="DIE445"/>
+    <attribute-die device-size="b" value="DIE448"/>
+    <driver name="core" type="cortex-m0" revision="r0p0">
+      <attribute-cmsis-define device-size="6" value="STM32F070x6"/>
+      <attribute-cmsis-define device-size="b" value="STM32F070xB"/>
+      <attribute-cmsis-header value="stm32f0xx"/>
       <memory device-size="6" name="flash" access="rx" start="0x8000000" size="32768"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory device-size="6" name="sram1" access="rwx" start="0x20000000" size="6144"/>

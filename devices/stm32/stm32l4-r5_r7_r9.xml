@@ -31,11 +31,16 @@
     <valid-device>stm32l4r9zit6</valid-device>
     <valid-device>stm32l4r9ziy6</valid-device>
     <valid-device>stm32l4r9ziy6p</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <attribute-die value="DIE470"/>
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
+      <attribute-cmsis-define device-name="r5" value="STM32L4R5xx"/>
+      <attribute-cmsis-define device-name="r7" value="STM32L4R7xx"/>
+      <attribute-cmsis-define device-name="r9" value="STM32L4R9xx"/>
+      <attribute-cmsis-header value="stm32l4xx"/>
       <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
       <memory device-size="i" name="flash" access="rx" start="0x8000000" size="2097152"/>
+      <memory name="ccm" access="rw" start="0x10000000" size="65536"/>
       <memory name="sram1" access="rwx" start="0x20000000" size="196608"/>
-      <memory name="sram2" access="rwx" start="0x20030000" size="65536"/>
       <memory name="sram3" access="rwx" start="0x20040000" size="393216"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD_PVM"/>
@@ -193,7 +198,7 @@
       <instance value="2"/>
     </driver>
     <driver name="rcc" type="stm32-v1.0">
-      <max-frequency value="120000000"/>
+      <max-frequency value="80000000"/>
     </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v2.4"/>

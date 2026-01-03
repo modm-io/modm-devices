@@ -79,10 +79,16 @@
     <valid-device>stm32g483ret7</valid-device>
     <valid-device>stm32g483veh6</valid-device>
     <valid-device>stm32g483vet6</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <attribute-die value="DIE469"/>
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
+      <attribute-cmsis-define device-name="73" value="STM32G473xx"/>
+      <attribute-cmsis-define device-name="83" value="STM32G483xx"/>
+      <attribute-cmsis-header value="stm32g4xx"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
+      <memory device-variant="z" name="flash1" access="rx" start="0x8000000" size="245759"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
-      <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288"/>
+      <memory device-size="e" device-variant="" name="flash" access="rx" start="0x8000000" size="524288"/>
+      <memory device-variant="z" name="flash2" access="rx" start="0x8040000" size="245759"/>
       <memory name="ccm" access="rwx" start="0x10000000" size="32768"/>
       <memory name="sram1" access="rwx" start="0x20000000" size="81920"/>
       <memory name="sram2" access="rwx" start="0x20014000" size="16384"/>
@@ -271,7 +277,8 @@
       <instance value="1"/>
     </driver>
     <driver name="rcc" type="stm32-v1.0">
-      <max-frequency value="170000000"/>
+      <max-frequency device-name="83" value="170000000"/>
+      <max-frequency device-name="73" value="150000000"/>
     </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v1.1"/>

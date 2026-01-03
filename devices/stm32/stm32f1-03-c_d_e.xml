@@ -23,7 +23,10 @@
     <invalid-device>stm32f103zdy7</invalid-device>
     <invalid-device>stm32f103zey6</invalid-device>
     <invalid-device>stm32f103zey7</invalid-device>
-    <driver name="core" type="cortex-m3">
+    <attribute-die value="DIE414"/>
+    <driver name="core" type="cortex-m3" revision="r1p1">
+      <attribute-cmsis-define value="STM32F103xE"/>
+      <attribute-cmsis-header value="stm32f1xx"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
       <memory device-size="d" name="flash" access="rx" start="0x8000000" size="393216"/>
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288"/>

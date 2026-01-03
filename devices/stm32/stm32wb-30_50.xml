@@ -5,13 +5,15 @@
     <naming-schema>{platform}{family}{name}{pin}{size}{package}{temperature}{variant}</naming-schema>
     <valid-device>stm32wb30ceu6a</valid-device>
     <valid-device>stm32wb50cgu6</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <attribute-die value="DIE495"/>
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
+      <attribute-cmsis-define device-name="30" value="STM32WB30xx"/>
+      <attribute-cmsis-define device-name="50" value="STM32WB50xx"/>
+      <attribute-cmsis-header value="stm32wbxx"/>
       <memory device-name="30" name="flash" access="rx" start="0x8000000" size="524288"/>
       <memory device-name="50" name="flash" access="rx" start="0x8000000" size="1048576"/>
       <memory device-name="30" name="sram1" access="rwx" start="0x20000000" size="32768"/>
       <memory device-name="50" name="sram1" access="rwx" start="0x20000000" size="65536"/>
-      <memory device-name="30" name="sram2" access="rwx" start="0x20008000" size="65536"/>
-      <memory device-name="50" name="sram2" access="rwx" start="0x20010000" size="65536"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD_PVM"/>
       <vector position="2" name="TAMP_STAMP_LSECSS"/>

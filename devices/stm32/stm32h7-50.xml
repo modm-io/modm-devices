@@ -8,14 +8,15 @@
     <valid-device>stm32h750vbt6</valid-device>
     <valid-device>stm32h750xbh6</valid-device>
     <valid-device>stm32h750zbt6</valid-device>
-    <driver name="core" type="cortex-m7fd">
+    <attribute-die value="DIE450"/>
+    <driver name="core" type="cortex-m7" fpu="fpv5-d16" revision="r0p1">
+      <attribute-cmsis-define value="STM32H750xx"/>
+      <attribute-cmsis-header value="stm32h7xx"/>
       <memory name="itcm" access="rwx" start="0x00" size="65536"/>
-      <memory name="flash" access="rx" start="0x8000000" size="131072"/>
+      <memory name="flash1" access="rx" start="0x8000000" size="131072"/>
       <memory name="dtcm" access="rwx" start="0x20000000" size="131072"/>
       <memory name="d1_sram" access="rwx" start="0x24000000" size="524288"/>
-      <memory name="d2_sram1" access="rwx" start="0x30000000" size="131072"/>
-      <memory name="d2_sram2" access="rwx" start="0x30020000" size="131072"/>
-      <memory name="d2_sram3" access="rwx" start="0x30040000" size="32768"/>
+      <memory name="d2_sram1" access="rwx" start="0x30000000" size="294912"/>
       <memory name="d3_sram" access="rwx" start="0x38000000" size="65536"/>
       <memory name="backup" access="rwx" start="0x38800000" size="4096"/>
       <vector position="0" name="WWDG"/>

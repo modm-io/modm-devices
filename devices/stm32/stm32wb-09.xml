@@ -5,10 +5,13 @@
     <naming-schema>{platform}{family}{name}{pin}{size}{package}{temperature}{variant}</naming-schema>
     <valid-device>stm32wb09kev6</valid-device>
     <valid-device>stm32wb09tef6</valid-device>
-    <driver name="core" type="cortex-m0+">
-      <memory name="flash" access="rx" start="0x8000000" size="524288"/>
-      <memory name="sram0" access="rwx" start="0x20000000" size="16384"/>
-      <memory name="sram1" access="rwx" start="0x20000000" size="16384"/>
+    <attribute-die value="DIE032"/>
+    <driver name="core" type="cortex-m0plus" revision="r0p1">
+      <attribute-cmsis-define value="STM32WB09"/>
+      <attribute-cmsis-header value="stm32wb0x"/>
+      <memory name="flash" access="rx" start="0x10040000" size="524288"/>
+      <memory name="sram0" access="rwx" start="0x20000018" size="16360"/>
+      <memory name="sram1" access="rwx" start="0x20004000" size="16384"/>
       <memory name="sram2" access="rwx" start="0x20008000" size="16384"/>
       <memory name="sram3" access="rwx" start="0x2000C000" size="16384"/>
       <vector position="0" name="FLASH"/>

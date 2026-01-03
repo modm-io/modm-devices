@@ -109,7 +109,7 @@
     <valid-device>samd20j18a-cu</valid-device>
     <valid-device>samd20j18a-mn</valid-device>
     <valid-device>samd20j18a-mu</valid-device>
-    <driver name="core" type="cortex-m0+">
+    <driver name="core" type="cortex-m0plus" revision="r0p1">
       <vector position="0" name="PM"/>
       <vector position="1" name="SYSCTRL"/>
       <vector position="2" name="WDT"/>

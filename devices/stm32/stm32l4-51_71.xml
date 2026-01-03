@@ -44,13 +44,19 @@
     <valid-device>stm32l471zet7</valid-device>
     <valid-device>stm32l471zgj6</valid-device>
     <valid-device>stm32l471zgt6</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <attribute-die device-name="71" value="DIE415"/>
+    <attribute-die device-name="51" value="DIE462"/>
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
+      <attribute-cmsis-define device-name="51" value="STM32L451xx"/>
+      <attribute-cmsis-define device-name="71" value="STM32L471xx"/>
+      <attribute-cmsis-header value="stm32l4xx"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
-      <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288"/>
-      <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
-      <memory name="ccm" access="rwx" start="0x10000000" size="32768"/>
-      <memory device-name="71" name="sram1" access="rwx" start="0x20000000" size="131072"/>
-      <memory device-name="51" name="sram1" access="rwx" start="0x20000000" size="163840"/>
+      <memory device-size="e" device-package="i|j|t|u|y" name="flash" access="rx" start="0x8000000" size="524288"/>
+      <memory device-size="g" device-package="j" name="flash" access="rx" start="0x8000000" size="524288"/>
+      <memory device-size="g" device-package="i|t" name="flash" access="rx" start="0x8000000" size="1048576"/>
+      <memory name="ccm" access="rw" start="0x10000000" size="32768"/>
+      <memory device-name="71" name="sram1" access="rwx" start="0x20000000" size="98304"/>
+      <memory device-name="51" name="sram1" access="rwx" start="0x20000000" size="131072"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD_PVM"/>
       <vector position="2" name="TAMP_STAMP"/>

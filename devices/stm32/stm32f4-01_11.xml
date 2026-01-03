@@ -58,7 +58,14 @@
     <valid-device>stm32f411vct6</valid-device>
     <valid-device>stm32f411veh6</valid-device>
     <valid-device>stm32f411vet6</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <attribute-die device-name="01" device-size="b|c" value="DIE423"/>
+    <attribute-die device-name="11" value="DIE431"/>
+    <attribute-die device-name="01" device-size="d|e" value="DIE433"/>
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
+      <attribute-cmsis-define device-name="01" device-size="b|c" value="STM32F401xC"/>
+      <attribute-cmsis-define device-name="01" device-size="d|e" value="STM32F401xE"/>
+      <attribute-cmsis-define device-name="11" value="STM32F411xE"/>
+      <attribute-cmsis-header value="stm32f4xx"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
       <memory device-size="d" name="flash" access="rx" start="0x8000000" size="393216"/>

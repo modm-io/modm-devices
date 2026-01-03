@@ -10,10 +10,14 @@
     <valid-device>stm32wb15ccu7e</valid-device>
     <valid-device>stm32wb15ccy6</valid-device>
     <valid-device>stm32wb15ccy7</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <attribute-die value="DIE494"/>
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
+      <attribute-cmsis-define device-name="10" value="STM32WB10xx"/>
+      <attribute-cmsis-define device-name="15" value="STM32WB15xx"/>
+      <attribute-cmsis-header value="stm32wbxx"/>
       <memory name="flash" access="rx" start="0x8000000" size="327680"/>
       <memory name="sram1" access="rwx" start="0x20000000" size="12288"/>
-      <memory name="sram2" access="rwx" start="0x20003000" size="36864"/>
+      <memory name="sram2" access="rwx" start="0x20030000" size="36864"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD_PVM"/>
       <vector position="2" name="TAMP_STAMP_LSECSS"/>

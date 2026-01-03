@@ -5,7 +5,7 @@
     <naming-schema>{platform}{series}{pin}{flash}{variant}-{package}{grade}</naming-schema>
     <valid-device>samd09c13a-ssu</valid-device>
     <valid-device>samd09d14a-mu</valid-device>
-    <driver name="core" type="cortex-m0+">
+    <driver name="core" type="cortex-m0plus" revision="r0p1">
       <vector position="0" name="PM"/>
       <vector position="1" name="SYSCTRL"/>
       <vector position="2" name="WDT"/>

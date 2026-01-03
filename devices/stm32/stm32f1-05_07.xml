@@ -25,7 +25,11 @@
     <invalid-device>stm32f107v8t7</invalid-device>
     <invalid-device>stm32f107vbh6</invalid-device>
     <invalid-device>stm32f107vbh7</invalid-device>
-    <driver name="core" type="cortex-m3">
+    <attribute-die value="DIE418"/>
+    <driver name="core" type="cortex-m3" revision="r1p1">
+      <attribute-cmsis-define device-name="05" value="STM32F105xC"/>
+      <attribute-cmsis-define device-name="07" value="STM32F107xC"/>
+      <attribute-cmsis-header value="stm32f1xx"/>
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="65536"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>

@@ -50,11 +50,15 @@
     <valid-device>stm32l462rey6</valid-device>
     <valid-device>stm32l462vei6</valid-device>
     <valid-device>stm32l462vet6</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <attribute-die value="DIE462"/>
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
+      <attribute-cmsis-define device-name="52" value="STM32L452xx"/>
+      <attribute-cmsis-define device-name="62" value="STM32L462xx"/>
+      <attribute-cmsis-header value="stm32l4xx"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288"/>
-      <memory name="ccm" access="rwx" start="0x10000000" size="16384"/>
-      <memory name="sram1" access="rwx" start="0x20000000" size="163840"/>
+      <memory name="ccm" access="rw" start="0x10000000" size="32768"/>
+      <memory name="sram1" access="rwx" start="0x20000000" size="131072"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD_PVM"/>
       <vector position="2" name="TAMP_STAMP"/>

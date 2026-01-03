@@ -18,15 +18,17 @@
     <valid-device>stm32h7b3vit6q</valid-device>
     <valid-device>stm32h7b3zit6</valid-device>
     <valid-device>stm32h7b3zit6q</valid-device>
-    <driver name="core" type="cortex-m7fd">
+    <attribute-die value="DIE480"/>
+    <driver name="core" type="cortex-m7" fpu="fpv5-d16" revision="r0p1">
+      <attribute-cmsis-define device-variant="" value="STM32H7B3xx"/>
+      <attribute-cmsis-define device-variant="q" value="STM32H7B3xxQ"/>
+      <attribute-cmsis-header value="stm32h7xx"/>
       <memory name="itcm" access="rwx" start="0x00" size="65536"/>
-      <memory name="flash" access="rx" start="0x8000000" size="2097152"/>
+      <memory name="flash1" access="rx" start="0x8000000" size="1048576"/>
+      <memory name="flash2" access="rx" start="0x8100000" size="1048576"/>
       <memory name="dtcm" access="rwx" start="0x20000000" size="131072"/>
-      <memory name="d1_sram1" access="rwx" start="0x24000000" size="262144"/>
-      <memory name="d1_sram2" access="rwx" start="0x24040000" size="393216"/>
-      <memory name="d1_sram3" access="rwx" start="0x240A0000" size="393216"/>
-      <memory name="d2_sram1" access="rwx" start="0x30000000" size="65536"/>
-      <memory name="d2_sram2" access="rwx" start="0x30010000" size="65536"/>
+      <memory name="d1_sram" access="rwx" start="0x24000000" size="1048576"/>
+      <memory name="d2_sram1" access="rwx" start="0x30000000" size="131072"/>
       <memory name="d3_sram" access="rwx" start="0x38000000" size="32768"/>
       <memory name="backup" access="rwx" start="0x38800000" size="4096"/>
       <vector position="0" name="WWDG"/>

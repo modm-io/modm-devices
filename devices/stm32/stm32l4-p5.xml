@@ -28,12 +28,14 @@
     <valid-device>stm32l4p5zet6</valid-device>
     <valid-device>stm32l4p5zgt6</valid-device>
     <valid-device>stm32l4p5zgt6p</valid-device>
-    <driver name="core" type="cortex-m4f">
-      <memory device-size="g" device-variant="" name="flash" access="rx" start="0x8000000" size="524288"/>
-      <memory device-size="e" device-variant="" name="flash" access="rx" start="0x8000000" size="1048576"/>
-      <memory device-size="g" device-variant="p|s" name="flash" access="rx" start="0x8000000" size="1048576"/>
+    <attribute-die value="DIE471"/>
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
+      <attribute-cmsis-define value="STM32L4P5xx"/>
+      <attribute-cmsis-header value="stm32l4xx"/>
+      <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288"/>
+      <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
+      <memory name="ccm" access="rw" start="0x10000000" size="65536"/>
       <memory name="sram1" access="rwx" start="0x20000000" size="131072"/>
-      <memory name="sram2" access="rwx" start="0x20020000" size="65536"/>
       <memory name="sram3" access="rwx" start="0x20030000" size="131072"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD_PVM"/>
@@ -189,7 +191,7 @@
     </driver>
     <driver device-pin="a|q|r|v|z" name="pssi" type="stm32-v3.0"/>
     <driver name="rcc" type="stm32-v1.0">
-      <max-frequency value="120000000"/>
+      <max-frequency value="80000000"/>
     </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v2.9"/>

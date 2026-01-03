@@ -9,14 +9,23 @@
     <valid-device>stm32l010k8t6</valid-device>
     <valid-device>stm32l010r8t6</valid-device>
     <valid-device>stm32l010rbt6</valid-device>
-    <driver name="core" type="cortex-m0+">
+    <attribute-die device-size="8" value="DIE417"/>
+    <attribute-die device-pin="c" value="DIE425"/>
+    <attribute-die device-size="b" value="DIE447"/>
+    <attribute-die device-size="4" value="DIE457"/>
+    <driver name="core" type="cortex-m0plus" revision="r0p0">
+      <attribute-cmsis-define device-size="4" value="STM32L010x4"/>
+      <attribute-cmsis-define device-pin="c" value="STM32L010x6"/>
+      <attribute-cmsis-define device-size="8" value="STM32L010x8"/>
+      <attribute-cmsis-define device-size="b" value="STM32L010xB"/>
+      <attribute-cmsis-header value="stm32l0xx"/>
       <memory device-size="4" name="flash" access="rx" start="0x8000000" size="16384"/>
       <memory device-pin="c" name="flash" access="rx" start="0x8000000" size="32768"/>
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="65536"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
-      <memory device-size="4" name="eeprom" access="rwx" start="0x8080000" size="128"/>
-      <memory device-size="6|8" name="eeprom" access="rwx" start="0x8080000" size="256"/>
-      <memory device-size="b" name="eeprom" access="rwx" start="0x8080000" size="512"/>
+      <memory device-size="4" name="eeprom" access="r" start="0x8080000" size="128"/>
+      <memory device-size="6|8" name="eeprom" access="r" start="0x8080000" size="256"/>
+      <memory device-size="b" name="eeprom" access="r" start="0x8080000" size="512"/>
       <memory device-size="4" name="sram1" access="rwx" start="0x20000000" size="2048"/>
       <memory device-size="6|8" name="sram1" access="rwx" start="0x20000000" size="8192"/>
       <memory device-size="b" name="sram1" access="rwx" start="0x20000000" size="20480"/>

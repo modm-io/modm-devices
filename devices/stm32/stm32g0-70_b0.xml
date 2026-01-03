@@ -10,7 +10,12 @@
     <valid-device>stm32g0b0ket6</valid-device>
     <valid-device>stm32g0b0ret6</valid-device>
     <valid-device>stm32g0b0vet6</valid-device>
-    <driver name="core" type="cortex-m0+">
+    <attribute-die device-name="70" value="DIE460"/>
+    <attribute-die device-name="b0" value="DIE467"/>
+    <driver name="core" type="cortex-m0plus" revision="r0p1">
+      <attribute-cmsis-define device-name="70" value="STM32G070xx"/>
+      <attribute-cmsis-define device-name="b0" value="STM32G0B0xx"/>
+      <attribute-cmsis-header value="stm32g0xx"/>
       <memory device-name="70" name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory device-name="b0" name="flash" access="rx" start="0x8000000" size="524288"/>
       <memory device-name="70" name="sram1" access="rwx" start="0x20000000" size="36864"/>

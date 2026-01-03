@@ -37,8 +37,6 @@
     <valid-device>stm32l031k6u3</valid-device>
     <valid-device>stm32l031k6u6</valid-device>
     <valid-device>stm32l031k6u7</valid-device>
-    <valid-device>stm32l041c4t6</valid-device>
-    <valid-device>stm32l041c4t7</valid-device>
     <valid-device>stm32l041c6t6</valid-device>
     <valid-device>stm32l041c6t7</valid-device>
     <valid-device>stm32l041c6u6</valid-device>
@@ -58,10 +56,14 @@
     <valid-device>stm32l041k6u3</valid-device>
     <valid-device>stm32l041k6u6</valid-device>
     <valid-device>stm32l041k6u7</valid-device>
-    <driver name="core" type="cortex-m0+">
+    <attribute-die value="DIE425"/>
+    <driver name="core" type="cortex-m0plus" revision="r0p0">
+      <attribute-cmsis-define device-name="31" value="STM32L031xx"/>
+      <attribute-cmsis-define device-name="41" value="STM32L041xx"/>
+      <attribute-cmsis-header value="stm32l0xx"/>
       <memory device-size="4" name="flash" access="rx" start="0x8000000" size="16384"/>
       <memory device-size="6" name="flash" access="rx" start="0x8000000" size="32768"/>
-      <memory name="eeprom" access="rwx" start="0x8080000" size="1024"/>
+      <memory name="eeprom" access="r" start="0x8080000" size="1024"/>
       <memory name="sram1" access="rwx" start="0x20000000" size="8192"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD"/>

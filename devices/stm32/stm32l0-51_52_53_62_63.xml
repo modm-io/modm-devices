@@ -86,10 +86,17 @@
     <valid-device>stm32l063c8u6</valid-device>
     <valid-device>stm32l063r8t6</valid-device>
     <valid-device>stm32l063r8t7</valid-device>
-    <driver name="core" type="cortex-m0+">
+    <attribute-die value="DIE417"/>
+    <driver name="core" type="cortex-m0plus" revision="r0p0">
+      <attribute-cmsis-define device-name="51" value="STM32L051xx"/>
+      <attribute-cmsis-define device-name="52" value="STM32L052xx"/>
+      <attribute-cmsis-define device-name="53" value="STM32L053xx"/>
+      <attribute-cmsis-define device-name="62" value="STM32L062xx"/>
+      <attribute-cmsis-define device-name="63" value="STM32L063xx"/>
+      <attribute-cmsis-header value="stm32l0xx"/>
       <memory device-size="6" name="flash" access="rx" start="0x8000000" size="32768"/>
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="65536"/>
-      <memory name="eeprom" access="rwx" start="0x8080000" size="2048"/>
+      <memory name="eeprom" access="r" start="0x8080000" size="2048"/>
       <memory name="sram1" access="rwx" start="0x20000000" size="8192"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD"/>

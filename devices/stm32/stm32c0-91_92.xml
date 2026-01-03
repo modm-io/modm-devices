@@ -35,7 +35,11 @@
     <valid-device>stm32c092rbt6</valid-device>
     <valid-device>stm32c092rci6</valid-device>
     <valid-device>stm32c092rct6</valid-device>
-    <driver name="core" type="cortex-m0+">
+    <attribute-die value="DIE44D"/>
+    <driver name="core" type="cortex-m0plus" revision="r0p1">
+      <attribute-cmsis-define device-name="91" value="STM32C091xx"/>
+      <attribute-cmsis-define device-name="92" value="STM32C092xx"/>
+      <attribute-cmsis-header value="stm32c0xx"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
       <memory device-name="92" name="sram1" access="rwx" start="0x20000000" size="30720"/>

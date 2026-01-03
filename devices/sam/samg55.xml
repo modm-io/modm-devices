@@ -8,7 +8,7 @@
     <valid-device>samg55j19a-aut</valid-device>
     <valid-device>samg55j19a-mu</valid-device>
     <valid-device>samg55j19a-mut</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
       <vector position="0" name="SUPC"/>
       <vector position="1" name="RSTC"/>
       <vector position="2" name="RTC"/>

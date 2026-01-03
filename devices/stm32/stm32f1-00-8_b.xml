@@ -7,7 +7,10 @@
     <invalid-device>stm32f100cbh6</invalid-device>
     <invalid-device>stm32f100v8h6</invalid-device>
     <invalid-device>stm32f100vbh6</invalid-device>
-    <driver name="core" type="cortex-m3">
+    <attribute-die value="DIE420"/>
+    <driver name="core" type="cortex-m3" revision="r1p1">
+      <attribute-cmsis-define value="STM32F100xB"/>
+      <attribute-cmsis-header value="stm32f1xx"/>
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="65536"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory name="sram1" access="rwx" start="0x20000000" size="8192"/>

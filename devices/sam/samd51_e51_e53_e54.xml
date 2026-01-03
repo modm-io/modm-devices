@@ -121,7 +121,7 @@
     <valid-device>same54p20a-ctf</valid-device>
     <valid-device>same54p20a-ctu</valid-device>
     <valid-device>same54p20a-ctz</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
       <vector position="0" name="PM"/>
       <vector position="1" name="MCLK"/>
       <vector position="2" name="OSCCTRL_XOSC0"/>

@@ -14,7 +14,10 @@
     <valid-device>stm32f302r6t6</valid-device>
     <valid-device>stm32f302r8t6</valid-device>
     <valid-device>stm32f302r8t7</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <attribute-die value="DIE439"/>
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
+      <attribute-cmsis-define value="STM32F302x8"/>
+      <attribute-cmsis-header value="stm32f3xx"/>
       <memory device-size="6" name="flash" access="rx" start="0x8000000" size="32768"/>
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="65536"/>
       <memory name="sram1" access="rwx" start="0x20000000" size="16384"/>

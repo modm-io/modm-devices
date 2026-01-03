@@ -10,17 +10,23 @@
     <valid-device>stm32l100rbt6</valid-device>
     <valid-device>stm32l100rbt6a</valid-device>
     <valid-device>stm32l100rct6</valid-device>
-    <driver name="core" type="cortex-m3">
+    <attribute-die device-size="6|8|b" device-variant="" value="DIE416"/>
+    <attribute-die device-size="c" value="DIE427"/>
+    <attribute-die device-variant="a" value="DIE429"/>
+    <driver name="core" type="cortex-m3" revision="r1p1">
+      <attribute-cmsis-define device-size="6|8|b" device-variant="" value="STM32L100xB"/>
+      <attribute-cmsis-define device-variant="a" value="STM32L100xBA"/>
+      <attribute-cmsis-define device-size="c" value="STM32L100xC"/>
+      <attribute-cmsis-header value="stm32l1xx"/>
       <memory device-pin="c" name="flash" access="rx" start="0x8000000" size="32768"/>
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="65536"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
-      <memory device-size="6|8|b" name="eeprom" access="rwx" start="0x8080000" size="4096"/>
-      <memory device-size="c" name="eeprom" access="rwx" start="0x8080000" size="8192"/>
-      <memory device-pin="c" device-variant="" name="sram1" access="rwx" start="0x20000000" size="4096"/>
-      <memory device-size="8" device-variant="" name="sram1" access="rwx" start="0x20000000" size="8192"/>
-      <memory device-size="6|8|b" device-variant="a" name="sram1" access="rwx" start="0x20000000" size="10240"/>
-      <memory device-size="b" device-variant="" name="sram1" access="rwx" start="0x20000000" size="10240"/>
+      <memory device-size="6|8|b" name="eeprom" access="r" start="0x8080000" size="2048"/>
+      <memory device-size="c" name="eeprom" access="r" start="0x8080000" size="4096"/>
+      <memory device-pin="c" name="sram1" access="rwx" start="0x20000000" size="4096"/>
+      <memory device-size="8" name="sram1" access="rwx" start="0x20000000" size="8192"/>
+      <memory device-size="b" name="sram1" access="rwx" start="0x20000000" size="10240"/>
       <memory device-size="c" name="sram1" access="rwx" start="0x20000000" size="16384"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD"/>

@@ -38,7 +38,7 @@
     <valid-device>saml22n18a-an</valid-device>
     <valid-device>saml22n18a-au</valid-device>
     <valid-device>saml22n18a-cfu</valid-device>
-    <driver name="core" type="cortex-m0+">
+    <driver name="core" type="cortex-m0plus" revision="r0p1">
       <vector position="0" name="SYSTEM"/>
       <vector position="1" name="WDT"/>
       <vector position="2" name="RTC"/>

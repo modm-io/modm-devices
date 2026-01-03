@@ -13,7 +13,11 @@
     <valid-device>stm32f102c6t6</valid-device>
     <valid-device>stm32f102r4t6</valid-device>
     <valid-device>stm32f102r6t6</valid-device>
-    <driver name="core" type="cortex-m3">
+    <attribute-die value="DIE412"/>
+    <driver name="core" type="cortex-m3" revision="r1p1">
+      <attribute-cmsis-define device-name="01" value="STM32F101x6"/>
+      <attribute-cmsis-define device-name="02" value="STM32F102x6"/>
+      <attribute-cmsis-header value="stm32f1xx"/>
       <memory device-size="4" name="flash" access="rx" start="0x8000000" size="16384"/>
       <memory device-size="6" name="flash" access="rx" start="0x8000000" size="32768"/>
       <memory device-size="4" name="sram1" access="rwx" start="0x20000000" size="4096"/>

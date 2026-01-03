@@ -10,7 +10,7 @@
     <valid-device>samg54g19-xx</valid-device>
     <valid-device>samg54j19-mu</valid-device>
     <valid-device>samg54n19-au</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
       <vector position="0" name="SUPC"/>
       <vector position="1" name="RSTC"/>
       <vector position="2" name="RTC"/>

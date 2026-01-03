@@ -33,7 +33,10 @@
     <valid-device>stm32f205zft6</valid-device>
     <valid-device>stm32f205zgt6</valid-device>
     <valid-device>stm32f205zgt7</valid-device>
-    <driver name="core" type="cortex-m3">
+    <attribute-die value="DIE411"/>
+    <driver name="core" type="cortex-m3" revision="r2p1">
+      <attribute-cmsis-define value="STM32F205xx"/>
+      <attribute-cmsis-header value="stm32f2xx"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288"/>

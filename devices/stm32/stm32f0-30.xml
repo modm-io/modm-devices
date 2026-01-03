@@ -10,7 +10,14 @@
     <valid-device>stm32f030k6t6</valid-device>
     <valid-device>stm32f030r8t6</valid-device>
     <valid-device>stm32f030rct6</valid-device>
-    <driver name="core" type="cortex-m0">
+    <attribute-die device-size="8" value="DIE440"/>
+    <attribute-die device-size="c" value="DIE442"/>
+    <attribute-die device-size="4|6" value="DIE444"/>
+    <driver name="core" type="cortex-m0" revision="r0p0">
+      <attribute-cmsis-define device-size="4|6" value="STM32F030x6"/>
+      <attribute-cmsis-define device-size="8" value="STM32F030x8"/>
+      <attribute-cmsis-define device-size="c" value="STM32F030xC"/>
+      <attribute-cmsis-header value="stm32f0xx"/>
       <memory device-pin="f" name="flash" access="rx" start="0x8000000" size="16384"/>
       <memory device-size="6" name="flash" access="rx" start="0x8000000" size="32768"/>
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="65536"/>

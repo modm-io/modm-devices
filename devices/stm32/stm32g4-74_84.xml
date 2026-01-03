@@ -79,7 +79,11 @@
     <valid-device>stm32g484ret7</valid-device>
     <valid-device>stm32g484veh6</valid-device>
     <valid-device>stm32g484vet6</valid-device>
-    <driver name="core" type="cortex-m4f">
+    <attribute-die value="DIE469"/>
+    <driver name="core" type="cortex-m4" fpu="fpv4-sp-d16" revision="r0p1">
+      <attribute-cmsis-define device-name="74" value="STM32G474xx"/>
+      <attribute-cmsis-define device-name="84" value="STM32G484xx"/>
+      <attribute-cmsis-header value="stm32g4xx"/>
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288"/>
@@ -279,7 +283,8 @@
       <instance value="1"/>
     </driver>
     <driver name="rcc" type="stm32-v1.0">
-      <max-frequency value="170000000"/>
+      <max-frequency device-name="84" value="150000000"/>
+      <max-frequency device-name="74" value="170000000"/>
     </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v1.1"/>

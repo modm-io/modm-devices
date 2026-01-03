@@ -64,14 +64,24 @@
     <valid-device>stm32u585vit7q</valid-device>
     <valid-device>stm32u585zit6</valid-device>
     <valid-device>stm32u585zit6q</valid-device>
-    <driver name="core" type="cortex-m33f">
-      <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
-      <memory device-size="i" name="flash" access="rx" start="0x8000000" size="2097152"/>
-      <memory name="sram1" access="rwx" start="0x20000000" size="196608"/>
-      <memory name="sram2" access="rwx" start="0x20030000" size="65536"/>
-      <memory name="sram3" access="rwx" start="0x20040000" size="524288"/>
-      <memory name="sram4" access="rwx" start="0x28000000" size="16384"/>
-      <memory name="bkpsram" access="rwx" start="0x40036400" size="2048"/>
+    <attribute-die value="DIE482"/>
+    <driver name="core" type="cortex-m33" fpu="fpv5-sp-d16" revision="r0p0">
+      <attribute-cmsis-define device-name="75" value="STM32U575xx"/>
+      <attribute-cmsis-define device-name="85" value="STM32U585xx"/>
+      <attribute-cmsis-header value="stm32u5xx"/>
+      <memory device-size="g" name="flash_ns" access="rx" start="0x8000000" size="1048576"/>
+      <memory device-size="i" name="flash_ns" access="rx" start="0x8000000" size="2097152"/>
+      <memory device-size="g" name="flash_s" access="rx" start="0xC000000" size="1048576" alias="flash_ns"/>
+      <memory device-size="i" name="flash_s" access="rx" start="0xC000000" size="2097152" alias="flash_ns"/>
+      <memory name="sram1_ns" access="rwx" start="0x20000000" size="196608"/>
+      <memory name="sram2_ns" access="rwx" start="0x20030000" size="65536"/>
+      <memory name="sram3_ns" access="rwx" start="0x20040000" size="524288"/>
+      <memory name="sram4_ns" access="rwx" start="0x28000000" size="16384"/>
+      <memory name="sram1_s" access="rwx" start="0x30000000" size="196608" alias="sram1_ns"/>
+      <memory name="sram2_s" access="rwx" start="0x30030000" size="65536" alias="sram2_ns"/>
+      <memory name="sram3_s" access="rwx" start="0x30040000" size="524288" alias="sram3_ns"/>
+      <memory name="sram4_s" access="rwx" start="0x38000000" size="16384" alias="sram4_ns"/>
+      <memory name="backup" access="rwx" start="0x40036400" size="2048"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD_PVM"/>
       <vector position="2" name="RTC"/>

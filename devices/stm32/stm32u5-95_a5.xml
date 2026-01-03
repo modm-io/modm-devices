@@ -27,7 +27,6 @@
     <valid-device>stm32u595zjy6q</valid-device>
     <valid-device>stm32u5a5ajh6</valid-device>
     <valid-device>stm32u5a5ajh6q</valid-device>
-    <valid-device>stm32u5a5qii6q</valid-device>
     <valid-device>stm32u5a5qji6</valid-device>
     <valid-device>stm32u5a5qji6q</valid-device>
     <valid-device>stm32u5a5rjt6</valid-device>
@@ -37,15 +36,28 @@
     <valid-device>stm32u5a5zjt6</valid-device>
     <valid-device>stm32u5a5zjt6q</valid-device>
     <valid-device>stm32u5a5zjy6q</valid-device>
-    <driver name="core" type="cortex-m33f">
-      <memory device-size="i" name="flash" access="rx" start="0x8000000" size="2097152"/>
-      <memory device-size="j" name="flash" access="rx" start="0x8000000" size="4194304"/>
-      <memory name="sram1" access="rwx" start="0x20000000" size="786432"/>
-      <memory name="sram2" access="rwx" start="0x200C0000" size="65536"/>
-      <memory name="sram3" access="rwx" start="0x200D0000" size="851968"/>
-      <memory name="sram5" access="rwx" start="0x201A0000" size="851968"/>
-      <memory name="sram4" access="rwx" start="0x28000000" size="16384"/>
-      <memory name="bkpsram" access="rwx" start="0x40036400" size="2048"/>
+    <attribute-die value="DIE481"/>
+    <driver name="core" type="cortex-m33" fpu="fpv5-sp-d16" revision="r0p0">
+      <attribute-cmsis-define device-name="95" value="STM32U595xx"/>
+      <attribute-cmsis-define device-name="a5" value="STM32U5A5xx"/>
+      <attribute-cmsis-header value="stm32u5xx"/>
+      <memory device-size="i" name="flash_ns" access="rx" start="0x8000000" size="2097152"/>
+      <memory device-size="j" name="flash_ns" access="rx" start="0x8000000" size="4194304"/>
+      <memory device-size="i" name="flash_s" access="rx" start="0xC000000" size="2097152" alias="flash_ns"/>
+      <memory device-size="j" name="flash_s" access="rx" start="0xC000000" size="4194304" alias="flash_ns"/>
+      <memory name="sram1_ns" access="rwx" start="0x20000000" size="786432"/>
+      <memory name="sram2_ns" access="rwx" start="0x200C0000" size="65536"/>
+      <memory name="sram3_ns" access="rwx" start="0x200D0000" size="851968"/>
+      <memory name="sram5_ns" access="rwx" start="0x201A0000" size="851968"/>
+      <memory name="sram_gfxmm_ns" access="rwx" start="0x24000000" size="16777216"/>
+      <memory name="sram4_ns" access="rwx" start="0x28000000" size="16384"/>
+      <memory name="sram1_s" access="rwx" start="0x30000000" size="786432" alias="sram1_ns"/>
+      <memory name="sram2_s" access="rwx" start="0x300C0000" size="65536" alias="sram2_ns"/>
+      <memory name="sram3_s" access="rwx" start="0x300D0000" size="851968" alias="sram3_ns"/>
+      <memory name="sram5_s" access="rwx" start="0x301A0000" size="851968" alias="sram5_ns"/>
+      <memory name="sram_gfxmm_s" access="rwx" start="0x34000000" size="16777216" alias="sram_gfxmm_ns"/>
+      <memory name="sram4_s" access="rwx" start="0x38000000" size="16384" alias="sram4_ns"/>
+      <memory name="backup" access="rwx" start="0x40036400" size="2048"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD_PVM"/>
       <vector position="2" name="RTC"/>
@@ -2724,7 +2736,8 @@
         <pin position="B1" name="VBAT" type="power"/>
         <pin position="B2" name="PE4"/>
         <pin position="B3" name="PE2"/>
-        <pin device-name="95|a5" device-size="i|j" device-variant="q" position="B4" name="VDD11" type="power"/>
+        <pin device-name="95" device-size="i|j" device-variant="q" position="B4" name="VDD11" type="power"/>
+        <pin device-name="a5" device-size="j" device-variant="q" position="B4" name="VDD11" type="power"/>
         <pin device-name="95" device-size="i|j" device-variant="" position="B4" name="PG15"/>
         <pin device-name="a5" device-size="j" device-variant="" position="B4" name="PG15"/>
         <pin position="B5" name="PH3-BOOT0"/>
@@ -2828,7 +2841,8 @@
         <pin position="L7" name="PE11"/>
         <pin position="L8" name="PE15"/>
         <pin position="L9" name="PB11"/>
-        <pin device-name="95|a5" device-size="i|j" device-variant="q" position="L10" name="VSSSMPS" type="power"/>
+        <pin device-name="95" device-size="i|j" device-variant="q" position="L10" name="VSSSMPS" type="power"/>
+        <pin device-name="a5" device-size="j" device-variant="q" position="L10" name="VSSSMPS" type="power"/>
         <pin device-name="95" device-size="i|j" device-variant="" position="L10" name="VCAP" type="power"/>
         <pin device-name="a5" device-size="j" device-variant="" position="L10" name="VCAP" type="power"/>
         <pin position="L11" name="PB12"/>
@@ -2841,13 +2855,16 @@
         <pin position="M6" name="PG0"/>
         <pin position="M7" name="PE9"/>
         <pin position="M8" name="PE13"/>
-        <pin device-name="95|a5" device-size="i|j" device-variant="q" position="M9" name="VDDSMPS" type="power"/>
+        <pin device-name="95" device-size="i|j" device-variant="q" position="M9" name="VDDSMPS" type="power"/>
+        <pin device-name="a5" device-size="j" device-variant="q" position="M9" name="VDDSMPS" type="power"/>
         <pin device-name="95" device-size="i|j" device-variant="" position="M9" name="PG14"/>
         <pin device-name="a5" device-size="j" device-variant="" position="M9" name="PG14"/>
-        <pin device-name="95|a5" device-size="i|j" device-variant="q" position="M10" name="VLXSMPS" type="power"/>
+        <pin device-name="95" device-size="i|j" device-variant="q" position="M10" name="VLXSMPS" type="power"/>
+        <pin device-name="a5" device-size="j" device-variant="q" position="M10" name="VLXSMPS" type="power"/>
         <pin device-name="95" device-size="i|j" device-variant="" position="M10" name="PG13"/>
         <pin device-name="a5" device-size="j" device-variant="" position="M10" name="PG13"/>
-        <pin device-name="95|a5" device-size="i|j" device-variant="q" position="M11" name="VDD11" type="power"/>
+        <pin device-name="95" device-size="i|j" device-variant="q" position="M11" name="VDD11" type="power"/>
+        <pin device-name="a5" device-size="j" device-variant="q" position="M11" name="VDD11" type="power"/>
         <pin device-name="95" device-size="i|j" device-variant="" position="M11" name="PG11"/>
         <pin device-name="a5" device-size="j" device-variant="" position="M11" name="PG11"/>
         <pin position="M12" name="PD10"/>

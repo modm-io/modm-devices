@@ -33,7 +33,10 @@
     <valid-device>stm32f051r8t6</valid-device>
     <valid-device>stm32f051r8t7</valid-device>
     <valid-device>stm32f051t8y6</valid-device>
-    <driver name="core" type="cortex-m0">
+    <attribute-die value="DIE440"/>
+    <driver name="core" type="cortex-m0" revision="r0p0">
+      <attribute-cmsis-define value="STM32F051x8"/>
+      <attribute-cmsis-header value="stm32f0xx"/>
       <memory device-size="4" name="flash" access="rx" start="0x8000000" size="16384"/>
       <memory device-size="6" name="flash" access="rx" start="0x8000000" size="32768"/>
       <memory device-size="8" name="flash" access="rx" start="0x8000000" size="65536"/>

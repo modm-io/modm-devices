@@ -15,16 +15,17 @@
     <valid-device>stm32h7s7l8h6</valid-device>
     <valid-device>stm32h7s7l8h6h</valid-device>
     <valid-device>stm32h7s7z8j6</valid-device>
-    <driver name="core" type="cortex-m7fd">
+    <attribute-die value="DIE485"/>
+    <driver name="core" type="cortex-m7" fpu="fpv5-d16" revision="r0p1">
+      <attribute-cmsis-define device-name="r7" value="STM32H7R7xx"/>
+      <attribute-cmsis-define device-name="s7" value="STM32H7S7xx"/>
+      <attribute-cmsis-header value="stm32h7rsxx"/>
+      <memory name="itcm_ram" access="rwx" start="0x00" size="65536"/>
       <memory name="itcm" access="rwx" start="0x00" size="65536"/>
       <memory name="flash" access="rx" start="0x8000000" size="65536"/>
       <memory name="dtcm" access="rwx" start="0x20000000" size="65536"/>
-      <memory name="d1_sram1" access="rwx" start="0x24000000" size="131072"/>
-      <memory name="d1_sram2" access="rwx" start="0x24020000" size="131072"/>
-      <memory name="d1_sram3" access="rwx" start="0x24040000" size="131072"/>
-      <memory name="d1_sram4" access="rwx" start="0x24060000" size="73728"/>
-      <memory name="d2_sram1" access="rwx" start="0x30000000" size="16384"/>
-      <memory name="d2_sram2" access="rwx" start="0x30004000" size="16384"/>
+      <memory name="d1_sram" access="rwx" start="0x24000000" size="466944"/>
+      <memory name="d2_sram1" access="rwx" start="0x30000000" size="32768"/>
       <memory name="backup" access="rwx" start="0x38800000" size="4096"/>
       <vector position="0" name="PVD_PVM"/>
       <vector position="2" name="DTS"/>
@@ -282,7 +283,7 @@
     <driver name="pwr" type="stm32-v1.0"/>
     <driver name="ramecc" type="stm32-v1.0"/>
     <driver name="rcc" type="stm32-v1.0">
-      <max-frequency value="600000000"/>
+      <max-frequency value="550000000"/>
     </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-rtc2_v2_u5_cube"/>

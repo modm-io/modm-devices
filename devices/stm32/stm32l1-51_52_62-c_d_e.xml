@@ -100,17 +100,42 @@
     <valid-device>stm32l162zct6</valid-device>
     <valid-device>stm32l162zdt6</valid-device>
     <valid-device>stm32l162zet6</valid-device>
-    <driver name="core" type="cortex-m3">
+    <attribute-die device-pin="c|r|u|v" device-size="c" device-variant="" value="DIE427"/>
+    <attribute-die device-pin="q|z" device-size="c|d" device-variant="" value="DIE436"/>
+    <attribute-die device-pin="r|v" device-size="c" device-variant="a" value="DIE436"/>
+    <attribute-die device-pin="r|v" device-size="d" device-variant="" value="DIE436"/>
+    <attribute-die device-size="d" device-variant="x" value="DIE437"/>
+    <attribute-die device-size="e" device-variant="" value="DIE437"/>
+    <driver name="core" type="cortex-m3" revision="r1p1">
+      <attribute-cmsis-define device-name="51" device-pin="c|r|u|v" device-size="c" device-variant="" value="STM32L151xC"/>
+      <attribute-cmsis-define device-name="51" device-pin="q|z" device-size="c" device-variant="" value="STM32L151xCA"/>
+      <attribute-cmsis-define device-name="51" device-pin="r|v" device-size="c" device-variant="a" value="STM32L151xCA"/>
+      <attribute-cmsis-define device-name="51" device-size="d" device-variant="" value="STM32L151xD"/>
+      <attribute-cmsis-define device-name="51" device-variant="x" value="STM32L151xDX"/>
+      <attribute-cmsis-define device-name="51" device-size="e" value="STM32L151xE"/>
+      <attribute-cmsis-define device-name="52" device-pin="c|r|u|v" device-size="c" device-variant="" value="STM32L152xC"/>
+      <attribute-cmsis-define device-name="52" device-pin="q|z" device-size="c" device-variant="" value="STM32L152xCA"/>
+      <attribute-cmsis-define device-name="52" device-pin="r|v" device-size="c" device-variant="a" value="STM32L152xCA"/>
+      <attribute-cmsis-define device-name="52" device-size="d" device-variant="" value="STM32L152xD"/>
+      <attribute-cmsis-define device-name="52" device-variant="x" value="STM32L152xDX"/>
+      <attribute-cmsis-define device-name="52" device-size="e" value="STM32L152xE"/>
+      <attribute-cmsis-define device-name="62" device-pin="r|v" device-size="c" device-variant="" value="STM32L162xC"/>
+      <attribute-cmsis-define device-name="62" device-pin="q|z" device-size="c" device-variant="" value="STM32L162xCA"/>
+      <attribute-cmsis-define device-name="62" device-pin="r|v" device-size="c" device-variant="a" value="STM32L162xCA"/>
+      <attribute-cmsis-define device-name="62" device-size="d" device-variant="" value="STM32L162xD"/>
+      <attribute-cmsis-define device-name="62" device-variant="x" value="STM32L162xDX"/>
+      <attribute-cmsis-define device-name="62" device-size="e" value="STM32L162xE"/>
+      <attribute-cmsis-header value="stm32l1xx"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
       <memory device-size="d" name="flash" access="rx" start="0x8000000" size="393216"/>
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288"/>
-      <memory device-size="c" name="eeprom" access="rwx" start="0x8080000" size="8192"/>
-      <memory device-size="d" name="eeprom" access="rwx" start="0x8080000" size="12288"/>
-      <memory device-size="e" name="eeprom" access="rwx" start="0x8080000" size="16384"/>
+      <memory device-size="c" name="eeprom" access="r" start="0x8080000" size="8192"/>
+      <memory device-name="62" device-size="e" name="eeprom" access="r" start="0x8080000" size="12288"/>
+      <memory device-name="51|52|62" device-size="d" name="eeprom" access="r" start="0x8080000" size="12288"/>
+      <memory device-name="51|52" device-size="e" name="eeprom" access="r" start="0x8080000" size="16384"/>
       <memory device-size="c" name="sram1" access="rwx" start="0x20000000" size="32768"/>
-      <memory device-size="d" device-variant="" name="sram1" access="rwx" start="0x20000000" size="49152"/>
-      <memory device-size="d" device-variant="x" name="sram1" access="rwx" start="0x20000000" size="81920"/>
-      <memory device-size="e" device-variant="" name="sram1" access="rwx" start="0x20000000" size="81920"/>
+      <memory device-size="d" name="sram1" access="rwx" start="0x20000000" size="49152"/>
+      <memory device-size="e" name="sram1" access="rwx" start="0x20000000" size="81920"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD"/>
       <vector position="2" name="TAMPER_STAMP"/>
@@ -156,7 +181,7 @@
       <vector position="42" name="USB_FS_WKUP"/>
       <vector position="43" name="TIM6"/>
       <vector position="44" name="TIM7"/>
-      <vector device-size="d" position="45" name="SDIO"/>
+      <vector device-size="d" device-variant="" position="45" name="SDIO"/>
       <vector position="46" name="TIM5"/>
       <vector position="47" name="SPI3"/>
       <vector device-size="d|e" position="48" name="UART4"/>
