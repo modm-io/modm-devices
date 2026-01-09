@@ -489,11 +489,7 @@ def fixMemoryForDevice(did, memories: dict[str, dict], header) -> list[dict]:
         mems[name] = data
 
     # Correct memories for specific devices
-    if did.string.startswith("stm32l083"):
-        # https://github.com/Open-CMSIS-Pack/STM32L0xx_DFP/pull/2
-        mems["sram"]["size"] = 0x00005000
-
-    elif did.family == "f2":
+    if did.family == "f2":
         # Split SRAM1 into SRAM1/2
         mems["sram1"] = mems.pop("sram")
         add_ram(mems, "sram2", 16*1024, target="sram1")
@@ -527,10 +523,6 @@ def fixMemoryForDevice(did, memories: dict[str, dict], header) -> list[dict]:
         # Fix missing alias, ITCM_FLASH is faster
         mems["flash"]["alias"] = "itcm_flash"
 
-    elif did.string.startswith("stm32g0b0vet"):
-        # https://github.com/Open-CMSIS-Pack/STM32G0xx_DFP/pull/3
-        mems["sram"]["size"] = 0x00024000
-
     elif did.family == "g4":
         # Fix missing CCM and SRAM2
         sizes = header.get_memory_sizes()
@@ -559,10 +551,6 @@ def fixMemoryForDevice(did, memories: dict[str, dict], header) -> list[dict]:
             d2_sram2, d2_sram3 = 128, 32
             # CM4 also missing d3_SRAM
             mems["d3_sram"] = {"start": 0x38000000, "size": 64*1024, "access": "rwx"}
-        # STM32H755/57 has the wrong size d2_sram1
-        if did.name in ["55", "57"] and did.get("core") == "m4":
-            # https://github.com/Open-CMSIS-Pack/STM32H7xx_DFP/pull/7
-            mems["d2_sram1"]["size"] = 0x40000
 
         if d2_sram3: add_ram(mems, "d2_sram3", d2_sram3*1024, target="d2_sram1")
         if d2_sram2: add_ram(mems, "d2_sram2", d2_sram2*1024, target="d2_sram1")

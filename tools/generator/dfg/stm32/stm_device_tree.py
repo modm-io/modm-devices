@@ -119,8 +119,6 @@ class STMDeviceTree:
         # Find the correct CMSIS header
         dfp_compile = dfp_findall("compile")[0].get("define")
         p["cmsis_header"] = cmsis_header = dfp_folder[:-4].lower()
-        # https://github.com/Open-CMSIS-Pack/STM32H7xx_DFP/pull/7
-        if did.string == "stm32h730ibt6q": dfp_compile = "STM32H730xxQ"
         stm_header = STMHeader(did, cmsis_header, dfp_compile)
         if not stm_header.is_valid:
             LOGGER.error("CMSIS Header invalid for %s", did.string)
