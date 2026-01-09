@@ -182,7 +182,7 @@
       <vector device-name="99" position="137" name="DSI"/>
       <vector device-name="99" position="138" name="DCACHE2"/>
     </driver>
-    <driver name="adc" type="stm32">
+    <driver name="adc" type="stm32-h5">
       <instance value="1"/>
       <instance value="2"/>
       <instance value="4"/>

@@ -185,7 +185,7 @@
       <vector position="124" name="FMAC"/>
       <vector position="125" name="LSECSSD"/>
     </driver>
-    <driver name="adc" type="stm32">
+    <driver name="adc" type="stm32-h5">
       <instance value="1"/>
       <instance value="4"/>
     </driver>

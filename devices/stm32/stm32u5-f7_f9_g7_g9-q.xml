@@ -187,7 +187,7 @@
       <vector position="139" name="GFXTIM"/>
       <vector position="140" name="JPEG"/>
     </driver>
-    <driver name="adc" type="stm32">
+    <driver name="adc" type="stm32-h5">
       <instance value="1"/>
       <instance value="2"/>
       <instance value="4"/>

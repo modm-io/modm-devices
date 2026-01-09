@@ -198,7 +198,7 @@
       <vector position="129" name="LPTIM5"/>
       <vector position="130" name="LPTIM6"/>
     </driver>
-    <driver name="adc" type="stm32">
+    <driver name="adc" type="stm32-h5">
       <instance value="1"/>
       <instance value="2"/>
     </driver>
@@ -269,7 +269,9 @@
     </driver>
     <driver name="hash" type="stm32-v4.0"/>
     <driver name="hdmi_cec" type="stm32-v2.0"/>
-    <driver name="i2c" type="stm32-v1.1">
+    <driver name="i2c" type="stm32-extended">
+      <feature value="dnf"/>
+      <feature value="fmp"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -307,7 +309,7 @@
     <driver name="pwr" type="stm32-v1.0"/>
     <driver name="ramcfg" type="stm32-v1.0"/>
     <driver name="rcc" type="stm32-v1.0">
-      <max-frequency value="240000000"/>
+      <max-frequency value="250000000"/>
     </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-rtc2_v2_u5_cube"/>
@@ -322,7 +324,7 @@
       <instance value="1"/>
       <instance device-name="63|73" device-pin="a|i|z" value="2"/>
     </driver>
-    <driver name="spi" type="stm32">
+    <driver name="spi" type="stm32-extended">
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -355,7 +357,8 @@
       <instance value="16"/>
       <instance value="17"/>
     </driver>
-    <driver name="uart" type="stm32">
+    <driver name="uart" type="stm32-extended">
+      <feature value="over8"/>
       <instance value="4"/>
       <instance value="5"/>
       <instance value="7"/>
@@ -366,7 +369,8 @@
     <driver name="ucpd" type="stm32-v1.0">
       <instance value="1"/>
     </driver>
-    <driver name="usart" type="stm32">
+    <driver name="usart" type="stm32-extended">
+      <feature value="over8"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
