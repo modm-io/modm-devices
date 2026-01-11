@@ -44,7 +44,7 @@
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
       <memory name="sram1" access="rwx" start="0x20000000" size="32768"/>
-      <memory name="sram2" access="rwx" start="0x20002000" size="8192"/>
+      <memory name="sram2" access="rwx" start="0x20008000" size="8192"/>
       <vector position="0" name="WWDG_IWDG"/>
       <vector position="1" name="PVD_PVM"/>
       <vector position="2" name="RTC_TAMP"/>
@@ -78,7 +78,7 @@
       <vector position="30" name="USART4_LPUART3"/>
       <vector position="31" name="RNG_CRYP"/>
     </driver>
-    <driver name="adc" type="stm32">
+    <driver name="adc" type="stm32-u0">
       <instance value="1"/>
     </driver>
     <driver device-name="83" name="aes" type="stm32-v1.0"/>
@@ -104,9 +104,7 @@
         <wait-state ws="2" hclk-max="56000000"/>
       </latency>
     </driver>
-    <driver name="i2c" type="stm32-extended">
-      <feature value="dnf"/>
-      <feature value="fmp"/>
+    <driver name="i2c" type="stm32-v1.1">
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -130,17 +128,22 @@
     </driver>
     <driver name="pwr" type="stm32-v1.0"/>
     <driver name="rcc" type="stm32-v1.2">
-      <max-frequency value="48000000"/>
+      <max-frequency value="56000000"/>
     </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v3.5"/>
     <driver name="spi" type="stm32">
+      <feature value="data-size"/>
+      <feature value="fifo"/>
+      <feature value="nss-pulse"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
     </driver>
     <driver name="sys" type="stm32">
+      <feature value="cfgr2"/>
       <feature value="exti"/>
+      <feature value="itline"/>
     </driver>
     <driver name="tamp" type="stm32-v2.8"/>
     <driver name="tim" type="stm32-advanced">
@@ -157,7 +160,8 @@
       <instance value="16"/>
     </driver>
     <driver name="tsc" type="stm32-v1.0"/>
-    <driver name="usart" type="stm32">
+    <driver name="usart" type="stm32-extended">
+      <feature value="tcbgt"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -166,7 +170,7 @@
     <driver name="usb" type="stm32-v1.0"/>
     <driver name="vrefbuf" type="stm32-v1.0"/>
     <driver name="wwdg" type="stm32-v2.0"/>
-    <driver name="dma" type="stm32-channel">
+    <driver name="dma" type="stm32-mux">
       <instance value="1"/>
       <instance value="2"/>
       <requests>

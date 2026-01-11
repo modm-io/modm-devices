@@ -558,6 +558,11 @@ def fixMemoryForDevice(did, memories: dict[str, dict], header) -> list[dict]:
         for name, data in mems.items():
             if "flash" not in name: data["access"] = "rwx"
 
+    elif did.family == "u0":
+        # https://github.com/Open-CMSIS-Pack/STM32U0xx_DFP/pull/1
+        if did.name != "31":
+            mems["sram2"]["start"] = 0x20008000
+
     elif did.family == "u5":
         # Fix missing Backup memory
         mems["backup"] = {"start": 0x40036400, "size": 2048, "access": "rwx"}
