@@ -154,6 +154,7 @@ class STMDeviceTree:
                 "alias": m.get("alias", "").lower(),
             }
             for m in (dfp_findall("memory") + dfp_findall("algorithm"))
+            if "gfx" not in m.get("name", m.get("id")).lower()
         }
         p["memories"] = stm.fixMemoryForDevice(did, memories, stm_header)
 
