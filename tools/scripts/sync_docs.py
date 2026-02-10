@@ -30,12 +30,14 @@ def extract(text, key):
 if __name__ == "__main__":
     devices_short = set()
     devices = {}
+    all_devices = {}
     for filename in Path(rootpath).glob("devices/**/*.xml"):
         for d in modm_devices.parser.DeviceParser().parse(str(filename)).get_devices():
             short_device = d.identifier.string.split("@")[0]
             if short_device not in devices_short:
                 devices_short.add(short_device)
                 devices[d] = filename
+            all_devices[d] = filename
 
     families = defaultdict(int)
     for dev in devices:
@@ -55,7 +57,7 @@ if __name__ == "__main__":
 
     # Group by device prefix
     db = defaultdict(dict)
-    for d, f in devices.items():
+    for d, f in all_devices.items():
         if d.identifier.platform == "rp":
             prefix = "rp"
         elif d.identifier.platform == "sam":
