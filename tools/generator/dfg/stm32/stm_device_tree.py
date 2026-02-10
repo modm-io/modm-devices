@@ -141,8 +141,6 @@ class STMDeviceTree:
         elif (max_frequency := device_file.query('//Frequency')):
             LOGGER.warning(f"Fallback to //Frequency for max frequency for {did.string}!")
             max_frequency = int(float(max_frequency[0].text) * 1e6)
-        # https://github.com/Open-CMSIS-Pack/STM32U0xx_DFP/pull/1
-        if did.family == "u0": max_frequency = 56_000_000
         p["max_frequency"] = max_frequency
 
         # Find all internal memories
