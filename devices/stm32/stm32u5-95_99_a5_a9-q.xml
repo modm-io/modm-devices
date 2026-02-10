@@ -50,13 +50,11 @@
       <memory name="sram2_ns" access="rwx" start="0x200C0000" size="65536"/>
       <memory name="sram3_ns" access="rwx" start="0x200D0000" size="851968"/>
       <memory name="sram5_ns" access="rwx" start="0x201A0000" size="851968"/>
-      <memory name="sram_gfxmm_ns" access="rwx" start="0x24000000" size="16777216"/>
       <memory name="sram4_ns" access="rwx" start="0x28000000" size="16384"/>
       <memory name="sram1_s" access="rwx" start="0x30000000" size="786432" alias="sram1_ns"/>
       <memory name="sram2_s" access="rwx" start="0x300C0000" size="65536" alias="sram2_ns"/>
       <memory name="sram3_s" access="rwx" start="0x300D0000" size="851968" alias="sram3_ns"/>
       <memory name="sram5_s" access="rwx" start="0x301A0000" size="851968" alias="sram5_ns"/>
-      <memory name="sram_gfxmm_s" access="rwx" start="0x34000000" size="16777216" alias="sram_gfxmm_ns"/>
       <memory name="sram4_s" access="rwx" start="0x38000000" size="16384" alias="sram4_ns"/>
       <memory name="backup" access="rwx" start="0x40036400" size="2048"/>
       <vector position="0" name="WWDG"/>

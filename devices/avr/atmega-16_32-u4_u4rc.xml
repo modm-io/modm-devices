@@ -146,6 +146,10 @@
         <signal driver="adc" name="6"/>
         <signal driver="jtag" name="tdo"/>
       </gpio>
+      <gpio port="F" pin="7">
+        <signal driver="adc" name="7"/>
+        <signal driver="jtag" name="tdi"/>
+      </gpio>
     </driver>
   </device>
 </modm>
