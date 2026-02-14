@@ -22,7 +22,7 @@ dfg.logger.configure_logger(args.log_level)
 
 devices = {}
 for dev in args.filter:
-    files = Path("raw-device-data/nrf-devices/nrf").glob(dev.lower() + "_*.ld")
+    files = Path("ext/nrfx/bsp/stable/mdk").glob(dev.lower() + "[0-9]*_*.ld")
     for filename in files:
         device = NRFDeviceTree.from_file(filename)
         if device is None: continue;

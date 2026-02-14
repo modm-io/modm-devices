@@ -25,7 +25,8 @@ class NRFIdentifier:
         string = string.lower()
 
         if string.startswith("nrf"):
-            matchString = r"nrf(?P<family>[0-9]{2})(?P<series>[0-9]{3})-(?P<package>\w{2})(?P<function>\w{2})"
+            matchString = r"nrf(?P<family>[0-9]{2})(?P<series>[0-9]{2,3})-(?P<package>\w{2})(?P<function>\w{2})"
+            if "nrf53" in string: matchString += r"-(?P<core>\w+)"
             match = re.search(matchString, string)
             if match:
                 i = DeviceIdentifier("{platform}{family}{series}-{package}{function}")
@@ -34,8 +35,10 @@ class NRFIdentifier:
                 i.set("series", match.group("series").lower())
                 i.set("package", match.group("package").lower())
                 i.set("function", match.group("function").lower())
+                if "nrf53" in string:
+                    i.naming_schema += "@{core}"
+                    i.set("core", match.group("core").lower()[:3])
                 return i
-
 
         LOGGER.error("Parse Error: unknown platform. Device string: '%s'", string)
         exit(1)

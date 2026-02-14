@@ -15,6 +15,9 @@ ext/%:
 ext/stm32-cube-hal-drivers:
 	@git clone https://github.com/modm-ext/stm32-cube-hal-drivers.git $@
 
+ext/nrfx:
+	@git clone https://github.com/nordicsemiconductor/nrfx.git $@
+
 .PHONY: init
 init: \
 	ext/cmsis-header-stm32 ext/cmsis-5-partial ext/stm32-cube-hal-drivers \
@@ -95,12 +98,12 @@ generate-sam:	generate-samda generate-samd1 generate-samd2 generate-samd09 \
 
 # NRF device files
 .PHONY: generate-nrf%
-generate-nrf%: raw-device-data/nrf-devices ext/cmsis-5-partial
+generate-nrf%: raw-device-data/nrf-devices ext/cmsis-5-partial ext/nrfx
 	@rm -f ../../devices/nrf/$(@:generate-%=%)*
 	./nrf_generator.py $(@:generate-%=%)
 
 .PHONY: generate-nrf
-generate-nrf: generate-nrf52810 generate-nrf52811 generate-nrf52820 generate-nrf52832 generate-nrf52833 generate-nrf52840
+generate-nrf:	generate-nrf51 generate-nrf52 generate-nrf53
 
 
 # STM32 device files
