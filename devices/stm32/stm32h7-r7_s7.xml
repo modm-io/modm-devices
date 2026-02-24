@@ -347,9 +347,7 @@
       <instance value="3"/>
     </driver>
     <driver name="usb_otg_fs" type="stm32-v3.0"/>
-    <driver name="usb_otg_fs1" type="stm32-v1.0"/>
-    <driver device-pin="l" name="usb_otg_hs" type="stm32-otghs_cube"/>
-    <driver device-pin="l" name="usb_otg_hs1" type="stm32-v1.0"/>
+    <driver device-pin="l" name="usb_otg_hs" type="stm32-v2.0"/>
     <driver device-pin="l" name="usbpd" type="stm32-v1.4"/>
     <driver name="vrefbuf" type="stm32-v1.0"/>
     <driver name="wwdg" type="stm32-v2.0"/>

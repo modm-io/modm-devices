@@ -339,7 +339,7 @@
     </driver>
     <driver name="octospi" type="stm32-v3.0">
       <instance value="1"/>
-      <instance device-pin="b|n" value="2"/>
+      <instance device-size="j" value="2"/>
     </driver>
     <driver name="octospim" type="stm32-v3.0"/>
     <driver name="opamp" type="stm32-v1.0">

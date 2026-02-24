@@ -1692,8 +1692,8 @@
         <pin device-name="22" device-size="c|e" device-temperature="6" position="54" name="PB15"/>
         <pin device-name="30" device-size="8" device-temperature="6|7" position="54" name="PB15"/>
         <pin device-name="22|32" device-size="e" device-temperature="6|7" position="54" name="PB15"/>
-        <pin device-name="23" device-size="c|e" device-temperature="6" position="55" name="V12PHYHS" type="power"/>
-        <pin device-name="33" device-size="e" device-temperature="6" position="55" name="V12PHYHS" type="power"/>
+        <pin device-name="23" device-size="c|e" device-temperature="6" position="55" name="V12_PHYHS" type="power"/>
+        <pin device-name="33" device-size="e" device-temperature="6" position="55" name="V12_PHYHS" type="power"/>
         <pin device-name="22" device-size="c|e" device-temperature="6" position="55" name="PD8"/>
         <pin device-name="30" device-size="8" device-temperature="6|7" position="55" name="PD8"/>
         <pin device-name="22|32" device-size="e" device-temperature="6|7" position="55" name="PD8"/>
@@ -1831,9 +1831,9 @@
         <pin device-name="23|33" device-size="e" device-temperature="6|7" position="75" name="REXTPHYHS" type="monoio"/>
         <pin device-name="22" device-size="c|e" device-temperature="6" position="75" name="PB14"/>
         <pin device-name="22|32" device-size="e" device-temperature="6|7" position="75" name="PB14"/>
-        <pin device-name="23" device-size="c|e" device-temperature="6" position="76" name="V12PHYHS" type="power"/>
-        <pin device-name="30" device-size="8" device-temperature="6|7" position="76" name="V12PHYHS" type="power"/>
-        <pin device-name="23|33" device-size="e" device-temperature="6|7" position="76" name="V12PHYHS" type="power"/>
+        <pin device-name="23" device-size="c|e" device-temperature="6" position="76" name="V12_PHYHS" type="power"/>
+        <pin device-name="30" device-size="8" device-temperature="6|7" position="76" name="V12_PHYHS" type="power"/>
+        <pin device-name="23|33" device-size="e" device-temperature="6|7" position="76" name="V12_PHYHS" type="power"/>
         <pin device-name="22" device-size="c|e" device-temperature="6" position="76" name="PB15"/>
         <pin device-name="22|32" device-size="e" device-temperature="6|7" position="76" name="PB15"/>
         <pin device-name="23" device-size="c|e" device-temperature="6" position="77" name="PB14"/>
@@ -2067,8 +2067,8 @@
         <pin device-name="23|33" device-size="e" device-temperature="6|7" position="94" name="REXTPHYHS" type="monoio"/>
         <pin device-name="22" device-size="c|e" device-temperature="6" position="94" name="PB14"/>
         <pin device-name="22|32" device-size="e" device-temperature="6|7" position="94" name="PB14"/>
-        <pin device-name="23" device-size="c|e" device-temperature="6" position="95" name="V12PHYHS" type="power"/>
-        <pin device-name="23|33" device-size="e" device-temperature="6|7" position="95" name="V12PHYHS" type="power"/>
+        <pin device-name="23" device-size="c|e" device-temperature="6" position="95" name="V12_PHYHS" type="power"/>
+        <pin device-name="23|33" device-size="e" device-temperature="6|7" position="95" name="V12_PHYHS" type="power"/>
         <pin device-name="22" device-size="c|e" device-temperature="6" position="95" name="PB15"/>
         <pin device-name="22|32" device-size="e" device-temperature="6|7" position="95" name="PB15"/>
         <pin device-name="23" device-size="c|e" device-temperature="6" position="96" name="PB14"/>
@@ -2361,7 +2361,7 @@
         <pin position="H7" name="VCAP_1" type="power"/>
         <pin position="H8" name="PE11"/>
         <pin position="H9" name="PD11"/>
-        <pin position="H10" name="V12PHYHS" type="power"/>
+        <pin position="H10" name="V12_PHYHS" type="power"/>
         <pin position="H11" name="REXTPHYHS" type="monoio"/>
         <pin position="H12" name="PG5"/>
         <pin position="J1" name="VSSA" type="power"/>
@@ -2532,9 +2532,9 @@
         <pin position="J10" name="VSS" type="power"/>
         <pin position="J12" name="VDD" type="power"/>
         <pin position="J13" name="VDD" type="power"/>
-        <pin device-name="23" device-size="c|e" device-temperature="6" position="J14" name="V12PHYHS" type="power"/>
-        <pin device-name="30" device-size="8" device-temperature="6|7" position="J14" name="V12PHYHS" type="power"/>
-        <pin device-name="23|33" device-size="e" device-temperature="6|7" position="J14" name="V12PHYHS" type="power"/>
+        <pin device-name="23" device-size="c|e" device-temperature="6" position="J14" name="V12_PHYHS" type="power"/>
+        <pin device-name="30" device-size="8" device-temperature="6|7" position="J14" name="V12_PHYHS" type="power"/>
+        <pin device-name="23|33" device-size="e" device-temperature="6|7" position="J14" name="V12_PHYHS" type="power"/>
         <pin device-name="22" device-size="c|e" device-temperature="6" position="J14" name="PG7"/>
         <pin device-name="22|32" device-size="e" device-temperature="6|7" position="J14" name="PG7"/>
         <pin device-name="23" device-size="c|e" device-temperature="6" position="J15" name="REXTPHYHS" type="monoio"/>
@@ -2685,7 +2685,7 @@
         <pin position="F8" name="PC0"/>
         <pin position="F9" name="VSS" type="power"/>
         <pin position="F10" name="VDD" type="power"/>
-        <pin position="G1" name="V12PHYHS" type="power"/>
+        <pin position="G1" name="V12_PHYHS" type="power"/>
         <pin position="G2" name="REXTPHYHS" type="monoio"/>
         <pin position="G3" name="PB10"/>
         <pin position="G4" name="PE11"/>
