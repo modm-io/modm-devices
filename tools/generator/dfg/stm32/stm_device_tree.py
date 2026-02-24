@@ -179,7 +179,7 @@ class STMDeviceTree:
                             "MBEDTLS", "FREERTOS", "CORTEX_M", "NVIC", "USB_DEVICE",
                             "USB_HOST", "LWIP", "LIBJPEG", "GUI_INTERFACE", "TRACER",
                             "FILEX", "LEVELX", "THREADX", "USBX", "LINKEDLIST", "NETXDUO",
-                            "BOOTPATH", "MEMORYMAP"}
+                            "BOOTPATH", "MEMORYMAP", "USB_OTG_FS1", "USB_OTG_HS1"}
             if any(ip.get("Name").upper().startswith(p) for p in software_ips):
                 continue
 
