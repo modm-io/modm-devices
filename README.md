@@ -12,23 +12,23 @@ These tools and this data set is maintained and curated by
 [@salkinium][] only at [modm-io/modm-devices][modm-devices].
 It is licensed under the MPLv2 license.
 
-Currently data for <!--devicecount-->4557<!--/devicecount--> devices is available.
+Currently data for <!--devicecount-->4568<!--/devicecount--> devices is available.
 Please open an issue or better yet a pull request for additional support.
 
 <!--devicetable-->
 | Family        | Devices | Family        | Devices | Family        | Devices |
 |:--------------|:--------|:--------------|:--------|:--------------|:--------|
 | AT90          |    12   | ATMEGA        |   352   | ATTINY        |   148   |
-| NRF52         |     7   | RP20          |     1   | RP23          |     1   |
-| SAMD1x/D2x/DAx|   304   | SAMD5x/E5x    |   118   | SAME7x/S7x/V7x|    69   |
-| SAMG5x        |    12   | SAML2x        |    82   | STM32C0       |    93   |
-| STM32F0       |   169   | STM32F1       |   174   | STM32F2       |    71   |
-| STM32F3       |   145   | STM32F4       |   354   | STM32F7       |   181   |
-| STM32G0       |   250   | STM32G4       |   338   | STM32H5       |    79   |
-| STM32H7       |   240   | STM32L0       |   352   | STM32L1       |   180   |
-| STM32L4       |   416   | STM32L5       |    44   | STM32U0       |    48   |
-| STM32U3       |    48   | STM32U5       |   177   | STM32WB       |    46   |
-| STM32WL       |    46   |
+| NRF51         |     9   | NRF52         |     8   | NRF53         |     1   |
+| RP20          |     1   | RP23          |     1   | SAMD1x/D2x/DAx|   304   |
+| SAMD5x/E5x    |   118   | SAME7x/S7x/V7x|    69   | SAMG5x        |    12   |
+| SAML2x        |    82   | STM32C0       |    93   | STM32F0       |   169   |
+| STM32F1       |   174   | STM32F2       |    71   | STM32F3       |   145   |
+| STM32F4       |   354   | STM32F7       |   181   | STM32G0       |   250   |
+| STM32G4       |   338   | STM32H5       |    79   | STM32H7       |   240   |
+| STM32L0       |   352   | STM32L1       |   180   | STM32L4       |   416   |
+| STM32L5       |    44   | STM32U0       |    48   | STM32U3       |    48   |
+| STM32U5       |   177   | STM32WB       |    46   | STM32WL       |    46   |
 <!--/devicetable-->
 
 

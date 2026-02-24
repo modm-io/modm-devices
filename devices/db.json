@@ -517,14 +517,30 @@
         "attiny9-ts8r": "avr/attiny-4_5_9_10.xml",
         "attiny9-tshr": "avr/attiny-4_5_9_10.xml"
     },
+    "nrf51": {
+        "nrf51422-xxaa": "nrf/nrf51422_801_802_822_824.xml",
+        "nrf51422-xxab": "nrf/nrf51422_801_802_822_824.xml",
+        "nrf51422-xxac": "nrf/nrf51422_801_802_822_824.xml",
+        "nrf51801-xxab": "nrf/nrf51422_801_802_822_824.xml",
+        "nrf51802-xxaa": "nrf/nrf51422_801_802_822_824.xml",
+        "nrf51822-xxaa": "nrf/nrf51422_801_802_822_824.xml",
+        "nrf51822-xxab": "nrf/nrf51422_801_802_822_824.xml",
+        "nrf51822-xxac": "nrf/nrf51422_801_802_822_824.xml",
+        "nrf51824-xxaa": "nrf/nrf51422_801_802_822_824.xml"
+    },
     "nrf52": {
-        "nrf52810-xxaa": "nrf/nrf52810.xml",
-        "nrf52811-xxaa": "nrf/nrf52811.xml",
-        "nrf52820-xxaa": "nrf/nrf52820.xml",
-        "nrf52832-xxaa": "nrf/nrf52832.xml",
-        "nrf52832-xxab": "nrf/nrf52832.xml",
-        "nrf52833-xxaa": "nrf/nrf52833.xml",
-        "nrf52840-xxaa": "nrf/nrf52840.xml"
+        "nrf52805-xxaa": "nrf/nrf52805_810_811.xml",
+        "nrf52810-xxaa": "nrf/nrf52805_810_811.xml",
+        "nrf52811-xxaa": "nrf/nrf52805_810_811.xml",
+        "nrf52820-xxaa": "nrf/nrf52820_840.xml",
+        "nrf52832-xxaa": "nrf/nrf52832_833.xml",
+        "nrf52832-xxab": "nrf/nrf52832_833.xml",
+        "nrf52833-xxaa": "nrf/nrf52832_833.xml",
+        "nrf52840-xxaa": "nrf/nrf52820_840.xml"
+    },
+    "nrf53": {
+        "nrf5340-xxaa@app": "nrf/nrf5340.xml",
+        "nrf5340-xxaa@net": "nrf/nrf5340.xml"
     },
     "rp": {
         "rp2040": "rp/rp2040.xml",
