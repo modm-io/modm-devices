@@ -531,11 +531,9 @@ def fixMemoryForDevice(did, memories: dict[str, dict], header) -> list[dict]:
             mems["sram1"] = mems.pop("sram")
             add_ram(mems, "sram2", sram2, target="sram1")
 
-    elif did.family == "h5":
-        # Fix missing Backup and SRAM2/3
+    elif did.family == "h5" and did.name in ["03"]:
+        # Fix missing Backup
         sizes = header.get_memory_sizes()
-        if (sram3 := sizes.get("SRAM3")): add_ram(mems, "sram3", sram3, target="sram1")
-        if (sram2 := sizes.get("SRAM2")): add_ram(mems, "sram2", sram2, target="sram1")
         mems["backup"] = {"start": 0x40036400, "size": sizes["BKPSRAM"], "access": "rwx"}
 
     elif did.family == "h7":
