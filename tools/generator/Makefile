@@ -56,13 +56,14 @@ clean_extract:
 	@rm -rf raw-device-data/
 
 .PHONY: update-data-%
-update-data-%:
+update-data-%: update_init
 	rm -rf $(@:update-data-%=raw-device-data/%-devices)
 	@$(MAKE) $(@:update-data-%=raw-device-data/%-devices)
 
+
 .PHONY: update-data
 update-data: update-data-avr update-data-stm32 update-data-sam \
-				update-data-nrf update-data-rp update_init
+				update-data-nrf update-data-rp
 
 
 # AVR device files

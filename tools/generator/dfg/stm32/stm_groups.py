@@ -90,6 +90,17 @@ stm_groups = \
         'name': ['74', '84']
     },
 
+    # STM32H5 devices
+    {
+        'family': ['h5'],
+        'name': ['e4', 'e5', 'f4', 'f5'],
+        'variant': ['']
+    },{
+        'family': ['h5'],
+        'name': ['e4', 'e5', 'f4', 'f5'],
+        'variant': ['q']
+    },
+
     # STM32H7 devices
     {
         'family': ['h7'],
@@ -159,6 +170,16 @@ stm_groups = \
     # STM32L5 devices
     # STM32U0 devices
     # STM32U3 devices
+    {
+        'family': ['u3'],
+        'name': ['b5', 'c5'],
+        'variant': ['']
+    },{
+        'family': ['u3'],
+        'name': ['b5', 'c5'],
+        'variant': ['q']
+    },
+
     # STM32U5 devices
     {
         'family': ['u5'],
