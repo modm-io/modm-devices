@@ -529,18 +529,33 @@
         "nrf51824-xxaa": "nrf/nrf51422_801_802_822_824.xml"
     },
     "nrf52": {
-        "nrf52805-xxaa": "nrf/nrf52805_810_811.xml",
-        "nrf52810-xxaa": "nrf/nrf52805_810_811.xml",
-        "nrf52811-xxaa": "nrf/nrf52805_810_811.xml",
-        "nrf52820-xxaa": "nrf/nrf52820_840.xml",
-        "nrf52832-xxaa": "nrf/nrf52832_833.xml",
-        "nrf52832-xxab": "nrf/nrf52832_833.xml",
-        "nrf52833-xxaa": "nrf/nrf52832_833.xml",
-        "nrf52840-xxaa": "nrf/nrf52820_840.xml"
+        "nrf52805-caaa": "nrf/nrf52805_810_811.xml",
+        "nrf52810-caaa": "nrf/nrf52805_810_811.xml",
+        "nrf52810-qcaa": "nrf/nrf52805_810_811.xml",
+        "nrf52810-qfaa": "nrf/nrf52805_810_811.xml",
+        "nrf52811-caaa": "nrf/nrf52805_810_811.xml",
+        "nrf52811-qcaa": "nrf/nrf52805_810_811.xml",
+        "nrf52811-qfaa": "nrf/nrf52805_810_811.xml",
+        "nrf52820-cfaa": "nrf/nrf52820_840.xml",
+        "nrf52820-qdaa": "nrf/nrf52820_840.xml",
+        "nrf52832-ciaa": "nrf/nrf52832_833.xml",
+        "nrf52832-ciab": "nrf/nrf52832_833.xml",
+        "nrf52832-qfaa": "nrf/nrf52832_833.xml",
+        "nrf52832-qfab": "nrf/nrf52832_833.xml",
+        "nrf52833-cjaa": "nrf/nrf52832_833.xml",
+        "nrf52833-qdaa": "nrf/nrf52832_833.xml",
+        "nrf52833-qiaa": "nrf/nrf52832_833.xml",
+        "nrf52840-ckaa": "nrf/nrf52820_840.xml",
+        "nrf52840-qfaa": "nrf/nrf52820_840.xml",
+        "nrf52840-qiaa": "nrf/nrf52820_840.xml"
     },
     "nrf53": {
-        "nrf5340-xxaa@app": "nrf/nrf5340.xml",
-        "nrf5340-xxaa@net": "nrf/nrf5340.xml"
+        "nrf5340-claa@app": "nrf/nrf5340.xml",
+        "nrf5340-claa@net": "nrf/nrf5340.xml",
+        "nrf5340-cmaa@app": "nrf/nrf5340.xml",
+        "nrf5340-cmaa@net": "nrf/nrf5340.xml",
+        "nrf5340-qkaa@app": "nrf/nrf5340.xml",
+        "nrf5340-qkaa@net": "nrf/nrf5340.xml"
     },
     "rp": {
         "rp2040": "rp/rp2040.xml",

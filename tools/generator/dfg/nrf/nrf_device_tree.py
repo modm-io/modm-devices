@@ -25,6 +25,43 @@ class NRFDeviceTree:
     """
 
     _pin_data_cache = {}
+    _package_code_map = {
+        ('52', '805'): {
+            'WLCSP': ['ca'],
+        },
+        ('52', '810'): {
+            'QFN48': ['qf'],
+            'QFN32': ['qc'],
+            'WLCSP': ['ca'],
+        },
+        ('52', '811'): {
+            'QFN48': ['qf'],
+            'QFN32': ['qc'],
+            'WLCSP': ['ca'],
+        },
+        ('52', '820'): {
+            'QFN40': ['qd'],
+            'WLCSP': ['cf'],
+        },
+        ('52', '832'): {
+            'QFN48': ['qf'],
+            'WLCSP': ['ci'],
+        },
+        ('52', '833'): {
+            'aQFN73': ['qi'],
+            'QFN40': ['qd'],
+            'WLCSP': ['cj'],
+        },
+        ('52', '840'): {
+            'aQFN73': ['qi'],
+            'QFN48': ['qf'],
+            'WLCSP': ['ck'],
+        },
+        ('53', '40'): {
+            'aQFN94': ['qk'],
+            'WLCSP': ['cl', 'cm'],
+        },
+    }
 
     @staticmethod
     def _text_lines(element):
@@ -129,6 +166,36 @@ class NRFDeviceTree:
             tags.add('twi')
 
         return tags
+
+    @staticmethod
+    def _package_codes_for_name(did, package_name):
+        package_map = NRFDeviceTree._package_code_map.get((did.family, did.series), {})
+        return package_map.get(package_name, [])
+
+    @staticmethod
+    def _expanded_device_ids(base_id, pin_packages):
+        package_codes = []
+        for package in pin_packages:
+            for package_code in package.get('codes', []):
+                if package_code not in package_codes:
+                    package_codes.append(package_code)
+
+        if not package_codes:
+            package_map = NRFDeviceTree._package_code_map.get((base_id.family, base_id.series), {})
+            for codes in package_map.values():
+                for package_code in codes:
+                    if package_code not in package_codes:
+                        package_codes.append(package_code)
+
+        if not package_codes:
+            return [base_id]
+
+        ids = []
+        for package_code in package_codes:
+            did = base_id.copy()
+            did.set('package', package_code)
+            ids.append(did)
+        return ids
 
     @staticmethod
     def _pin_data_from_html(did):
@@ -248,7 +315,11 @@ class NRFDeviceTree:
                         special_tags.setdefault(ref, set()).update(tags)
 
             if package_pins:
-                package_pinouts.append({'name': package_name, 'pins': package_pins})
+                package_pinouts.append({
+                    'name': package_name,
+                    'pins': package_pins,
+                    'codes': NRFDeviceTree._package_codes_for_name(did, package_name),
+                })
 
         result = {
             'packages': package_pinouts,
@@ -524,7 +595,8 @@ class NRFDeviceTree:
     @staticmethod
     def _device_tree_from_properties(p):
         tree = DeviceTree('device')
-        tree.ids.append(p['id'])
+        for did in NRFDeviceTree._expanded_device_ids(p['id'], p.get('pin_packages', [])):
+            tree.ids.append(did)
 
         def topLevelOrder(e):
             order = ['attribute-flash', 'attribute-ram', 'attribute-eeprom', 'attribute-core', 'attribute-mcu', 'header', 'attribute-define']
@@ -673,6 +745,8 @@ class NRFDeviceTree:
 
         for package in p.get('pin_packages', []):
             package_node = gpio_driver.addChild('package')
+            if package.get('codes'):
+                package_node.ids = tree.ids.filter(lambda did: did['package'] in package['codes'])
             package_node.setAttribute('name', package['name'])
             for package_pin in package['pins']:
                 pin_node = package_node.addChild('pin')
