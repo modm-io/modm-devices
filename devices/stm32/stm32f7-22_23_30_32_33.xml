@@ -742,8 +742,7 @@
         <signal af="2" driver="tim" instance="5" name="ch4"/>
         <signal af="3" driver="tim" instance="9" name="ch2"/>
         <signal af="7" driver="usart" instance="2" name="rx"/>
-        <signal device-name="30" device-pin="r|v" af="10" driver="usb_otg_hs" name="ulpi_d0"/>
-        <signal device-name="22|32" device-pin="i|r|v|z" af="10" driver="usb_otg_hs" name="ulpi_d0"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_d0"/>
       </gpio>
       <gpio port="a" pin="4">
         <signal driver="adc" instance="1" name="in4"/>
@@ -765,8 +764,7 @@
         <signal af="3" driver="tim" instance="8" name="ch1n"/>
         <signal af="5" driver="i2s" instance="1" name="ck"/>
         <signal af="5" driver="spi" instance="1" name="sck"/>
-        <signal device-name="30" device-pin="r|v" af="10" driver="usb_otg_hs" name="ulpi_ck"/>
-        <signal device-name="22|32" device-pin="i|r|v|z" af="10" driver="usb_otg_hs" name="ulpi_ck"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_ck"/>
       </gpio>
       <gpio port="a" pin="6">
         <signal driver="adc" instance="1" name="in6"/>
@@ -849,8 +847,7 @@
         <signal af="2" driver="tim" instance="3" name="ch3"/>
         <signal af="3" driver="tim" instance="8" name="ch2n"/>
         <signal af="8" driver="uart" instance="4" name="cts"/>
-        <signal device-name="30" device-pin="r|v" af="10" driver="usb_otg_hs" name="ulpi_d1"/>
-        <signal device-name="22|32" device-pin="i|r|v|z" af="10" driver="usb_otg_hs" name="ulpi_d1"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_d1"/>
       </gpio>
       <gpio port="b" pin="1">
         <signal driver="adc" instance="1" name="in9"/>
@@ -858,8 +855,7 @@
         <signal af="1" driver="tim" instance="1" name="ch3n"/>
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="3" driver="tim" instance="8" name="ch3n"/>
-        <signal device-name="30" device-pin="r|v" af="10" driver="usb_otg_hs" name="ulpi_d2"/>
-        <signal device-name="22|32" device-pin="i|r|v|z" af="10" driver="usb_otg_hs" name="ulpi_d2"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_d2"/>
       </gpio>
       <gpio port="b" pin="2">
         <signal af="6" driver="sai" instance="1" name="sd_a"/>
@@ -895,8 +891,7 @@
         <signal af="5" driver="spi" instance="1" name="mosi"/>
         <signal af="6" driver="i2s" instance="3" name="sd"/>
         <signal af="6" driver="spi" instance="3" name="mosi"/>
-        <signal device-name="30" device-pin="r|v" af="10" driver="usb_otg_hs" name="ulpi_d7"/>
-        <signal device-name="22|32" device-pin="i|r|v|z" af="10" driver="usb_otg_hs" name="ulpi_d7"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_d7"/>
         <signal device-pin="i|v|z" af="12" driver="fmc" name="sdcke1"/>
       </gpio>
       <gpio port="b" pin="6">
@@ -938,15 +933,13 @@
         <signal af="5" driver="i2s" instance="2" name="ck"/>
         <signal af="5" driver="spi" instance="2" name="sck"/>
         <signal af="7" driver="usart" instance="3" name="tx"/>
-        <signal device-name="30" device-pin="r|v" af="10" driver="usb_otg_hs" name="ulpi_d3"/>
-        <signal device-name="22|32" device-pin="i|r|v|z" af="10" driver="usb_otg_hs" name="ulpi_d3"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_d3"/>
       </gpio>
       <gpio port="b" pin="11">
         <signal af="1" driver="tim" instance="2" name="ch4"/>
         <signal af="4" driver="i2c" instance="2" name="sda"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
-        <signal device-name="30" device-pin="r|v" af="10" driver="usb_otg_hs" name="ulpi_d4"/>
-        <signal device-name="22|32" device-pin="i|r|v|z" af="10" driver="usb_otg_hs" name="ulpi_d4"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_d4"/>
       </gpio>
       <gpio port="b" pin="12">
         <signal af="1" driver="tim" instance="1" name="bkin"/>
@@ -954,8 +947,7 @@
         <signal af="5" driver="i2s" instance="2" name="ws"/>
         <signal af="5" driver="spi" instance="2" name="nss"/>
         <signal af="7" driver="usart" instance="3" name="ck"/>
-        <signal device-name="30" device-pin="r|v" af="10" driver="usb_otg_hs" name="ulpi_d5"/>
-        <signal device-name="22|32" device-pin="i|r|v|z" af="10" driver="usb_otg_hs" name="ulpi_d5"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_d5"/>
         <signal af="12" driver="usb_otg_hs" name="id"/>
       </gpio>
       <gpio port="b" pin="13">
@@ -964,8 +956,7 @@
         <signal af="5" driver="i2s" instance="2" name="ck"/>
         <signal af="5" driver="spi" instance="2" name="sck"/>
         <signal af="7" driver="usart" instance="3" name="cts"/>
-        <signal device-name="30" device-pin="r|v" af="10" driver="usb_otg_hs" name="ulpi_d6"/>
-        <signal device-name="22|32" device-pin="i|r|v|z" af="10" driver="usb_otg_hs" name="ulpi_d6"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_d6"/>
       </gpio>
       <gpio port="b" pin="14">
         <signal device-name="30" device-pin="r|v" af="1" driver="tim" instance="1" name="ch2n"/>
@@ -1006,8 +997,7 @@
         <signal driver="adc" instance="2" name="in10"/>
         <signal driver="adc" instance="3" name="in10"/>
         <signal af="8" driver="sai" instance="2" name="fs_b"/>
-        <signal device-name="30" device-pin="r|v" af="10" driver="usb_otg_hs" name="ulpi_stp"/>
-        <signal device-name="22|32" device-pin="i|r|v|z" af="10" driver="usb_otg_hs" name="ulpi_stp"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_stp"/>
         <signal device-pin="i|v|z" af="12" driver="fmc" name="sdnwe"/>
       </gpio>
       <gpio port="c" pin="1">
@@ -1015,7 +1005,6 @@
         <signal driver="adc" instance="2" name="in11"/>
         <signal driver="adc" instance="3" name="in11"/>
         <signal driver="rtc" name="tamp3"/>
-        <signal driver="rtc" name="ts"/>
         <signal driver="sys" name="wkup3"/>
         <signal af="0" driver="sys" name="traced0"/>
         <signal af="5" driver="i2s" instance="2" name="sd"/>
@@ -1027,8 +1016,7 @@
         <signal driver="adc" instance="2" name="in12"/>
         <signal driver="adc" instance="3" name="in12"/>
         <signal af="5" driver="spi" instance="2" name="miso"/>
-        <signal device-name="30" device-pin="r|v" af="10" driver="usb_otg_hs" name="ulpi_dir"/>
-        <signal device-name="22|32" device-pin="i|r|v|z" af="10" driver="usb_otg_hs" name="ulpi_dir"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_dir"/>
         <signal device-pin="i|v|z" af="12" driver="fmc" name="sdne0"/>
       </gpio>
       <gpio port="c" pin="3">
@@ -1037,8 +1025,7 @@
         <signal driver="adc" instance="3" name="in13"/>
         <signal af="5" driver="i2s" instance="2" name="sd"/>
         <signal af="5" driver="spi" instance="2" name="mosi"/>
-        <signal device-name="30" device-pin="r|v" af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
-        <signal device-name="22|32" device-pin="i|r|v|z" af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
         <signal device-pin="i|v|z" af="12" driver="fmc" name="sdcke0"/>
       </gpio>
       <gpio port="c" pin="4">
@@ -1512,8 +1499,7 @@
       </gpio>
       <gpio device-pin="i" port="h" pin="4">
         <signal af="4" driver="i2c" instance="2" name="scl"/>
-        <signal device-name="22" device-size="c|e" device-package="k|t" device-temperature="6" af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
-        <signal device-name="22|32" device-size="e" device-package="k|t" device-temperature="6|7" af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
       </gpio>
       <gpio device-pin="i" port="h" pin="5">
         <signal af="4" driver="i2c" instance="2" name="sda"/>
@@ -1626,8 +1612,7 @@
       </gpio>
       <gpio device-pin="i" port="i" pin="11">
         <signal driver="sys" name="wkup6"/>
-        <signal device-name="22" device-size="c|e" device-package="k|t" device-temperature="6" af="10" driver="usb_otg_hs" name="ulpi_dir"/>
-        <signal device-name="22|32" device-size="e" device-package="k|t" device-temperature="6|7" af="10" driver="usb_otg_hs" name="ulpi_dir"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_dir"/>
       </gpio>
       <package device-pin="v" device-package="t" name="LQFP100">
         <pin position="1" name="PE2"/>

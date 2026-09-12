@@ -489,7 +489,12 @@ def fixMemoryForDevice(did, memories: dict[str, dict], header) -> list[dict]:
         mems[name] = data
 
     # Correct memories for specific devices
-    if did.family == "f2":
+    if did.string.startswith("stm32l083"):
+        # https://github.com/Open-CMSIS-Pack/STM32L0xx_DFP/pull/2 was reverted by
+        # https://github.com/Open-CMSIS-Pack/STM32L0xx_DFP/commit/310d314924af14886dc0ac82b315b6129a017a9c
+        mems["sram"]["size"] = 0x00005000
+
+    elif did.family == "f2":
         # Split SRAM1 into SRAM1/2
         mems["sram1"] = mems.pop("sram")
         add_ram(mems, "sram2", 16*1024, target="sram1")

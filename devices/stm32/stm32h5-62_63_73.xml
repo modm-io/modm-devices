@@ -409,8 +409,8 @@
         <signal af="8" driver="uart" instance="4" name="tx"/>
         <signal device-name="63|73" device-pin="a|i|l|z" af="9" driver="sdmmc" instance="2" name="cmd"/>
         <signal af="10" driver="sai" instance="2" name="sd_b"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="crs"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="crs"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_crs"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_crs"/>
         <signal af="14" driver="tim" instance="2" name="etr"/>
       </gpio>
       <gpio port="a" pin="1">
@@ -428,10 +428,10 @@
         <signal af="8" driver="uart" instance="4" name="rx"/>
         <signal af="9" driver="octospi" instance="1" name="io3"/>
         <signal af="10" driver="sai" instance="2" name="mclk_b"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="ref_clk"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="ref_clk"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rx_clk"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rx_clk"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_rx_clk"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_rx_clk"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rmii_ref_clk"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rmii_ref_clk"/>
       </gpio>
       <gpio port="a" pin="2">
         <signal driver="adc" instance="1" name="inp14"/>
@@ -459,8 +459,8 @@
         <signal af="5" driver="spi" instance="2" name="nss"/>
         <signal af="6" driver="sai" instance="1" name="sd_b"/>
         <signal af="7" driver="usart" instance="2" name="rx"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="col"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="col"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_col"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_col"/>
       </gpio>
       <gpio port="a" pin="4">
         <signal driver="adc" instance="1" name="inp18"/>
@@ -488,8 +488,10 @@
         <signal af="5" driver="i2s" instance="1" name="ck"/>
         <signal af="5" driver="spi" instance="1" name="sck"/>
         <signal af="8" driver="spi" instance="6" name="sck"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="tx_en"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rmii_tx_en"/>
         <signal af="13" driver="pssi" name="d14"/>
         <signal af="14" driver="tim" instance="2" name="etr"/>
       </gpio>
@@ -522,10 +524,10 @@
         <signal af="8" driver="spi" instance="6" name="mosi"/>
         <signal af="9" driver="tim" instance="14" name="ch1"/>
         <signal af="10" driver="octospi" instance="1" name="io2"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rcc_crs_dv"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rcc_crs_dv"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rx_dv"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rx_dv"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_rx_dv"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_rx_dv"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rmii_rcc_crs_dv"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rmii_rcc_crs_dv"/>
         <signal device-pin="a|i|l|m|v|z" af="12" driver="fmc" name="sdnwe"/>
         <signal device-pin="a|i|l|m|v|z" af="13" driver="fmc" name="nwe"/>
       </gpio>
@@ -550,8 +552,8 @@
         <signal af="5" driver="i2s" instance="2" name="ck"/>
         <signal af="5" driver="spi" instance="2" name="sck"/>
         <signal af="7" driver="usart" instance="1" name="tx"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="tx_er"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="tx_er"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_tx_er"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_tx_er"/>
         <signal device-pin="a|i|l|m|v|z" af="12" driver="fmc" name="nwe"/>
         <signal af="13" driver="dcmi" name="d0"/>
         <signal af="13" driver="pssi" name="d0"/>
@@ -628,8 +630,8 @@
         <signal af="6" driver="octospi" instance="1" name="io1"/>
         <signal af="7" driver="usart" instance="11" name="ck"/>
         <signal af="8" driver="uart" instance="4" name="cts"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rxd2"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rxd2"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_rxd2"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_rxd2"/>
         <signal af="14" driver="lptim" instance="3" name="ch1"/>
       </gpio>
       <gpio port="b" pin="1">
@@ -639,8 +641,8 @@
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="3" driver="tim" instance="8" name="ch3n"/>
         <signal af="6" driver="octospi" instance="1" name="io0"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rxd3"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rxd3"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_rxd3"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_rxd3"/>
         <signal af="14" driver="lptim" instance="3" name="ch2"/>
       </gpio>
       <gpio port="b" pin="2">
@@ -754,8 +756,8 @@
         <signal af="8" driver="uart" instance="4" name="rx"/>
         <signal af="9" driver="fdcan" instance="1" name="rx"/>
         <signal device-name="63|73" device-pin="a|i|l|z" af="10" driver="sdmmc" instance="2" name="d4"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="txd3"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="txd3"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_txd3"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_txd3"/>
         <signal af="12" driver="sdmmc" instance="1" name="d4"/>
         <signal af="13" driver="dcmi" name="d6"/>
         <signal af="13" driver="pssi" name="d6"/>
@@ -854,8 +856,8 @@
         <signal af="5" driver="spi" instance="2" name="sck"/>
         <signal af="7" driver="usart" instance="3" name="tx"/>
         <signal af="9" driver="octospi" instance="1" name="ncs"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rx_er"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rx_er"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_rx_er"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_rx_er"/>
       </gpio>
       <gpio device-pin="v|z" device-package="t" device-variant="q" port="b" pin="11">
         <signal af="1" driver="tim" instance="2" name="ch4"/>
@@ -865,10 +867,14 @@
         <signal device-pin="a|i" device-variant="|q" af="6" driver="spi" instance="4" name="rdy"/>
         <signal device-pin="l|v|z" device-variant="q" af="6" driver="spi" instance="4" name="rdy"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
-        <signal device-name="63|73" device-pin="a" device-package="i" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="i" device-package="k|t" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="l" device-package="h" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="r" device-package="v" af="11" driver="eth" name="tx_en"/>
+        <signal device-name="63|73" device-pin="a" device-package="i" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="i" device-package="k|t" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="l" device-package="h" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="r" device-package="v" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="a" device-package="i" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="i" device-package="k|t" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="l" device-package="h" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="r" device-package="v" af="11" driver="eth" name="rmii_tx_en"/>
         <signal device-pin="a|i" device-variant="|q" af="12" driver="fmc" name="nbl1"/>
         <signal device-pin="l|v|z" device-variant="q" af="12" driver="fmc" name="nbl1"/>
       </gpio>
@@ -880,10 +886,14 @@
         <signal device-pin="a|i" device-variant="|q" af="6" driver="spi" instance="4" name="rdy"/>
         <signal device-pin="l|v|z" device-variant="q" af="6" driver="spi" instance="4" name="rdy"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
-        <signal device-name="63|73" device-pin="a" device-package="i" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="i" device-package="k|t" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="l" device-package="h" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="r" device-package="v" af="11" driver="eth" name="tx_en"/>
+        <signal device-name="63|73" device-pin="a" device-package="i" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="i" device-package="k|t" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="l" device-package="h" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="r" device-package="v" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="a" device-package="i" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="i" device-package="k|t" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="l" device-package="h" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="r" device-package="v" af="11" driver="eth" name="rmii_tx_en"/>
         <signal device-pin="a|i" device-variant="|q" af="12" driver="fmc" name="nbl1"/>
         <signal device-pin="l|v|z" device-variant="q" af="12" driver="fmc" name="nbl1"/>
       </gpio>
@@ -895,10 +905,14 @@
         <signal device-pin="a|i" device-variant="|q" af="6" driver="spi" instance="4" name="rdy"/>
         <signal device-pin="l|v|z" device-variant="q" af="6" driver="spi" instance="4" name="rdy"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
-        <signal device-name="63|73" device-pin="a" device-package="i" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="i" device-package="k|t" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="l" device-package="h" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="r" device-package="v" af="11" driver="eth" name="tx_en"/>
+        <signal device-name="63|73" device-pin="a" device-package="i" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="i" device-package="k|t" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="l" device-package="h" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="r" device-package="v" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="a" device-package="i" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="i" device-package="k|t" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="l" device-package="h" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="r" device-package="v" af="11" driver="eth" name="rmii_tx_en"/>
         <signal device-pin="a|i" device-variant="|q" af="12" driver="fmc" name="nbl1"/>
         <signal device-pin="l|v|z" device-variant="q" af="12" driver="fmc" name="nbl1"/>
       </gpio>
@@ -910,10 +924,14 @@
         <signal device-pin="a|i" device-variant="|q" af="6" driver="spi" instance="4" name="rdy"/>
         <signal device-pin="l|v|z" device-variant="q" af="6" driver="spi" instance="4" name="rdy"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
-        <signal device-name="63|73" device-pin="a" device-package="i" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="i" device-package="k|t" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="l" device-package="h" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="r" device-package="v" af="11" driver="eth" name="tx_en"/>
+        <signal device-name="63|73" device-pin="a" device-package="i" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="i" device-package="k|t" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="l" device-package="h" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="r" device-package="v" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="a" device-package="i" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="i" device-package="k|t" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="l" device-package="h" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="r" device-package="v" af="11" driver="eth" name="rmii_tx_en"/>
         <signal device-pin="a|i" device-variant="|q" af="12" driver="fmc" name="nbl1"/>
         <signal device-pin="l|v|z" device-variant="q" af="12" driver="fmc" name="nbl1"/>
       </gpio>
@@ -925,10 +943,14 @@
         <signal device-pin="a|i" device-variant="|q" af="6" driver="spi" instance="4" name="rdy"/>
         <signal device-pin="l|v|z" device-variant="q" af="6" driver="spi" instance="4" name="rdy"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
-        <signal device-name="63|73" device-pin="a" device-package="i" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="i" device-package="k|t" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="l" device-package="h" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="r" device-package="v" af="11" driver="eth" name="tx_en"/>
+        <signal device-name="63|73" device-pin="a" device-package="i" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="i" device-package="k|t" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="l" device-package="h" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="r" device-package="v" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="a" device-package="i" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="i" device-package="k|t" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="l" device-package="h" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="r" device-package="v" af="11" driver="eth" name="rmii_tx_en"/>
         <signal device-pin="a|i" device-variant="|q" af="12" driver="fmc" name="nbl1"/>
         <signal device-pin="l|v|z" device-variant="q" af="12" driver="fmc" name="nbl1"/>
       </gpio>
@@ -942,8 +964,10 @@
         <signal af="7" driver="usart" instance="3" name="ck"/>
         <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="9" driver="fdcan" instance="2" name="rx"/>
         <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="9" driver="fdcan" instance="2" name="rx"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="txd0"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="txd0"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_txd0"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_txd0"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rmii_txd0"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rmii_txd0"/>
         <signal af="14" driver="uart" instance="5" name="rx"/>
       </gpio>
       <gpio device-pin="a|i|r|v|z" device-variant="" port="b" pin="12">
@@ -956,8 +980,10 @@
         <signal af="7" driver="usart" instance="3" name="ck"/>
         <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="9" driver="fdcan" instance="2" name="rx"/>
         <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="9" driver="fdcan" instance="2" name="rx"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="txd0"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="txd0"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_txd0"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_txd0"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rmii_txd0"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rmii_txd0"/>
         <signal af="14" driver="uart" instance="5" name="rx"/>
       </gpio>
       <gpio port="b" pin="13">
@@ -1003,8 +1029,10 @@
         <signal af="8" driver="uart" instance="4" name="cts"/>
         <signal device-name="63|73" device-pin="a|i|l|z" af="9" driver="sdmmc" instance="2" name="d1"/>
         <signal af="10" driver="octospi" instance="1" name="clk"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="txd1"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="txd1"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_txd1"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_txd1"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rmii_txd1"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rmii_txd1"/>
         <signal af="13" driver="dcmi" name="d2"/>
         <signal af="13" driver="pssi" name="d2"/>
         <signal af="14" driver="uart" instance="5" name="rx"/>
@@ -1053,8 +1081,8 @@
         <signal af="5" driver="spi" instance="2" name="miso"/>
         <signal af="6" driver="octospi" instance="1" name="io5"/>
         <signal af="9" driver="octospi" instance="1" name="io2"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="txd2"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="txd2"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_txd2"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_txd2"/>
         <signal device-pin="a|i|l|m|v|z" af="12" driver="fmc" name="sdne0"/>
       </gpio>
       <gpio port="c" pin="3">
@@ -1069,8 +1097,8 @@
         <signal af="5" driver="spi" instance="2" name="mosi"/>
         <signal af="6" driver="octospi" instance="1" name="io6"/>
         <signal af="9" driver="octospi" instance="1" name="io0"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="tx_clk"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="tx_clk"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_tx_clk"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_tx_clk"/>
         <signal device-pin="a|i|l|m|v|z" af="12" driver="fmc" name="sdcke0"/>
       </gpio>
       <gpio device-pin="a|i|l|m" device-variant="q" port="c" pin="4">
@@ -1081,8 +1109,10 @@
         <signal af="3" driver="lptim" instance="2" name="etr"/>
         <signal af="5" driver="i2s" instance="1" name="mck"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rxd0"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rxd0"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_rxd0"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_rxd0"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rmii_rxd0"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rmii_rxd0"/>
         <signal device-pin="a|i|l|m" device-variant="q" af="12" driver="fmc" name="sdne0"/>
         <signal device-pin="a|i|v|z" device-variant="" af="12" driver="fmc" name="sdne0"/>
       </gpio>
@@ -1094,8 +1124,10 @@
         <signal af="3" driver="lptim" instance="2" name="etr"/>
         <signal af="5" driver="i2s" instance="1" name="mck"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rxd0"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rxd0"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_rxd0"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_rxd0"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rmii_rxd0"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rmii_rxd0"/>
         <signal device-pin="a|i|l|m" device-variant="q" af="12" driver="fmc" name="sdne0"/>
         <signal device-pin="a|i|v|z" device-variant="" af="12" driver="fmc" name="sdne0"/>
       </gpio>
@@ -1113,8 +1145,10 @@
         <signal device-pin="a|i|l|m" device-variant="q" af="7" driver="uart" instance="12" name="rts"/>
         <signal device-pin="a|i|v|z" device-variant="" af="7" driver="uart" instance="12" name="rts"/>
         <signal af="10" driver="octospi" instance="1" name="dqs"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rxd1"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rxd1"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_rxd1"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_rxd1"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rmii_rxd1"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rmii_rxd1"/>
         <signal device-pin="a|i|l|m" device-variant="q" af="12" driver="fmc" name="sdcke0"/>
         <signal device-pin="a|i|v|z" device-variant="" af="12" driver="fmc" name="sdcke0"/>
       </gpio>
@@ -1132,8 +1166,10 @@
         <signal device-pin="a|i|l|m" device-variant="q" af="7" driver="uart" instance="12" name="rts"/>
         <signal device-pin="a|i|v|z" device-variant="" af="7" driver="uart" instance="12" name="rts"/>
         <signal af="10" driver="octospi" instance="1" name="dqs"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rxd1"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rxd1"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_rxd1"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_rxd1"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rmii_rxd1"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rmii_rxd1"/>
         <signal device-pin="a|i|l|m" device-variant="q" af="12" driver="fmc" name="sdcke0"/>
         <signal device-pin="a|i|v|z" device-variant="" af="12" driver="fmc" name="sdcke0"/>
       </gpio>
@@ -1201,8 +1237,10 @@
         <signal af="7" driver="usart" instance="3" name="tx"/>
         <signal af="8" driver="uart" instance="4" name="tx"/>
         <signal af="9" driver="octospi" instance="1" name="io1"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="txd0"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="txd0"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_txd0"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_txd0"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rmii_txd0"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rmii_txd0"/>
         <signal af="12" driver="sdmmc" instance="1" name="d2"/>
         <signal af="13" driver="dcmi" name="d8"/>
         <signal af="13" driver="pssi" name="d8"/>
@@ -1597,8 +1635,8 @@
         <signal af="7" driver="usart" instance="10" name="rx"/>
         <signal af="8" driver="uart" instance="8" name="tx"/>
         <signal af="9" driver="octospi" instance="1" name="io2"/>
-        <signal device-name="63|73" device-pin="a|i|l" device-variant="q" af="11" driver="eth" name="txd3"/>
-        <signal device-name="63|73" device-pin="a|i|v|z" device-variant="" af="11" driver="eth" name="txd3"/>
+        <signal device-name="63|73" device-pin="a|i|l" device-variant="q" af="11" driver="eth" name="mii_txd3"/>
+        <signal device-name="63|73" device-pin="a|i|v|z" device-variant="" af="11" driver="eth" name="mii_txd3"/>
         <signal af="12" driver="fmc" name="a23"/>
         <signal af="13" driver="dcmi" name="d3"/>
         <signal af="13" driver="pssi" name="d3"/>
@@ -1964,8 +2002,10 @@
         <signal af="7" driver="usart" instance="11" name="rts"/>
         <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="10" driver="sdmmc" instance="2" name="d2"/>
         <signal device-name="63|73" device-pin="i|l" device-variant="q" af="10" driver="sdmmc" instance="2" name="d2"/>
-        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="tx_en"/>
+        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="rmii_tx_en"/>
         <signal af="13" driver="dcmi" name="d3"/>
         <signal af="13" driver="pssi" name="d3"/>
       </gpio>
@@ -1978,8 +2018,10 @@
         <signal af="7" driver="usart" instance="11" name="rts"/>
         <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="10" driver="sdmmc" instance="2" name="d2"/>
         <signal device-name="63|73" device-pin="i|l" device-variant="q" af="10" driver="sdmmc" instance="2" name="d2"/>
-        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="tx_en"/>
-        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="tx_en"/>
+        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="mii_tx_en"/>
+        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="rmii_tx_en"/>
+        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="rmii_tx_en"/>
         <signal af="13" driver="dcmi" name="d3"/>
         <signal af="13" driver="pssi" name="d3"/>
       </gpio>
@@ -1991,8 +2033,10 @@
         <signal af="7" driver="usart" instance="6" name="de"/>
         <signal af="7" driver="usart" instance="6" name="rts"/>
         <signal device-name="63|73" device-pin="a|i|l|z" af="10" driver="sdmmc" instance="2" name="d3"/>
-        <signal device-name="63|73" device-pin="a|i|l" device-variant="q" af="11" driver="eth" name="txd1"/>
-        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="txd1"/>
+        <signal device-name="63|73" device-pin="a|i|l" device-variant="q" af="11" driver="eth" name="mii_txd1"/>
+        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="mii_txd1"/>
+        <signal device-name="63|73" device-pin="a|i|l" device-variant="q" af="11" driver="eth" name="rmii_txd1"/>
+        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="rmii_txd1"/>
         <signal af="12" driver="fmc" name="ne4"/>
         <signal af="13" driver="dcmi" name="d11"/>
         <signal af="13" driver="pssi" name="d11"/>
@@ -2008,8 +2052,10 @@
         <signal af="7" driver="usart" instance="6" name="nss"/>
         <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="10" driver="sdmmc" instance="2" name="d6"/>
         <signal device-name="63|73" device-pin="i|l|z" device-variant="q" af="10" driver="sdmmc" instance="2" name="d6"/>
-        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="txd0"/>
-        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="txd0"/>
+        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="mii_txd0"/>
+        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="mii_txd0"/>
+        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="rmii_txd0"/>
+        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="rmii_txd0"/>
         <signal af="12" driver="fmc" name="a24"/>
         <signal af="13" driver="lptim" instance="5" name="ch2"/>
       </gpio>
@@ -2023,8 +2069,10 @@
         <signal af="7" driver="usart" instance="6" name="nss"/>
         <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="10" driver="sdmmc" instance="2" name="d6"/>
         <signal device-name="63|73" device-pin="i|l|z" device-variant="q" af="10" driver="sdmmc" instance="2" name="d6"/>
-        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="txd0"/>
-        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="txd0"/>
+        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="mii_txd0"/>
+        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="mii_txd0"/>
+        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="rmii_txd0"/>
+        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="rmii_txd0"/>
         <signal af="12" driver="fmc" name="a24"/>
         <signal af="13" driver="lptim" instance="5" name="ch2"/>
       </gpio>
@@ -2039,8 +2087,10 @@
         <signal af="9" driver="octospi" instance="1" name="io7"/>
         <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="10" driver="sdmmc" instance="2" name="d7"/>
         <signal device-name="63|73" device-pin="i|l|z" device-variant="q" af="10" driver="sdmmc" instance="2" name="d7"/>
-        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="txd1"/>
-        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="txd1"/>
+        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="mii_txd1"/>
+        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="mii_txd1"/>
+        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="rmii_txd1"/>
+        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="rmii_txd1"/>
         <signal af="12" driver="fmc" name="a25"/>
         <signal af="13" driver="lptim" instance="5" name="in1"/>
       </gpio>
@@ -2055,8 +2105,10 @@
         <signal af="9" driver="octospi" instance="1" name="io7"/>
         <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="10" driver="sdmmc" instance="2" name="d7"/>
         <signal device-name="63|73" device-pin="i|l|z" device-variant="q" af="10" driver="sdmmc" instance="2" name="d7"/>
-        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="txd1"/>
-        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="txd1"/>
+        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="mii_txd1"/>
+        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="mii_txd1"/>
+        <signal device-name="63|73" device-pin="a|i|z" device-variant="" af="11" driver="eth" name="rmii_txd1"/>
+        <signal device-name="63|73" device-pin="i|l" device-variant="q" af="11" driver="eth" name="rmii_txd1"/>
         <signal af="12" driver="fmc" name="a25"/>
         <signal af="13" driver="lptim" instance="5" name="in1"/>
       </gpio>
@@ -2079,13 +2131,13 @@
         <signal af="1" driver="lptim" instance="1" name="in2"/>
         <signal af="9" driver="octospi" instance="1" name="io4"/>
         <signal af="10" driver="sai" instance="2" name="sck_b"/>
-        <signal device-name="63|73" device-pin="a|i|l" af="11" driver="eth" name="crs"/>
+        <signal device-name="63|73" device-pin="a|i|l" af="11" driver="eth" name="mii_crs"/>
         <signal af="12" driver="fmc" name="sdcke0"/>
       </gpio>
       <gpio device-pin="a|i|l" port="h" pin="3">
         <signal af="9" driver="octospi" instance="1" name="io5"/>
         <signal af="10" driver="sai" instance="2" name="mclk_b"/>
-        <signal device-name="63|73" device-pin="a|i|l" af="11" driver="eth" name="col"/>
+        <signal device-name="63|73" device-pin="a|i|l" af="11" driver="eth" name="mii_col"/>
         <signal af="12" driver="fmc" name="sdne0"/>
       </gpio>
       <gpio device-pin="a" device-package="i" device-variant="|q" port="h" pin="4">
@@ -2142,7 +2194,7 @@
         <signal af="3" driver="tim" instance="8" name="ch1"/>
         <signal af="4" driver="i2c" instance="2" name="smba"/>
         <signal af="5" driver="spi" instance="5" name="sck"/>
-        <signal device-name="63|73" device-pin="a|i|l" af="11" driver="eth" name="rxd2"/>
+        <signal device-name="63|73" device-pin="a|i|l" af="11" driver="eth" name="mii_rxd2"/>
         <signal af="12" driver="fmc" name="sdne1"/>
         <signal af="13" driver="dcmi" name="d8"/>
         <signal af="13" driver="pssi" name="d8"/>
@@ -2152,7 +2204,7 @@
         <signal af="3" driver="tim" instance="8" name="ch1n"/>
         <signal af="4" driver="i2c" instance="3" name="scl"/>
         <signal af="5" driver="spi" instance="5" name="miso"/>
-        <signal device-name="63|73" device-pin="a|i|l" af="11" driver="eth" name="rxd3"/>
+        <signal device-name="63|73" device-pin="a|i|l" af="11" driver="eth" name="mii_rxd3"/>
         <signal af="12" driver="fmc" name="sdcke1"/>
         <signal af="13" driver="dcmi" name="d9"/>
         <signal af="13" driver="pssi" name="d9"/>
@@ -2352,7 +2404,7 @@
       </gpio>
       <gpio device-pin="i|l" port="i" pin="10">
         <signal af="9" driver="fdcan" instance="1" name="rx"/>
-        <signal device-name="63|73" device-pin="i|l" af="11" driver="eth" name="rx_er"/>
+        <signal device-name="63|73" device-pin="i|l" af="11" driver="eth" name="mii_rx_er"/>
         <signal af="13" driver="pssi" name="d14"/>
       </gpio>
       <gpio device-pin="a|i" device-variant="" port="i" pin="11">

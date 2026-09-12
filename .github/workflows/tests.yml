@@ -28,6 +28,7 @@ jobs:
           cd tools/generator
           make generate-stm32f4 generate-stm32g4 generate-stm32l0 generate-stm32h5
       - name: Synchronize Docs
+        if: always()
         run: |
           python3 tools/scripts/sync_docs.py
           git diff -- README.md
@@ -53,6 +54,7 @@ jobs:
           cd tools/generator
           make generate-stm32c0 generate-stm32g0 generate-stm32u0 generate-stm32h7 generate-stm32l4
       - name: Synchronize Docs
+        if: always()
         run: |
           python3 tools/scripts/sync_docs.py
           git diff -- README.md
@@ -80,6 +82,7 @@ jobs:
                generate-stm32f7 generate-stm32l1 generate-stm32wb generate-stm32wl \
                generate-stm32u3 generate-stm32u5 generate-stm32l5
       - name: Synchronize Docs
+        if: always()
         run: |
           python3 tools/scripts/sync_docs.py
           git diff -- README.md
@@ -124,6 +127,7 @@ jobs:
           cd tools/generator
           make generate-rp
       - name: Synchronize Docs
+        if: always()
         run: |
           python3 tools/scripts/sync_docs.py
           git diff -- README.md

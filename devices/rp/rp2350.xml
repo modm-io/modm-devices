@@ -47,6 +47,8 @@
       <vector position="37" name="I2C1_IRQ"/>
       <vector position="38" name="OTP_IRQ"/>
       <vector position="39" name="TRNG_IRQ"/>
+      <vector position="40" name="PROC0_IRQ_CTI"/>
+      <vector position="41" name="PROC1_IRQ_CTI"/>
       <vector position="42" name="PLL_SYS_IRQ"/>
       <vector position="43" name="PLL_USB_IRQ"/>
       <vector position="44" name="POWMAN_IRQ_POW"/>
@@ -237,7 +239,6 @@
     </driver>
     <driver name="sio" type="rp23"/>
     <driver name="sio_ns" type="rp23"/>
-    <driver name="spare_irq" type="rp23"/>
     <driver name="spi" type="rp23">
       <instance value="0"/>
       <instance value="1"/>
@@ -256,7 +257,8 @@
       <instance value="1"/>
     </driver>
     <driver name="usb" type="rp23"/>
-    <driver name="usb_dpram" type="rp23"/>
+    <driver name="usb_device_dpram" type="rp23"/>
+    <driver name="virtual" type="rp23"/>
     <driver name="watchdog" type="rp23"/>
     <driver name="xip" type="rp23"/>
     <driver name="xip_aux" type="rp23"/>

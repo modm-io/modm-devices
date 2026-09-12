@@ -185,7 +185,7 @@
       <memory device-size="b" name="flash" access="rx" start="0x8000000" size="131072"/>
       <memory device-size="z" name="flash" access="rx" start="0x8000000" size="196608"/>
       <memory device-size="b|z" name="eeprom" access="r" start="0x8080000" size="6144"/>
-      <memory device-size="8" name="eeprom" access="r" start="0x8080C00" size="2048"/>
+      <memory device-size="8" name="eeprom" access="r" start="0x8080C00" size="3072"/>
       <memory name="sram" access="rwx" start="0x20000000" size="20480"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD"/>
