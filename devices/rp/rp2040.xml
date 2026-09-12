@@ -181,7 +181,6 @@
     <driver name="rosc" type="rp20"/>
     <driver name="rtc" type="rp20"/>
     <driver name="sio" type="rp20"/>
-    <driver name="spare_irq" type="rp20"/>
     <driver name="spi" type="rp20">
       <instance value="0"/>
       <instance value="1"/>
@@ -196,7 +195,8 @@
       <instance value="1"/>
     </driver>
     <driver name="usb" type="rp20"/>
-    <driver name="usb_dpram" type="rp20"/>
+    <driver name="usb_device_dpram" type="rp20"/>
+    <driver name="virtual" type="rp20"/>
     <driver name="vreg_and_chip_reset" type="rp20"/>
     <driver name="watchdog" type="rp20"/>
     <driver name="xip" type="rp20"/>

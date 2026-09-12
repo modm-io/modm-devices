@@ -138,6 +138,33 @@
         <request position="16">
           <signal driver="adc" instance="1" name="ds"/>
         </request>
+        <request position="18">
+          <signal driver="tim" instance="2" name="ch1"/>
+        </request>
+        <request position="19">
+          <signal driver="tim" instance="2" name="ch2"/>
+        </request>
+        <request position="20">
+          <signal driver="tim" instance="2" name="ch3"/>
+        </request>
+        <request position="21">
+          <signal driver="tim" instance="2" name="ch4"/>
+        </request>
+        <request position="22">
+          <signal driver="tim" instance="2" name="up"/>
+        </request>
+        <request position="23">
+          <signal driver="tim" instance="16" name="ch1"/>
+        </request>
+        <request position="24">
+          <signal driver="tim" instance="16" name="up"/>
+        </request>
+        <request position="25">
+          <signal driver="tim" instance="17" name="ch1"/>
+        </request>
+        <request position="26">
+          <signal driver="tim" instance="17" name="up"/>
+        </request>
       </requests>
       <mux-channels>
         <mux-channel position="0" dma-instance="1" dma-channel="1"/>

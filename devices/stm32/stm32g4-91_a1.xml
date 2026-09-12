@@ -744,6 +744,7 @@
         <signal af="14" driver="sai" instance="1" name="fs_a"/>
       </gpio>
       <gpio port="a" pin="10">
+        <signal driver="sys" name="pvd_in"/>
         <signal driver="ucpd" instance="1" name="dbcc2"/>
         <signal af="1" driver="tim" instance="17" name="bkin"/>
         <signal af="3" driver="rcc" name="crs_sync"/>
@@ -924,7 +925,6 @@
         <signal af="14" driver="sai" instance="1" name="fs_b"/>
       </gpio>
       <gpio port="b" pin="7">
-        <signal driver="sys" name="pvd_in"/>
         <signal af="1" driver="tim" instance="17" name="ch1n"/>
         <signal af="2" driver="tim" instance="4" name="ch2"/>
         <signal af="4" driver="i2c" instance="1" name="sda"/>

@@ -199,6 +199,24 @@
         <request position="25">
           <signal driver="tim" instance="1" name="up"/>
         </request>
+        <request position="26">
+          <signal driver="tim" instance="2" name="ch1"/>
+        </request>
+        <request position="27">
+          <signal driver="tim" instance="2" name="ch2"/>
+        </request>
+        <request position="28">
+          <signal driver="tim" instance="2" name="ch3"/>
+        </request>
+        <request position="29">
+          <signal driver="tim" instance="2" name="ch4"/>
+        </request>
+        <request position="30">
+          <signal driver="tim" instance="2" name="trig"/>
+        </request>
+        <request position="31">
+          <signal driver="tim" instance="2" name="up"/>
+        </request>
         <request position="32">
           <signal driver="tim" instance="3" name="ch1"/>
         </request>
