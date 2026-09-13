@@ -101,7 +101,7 @@
       <instance value="2"/>
     </driver>
     <driver name="can" type="stm32">
-      <feature value="filter-14"/>
+      <feature value="filter-28"/>
       <instance value="1"/>
       <instance value="2"/>
     </driver>

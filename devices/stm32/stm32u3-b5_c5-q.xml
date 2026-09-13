@@ -156,7 +156,9 @@
       <vector position="123" name="PWR"/>
       <vector position="124" name="PWR_S"/>
     </driver>
-    <driver name="adc" type="stm32-u0">
+    <driver name="adc" type="stm32-u3">
+      <feature value="calfact"/>
+      <feature value="prescaler"/>
       <instance value="1"/>
       <instance value="2"/>
     </driver>
@@ -169,7 +171,10 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver name="crc" type="stm32"/>
+    <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
+      <feature value="reverse"/>
+    </driver>
     <driver name="dac" type="stm32">
       <feature value="status"/>
       <instance value="1"/>
@@ -186,9 +191,10 @@
         <wait-state ws="2" hclk-max="48000000"/>
       </latency>
       <latency vcore-min="900">
-        <wait-state ws="0" hclk-max="32000000"/>
-        <wait-state ws="1" hclk-max="64000000"/>
-        <wait-state ws="2" hclk-max="96000000"/>
+        <wait-state ws="0" hclk-max="25000000"/>
+        <wait-state ws="1" hclk-max="50000000"/>
+        <wait-state ws="2" hclk-max="75000000"/>
+        <wait-state ws="3" hclk-max="96000000"/>
       </latency>
     </driver>
     <driver name="gpdma" type="stm32-stm32u3_dma3_cube">
@@ -201,8 +207,9 @@
     </driver>
     <driver name="hash" type="stm32-v4.0"/>
     <driver name="hsp1" type="stm32-v1.0"/>
-    <driver name="hsp_engine" type="stm32-v1.0"/>
-    <driver name="i2c" type="stm32-v1.1">
+    <driver name="i2c" type="stm32-extended">
+      <feature value="dnf"/>
+      <feature value="fmp"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -214,7 +221,9 @@
     </driver>
     <driver name="icache" type="stm32-v1.0"/>
     <driver name="irtim" type="stm32-v1.0"/>
-    <driver name="iwdg" type="stm32"/>
+    <driver name="iwdg" type="stm32">
+      <feature value="window"/>
+    </driver>
     <driver name="lptim" type="stm32-v2.2">
       <instance value="1"/>
       <instance value="2"/>
@@ -254,7 +263,7 @@
       <instance value="4"/>
     </driver>
     <driver name="sys" type="stm32">
-      <feature value="exti"/>
+      <feature value="cfgr2"/>
     </driver>
     <driver name="sys_s" type="stm32-v1.1"/>
     <driver name="tamp" type="stm32-v2.8"/>
@@ -304,7 +313,7 @@
         <signal af="7" driver="usart" instance="2" name="nss"/>
         <signal af="8" driver="uart" instance="4" name="tx"/>
         <signal af="11" driver="hsp1" name="snp0"/>
-        <signal af="13" name="audioclk"/>
+        <signal af="13" driver="rcc" name="audioclk"/>
         <signal af="14" driver="tim" instance="2" name="etr"/>
       </gpio>
       <gpio port="a" pin="1">
@@ -513,7 +522,7 @@
         <signal af="7" driver="usart" instance="3" name="ck"/>
         <signal af="10" driver="octospi" instance="1" name="io1"/>
         <signal af="12" driver="comp" instance="1" name="out"/>
-        <signal af="13" name="audioclk"/>
+        <signal af="13" driver="rcc" name="audioclk"/>
       </gpio>
       <gpio port="b" pin="1">
         <signal driver="adc" instance="1" name="in14"/>

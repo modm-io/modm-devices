@@ -109,6 +109,7 @@
       <vector position="82" name="CRS"/>
     </driver>
     <driver name="adc" type="stm32-f3">
+      <feature value="prescaler"/>
       <instance value="1"/>
       <instance value="2"/>
     </driver>
@@ -116,7 +117,10 @@
     <driver name="comp" type="stm32-tsmc90_orca128_cube">
       <instance value="1"/>
     </driver>
-    <driver name="crc" type="stm32"/>
+    <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
+      <feature value="reverse"/>
+    </driver>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1000">
         <wait-state ws="0" hclk-max="6000000"/>
@@ -140,7 +144,9 @@
       <instance value="3"/>
     </driver>
     <driver name="irtim" type="stm32-v1.0"/>
-    <driver name="iwdg" type="stm32"/>
+    <driver name="iwdg" type="stm32">
+      <feature value="window"/>
+    </driver>
     <driver name="lptim" type="stm32-v1.0">
       <instance value="1"/>
       <instance value="2"/>
@@ -165,7 +171,10 @@
       <instance device-pin="c|r" value="2"/>
     </driver>
     <driver name="sys" type="stm32">
+      <feature value="cfgr2"/>
       <feature value="exti"/>
+      <feature value="fpu"/>
+      <feature value="sram2-wp"/>
     </driver>
     <driver name="tim" type="stm32-advanced">
       <instance value="1"/>
@@ -180,6 +189,7 @@
     </driver>
     <driver name="tsc" type="stm32-v1.0"/>
     <driver name="usart" type="stm32-extended">
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance device-pin="c|r" value="3"/>
@@ -352,7 +362,7 @@
             <signal driver="usart" instance="1" name="tx"/>
           </request>
           <request position="4">
-            <signal driver="lpuart" name="tx"/>
+            <signal driver="lpuart" instance="1" name="tx"/>
           </request>
           <request position="5">
             <signal driver="i2c" instance="1" name="rx"/>
@@ -366,7 +376,7 @@
             <signal driver="quadspi"/>
           </request>
           <request position="4">
-            <signal driver="lpuart" name="rx"/>
+            <signal driver="lpuart" instance="1" name="rx"/>
           </request>
           <request position="5">
             <signal driver="i2c" instance="1" name="tx"/>

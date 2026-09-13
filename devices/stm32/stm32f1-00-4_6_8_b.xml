@@ -69,7 +69,9 @@
       <instance value="1"/>
     </driver>
     <driver name="crc" type="stm32"/>
-    <driver name="dac" type="stm32"/>
+    <driver name="dac" type="stm32">
+      <feature value="status"/>
+    </driver>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1800">
         <wait-state ws="0" hclk-max="24000000"/>

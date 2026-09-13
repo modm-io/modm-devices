@@ -167,6 +167,7 @@
       <vector device-name="62" position="108" name="OTFDEC1"/>
     </driver>
     <driver name="adc" type="stm32-f3">
+      <feature value="prescaler"/>
       <instance value="1"/>
       <instance value="2"/>
     </driver>
@@ -207,7 +208,8 @@
         <wait-state ws="1" hclk-max="40000000"/>
         <wait-state ws="2" hclk-max="60000000"/>
         <wait-state ws="3" hclk-max="80000000"/>
-        <wait-state ws="4" hclk-max="110000000"/>
+        <wait-state ws="4" hclk-max="100000000"/>
+        <wait-state ws="5" hclk-max="110000000"/>
       </latency>
     </driver>
     <driver device-pin="q|v|z" name="fmc" type="stm32-v2.2"/>
@@ -278,8 +280,6 @@
     </driver>
     <driver name="sys" type="stm32">
       <feature value="cfgr2"/>
-      <feature value="exti"/>
-      <feature value="imr"/>
       <feature value="sram2-wp"/>
     </driver>
     <driver name="sys_s" type="stm32-v1.0"/>
@@ -304,6 +304,7 @@
     <driver name="tsc" type="stm32-v1.0"/>
     <driver name="uart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="4"/>
       <instance device-pin="m|q|r|v|z" value="5"/>
     </driver>
@@ -312,12 +313,12 @@
     </driver>
     <driver name="usart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
     </driver>
     <driver name="usb" type="stm32-v2.2"/>
-    <driver name="usbpd" type="stm32-v1.4"/>
     <driver name="vrefbuf" type="stm32-v1.0"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="dma" type="stm32-mux">

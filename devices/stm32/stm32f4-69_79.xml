@@ -768,7 +768,7 @@
         <signal af="5" driver="spi" instance="1" name="mosi"/>
         <signal af="9" driver="tim" instance="14" name="ch1"/>
         <signal af="10" driver="quadspi" name="clk"/>
-        <signal device-pin="b|i|n" af="11" driver="eth" name="rcc_crs_dv"/>
+        <signal device-pin="b|i|n" af="11" driver="eth" name="crs_dv"/>
         <signal device-pin="b|i|n" af="11" driver="eth" name="rx_dv"/>
         <signal af="12" driver="fmc" name="sdnwe"/>
       </gpio>
@@ -1053,7 +1053,7 @@
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="3" driver="tim" instance="8" name="ch4"/>
         <signal af="4" driver="i2c" instance="3" name="sda"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="9" driver="quadspi" name="bk1_io0"/>
         <signal af="12" driver="sdio" name="d1"/>
         <signal af="13" driver="dcmi" name="d3"/>

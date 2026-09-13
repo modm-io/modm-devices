@@ -61,6 +61,7 @@
       <instance value="1"/>
     </driver>
     <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
       <feature value="reverse"/>
     </driver>
     <driver name="flash" type="stm32-v1.0">
@@ -106,7 +107,6 @@
     </driver>
     <driver name="sys" type="stm32">
       <feature value="cfgr2"/>
-      <feature value="exti"/>
       <feature value="itline"/>
     </driver>
     <driver name="tim" type="stm32-advanced">
@@ -126,6 +126,7 @@
     </driver>
     <driver name="usart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -430,7 +431,7 @@
         <signal device-name="b0" af="1" driver="i2s" instance="2" name="ws"/>
         <signal af="1" driver="spi" instance="2" name="nss"/>
         <signal af="2" driver="tim" instance="1" name="ch1"/>
-        <signal device-name="b0" af="4" name="crs1_sync"/>
+        <signal device-name="b0" af="4" driver="rcc" name="crs1_sync"/>
         <signal device-name="b0" af="8" driver="i2c" instance="2" name="smba"/>
       </gpio>
       <gpio port="a" pin="9">
@@ -471,7 +472,7 @@
         <signal af="1" driver="usart" instance="1" name="de"/>
         <signal af="1" driver="usart" instance="1" name="rts"/>
         <signal af="2" driver="tim" instance="1" name="etr"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="6" driver="i2c" instance="2" name="sda"/>
       </gpio>
       <gpio port="a" pin="13">
@@ -695,7 +696,7 @@
         <signal af="2" driver="tim" instance="1" name="ch1"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="9">
-        <signal af="0" driver="i2s" name="ckin"/>
+        <signal af="0" driver="rcc" name="i2s_ckin"/>
         <signal af="1" driver="tim" instance="3" name="ch4"/>
         <signal af="2" driver="tim" instance="1" name="ch2"/>
         <signal device-name="b0" device-pin="r|v" af="6" driver="usb" name="noe"/>
@@ -821,7 +822,7 @@
         <signal af="2" driver="tim" instance="4" name="ch3"/>
       </gpio>
       <gpio device-pin="v" port="d" pin="15">
-        <signal af="0" name="crs1_sync"/>
+        <signal af="0" driver="rcc" name="crs1_sync"/>
         <signal af="2" driver="tim" instance="4" name="ch4"/>
       </gpio>
       <gpio device-pin="v" port="e" pin="0">
@@ -893,7 +894,7 @@
       </gpio>
       <gpio device-pin="c|r|v" port="f" pin="0">
         <signal driver="rcc" name="osc_in"/>
-        <signal device-name="b0" device-pin="c|r|v" af="0" name="crs1_sync"/>
+        <signal device-name="b0" device-pin="c|r|v" af="0" driver="rcc" name="crs1_sync"/>
         <signal af="2" driver="tim" instance="14" name="ch1"/>
       </gpio>
       <gpio device-pin="c|r|v" port="f" pin="1">

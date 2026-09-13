@@ -234,7 +234,10 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver name="crc" type="stm32"/>
+    <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
+      <feature value="reverse"/>
+    </driver>
     <driver device-name="72|73|82|83" name="dac" type="stm32">
       <feature value="status"/>
     </driver>
@@ -261,7 +264,9 @@
     <driver device-pin="c|r|v" name="i2s" type="stm32-v3.1">
       <instance value="2"/>
     </driver>
-    <driver name="iwdg" type="stm32"/>
+    <driver name="iwdg" type="stm32">
+      <feature value="window"/>
+    </driver>
     <driver device-name="73|83" name="lcd" type="stm32-v1.3"/>
     <driver name="lptim" type="stm32-v1.0">
       <instance value="1"/>
@@ -279,6 +284,7 @@
       <instance device-pin="c|r|v" value="2"/>
     </driver>
     <driver name="sys" type="stm32">
+      <feature value="cfgr2"/>
       <feature value="exti"/>
     </driver>
     <driver name="tim" type="stm32-basic">
@@ -294,6 +300,7 @@
     <driver device-name="72|73|82|83" name="tsc" type="stm32-v1.0"/>
     <driver name="usart" type="stm32-extended">
       <feature value="over8"/>
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="4"/>

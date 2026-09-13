@@ -207,12 +207,16 @@
       <vector position="130" name="LPTIM6"/>
     </driver>
     <driver name="adc" type="stm32-h5">
+      <feature value="prescaler"/>
       <instance value="1"/>
       <instance value="2"/>
     </driver>
     <driver device-name="73" name="aes" type="stm32-v2.0"/>
     <driver name="cordic" type="stm32-v1.0"/>
-    <driver name="crc" type="stm32"/>
+    <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
+      <feature value="reverse"/>
+    </driver>
     <driver name="dac" type="stm32">
       <feature value="status"/>
       <instance value="1"/>
@@ -293,7 +297,9 @@
       <instance value="1"/>
     </driver>
     <driver name="icache" type="stm32-v1.0"/>
-    <driver name="iwdg" type="stm32"/>
+    <driver name="iwdg" type="stm32">
+      <feature value="window"/>
+    </driver>
     <driver name="lptim" type="stm32-v2.2">
       <instance value="1"/>
       <instance value="2"/>
@@ -339,9 +345,7 @@
       <instance device-pin="a|i|l|z" value="5"/>
       <instance value="6"/>
     </driver>
-    <driver name="sys" type="stm32">
-      <feature value="exti"/>
-    </driver>
+    <driver name="sys" type="stm32"/>
     <driver name="sys_s" type="stm32-v1.0"/>
     <driver name="tamp" type="stm32-v2.8"/>
     <driver name="tim" type="stm32-advanced">
@@ -366,6 +370,7 @@
     </driver>
     <driver name="uart" type="stm32-extended">
       <feature value="over8"/>
+      <feature value="wakeup"/>
       <instance value="4"/>
       <instance value="5"/>
       <instance value="7"/>
@@ -378,6 +383,7 @@
     </driver>
     <driver name="usart" type="stm32-extended">
       <feature value="over8"/>
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -386,7 +392,6 @@
       <instance value="11"/>
     </driver>
     <driver name="usb" type="stm32-v1.0"/>
-    <driver name="usbpd" type="stm32-v4.1"/>
     <driver name="vrefbuf" type="stm32-v1.0"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="gpio" type="stm32">
@@ -526,8 +531,8 @@
         <signal af="10" driver="octospi" instance="1" name="io2"/>
         <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="mii_rx_dv"/>
         <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="mii_rx_dv"/>
-        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rmii_rcc_crs_dv"/>
-        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rmii_rcc_crs_dv"/>
+        <signal device-name="63|73" device-pin="a|i|l|m" device-variant="q" af="11" driver="eth" name="rmii_crs_dv"/>
+        <signal device-name="63|73" device-pin="a|i|r|v|z" device-variant="" af="11" driver="eth" name="rmii_crs_dv"/>
         <signal device-pin="a|i|l|m|v|z" af="12" driver="fmc" name="sdnwe"/>
         <signal device-pin="a|i|l|m|v|z" af="13" driver="fmc" name="nwe"/>
       </gpio>
@@ -1222,7 +1227,7 @@
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="3" driver="tim" instance="8" name="ch4"/>
         <signal af="4" driver="i2c" instance="3" name="sda"/>
-        <signal af="5" name="audioclk"/>
+        <signal af="5" driver="rcc" name="audioclk"/>
         <signal af="8" driver="uart" instance="5" name="cts"/>
         <signal af="9" driver="octospi" instance="1" name="io0"/>
         <signal device-pin="a|i|l|m|v|z" af="11" driver="fmc" name="cle"/>

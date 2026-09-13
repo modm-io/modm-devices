@@ -41,39 +41,40 @@
       <vector position="28" name="LCSC"/>
       <vector position="29" name="LCSC_LC_ACTIVITY"/>
     </driver>
-    <driver name="adc" type="stm32">
+    <driver name="adc" type="stm32-wb0">
       <instance value="1"/>
     </driver>
     <driver name="aes" type="stm32-v1.0"/>
     <driver name="comp" type="stm32-tsmc90_wl3_cube">
       <instance value="1"/>
     </driver>
-    <driver name="crc" type="stm32"/>
+    <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
+      <feature value="reverse"/>
+    </driver>
     <driver name="dac" type="stm32">
       <feature value="status"/>
       <instance value="1"/>
     </driver>
     <driver name="debug" type="stm32-v1.0"/>
     <driver name="flash" type="stm32-v1.0">
-      <latency vcore-min="1000">
-        <wait-state ws="0" hclk-max="6000000"/>
-        <wait-state ws="1" hclk-max="12000000"/>
-        <wait-state ws="2" hclk-max="16000000"/>
-      </latency>
       <latency vcore-min="1200">
-        <wait-state ws="0" hclk-max="18000000"/>
-        <wait-state ws="1" hclk-max="36000000"/>
-        <wait-state ws="2" hclk-max="48000000"/>
+        <wait-state ws="0" hclk-max="32000000"/>
+        <wait-state ws="1" hclk-max="64000000"/>
       </latency>
     </driver>
-    <driver name="i2c" type="stm32-v1.1">
+    <driver name="i2c" type="stm32-extended">
+      <feature value="dnf"/>
+      <feature value="fmp"/>
       <instance value="1"/>
       <instance device-pin="c" value="2"/>
     </driver>
     <driver name="i2s" type="stm32-v3.3">
       <instance value="3"/>
     </driver>
-    <driver name="iwdg" type="stm32"/>
+    <driver name="iwdg" type="stm32">
+      <feature value="window"/>
+    </driver>
     <driver name="lcd" type="stm32-v1.3"/>
     <driver name="lcsc" type="stm32-v1.0"/>
     <driver name="lpawur" type="stm32-v1.0"/>
@@ -89,23 +90,22 @@
     <driver name="rf" type="stm32-v1.1"/>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v3.0"/>
-    <driver name="sigfox" type="stm32-v1.0"/>
     <driver name="spi" type="stm32">
+      <feature value="data-size"/>
+      <feature value="fifo"/>
+      <feature value="nss-pulse"/>
       <instance device-pin="c" value="1"/>
       <instance value="3"/>
     </driver>
-    <driver name="sys" type="stm32">
-      <feature value="exti"/>
-    </driver>
+    <driver name="sys" type="stm32"/>
     <driver name="tim" type="stm32-general-purpose">
       <instance value="2"/>
       <instance value="16"/>
     </driver>
-    <driver name="tiny_lpm" type="stm32-v1.0"/>
-    <driver name="usart" type="stm32">
+    <driver name="usart" type="stm32-extended">
+      <feature value="wakeup"/>
       <instance value="1"/>
     </driver>
-    <driver name="wmbus" type="stm32-v1.0"/>
     <driver name="dma" type="stm32-mux">
       <instance value="1"/>
       <requests>
@@ -182,7 +182,7 @@
           <signal driver="tim" instance="16" name="trg"/>
         </request>
         <request position="26">
-          <signal driver="dac" name="out1"/>
+          <signal driver="dac" instance="1" name="out1"/>
         </request>
       </requests>
       <mux-channels>

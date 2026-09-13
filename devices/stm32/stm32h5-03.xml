@@ -95,12 +95,16 @@
       <vector position="133" name="COMP1"/>
     </driver>
     <driver name="adc" type="stm32-h5">
+      <feature value="prescaler"/>
       <instance value="1"/>
     </driver>
     <driver name="comp" type="stm32-tsmc90_h5_cube">
       <instance value="1"/>
     </driver>
-    <driver name="crc" type="stm32"/>
+    <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
+      <feature value="reverse"/>
+    </driver>
     <driver name="dac" type="stm32">
       <feature value="status"/>
       <instance value="1"/>
@@ -166,7 +170,9 @@
       <instance value="2"/>
     </driver>
     <driver name="icache" type="stm32-v1.0"/>
-    <driver name="iwdg" type="stm32"/>
+    <driver name="iwdg" type="stm32">
+      <feature value="window"/>
+    </driver>
     <driver name="lptim" type="stm32-v2.2">
       <instance value="1"/>
       <instance value="2"/>
@@ -191,9 +197,7 @@
       <instance value="2"/>
       <instance value="3"/>
     </driver>
-    <driver name="sys" type="stm32">
-      <feature value="exti"/>
-    </driver>
+    <driver name="sys" type="stm32"/>
     <driver name="tamp" type="stm32-v2.8"/>
     <driver name="tim" type="stm32-advanced">
       <instance value="1"/>
@@ -208,6 +212,7 @@
     </driver>
     <driver name="usart" type="stm32-extended">
       <feature value="over8"/>
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -352,7 +357,7 @@
         <signal af="5" driver="i2s" instance="1" name="sdo"/>
         <signal af="5" driver="spi" instance="1" name="mosi"/>
         <signal af="6" driver="i2s" instance="2" name="mck"/>
-        <signal af="7" name="audioclk"/>
+        <signal af="7" driver="rcc" name="audioclk"/>
         <signal af="8" driver="usart" instance="1" name="de"/>
         <signal af="8" driver="usart" instance="1" name="rts"/>
         <signal af="9" driver="usart" instance="3" name="de"/>
@@ -604,7 +609,7 @@
         <signal af="2" driver="tim" instance="3" name="etr"/>
         <signal af="3" driver="i3c" instance="1" name="sda"/>
         <signal af="4" driver="i2c" instance="1" name="sda"/>
-        <signal af="5" name="audioclk"/>
+        <signal af="5" driver="rcc" name="audioclk"/>
         <signal af="6" driver="i2s" instance="3" name="ck"/>
         <signal af="6" driver="spi" instance="3" name="sck"/>
         <signal af="7" driver="usart" instance="1" name="rx"/>
@@ -813,7 +818,7 @@
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="3" driver="i3c" instance="1" name="sda"/>
         <signal af="4" driver="i2c" instance="1" name="sda"/>
-        <signal af="5" name="audioclk"/>
+        <signal af="5" driver="rcc" name="audioclk"/>
         <signal af="6" driver="spi" instance="3" name="rdy"/>
         <signal af="7" driver="usart" instance="3" name="de"/>
         <signal af="7" driver="usart" instance="3" name="rts"/>

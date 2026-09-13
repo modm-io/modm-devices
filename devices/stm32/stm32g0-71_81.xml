@@ -119,6 +119,7 @@
       <instance value="2"/>
     </driver>
     <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
       <feature value="reverse"/>
     </driver>
     <driver name="dac" type="stm32">
@@ -171,7 +172,6 @@
     </driver>
     <driver name="sys" type="stm32">
       <feature value="cfgr2"/>
-      <feature value="exti"/>
       <feature value="itline"/>
     </driver>
     <driver name="tim" type="stm32-advanced">
@@ -196,12 +196,12 @@
     </driver>
     <driver name="usart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
       <instance value="4"/>
     </driver>
-    <driver name="usbpd" type="stm32-v1.5"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="dma" type="stm32-mux">
       <instance value="1"/>
@@ -560,7 +560,7 @@
         <signal af="1" driver="usart" instance="1" name="de"/>
         <signal af="1" driver="usart" instance="1" name="rts"/>
         <signal af="2" driver="tim" instance="1" name="etr"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="6" driver="i2c" instance="2" name="sda"/>
         <signal af="7" driver="comp" instance="2" name="out"/>
       </gpio>
@@ -820,7 +820,7 @@
         <signal af="2" driver="tim" instance="1" name="ch1"/>
       </gpio>
       <gpio device-pin="r" port="c" pin="9">
-        <signal af="0" driver="i2s" name="ckin"/>
+        <signal af="0" driver="rcc" name="i2s_ckin"/>
         <signal af="1" driver="tim" instance="3" name="ch4"/>
         <signal af="2" driver="tim" instance="1" name="ch2"/>
       </gpio>

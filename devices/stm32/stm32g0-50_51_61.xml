@@ -95,6 +95,7 @@
       <instance value="2"/>
     </driver>
     <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
       <feature value="reverse"/>
     </driver>
     <driver device-name="51|61" name="dac" type="stm32">
@@ -146,7 +147,6 @@
     </driver>
     <driver name="sys" type="stm32">
       <feature value="cfgr2"/>
-      <feature value="exti"/>
       <feature value="itline"/>
     </driver>
     <driver name="tim" type="stm32-advanced">
@@ -166,6 +166,7 @@
     </driver>
     <driver name="usart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
     </driver>
@@ -474,7 +475,7 @@
         <signal af="1" driver="usart" instance="1" name="de"/>
         <signal af="1" driver="usart" instance="1" name="rts"/>
         <signal af="2" driver="tim" instance="1" name="etr"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="6" driver="i2c" instance="2" name="sda"/>
         <signal device-name="51|61" af="7" driver="comp" instance="2" name="out"/>
       </gpio>

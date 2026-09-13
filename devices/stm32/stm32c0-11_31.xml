@@ -54,13 +54,16 @@
       <vector position="27" name="USART1"/>
       <vector position="28" name="USART2"/>
     </driver>
-    <driver name="adc" type="stm32-c0">
+    <driver name="adc" type="stm32-g0">
       <feature value="calfact"/>
       <feature value="oversampler"/>
       <feature value="prescaler"/>
       <instance value="1"/>
     </driver>
-    <driver name="crc" type="stm32"/>
+    <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
+      <feature value="reverse"/>
+    </driver>
     <driver name="debug" type="stm32-v1.0"/>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1200">
@@ -77,7 +80,9 @@
       <instance value="1"/>
     </driver>
     <driver name="irtim" type="stm32-v1.0"/>
-    <driver name="iwdg" type="stm32"/>
+    <driver name="iwdg" type="stm32">
+      <feature value="window"/>
+    </driver>
     <driver name="pwr" type="stm32-v1.0"/>
     <driver name="rcc" type="stm32-v1.0">
       <max-frequency value="48000000"/>
@@ -91,7 +96,6 @@
     </driver>
     <driver name="sys" type="stm32">
       <feature value="cfgr2"/>
-      <feature value="exti"/>
       <feature value="itline"/>
     </driver>
     <driver name="tim" type="stm32-advanced">
@@ -105,6 +109,7 @@
     </driver>
     <driver name="usart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
     </driver>
@@ -335,7 +340,7 @@
         <signal af="1" driver="usart" instance="1" name="de"/>
         <signal af="1" driver="usart" instance="1" name="rts"/>
         <signal af="2" driver="tim" instance="1" name="etr"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
       </gpio>
       <gpio port="a" pin="13">
         <signal driver="adc" instance="1" name="in13"/>

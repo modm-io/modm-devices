@@ -203,6 +203,7 @@
       <vector position="162" name="TIM24"/>
     </driver>
     <driver name="adc" type="stm32-h7">
+      <feature value="prescaler"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -333,8 +334,6 @@
       <instance device-pin="a|i|v|z" value="2"/>
       <instance value="3"/>
       <instance value="4"/>
-    </driver>
-    <driver name="i2c" type="stm32-v1.1">
       <instance value="5"/>
     </driver>
     <driver name="i2s" type="stm32-v1.1">
@@ -344,6 +343,7 @@
       <instance value="6"/>
     </driver>
     <driver name="iwdg" type="stm32">
+      <feature value="window"/>
       <instance value="1"/>
     </driver>
     <driver name="lptim" type="stm32-v1.1">
@@ -388,9 +388,7 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver name="spdifrx" type="stm32-spdifrx1_h7_cube">
-      <instance value="1"/>
-    </driver>
+    <driver name="spdifrx" type="stm32-spdifrx1_h7_cube"/>
     <driver name="spi" type="stm32-extended">
       <instance value="1"/>
       <instance value="2"/>
@@ -429,6 +427,7 @@
     </driver>
     <driver name="uart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="4"/>
       <instance value="5"/>
       <instance value="7"/>
@@ -440,6 +439,7 @@
     </driver>
     <driver name="usart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -739,10 +739,10 @@
           <signal driver="sai" instance="1" name="b"/>
         </request>
         <request position="91">
-          <signal driver="swpmi" name="rx"/>
+          <signal driver="swpmi" instance="1" name="rx"/>
         </request>
         <request position="92">
-          <signal driver="swpmi" name="tx"/>
+          <signal driver="swpmi" instance="1" name="tx"/>
         </request>
         <request position="93">
           <signal driver="spdifrx" name="dt"/>
@@ -1034,7 +1034,7 @@
         <signal af="8" driver="spi" instance="6" name="mosi"/>
         <signal af="9" driver="tim" instance="14" name="ch1"/>
         <signal af="10" driver="octospim" name="p1_io2"/>
-        <signal device-pin="a|i|v|z" af="11" driver="eth" name="rcc_crs_dv"/>
+        <signal device-pin="a|i|v|z" af="11" driver="eth" name="crs_dv"/>
         <signal device-pin="a|i|v|z" af="11" driver="eth" name="rx_dv"/>
         <signal device-pin="a|i|v|z" af="12" driver="fmc" name="sdnwe"/>
         <signal af="14" driver="ltdc" name="vsync"/>
@@ -1427,17 +1427,15 @@
         <signal device-package="i|k" driver="adc" instance="3" name="inn11"/>
         <signal device-package="h|t" driver="adc" instance="3" name="inp0"/>
         <signal device-package="i|k" driver="adc" instance="3" name="inp12"/>
-        <signal device-package="i|k" driver="eth" name="txd2"/>
         <signal driver="pwr" name="cstop"/>
-        <signal device-package="i|k" driver="usb_otg_hs" name="ulpi_dir"/>
         <signal af="3" driver="dfsdm" instance="1" name="ckin1"/>
         <signal af="4" driver="octospim" name="p1_io5"/>
         <signal af="5" driver="i2s" instance="2" name="sdi"/>
         <signal af="5" driver="spi" instance="2" name="miso"/>
         <signal af="6" driver="dfsdm" instance="1" name="ckout"/>
         <signal af="9" driver="octospim" name="p1_io2"/>
-        <signal device-package="h|t" af="10" driver="usb_otg_hs" name="ulpi_dir"/>
-        <signal device-package="h|t" af="11" driver="eth" name="txd2"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_dir"/>
+        <signal af="11" driver="eth" name="txd2"/>
         <signal af="12" driver="fmc" name="sdne0"/>
       </gpio>
       <gpio device-package="h|i|k|t" port="c" pin="3">
@@ -1446,16 +1444,14 @@
         <signal device-package="i|k" driver="adc" instance="2" name="inn12"/>
         <signal device-package="i|k" driver="adc" instance="2" name="inp13"/>
         <signal device-package="h|t" driver="adc" instance="3" name="inp1"/>
-        <signal device-package="i|k" driver="eth" name="tx_clk"/>
         <signal driver="pwr" name="csleep"/>
-        <signal device-package="i|k" driver="usb_otg_hs" name="ulpi_nxt"/>
         <signal af="3" driver="dfsdm" instance="1" name="datin1"/>
         <signal af="4" driver="octospim" name="p1_io6"/>
         <signal af="5" driver="i2s" instance="2" name="sdo"/>
         <signal af="5" driver="spi" instance="2" name="mosi"/>
         <signal af="9" driver="octospim" name="p1_io0"/>
-        <signal device-package="h|t" af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
-        <signal device-package="h|t" af="11" driver="eth" name="tx_clk"/>
+        <signal af="10" driver="usb_otg_hs" name="ulpi_nxt"/>
+        <signal af="11" driver="eth" name="tx_clk"/>
         <signal af="12" driver="fmc" name="sdcke0"/>
       </gpio>
       <gpio port="c" pin="4">
@@ -1540,7 +1536,7 @@
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="3" driver="tim" instance="8" name="ch4"/>
         <signal af="4" driver="i2c" instance="3" name="sda"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="6" driver="i2c" instance="5" name="sda"/>
         <signal af="8" driver="uart" instance="5" name="cts"/>
         <signal af="9" driver="octospim" name="p1_io0"/>

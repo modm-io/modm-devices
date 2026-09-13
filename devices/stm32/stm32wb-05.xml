@@ -36,24 +36,18 @@
       <vector position="26" name="TIM16"/>
       <vector position="27" name="TIM17"/>
     </driver>
-    <driver name="adc" type="stm32-f3">
+    <driver name="adc" type="stm32-wb0">
       <instance value="1"/>
     </driver>
-    <driver name="adv_trace" type="stm32-v1.0"/>
-    <driver name="common_ble" type="stm32-v1.0"/>
-    <driver name="crc" type="stm32"/>
+    <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
+      <feature value="reverse"/>
+    </driver>
     <driver name="debug" type="stm32-v1.0"/>
     <driver name="flash" type="stm32-v1.0">
-      <latency vcore-min="1000">
-        <wait-state ws="0" hclk-max="6000000"/>
-        <wait-state ws="1" hclk-max="12000000"/>
-        <wait-state ws="2" hclk-max="16000000"/>
-      </latency>
       <latency vcore-min="1200">
-        <wait-state ws="0" hclk-max="18000000"/>
-        <wait-state ws="1" hclk-max="36000000"/>
-        <wait-state ws="2" hclk-max="54000000"/>
-        <wait-state ws="3" hclk-max="64000000"/>
+        <wait-state ws="0" hclk-max="32000000"/>
+        <wait-state ws="1" hclk-max="64000000"/>
       </latency>
     </driver>
     <driver name="i2c" type="stm32-extended">
@@ -71,7 +65,6 @@
     <driver name="lpuart" type="stm32-v1.4">
       <instance value="1"/>
     </driver>
-    <driver name="misc" type="stm32-v1.0"/>
     <driver name="pka" type="stm32-v1.0"/>
     <driver name="pwr" type="stm32-v1.0"/>
     <driver name="radio" type="stm32-v1.0"/>
@@ -81,28 +74,21 @@
     </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v4.1"/>
-    <driver name="sequencer" type="stm32-v1.0"/>
     <driver name="spi" type="stm32">
       <feature value="data-size"/>
       <feature value="fifo"/>
       <feature value="nss-pulse"/>
       <instance value="3"/>
     </driver>
-    <driver name="stm32_ble" type="stm32-v1.0"/>
-    <driver name="sys" type="stm32">
-      <feature value="cfgr2"/>
-      <feature value="exti"/>
-      <feature value="imr"/>
-      <feature value="sram2-wp"/>
-    </driver>
+    <driver name="sys" type="stm32"/>
     <driver name="tim" type="stm32-general-purpose">
       <instance value="2"/>
       <instance value="16"/>
       <instance value="17"/>
     </driver>
-    <driver name="tiny_lpm" type="stm32-v1.0"/>
     <driver name="usart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="1"/>
     </driver>
     <driver name="dma" type="stm32-mux">

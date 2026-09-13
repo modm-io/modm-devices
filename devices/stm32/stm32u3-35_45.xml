@@ -135,7 +135,9 @@
       <vector position="123" name="PWR"/>
       <vector position="124" name="PWR_S"/>
     </driver>
-    <driver name="adc" type="stm32-u0">
+    <driver name="adc" type="stm32-u3">
+      <feature value="calfact"/>
+      <feature value="prescaler"/>
       <instance value="1"/>
     </driver>
     <driver name="adf" type="stm32-v1.0">
@@ -146,7 +148,10 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver name="crc" type="stm32"/>
+    <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
+      <feature value="reverse"/>
+    </driver>
     <driver name="dac" type="stm32">
       <feature value="status"/>
       <instance value="1"/>
@@ -176,7 +181,9 @@
       <instance value="_s"/>
     </driver>
     <driver name="hash" type="stm32-v4.0"/>
-    <driver name="i2c" type="stm32-v1.1">
+    <driver name="i2c" type="stm32-extended">
+      <feature value="dnf"/>
+      <feature value="fmp"/>
       <instance value="1"/>
       <instance value="3"/>
     </driver>
@@ -185,7 +192,9 @@
     </driver>
     <driver name="icache" type="stm32-v1.0"/>
     <driver name="irtim" type="stm32-v1.0"/>
-    <driver name="iwdg" type="stm32"/>
+    <driver name="iwdg" type="stm32">
+      <feature value="window"/>
+    </driver>
     <driver name="lptim" type="stm32-v2.2">
       <instance value="1"/>
       <instance value="2"/>
@@ -214,7 +223,7 @@
       <instance value="2"/>
     </driver>
     <driver name="sys" type="stm32">
-      <feature value="exti"/>
+      <feature value="cfgr2"/>
     </driver>
     <driver name="sys_s" type="stm32-v1.2"/>
     <driver name="tamp" type="stm32-v2.8"/>
@@ -256,7 +265,7 @@
         <signal af="1" driver="tim" instance="2" name="ch1"/>
         <signal af="6" driver="spi" instance="2" name="rdy"/>
         <signal af="8" driver="uart" instance="4" name="tx"/>
-        <signal af="13" name="audioclk"/>
+        <signal af="13" driver="rcc" name="audioclk"/>
         <signal af="14" driver="tim" instance="2" name="etr"/>
       </gpio>
       <gpio port="a" pin="1">
@@ -426,7 +435,7 @@
         <signal af="9" driver="fdcan" instance="1" name="tx"/>
         <signal af="10" driver="octospi" instance="1" name="io1"/>
         <signal af="12" driver="comp" instance="1" name="out"/>
-        <signal af="13" name="audioclk"/>
+        <signal af="13" driver="rcc" name="audioclk"/>
       </gpio>
       <gpio port="b" pin="1">
         <signal driver="adc" instance="1" name="in14"/>
@@ -527,42 +536,19 @@
       </gpio>
       <gpio port="b" pin="7">
         <signal driver="comp" instance="2" name="inm"/>
-        <signal device-pin="k" device-package="u" driver="i2c" instance="1" name="sda"/>
-        <signal device-pin="k" device-package="u" driver="i3c" instance="1" name="sda"/>
-        <signal device-pin="k" device-package="u" driver="lptim" instance="1" name="in2"/>
-        <signal device-pin="k" device-package="u" driver="octospi" instance="1" name="io6"/>
         <signal driver="pwr" name="pvd_in"/>
         <signal driver="pwr" name="wkup4"/>
-        <signal device-pin="k" device-package="u" driver="tim" instance="17" name="ch1n"/>
-        <signal device-pin="k" device-package="u" driver="tim" instance="4" name="ch2"/>
-        <signal device-pin="k" device-package="u" driver="tsc" name="g2_io4"/>
-        <signal device-pin="k" device-package="u" driver="uart" instance="4" name="cts"/>
-        <signal device-pin="k" device-package="u" driver="usart" instance="1" name="rx"/>
-        <signal device-pin="c" device-package="t|u|y" af="1" driver="lptim" instance="1" name="in2"/>
-        <signal device-pin="k" device-package="y" af="1" driver="lptim" instance="1" name="in2"/>
-        <signal device-pin="r" device-package="i|t" af="1" driver="lptim" instance="1" name="in2"/>
-        <signal device-pin="c" device-package="t|u|y" af="2" driver="tim" instance="4" name="ch2"/>
-        <signal device-pin="k" device-package="y" af="2" driver="tim" instance="4" name="ch2"/>
-        <signal device-pin="r" device-package="i|t" af="2" driver="tim" instance="4" name="ch2"/>
-        <signal device-pin="c" device-package="t|u|y" af="4" driver="i2c" instance="1" name="sda"/>
-        <signal device-pin="k" device-package="y" af="4" driver="i2c" instance="1" name="sda"/>
-        <signal device-pin="r" device-package="i|t" af="4" driver="i2c" instance="1" name="sda"/>
-        <signal device-pin="c" device-package="t|u|y" af="5" driver="i3c" instance="1" name="sda"/>
-        <signal device-pin="k" device-package="y" af="5" driver="i3c" instance="1" name="sda"/>
-        <signal device-pin="r" device-package="i|t" af="5" driver="i3c" instance="1" name="sda"/>
-        <signal device-pin="c" device-package="t|u|y" af="7" driver="usart" instance="1" name="rx"/>
-        <signal device-pin="k" device-package="y" af="7" driver="usart" instance="1" name="rx"/>
-        <signal device-pin="r" device-package="i|t" af="7" driver="usart" instance="1" name="rx"/>
-        <signal device-pin="c" device-package="t|u|y" af="8" driver="uart" instance="4" name="cts"/>
-        <signal device-pin="k" device-package="y" af="8" driver="uart" instance="4" name="cts"/>
-        <signal device-pin="r" device-package="i|t" af="8" driver="uart" instance="4" name="cts"/>
-        <signal device-pin="c|r" af="9" driver="tsc" name="g2_io4"/>
-        <signal device-pin="c" device-package="t|u|y" af="10" driver="octospi" instance="1" name="io6"/>
-        <signal device-pin="k" device-package="y" af="10" driver="octospi" instance="1" name="io6"/>
-        <signal device-pin="r" device-package="i|t" af="10" driver="octospi" instance="1" name="io6"/>
-        <signal device-pin="c" device-package="t|u|y" af="14" driver="tim" instance="17" name="ch1n"/>
-        <signal device-pin="k" device-package="y" af="14" driver="tim" instance="17" name="ch1n"/>
-        <signal device-pin="r" device-package="i|t" af="14" driver="tim" instance="17" name="ch1n"/>
+        <signal af="1" driver="lptim" instance="1" name="in2"/>
+        <signal af="2" driver="tim" instance="4" name="ch2"/>
+        <signal af="4" driver="i2c" instance="1" name="sda"/>
+        <signal af="5" driver="i3c" instance="1" name="sda"/>
+        <signal af="7" driver="usart" instance="1" name="rx"/>
+        <signal af="8" driver="uart" instance="4" name="cts"/>
+        <signal device-pin="c" device-package="t|u|y" af="9" driver="tsc" name="g2_io4"/>
+        <signal device-pin="k" device-package="u" af="9" driver="tsc" name="g2_io4"/>
+        <signal device-pin="r" device-package="i|t" af="9" driver="tsc" name="g2_io4"/>
+        <signal af="10" driver="octospi" instance="1" name="io6"/>
+        <signal af="14" driver="tim" instance="17" name="ch1n"/>
       </gpio>
       <gpio device-pin="c" device-package="t|u" port="b" pin="8">
         <signal driver="pwr" name="wkup5"/>

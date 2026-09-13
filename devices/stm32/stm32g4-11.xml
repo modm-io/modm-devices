@@ -101,6 +101,7 @@
       <vector position="101" name="FMAC"/>
     </driver>
     <driver name="adc" type="stm32-f3">
+      <feature value="prescaler"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance device-size="c" value="3"/>
@@ -109,10 +110,10 @@
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
-      <instance device-size="6|8|b" value="4"/>
     </driver>
     <driver name="cordic" type="stm32-v1.0"/>
     <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
       <feature value="reverse"/>
     </driver>
     <driver name="dac" type="stm32">
@@ -126,20 +127,23 @@
     </driver>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1000">
-        <wait-state ws="0" hclk-max="8000000"/>
-        <wait-state ws="1" hclk-max="16000000"/>
+        <wait-state ws="0" hclk-max="12000000"/>
+        <wait-state ws="1" hclk-max="24000000"/>
         <wait-state ws="2" hclk-max="26000000"/>
       </latency>
+      <latency vcore-min="1200">
+        <wait-state ws="0" hclk-max="30000000"/>
+        <wait-state ws="1" hclk-max="60000000"/>
+        <wait-state ws="2" hclk-max="90000000"/>
+        <wait-state ws="3" hclk-max="120000000"/>
+        <wait-state ws="4" hclk-max="150000000"/>
+      </latency>
       <latency vcore-min="1280">
-        <wait-state ws="0" hclk-max="20000000"/>
-        <wait-state ws="1" hclk-max="40000000"/>
-        <wait-state ws="2" hclk-max="60000000"/>
-        <wait-state ws="3" hclk-max="80000000"/>
-        <wait-state ws="4" hclk-max="100000000"/>
-        <wait-state ws="5" hclk-max="120000000"/>
-        <wait-state ws="6" hclk-max="140000000"/>
-        <wait-state ws="7" hclk-max="160000000"/>
-        <wait-state ws="8" hclk-max="170000000"/>
+        <wait-state ws="0" hclk-max="34000000"/>
+        <wait-state ws="1" hclk-max="68000000"/>
+        <wait-state ws="2" hclk-max="102000000"/>
+        <wait-state ws="3" hclk-max="136000000"/>
+        <wait-state ws="4" hclk-max="170000000"/>
       </latency>
     </driver>
     <driver device-size="c" name="fmac" type="stm32-v1.0"/>
@@ -164,8 +168,6 @@
     </driver>
     <driver name="opamp" type="stm32-g4_tsmc90_fastopamp_cube">
       <instance value="1"/>
-      <instance device-size="6|8|b" value="2"/>
-      <instance device-size="6|8|b" value="3"/>
     </driver>
     <driver name="pwr" type="stm32-v1.0"/>
     <driver name="rcc" type="stm32-v1.0">
@@ -181,10 +183,10 @@
       <instance value="2"/>
     </driver>
     <driver name="sys" type="stm32">
-      <feature value="ccm-wp"/>
       <feature value="cfgr2"/>
       <feature value="exti"/>
       <feature value="fpu"/>
+      <feature value="sram2-wp"/>
     </driver>
     <driver name="tamp" type="stm32-v2.8"/>
     <driver name="tim" type="stm32-advanced">
@@ -206,14 +208,15 @@
     </driver>
     <driver name="uart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="4"/>
     </driver>
     <driver name="usart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver name="usbpd" type="stm32-v1.4"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="dma" type="stm32-mux">
       <instance value="1"/>
@@ -501,8 +504,6 @@
         <signal driver="comp" instance="1" name="inp"/>
         <signal driver="opamp" instance="1" name="vinp"/>
         <signal driver="opamp" instance="1" name="vinp_sec"/>
-        <signal device-size="6|8|b" driver="opamp" instance="3" name="vinp"/>
-        <signal device-size="6|8|b" driver="opamp" instance="3" name="vinp_sec"/>
         <signal af="0" driver="rtc" name="refin"/>
         <signal af="1" driver="tim" instance="2" name="ch2"/>
         <signal af="7" driver="usart" instance="2" name="de"/>
@@ -546,16 +547,12 @@
         <signal driver="adc" instance="2" name="in13"/>
         <signal driver="comp" instance="2" name="inm"/>
         <signal driver="dac" instance="1" name="out2"/>
-        <signal device-size="6|8|b" driver="opamp" instance="2" name="vinm"/>
-        <signal device-size="6|8|b" driver="opamp" instance="2" name="vinm0"/>
-        <signal device-size="6|8|b" driver="opamp" instance="2" name="vinm_sec"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
         <signal af="2" driver="tim" instance="2" name="etr"/>
         <signal af="5" driver="spi" instance="1" name="sck"/>
       </gpio>
       <gpio port="a" pin="6">
         <signal driver="adc" instance="2" name="in3"/>
-        <signal device-size="6|8|b" driver="opamp" instance="2" name="vout"/>
         <signal af="1" driver="tim" instance="16" name="ch1"/>
         <signal af="2" driver="tim" instance="3" name="ch1"/>
         <signal af="4" driver="tim" instance="8" name="bkin"/>
@@ -569,8 +566,6 @@
         <signal driver="comp" instance="2" name="inp"/>
         <signal driver="opamp" instance="1" name="vinp"/>
         <signal driver="opamp" instance="1" name="vinp_sec"/>
-        <signal device-size="6|8|b" driver="opamp" instance="2" name="vinp"/>
-        <signal device-size="6|8|b" driver="opamp" instance="2" name="vinp_sec"/>
         <signal af="1" driver="tim" instance="17" name="ch1"/>
         <signal af="2" driver="tim" instance="3" name="ch2"/>
         <signal af="4" driver="tim" instance="8" name="ch1n"/>
@@ -618,7 +613,7 @@
       </gpio>
       <gpio port="a" pin="12">
         <signal af="1" driver="tim" instance="16" name="ch1"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="6" driver="tim" instance="1" name="ch2n"/>
         <signal af="7" driver="usart" instance="1" name="de"/>
         <signal af="7" driver="usart" instance="1" name="rts"/>
@@ -660,11 +655,6 @@
       <gpio port="b" pin="0">
         <signal driver="adc" instance="1" name="in15"/>
         <signal device-size="c" driver="adc" instance="3" name="in12"/>
-        <signal device-size="6|8|b" driver="comp" instance="4" name="inp"/>
-        <signal device-size="6|8|b" driver="opamp" instance="2" name="vinp"/>
-        <signal device-size="6|8|b" driver="opamp" instance="2" name="vinp_sec"/>
-        <signal device-size="6|8|b" driver="opamp" instance="3" name="vinp"/>
-        <signal device-size="6|8|b" driver="opamp" instance="3" name="vinp_sec"/>
         <signal af="2" driver="tim" instance="3" name="ch3"/>
         <signal af="4" driver="tim" instance="8" name="ch2n"/>
         <signal af="6" driver="tim" instance="1" name="ch2n"/>
@@ -673,20 +663,14 @@
         <signal driver="adc" instance="1" name="in12"/>
         <signal device-size="c" driver="adc" instance="3" name="in1"/>
         <signal driver="comp" instance="1" name="inp"/>
-        <signal device-pin="c|m|r" device-size="6|8|b" driver="opamp" instance="3" name="vout"/>
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="4" driver="tim" instance="8" name="ch3n"/>
         <signal af="6" driver="tim" instance="1" name="ch3n"/>
-        <signal device-pin="c|m|r" device-size="6|8|b" af="8" driver="comp" instance="4" name="out"/>
         <signal af="12" driver="lpuart" instance="1" name="de"/>
         <signal af="12" driver="lpuart" instance="1" name="rts"/>
       </gpio>
       <gpio device-pin="c|m|r" port="b" pin="2">
         <signal driver="adc" instance="2" name="in12"/>
-        <signal device-pin="c|m|r" device-size="6|8|b" driver="comp" instance="4" name="inm"/>
-        <signal device-pin="c|m|r" device-size="6|8|b" driver="opamp" instance="3" name="vinm"/>
-        <signal device-pin="c|m|r" device-size="6|8|b" driver="opamp" instance="3" name="vinm0"/>
-        <signal device-pin="c|m|r" device-size="6|8|b" driver="opamp" instance="3" name="vinm_sec"/>
         <signal af="0" driver="rtc" name="out2"/>
         <signal af="1" driver="lptim" instance="1" name="out"/>
         <signal device-size="c" af="3" driver="tim" instance="20" name="ch1"/>
@@ -727,7 +711,6 @@
         <signal af="5" driver="tim" instance="8" name="ch1"/>
         <signal af="6" driver="tim" instance="8" name="etr"/>
         <signal af="7" driver="usart" instance="1" name="tx"/>
-        <signal device-size="6|8|b" af="8" driver="comp" instance="4" name="out"/>
         <signal af="10" driver="tim" instance="8" name="bkin2"/>
         <signal af="11" driver="lptim" instance="1" name="etr"/>
       </gpio>
@@ -762,9 +745,6 @@
         <signal af="12" driver="tim" instance="1" name="ch3n"/>
       </gpio>
       <gpio device-pin="c|m|r" port="b" pin="10">
-        <signal device-pin="c|m|r" device-size="6|8|b" driver="opamp" instance="3" name="vinm"/>
-        <signal device-pin="c|m|r" device-size="6|8|b" driver="opamp" instance="3" name="vinm1"/>
-        <signal device-pin="c|m|r" device-size="6|8|b" driver="opamp" instance="3" name="vinm_sec"/>
         <signal af="1" driver="tim" instance="2" name="ch3"/>
         <signal af="8" driver="lpuart" instance="1" name="rx"/>
         <signal af="12" driver="tim" instance="1" name="bkin"/>
@@ -786,8 +766,6 @@
       </gpio>
       <gpio device-pin="c|m|r" port="b" pin="13">
         <signal device-size="c" driver="adc" instance="3" name="in5"/>
-        <signal device-pin="c|m|r" device-size="6|8|b" driver="opamp" instance="3" name="vinp"/>
-        <signal device-pin="c|m|r" device-size="6|8|b" driver="opamp" instance="3" name="vinp_sec"/>
         <signal af="5" driver="i2s" instance="2" name="ck"/>
         <signal af="5" driver="spi" instance="2" name="sck"/>
         <signal af="6" driver="tim" instance="1" name="ch1n"/>
@@ -795,12 +773,9 @@
       </gpio>
       <gpio device-pin="c|m|r" port="b" pin="14">
         <signal driver="adc" instance="1" name="in5"/>
-        <signal device-pin="c|m|r" device-size="6|8|b" driver="opamp" instance="2" name="vinp"/>
-        <signal device-pin="c|m|r" device-size="6|8|b" driver="opamp" instance="2" name="vinp_sec"/>
         <signal af="1" driver="tim" instance="15" name="ch1"/>
         <signal af="5" driver="spi" instance="2" name="miso"/>
         <signal af="6" driver="tim" instance="1" name="ch2n"/>
-        <signal device-pin="c|m|r" device-size="6|8|b" af="8" driver="comp" instance="4" name="out"/>
       </gpio>
       <gpio device-pin="c|m|r" port="b" pin="15">
         <signal driver="adc" instance="2" name="in15"/>
@@ -860,9 +835,6 @@
         <signal driver="opamp" instance="1" name="vinm"/>
         <signal driver="opamp" instance="1" name="vinm1"/>
         <signal driver="opamp" instance="1" name="vinm_sec"/>
-        <signal device-pin="m|r" device-size="6|8|b" driver="opamp" instance="2" name="vinm"/>
-        <signal device-pin="m|r" device-size="6|8|b" driver="opamp" instance="2" name="vinm1"/>
-        <signal device-pin="m|r" device-size="6|8|b" driver="opamp" instance="2" name="vinm_sec"/>
         <signal driver="sys" name="wkup5"/>
         <signal af="2" driver="tim" instance="15" name="bkin"/>
         <signal af="6" driver="tim" instance="1" name="ch4n"/>
@@ -890,7 +862,7 @@
       <gpio device-pin="m|r" port="c" pin="9">
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="4" driver="tim" instance="8" name="ch4"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="6" driver="tim" instance="8" name="bkin2"/>
       </gpio>
       <gpio device-pin="m|r" device-package="t" port="c" pin="10">
@@ -947,12 +919,10 @@
       </gpio>
       <gpio device-pin="m" port="e" pin="7">
         <signal device-size="c" driver="adc" instance="3" name="in4"/>
-        <signal device-size="6|8|b" driver="comp" instance="4" name="inp"/>
         <signal af="2" driver="tim" instance="1" name="etr"/>
       </gpio>
       <gpio device-pin="m" port="e" pin="8">
         <signal device-size="c" driver="adc" instance="3" name="in6"/>
-        <signal device-size="6|8|b" driver="comp" instance="4" name="inm"/>
         <signal af="2" driver="tim" instance="1" name="ch1n"/>
       </gpio>
       <gpio device-pin="m" port="e" pin="9">

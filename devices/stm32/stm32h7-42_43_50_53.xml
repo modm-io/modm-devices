@@ -65,11 +65,10 @@
       <memory device-name="42" name="d1_sram" access="rwx" start="0x24000000" size="393216"/>
       <memory device-name="43|50|53" name="d1_sram" access="rwx" start="0x24000000" size="524288"/>
       <memory device-name="42" name="d2_sram1" access="rwx" start="0x30000000" size="32768"/>
-      <memory device-name="43|53" name="d2_sram1" access="rwx" start="0x30000000" size="131072"/>
-      <memory device-name="50" name="d2_sram1" access="rwx" start="0x30000000" size="294912"/>
+      <memory device-name="43|50|53" name="d2_sram1" access="rwx" start="0x30000000" size="131072"/>
       <memory device-name="42" name="d2_sram2" access="rwx" start="0x30020000" size="16384"/>
-      <memory device-name="43|53" name="d2_sram2" access="rwx" start="0x30020000" size="131072"/>
-      <memory device-name="43|53" name="d2_sram3" access="rwx" start="0x30040000" size="32768"/>
+      <memory device-name="43|50|53" name="d2_sram2" access="rwx" start="0x30020000" size="131072"/>
+      <memory device-name="43|50|53" name="d2_sram3" access="rwx" start="0x30040000" size="32768"/>
       <memory name="d3_sram" access="rwx" start="0x38000000" size="65536"/>
       <memory name="backup" access="rwx" start="0x38800000" size="4096"/>
       <vector position="0" name="WWDG"/>
@@ -215,6 +214,7 @@
       <vector position="149" name="WAKEUP_PIN"/>
     </driver>
     <driver name="adc" type="stm32-h7">
+      <feature value="prescaler"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -354,6 +354,7 @@
       <instance value="3"/>
     </driver>
     <driver name="iwdg" type="stm32">
+      <feature value="window"/>
       <instance value="1"/>
     </driver>
     <driver device-name="43|50|53" name="jpeg" type="stm32-v1.0"/>
@@ -392,9 +393,7 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver name="spdifrx" type="stm32-spdifrx1_h7_cube">
-      <instance value="1"/>
-    </driver>
+    <driver name="spdifrx" type="stm32-spdifrx1_h7_cube"/>
     <driver name="spi" type="stm32-extended">
       <instance value="1"/>
       <instance value="2"/>
@@ -431,6 +430,7 @@
     </driver>
     <driver name="uart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="4"/>
       <instance value="5"/>
       <instance value="7"/>
@@ -438,6 +438,7 @@
     </driver>
     <driver name="usart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -721,10 +722,10 @@
           <signal driver="sai" instance="2" name="b"/>
         </request>
         <request position="91">
-          <signal driver="swpmi" name="rx"/>
+          <signal driver="swpmi" instance="1" name="rx"/>
         </request>
         <request position="92">
-          <signal driver="swpmi" name="tx"/>
+          <signal driver="swpmi" instance="1" name="tx"/>
         </request>
         <request position="93">
           <signal driver="spdifrx" name="dt"/>
@@ -919,7 +920,7 @@
         <signal af="5" driver="spi" instance="1" name="mosi"/>
         <signal af="8" driver="spi" instance="6" name="mosi"/>
         <signal af="9" driver="tim" instance="14" name="ch1"/>
-        <signal af="11" driver="eth" name="rcc_crs_dv"/>
+        <signal af="11" driver="eth" name="crs_dv"/>
         <signal af="11" driver="eth" name="rx_dv"/>
         <signal af="12" driver="fmc" name="sdnwe"/>
       </gpio>
@@ -1387,7 +1388,7 @@
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="3" driver="tim" instance="8" name="ch4"/>
         <signal af="4" driver="i2c" instance="3" name="sda"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="8" driver="uart" instance="5" name="cts"/>
         <signal af="9" driver="quadspi" name="bk1_io0"/>
         <signal device-name="43|50|53" af="10" driver="ltdc" name="g3"/>

@@ -73,9 +73,8 @@
       <attribute-cmsis-header value="stm32f4xx"/>
       <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
       <memory device-size="h" name="flash" access="rx" start="0x8000000" size="1572864"/>
-      <memory name="ccm" access="rw" start="0x10000000" size="65536"/>
-      <memory name="sram" access="rwx" start="0x20000000" size="327680"/>
-      <memory name="backup" access="rwx" start="0x40024000" size="4096"/>
+      <memory name="sram1" access="rwx" start="0x20000000" size="262144"/>
+      <memory name="sram2" access="rwx" start="0x20040000" size="65536"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD"/>
       <vector position="2" name="TAMP_STAMP"/>
@@ -191,7 +190,7 @@
       <instance value="2"/>
     </driver>
     <driver name="flash" type="stm32-v1.0">
-      <latency vcore-min="1800">
+      <latency vcore-min="1710">
         <wait-state ws="0" hclk-max="16000000"/>
         <wait-state ws="1" hclk-max="32000000"/>
         <wait-state ws="2" hclk-max="48000000"/>
@@ -209,16 +208,16 @@
         <wait-state ws="5" hclk-max="100000000"/>
       </latency>
       <latency vcore-min="2400">
-        <wait-state ws="0" hclk-max="24000000"/>
-        <wait-state ws="1" hclk-max="48000000"/>
-        <wait-state ws="2" hclk-max="72000000"/>
-        <wait-state ws="3" hclk-max="96000000"/>
+        <wait-state ws="0" hclk-max="20000000"/>
+        <wait-state ws="1" hclk-max="40000000"/>
+        <wait-state ws="2" hclk-max="60000000"/>
+        <wait-state ws="3" hclk-max="80000000"/>
         <wait-state ws="4" hclk-max="100000000"/>
       </latency>
       <latency vcore-min="2700">
-        <wait-state ws="0" hclk-max="30000000"/>
-        <wait-state ws="1" hclk-max="60000000"/>
-        <wait-state ws="2" hclk-max="90000000"/>
+        <wait-state ws="0" hclk-max="25000000"/>
+        <wait-state ws="1" hclk-max="50000000"/>
+        <wait-state ws="2" hclk-max="75000000"/>
         <wait-state ws="3" hclk-max="100000000"/>
       </latency>
     </driver>
@@ -227,6 +226,7 @@
     </driver>
     <driver device-pin="m|r|v|z" name="fsmc" type="stm32-v2.0"/>
     <driver name="i2c" type="stm32">
+      <feature value="dnf"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -260,6 +260,7 @@
       <instance value="5"/>
     </driver>
     <driver name="sys" type="stm32">
+      <feature value="cfgr2"/>
       <feature value="exti"/>
     </driver>
     <driver name="tim" type="stm32-advanced">
@@ -771,7 +772,7 @@
         <signal af="1" driver="tim" instance="2" name="ch3"/>
         <signal af="2" driver="tim" instance="5" name="ch3"/>
         <signal af="3" driver="tim" instance="9" name="ch1"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="7" driver="usart" instance="2" name="tx"/>
         <signal device-pin="m|r|v|z" af="12" driver="fsmc" name="d4"/>
         <signal device-pin="m|r|v|z" af="12" driver="fsmc" name="da4"/>
@@ -1030,13 +1031,13 @@
       <gpio device-pin="v" device-package="h" port="b" pin="11">
         <signal af="1" driver="tim" instance="2" name="ch4"/>
         <signal af="4" driver="i2c" instance="2" name="sda"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
       </gpio>
       <gpio device-pin="z" device-package="j|t" port="b" pin="11">
         <signal af="1" driver="tim" instance="2" name="ch4"/>
         <signal af="4" driver="i2c" instance="2" name="sda"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="7" driver="usart" instance="3" name="rx"/>
       </gpio>
       <gpio port="b" pin="12">
@@ -1176,7 +1177,7 @@
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="3" driver="tim" instance="8" name="ch4"/>
         <signal af="4" driver="i2c" instance="3" name="sda"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="7" driver="dfsdm" instance="2" name="datin3"/>
         <signal af="9" driver="quadspi" name="bk1_io0"/>
         <signal af="12" driver="sdio" name="d1"/>

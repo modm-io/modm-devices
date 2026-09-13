@@ -113,8 +113,9 @@
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1800">
         <wait-state ws="0" hclk-max="24000000"/>
-        <wait-state ws="1" hclk-max="48000000"/>
-        <wait-state ws="2" hclk-max="72000000"/>
+        <wait-state device-name="01" ws="1" hclk-max="36000000"/>
+        <wait-state device-name="02|03" ws="1" hclk-max="48000000"/>
+        <wait-state device-name="03" ws="2" hclk-max="72000000"/>
       </latency>
     </driver>
     <driver name="i2c" type="stm32">

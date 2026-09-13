@@ -31,7 +31,9 @@
       <attribute-cmsis-header value="stm32f4xx"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288"/>
-      <memory name="sram" access="rwx" start="0x20000000" size="131072"/>
+      <memory name="sram1" access="rwx" start="0x20000000" size="114688"/>
+      <memory name="sram2" access="rwx" start="0x2001C000" size="16384"/>
+      <memory name="backup" access="rwx" start="0x40024000" size="4096"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD"/>
       <vector position="2" name="TAMP_STAMP"/>
@@ -986,7 +988,7 @@
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="3" driver="tim" instance="8" name="ch4"/>
         <signal af="4" driver="i2c" instance="3" name="sda"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="7" driver="uart" instance="5" name="cts"/>
         <signal af="9" driver="quadspi" name="bk1_io0"/>
         <signal af="12" driver="sdio" name="d1"/>
