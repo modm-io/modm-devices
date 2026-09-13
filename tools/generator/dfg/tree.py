@@ -1,33 +1,29 @@
-# -*- coding: utf-8 -*-
-# Copyright (c) 2013-2016, Niklas Hauser
-# Copyright (c)      2016, Fabian Greif
-# All rights reserved.
+# Copyright 2013, Niklas Hauser
+# Copyright 2016, Fabian Greif
+# SPDX-License-Identifier: MPL-2.0
 
 import logging
-
-from enum import Enum
 from collections import OrderedDict
 
-from modm_devices.device_identifier import MultiDeviceIdentifier
+from .identifier import MultiDeviceIdentifier
 
-LOGGER = logging.getLogger('dfg.tree')
+LOGGER = logging.getLogger(__name__)
+
 
 class DeviceTree:
-    """ DeviceTree
-    Abstracts a generic tree, loosely based on XML.
+    """
+    A generic tree loosely based on XML, where every node carries the set of
+    devices it applies to. Merging two trees combines equal nodes and extends
+    their device sets.
     """
 
     def __init__(self, name=None, ids=None):
         self.parent = None
         self.children = []
-
         self.ids = MultiDeviceIdentifier(ids)
-
         self.name = str(name)
         self.attributes = OrderedDict()
-
         self.sortKeys = []
-
         self.__cstring = None
         self.__hash = None
 
@@ -42,8 +38,7 @@ class DeviceTree:
         tree.sortKeys = self.sortKeys
         tree.parent = parent if parent else self.parent
         for child in self.children:
-            cchild = child.copy(tree)
-            tree.children.append(cchild)
+            tree.children.append(child.copy(tree))
         return tree
 
     def setAttributes(self, *args):
@@ -53,8 +48,7 @@ class DeviceTree:
                     self.setAttribute(k, args[1][k])
             return
         if isinstance(args[0], dict):
-            LOGGER.error("Unordered dictionaries are not accepted!")
-            return
+            raise TypeError("Unordered dictionaries are not accepted!")
 
         assert len(args) % 2 == 0
         for ii in range(len(args) // 2):
@@ -63,8 +57,7 @@ class DeviceTree:
     def setAttribute(self, key, value):
         self._invalidate()
         if key == "value" and len(self.children):
-            LOGGER.error("Cannot set attribute `value` on tree with children!")
-            exit(1)
+            raise ValueError("Cannot set attribute `value` on tree with children!")
         if key in self.attributes:
             LOGGER.warning("Overwriting attribute '%s'", key)
         self.attributes[key] = str(value)
@@ -76,26 +69,15 @@ class DeviceTree:
 
     def addChild(self, name):
         if "value" in self:
-            LOGGER.error("Cannot add children to tree with attribute `value`!")
-            exit(1)
+            raise ValueError("Cannot add children to tree with attribute `value`!")
         element = DeviceTree(name)
         element.parent = self
         element.ids = self.ids.copy()
         self.children.append(element)
         return element
 
-    def prependChild(self, name):
-        if "value" in self:
-            LOGGER.error("Cannot add children to tree with attribute `value`!")
-            exit(1)
-        element = DeviceTree(name)
-        element.parent = self
-        element.ids = self.ids.copy()
-        self.children.insert(0, element)
-        return element
-
     def setValue(self, value):
-        self.setAttribute('value', str(value))
+        self.setAttribute("value", str(value))
 
     def addSortKey(self, key):
         self.sortKeys.append(key)
@@ -107,40 +89,35 @@ class DeviceTree:
         return self.get(item)
 
     def __contains__(self, item):
-        return (item in self.attributes)
+        return item in self.attributes
 
     def _sortTree(self):
         for key in self.sortKeys:
-            try:
-                self.children.sort(key=key)
-            except Exception as e:
-                print(e, self.children, key)
-                exit(1)
+            self.children.sort(key=key)
         for ch in self.children:
             ch._sortTree()
 
     def toString(self, indent=0):
-        ind = ' ' * indent
+        ind = " " * indent
         if indent >= 2:
-            ind = ind[:-2] + '. '
-        if self.parent is None or self.parent.ids == self.ids:
-            ident = ""
-        else:
-            ident = self.ids.string
-        string = "{}{} {}\n".format(
-            ind,
-            self._toCompactString(),
-            ident)
+            ind = ind[:-2] + ". "
+        ident = (
+            ""
+            if self.parent is None or self.parent.ids == self.ids
+            else self.ids.string
+        )
+        string = f"{ind}{self._toCompactString()} {ident}\n"
         for ch in self.children:
             string += ch.toString(indent + 2)
         return string
 
     def _toCompactString(self):
         if self.__cstring is None:
-            self.__cstring = "{} <{}>".format(
-                self.name,
-                " ".join(["{}:{}".format(k, "[hidden]" if k.startswith("_") else v) for k,v in self.attributes.items()])
+            attributes = " ".join(
+                "{}:{}".format(k, "[hidden]" if k.startswith("_") else v)
+                for k, v in self.attributes.items()
             )
+            self.__cstring = f"{self.name} <{attributes}>"
         return self.__cstring
 
     def merge(self, other):
@@ -157,7 +134,7 @@ class DeviceTree:
             for other in other_remaining:
                 if other == child:
                     other_remaining.remove(other)
-                    merge_list.append( (child, other) )
+                    merge_list.append((child, other))
                     break
             else:
                 remaining.append(child)
@@ -188,7 +165,4 @@ class DeviceTree:
         return self.__hash
 
     def __repr__(self):
-        return self.__str__()
-
-    def __str__(self):
         return self._toCompactString()
