@@ -1,7 +1,7 @@
 # Curated data for AVR and STM32 devices
 
-This repository contains tools for extracting data from vendor sources,
-filtering and reformatting them into a vendor-independent format.
+This repository contains the modm device files and the tools to convert the
+device data extracted from vendor sources by [modm-data][] into this format.
 
 This data is used by [the modm project][modm-io] to generate
 its Hardware Abstraction Layer (HAL), startup code and additional support tools.
@@ -34,21 +34,24 @@ Please open an issue or better yet a pull request for additional support.
 
 ### TL;DR
 
+The device files are generated from the device data extracted by [modm-data][]
+and updated manually. The CI generates them every week with the latest modm-data
+to check that the committed device files are still up-to-date. To update them,
+install the latest modm-data with its input sources and then run the Device File
+Generator here:
+
 ```sh
+git clone https://github.com/modm-io/modm-data.git
 git clone https://github.com/modm-io/modm-devices.git
+# Install modm-data and download the input sources (the CubeMX database separately)
+(cd modm-data && make venv && source .venv/bin/activate && \
+    make device-sources download-stmicro-cubemx)
+source modm-data/.venv/bin/activate
 cd modm-devices/tools/generator
-# Generate STM32 device data
+# Generate all device files or just a vendor or device prefix
+make generate
 make generate-stm32
-# Generate SAM device data
-make generate-sam
-# Generate AVR device data
-make generate-avr
-```
-
-You need Python3 with lxml, jinja2, deepdiff, CppHeaderParser and packaging packages.
-
-```sh
-pip install lxml jinja2 deepdiff CppHeaderParser packaging
+make generate-stm32f4
 ```
 
 
@@ -93,8 +96,9 @@ to maintain. You may of course open an issue about wrong data, but I'd prefer if
 you opened a pull request that fixes the problem in the DFG instead.
 
 All fixes MUST BE REPRODUCIBLE by the DFG! This means you need to track down the
-bug to either the raw vendor data (=> update the manual patches) or in the DFG
-data pipeline (=> fix the DFG).
+bug to either the raw vendor data (=> update the manual patches in modm-data),
+the data extraction pipeline (=> fix modm-data) or the conversion into device
+files (=> fix the DFG in this repository).
 
 *DO NOT UNDER ANY CIRCUMSTANCES PUBLISH THE RAW DATA EXTRACTED FROM CUBEMX ANYWHERE!*
 It is subject to ST's copyright and you are not allowed to distribute it!
@@ -131,4 +135,5 @@ For modm we convert this format to a Python dictionary tree, for details see the
 [@salkinium]: http://github.com/salkinium
 [modm-devices]: https://github.com/modm-io/modm-devices
 [modm-io]: https://github.com/modm-io
-[patches]: https://github.com/modm-io/modm-devices/tree/develop/tools/generator/raw-data-extractor/patches
+[patches]: https://github.com/modm-io/modm-data/tree/main/src/modm_data/dl
+[modm-data]: https://github.com/modm-io/modm-data
