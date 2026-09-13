@@ -437,10 +437,6 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver name="openamp" type="stm32-v1.0">
-      <instance value="cortex-m4"/>
-      <instance value="cortex-m7"/>
-    </driver>
     <driver name="pwr" type="stm32-v1.0"/>
     <driver name="quadspi" type="stm32-v1.0"/>
     <driver name="ramecc" type="stm32-v1.0"/>
