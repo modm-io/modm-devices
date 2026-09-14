@@ -189,13 +189,13 @@ def _device_tree(p, did) -> DeviceTree:
     _add_interrupts(p, core_child)
 
     modules = {}
-    for m, i, _, h, f, pr in p["modules"]:
+    for m, i, _, h, f in p["modules"]:
         if m + h not in modules:
-            modules[m + h] = (m, h, f, pr, [i])
+            modules[m + h] = (m, h, f, [i])
         else:
-            modules[m + h][4].append(i)
+            modules[m + h][3].append(i)
 
-    for name, hardware, features, protocols, instances in modules.values():
+    for name, hardware, features, instances in modules.values():
         driver = tree.addChild("driver")
         driver.setAttributes("name", name, "type", hardware)
         if name == "gpio":
