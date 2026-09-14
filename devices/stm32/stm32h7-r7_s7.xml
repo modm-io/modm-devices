@@ -20,12 +20,12 @@
       <attribute-cmsis-define device-name="r7" value="STM32H7R7xx"/>
       <attribute-cmsis-define device-name="s7" value="STM32H7S7xx"/>
       <attribute-cmsis-header value="stm32h7rsxx"/>
-      <memory name="itcm_ram" access="rwx" start="0x00" size="65536"/>
       <memory name="itcm" access="rwx" start="0x00" size="65536"/>
       <memory name="flash" access="rx" start="0x8000000" size="65536"/>
       <memory name="dtcm" access="rwx" start="0x20000000" size="65536"/>
       <memory name="d1_sram" access="rwx" start="0x24000000" size="466944"/>
-      <memory name="d2_sram1" access="rwx" start="0x30000000" size="32768"/>
+      <memory name="d2_sram1" access="rwx" start="0x30000000" size="16384"/>
+      <memory name="d2_sram2" access="rwx" start="0x30004000" size="16384"/>
       <memory name="backup" access="rwx" start="0x38800000" size="4096"/>
       <vector position="0" name="PVD_PVM"/>
       <vector position="2" name="DTS"/>
@@ -175,7 +175,8 @@
       <vector position="154" name="FDCAN2_IT0"/>
       <vector position="155" name="FDCAN2_IT1"/>
     </driver>
-    <driver name="adc" type="stm32-h7">
+    <driver name="adc" type="stm32-h5">
+      <feature value="prescaler"/>
       <instance value="1"/>
       <instance value="2"/>
     </driver>
@@ -193,39 +194,28 @@
     <driver name="dma2d" type="stm32"/>
     <driver name="dts" type="stm32-v1.0"/>
     <driver name="eth" type="stm32-v3.1"/>
-    <driver name="extmem_loader" type="stm32-v1.0"/>
-    <driver name="extmem_manager" type="stm32-v1.0"/>
-    <driver name="extmem_manager_appli" type="stm32-v1.0"/>
-    <driver name="fdcan" type="stm32-h7">
+    <driver name="fdcan" type="stm32">
       <instance value="1"/>
       <instance value="2"/>
     </driver>
     <driver name="flash" type="stm32-v1.0">
-      <latency vcore-min="950">
-        <wait-state ws="0" hclk-max="45000000"/>
-        <wait-state ws="1" hclk-max="90000000"/>
-        <wait-state ws="2" hclk-max="135000000"/>
-        <wait-state ws="3" hclk-max="180000000"/>
-        <wait-state ws="4" hclk-max="225000000"/>
-      </latency>
-      <latency vcore-min="1050">
-        <wait-state ws="0" hclk-max="55000000"/>
-        <wait-state ws="1" hclk-max="110000000"/>
-        <wait-state ws="2" hclk-max="165000000"/>
-        <wait-state ws="3" hclk-max="225000000"/>
-      </latency>
       <latency vcore-min="1150">
-        <wait-state ws="0" hclk-max="70000000"/>
-        <wait-state ws="1" hclk-max="140000000"/>
-        <wait-state ws="2" hclk-max="210000000"/>
-        <wait-state ws="3" hclk-max="225000000"/>
+        <wait-state ws="0" hclk-max="36000000"/>
+        <wait-state ws="1" hclk-max="72000000"/>
+        <wait-state ws="2" hclk-max="108000000"/>
+        <wait-state ws="3" hclk-max="144000000"/>
+        <wait-state ws="4" hclk-max="180000000"/>
+        <wait-state ws="5" hclk-max="216000000"/>
       </latency>
-      <latency vcore-min="1260">
-        <wait-state ws="0" hclk-max="70000000"/>
-        <wait-state ws="1" hclk-max="140000000"/>
-        <wait-state ws="2" hclk-max="210000000"/>
-        <wait-state ws="3" hclk-max="225000000"/>
-        <wait-state ws="4" hclk-max="240000000"/>
+      <latency vcore-min="1300">
+        <wait-state ws="0" hclk-max="40000000"/>
+        <wait-state ws="1" hclk-max="80000000"/>
+        <wait-state ws="2" hclk-max="120000000"/>
+        <wait-state ws="3" hclk-max="160000000"/>
+        <wait-state ws="4" hclk-max="200000000"/>
+        <wait-state ws="5" hclk-max="240000000"/>
+        <wait-state ws="6" hclk-max="280000000"/>
+        <wait-state ws="7" hclk-max="320000000"/>
       </latency>
     </driver>
     <driver name="fmc" type="stm32-v3.1"/>
@@ -259,7 +249,9 @@
     <driver name="icache" type="stm32-v1.0">
       <instance value="_gpu2d"/>
     </driver>
-    <driver name="iwdg" type="stm32"/>
+    <driver name="iwdg" type="stm32">
+      <feature value="window"/>
+    </driver>
     <driver name="jpeg" type="stm32-v1.0"/>
     <driver name="lptim" type="stm32-v2.2">
       <instance device-pin="l" value="1"/>
@@ -283,7 +275,8 @@
     <driver name="pwr" type="stm32-v1.0"/>
     <driver name="ramecc" type="stm32-v1.0"/>
     <driver name="rcc" type="stm32-v1.0">
-      <max-frequency value="550000000"/>
+      <max-frequency device-pin="a|i|z" value="600000000"/>
+      <max-frequency device-pin="l" value="550000000"/>
     </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-rtc2_v2_u5_cube"/>
@@ -306,9 +299,7 @@
       <instance value="5"/>
       <instance value="6"/>
     </driver>
-    <driver name="sys" type="stm32">
-      <feature value="exti"/>
-    </driver>
+    <driver name="sys" type="stm32"/>
     <driver name="tamp" type="stm32-v2.8"/>
     <driver name="tim" type="stm32-advanced">
       <instance value="1"/>
@@ -332,6 +323,7 @@
     </driver>
     <driver name="uart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="4"/>
       <instance value="5"/>
       <instance value="7"/>
@@ -342,13 +334,13 @@
     </driver>
     <driver name="usart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
     </driver>
     <driver name="usb_otg_fs" type="stm32-v3.0"/>
     <driver device-pin="l" name="usb_otg_hs" type="stm32-v2.0"/>
-    <driver device-pin="l" name="usbpd" type="stm32-v1.4"/>
     <driver name="vrefbuf" type="stm32-v1.0"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="xspi" type="stm32-v2.1">
@@ -495,7 +487,7 @@
         <signal af="9" driver="tim" instance="14" name="ch1"/>
         <signal af="10" driver="ltdc" name="r4"/>
         <signal af="11" driver="eth" name="mii_rx_dv"/>
-        <signal af="11" driver="eth" name="rmii_rcc_crs_dv"/>
+        <signal af="11" driver="eth" name="rmii_crs_dv"/>
         <signal af="12" driver="fmc" name="int"/>
         <signal af="13" driver="ltdc" name="b1"/>
       </gpio>
@@ -945,7 +937,7 @@
         <signal af="0" driver="rcc" name="mco_2"/>
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="4" driver="i2c" instance="3" name="sda"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="8" driver="uart" instance="5" name="cts"/>
         <signal af="9" driver="pssi" name="d3"/>
         <signal device-pin="a|i|l" af="11" driver="sdmmc" instance="1" name="d1"/>

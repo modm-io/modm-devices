@@ -173,19 +173,23 @@
       <instance value="1"/>
       <channels instance="1">
         <channel position="1">
-          <signal driver="adc"/>
+          <signal driver="adc">
+            <remap position="8" mask="1" id="0"/>
+          </signal>
           <signal driver="tim" instance="17" name="ch1">
             <remap position="12" mask="1" id="0"/>
-            <remap position="14" mask="1" id="1"/>
+            <remap position="14" mask="1" id="0"/>
           </signal>
           <signal driver="tim" instance="17" name="up">
             <remap position="12" mask="1" id="0"/>
-            <remap position="14" mask="1" id="1"/>
+            <remap position="14" mask="1" id="0"/>
           </signal>
           <signal driver="tim" instance="2" name="ch3"/>
         </channel>
         <channel position="2">
-          <signal driver="adc"/>
+          <signal driver="adc">
+            <remap position="8" mask="1" id="1"/>
+          </signal>
           <signal driver="i2c" instance="1" name="tx">
             <remap position="27" mask="1" id="0"/>
           </signal>
@@ -195,11 +199,11 @@
           </signal>
           <signal driver="tim" instance="17" name="ch1">
             <remap position="12" mask="1" id="1"/>
-            <remap position="14" mask="1" id="1"/>
+            <remap position="14" mask="1" id="0"/>
           </signal>
           <signal driver="tim" instance="17" name="up">
             <remap position="12" mask="1" id="1"/>
-            <remap position="14" mask="1" id="1"/>
+            <remap position="14" mask="1" id="0"/>
           </signal>
           <signal driver="tim" instance="2" name="up"/>
           <signal driver="tim" instance="3" name="ch3"/>
@@ -221,11 +225,11 @@
           </signal>
           <signal driver="tim" instance="16" name="ch1">
             <remap position="11" mask="1" id="0"/>
-            <remap position="13" mask="1" id="1"/>
+            <remap position="13" mask="1" id="0"/>
           </signal>
           <signal driver="tim" instance="16" name="up">
             <remap position="11" mask="1" id="0"/>
-            <remap position="13" mask="1" id="1"/>
+            <remap position="13" mask="1" id="0"/>
           </signal>
           <signal driver="tim" instance="2" name="ch2">
             <remap position="29" mask="1" id="0"/>
@@ -251,11 +255,11 @@
           <signal driver="tim" instance="1" name="trig"/>
           <signal driver="tim" instance="16" name="ch1">
             <remap position="11" mask="1" id="1"/>
-            <remap position="13" mask="1" id="1"/>
+            <remap position="13" mask="1" id="0"/>
           </signal>
           <signal driver="tim" instance="16" name="up">
             <remap position="11" mask="1" id="1"/>
-            <remap position="13" mask="1" id="1"/>
+            <remap position="13" mask="1" id="0"/>
           </signal>
           <signal driver="tim" instance="2" name="ch4">
             <remap position="29" mask="1" id="0"/>
@@ -279,7 +283,9 @@
           <signal driver="spi" instance="2" name="tx">
             <remap position="24" mask="1" id="0"/>
           </signal>
-          <signal driver="tim" instance="1" name="ch3"/>
+          <signal driver="tim" instance="1" name="ch3">
+            <remap position="28" mask="1" id="0"/>
+          </signal>
           <signal driver="tim" instance="1" name="up"/>
           <signal driver="tim" instance="15" name="ch1"/>
           <signal driver="tim" instance="15" name="com"/>
@@ -310,9 +316,11 @@
             <remap position="28" mask="1" id="1"/>
           </signal>
           <signal driver="tim" instance="16" name="ch1">
+            <remap position="11" mask="1" id="0"/>
             <remap position="13" mask="1" id="1"/>
           </signal>
           <signal driver="tim" instance="16" name="up">
+            <remap position="11" mask="1" id="0"/>
             <remap position="13" mask="1" id="1"/>
           </signal>
           <signal driver="tim" instance="3" name="ch1">
@@ -337,9 +345,11 @@
             <remap position="24" mask="1" id="1"/>
           </signal>
           <signal driver="tim" instance="17" name="ch1">
+            <remap position="12" mask="1" id="0"/>
             <remap position="14" mask="1" id="1"/>
           </signal>
           <signal driver="tim" instance="17" name="up">
+            <remap position="12" mask="1" id="0"/>
             <remap position="14" mask="1" id="1"/>
           </signal>
           <signal driver="tim" instance="2" name="ch2">

@@ -78,7 +78,10 @@
       <vector position="30" name="USART4_LPUART3"/>
       <vector position="31" name="RNG_CRYP"/>
     </driver>
-    <driver name="adc" type="stm32-u0">
+    <driver name="adc" type="stm32-g0">
+      <feature value="calfact"/>
+      <feature value="oversampler"/>
+      <feature value="prescaler"/>
       <instance value="1"/>
     </driver>
     <driver device-name="83" name="aes" type="stm32-v1.0"/>
@@ -86,7 +89,10 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver name="crc" type="stm32"/>
+    <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
+      <feature value="reverse"/>
+    </driver>
     <driver name="dac" type="stm32">
       <feature value="status"/>
       <instance value="1"/>
@@ -96,7 +102,7 @@
       <latency vcore-min="1000">
         <wait-state ws="0" hclk-max="8000000"/>
         <wait-state ws="1" hclk-max="16000000"/>
-        <wait-state ws="2" hclk-max="16000000"/>
+        <wait-state ws="2" hclk-max="18000000"/>
       </latency>
       <latency vcore-min="1200">
         <wait-state ws="0" hclk-max="24000000"/>
@@ -104,14 +110,18 @@
         <wait-state ws="2" hclk-max="56000000"/>
       </latency>
     </driver>
-    <driver name="i2c" type="stm32-v1.1">
+    <driver name="i2c" type="stm32-extended">
+      <feature value="dnf"/>
+      <feature value="fmp"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
       <instance value="4"/>
     </driver>
     <driver name="irtim" type="stm32-v1.0"/>
-    <driver name="iwdg" type="stm32"/>
+    <driver name="iwdg" type="stm32">
+      <feature value="window"/>
+    </driver>
     <driver name="lcd" type="stm32-v1.5"/>
     <driver name="lptim" type="stm32-v2.3">
       <instance value="1"/>
@@ -142,7 +152,6 @@
     </driver>
     <driver name="sys" type="stm32">
       <feature value="cfgr2"/>
-      <feature value="exti"/>
       <feature value="itline"/>
     </driver>
     <driver name="tamp" type="stm32-v2.8"/>
@@ -162,6 +171,7 @@
     <driver name="tsc" type="stm32-v1.0"/>
     <driver name="usart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -187,7 +197,7 @@
           <signal driver="dma" name="generator3"/>
         </request>
         <request position="5">
-          <signal driver="adc"/>
+          <signal driver="adc" instance="1"/>
         </request>
         <request device-name="83" position="6">
           <signal driver="aes" name="in"/>
@@ -196,7 +206,7 @@
           <signal driver="aes" name="out"/>
         </request>
         <request position="8">
-          <signal driver="dac" name="ch1"/>
+          <signal driver="dac" instance="1" name="ch1"/>
         </request>
         <request position="9">
           <signal driver="i2c" instance="1" name="rx"/>
@@ -430,8 +440,7 @@
         <signal driver="opamp" instance="1" name="vinp"/>
         <signal driver="pwr" name="wkup1"/>
         <signal driver="tamp" name="in2"/>
-        <signal device-pin="c|h|m|r" driver="tim" instance="2" name="ch1"/>
-        <signal device-pin="k" af="1" driver="tim" instance="2" name="ch1"/>
+        <signal af="1" driver="tim" instance="2" name="ch1"/>
         <signal af="7" driver="usart" instance="2" name="cts"/>
         <signal af="8" driver="usart" instance="4" name="tx"/>
         <signal af="11" driver="lcd" name="seg42"/>

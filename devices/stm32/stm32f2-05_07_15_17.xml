@@ -86,16 +86,15 @@
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288"/>
       <memory device-size="f" name="flash" access="rx" start="0x8000000" size="786432"/>
       <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
-      <memory device-size="b" name="sram1" access="rwx" start="0x20000000" size="49152"/>
-      <memory device-name="05" device-size="c" name="sram1" access="rwx" start="0x20000000" size="81920"/>
+      <memory device-size="b" name="sram" access="rwx" start="0x20000000" size="65536"/>
+      <memory device-name="05" device-size="c" name="sram" access="rwx" start="0x20000000" size="98304"/>
       <memory device-name="07" device-size="c" name="sram1" access="rwx" start="0x20000000" size="114688"/>
       <memory device-name="05|07" device-size="e|f|g" name="sram1" access="rwx" start="0x20000000" size="114688"/>
       <memory device-name="15|17" device-size="e|g" name="sram1" access="rwx" start="0x20000000" size="114688"/>
-      <memory device-size="b" name="sram2" access="rwx" start="0x2000C000" size="16384"/>
-      <memory device-name="05" device-size="c" name="sram2" access="rwx" start="0x20014000" size="16384"/>
       <memory device-name="07" device-size="c" name="sram2" access="rwx" start="0x2001C000" size="16384"/>
       <memory device-name="05|07" device-size="e|f|g" name="sram2" access="rwx" start="0x2001C000" size="16384"/>
       <memory device-name="15|17" device-size="e|g" name="sram2" access="rwx" start="0x2001C000" size="16384"/>
+      <memory name="backup" access="rwx" start="0x40024000" size="4096"/>
       <vector position="0" name="WWDG"/>
       <vector position="1" name="PVD"/>
       <vector position="2" name="TAMP_STAMP"/>
@@ -689,7 +688,7 @@
         <signal af="3" driver="tim" instance="8" name="ch1n"/>
         <signal af="5" driver="spi" instance="1" name="mosi"/>
         <signal af="9" driver="tim" instance="14" name="ch1"/>
-        <signal device-name="07|17" af="11" driver="eth" name="rcc_crs_dv"/>
+        <signal device-name="07|17" af="11" driver="eth" name="crs_dv"/>
         <signal device-name="07|17" af="11" driver="eth" name="rx_dv"/>
       </gpio>
       <gpio port="a" pin="8">
@@ -938,7 +937,7 @@
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="3" driver="tim" instance="8" name="ch4"/>
         <signal af="4" driver="i2c" instance="3" name="sda"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="12" driver="sdio" name="d1"/>
         <signal device-name="07|17" af="13" driver="dcmi" name="d3"/>
       </gpio>

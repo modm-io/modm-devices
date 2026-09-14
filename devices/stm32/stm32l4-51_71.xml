@@ -51,9 +51,8 @@
       <attribute-cmsis-define device-name="71" value="STM32L471xx"/>
       <attribute-cmsis-header value="stm32l4xx"/>
       <memory device-size="c" name="flash" access="rx" start="0x8000000" size="262144"/>
-      <memory device-size="e" device-package="i|j|t|u|y" name="flash" access="rx" start="0x8000000" size="524288"/>
-      <memory device-size="g" device-package="j" name="flash" access="rx" start="0x8000000" size="524288"/>
-      <memory device-size="g" device-package="i|t" name="flash" access="rx" start="0x8000000" size="1048576"/>
+      <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288"/>
+      <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576"/>
       <memory name="ccm" access="rw" start="0x10000000" size="32768"/>
       <memory device-name="71" name="sram1" access="rwx" start="0x20000000" size="98304"/>
       <memory device-name="51" name="sram1" access="rwx" start="0x20000000" size="131072"/>
@@ -143,12 +142,13 @@
       <vector device-name="51" position="84" name="I2C4_ER"/>
     </driver>
     <driver name="adc" type="stm32-f3">
+      <feature value="prescaler"/>
       <instance value="1"/>
       <instance device-name="71" value="2"/>
       <instance device-name="71" value="3"/>
     </driver>
     <driver name="can" type="stm32">
-      <feature value="filter-28"/>
+      <feature value="filter-14"/>
       <instance value="1"/>
     </driver>
     <driver device-name="71" name="comp" type="stm32-tsmc90_cube">
@@ -159,7 +159,10 @@
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver name="crc" type="stm32"/>
+    <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
+      <feature value="reverse"/>
+    </driver>
     <driver name="dac" type="stm32">
       <feature value="status"/>
       <instance value="1"/>
@@ -192,7 +195,9 @@
       <instance device-name="51" value="4"/>
     </driver>
     <driver name="irtim" type="stm32-v1.0"/>
-    <driver name="iwdg" type="stm32"/>
+    <driver name="iwdg" type="stm32">
+      <feature value="window"/>
+    </driver>
     <driver name="lptim" type="stm32-v1.0">
       <instance value="1"/>
       <instance value="2"/>
@@ -230,7 +235,10 @@
       <instance value="1"/>
     </driver>
     <driver name="sys" type="stm32">
+      <feature value="cfgr2"/>
       <feature value="exti"/>
+      <feature value="fpu"/>
+      <feature value="sram2-wp"/>
     </driver>
     <driver name="tim" type="stm32-advanced">
       <instance value="1"/>
@@ -251,10 +259,12 @@
     </driver>
     <driver name="tsc" type="stm32-v1.0"/>
     <driver name="uart" type="stm32-extended">
+      <feature value="wakeup"/>
       <instance value="4"/>
       <instance device-name="71" value="5"/>
     </driver>
     <driver name="usart" type="stm32-extended">
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -324,7 +334,7 @@
             <signal driver="tim" instance="3" name="up"/>
           </request>
           <request position="6">
-            <signal driver="dac" name="ch1"/>
+            <signal driver="dac" instance="1" name="ch1"/>
             <signal driver="tim" instance="6" name="up"/>
           </request>
           <request position="7">
@@ -345,7 +355,7 @@
             <signal driver="i2c" instance="2" name="tx"/>
           </request>
           <request position="5">
-            <signal driver="dac" name="ch2"/>
+            <signal driver="dac" instance="1" name="ch2"/>
             <signal device-name="71" driver="tim" instance="7" name="up"/>
           </request>
           <request device-name="71" position="6">
@@ -455,7 +465,7 @@
             <signal driver="spi" instance="3" name="rx"/>
           </request>
           <request device-name="71" position="4">
-            <signal driver="swpmi" name="rx"/>
+            <signal driver="swpmi" instance="1" name="rx"/>
           </request>
           <request device-name="71" position="5">
             <signal driver="tim" instance="5" name="ch4"/>
@@ -481,7 +491,7 @@
             <signal driver="spi" instance="3" name="tx"/>
           </request>
           <request device-name="71" position="4">
-            <signal driver="swpmi" name="tx"/>
+            <signal driver="swpmi" instance="1" name="tx"/>
           </request>
           <request device-name="71" position="5">
             <signal driver="tim" instance="5" name="ch3"/>
@@ -515,7 +525,7 @@
             <signal driver="sai" instance="2" name="b"/>
           </request>
           <request position="3">
-            <signal driver="dac" name="ch1"/>
+            <signal driver="dac" instance="1" name="ch1"/>
             <signal driver="tim" instance="6" name="up"/>
           </request>
           <request position="4">
@@ -537,7 +547,7 @@
             <signal driver="uart" instance="4" name="rx"/>
           </request>
           <request position="3">
-            <signal driver="dac" name="ch2"/>
+            <signal driver="dac" instance="1" name="ch2"/>
             <signal device-name="71" driver="tim" instance="7" name="up"/>
           </request>
           <request device-name="71" position="5">
@@ -556,7 +566,7 @@
             <signal driver="usart" instance="1" name="tx"/>
           </request>
           <request position="4">
-            <signal driver="lpuart" name="tx"/>
+            <signal driver="lpuart" instance="1" name="tx"/>
           </request>
           <request position="5">
             <signal driver="i2c" instance="1" name="rx"/>
@@ -576,7 +586,7 @@
             <signal driver="quadspi"/>
           </request>
           <request position="4">
-            <signal driver="lpuart" name="rx"/>
+            <signal driver="lpuart" instance="1" name="rx"/>
           </request>
           <request position="5">
             <signal driver="i2c" instance="1" name="tx"/>

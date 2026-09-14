@@ -135,6 +135,7 @@
       <vector position="101" name="FMAC"/>
     </driver>
     <driver name="adc" type="stm32-f3">
+      <feature value="prescaler"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -148,6 +149,7 @@
     </driver>
     <driver name="cordic" type="stm32-v1.0"/>
     <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
       <feature value="reverse"/>
     </driver>
     <driver name="dac" type="stm32">
@@ -162,20 +164,23 @@
     </driver>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1000">
-        <wait-state ws="0" hclk-max="8000000"/>
-        <wait-state ws="1" hclk-max="16000000"/>
+        <wait-state ws="0" hclk-max="12000000"/>
+        <wait-state ws="1" hclk-max="24000000"/>
         <wait-state ws="2" hclk-max="26000000"/>
       </latency>
+      <latency vcore-min="1200">
+        <wait-state ws="0" hclk-max="30000000"/>
+        <wait-state ws="1" hclk-max="60000000"/>
+        <wait-state ws="2" hclk-max="90000000"/>
+        <wait-state ws="3" hclk-max="120000000"/>
+        <wait-state ws="4" hclk-max="150000000"/>
+      </latency>
       <latency vcore-min="1280">
-        <wait-state ws="0" hclk-max="20000000"/>
-        <wait-state ws="1" hclk-max="40000000"/>
-        <wait-state ws="2" hclk-max="60000000"/>
-        <wait-state ws="3" hclk-max="80000000"/>
-        <wait-state ws="4" hclk-max="100000000"/>
-        <wait-state ws="5" hclk-max="120000000"/>
-        <wait-state ws="6" hclk-max="140000000"/>
-        <wait-state ws="7" hclk-max="160000000"/>
-        <wait-state ws="8" hclk-max="170000000"/>
+        <wait-state ws="0" hclk-max="34000000"/>
+        <wait-state ws="1" hclk-max="68000000"/>
+        <wait-state ws="2" hclk-max="102000000"/>
+        <wait-state ws="3" hclk-max="136000000"/>
+        <wait-state ws="4" hclk-max="170000000"/>
       </latency>
     </driver>
     <driver name="fmac" type="stm32-v1.0"/>
@@ -227,10 +232,10 @@
       <instance value="3"/>
     </driver>
     <driver name="sys" type="stm32">
-      <feature value="ccm-wp"/>
       <feature value="cfgr2"/>
       <feature value="exti"/>
       <feature value="fpu"/>
+      <feature value="sram2-wp"/>
     </driver>
     <driver device-variant="z" name="tamp" type="stm32-v2.8"/>
     <driver name="tim" type="stm32-advanced">
@@ -252,21 +257,25 @@
     </driver>
     <driver device-name="91" device-pin="c" device-package="u" name="uart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="4"/>
       <instance device-pin="m|r|v" value="5"/>
     </driver>
     <driver device-name="91|a1" device-pin="m" device-package="s|t" name="uart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="4"/>
       <instance device-pin="m|r|v" value="5"/>
     </driver>
     <driver device-name="91|a1" device-pin="r" device-package="i|t|y" name="uart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="4"/>
       <instance device-pin="m|r|v" value="5"/>
     </driver>
     <driver device-name="91|a1" device-pin="v" device-package="t" name="uart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="4"/>
       <instance device-pin="m|r|v" value="5"/>
     </driver>
@@ -275,12 +284,12 @@
     </driver>
     <driver name="usart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance device-pin="c|m|r|v" value="3"/>
     </driver>
     <driver name="usb" type="stm32-v2.2"/>
-    <driver name="usbpd" type="stm32-v1.4"/>
     <driver device-variant="z" name="vrefbuf" type="stm32-v1.0"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="dma" type="stm32-mux">
@@ -411,7 +420,7 @@
           <signal driver="adc" instance="3"/>
         </request>
         <request position="40">
-          <signal driver="quadspi"/>
+          <signal driver="quadspi" instance="1"/>
         </request>
         <request position="42">
           <signal driver="tim" instance="1" name="ch1"/>
@@ -773,7 +782,7 @@
       <gpio port="a" pin="12">
         <signal driver="usb" name="dp"/>
         <signal af="1" driver="tim" instance="16" name="ch1"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="6" driver="tim" instance="1" name="ch2n"/>
         <signal af="7" driver="usart" instance="1" name="de"/>
         <signal af="7" driver="usart" instance="1" name="rts"/>
@@ -1144,7 +1153,7 @@
       <gpio device-pin="m|r|v" port="c" pin="9">
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="4" driver="tim" instance="8" name="ch4"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="6" driver="tim" instance="8" name="bkin2"/>
         <signal af="8" driver="i2c" instance="3" name="sda"/>
       </gpio>

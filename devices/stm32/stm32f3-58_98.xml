@@ -96,7 +96,7 @@
       <instance value="4"/>
     </driver>
     <driver name="can" type="stm32">
-      <feature value="filter-28"/>
+      <feature value="filter-14"/>
     </driver>
     <driver device-name="98" name="comp" type="stm32-v1.2">
       <instance value="1"/>
@@ -227,7 +227,9 @@
           <signal driver="usart" instance="3" name="tx"/>
         </channel>
         <channel position="3">
-          <signal device-name="58" driver="dac" name="ch1"/>
+          <signal device-name="58" driver="dac" name="ch1">
+            <remap position="13" mask="1" id="1"/>
+          </signal>
           <signal device-name="98" driver="dac" instance="1" name="ch1">
             <remap position="13" mask="1" id="1"/>
           </signal>
@@ -247,7 +249,9 @@
           <signal driver="usart" instance="3" name="rx"/>
         </channel>
         <channel position="4">
-          <signal device-name="58" driver="dac" name="ch2"/>
+          <signal device-name="58" driver="dac" name="ch2">
+            <remap position="14" mask="1" id="1"/>
+          </signal>
           <signal device-name="98" driver="dac" instance="1" name="ch2">
             <remap position="14" mask="1" id="1"/>
           </signal>
@@ -277,8 +281,12 @@
         <channel position="6">
           <signal driver="i2c" instance="1" name="tx"/>
           <signal driver="tim" instance="1" name="ch3"/>
-          <signal driver="tim" instance="16" name="ch1"/>
-          <signal driver="tim" instance="16" name="up"/>
+          <signal driver="tim" instance="16" name="ch1">
+            <remap position="11" mask="1" id="1"/>
+          </signal>
+          <signal driver="tim" instance="16" name="up">
+            <remap position="11" mask="1" id="1"/>
+          </signal>
           <signal driver="tim" instance="3" name="ch1"/>
           <signal driver="tim" instance="3" name="trig"/>
           <signal driver="usart" instance="2" name="rx"/>
@@ -300,7 +308,6 @@
       <channels instance="2">
         <channel position="1">
           <signal driver="adc" instance="2">
-            <remap position="73" mask="1" id="0"/>
             <remap position="8" mask="1" id="0"/>
           </signal>
           <signal driver="spi" instance="3" name="rx"/>
@@ -309,7 +316,9 @@
           <signal driver="tim" instance="8" name="up"/>
         </channel>
         <channel position="2">
-          <signal driver="adc" instance="4"/>
+          <signal driver="adc" instance="4">
+            <remap position="8" mask="1" id="0"/>
+          </signal>
           <signal driver="spi" instance="3" name="tx"/>
           <signal device-name="98" driver="tim" instance="20" name="ch2"/>
           <signal driver="tim" instance="8" name="ch4"/>
@@ -318,10 +327,11 @@
         </channel>
         <channel position="3">
           <signal driver="adc" instance="2">
-            <remap position="73" mask="1" id="0"/>
             <remap position="8" mask="1" id="1"/>
           </signal>
-          <signal device-name="58" driver="dac" name="ch1"/>
+          <signal device-name="58" driver="dac" name="ch1">
+            <remap position="13" mask="1" id="0"/>
+          </signal>
           <signal device-name="98" driver="dac" instance="1" name="ch1">
             <remap position="13" mask="1" id="0"/>
           </signal>
@@ -334,8 +344,12 @@
           <signal device-pin="r|v" driver="uart" instance="4" name="rx"/>
         </channel>
         <channel position="4">
-          <signal driver="adc" instance="4"/>
-          <signal device-name="58" driver="dac" name="ch2"/>
+          <signal driver="adc" instance="4">
+            <remap position="8" mask="1" id="1"/>
+          </signal>
+          <signal device-name="58" driver="dac" name="ch2">
+            <remap position="14" mask="1" id="0"/>
+          </signal>
           <signal device-name="98" driver="dac" instance="1" name="ch2">
             <remap position="14" mask="1" id="0"/>
           </signal>
@@ -520,7 +534,7 @@
       </gpio>
       <gpio port="a" pin="12">
         <signal af="1" driver="tim" instance="16" name="ch1"/>
-        <signal device-name="98" af="5" driver="i2s" name="ckin"/>
+        <signal device-name="98" af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="6" driver="tim" instance="1" name="ch2n"/>
         <signal af="7" driver="usart" instance="1" name="de"/>
         <signal af="7" driver="usart" instance="1" name="rts"/>
@@ -786,7 +800,7 @@
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal device-name="98" af="3" driver="i2c" instance="3" name="sda"/>
         <signal af="4" driver="tim" instance="8" name="ch4"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="6" driver="tim" instance="8" name="bkin2"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="10">

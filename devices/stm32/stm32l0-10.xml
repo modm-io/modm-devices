@@ -55,7 +55,10 @@
       <feature value="oversampler"/>
       <feature value="prescaler"/>
     </driver>
-    <driver name="crc" type="stm32"/>
+    <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
+      <feature value="reverse"/>
+    </driver>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1050">
         <wait-state ws="0" hclk-max="4200000"/>
@@ -71,10 +74,11 @@
     </driver>
     <driver name="i2c" type="stm32-extended">
       <feature value="dnf"/>
-      <feature value="fmp"/>
       <instance value="1"/>
     </driver>
-    <driver name="iwdg" type="stm32"/>
+    <driver name="iwdg" type="stm32">
+      <feature value="window"/>
+    </driver>
     <driver name="lptim" type="stm32-v1.0">
       <instance value="1"/>
     </driver>
@@ -95,6 +99,7 @@
       <instance value="1"/>
     </driver>
     <driver name="sys" type="stm32">
+      <feature value="cfgr2"/>
       <feature value="exti"/>
     </driver>
     <driver name="tim" type="stm32-general-purpose">
@@ -104,6 +109,7 @@
     </driver>
     <driver name="usart" type="stm32-extended">
       <feature value="over8"/>
+      <feature value="wakeup"/>
       <instance value="2"/>
     </driver>
     <driver name="wwdg" type="stm32-v1.0"/>

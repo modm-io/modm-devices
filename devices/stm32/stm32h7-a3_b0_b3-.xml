@@ -42,7 +42,8 @@
       <memory device-size="i" name="flash2" access="rx" start="0x8100000" size="1048576"/>
       <memory name="dtcm" access="rwx" start="0x20000000" size="131072"/>
       <memory name="d1_sram" access="rwx" start="0x24000000" size="1048576"/>
-      <memory name="d2_sram1" access="rwx" start="0x30000000" size="131072"/>
+      <memory name="d2_sram1" access="rwx" start="0x30000000" size="65536"/>
+      <memory name="d2_sram2" access="rwx" start="0x30010000" size="65536"/>
       <memory name="d3_sram" access="rwx" start="0x38000000" size="32768"/>
       <memory name="backup" access="rwx" start="0x38800000" size="4096"/>
       <vector position="0" name="WWDG"/>
@@ -185,6 +186,7 @@
       <vector position="154" name="BDMA1"/>
     </driver>
     <driver name="adc" type="stm32-h7">
+      <feature value="prescaler"/>
       <instance value="1"/>
       <instance value="2"/>
     </driver>
@@ -329,6 +331,7 @@
       <instance value="6"/>
     </driver>
     <driver name="iwdg" type="stm32">
+      <feature value="window"/>
       <instance value="1"/>
     </driver>
     <driver name="jpeg" type="stm32-v1.0"/>
@@ -410,6 +413,7 @@
     </driver>
     <driver name="uart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="4"/>
       <instance value="5"/>
       <instance value="7"/>
@@ -418,6 +422,7 @@
     </driver>
     <driver name="usart" type="stm32-extended">
       <feature value="tcbgt"/>
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -702,10 +707,10 @@
           <signal driver="sai" instance="2" name="b"/>
         </request>
         <request position="91">
-          <signal driver="swpmi" name="rx"/>
+          <signal driver="swpmi" instance="1" name="rx"/>
         </request>
         <request position="92">
-          <signal driver="swpmi" name="tx"/>
+          <signal driver="swpmi" instance="1" name="tx"/>
         </request>
         <request position="93">
           <signal driver="spdifrx" name="dt"/>
@@ -1369,7 +1374,7 @@
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="3" driver="tim" instance="8" name="ch4"/>
         <signal af="4" driver="i2c" instance="3" name="sda"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="8" driver="uart" instance="5" name="cts"/>
         <signal af="9" driver="octospim" name="p1_io0"/>
         <signal af="10" driver="ltdc" name="g3"/>

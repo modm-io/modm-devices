@@ -156,8 +156,9 @@
     </driver>
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1200">
-        <wait-state ws="0" hclk-max="4200000"/>
-        <wait-state ws="1" hclk-max="8000000"/>
+        <wait-state device-variant="" ws="0" hclk-max="2100000"/>
+        <wait-state device-variant="a" ws="0" hclk-max="4200000"/>
+        <wait-state device-variant="" ws="1" hclk-max="4200000"/>
       </latency>
       <latency vcore-min="1500">
         <wait-state ws="0" hclk-max="8000000"/>

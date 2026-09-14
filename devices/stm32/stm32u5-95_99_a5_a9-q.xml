@@ -197,7 +197,8 @@
       <vector device-name="99|a9" position="137" name="DSI"/>
       <vector device-name="99|a9" position="138" name="DCACHE2"/>
     </driver>
-    <driver name="adc" type="stm32-h5">
+    <driver name="adc" type="stm32-u5">
+      <feature value="prescaler"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="4"/>
@@ -277,52 +278,14 @@
       <instance value="2"/>
       <instance value="3"/>
       <instance value="4"/>
-    </driver>
-    <driver device-pin="a|b|n|q|v|z" name="i2c" type="stm32-v1.1">
-      <instance value="5"/>
-      <instance value="6"/>
+      <instance device-pin="a|b|n|q|v|z" value="5"/>
+      <instance device-pin="a|b|n|q|v|z" value="6"/>
     </driver>
     <driver name="icache" type="stm32-v1.0"/>
     <driver name="irtim" type="stm32-v1.0"/>
     <driver name="iwdg" type="stm32">
       <feature value="window"/>
     </driver>
-    <driver name="lpbam" type="stm32-stm32u5xx"/>
-    <driver name="lpbamadc" type="stm32-stm32u5xx">
-      <instance value="4"/>
-    </driver>
-    <driver name="lpbamcomp" type="stm32-stm32u5xx">
-      <instance value="1"/>
-      <instance value="2"/>
-    </driver>
-    <driver name="lpbamdac" type="stm32-stm32u5xx">
-      <instance value="1"/>
-    </driver>
-    <driver name="lpbami2c" type="stm32-stm32u5xx">
-      <instance value="3"/>
-    </driver>
-    <driver name="lpbamlpdma" type="stm32-stm32u5xx">
-      <instance value="1"/>
-    </driver>
-    <driver name="lpbamlpgpio" type="stm32-stm32u5xx">
-      <instance value="1"/>
-    </driver>
-    <driver name="lpbamlptim" type="stm32-stm32u5xx">
-      <instance value="1"/>
-      <instance value="3"/>
-    </driver>
-    <driver name="lpbamlpuart" type="stm32-stm32u5xx">
-      <instance value="1"/>
-    </driver>
-    <driver name="lpbamopamp" type="stm32-stm32u5xx">
-      <instance value="1"/>
-      <instance value="2"/>
-    </driver>
-    <driver name="lpbamqueue" type="stm32-stm32u5xx"/>
-    <driver name="lpbamspi" type="stm32-stm32u5xx">
-      <instance value="3"/>
-    </driver>
-    <driver name="lpbamvrefbuf" type="stm32-stm32u5xx"/>
     <driver name="lpdma" type="stm32-stm32u5_dma3_cube">
       <instance value="1"/>
     </driver>
@@ -377,7 +340,7 @@
       <instance value="3"/>
     </driver>
     <driver name="sys" type="stm32">
-      <feature value="exti"/>
+      <feature value="cfgr2"/>
     </driver>
     <driver name="sys_s" type="stm32-v1.0"/>
     <driver name="tamp" type="stm32-v2.8"/>
@@ -415,7 +378,6 @@
       <instance value="6"/>
     </driver>
     <driver name="usb_otg_hs" type="stm32-v2.0"/>
-    <driver name="usbpd" type="stm32-v1.0"/>
     <driver device-pin="a|b|n|q|v|z" name="vrefbuf" type="stm32-v1.0"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="gpio" type="stm32">
@@ -434,7 +396,7 @@
         <signal af="8" driver="uart" instance="4" name="tx"/>
         <signal af="10" driver="octospim" name="p2_ncs"/>
         <signal af="12" driver="sdmmc" instance="2" name="cmd"/>
-        <signal af="13" name="audioclk"/>
+        <signal af="13" driver="rcc" name="audioclk"/>
         <signal af="14" driver="tim" instance="2" name="etr"/>
       </gpio>
       <gpio port="a" pin="1">
@@ -641,7 +603,7 @@
         <signal af="7" driver="usart" instance="3" name="ck"/>
         <signal af="10" driver="octospim" name="p1_io1"/>
         <signal af="12" driver="comp" instance="1" name="out"/>
-        <signal af="13" name="audioclk"/>
+        <signal af="13" driver="rcc" name="audioclk"/>
       </gpio>
       <gpio port="b" pin="1">
         <signal driver="adc" instance="1" name="in16"/>

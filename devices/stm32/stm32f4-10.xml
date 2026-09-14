@@ -98,7 +98,7 @@
       <feature value="status"/>
     </driver>
     <driver name="flash" type="stm32-v1.0">
-      <latency vcore-min="1800">
+      <latency vcore-min="1710">
         <wait-state ws="0" hclk-max="16000000"/>
         <wait-state ws="1" hclk-max="32000000"/>
         <wait-state ws="2" hclk-max="48000000"/>
@@ -124,7 +124,7 @@
       </latency>
       <latency vcore-min="2700">
         <wait-state ws="0" hclk-max="30000000"/>
-        <wait-state ws="1" hclk-max="60000000"/>
+        <wait-state ws="1" hclk-max="64000000"/>
         <wait-state ws="2" hclk-max="90000000"/>
         <wait-state ws="3" hclk-max="100000000"/>
       </latency>
@@ -133,6 +133,7 @@
       <instance value="1"/>
     </driver>
     <driver name="i2c" type="stm32">
+      <feature value="dnf"/>
       <instance value="1"/>
       <instance value="2"/>
     </driver>
@@ -156,6 +157,7 @@
       <instance device-pin="c|r" value="5"/>
     </driver>
     <driver name="sys" type="stm32">
+      <feature value="cfgr2"/>
       <feature value="exti"/>
     </driver>
     <driver name="tim" type="stm32-advanced">
@@ -395,7 +397,7 @@
         <signal driver="adc" instance="1" name="in2"/>
         <signal af="2" driver="tim" instance="5" name="ch3"/>
         <signal af="3" driver="tim" instance="9" name="ch1"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="7" driver="usart" instance="2" name="tx"/>
       </gpio>
       <gpio port="a" pin="3">
@@ -545,7 +547,7 @@
         <signal af="0" driver="sys" name="traced3"/>
         <signal af="2" driver="tim" instance="5" name="ch4"/>
         <signal af="4" driver="i2c" instance="2" name="sda"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
       </gpio>
       <gpio port="b" pin="12">
         <signal af="1" driver="tim" instance="1" name="bkin"/>
@@ -621,7 +623,7 @@
       <gpio device-pin="r" port="c" pin="9">
         <signal af="0" driver="rcc" name="mco_2"/>
         <signal af="4" driver="fmpi2c" instance="1" name="sda"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
       </gpio>
       <gpio device-pin="r" port="c" pin="10">
         <signal af="0" driver="sys" name="traced0"/>

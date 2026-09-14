@@ -136,15 +136,22 @@
     </driver>
     <driver name="crc" type="stm32"/>
     <driver name="flash" type="stm32-v1.0">
-      <latency vcore-min="1800">
+      <latency device-name="11" vcore-min="1710">
         <wait-state ws="0" hclk-max="16000000"/>
         <wait-state ws="1" hclk-max="32000000"/>
         <wait-state ws="2" hclk-max="48000000"/>
         <wait-state ws="3" hclk-max="64000000"/>
         <wait-state ws="4" hclk-max="80000000"/>
-        <wait-state device-name="01" ws="5" hclk-max="84000000"/>
-        <wait-state device-name="11" ws="5" hclk-max="96000000"/>
-        <wait-state device-name="11" ws="6" hclk-max="100000000"/>
+        <wait-state ws="5" hclk-max="96000000"/>
+        <wait-state ws="6" hclk-max="100000000"/>
+      </latency>
+      <latency device-name="01" vcore-min="1800">
+        <wait-state ws="0" hclk-max="16000000"/>
+        <wait-state ws="1" hclk-max="32000000"/>
+        <wait-state ws="2" hclk-max="48000000"/>
+        <wait-state ws="3" hclk-max="64000000"/>
+        <wait-state ws="4" hclk-max="80000000"/>
+        <wait-state ws="5" hclk-max="84000000"/>
       </latency>
       <latency vcore-min="2100">
         <wait-state ws="0" hclk-max="18000000"/>
@@ -165,13 +172,15 @@
       </latency>
       <latency vcore-min="2700">
         <wait-state ws="0" hclk-max="30000000"/>
-        <wait-state ws="1" hclk-max="60000000"/>
+        <wait-state device-name="01" ws="1" hclk-max="60000000"/>
+        <wait-state device-name="11" ws="1" hclk-max="64000000"/>
         <wait-state device-name="01" ws="2" hclk-max="84000000"/>
         <wait-state device-name="11" ws="2" hclk-max="90000000"/>
         <wait-state device-name="11" ws="3" hclk-max="100000000"/>
       </latency>
     </driver>
     <driver name="i2c" type="stm32">
+      <feature value="dnf"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -552,7 +561,7 @@
         <signal af="1" driver="tim" instance="2" name="ch3"/>
         <signal af="2" driver="tim" instance="5" name="ch3"/>
         <signal af="3" driver="tim" instance="9" name="ch1"/>
-        <signal device-name="11" af="5" driver="i2s" name="ckin"/>
+        <signal device-name="11" af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="7" driver="usart" instance="2" name="tx"/>
       </gpio>
       <gpio port="a" pin="3">
@@ -734,7 +743,7 @@
       <gpio device-package="h" port="b" pin="11">
         <signal af="1" driver="tim" instance="2" name="ch4"/>
         <signal af="4" driver="i2c" instance="2" name="sda"/>
-        <signal device-name="11" device-size="c|e" device-temperature="6" af="5" driver="i2s" name="ckin"/>
+        <signal device-name="11" device-size="c|e" device-temperature="6" af="5" driver="rcc" name="i2s_ckin"/>
       </gpio>
       <gpio port="b" pin="12">
         <signal af="1" driver="tim" instance="1" name="bkin"/>
@@ -811,7 +820,7 @@
         <signal af="0" driver="rcc" name="mco_2"/>
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="4" driver="i2c" instance="3" name="sda"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="12" driver="sdio" name="d1"/>
       </gpio>
       <gpio device-pin="r|v" port="c" pin="10">

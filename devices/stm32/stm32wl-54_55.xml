@@ -63,14 +63,20 @@
       <vector position="30" name="SUBGHZSPI"/>
       <vector position="31" name="SUBGHZ_Radio"/>
     </driver>
-    <driver name="adc" type="stm32"/>
-    <driver name="adv_trace" type="stm32-v1.1"/>
+    <driver name="adc" type="stm32-g0">
+      <feature value="calfact"/>
+      <feature value="oversampler"/>
+      <feature value="prescaler"/>
+    </driver>
     <driver name="aes" type="stm32-v1.0"/>
     <driver name="comp" type="stm32-tsmc90_wlxx_cube">
       <instance value="1"/>
       <instance value="2"/>
     </driver>
-    <driver name="crc" type="stm32"/>
+    <driver name="crc" type="stm32">
+      <feature value="polynomial"/>
+      <feature value="reverse"/>
+    </driver>
     <driver name="dac" type="stm32">
       <feature value="status"/>
     </driver>
@@ -92,7 +98,9 @@
       <instance value="_s"/>
     </driver>
     <driver name="hsem" type="stm32-v1.0"/>
-    <driver name="i2c" type="stm32-v1.1">
+    <driver name="i2c" type="stm32-extended">
+      <feature value="dnf"/>
+      <feature value="fmp"/>
       <instance value="1"/>
       <instance value="2"/>
       <instance value="3"/>
@@ -102,9 +110,9 @@
     </driver>
     <driver name="ipcc" type="stm32-v1.0"/>
     <driver name="irtim" type="stm32-v1.0"/>
-    <driver name="iwdg" type="stm32"/>
-    <driver name="kms" type="stm32-v1.1"/>
-    <driver device-name="55" name="lorawan" type="stm32-v2.5"/>
+    <driver name="iwdg" type="stm32">
+      <feature value="window"/>
+    </driver>
     <driver name="lptim" type="stm32-v2.1">
       <instance value="1"/>
       <instance value="2"/>
@@ -113,7 +121,6 @@
     <driver name="lpuart" type="stm32-v1.3">
       <instance value="1"/>
     </driver>
-    <driver name="misc" type="stm32-v1.0"/>
     <driver name="pka" type="stm32-v1.0"/>
     <driver name="pwr" type="stm32-v1.0"/>
     <driver name="rcc" type="stm32-v1.0">
@@ -121,19 +128,19 @@
     </driver>
     <driver name="rng" type="stm32"/>
     <driver name="rtc" type="stm32-v3.0"/>
-    <driver name="sequencer" type="stm32-v1.1">
-      <instance value="cortex-m0plus"/>
-      <instance value="cortex-m4"/>
-    </driver>
-    <driver name="sigfox" type="stm32-v1.8"/>
     <driver name="spi" type="stm32">
+      <feature value="data-size"/>
+      <feature value="fifo"/>
+      <feature value="nss-pulse"/>
       <instance value="1"/>
       <instance value="2"/>
     </driver>
     <driver name="subghz" type="stm32-v1.0"/>
-    <driver name="subghz_phy" type="stm32-v1.3"/>
     <driver name="sys" type="stm32">
+      <feature value="cfgr2"/>
       <feature value="exti"/>
+      <feature value="imr"/>
+      <feature value="sram2-wp"/>
     </driver>
     <driver name="sysm0p" type="stm32-v1.0">
       <instance value="plus"/>
@@ -146,11 +153,8 @@
       <instance value="16"/>
       <instance value="17"/>
     </driver>
-    <driver name="tim" type="stm32-v1.1">
-      <instance value="er"/>
-    </driver>
-    <driver name="tiny_lpm" type="stm32-v1.1"/>
-    <driver name="usart" type="stm32">
+    <driver name="usart" type="stm32-extended">
+      <feature value="wakeup"/>
       <instance value="1"/>
       <instance value="2"/>
     </driver>
@@ -310,12 +314,11 @@
         <signal driver="rtc" name="tamp_in2"/>
         <signal af="1" driver="tim" instance="2" name="ch1"/>
         <signal af="4" driver="i2c" instance="3" name="smba"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="7" driver="usart" instance="2" name="cts"/>
         <signal af="7" driver="usart" instance="2" name="nss"/>
         <signal af="12" driver="comp" instance="1" name="out"/>
-        <signal af="13" driver="debug" name="pwr"/>
-        <signal af="13" driver="debug" name="reglp1s"/>
+        <signal af="13" driver="debug" name="pwr_reglp1s"/>
         <signal af="14" driver="tim" instance="2" name="etr"/>
       </gpio>
       <gpio port="a" pin="1">
@@ -326,8 +329,7 @@
         <signal af="7" driver="usart" instance="2" name="de"/>
         <signal af="7" driver="usart" instance="2" name="rts"/>
         <signal af="8" driver="lpuart" instance="1" name="rts"/>
-        <signal af="13" driver="debug" name="pwr"/>
-        <signal af="13" driver="debug" name="reglp2s"/>
+        <signal af="13" driver="debug" name="pwr_reglp2s"/>
       </gpio>
       <gpio port="a" pin="2">
         <signal af="0" driver="rcc" name="lsco"/>
@@ -335,8 +337,7 @@
         <signal af="7" driver="usart" instance="2" name="tx"/>
         <signal af="8" driver="lpuart" instance="1" name="tx"/>
         <signal af="12" driver="comp" instance="2" name="out"/>
-        <signal af="13" driver="debug" name="ldordy"/>
-        <signal af="13" driver="debug" name="pwr"/>
+        <signal af="13" driver="debug" name="pwr_ldordy"/>
       </gpio>
       <gpio port="a" pin="3">
         <signal af="1" driver="tim" instance="2" name="ch4"/>
@@ -349,8 +350,7 @@
         <signal af="1" driver="lptim" instance="1" name="out"/>
         <signal af="5" driver="spi" instance="1" name="nss"/>
         <signal af="7" driver="usart" instance="2" name="ck"/>
-        <signal af="13" driver="debug" name="nssout"/>
-        <signal af="13" driver="debug" name="subghzspi"/>
+        <signal af="13" driver="debug" name="subghzspi_nssout"/>
         <signal af="14" driver="lptim" instance="2" name="out"/>
       </gpio>
       <gpio port="a" pin="5">
@@ -358,8 +358,7 @@
         <signal af="2" driver="tim" instance="2" name="etr"/>
         <signal af="3" driver="spi" instance="2" name="miso"/>
         <signal af="5" driver="spi" instance="1" name="sck"/>
-        <signal af="13" driver="debug" name="sckout"/>
-        <signal af="13" driver="debug" name="subghzspi"/>
+        <signal af="13" driver="debug" name="subghzspi_sckout"/>
         <signal af="14" driver="lptim" instance="2" name="etr"/>
       </gpio>
       <gpio port="a" pin="6">
@@ -367,8 +366,7 @@
         <signal af="5" driver="spi" instance="1" name="miso"/>
         <signal af="8" driver="lpuart" instance="1" name="cts"/>
         <signal af="12" driver="tim" instance="1" name="bkin"/>
-        <signal af="13" driver="debug" name="misoout"/>
-        <signal af="13" driver="debug" name="subghzspi"/>
+        <signal af="13" driver="debug" name="subghzspi_misoout"/>
         <signal af="14" driver="tim" instance="16" name="ch1"/>
       </gpio>
       <gpio port="a" pin="7">
@@ -376,8 +374,7 @@
         <signal af="4" driver="i2c" instance="3" name="scl"/>
         <signal af="5" driver="spi" instance="1" name="mosi"/>
         <signal af="12" driver="comp" instance="2" name="out"/>
-        <signal af="13" driver="debug" name="mosiout"/>
-        <signal af="13" driver="debug" name="subghzspi"/>
+        <signal af="13" driver="debug" name="subghzspi_mosiout"/>
         <signal af="14" driver="tim" instance="17" name="ch1"/>
       </gpio>
       <gpio port="a" pin="8">
@@ -408,8 +405,7 @@
         <signal af="5" driver="i2s" instance="2" name="sd"/>
         <signal af="5" driver="spi" instance="2" name="mosi"/>
         <signal af="7" driver="usart" instance="1" name="rx"/>
-        <signal af="13" driver="debug" name="hse32rdy"/>
-        <signal af="13" driver="debug" name="rf"/>
+        <signal af="13" driver="debug" name="rf_hse32rdy"/>
         <signal af="14" driver="tim" instance="17" name="bkin"/>
       </gpio>
       <gpio port="a" pin="11">
@@ -423,8 +419,7 @@
         <signal af="7" driver="usart" instance="1" name="cts"/>
         <signal af="7" driver="usart" instance="1" name="nss"/>
         <signal af="12" driver="tim" instance="1" name="bkin2"/>
-        <signal af="13" driver="debug" name="nreset"/>
-        <signal af="13" driver="debug" name="rf"/>
+        <signal af="13" driver="debug" name="rf_nreset"/>
       </gpio>
       <gpio port="a" pin="12">
         <signal driver="adc" name="in8"/>
@@ -432,8 +427,7 @@
         <signal af="3" driver="lptim" instance="3" name="in1"/>
         <signal af="4" driver="i2c" instance="2" name="scl"/>
         <signal af="5" driver="spi" instance="1" name="mosi"/>
-        <signal af="6" driver="debug" name="busy"/>
-        <signal af="6" driver="debug" name="rf"/>
+        <signal af="6" driver="debug" name="rf_busy"/>
         <signal af="7" driver="usart" instance="1" name="de"/>
         <signal af="7" driver="usart" instance="1" name="rts"/>
       </gpio>
@@ -462,7 +456,7 @@
         <signal af="5" driver="spi" instance="1" name="nss"/>
       </gpio>
       <gpio port="b" pin="0">
-        <signal name="vddtcxo"/>
+        <signal driver="subghz" name="vddtcxo"/>
         <signal af="12" driver="comp" instance="1" name="out"/>
       </gpio>
       <gpio device-pin="j" port="b" pin="1">
@@ -479,8 +473,7 @@
         <signal af="1" driver="lptim" instance="1" name="out"/>
         <signal af="4" driver="i2c" instance="3" name="smba"/>
         <signal af="5" driver="spi" instance="1" name="nss"/>
-        <signal af="13" driver="debug" name="rf"/>
-        <signal af="13" driver="debug" name="smpsrdy"/>
+        <signal af="13" driver="debug" name="rf_smpsrdy"/>
       </gpio>
       <gpio port="b" pin="3">
         <signal driver="adc" name="in2"/>
@@ -494,8 +487,7 @@
         <signal af="5" driver="spi" instance="1" name="sck"/>
         <signal af="7" driver="usart" instance="1" name="de"/>
         <signal af="7" driver="usart" instance="1" name="rts"/>
-        <signal af="13" driver="debug" name="dtb1"/>
-        <signal af="13" driver="debug" name="rf"/>
+        <signal af="13" driver="debug" name="rf_dtb1"/>
       </gpio>
       <gpio port="b" pin="4">
         <signal driver="adc" name="in3"/>
@@ -506,8 +498,7 @@
         <signal af="5" driver="spi" instance="1" name="miso"/>
         <signal af="7" driver="usart" instance="1" name="cts"/>
         <signal af="7" driver="usart" instance="1" name="nss"/>
-        <signal af="13" driver="debug" name="ldordy"/>
-        <signal af="13" driver="debug" name="rf"/>
+        <signal af="13" driver="debug" name="rf_ldordy"/>
         <signal af="14" driver="tim" instance="17" name="bkin"/>
       </gpio>
       <gpio port="b" pin="5">

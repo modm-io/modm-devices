@@ -107,7 +107,7 @@
       <instance value="1"/>
     </driver>
     <driver name="can" type="stm32">
-      <feature value="filter-28"/>
+      <feature value="filter-14"/>
     </driver>
     <driver name="comp" type="stm32-v1.3">
       <instance value="1"/>
@@ -163,7 +163,6 @@
       <instance value="3"/>
     </driver>
     <driver name="sys" type="stm32">
-      <feature value="ccm-wp"/>
       <feature value="cfgr2"/>
       <feature value="exti"/>
       <feature value="fpu"/>
@@ -270,8 +269,12 @@
         </channel>
         <channel position="6">
           <signal driver="i2c" instance="1" name="tx"/>
-          <signal driver="tim" instance="16" name="ch1"/>
-          <signal driver="tim" instance="16" name="up"/>
+          <signal driver="tim" instance="16" name="ch1">
+            <remap position="11" mask="1" id="1"/>
+          </signal>
+          <signal driver="tim" instance="16" name="up">
+            <remap position="11" mask="1" id="1"/>
+          </signal>
           <signal driver="tim" instance="3" name="ch1"/>
           <signal driver="tim" instance="3" name="trig"/>
           <signal driver="usart" instance="2" name="rx"/>

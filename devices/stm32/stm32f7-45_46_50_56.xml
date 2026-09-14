@@ -66,10 +66,12 @@
       <attribute-cmsis-define device-name="56" value="STM32F756xx"/>
       <attribute-cmsis-header value="stm32f7xx"/>
       <memory name="itcm" access="rwx" start="0x00" size="16384"/>
+      <memory device-name="50" name="itcm_flash" access="rx" start="0x200000" size="65536"/>
       <memory device-size="e" name="itcm_flash" access="rx" start="0x200000" size="524288"/>
-      <memory device-size="8|g" name="itcm_flash" access="rx" start="0x200000" size="1048576"/>
+      <memory device-size="g" name="itcm_flash" access="rx" start="0x200000" size="1048576"/>
+      <memory device-name="50" name="flash" access="rx" start="0x8000000" size="65536" alias="itcm_flash"/>
       <memory device-size="e" name="flash" access="rx" start="0x8000000" size="524288" alias="itcm_flash"/>
-      <memory device-size="8|g" name="flash" access="rx" start="0x8000000" size="1048576" alias="itcm_flash"/>
+      <memory device-size="g" name="flash" access="rx" start="0x8000000" size="1048576" alias="itcm_flash"/>
       <memory name="dtcm" access="rwx" start="0x20000000" size="65536"/>
       <memory name="sram1" access="rwx" start="0x20010000" size="245760"/>
       <memory name="sram2" access="rwx" start="0x2004C000" size="16384"/>
@@ -237,7 +239,8 @@
         <wait-state ws="3" hclk-max="120000000"/>
         <wait-state ws="4" hclk-max="150000000"/>
         <wait-state ws="5" hclk-max="180000000"/>
-        <wait-state ws="6" hclk-max="216000000"/>
+        <wait-state ws="6" hclk-max="210000000"/>
+        <wait-state ws="7" hclk-max="216000000"/>
       </latency>
     </driver>
     <driver name="fmc" type="stm32-v2.0"/>
@@ -859,7 +862,7 @@
         <signal af="5" driver="i2s" instance="1" name="sd"/>
         <signal af="5" driver="spi" instance="1" name="mosi"/>
         <signal af="9" driver="tim" instance="14" name="ch1"/>
-        <signal af="11" driver="eth" name="rcc_crs_dv"/>
+        <signal af="11" driver="eth" name="crs_dv"/>
         <signal af="11" driver="eth" name="rx_dv"/>
         <signal af="12" driver="fmc" name="sdnwe"/>
       </gpio>
@@ -1164,7 +1167,7 @@
         <signal af="2" driver="tim" instance="3" name="ch4"/>
         <signal af="3" driver="tim" instance="8" name="ch4"/>
         <signal af="4" driver="i2c" instance="3" name="sda"/>
-        <signal af="5" driver="i2s" name="ckin"/>
+        <signal af="5" driver="rcc" name="i2s_ckin"/>
         <signal af="7" driver="uart" instance="5" name="cts"/>
         <signal af="9" driver="quadspi" name="bk1_io0"/>
         <signal af="12" driver="sdmmc" instance="1" name="d1"/>

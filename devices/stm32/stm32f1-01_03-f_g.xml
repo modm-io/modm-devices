@@ -115,8 +115,9 @@
     <driver name="flash" type="stm32-v1.0">
       <latency vcore-min="1800">
         <wait-state ws="0" hclk-max="24000000"/>
-        <wait-state ws="1" hclk-max="48000000"/>
-        <wait-state ws="2" hclk-max="72000000"/>
+        <wait-state device-name="01" ws="1" hclk-max="36000000"/>
+        <wait-state device-name="03" ws="1" hclk-max="48000000"/>
+        <wait-state device-name="03" ws="2" hclk-max="72000000"/>
       </latency>
     </driver>
     <driver device-pin="v|z" name="fsmc" type="stm32-v1.0"/>
@@ -461,32 +462,6 @@
         <group id="3">
           <signal port="d" pin="0" name="rx"/>
           <signal port="d" pin="1" name="tx"/>
-        </group>
-      </remap>
-      <remap device-name="03" driver="i2s" instance="3" position="28" mask="1">
-        <group id="0">
-          <signal port="a" pin="15" name="ws"/>
-          <signal port="b" pin="3" name="ck"/>
-          <signal port="b" pin="5" name="sd"/>
-        </group>
-        <group id="1">
-          <signal port="a" pin="4" name="ws"/>
-          <signal port="c" pin="10" name="ck"/>
-          <signal port="c" pin="12" name="sd"/>
-        </group>
-      </remap>
-      <remap driver="spi" instance="3" position="28" mask="1">
-        <group id="0">
-          <signal port="a" pin="15" name="nss"/>
-          <signal port="b" pin="3" name="sck"/>
-          <signal port="b" pin="4" name="miso"/>
-          <signal port="b" pin="5" name="mosi"/>
-        </group>
-        <group id="1">
-          <signal port="a" pin="4" name="nss"/>
-          <signal port="c" pin="10" name="sck"/>
-          <signal port="c" pin="11" name="miso"/>
-          <signal port="c" pin="12" name="mosi"/>
         </group>
       </remap>
       <remap driver="tim" instance="9" position="37" mask="1">
