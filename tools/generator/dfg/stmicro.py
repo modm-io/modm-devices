@@ -240,6 +240,8 @@ def _device_tree(p, did) -> DeviceTree:
             # The routing is fixed. Thus, no configuration data is available.
             if instances != ["bdma1"]:
                 _add_dma(p, driver)
+        if name in ["gpdma", "hpdma", "lpdma"]:
+            _add_dma(p, driver)
     return tree
 
 
