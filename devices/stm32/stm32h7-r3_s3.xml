@@ -226,13 +226,587 @@
     <driver name="fmc" type="stm32-v3.1"/>
     <driver name="gfxmmu" type="stm32-v1.0"/>
     <driver name="gfxtim" type="stm32-v1.0"/>
-    <driver name="gpdma" type="stm32-stm32h7rs_dma3_cube">
+    <driver name="gpdma" type="stm32">
       <instance value="1"/>
+      <requests>
+        <request position="0">
+          <signal driver="adc" instance="1"/>
+        </request>
+        <request position="1">
+          <signal driver="adc" instance="2"/>
+        </request>
+        <request device-name="s3" position="2">
+          <signal driver="cryp" name="in"/>
+        </request>
+        <request device-name="s3" position="3">
+          <signal driver="cryp" name="out"/>
+        </request>
+        <request device-name="s3" position="4">
+          <signal driver="saes" name="in"/>
+        </request>
+        <request device-name="s3" position="5">
+          <signal driver="saes" name="out"/>
+        </request>
+        <request position="6">
+          <signal driver="hash" name="in"/>
+        </request>
+        <request position="7">
+          <signal driver="tim" instance="1" name="ch1"/>
+        </request>
+        <request position="8">
+          <signal driver="tim" instance="1" name="ch2"/>
+        </request>
+        <request position="9">
+          <signal driver="tim" instance="1" name="ch3"/>
+        </request>
+        <request position="10">
+          <signal driver="tim" instance="1" name="ch4"/>
+        </request>
+        <request position="11">
+          <signal driver="tim" instance="1" name="up"/>
+        </request>
+        <request position="12">
+          <signal driver="tim" instance="1" name="trig"/>
+        </request>
+        <request position="13">
+          <signal driver="tim" instance="1" name="com"/>
+        </request>
+        <request position="14">
+          <signal driver="tim" instance="2" name="ch1"/>
+        </request>
+        <request position="15">
+          <signal driver="tim" instance="2" name="ch2"/>
+        </request>
+        <request position="16">
+          <signal driver="tim" instance="2" name="ch3"/>
+        </request>
+        <request position="17">
+          <signal driver="tim" instance="2" name="ch4"/>
+        </request>
+        <request position="18">
+          <signal driver="tim" instance="2" name="up"/>
+        </request>
+        <request position="19">
+          <signal driver="tim" instance="2" name="trig"/>
+        </request>
+        <request device-pin="a|i|l|z" position="20">
+          <signal driver="tim" instance="3" name="ch1"/>
+        </request>
+        <request device-pin="a|i|l|z" position="21">
+          <signal driver="tim" instance="3" name="ch2"/>
+        </request>
+        <request device-pin="a|i|l|z" position="22">
+          <signal driver="tim" instance="3" name="ch3"/>
+        </request>
+        <request device-pin="a|i|l|z" position="23">
+          <signal driver="tim" instance="3" name="ch4"/>
+        </request>
+        <request device-pin="a|i|l|z" position="24">
+          <signal driver="tim" instance="3" name="up"/>
+        </request>
+        <request device-pin="a|i|l|z" position="25">
+          <signal driver="tim" instance="3" name="trig"/>
+        </request>
+        <request device-pin="a|i|l|z" position="26">
+          <signal driver="tim" instance="4" name="ch1"/>
+        </request>
+        <request device-pin="a|i|l|z" position="27">
+          <signal driver="tim" instance="4" name="ch2"/>
+        </request>
+        <request device-pin="a|i|l|z" position="28">
+          <signal driver="tim" instance="4" name="ch3"/>
+        </request>
+        <request device-pin="a|i|l|z" position="29">
+          <signal driver="tim" instance="4" name="ch4"/>
+        </request>
+        <request device-pin="a|i|l|z" position="30">
+          <signal driver="tim" instance="4" name="up"/>
+        </request>
+        <request device-pin="a|i|l|z" position="31">
+          <signal driver="tim" instance="4" name="trig"/>
+        </request>
+        <request device-pin="a" device-package="i" position="32">
+          <signal driver="tim" instance="5" name="ch1"/>
+        </request>
+        <request device-pin="i" device-package="k|t" position="32">
+          <signal driver="tim" instance="5" name="ch1"/>
+        </request>
+        <request device-pin="l" device-package="h" position="32">
+          <signal driver="tim" instance="5" name="ch1"/>
+        </request>
+        <request device-pin="r" device-package="v" position="32">
+          <signal driver="tim" instance="5" name="ch1"/>
+        </request>
+        <request device-pin="v" device-package="t" position="32">
+          <signal driver="tim" instance="5" name="ch1"/>
+        </request>
+        <request device-pin="z" device-package="j|t" position="32">
+          <signal driver="tim" instance="5" name="ch1"/>
+        </request>
+        <request device-pin="a" device-package="i" position="33">
+          <signal driver="tim" instance="5" name="ch2"/>
+        </request>
+        <request device-pin="i" device-package="k|t" position="33">
+          <signal driver="tim" instance="5" name="ch2"/>
+        </request>
+        <request device-pin="l" device-package="h" position="33">
+          <signal driver="tim" instance="5" name="ch2"/>
+        </request>
+        <request device-pin="r" device-package="v" position="33">
+          <signal driver="tim" instance="5" name="ch2"/>
+        </request>
+        <request device-pin="v" device-package="t" position="33">
+          <signal driver="tim" instance="5" name="ch2"/>
+        </request>
+        <request device-pin="z" device-package="j|t" position="33">
+          <signal driver="tim" instance="5" name="ch2"/>
+        </request>
+        <request device-pin="a" device-package="i" position="34">
+          <signal driver="tim" instance="5" name="ch3"/>
+        </request>
+        <request device-pin="i" device-package="k|t" position="34">
+          <signal driver="tim" instance="5" name="ch3"/>
+        </request>
+        <request device-pin="l" device-package="h" position="34">
+          <signal driver="tim" instance="5" name="ch3"/>
+        </request>
+        <request device-pin="r" device-package="v" position="34">
+          <signal driver="tim" instance="5" name="ch3"/>
+        </request>
+        <request device-pin="v" device-package="t" position="34">
+          <signal driver="tim" instance="5" name="ch3"/>
+        </request>
+        <request device-pin="z" device-package="j|t" position="34">
+          <signal driver="tim" instance="5" name="ch3"/>
+        </request>
+        <request device-pin="a" device-package="i" position="35">
+          <signal driver="tim" instance="5" name="ch4"/>
+        </request>
+        <request device-pin="i" device-package="k|t" position="35">
+          <signal driver="tim" instance="5" name="ch4"/>
+        </request>
+        <request device-pin="l" device-package="h" position="35">
+          <signal driver="tim" instance="5" name="ch4"/>
+        </request>
+        <request device-pin="r" device-package="v" position="35">
+          <signal driver="tim" instance="5" name="ch4"/>
+        </request>
+        <request device-pin="v" device-package="t" position="35">
+          <signal driver="tim" instance="5" name="ch4"/>
+        </request>
+        <request device-pin="z" device-package="j|t" position="35">
+          <signal driver="tim" instance="5" name="ch4"/>
+        </request>
+        <request device-pin="a" device-package="i" position="36">
+          <signal driver="tim" instance="5" name="up"/>
+        </request>
+        <request device-pin="i" device-package="k|t" position="36">
+          <signal driver="tim" instance="5" name="up"/>
+        </request>
+        <request device-pin="l" device-package="h" position="36">
+          <signal driver="tim" instance="5" name="up"/>
+        </request>
+        <request device-pin="r" device-package="v" position="36">
+          <signal driver="tim" instance="5" name="up"/>
+        </request>
+        <request device-pin="v" device-package="t" position="36">
+          <signal driver="tim" instance="5" name="up"/>
+        </request>
+        <request device-pin="z" device-package="j|t" position="36">
+          <signal driver="tim" instance="5" name="up"/>
+        </request>
+        <request device-pin="a" device-package="i" position="37">
+          <signal driver="tim" instance="5" name="trig"/>
+        </request>
+        <request device-pin="i" device-package="k|t" position="37">
+          <signal driver="tim" instance="5" name="trig"/>
+        </request>
+        <request device-pin="l" device-package="h" position="37">
+          <signal driver="tim" instance="5" name="trig"/>
+        </request>
+        <request device-pin="r" device-package="v" position="37">
+          <signal driver="tim" instance="5" name="trig"/>
+        </request>
+        <request device-pin="v" device-package="t" position="37">
+          <signal driver="tim" instance="5" name="trig"/>
+        </request>
+        <request device-pin="z" device-package="j|t" position="37">
+          <signal driver="tim" instance="5" name="trig"/>
+        </request>
+        <request position="38">
+          <signal driver="tim" instance="6" name="up"/>
+        </request>
+        <request position="39">
+          <signal driver="tim" instance="7" name="up"/>
+        </request>
+        <request device-package="h|i|j|k|t|v" position="40">
+          <signal driver="tim" instance="15" name="ch1"/>
+        </request>
+        <request device-package="h|i|j|k|t|v" position="41">
+          <signal driver="tim" instance="15" name="ch2"/>
+        </request>
+        <request device-package="h|i|j|k|t|v" position="42">
+          <signal driver="tim" instance="15" name="up"/>
+        </request>
+        <request device-package="h|i|j|k|t|v" position="43">
+          <signal driver="tim" instance="15" name="trig"/>
+        </request>
+        <request device-package="h|i|j|k|t|v" position="44">
+          <signal driver="tim" instance="15" name="com"/>
+        </request>
+        <request device-pin="a|i|l|v|z" position="45">
+          <signal driver="tim" instance="16" name="ch1"/>
+        </request>
+        <request device-pin="a|i|l|v|z" position="46">
+          <signal driver="tim" instance="16" name="up"/>
+        </request>
+        <request device-pin="a|i|l|v|z" position="47">
+          <signal driver="tim" instance="16" name="com"/>
+        </request>
+        <request device-package="h|i|j|k|t|v" position="48">
+          <signal driver="tim" instance="17" name="ch1"/>
+        </request>
+        <request device-package="h|i|j|k|t|v" position="49">
+          <signal driver="tim" instance="17" name="up"/>
+        </request>
+        <request device-package="h|i|j|k|t|v" position="50">
+          <signal driver="tim" instance="17" name="com"/>
+        </request>
+        <request position="51">
+          <signal driver="spi" instance="1" name="rx"/>
+        </request>
+        <request position="52">
+          <signal driver="spi" instance="1" name="tx"/>
+        </request>
+        <request position="53">
+          <signal driver="spi" instance="2" name="rx"/>
+        </request>
+        <request position="54">
+          <signal driver="spi" instance="2" name="tx"/>
+        </request>
+        <request position="55">
+          <signal driver="spi" instance="3" name="rx"/>
+        </request>
+        <request position="56">
+          <signal driver="spi" instance="3" name="tx"/>
+        </request>
+        <request device-pin="a|i|l|z" position="57">
+          <signal driver="spi" instance="4" name="rx"/>
+        </request>
+        <request device-pin="a|i|l|z" position="58">
+          <signal driver="spi" instance="4" name="tx"/>
+        </request>
+        <request position="59">
+          <signal driver="spi" instance="5" name="rx"/>
+        </request>
+        <request position="60">
+          <signal driver="spi" instance="5" name="tx"/>
+        </request>
+        <request device-pin="a|i|l|v|z" position="61">
+          <signal driver="spi" instance="6" name="rx"/>
+        </request>
+        <request device-pin="a|i|l|v|z" position="62">
+          <signal driver="spi" instance="6" name="tx"/>
+        </request>
+        <request device-pin="a|i|l|z" position="63">
+          <signal driver="sai" instance="1" name="a"/>
+        </request>
+        <request device-pin="a|i|l|z" position="64">
+          <signal driver="sai" instance="1" name="b"/>
+        </request>
+        <request position="65">
+          <signal driver="sai" instance="2" name="a"/>
+        </request>
+        <request position="66">
+          <signal driver="sai" instance="2" name="b"/>
+        </request>
+        <request position="67">
+          <signal driver="i2c" instance="1" name="rx"/>
+        </request>
+        <request position="68">
+          <signal driver="i2c" instance="1" name="tx"/>
+        </request>
+        <request position="69">
+          <signal driver="i2c" instance="2" name="rx"/>
+        </request>
+        <request position="70">
+          <signal driver="i2c" instance="2" name="tx"/>
+        </request>
+        <request position="71">
+          <signal driver="i2c" instance="3" name="rx"/>
+        </request>
+        <request position="72">
+          <signal driver="i2c" instance="3" name="tx"/>
+        </request>
+        <request position="73">
+          <signal driver="usart" instance="1" name="rx"/>
+        </request>
+        <request position="74">
+          <signal driver="usart" instance="1" name="tx"/>
+        </request>
+        <request device-pin="a" device-package="i" position="75">
+          <signal driver="usart" instance="2" name="rx"/>
+        </request>
+        <request device-pin="i" device-package="k|t" position="75">
+          <signal driver="usart" instance="2" name="rx"/>
+        </request>
+        <request device-pin="l" device-package="h" position="75">
+          <signal driver="usart" instance="2" name="rx"/>
+        </request>
+        <request device-pin="r" device-package="v" position="75">
+          <signal driver="usart" instance="2" name="rx"/>
+        </request>
+        <request device-pin="v" device-package="t" position="75">
+          <signal driver="usart" instance="2" name="rx"/>
+        </request>
+        <request device-pin="z" device-package="j|t" position="75">
+          <signal driver="usart" instance="2" name="rx"/>
+        </request>
+        <request device-pin="a" device-package="i" position="76">
+          <signal driver="usart" instance="2" name="tx"/>
+        </request>
+        <request device-pin="i" device-package="k|t" position="76">
+          <signal driver="usart" instance="2" name="tx"/>
+        </request>
+        <request device-pin="l" device-package="h" position="76">
+          <signal driver="usart" instance="2" name="tx"/>
+        </request>
+        <request device-pin="r" device-package="v" position="76">
+          <signal driver="usart" instance="2" name="tx"/>
+        </request>
+        <request device-pin="v" device-package="t" position="76">
+          <signal driver="usart" instance="2" name="tx"/>
+        </request>
+        <request device-pin="z" device-package="j|t" position="76">
+          <signal driver="usart" instance="2" name="tx"/>
+        </request>
+        <request position="77">
+          <signal driver="usart" instance="3" name="rx"/>
+        </request>
+        <request position="78">
+          <signal driver="usart" instance="3" name="tx"/>
+        </request>
+        <request position="79">
+          <signal driver="uart" instance="4" name="rx"/>
+        </request>
+        <request position="80">
+          <signal driver="uart" instance="4" name="tx"/>
+        </request>
+        <request position="81">
+          <signal driver="uart" instance="5" name="rx"/>
+        </request>
+        <request position="82">
+          <signal driver="uart" instance="5" name="tx"/>
+        </request>
+        <request position="83">
+          <signal driver="uart" instance="7" name="rx"/>
+        </request>
+        <request position="84">
+          <signal driver="uart" instance="7" name="tx"/>
+        </request>
+        <request device-pin="a|i|l|z" position="85">
+          <signal driver="uart" instance="8" name="rx"/>
+        </request>
+        <request device-pin="a|i|l|z" position="86">
+          <signal driver="uart" instance="8" name="tx"/>
+        </request>
+        <request position="87">
+          <signal driver="cordic" name="read"/>
+        </request>
+        <request position="88">
+          <signal driver="cordic" name="write"/>
+        </request>
+        <request device-pin="a" device-package="i" position="89">
+          <signal driver="lptim" instance="1" name="ic1"/>
+        </request>
+        <request device-pin="i" device-package="k|t" position="89">
+          <signal driver="lptim" instance="1" name="ic1"/>
+        </request>
+        <request device-pin="l" device-package="h" position="89">
+          <signal driver="lptim" instance="1" name="ic1"/>
+        </request>
+        <request device-pin="v" device-package="y" position="89">
+          <signal driver="lptim" instance="1" name="ic1"/>
+        </request>
+        <request device-pin="z" device-package="j|t" position="89">
+          <signal driver="lptim" instance="1" name="ic1"/>
+        </request>
+        <request device-pin="a" device-package="i" position="90">
+          <signal driver="lptim" instance="1" name="ic2"/>
+        </request>
+        <request device-pin="i" device-package="k|t" position="90">
+          <signal driver="lptim" instance="1" name="ic2"/>
+        </request>
+        <request device-pin="l" device-package="h" position="90">
+          <signal driver="lptim" instance="1" name="ic2"/>
+        </request>
+        <request device-pin="v" device-package="y" position="90">
+          <signal driver="lptim" instance="1" name="ic2"/>
+        </request>
+        <request device-pin="z" device-package="j|t" position="90">
+          <signal driver="lptim" instance="1" name="ic2"/>
+        </request>
+        <request device-pin="a" device-package="i" position="91">
+          <signal driver="lptim" instance="1" name="ue"/>
+        </request>
+        <request device-pin="i" device-package="k|t" position="91">
+          <signal driver="lptim" instance="1" name="ue"/>
+        </request>
+        <request device-pin="l" device-package="h" position="91">
+          <signal driver="lptim" instance="1" name="ue"/>
+        </request>
+        <request device-pin="v" device-package="y" position="91">
+          <signal driver="lptim" instance="1" name="ue"/>
+        </request>
+        <request device-pin="z" device-package="j|t" position="91">
+          <signal driver="lptim" instance="1" name="ue"/>
+        </request>
+        <request position="92">
+          <signal driver="lptim" instance="2" name="ic1"/>
+        </request>
+        <request position="93">
+          <signal driver="lptim" instance="2" name="ic2"/>
+        </request>
+        <request position="94">
+          <signal driver="lptim" instance="2" name="ue"/>
+        </request>
+        <request device-pin="a" device-package="i" position="95">
+          <signal driver="spdifrx" name="dt"/>
+        </request>
+        <request device-pin="i" device-package="k|t" position="95">
+          <signal driver="spdifrx" name="dt"/>
+        </request>
+        <request device-pin="l" device-package="h" position="95">
+          <signal driver="spdifrx" name="dt"/>
+        </request>
+        <request device-pin="v" device-package="y" position="95">
+          <signal driver="spdifrx" name="dt"/>
+        </request>
+        <request device-pin="z" device-package="j|t" position="95">
+          <signal driver="spdifrx" name="dt"/>
+        </request>
+        <request device-pin="a" device-package="i" position="96">
+          <signal driver="spdifrx" name="cs"/>
+        </request>
+        <request device-pin="i" device-package="k|t" position="96">
+          <signal driver="spdifrx" name="cs"/>
+        </request>
+        <request device-pin="l" device-package="h" position="96">
+          <signal driver="spdifrx" name="cs"/>
+        </request>
+        <request device-pin="v" device-package="y" position="96">
+          <signal driver="spdifrx" name="cs"/>
+        </request>
+        <request device-pin="z" device-package="j|t" position="96">
+          <signal driver="spdifrx" name="cs"/>
+        </request>
+        <request device-pin="a|i|l|z" position="97">
+          <signal driver="adf" instance="1" name="flt0"/>
+        </request>
+        <request device-pin="a|i|l|v|z" position="98">
+          <signal driver="ucpd" instance="1" name="tx"/>
+        </request>
+        <request device-pin="a|i|l|v|z" position="99">
+          <signal driver="ucpd" instance="1" name="rx"/>
+        </request>
+        <request device-pin="a|i|l|z" position="100">
+          <signal driver="pssi"/>
+        </request>
+        <request position="101">
+          <signal driver="lpuart" instance="1" name="rx"/>
+        </request>
+        <request position="102">
+          <signal driver="lpuart" instance="1" name="tx"/>
+        </request>
+        <request device-package="h|i|j|k|t|v" position="103">
+          <signal driver="lptim" instance="3" name="ic1"/>
+        </request>
+        <request device-package="h|i|j|k|t|v" position="104">
+          <signal driver="lptim" instance="3" name="ic2"/>
+        </request>
+        <request device-package="h|i|j|k|t|v" position="105">
+          <signal driver="lptim" instance="3" name="ue"/>
+        </request>
+        <request position="106">
+          <signal driver="i3c" instance="1" name="rx"/>
+        </request>
+        <request position="107">
+          <signal driver="i3c" instance="1" name="tx"/>
+        </request>
+        <request position="108">
+          <signal driver="i3c" instance="1" name="tc"/>
+        </request>
+        <request position="109">
+          <signal driver="i3c" instance="1" name="rs"/>
+        </request>
+      </requests>
     </driver>
     <driver name="hash" type="stm32-v4.0"/>
     <driver name="hdmi_cec" type="stm32-v2.0"/>
-    <driver name="hpdma" type="stm32-stm32h7rs_dma3_cube">
+    <driver name="hpdma" type="stm32">
       <instance value="1"/>
+      <requests>
+        <request position="0">
+          <signal driver="jpeg" name="rx"/>
+        </request>
+        <request position="1">
+          <signal driver="jpeg" name="tx"/>
+        </request>
+        <request position="2">
+          <signal driver="xspi" instance="1"/>
+        </request>
+        <request device-pin="l" position="3">
+          <signal driver="xspi" instance="2"/>
+        </request>
+        <request position="4">
+          <signal driver="spi" instance="3" name="rx"/>
+        </request>
+        <request position="5">
+          <signal driver="spi" instance="3" name="tx"/>
+        </request>
+        <request device-pin="a|i|l|z" position="6">
+          <signal driver="spi" instance="4" name="rx"/>
+        </request>
+        <request device-pin="a|i|l|z" position="7">
+          <signal driver="spi" instance="4" name="tx"/>
+        </request>
+        <request position="8">
+          <signal driver="adc" instance="1"/>
+        </request>
+        <request position="9">
+          <signal driver="adc" instance="2"/>
+        </request>
+        <request device-pin="a|i|l|z" position="10">
+          <signal driver="adf" instance="1" name="flt0"/>
+        </request>
+        <request position="11">
+          <signal driver="uart" instance="4" name="rx"/>
+        </request>
+        <request position="12">
+          <signal driver="uart" instance="4" name="tx"/>
+        </request>
+        <request position="13">
+          <signal driver="uart" instance="5" name="rx"/>
+        </request>
+        <request position="14">
+          <signal driver="uart" instance="5" name="tx"/>
+        </request>
+        <request position="15">
+          <signal driver="uart" instance="7" name="rx"/>
+        </request>
+        <request position="16">
+          <signal driver="uart" instance="7" name="tx"/>
+        </request>
+        <request position="17">
+          <signal driver="lptim" instance="2" name="ic1"/>
+        </request>
+        <request position="18">
+          <signal driver="lptim" instance="2" name="ic2"/>
+        </request>
+        <request position="19">
+          <signal driver="lptim" instance="2" name="ue"/>
+        </request>
+      </requests>
     </driver>
     <driver name="i2c" type="stm32-extended">
       <feature value="dnf"/>

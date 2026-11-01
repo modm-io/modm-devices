@@ -146,11 +146,179 @@
         <wait-state ws="5" hclk-max="250000000"/>
       </latency>
     </driver>
-    <driver name="gpdma" type="stm32-instance2_stm32h5_dma3_cube">
-      <instance value="2"/>
-    </driver>
-    <driver name="gpdma" type="stm32-stm32h5_dma3_cube">
+    <driver name="gpdma" type="stm32">
       <instance value="1"/>
+      <instance value="2"/>
+      <requests>
+        <request position="0">
+          <signal driver="adc" instance="1"/>
+        </request>
+        <request position="2">
+          <signal driver="dac" instance="1" name="ch1"/>
+        </request>
+        <request position="3">
+          <signal driver="dac" instance="1" name="ch2"/>
+        </request>
+        <request position="4">
+          <signal driver="tim" instance="6" name="up"/>
+        </request>
+        <request position="5">
+          <signal driver="tim" instance="7" name="up"/>
+        </request>
+        <request position="6">
+          <signal driver="spi" instance="1" name="rx"/>
+        </request>
+        <request position="7">
+          <signal driver="spi" instance="1" name="tx"/>
+        </request>
+        <request position="8">
+          <signal driver="spi" instance="2" name="rx"/>
+        </request>
+        <request position="9">
+          <signal driver="spi" instance="2" name="tx"/>
+        </request>
+        <request position="10">
+          <signal driver="spi" instance="3" name="rx"/>
+        </request>
+        <request position="11">
+          <signal driver="spi" instance="3" name="tx"/>
+        </request>
+        <request position="12">
+          <signal driver="i2c" instance="1" name="rx"/>
+        </request>
+        <request position="13">
+          <signal driver="i2c" instance="1" name="tx"/>
+        </request>
+        <request position="15">
+          <signal driver="i2c" instance="2" name="rx"/>
+        </request>
+        <request position="16">
+          <signal driver="i2c" instance="2" name="tx"/>
+        </request>
+        <request position="21">
+          <signal driver="usart" instance="1" name="rx"/>
+        </request>
+        <request position="22">
+          <signal driver="usart" instance="1" name="tx"/>
+        </request>
+        <request position="23">
+          <signal driver="usart" instance="2" name="rx"/>
+        </request>
+        <request position="24">
+          <signal driver="usart" instance="2" name="tx"/>
+        </request>
+        <request position="25">
+          <signal driver="usart" instance="3" name="rx"/>
+        </request>
+        <request position="26">
+          <signal driver="usart" instance="3" name="tx"/>
+        </request>
+        <request position="45">
+          <signal driver="lpuart" instance="1" name="rx"/>
+        </request>
+        <request position="46">
+          <signal driver="lpuart" instance="1" name="tx"/>
+        </request>
+        <request position="58">
+          <signal driver="tim" instance="1" name="ch1"/>
+        </request>
+        <request position="59">
+          <signal driver="tim" instance="1" name="ch2"/>
+        </request>
+        <request position="60">
+          <signal driver="tim" instance="1" name="ch3"/>
+        </request>
+        <request position="61">
+          <signal driver="tim" instance="1" name="ch4"/>
+        </request>
+        <request position="62">
+          <signal driver="tim" instance="1" name="up"/>
+        </request>
+        <request position="63">
+          <signal driver="tim" instance="1" name="trig"/>
+        </request>
+        <request position="64">
+          <signal driver="tim" instance="1" name="com"/>
+        </request>
+        <request position="72">
+          <signal driver="tim" instance="2" name="ch1"/>
+        </request>
+        <request position="73">
+          <signal driver="tim" instance="2" name="ch2"/>
+        </request>
+        <request position="74">
+          <signal driver="tim" instance="2" name="ch3"/>
+        </request>
+        <request position="75">
+          <signal driver="tim" instance="2" name="ch4"/>
+        </request>
+        <request position="76">
+          <signal driver="tim" instance="2" name="up"/>
+        </request>
+        <request position="77">
+          <signal driver="tim" instance="3" name="ch1"/>
+        </request>
+        <request position="78">
+          <signal driver="tim" instance="3" name="ch2"/>
+        </request>
+        <request position="79">
+          <signal driver="tim" instance="3" name="ch3"/>
+        </request>
+        <request position="80">
+          <signal driver="tim" instance="3" name="ch4"/>
+        </request>
+        <request position="81">
+          <signal driver="tim" instance="3" name="up"/>
+        </request>
+        <request position="82">
+          <signal driver="tim" instance="3" name="trig"/>
+        </request>
+        <request position="102">
+          <signal driver="lptim" instance="1" name="ic1"/>
+        </request>
+        <request position="103">
+          <signal driver="lptim" instance="1" name="ic2"/>
+        </request>
+        <request position="104">
+          <signal driver="lptim" instance="1" name="ue"/>
+        </request>
+        <request position="105">
+          <signal driver="lptim" instance="2" name="ic1"/>
+        </request>
+        <request position="106">
+          <signal driver="lptim" instance="2" name="ic2"/>
+        </request>
+        <request position="107">
+          <signal driver="lptim" instance="2" name="ue"/>
+        </request>
+        <request position="111">
+          <signal driver="hash" name="in"/>
+        </request>
+        <request position="120">
+          <signal driver="i3c" instance="1" name="rx"/>
+        </request>
+        <request position="121">
+          <signal driver="i3c" instance="1" name="tx"/>
+        </request>
+        <request position="122">
+          <signal driver="i3c" instance="1" name="tc"/>
+        </request>
+        <request position="123">
+          <signal driver="i3c" instance="1" name="rs"/>
+        </request>
+        <request position="136">
+          <signal driver="i3c" instance="2" name="rx"/>
+        </request>
+        <request position="137">
+          <signal driver="i3c" instance="2" name="tx"/>
+        </request>
+        <request position="138">
+          <signal driver="i3c" instance="2" name="tc"/>
+        </request>
+        <request position="139">
+          <signal driver="i3c" instance="2" name="rs"/>
+        </request>
+      </requests>
     </driver>
     <driver name="gtzc" type="stm32-v2.2"/>
     <driver name="hash" type="stm32-v4.0"/>
