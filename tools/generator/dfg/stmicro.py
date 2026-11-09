@@ -426,7 +426,7 @@ def _add_memories(p, node):
 def _add_interrupts(p, node):
     for vector in p["interrupts"]:
         if vector["position"] >= 0:
-            node.addChild("vector").setAttributes(["position", "name"], vector)
+            node.addChild("vector").setAttributes(["position", "name", "alias"], vector)
     # sort the node children by vector number and name
     node.addSortKey(
         lambda e: (int(e["position"]), e["name"]) if e.name == "vector" else (-1, "")

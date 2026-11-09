@@ -197,6 +197,7 @@
     <xsd:extension base="AttributeBaseType">
       <xsd:attribute name="position" type="xsd:string" use="required" />
       <xsd:attribute name="name" type="xsd:string" use="required" />
+      <xsd:attribute name="alias" type="xsd:string" use="optional" />
     </xsd:extension>
   </xsd:complexContent>
 </xsd:complexType>
