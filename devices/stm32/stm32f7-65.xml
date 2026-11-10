@@ -213,6 +213,34 @@
         <wait-state ws="6" hclk-max="210000000"/>
         <wait-state ws="7" hclk-max="216000000"/>
       </latency>
+      <layout alignment="16" erased="0xff">
+        <bank start="0x08000000">
+          <sectors start="0x08000000" size="16384" count="4"/>
+          <sectors start="0x08010000" size="65536" count="1"/>
+          <sectors device-size="i" start="0x08020000" size="131072" count="7"/>
+          <sectors device-size="g" start="0x08020000" size="131072" count="3"/>
+        </bank>
+        <bank device-size="g" start="0x08080000">
+          <sectors start="0x08080000" size="16384" count="4"/>
+          <sectors start="0x08090000" size="65536" count="1"/>
+          <sectors start="0x080A0000" size="131072" count="3"/>
+        </bank>
+        <bank device-size="i" start="0x08100000">
+          <sectors start="0x08100000" size="16384" count="4"/>
+          <sectors start="0x08110000" size="65536" count="1"/>
+          <sectors start="0x08120000" size="131072" count="7"/>
+        </bank>
+        <option name="dualbank" register="0x40023C14" mask="0x20000000" value="0x00000000"/>
+      </layout>
+      <layout alignment="32" erased="0xff">
+        <bank start="0x08000000">
+          <sectors start="0x08000000" size="32768" count="4"/>
+          <sectors start="0x08020000" size="131072" count="1"/>
+          <sectors device-size="i" start="0x08040000" size="262144" count="7"/>
+          <sectors device-size="g" start="0x08040000" size="262144" count="3"/>
+        </bank>
+        <option name="dualbank" register="0x40023C14" mask="0x20000000" value="0x20000000"/>
+      </layout>
     </driver>
     <driver name="fmc" type="stm32-v2.0"/>
     <driver name="hdmi_cec" type="stm32-v2.0"/>

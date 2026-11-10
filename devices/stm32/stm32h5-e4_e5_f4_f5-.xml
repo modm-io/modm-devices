@@ -278,6 +278,18 @@
         <wait-state ws="4" hclk-max="210000000"/>
         <wait-state ws="5" hclk-max="250000000"/>
       </latency>
+      <layout alignment="16" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="j" start="0x08000000" size="8192" count="256"/>
+          <sectors device-size="k" start="0x08000000" size="8192" count="192"/>
+        </bank>
+        <bank device-size="k" start="0x08180000">
+          <sectors start="0x08180000" size="8192" count="192"/>
+        </bank>
+        <bank device-size="j" start="0x08200000">
+          <sectors start="0x08200000" size="8192" count="256"/>
+        </bank>
+      </layout>
     </driver>
     <driver name="fmac" type="stm32-v1.0"/>
     <driver device-pin="a|i|v" device-size="j|k" name="fmc" type="stm32-v2.5"/>

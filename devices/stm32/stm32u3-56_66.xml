@@ -182,6 +182,26 @@
         <wait-state ws="1" hclk-max="64000000"/>
         <wait-state ws="2" hclk-max="96000000"/>
       </latency>
+      <layout alignment="16" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="e" start="0x08000000" size="4096" count="128"/>
+          <sectors device-size="c" start="0x08000000" size="4096" count="64"/>
+        </bank>
+        <option name="dbank" register="0x40022040" mask="0x00200000" value="0x00000000"/>
+      </layout>
+      <layout alignment="16" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="e" start="0x08000000" size="4096" count="64"/>
+          <sectors device-size="c" start="0x08000000" size="4096" count="32"/>
+        </bank>
+        <bank device-size="c" start="0x08020000">
+          <sectors start="0x08020000" size="4096" count="32"/>
+        </bank>
+        <bank device-size="e" start="0x08040000">
+          <sectors start="0x08040000" size="4096" count="64"/>
+        </bank>
+        <option name="dbank" register="0x40022040" mask="0x00200000" value="0x00200000"/>
+      </layout>
     </driver>
     <driver name="gpdma" type="stm32">
       <instance value="1"/>

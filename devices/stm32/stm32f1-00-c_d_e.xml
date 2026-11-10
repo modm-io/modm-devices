@@ -78,6 +78,13 @@
       <latency vcore-min="1800">
         <wait-state ws="0" hclk-max="24000000"/>
       </latency>
+      <layout alignment="4" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="e" start="0x08000000" size="2048" count="256"/>
+          <sectors device-size="d" start="0x08000000" size="2048" count="192"/>
+          <sectors device-size="c" start="0x08000000" size="2048" count="128"/>
+        </bank>
+      </layout>
     </driver>
     <driver device-pin="v|z" name="fsmc" type="stm32-v4.0"/>
     <driver name="hdmi_cec" type="stm32-v1.1"/>

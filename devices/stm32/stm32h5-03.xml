@@ -145,6 +145,14 @@
         <wait-state ws="4" hclk-max="210000000"/>
         <wait-state ws="5" hclk-max="250000000"/>
       </latency>
+      <layout alignment="16" erased="0xff">
+        <bank start="0x08000000">
+          <sectors start="0x08000000" size="8192" count="8"/>
+        </bank>
+        <bank start="0x08010000">
+          <sectors start="0x08010000" size="8192" count="8"/>
+        </bank>
+      </layout>
     </driver>
     <driver name="gpdma" type="stm32">
       <instance value="1"/>

@@ -130,6 +130,12 @@
         <wait-state ws="1" hclk-max="48000000"/>
         <wait-state ws="2" hclk-max="72000000"/>
       </latency>
+      <layout alignment="8" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-name="58" start="0x08000000" size="2048" count="128"/>
+          <sectors device-name="98" start="0x08000000" size="2048" count="256"/>
+        </bank>
+      </layout>
     </driver>
     <driver device-name="98" name="fmc" type="stm32-v1.0"/>
     <driver name="i2c" type="stm32-extended">

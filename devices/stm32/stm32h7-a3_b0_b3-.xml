@@ -311,6 +311,19 @@
         <wait-state ws="5" hclk-max="252000000"/>
         <wait-state ws="6" hclk-max="280000000"/>
       </latency>
+      <layout alignment="16" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="i" start="0x08000000" size="8192" count="128"/>
+          <sectors device-name="b0" start="0x08000000" size="8192" count="16"/>
+          <sectors device-size="g" start="0x08000000" size="8192" count="64"/>
+        </bank>
+        <bank device-size="g" start="0x08080000">
+          <sectors start="0x08080000" size="8192" count="64"/>
+        </bank>
+        <bank device-size="i" start="0x08100000">
+          <sectors start="0x08100000" size="8192" count="128"/>
+        </bank>
+      </layout>
     </driver>
     <driver device-pin="i|n|v|z" name="fmc" type="stm32-v3.0"/>
     <driver name="gfxmmu" type="stm32-v1.0"/>

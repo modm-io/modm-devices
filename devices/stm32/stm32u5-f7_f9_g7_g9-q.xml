@@ -245,6 +245,24 @@
         <wait-state ws="3" hclk-max="128000000"/>
         <wait-state ws="4" hclk-max="160000000"/>
       </latency>
+      <layout alignment="16" erased="0xff">
+        <bank start="0x08000000">
+          <sectors start="0x08000000" size="8192" count="256"/>
+        </bank>
+        <bank device-size="j" start="0x08200000">
+          <sectors start="0x08200000" size="8192" count="256"/>
+        </bank>
+        <option device-size="i" name="dbank" register="0x40022040" mask="0x00200000" value="0x00000000"/>
+      </layout>
+      <layout device-size="i" alignment="16" erased="0xff">
+        <bank start="0x08000000">
+          <sectors start="0x08000000" size="8192" count="128"/>
+        </bank>
+        <bank start="0x08100000">
+          <sectors start="0x08100000" size="8192" count="128"/>
+        </bank>
+        <option name="dbank" register="0x40022040" mask="0x00200000" value="0x00200000"/>
+      </layout>
     </driver>
     <driver name="fmac" type="stm32-v1.0"/>
     <driver name="fmc" type="stm32-v2.4"/>

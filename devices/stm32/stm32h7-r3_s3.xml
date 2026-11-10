@@ -222,6 +222,11 @@
         <wait-state ws="6" hclk-max="280000000"/>
         <wait-state ws="7" hclk-max="320000000"/>
       </latency>
+      <layout alignment="16" erased="0xff">
+        <bank start="0x08000000">
+          <sectors start="0x08000000" size="8192" count="8"/>
+        </bank>
+      </layout>
     </driver>
     <driver name="fmc" type="stm32-v3.1"/>
     <driver name="gfxmmu" type="stm32-v1.0"/>

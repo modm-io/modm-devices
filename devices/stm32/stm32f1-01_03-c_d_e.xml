@@ -137,6 +137,13 @@
         <wait-state device-name="03" ws="1" hclk-max="48000000"/>
         <wait-state device-name="03" ws="2" hclk-max="72000000"/>
       </latency>
+      <layout alignment="4" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="e" start="0x08000000" size="2048" count="256"/>
+          <sectors device-size="d" start="0x08000000" size="2048" count="192"/>
+          <sectors device-size="c" start="0x08000000" size="2048" count="128"/>
+        </bank>
+      </layout>
     </driver>
     <driver device-pin="v|z" name="fsmc" type="stm32-v1.0"/>
     <driver name="i2c" type="stm32">

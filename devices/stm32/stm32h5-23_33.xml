@@ -207,6 +207,18 @@
         <wait-state ws="4" hclk-max="210000000"/>
         <wait-state ws="5" hclk-max="250000000"/>
       </latency>
+      <layout alignment="16" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="e" start="0x08000000" size="8192" count="32"/>
+          <sectors device-size="c" start="0x08000000" size="8192" count="16"/>
+        </bank>
+        <bank device-size="c" start="0x08020000">
+          <sectors start="0x08020000" size="8192" count="16"/>
+        </bank>
+        <bank device-size="e" start="0x08040000">
+          <sectors start="0x08040000" size="8192" count="32"/>
+        </bank>
+      </layout>
     </driver>
     <driver device-pin="z" name="fmc" type="stm32-v2.4"/>
     <driver device-pin="v" name="fmc" type="stm32-v2.5"/>

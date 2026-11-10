@@ -184,6 +184,27 @@
         <wait-state ws="3" hclk-max="64000000"/>
         <wait-state ws="4" hclk-max="80000000"/>
       </latency>
+      <layout alignment="8" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-name="51" device-size="e" start="0x08000000" size="2048" count="256"/>
+          <sectors device-name="71" device-size="g" start="0x08000000" size="2048" count="256"/>
+          <sectors device-name="51" device-size="c" start="0x08000000" size="2048" count="128"/>
+          <sectors device-name="71" device-size="e" start="0x08000000" size="2048" count="128"/>
+        </bank>
+        <bank device-name="71" device-size="e" start="0x08040000">
+          <sectors start="0x08040000" size="2048" count="128"/>
+        </bank>
+        <bank device-size="g" start="0x08080000">
+          <sectors start="0x08080000" size="2048" count="256"/>
+        </bank>
+        <option device-name="71" device-size="e" name="dualbank" register="0x40022020" mask="0x00200000" value="0x00200000"/>
+      </layout>
+      <layout device-name="71" device-size="e" alignment="8" erased="0xff">
+        <bank start="0x08000000">
+          <sectors start="0x08000000" size="2048" count="256"/>
+        </bank>
+        <option name="dualbank" register="0x40022020" mask="0x00200000" value="0x00000000"/>
+      </layout>
     </driver>
     <driver device-name="71" device-pin="q|v|z" name="fmc" type="stm32-v1.1"/>
     <driver name="i2c" type="stm32-extended">

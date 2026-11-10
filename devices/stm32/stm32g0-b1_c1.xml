@@ -162,6 +162,13 @@
         <wait-state ws="1" hclk-max="48000000"/>
         <wait-state ws="2" hclk-max="64000000"/>
       </latency>
+      <layout alignment="0" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="e" start="0x08000000" size="2048" count="256"/>
+          <sectors device-size="c" start="0x08000000" size="2048" count="128"/>
+          <sectors device-size="b" start="0x08000000" size="2048" count="64"/>
+        </bank>
+      </layout>
     </driver>
     <driver name="hdmi_cec" type="stm32-v2.0"/>
     <driver name="i2c" type="stm32-extended">

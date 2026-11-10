@@ -178,6 +178,24 @@
         <wait-state ws="3" hclk-max="136000000"/>
         <wait-state ws="4" hclk-max="170000000"/>
       </latency>
+      <layout alignment="8" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="e" start="0x08000000" size="4096" count="128"/>
+          <sectors device-size="c" start="0x08000000" size="4096" count="64"/>
+        </bank>
+        <option name="dbank" register="0x40022020" mask="0x00400000" value="0x00000000"/>
+      </layout>
+      <layout alignment="8" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="e" start="0x08000000" size="2048" count="128"/>
+          <sectors device-size="c" start="0x08000000" size="2048" count="64"/>
+        </bank>
+        <bank start="0x08040000">
+          <sectors device-size="e" start="0x08040000" size="2048" count="128"/>
+          <sectors device-size="c" start="0x08040000" size="2048" count="64"/>
+        </bank>
+        <option name="dbank" register="0x40022020" mask="0x00400000" value="0x00400000"/>
+      </layout>
     </driver>
     <driver name="fmac" type="stm32-v1.0"/>
     <driver name="i2c" type="stm32-extended">

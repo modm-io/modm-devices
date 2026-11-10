@@ -301,6 +301,13 @@
         <wait-state ws="2" hclk-max="210000000"/>
         <wait-state ws="3" hclk-max="275000000"/>
       </latency>
+      <layout alignment="32" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="g" start="0x08000000" size="131072" count="8"/>
+          <sectors device-name="30" start="0x08000000" size="131072" count="1"/>
+          <sectors device-size="e" start="0x08000000" size="131072" count="4"/>
+        </bank>
+      </layout>
     </driver>
     <driver name="fmac" type="stm32-v1.0"/>
     <driver name="fmc" type="stm32-v3.0"/>

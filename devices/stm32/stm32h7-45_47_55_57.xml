@@ -398,6 +398,12 @@
         <wait-state ws="3" hclk-max="225000000"/>
         <wait-state ws="4" hclk-max="240000000"/>
       </latency>
+      <layout alignment="32" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="i" start="0x08000000" size="131072" count="8"/>
+          <sectors device-size="g" start="0x08000000" size="131072" count="4"/>
+        </bank>
+      </layout>
     </driver>
     <driver name="fmc" type="stm32-v3.0"/>
     <driver device-name="55|57" name="hash" type="stm32-v2.0"/>

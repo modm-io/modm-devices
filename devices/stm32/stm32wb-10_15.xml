@@ -87,6 +87,11 @@
         <wait-state ws="2" hclk-max="54000000"/>
         <wait-state ws="3" hclk-max="64000000"/>
       </latency>
+      <layout alignment="8" erased="0x00">
+        <bank start="0x08000000">
+          <sectors start="0x08000000" size="2048" count="160"/>
+        </bank>
+      </layout>
     </driver>
     <driver name="hsem" type="stm32-v1.0"/>
     <driver name="i2c" type="stm32-extended">

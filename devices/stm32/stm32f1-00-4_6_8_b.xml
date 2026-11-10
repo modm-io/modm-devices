@@ -76,6 +76,14 @@
       <latency vcore-min="1800">
         <wait-state ws="0" hclk-max="24000000"/>
       </latency>
+      <layout alignment="4" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="b" start="0x08000000" size="1024" count="128"/>
+          <sectors device-size="8" start="0x08000000" size="1024" count="64"/>
+          <sectors device-size="6" start="0x08000000" size="1024" count="32"/>
+          <sectors device-size="4" start="0x08000000" size="1024" count="16"/>
+        </bank>
+      </layout>
     </driver>
     <driver name="hdmi_cec" type="stm32-v1.1"/>
     <driver name="i2c" type="stm32">

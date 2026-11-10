@@ -178,6 +178,28 @@
         <wait-state ws="4" hclk-max="100000000"/>
         <wait-state ws="5" hclk-max="120000000"/>
       </latency>
+      <layout alignment="8" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="i" start="0x08000000" size="4096" count="256"/>
+          <sectors device-size="g" start="0x08000000" size="4096" count="128"/>
+        </bank>
+        <bank device-size="g" start="0x08080000">
+          <sectors start="0x08080000" size="4096" count="128"/>
+        </bank>
+        <bank device-size="i" start="0x08100000">
+          <sectors start="0x08100000" size="4096" count="256"/>
+        </bank>
+        <option device-size="g" name="db1m" register="0x40022020" mask="0x00200000" value="0x00200000"/>
+        <option device-size="i" name="dbank" register="0x40022020" mask="0x00400000" value="0x00400000"/>
+      </layout>
+      <layout alignment="8" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="i" start="0x08000000" size="8192" count="256"/>
+          <sectors device-size="g" start="0x08000000" size="4096" count="256"/>
+        </bank>
+        <option device-size="g" name="db1m" register="0x40022020" mask="0x00200000" value="0x00000000"/>
+        <option device-size="i" name="dbank" register="0x40022020" mask="0x00400000" value="0x00000000"/>
+      </layout>
     </driver>
     <driver name="fmc" type="stm32-v2.1"/>
     <driver device-name="r7|r9" name="gfxmmu" type="stm32-v1.0"/>

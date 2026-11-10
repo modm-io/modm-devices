@@ -159,6 +159,12 @@
         <wait-state ws="0" hclk-max="16000000"/>
         <wait-state ws="1" hclk-max="32000000"/>
       </latency>
+      <layout alignment="4" erased="0x00">
+        <bank start="0x08000000">
+          <sectors device-size="8" start="0x08000000" size="128" count="512"/>
+          <sectors device-size="6" start="0x08000000" size="128" count="256"/>
+        </bank>
+      </layout>
     </driver>
     <driver name="i2c" type="stm32-extended">
       <feature value="dnf"/>

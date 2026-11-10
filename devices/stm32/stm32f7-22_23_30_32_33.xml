@@ -230,6 +230,14 @@
         <wait-state ws="6" hclk-max="210000000"/>
         <wait-state ws="7" hclk-max="216000000"/>
       </latency>
+      <layout alignment="16" erased="0xff">
+        <bank start="0x08000000">
+          <sectors start="0x08000000" size="16384" count="4"/>
+          <sectors device-name="22|23|32|33" start="0x08010000" size="65536" count="1"/>
+          <sectors device-size="e" start="0x08020000" size="131072" count="3"/>
+          <sectors device-size="c" start="0x08020000" size="131072" count="1"/>
+        </bank>
+      </layout>
     </driver>
     <driver device-pin="i|v|z" name="fmc" type="stm32-v2.0"/>
     <driver name="i2c" type="stm32-extended">

@@ -183,6 +183,30 @@
         <wait-state ws="3" hclk-max="64000000"/>
         <wait-state ws="4" hclk-max="80000000"/>
       </latency>
+      <layout alignment="8" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="g" start="0x08000000" size="2048" count="256"/>
+          <sectors device-size="e" start="0x08000000" size="2048" count="128"/>
+          <sectors device-size="c" start="0x08000000" size="2048" count="64"/>
+        </bank>
+        <bank device-size="c" start="0x08020000">
+          <sectors start="0x08020000" size="2048" count="64"/>
+        </bank>
+        <bank device-size="e" start="0x08040000">
+          <sectors start="0x08040000" size="2048" count="128"/>
+        </bank>
+        <bank device-size="g" start="0x08080000">
+          <sectors start="0x08080000" size="2048" count="256"/>
+        </bank>
+        <option device-size="c|e" name="dualbank" register="0x40022020" mask="0x00200000" value="0x00200000"/>
+      </layout>
+      <layout device-size="c|e" alignment="8" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="e" start="0x08000000" size="2048" count="256"/>
+          <sectors device-size="c" start="0x08000000" size="2048" count="128"/>
+        </bank>
+        <option name="dualbank" register="0x40022020" mask="0x00200000" value="0x00000000"/>
+      </layout>
     </driver>
     <driver device-pin="q" device-package="i" name="fmc" type="stm32-v1.1"/>
     <driver device-pin="v" device-package="t" name="fmc" type="stm32-v1.1"/>

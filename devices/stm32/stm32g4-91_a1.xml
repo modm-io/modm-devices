@@ -182,6 +182,12 @@
         <wait-state ws="3" hclk-max="136000000"/>
         <wait-state ws="4" hclk-max="170000000"/>
       </latency>
+      <layout alignment="8" erased="0xff">
+        <bank start="0x08000000">
+          <sectors device-size="e" start="0x08000000" size="2048" count="256"/>
+          <sectors device-size="c" start="0x08000000" size="2048" count="128"/>
+        </bank>
+      </layout>
     </driver>
     <driver name="fmac" type="stm32-v1.0"/>
     <driver name="i2c" type="stm32-extended">

@@ -226,6 +226,16 @@
         <wait-state ws="4" hclk-max="210000000"/>
         <wait-state ws="5" hclk-max="250000000"/>
       </latency>
+      <layout device-size="g" alignment="0" erased="0xff">
+        <bank start="0x08000000">
+          <sectors start="0x08000000" size="8192" count="128"/>
+        </bank>
+      </layout>
+      <layout device-size="e" alignment="16" erased="0xff">
+        <bank start="0x08000000">
+          <sectors start="0x08000000" size="8192" count="64"/>
+        </bank>
+      </layout>
     </driver>
     <driver device-pin="v|z" name="fmc" type="stm32-v2.5"/>
     <driver name="gpdma" type="stm32">
