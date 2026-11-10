@@ -221,7 +221,10 @@ def _device_tree(p, did) -> DeviceTree:
                 )
 
         if name == "flash":
-            driver.addSortKey(lambda e: int(e.get("vcore-min", 1e6)))
+            driver.addSortKey(
+                lambda e: (e.name, int(e.get("vcore-min", 0)), e.toString())
+            )
+            _add_flash_layouts(p, driver)
             for mV, freqs in p["flash_latency"].items():
                 vddc = driver.addChild("latency")
                 vddc.setAttributes("vcore-min", mV)
@@ -243,6 +246,28 @@ def _device_tree(p, did) -> DeviceTree:
         if name in ["gpdma", "hpdma", "lpdma"]:
             _add_dma(p, driver)
     return tree
+
+
+def _add_flash_layouts(p, driver):
+    # One layout per value of the dual-bank option bits, with its banks of pages or sectors
+    for layout in p.get("flash_layouts", []):
+        node = driver.addChild("layout")
+        node.setAttributes("alignment", layout.alignment, "erased", f"0x{layout.erased:02x}")
+        node.addSortKey(lambda e: (e.name, e.get("name", ""), int(e.get("start", "0"), 0)))
+        for name, register, mask, value in layout.options:
+            node.addChild("option").setAttributes(
+                "name", name.lower(), "register", f"0x{register:08X}",
+                "mask", f"0x{mask:08X}", "value", f"0x{value:08X}"
+            )
+        for start, groups in layout.banks:
+            bank = node.addChild("bank")
+            bank.setAttributes("start", f"0x{start:08X}")
+            bank.addSortKey(lambda e: int(e["start"], 0))
+            for size, count in groups:
+                bank.addChild("sectors").setAttributes(
+                    "start", f"0x{start:08X}", "size", size, "count", count
+                )
+                start += size * count
 
 
 def _add_dma(p, driver):

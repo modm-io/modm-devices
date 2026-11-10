@@ -23,13 +23,13 @@ jobs:
       matrix:
         include:
           - name: "STM32: F4, G4, L0, H5"
-            sources: clone-sources-stmicro download-stmicro-cubemx
+            sources: clone-sources-stmicro download-stmicro-cubemx download-stmicro-cubeprog
             targets: stm32f4 stm32g4 stm32l0 stm32h5
           - name: "STM32: C0, G0, U0, H7, L4"
-            sources: clone-sources-stmicro download-stmicro-cubemx
+            sources: clone-sources-stmicro download-stmicro-cubemx download-stmicro-cubeprog
             targets: stm32c0 stm32g0 stm32u0 stm32h7 stm32l4
           - name: "STM32: F0, F1, F2, F3, F7, L1, L5, WB, WL, U3, U5"
-            sources: clone-sources-stmicro download-stmicro-cubemx
+            sources: clone-sources-stmicro download-stmicro-cubemx download-stmicro-cubeprog
             targets: stm32f0 stm32f1 stm32f2 stm32f3 stm32f7 stm32l1 stm32wb stm32wl stm32u3 stm32u5 stm32l5
           - name: "AVR, SAM, NRF, RP"
             sources: download-sources-microchip clone-sources-nordic download-sources-raspberrypi
