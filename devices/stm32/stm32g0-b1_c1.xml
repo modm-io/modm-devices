@@ -162,12 +162,24 @@
         <wait-state ws="1" hclk-max="48000000"/>
         <wait-state ws="2" hclk-max="64000000"/>
       </latency>
-      <layout alignment="0" erased="0xff">
+      <layout alignment="8" erased="0xff">
         <bank start="0x08000000">
-          <sectors device-size="e" start="0x08000000" size="2048" count="256"/>
-          <sectors device-size="c" start="0x08000000" size="2048" count="128"/>
+          <sectors device-size="c|e" start="0x08000000" size="2048" count="128"/>
           <sectors device-size="b" start="0x08000000" size="2048" count="64"/>
         </bank>
+        <bank device-size="e" start="0x08040000">
+          <sectors start="0x08040000" size="2048" count="128"/>
+        </bank>
+        <option device-size="c" name="dualbank" register="0x40022020" mask="0x00200000" value="0x00000000"/>
+      </layout>
+      <layout device-size="c" alignment="8" erased="0xff">
+        <bank start="0x08000000">
+          <sectors start="0x08000000" size="2048" count="64"/>
+        </bank>
+        <bank start="0x08020000">
+          <sectors start="0x08020000" size="2048" count="64"/>
+        </bank>
+        <option name="dualbank" register="0x40022020" mask="0x00200000" value="0x00200000"/>
       </layout>
     </driver>
     <driver name="hdmi_cec" type="stm32-v2.0"/>

@@ -403,6 +403,10 @@
           <sectors device-size="i" start="0x08000000" size="131072" count="8"/>
           <sectors device-size="g" start="0x08000000" size="131072" count="4"/>
         </bank>
+        <bank start="0x08100000">
+          <sectors device-size="i" start="0x08100000" size="131072" count="8"/>
+          <sectors device-size="g" start="0x08100000" size="131072" count="4"/>
+        </bank>
       </layout>
     </driver>
     <driver name="fmc" type="stm32-v3.0"/>

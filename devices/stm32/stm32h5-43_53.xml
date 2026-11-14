@@ -226,14 +226,16 @@
         <wait-state ws="4" hclk-max="210000000"/>
         <wait-state ws="5" hclk-max="250000000"/>
       </latency>
-      <layout device-size="g" alignment="0" erased="0xff">
+      <layout alignment="16" erased="0xff">
         <bank start="0x08000000">
-          <sectors start="0x08000000" size="8192" count="128"/>
+          <sectors device-size="g" start="0x08000000" size="8192" count="64"/>
+          <sectors device-size="e" start="0x08000000" size="8192" count="32"/>
         </bank>
-      </layout>
-      <layout device-size="e" alignment="16" erased="0xff">
-        <bank start="0x08000000">
-          <sectors start="0x08000000" size="8192" count="64"/>
+        <bank device-size="e" start="0x08040000">
+          <sectors start="0x08040000" size="8192" count="32"/>
+        </bank>
+        <bank device-size="g" start="0x08080000">
+          <sectors start="0x08080000" size="8192" count="64"/>
         </bank>
       </layout>
     </driver>
