@@ -58,7 +58,6 @@
       <memory name="d2_sram1" access="rwx" start="0x30000000" size="16384"/>
       <memory name="d2_sram2" access="rwx" start="0x30004000" size="16384"/>
       <memory name="d2_sram3" access="rwx" start="0x30008000" size="65536"/>
-      <memory name="hsp_data_bram" access="rwx" start="0x30018000" size="16384"/>
       <memory name="backup" access="rwx" start="0x38800000" size="4096"/>
       <vector position="0" name="PWR_PVD_AVD"/>
       <vector position="2" name="DTS"/>
