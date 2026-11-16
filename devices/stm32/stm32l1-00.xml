@@ -144,6 +144,11 @@
     <driver name="sys" type="stm32">
       <feature value="exti"/>
     </driver>
+    <driver name="sysboot" type="stm32">
+      <attribute-entry value="0x1ff00000"/>
+      <attribute-id-address device-size="6|8|b" value="0x1ff00ffe"/>
+      <attribute-id-address device-size="c" value="0x1ff01ffe"/>
+    </driver>
     <driver name="tim" type="stm32-basic">
       <instance value="6"/>
       <instance value="7"/>

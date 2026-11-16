@@ -110,6 +110,11 @@
       <feature value="cfgr2"/>
       <feature value="exti"/>
     </driver>
+    <driver name="sysboot" type="stm32">
+      <attribute-entry device-size="6|8|b" value="0x1ff00000"/>
+      <attribute-id-address device-size="4|6|8" value="0x1ff00ffe"/>
+      <attribute-id-address device-size="b" value="0x1ff01ffe"/>
+    </driver>
     <driver name="tim" type="stm32-general-purpose">
       <instance value="2"/>
       <instance value="21"/>

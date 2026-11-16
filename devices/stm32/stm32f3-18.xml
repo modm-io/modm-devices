@@ -116,6 +116,10 @@
       <feature value="exti"/>
       <feature value="fpu"/>
     </driver>
+    <driver name="sysboot" type="stm32">
+      <attribute-entry value="0x1fffd800"/>
+      <attribute-id-address value="0x1ffff796"/>
+    </driver>
     <driver name="tim" type="stm32-advanced">
       <instance value="1"/>
     </driver>

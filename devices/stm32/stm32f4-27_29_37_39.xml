@@ -305,6 +305,10 @@
     <driver name="sys" type="stm32">
       <feature value="exti"/>
     </driver>
+    <driver name="sysboot" type="stm32">
+      <attribute-entry value="0x1fff0000"/>
+      <attribute-id-address value="0x1fff76de"/>
+    </driver>
     <driver name="tim" type="stm32-advanced">
       <instance value="1"/>
       <instance value="8"/>

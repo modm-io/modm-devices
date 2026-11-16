@@ -147,6 +147,10 @@
       <feature value="imr"/>
       <feature value="sram2-wp"/>
     </driver>
+    <driver name="sysboot" type="stm32">
+      <attribute-entry value="0x1fff0000"/>
+      <attribute-id-address value="0x1fff3efe"/>
+    </driver>
     <driver name="sysm0p" type="stm32-v1.0">
       <instance value="plus"/>
     </driver>

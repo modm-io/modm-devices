@@ -154,6 +154,10 @@
       <feature value="exti"/>
       <feature value="remap"/>
     </driver>
+    <driver name="sysboot" type="stm32">
+      <attribute-entry value="0x1fffe000"/>
+      <attribute-id-address value="0x1ffff7d6"/>
+    </driver>
     <driver device-name="03" name="tim" type="stm32-advanced">
       <instance value="1"/>
       <instance value="8"/>

@@ -118,6 +118,11 @@
       <feature value="cfgr2"/>
       <feature value="itline"/>
     </driver>
+    <driver name="sysboot" type="stm32">
+      <attribute-entry value="0x1fff0000"/>
+      <attribute-id-address device-name="70" value="0x1fff6ffe"/>
+      <attribute-id-address device-name="b0" value="0x1fff9ffe"/>
+    </driver>
     <driver name="tim" type="stm32-advanced">
       <instance value="1"/>
     </driver>

@@ -942,6 +942,9 @@
       <instance value="2"/>
       <instance value="3"/>
     </driver>
+    <driver name="sysboot" type="stm32">
+      <attribute-id-address value="0x0bfadafe"/>
+    </driver>
     <driver name="tamp" type="stm32-c7amba_rtc3-v3.6"/>
     <driver name="tim" type="stm32-advanced">
       <instance value="1"/>

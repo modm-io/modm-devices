@@ -762,6 +762,10 @@
       <feature value="cfgr2"/>
     </driver>
     <driver name="sys_s" type="stm32-v1.0"/>
+    <driver name="sysboot" type="stm32">
+      <attribute-entry value="0x0bf90000"/>
+      <attribute-id-address value="0x0bf99efe"/>
+    </driver>
     <driver name="tamp" type="stm32-v2.8"/>
     <driver name="tim" type="stm32-advanced">
       <instance value="1"/>

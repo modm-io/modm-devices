@@ -99,6 +99,10 @@
       <feature value="cfgr2"/>
       <feature value="exti"/>
     </driver>
+    <driver name="sysboot" type="stm32">
+      <attribute-entry value="0x1fffec00"/>
+      <attribute-id-address value="0x1ffff7a6"/>
+    </driver>
     <driver name="tim" type="stm32-advanced">
       <instance value="1"/>
     </driver>

@@ -895,6 +895,10 @@
       <instance device-pin="a|i|l|v|z" value="6"/>
     </driver>
     <driver name="sys" type="stm32"/>
+    <driver name="sysboot" type="stm32">
+      <attribute-entry value="0x1ff18000"/>
+      <attribute-id-address value="0x1ff1fcfe"/>
+    </driver>
     <driver name="tamp" type="stm32-v2.8"/>
     <driver name="tim" type="stm32-advanced">
       <instance value="1"/>
