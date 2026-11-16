@@ -188,6 +188,14 @@ def _device_tree(p, did) -> DeviceTree:
     _add_memories(p, core_child)
     _add_interrupts(p, core_child)
 
+    # System memory bootloader: vector table and bootloader ID addresses
+    if p.get("sysboot"):
+        sysboot = tree.addChild("driver")
+        sysboot.setAttributes("name", "sysboot", "type", "stm32")
+        sysboot.addSortKey(lambda e: (e.name, e["value"]))
+        for key, address in p["sysboot"].items():
+            sysboot.addChild(f"attribute-{key}").setValue(f"0x{address:08x}")
+
     modules = {}
     for m, i, _, h, f in p["modules"]:
         if m + h not in modules:
