@@ -156,7 +156,7 @@
       <vector position="134" name="BDMA_Channel5"/>
       <vector position="135" name="BDMA_Channel6"/>
       <vector position="136" name="BDMA_Channel7"/>
-      <vector position="137" name="COMP"/>
+      <vector position="137" name="COMP" alias="COMP1"/>
       <vector position="138" name="LPTIM2"/>
       <vector position="139" name="LPTIM3"/>
       <vector position="140" name="LPTIM4"/>

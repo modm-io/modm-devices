@@ -99,7 +99,7 @@
       <vector position="64" name="COMP"/>
       <vector device-name="73" position="74" name="USB_HP"/>
       <vector device-name="73" position="75" name="USB_LP"/>
-      <vector device-name="73" position="76" name="USBWakeUp"/>
+      <vector device-name="73" position="76" name="USBWakeUp" alias="CEC"/>
       <vector position="78" name="TIM19"/>
       <vector position="81" name="FPU"/>
     </driver>
