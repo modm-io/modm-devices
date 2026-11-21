@@ -708,7 +708,6 @@
         <signal af="0" driver="debug" name="jtms"/>
         <signal af="0" driver="debug" name="swdio"/>
         <signal af="1" driver="irtim" name="out"/>
-        <signal af="10" driver="usb" name="noe"/>
         <signal af="11" driver="lcd" name="seg12"/>
       </gpio>
       <gpio port="a" pin="14">

@@ -257,10 +257,12 @@
           <sectors device-size="c" start="0x08000000" size="2048" count="64"/>
           <sectors device-size="b" start="0x08000000" size="2048" count="32"/>
         </bank>
-        <bank start="0x08040000">
+        <bank device-size="b" start="0x08010000">
+          <sectors start="0x08010000" size="2048" count="32"/>
+        </bank>
+        <bank device-size="c|e" start="0x08040000">
           <sectors device-size="e" start="0x08040000" size="2048" count="128"/>
           <sectors device-size="c" start="0x08040000" size="2048" count="64"/>
-          <sectors device-size="b" start="0x08040000" size="2048" count="32"/>
         </bank>
         <option name="dbank" register="0x40022020" mask="0x00400000" value="0x00400000"/>
       </layout>

@@ -239,15 +239,16 @@
       </latency>
       <layout alignment="16" erased="0xff">
         <bank start="0x08000000">
-          <sectors device-size="e" start="0x08000000" size="16384" count="32"/>
-          <sectors device-size="c" start="0x08000000" size="8192" count="32"/>
+          <sectors device-size="c|e" start="0x08000000" size="8192" count="32"/>
           <sectors device-size="b" start="0x08000000" size="8192" count="16"/>
         </bank>
-        <option name="dbank" register="0x40022040" mask="0x00200000" value="0x00000000"/>
+        <bank device-size="e" start="0x08040000">
+          <sectors start="0x08040000" size="8192" count="32"/>
+        </bank>
+        <option device-size="b|c" name="dbank" register="0x40022040" mask="0x00200000" value="0x00000000"/>
       </layout>
-      <layout alignment="16" erased="0xff">
+      <layout device-size="b|c" alignment="16" erased="0xff">
         <bank start="0x08000000">
-          <sectors device-size="e" start="0x08000000" size="8192" count="32"/>
           <sectors device-size="c" start="0x08000000" size="8192" count="16"/>
           <sectors device-size="b" start="0x08000000" size="8192" count="8"/>
         </bank>
@@ -256,9 +257,6 @@
         </bank>
         <bank device-size="c" start="0x08020000">
           <sectors start="0x08020000" size="8192" count="16"/>
-        </bank>
-        <bank device-size="e" start="0x08040000">
-          <sectors start="0x08040000" size="8192" count="32"/>
         </bank>
         <option name="dbank" register="0x40022040" mask="0x00200000" value="0x00200000"/>
       </layout>

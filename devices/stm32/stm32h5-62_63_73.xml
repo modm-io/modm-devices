@@ -805,7 +805,7 @@
       <instance value="11"/>
     </driver>
     <driver name="usb" type="stm32-v1.0"/>
-    <driver name="vrefbuf" type="stm32-v1.0"/>
+    <driver device-pin="a|i|l|r|v|z" name="vrefbuf" type="stm32-v1.0"/>
     <driver name="wwdg" type="stm32-v2.0"/>
     <driver name="gpio" type="stm32">
       <gpio port="a" pin="0">

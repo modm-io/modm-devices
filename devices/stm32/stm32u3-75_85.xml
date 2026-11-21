@@ -698,7 +698,6 @@
         <signal af="3" driver="sai" instance="1" name="ck2"/>
         <signal af="5" driver="spi" instance="1" name="rdy"/>
         <signal af="7" driver="usart" instance="1" name="ck"/>
-        <signal af="10" driver="usb" name="sof"/>
         <signal af="11" driver="rcc" name="mco2"/>
         <signal af="12" driver="debug" name="traceclk"/>
         <signal af="13" driver="sai" instance="1" name="sck_a"/>
@@ -746,7 +745,6 @@
         <signal af="0" driver="debug" name="jtms"/>
         <signal af="0" driver="debug" name="swdio"/>
         <signal af="1" driver="irtim" name="out"/>
-        <signal af="10" driver="usb" name="noe"/>
         <signal af="13" driver="sai" instance="1" name="sd_b"/>
       </gpio>
       <gpio port="a" pin="14">
@@ -756,7 +754,6 @@
         <signal device-pin="c|r|v" af="3" driver="i2c" instance="2" name="smba"/>
         <signal af="4" driver="i2c" instance="1" name="smba"/>
         <signal af="5" driver="i2c" instance="3" name="smba"/>
-        <signal af="10" driver="usb" name="sof"/>
         <signal af="13" driver="sai" instance="1" name="fs_b"/>
       </gpio>
       <gpio port="a" pin="15">
