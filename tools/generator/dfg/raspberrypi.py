@@ -10,7 +10,7 @@ from .merger import merge, filename_from_ids
 LOGGER = logging.getLogger(__name__)
 PLATFORM = "rp"
 
-rp_groups = [{"family": ["20"]}]
+rp_groups = [{"family": ["20"]}, {"family": ["23"]}]
 
 
 def device_trees(prefixes: list[str]) -> dict[str, DeviceTree]:
@@ -21,8 +21,8 @@ def device_trees(prefixes: list[str]) -> dict[str, DeviceTree]:
     trees = {}
     for prefix in prefixes:
         for path in picosdk.device_files(prefix):
-            p = picosdk.device_from_file(path)
-            trees[p["id"].string] = _device_tree(p)
+            for p in picosdk.device_from_file(path):
+                trees[p["id"].string] = _device_tree(p)
     return trees
 
 

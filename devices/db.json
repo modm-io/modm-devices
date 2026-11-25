@@ -559,7 +559,10 @@
     },
     "rp": {
         "rp2040": "rp/rp2040.xml",
-        "rp2350": "rp/rp2350.xml"
+        "rp2350a": "rp/rp2350_4.xml",
+        "rp2350b": "rp/rp2350_4.xml",
+        "rp2354a": "rp/rp2350_4.xml",
+        "rp2354b": "rp/rp2350_4.xml"
     },
     "samd09": {
         "samd09c13a-ssu": "sam/samd09.xml",
