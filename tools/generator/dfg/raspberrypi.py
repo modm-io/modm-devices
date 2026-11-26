@@ -113,6 +113,9 @@ def _device_tree(p) -> DeviceTree:
         pin_driver.setAttributes(
             "port", pin["bank"], "pin", str(pin["idx"]), "name", pin["name"]
         )
+        # The QSPI pads are ordered differently from the IO_QSPI and SIO bits
+        if pin["pad"] != pin["idx"]:
+            pin_driver.setAttribute("pad", str(pin["pad"]))
         for s in pin["signals"]:
             signal = pin_driver.addChild("signal")
             signal.setAttributes(
